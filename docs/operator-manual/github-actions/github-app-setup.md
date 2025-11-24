@@ -9,6 +9,7 @@ A **GitHub Core App** is an organization-level GitHub App that provides centrali
 ### Why Use a Core App?
 
 **Traditional Approach (PATs)**:
+
 - Personal Access Tokens tied to individual user accounts
 - Token revoked when user leaves organization
 - Difficult to audit actions across repositories
@@ -16,6 +17,7 @@ A **GitHub Core App** is an organization-level GitHub App that provides centrali
 - Lower rate limits (5000 requests/hour for authenticated users)
 
 **Core App Approach**:
+
 - Organization-owned identity independent of individuals
 - Survives personnel changes
 - Complete audit trail of all actions
@@ -142,12 +144,14 @@ After creating the app:
 2. Select **Install on this organization**
 3. Choose installation scope:
 
-**Recommended: All repositories**
+#### Recommended: All repositories
+
 - Simplifies automation across organization
 - New repositories automatically included
 - No maintenance of repository selection
 
-**Alternative: Only select repositories**
+#### Alternative: Only select repositories
+
 - Use when testing or limiting scope
 - Requires manual updates as repositories are added
 
@@ -169,7 +173,8 @@ Generate the authentication credentials:
 3. Downloads a `.pem` file
 4. **Store securely** - this file cannot be regenerated
 5. File format:
-   ```
+
+   ```text
    -----BEGIN RSA PRIVATE KEY-----
    MIIEpAIBAAKCAQEA...
    ...
@@ -211,7 +216,7 @@ For organization-wide usage (recommended):
 
 For reporting and analysis workflows:
 
-```
+```text
 Contents: Read
 Pull Requests: Read
 Issues: Read
@@ -224,7 +229,7 @@ Members: Read
 
 For typical cross-repository workflows:
 
-```
+```text
 Contents: Read & Write
 Pull Requests: Read & Write
 Members: Read
@@ -236,7 +241,7 @@ Members: Read
 
 For infrastructure and repository management:
 
-```
+```text
 Contents: Read & Write
 Pull Requests: Read & Write
 Administration: Write
@@ -289,11 +294,13 @@ Monitor Core App usage:
 **Configuration**: All repositories
 
 **Advantages**:
+
 - New repositories automatically included
 - No maintenance overhead
 - Consistent access across organization
 
 **Considerations**:
+
 - Requires trust in workflows
 - Broader attack surface if compromised
 - More careful permission design needed
@@ -303,11 +310,13 @@ Monitor Core App usage:
 **Configuration**: Selected repositories (team members)
 
 **Advantages**:
+
 - Limited blast radius
 - Team-level isolation
 - Granular control
 
 **Considerations**:
+
 - Manual maintenance as teams change
 - Complexity managing multiple apps
 - GraphQL queries still require Members permission
@@ -337,6 +346,7 @@ Monitor Core App usage:
 ### File Distribution Workflows
 
 **Required**:
+
 - Contents: Read & Write
 - Pull Requests: Read & Write
 - Members: Read (for team queries)
@@ -344,6 +354,7 @@ Monitor Core App usage:
 ### CI/CD Orchestration
 
 **Required**:
+
 - Actions: Read & Write
 - Contents: Read
 - Workflows: Write (for fork approval)
@@ -351,6 +362,7 @@ Monitor Core App usage:
 ### Repository Management
 
 **Required**:
+
 - Administration: Write
 - Contents: Read & Write
 - Members: Read
@@ -358,6 +370,7 @@ Monitor Core App usage:
 ### Compliance Scanning
 
 **Required**:
+
 - Contents: Read
 - Pull Requests: Read
 - Issues: Read & Write (for creating issues)
@@ -369,6 +382,7 @@ Monitor Core App usage:
 **Symptom**: Cannot install app on organization
 
 **Checks**:
+
 1. Verify organization owner role
 2. Check organization permissions allow app installation
 3. Review organization security settings
@@ -378,6 +392,7 @@ Monitor Core App usage:
 **Symptom**: Workflows fail with `403 Forbidden`
 
 **Checks**:
+
 1. Verify app has required permissions in settings
 2. Check app is installed on target repositories
 3. Confirm organization secrets are accessible
@@ -387,6 +402,7 @@ Monitor Core App usage:
 **Symptom**: GraphQL query for team repositories returns `"team": null`
 
 **Checks**:
+
 1. Verify "Members" organization permission is granted
 2. Confirm app is installed at organization level
 3. Check team exists and has repositories

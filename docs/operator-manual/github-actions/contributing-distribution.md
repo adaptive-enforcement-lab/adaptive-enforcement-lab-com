@@ -105,6 +105,7 @@ jobs:
 ```
 
 **Key Features**:
+
 - GraphQL query scopes to specific team
 - Returns repository names and default branch
 - Outputs JSON array for matrix strategy
@@ -206,6 +207,7 @@ distribute:
 ```
 
 **Key Features**:
+
 - Matrix spawns parallel jobs per repository
 - `fail-fast: false` ensures all repos process even if one fails
 - `max-parallel: 10` limits concurrent jobs to avoid rate limits
@@ -262,6 +264,7 @@ summary:
 ```
 
 **Key Features**:
+
 - `if: always()` runs even if distribution jobs fail
 - Extracts PR URLs from workflow logs
 - Provides clickable summary of results
@@ -371,16 +374,19 @@ fi
 The workflow is designed to be fully idempotent:
 
 ### Branch Management
+
 - `git checkout -B` forces reset to remote state
 - No merge conflicts on subsequent runs
 - Safe to run multiple times
 
 ### Change Detection
+
 - Checks if file content actually changed
 - Skips commit/push if no changes
 - Avoids empty commits
 
 ### PR Management
+
 - Checks for existing PRs before creating
 - Updates existing PRs with new commits
 - No duplicate PRs created
@@ -426,6 +432,7 @@ strategy:
 ```
 
 **Tuning**:
+
 - Start with `max-parallel: 10`
 - Monitor rate limit headers
 - Reduce if hitting rate limits
@@ -549,6 +556,7 @@ fi
 **Symptom**: Discovery returns 0 repositories
 
 **Checks**:
+
 1. Verify team slug is correct
 2. Confirm Core App has "Members" organization permission
 3. Check `owner` parameter in token generation
@@ -558,6 +566,7 @@ fi
 **Symptom**: Workflow completes but no PRs appear
 
 **Checks**:
+
 1. Verify files actually changed
 2. Check change detection logic
 3. Review workflow logs for error messages
@@ -567,6 +576,7 @@ fi
 **Symptom**: `403 Forbidden` errors
 
 **Checks**:
+
 1. Verify Core App has required permissions
 2. Confirm app installed on target repositories
 3. Check workflow permissions declaration

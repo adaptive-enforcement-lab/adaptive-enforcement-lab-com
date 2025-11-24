@@ -46,6 +46,7 @@ To generate tokens with organization-wide access:
 ```
 
 **Critical Parameter**:
+
 - **`owner`** - MUST be specified for organization-level operations
 - Without `owner`, tokens are scoped only to the current repository
 - Value must match your GitHub organization name exactly
@@ -437,6 +438,7 @@ jobs:
 ```
 
 **Key Permissions**:
+
 - `contents: read` - Required for checkout action
 - `id-token: write` - Required for generating app tokens
 
@@ -590,6 +592,7 @@ jobs:
 **Symptom**: `404 Not Found` when accessing org resources
 
 **Solution**: Add `owner` parameter to token generation:
+
 ```yaml
 owner: your-org  # This parameter is required
 ```

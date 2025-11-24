@@ -1,0 +1,20 @@
+---
+# markdownlint configuration
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+# Set sensible line length limits for better readability
+MD013:
+  line_length: 300
+  heading_line_length: 150
+  code_block_line_length: 350
+  tables: false
+
+# Allow duplicate headings in decision logs and structured documents
+MD024:
+  siblings_only: true
+
+# Disallow raw HTML
+MD033: true
+
+# Disallow emphasis as headings
+MD036: true

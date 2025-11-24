@@ -28,7 +28,7 @@ mkdocs gh-deploy
 
 ## Repository Structure
 
-```
+```text
 mkdocs.yml                      # Site configuration
 docs/
 ├── index.md                    # Homepage
