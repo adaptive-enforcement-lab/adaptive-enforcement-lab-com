@@ -1,0 +1,92 @@
+---
+site_name: Adaptive Enforcement Lab
+site_url: https://adaptive-enforcement-lab.com
+copyright: |
+  &copy; 2025 <a href="https://adaptive-enforcement-lab.com" target="_blank" rel="noopener">Adaptive Enforcement Lab</a>
+
+extra:
+  homepage: https://adaptive-enforcement-lab.com
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/adaptive-enforcement-lab
+
+theme:
+  name: material
+  logo: assets/ael-logo.png
+  favicon: assets/ael-logo.png
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - header.autohide
+    - navigation.footer
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  language: en
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: blue
+      accent: teal
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-3
+        name: Switch to system preference
+      primary: blue
+      accent: teal
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - codehilite
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      separator: "_"
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: index.md
+  - Operator Manual:
+      - GitHub Actions:
+          - GitHub App Setup: operator-manual/github-actions/github-app-setup.md
+          - Actions Integration: operator-manual/github-actions/actions-integration.md
+          - File Distribution: operator-manual/github-actions/contributing-distribution.md
