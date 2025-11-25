@@ -78,13 +78,13 @@ flowchart TD
     D -->|Yes| E[Standard Automation]
     D -->|No| F[Read-Only Automation]
 
-    %% Ghostty Hardcore Theme
-    style A fill:#5e7175,color:#f8f8f3
-    style B fill:#fd971e,color:#1b1d1e
-    style C fill:#f92572,color:#1b1d1e
-    style D fill:#65d9ef,color:#1b1d1e
-    style E fill:#9e6ffe,color:#1b1d1e
-    style F fill:#a7e22e,color:#1b1d1e
+    %% Ghostty Hardcore Theme (dark mode optimized)
+    style A fill:#515354,color:#f8f8f3,stroke:#ccccc7,stroke-width:2px
+    style B fill:#fd971e,color:#1b1d1e,stroke:#e6db74,stroke-width:2px
+    style C fill:#f92572,color:#f8f8f3,stroke:#ff669d,stroke-width:2px
+    style D fill:#65d9ef,color:#1b1d1e,stroke:#a3babf,stroke-width:2px
+    style E fill:#9e6ffe,color:#f8f8f3,stroke:#9e6ffe,stroke-width:2px
+    style F fill:#a7e22e,color:#1b1d1e,stroke:#bded5f,stroke-width:2px
 ```
 
 ## Pattern Guidelines
