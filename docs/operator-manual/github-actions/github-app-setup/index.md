@@ -1,3 +1,10 @@
+---
+title: GitHub Core App Setup
+description: >-
+  Configure organization-level GitHub Apps for secure cross-repository automation.
+  Machine identity, audit trails, and enterprise-grade authentication.
+---
+
 # GitHub Core App for Organizations
 
 This guide describes the concept, setup, and configuration of a GitHub Core App for organization-level automation.

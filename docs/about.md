@@ -1,3 +1,10 @@
+---
+title: About
+description: >-
+  Our mission to turn secure development into an enforced standard.
+  Who we are, what we do, and why enforcement matters.
+---
+
 # About
 
 ## Our Mission

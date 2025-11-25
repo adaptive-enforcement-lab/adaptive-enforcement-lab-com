@@ -1,3 +1,10 @@
+---
+title: Storing Credentials
+description: >-
+  Securely store GitHub App credentials as organization or repository secrets.
+  Best practices for secret management and access control.
+---
+
 # Storing Credentials in GitHub
 
 How to securely store your Core App credentials for use in GitHub Actions workflows.

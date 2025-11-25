@@ -21,3 +21,6 @@ MD036: true
 
 # Disable code block style check (conflicts with MkDocs admonitions)
 MD046: false
+
+# Disable single H1 check (MkDocs meta plugin title counts as first heading)
+MD025: false

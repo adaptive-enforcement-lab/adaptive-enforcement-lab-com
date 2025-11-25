@@ -1,3 +1,10 @@
+---
+title: Maintenance
+description: >-
+  Ongoing care and lifecycle management for GitHub Core Apps.
+  Key rotation, permission audits, and health monitoring.
+---
+
 # Maintenance
 
 Ongoing care, key rotation, and lifecycle management for your GitHub Core App.

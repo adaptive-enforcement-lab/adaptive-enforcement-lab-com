@@ -1,3 +1,10 @@
+---
+title: Roadmap
+description: >-
+  What's coming to Adaptive Enforcement Lab. Blog content, resources,
+  deep dives, and community features in development.
+---
+
 # Roadmap
 
 Adaptive Enforcement Lab is actively building. Here's what's coming.

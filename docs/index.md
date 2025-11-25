@@ -1,3 +1,10 @@
+---
+title: Adaptive Enforcement Lab
+description: >-
+  DevSecOps automation patterns for enterprise-grade GitHub workflows.
+  Security by design, policy as code, and enforcement at scale.
+---
+
 # Govern - Enforce - Secure
 
 Security isn't a checkbox. It's a lifecycle.

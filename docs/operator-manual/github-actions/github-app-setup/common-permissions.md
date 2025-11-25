@@ -1,3 +1,10 @@
+---
+title: Common Permissions
+description: >-
+  Permission configurations for specific automation use cases.
+  File distribution, CI/CD, repository management, and security scanning.
+---
+
 # Common Permission Requirements
 
 Permission configurations for specific automation use cases.

@@ -1,3 +1,10 @@
+---
+title: Security Best Practices
+description: >-
+  Essential security guidelines for GitHub Core Apps.
+  Private key protection, permission auditing, and access control.
+---
+
 # Security Best Practices
 
 Essential security guidelines for managing your GitHub Core App.

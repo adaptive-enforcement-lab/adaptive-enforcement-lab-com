@@ -1,0 +1,22 @@
+{
+  "assets/images/social/about.png": "da38953d9302ad24296369a13f17f5190f77d434",
+  "assets/images/social/blog/2025/11/25/one-year-of-fidgeting-with-github-app-automation.png": "75f2f508fe8323e41a0ef7fc5b25a859ddde4c46",
+  "assets/images/social/blog/archive/2025.png": "f670ffbe13514be9d5c99f016a0ff94617e10a9b",
+  "assets/images/social/blog/category/automation.png": "5a9111a99883c29db94b0da10dd918904e28d198",
+  "assets/images/social/blog/category/devsecops.png": "c87c8a83ae56165cad8e67589b9ff341424f10a4",
+  "assets/images/social/blog/category/github-actions.png": "e1b4cf16c28d7e6804a84ef87d0f48061444192c",
+  "assets/images/social/blog/index.png": "7cbdac3d20014b6706c4d67de9f95961608c3269",
+  "assets/images/social/index.png": "190f1498cb944003d9294b34539f5d4e29ef4a75",
+  "assets/images/social/operator-manual/github-actions/actions-integration.png": "547619f493b131904a62021572271c8e204880d9",
+  "assets/images/social/operator-manual/github-actions/contributing-distribution.png": "e5597248a36fb0cec11f43e825fdad5a756cf6bb",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/common-permissions.png": "802e726c595892a5c9e1ee913f75f9601fad4a4b",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/creating-the-app.png": "3088da787e79293e02bfabe69f2e7636c989f9b2",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/index.png": "994745e065617c4f008bd29162529f5661f65821",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/installation-scopes.png": "2a50a30e76b874ec10b166eb20249e5ef2b3a694",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/maintenance.png": "dbb1ce3ab9ced0e6e3af65d8da3ca6fb4f3ff59c",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/permission-patterns.png": "a08b02c1b613f129a3bbd346032be0aa4c1a228a",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/security-best-practices.png": "94f0dfc756b9c981fd55ce1f290111d82da81b21",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/storing-credentials.png": "1682625aa7fd1ccce82e1a48ccb45f7b28b8428d",
+  "assets/images/social/operator-manual/github-actions/github-app-setup/troubleshooting.png": "90ab7e23e2f2acbc9574750a6ce9f5ce4e05c83f",
+  "assets/images/social/roadmap.png": "8914fa517ee31e7c8603c9562162d7a7a07e2571"
+}

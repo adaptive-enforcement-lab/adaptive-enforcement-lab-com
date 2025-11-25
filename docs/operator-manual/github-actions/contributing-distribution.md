@@ -1,3 +1,10 @@
+---
+title: File Distribution Pattern
+description: >-
+  Automated file distribution across multiple repositories.
+  Three-stage workflow with discovery, parallel distribution, and summary.
+---
+
 # File Distribution Workflow Pattern
 
 This document describes a generic pattern for automated file distribution across multiple repositories using GitHub Actions, GitHub Apps, and team-based repository discovery.

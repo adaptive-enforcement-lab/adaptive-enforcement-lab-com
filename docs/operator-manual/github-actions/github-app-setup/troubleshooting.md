@@ -1,3 +1,10 @@
+---
+title: Troubleshooting
+description: >-
+  Common GitHub App issues and solutions.
+  Authentication errors, permission problems, and token generation failures.
+---
+
 # Troubleshooting
 
 Common issues and solutions for GitHub Core App configuration.
