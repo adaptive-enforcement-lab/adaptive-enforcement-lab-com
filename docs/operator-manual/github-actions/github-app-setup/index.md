@@ -87,7 +87,7 @@ Before creating the app, determine:
 After setting up your Core App:
 
 1. **[GitHub Actions Integration](../actions-integration/index.md)** - Learn how to use the app in workflows
-2. **[Distribution Workflows](../contributing-distribution.md)** - Example use case patterns
+2. **[Distribution Workflows](../use-cases/file-distribution/index.md)** - Example use case patterns
 
 ## References
 
