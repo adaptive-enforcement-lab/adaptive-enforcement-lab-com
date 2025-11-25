@@ -7,18 +7,16 @@ site_description: >-
   and policy enforcement at scale.
 copyright: |
   &copy; 2025 <a href="https://adaptive-enforcement-lab.com" target="_blank" rel="noopener">Adaptive Enforcement Lab</a>
-
 extra:
+  generator: false
   homepage: https://adaptive-enforcement-lab.com
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/adaptive-enforcement-lab
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/markcheret/
-
 extra_css:
   - stylesheets/extra.css
-
 theme:
   name: material
   logo: assets/ael-logo.png
@@ -59,14 +57,12 @@ theme:
         name: Switch to system preference
       primary: blue
       accent: teal
-
 plugins:
   - search:
       separator: '[\s\-\.]+'
       lang:
         - en
-  - social:
-      enabled: !ENV [CI, false]  # Only generate social cards in CI
+  - social
   - meta
   - blog:
       blog_dir: blog
@@ -125,6 +121,16 @@ nav:
               - Common Permissions: operator-manual/github-actions/github-app-setup/common-permissions.md
               - Troubleshooting: operator-manual/github-actions/github-app-setup/troubleshooting.md
               - Maintenance: operator-manual/github-actions/github-app-setup/maintenance.md
-          - Actions Integration: operator-manual/github-actions/actions-integration.md
+          - Actions Integration:
+              - operator-manual/github-actions/actions-integration/index.md
+              - Token Generation: operator-manual/github-actions/actions-integration/token-generation.md
+              - Using Tokens: operator-manual/github-actions/actions-integration/using-tokens.md
+              - Workflow Patterns: operator-manual/github-actions/actions-integration/workflow-patterns.md
+              - Token Validation: operator-manual/github-actions/actions-integration/token-validation.md
+              - Workflow Permissions: operator-manual/github-actions/actions-integration/workflow-permissions.md
+              - Error Handling: operator-manual/github-actions/actions-integration/error-handling.md
+              - Security Best Practices: operator-manual/github-actions/actions-integration/security-best-practices.md
+              - Troubleshooting: operator-manual/github-actions/actions-integration/troubleshooting.md
+              - Performance Optimization: operator-manual/github-actions/actions-integration/performance-optimization.md
           - File Distribution: operator-manual/github-actions/contributing-distribution.md
   - Roadmap: roadmap.md

@@ -602,6 +602,6 @@ fi
 ## References
 
 - [GitHub Core App Setup](./github-app-setup/index.md)
-- [GitHub Actions Integration](./actions-integration.md)
+- [GitHub Actions Integration](./actions-integration/index.md)
 - [GitHub Actions Matrix Strategy](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs)
 - [GitHub GraphQL API](https://docs.github.com/en/graphql)
