@@ -74,7 +74,6 @@ plugins:
         - GitHub Actions
         - Automation
         - Security
-
 markdown_extensions:
   - admonition
   - attr_list
@@ -105,7 +104,6 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-
 nav:
   - Home: index.md
   - About:
