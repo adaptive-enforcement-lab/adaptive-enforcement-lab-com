@@ -59,6 +59,15 @@ plugins:
       separator: '[\s\-\.]+'
       lang:
         - en
+  - blog:
+      blog_dir: blog
+      post_date_format: medium
+      archive_date_format: MMMM yyyy
+      categories_allowed:
+        - DevSecOps
+        - GitHub Actions
+        - Automation
+        - Security
 
 markdown_extensions:
   - admonition
@@ -94,6 +103,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About: about.md
+  - Blog: blog/index.md
   - Operator Manual:
       - GitHub Actions:
           - GitHub App Setup:
