@@ -68,18 +68,15 @@ Members: Read
 | Actions | - | - | Read & Write |
 | Workflows | - | - | Write |
 
-## Choosing the Right Pattern
+## Permission Decision Tree
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryTextColor': '#1b1d1e', 'lineColor': '#5e7175', 'primaryBorderColor': '#5e7175' }}}%%
-flowchart TD
-    subgraph decide ["Permission Decision Tree"]
-        A[What does your automation need?] --> B{Create/modify repos?}
-        B -->|Yes| C[Full Automation]
-        B -->|No| D{Create PRs or push code?}
-        D -->|Yes| E[Standard Automation]
-        D -->|No| F[Read-Only Automation]
-    end
+flowchart LR
+    A[What does your automation need?] --> B{Create/modify repos?}
+    B -->|Yes| C[Full Automation]
+    B -->|No| D{Create PRs or push code?}
+    D -->|Yes| E[Standard Automation]
+    D -->|No| F[Read-Only Automation]
 
     %% Ghostty Hardcore Theme
     style A fill:#515354,stroke:#ccccc7,stroke-width:2px
@@ -88,7 +85,6 @@ flowchart TD
     style D fill:#65d9ef,stroke:#a3babf,stroke-width:2px
     style E fill:#9e6ffe,stroke:#9e6ffe,stroke-width:2px
     style F fill:#a7e22e,stroke:#bded5f,stroke-width:2px
-    style decide fill:#1b1d1e,stroke:#5e7175,stroke-width:2px
 ```
 
 ## Pattern Guidelines
