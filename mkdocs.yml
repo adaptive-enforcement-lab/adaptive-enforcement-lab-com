@@ -65,7 +65,8 @@ plugins:
       separator: '[\s\-\.]+'
       lang:
         - en
-  - social
+  - social:
+      enabled: !ENV [CI, false]  # Only generate social cards in CI
   - meta
   - blog:
       blog_dir: blog
