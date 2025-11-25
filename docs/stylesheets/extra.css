@@ -1,12 +1,20 @@
-/* Force dark text in mermaid diagrams for colored nodes */
-.mermaid .node .label,
-.mermaid .nodeLabel {
-  color: #1b1d1e !important;
-  fill: #1b1d1e !important;
+/* Override MkDocs Material's mermaid CSS variables for better contrast */
+/* See: https://github.com/squidfunk/mkdocs-material/issues/4517 */
+
+:root,
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+  --md-mermaid-label-fg-color: #1b1d1e;
+  --md-mermaid-node-fg-color: #1b1d1e;
 }
 
-/* Keep subgraph title readable */
-.mermaid .cluster-label .nodeLabel {
+/* Ensure edge labels are also dark */
+[data-md-color-scheme="slate"] .mermaid .edgeLabel {
+  color: #1b1d1e !important;
+  background-color: transparent !important;
+}
+
+/* Keep cluster/subgraph labels light on dark backgrounds */
+[data-md-color-scheme="slate"] .mermaid .cluster-label span {
   color: #f8f8f3 !important;
-  fill: #f8f8f3 !important;
 }
