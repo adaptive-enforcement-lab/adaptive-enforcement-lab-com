@@ -65,7 +65,12 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      permalink_title: "Link"
+      toc_depth: 3
       separator: "_"
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -86,9 +91,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About: about.md
-  - Roadmap: roadmap.md
   - Operator Manual:
       - GitHub Actions:
           - GitHub App Setup: operator-manual/github-actions/github-app-setup.md
           - Actions Integration: operator-manual/github-actions/actions-integration.md
           - File Distribution: operator-manual/github-actions/contributing-distribution.md
+  - Roadmap: roadmap.md
