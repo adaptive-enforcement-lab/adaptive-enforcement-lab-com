@@ -10,6 +10,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/adaptive-enforcement-lab
 
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   logo: assets/ael-logo.png

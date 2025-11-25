@@ -1,0 +1,12 @@
+/* Force dark text in mermaid diagrams for colored nodes */
+.mermaid .node .label,
+.mermaid .nodeLabel {
+  color: #1b1d1e !important;
+  fill: #1b1d1e !important;
+}
+
+/* Keep subgraph title readable */
+.mermaid .cluster-label .nodeLabel {
+  color: #f8f8f3 !important;
+  fill: #f8f8f3 !important;
+}
