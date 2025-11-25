@@ -11,26 +11,28 @@ This guide describes the concept, setup, and configuration of a GitHub Core App 
 
 ## What is a GitHub Core App?
 
-A **GitHub Core App** is an organization-level GitHub App that provides centralized, secure authentication for GitHub Actions workflows operating across multiple repositories. It serves as the foundational authentication mechanism for org-wide automation.
+!!! abstract "Definition"
+
+    A **GitHub Core App** is an organization-level GitHub App that provides centralized, secure authentication for GitHub Actions workflows operating across multiple repositories. It serves as the foundational authentication mechanism for org-wide automation.
 
 ### Why Use a Core App?
 
-**Traditional Approach (PATs)**:
+!!! warning "Traditional Approach (PATs)"
 
-- Personal Access Tokens tied to individual user accounts
-- Token revoked when user leaves organization
-- Difficult to audit actions across repositories
-- No granular permission control
-- Lower rate limits (5000 requests/hour for authenticated users)
+    - Personal Access Tokens tied to individual user accounts
+    - Token revoked when user leaves organization
+    - Difficult to audit actions across repositories
+    - No granular permission control
+    - Lower rate limits (5000 requests/hour for authenticated users)
 
-**Core App Approach**:
+!!! tip "Core App Approach"
 
-- Organization-owned identity independent of individuals
-- Survives personnel changes
-- Complete audit trail of all actions
-- Fine-grained, repository-scoped permissions
-- Higher rate limits (5000 requests/hour per installation)
-- Team-based repository access control
+    - Organization-owned identity independent of individuals
+    - Survives personnel changes
+    - Complete audit trail of all actions
+    - Fine-grained, repository-scoped permissions
+    - Higher rate limits (5000 requests/hour per installation)
+    - Team-based repository access control
 
 ### Use Cases
 
@@ -57,19 +59,23 @@ A GitHub Core App enables:
 
 ### Required Access
 
-To create a Core App, you need:
+!!! info "Required Access"
 
-- **Organization owner** role
-- Access to organization settings: `https://github.com/organizations/{ORG}/settings/apps`
+    To create a Core App, you need:
+
+    - **Organization owner** role
+    - Access to organization settings: `https://github.com/organizations/{ORG}/settings/apps`
 
 ### Planning Considerations
 
-Before creating the app, determine:
+!!! note "Planning Considerations"
 
-1. **Permission scope** - Which repository and organization permissions are needed
-2. **Installation scope** - All repositories or specific teams
-3. **Token management** - Where secrets will be stored (repository or organization level)
-4. **Naming convention** - Standard naming (e.g., "CORE App", "Automation Core")
+    Before creating the app, determine:
+
+    1. **Permission scope** - Which repository and organization permissions are needed
+    2. **Installation scope** - All repositories or specific teams
+    3. **Token management** - Where secrets will be stored (repository or organization level)
+    4. **Naming convention** - Standard naming (e.g., "CORE App", "Automation Core")
 
 ## Guide Sections
 
