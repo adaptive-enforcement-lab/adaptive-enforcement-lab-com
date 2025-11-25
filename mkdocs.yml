@@ -108,7 +108,14 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - About: about.md
+  - About:
+      - about/index.md
+      - Mission: about/mission.md
+      - Audience: about/audience.md
+      - Principles: about/principles.md
+      - Approach: about/approach.md
+      - Brand: about/brand.md
+      - Connect: about/connect.md
   - Blog: blog/index.md
   - Operator Manual:
       - GitHub Actions:
