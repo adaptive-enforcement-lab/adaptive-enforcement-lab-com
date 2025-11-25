@@ -165,7 +165,7 @@ Key insights:
 
 !!! tip "Performance Win"
 
-    45 minutes became 8.
+    45 minutes became under 2.
     Parallel execution with controlled concurrency is the answer.
 
 ---
@@ -251,7 +251,7 @@ The file distribution pattern now runs weekly across 40 repositories:
 
 !!! success "The Result"
 
-    Total runtime: under 10 minutes.
+    Total runtime: under 2 minutes for 40 repositories.
     Zero manual intervention required.
     Enterprise-grade security with machine identity.
 
