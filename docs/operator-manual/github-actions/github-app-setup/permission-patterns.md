@@ -71,6 +71,7 @@ Members: Read
 ## Choosing the Right Pattern
 
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryTextColor': '#1b1d1e', 'lineColor': '#5e7175', 'primaryBorderColor': '#5e7175' }}}%%
 flowchart TD
     subgraph decide ["Permission Decision Tree"]
         A[What does your automation need?] --> B{Create/modify repos?}
@@ -80,14 +81,14 @@ flowchart TD
         D -->|No| F[Read-Only Automation]
     end
 
-    %% Ghostty Hardcore Theme (dark mode optimized)
-    style A fill:#515354,color:#f8f8f3,stroke:#ccccc7,stroke-width:2px
-    style B fill:#fd971e,color:#1b1d1e,stroke:#e6db74,stroke-width:2px
-    style C fill:#f92572,color:#f8f8f3,stroke:#ff669d,stroke-width:2px
-    style D fill:#65d9ef,color:#1b1d1e,stroke:#a3babf,stroke-width:2px
-    style E fill:#9e6ffe,color:#f8f8f3,stroke:#9e6ffe,stroke-width:2px
-    style F fill:#a7e22e,color:#1b1d1e,stroke:#bded5f,stroke-width:2px
-    style decide fill:#1b1d1e,color:#f8f8f3,stroke:#5e7175,stroke-width:2px
+    %% Ghostty Hardcore Theme
+    style A fill:#515354,stroke:#ccccc7,stroke-width:2px
+    style B fill:#fd971e,stroke:#e6db74,stroke-width:2px
+    style C fill:#f92572,stroke:#ff669d,stroke-width:2px
+    style D fill:#65d9ef,stroke:#a3babf,stroke-width:2px
+    style E fill:#9e6ffe,stroke:#9e6ffe,stroke-width:2px
+    style F fill:#a7e22e,stroke:#bded5f,stroke-width:2px
+    style decide fill:#1b1d1e,stroke:#5e7175,stroke-width:2px
 ```
 
 ## Pattern Guidelines
