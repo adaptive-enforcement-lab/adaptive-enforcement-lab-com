@@ -38,4 +38,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## License
 
-Content licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+MIT License. See [LICENSE](LICENSE) for details.
