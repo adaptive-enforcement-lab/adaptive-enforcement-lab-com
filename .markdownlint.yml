@@ -18,3 +18,6 @@ MD033: true
 
 # Disallow emphasis as headings
 MD036: true
+
+# Disable code block style check (conflicts with MkDocs admonitions)
+MD046: false

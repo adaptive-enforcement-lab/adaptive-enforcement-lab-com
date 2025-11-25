@@ -93,7 +93,16 @@ nav:
   - About: about.md
   - Operator Manual:
       - GitHub Actions:
-          - GitHub App Setup: operator-manual/github-actions/github-app-setup.md
+          - GitHub App Setup:
+              - operator-manual/github-actions/github-app-setup/index.md
+              - Creating the App: operator-manual/github-actions/github-app-setup/creating-the-app.md
+              - Storing Credentials: operator-manual/github-actions/github-app-setup/storing-credentials.md
+              - Permission Patterns: operator-manual/github-actions/github-app-setup/permission-patterns.md
+              - Security Best Practices: operator-manual/github-actions/github-app-setup/security-best-practices.md
+              - Installation Scopes: operator-manual/github-actions/github-app-setup/installation-scopes.md
+              - Common Permissions: operator-manual/github-actions/github-app-setup/common-permissions.md
+              - Troubleshooting: operator-manual/github-actions/github-app-setup/troubleshooting.md
+              - Maintenance: operator-manual/github-actions/github-app-setup/maintenance.md
           - Actions Integration: operator-manual/github-actions/actions-integration.md
           - File Distribution: operator-manual/github-actions/contributing-distribution.md
   - Roadmap: roadmap.md

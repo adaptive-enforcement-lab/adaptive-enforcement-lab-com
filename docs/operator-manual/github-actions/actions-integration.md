@@ -6,7 +6,7 @@ This guide explains how to integrate your GitHub Core App with GitHub Actions wo
 
 Before integrating, ensure you have:
 
-1. **Core App created and installed** - See [GitHub App Setup](./github-app-setup.md)
+1. **Core App created and installed** - See [GitHub App Setup](./github-app-setup/index.md)
 2. **Secrets configured** - `CORE_APP_ID` and `CORE_APP_PRIVATE_KEY` stored in GitHub
 3. **Required permissions** - App has permissions for your automation tasks
 
@@ -720,4 +720,4 @@ steps:
 - [GitHub Actions Permissions](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)
 - [GitHub CLI Manual](https://cli.github.com/manual/)
 - [GitHub GraphQL API](https://docs.github.com/en/graphql)
-- [GitHub Core App Setup](./github-app-setup.md)
+- [GitHub Core App Setup](./github-app-setup/index.md)

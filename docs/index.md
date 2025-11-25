@@ -2,7 +2,7 @@
 
 Security isn't a checkbox. It's a lifecycle.
 
-Adaptive Enforcement Lab is where you come to build systems that withstand.
+`Adaptive Enforcement Lab` is where you come to build systems that withstand.
 
 ---
 
@@ -32,18 +32,6 @@ We're here to challenge bad defaults, cut through vendor fluff, and enforce what
 !!! tip "If you can't enforce it, it doesn't matter"
 
     Policies without controls are wishes. We focus on what you can actually verify and block.
-
----
-
-## Operator Manual
-
-Technical guides for infrastructure automation and DevOps patterns.
-
-!!! example "GitHub Actions"
-
-    - [GitHub App Setup](operator-manual/github-actions/github-app-setup.md) - Create and configure organization-level GitHub Apps for centralized authentication
-    - [Actions Integration](operator-manual/github-actions/actions-integration.md) - Integrate Core Apps with GitHub Actions workflows
-    - [File Distribution](operator-manual/github-actions/contributing-distribution.md) - Automated file distribution across multiple repositories
 
 ---
 
