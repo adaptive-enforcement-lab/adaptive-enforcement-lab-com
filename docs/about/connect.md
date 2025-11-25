@@ -17,7 +17,7 @@ Our repositories contain the implementations, workflows, and configurations we d
 
 ## Contributions
 
-We welcome contributions from the community. Whether it's improving documentation, sharing enforcement patterns, or reporting issues—your input helps everyone.
+We welcome contributions from the community. Whether it's improving documentation, sharing enforcement patterns, or reporting issues, your input helps everyone.
 
 ## Feedback
 

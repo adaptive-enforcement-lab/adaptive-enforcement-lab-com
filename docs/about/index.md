@@ -7,7 +7,7 @@ description: >-
 
 # About Adaptive Enforcement Lab
 
-Adaptive Enforcement Lab was born from the realization that real security only happens when governance is embedded, observable, and executable—from the first design decision to the last line of code deployed.
+Adaptive Enforcement Lab was born from the realization that real security only happens when governance is embedded, observable, and executable, from the first design decision to the last line of code deployed.
 
 ## Guide Sections
 

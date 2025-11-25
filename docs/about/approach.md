@@ -14,7 +14,7 @@ description: >-
 
 ## From Policy to Enforcement
 
-Most security guidance stops at recommendations. We go further—providing the actual implementations, configurations, and workflows that make enforcement happen.
+Most security guidance stops at recommendations. We go further, providing the actual implementations, configurations, and workflows that make enforcement happen.
 
 ## Production-First
 

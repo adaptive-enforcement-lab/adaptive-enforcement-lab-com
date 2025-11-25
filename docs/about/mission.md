@@ -10,11 +10,11 @@ description: >-
 
     To turn secure development into an enforced standard, not an afterthought.
 
-Adaptive Enforcement Lab was born from the realization that real security only happens when governance is embedded, observable, and executable—from the first design decision to the last line of code deployed.
+Adaptive Enforcement Lab was born from the realization that real security only happens when governance is embedded, observable, and executable, from the first design decision to the last line of code deployed.
 
 ## The Problem We Solve
 
-Security has traditionally been treated as a checkpoint—something that happens at the end of the development cycle, often too late to make meaningful changes. This approach creates friction between security teams and developers, leads to insecure shortcuts, and ultimately fails to protect organizations.
+Security has traditionally been treated as a checkpoint: something that happens at the end of the development cycle, often too late to make meaningful changes. This approach creates friction between security teams and developers, leads to insecure shortcuts, and ultimately fails to protect organizations.
 
 ## Our Vision
 

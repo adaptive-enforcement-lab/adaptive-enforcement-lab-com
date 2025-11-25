@@ -12,7 +12,7 @@ description: >-
 
     You don't declare security. You build it, test it, enforce it, and monitor it continuously.
 
-Security isn't a state you achieve—it's a discipline you practice. Claims mean nothing without continuous verification.
+Security isn't a state you achieve. It's a discipline you practice. Claims mean nothing without continuous verification.
 
 ## If you can't enforce it, it doesn't matter
 
@@ -38,9 +38,9 @@ Effective security requires complete visibility into your systems, dependencies,
 
 Your ability to detect, respond to, and recover from incidents is as important as your preventive controls. Preparedness reduces the impact of inevitable failures.
 
-## You don't just build fast—you build to withstand
+## You don't just build fast, you build to withstand
 
-!!! tip "You don't just build fast—you build to withstand"
+!!! tip "You don't just build fast, you build to withstand"
 
     Speed without resilience is technical debt with interest.
 

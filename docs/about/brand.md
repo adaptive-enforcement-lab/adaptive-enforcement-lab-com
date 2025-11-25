@@ -6,21 +6,15 @@ description: >-
 
 # Brand Identity
 
-<!-- markdownlint-disable MD033 -->
-<figure markdown="span">
-  ![Adaptive Enforcement Lab Logo](../assets/ael-logo.png){ width="400" }
-</figure>
-<!-- markdownlint-enable MD033 -->
-
 ## The Name
 
 ### Adaptive
 
-Security threats evolve constantly. Static defenses become obsolete. **Adaptive** reflects our commitment to controls that respond to changing conditions—adjusting to new threats, scaling with growth, and learning from incidents.
+Security threats evolve constantly. Static defenses become obsolete. **Adaptive** reflects our commitment to controls that respond to changing conditions: adjusting to new threats, scaling with growth, and learning from incidents.
 
 ### Enforcement
 
-Policy without enforcement is theater. **Enforcement** is the core of what we do—turning security intentions into executable controls that actively prevent violations rather than merely detecting them after the fact.
+Policy without enforcement is theater. **Enforcement** is the core of what we do: turning security intentions into executable controls that actively prevent violations rather than merely detecting them after the fact.
 
 ### Lab
 
@@ -28,13 +22,15 @@ A **lab** is where experimentation, testing, and refinement happen. We develop, 
 
 ## The Logo Elements
 
+![Adaptive Enforcement Lab Logo](../assets/ael-logo.png)
+
 ### The Shield
 
-The outer shield represents **protection and defense**—the fundamental purpose of security. Its rounded, modern form signals that defense doesn't mean rigidity; it adapts to what it protects.
+The outer shield represents **protection and defense**: the fundamental purpose of security. Its rounded, modern form signals that defense doesn't mean rigidity; it adapts to what it protects.
 
 ### The Gear
 
-The cogwheel symbolizes **automation and engineering**. Security at scale requires mechanical precision—repeatable processes, automated controls, and systems that work without constant human intervention.
+The cogwheel symbolizes **automation and engineering**. Security at scale requires mechanical precision: repeatable processes, automated controls, and systems that work without constant human intervention.
 
 ### The Flask
 
