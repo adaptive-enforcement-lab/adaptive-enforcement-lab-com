@@ -2,6 +2,43 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Brand Brief
+
+### Mission
+
+To turn secure development into an enforced standard, not an afterthought.
+
+### Audience
+
+- DevSecOps engineers and platform teams
+- Security-conscious developers
+- Organizations scaling secure CI/CD practices
+- Teams building or managing GitHub-based automation
+
+### Core Principles
+
+1. **Security by Default** - Guardrails should be built-in, not bolted on
+2. **Automation Over Documentation** - Enforce standards through pipelines, not policies
+3. **Visibility and Accountability** - Every action should be traceable and auditable
+4. **Minimal Friction, Maximum Control** - Balance developer velocity with security posture
+
+### Differentiators
+
+- Real-world operational knowledge, not theoretical frameworks
+- Patterns tested in production across enterprise environments
+- Focus on enforcement mechanisms, not just recommendations
+- Open-source tooling and transparent methodology
+
+### AI Tone Guidance
+
+Use a tone that is:
+
+- Tactical but intelligent
+- Bold but not hostile
+- Educational without being preachy
+- Modern, with short sentences and real verbs
+- Styled for DevSecOps culture, with light touches of hacker/special-forces ethos
+
 ## Project Overview
 
 MkDocs Material static site for **adaptive-enforcement-lab.com**, hosted on GitHub Pages. The site serves as the documentation hub for the `adaptive-enforcement-lab` GitHub organization.
@@ -32,11 +69,24 @@ mkdocs gh-deploy
 mkdocs.yml                      # Site configuration
 docs/
 ├── index.md                    # Homepage
+├── about.md                    # About page
+├── roadmap.md                  # Roadmap
 ├── assets/
 │   └── ael-logo.png            # Site logo and favicon
+├── stylesheets/
+│   └── extra.css               # Mermaid dark mode fixes
 └── operator-manual/
     └── github-actions/
-        ├── github-app-setup.md
+        ├── github-app-setup/
+        │   ├── index.md              # Overview
+        │   ├── creating-the-app.md   # App creation guide
+        │   ├── storing-credentials.md
+        │   ├── permission-patterns.md
+        │   ├── security-best-practices.md
+        │   ├── installation-scopes.md
+        │   ├── common-permissions.md
+        │   ├── troubleshooting.md
+        │   └── maintenance.md
         ├── actions-integration.md
         └── contributing-distribution.md
 ```
