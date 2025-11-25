@@ -132,5 +132,20 @@ nav:
               - Security Best Practices: operator-manual/github-actions/actions-integration/security-best-practices.md
               - Troubleshooting: operator-manual/github-actions/actions-integration/troubleshooting.md
               - Performance Optimization: operator-manual/github-actions/actions-integration/performance-optimization.md
-          - File Distribution: operator-manual/github-actions/contributing-distribution.md
+          - Use Cases:
+              - File Distribution:
+                  - operator-manual/github-actions/use-cases/file-distribution/index.md
+                  - Architecture: operator-manual/github-actions/use-cases/file-distribution/architecture.md
+                  - "Stage 1: Discovery": operator-manual/github-actions/use-cases/file-distribution/discovery-stage.md
+                  - "Stage 2: Distribution": operator-manual/github-actions/use-cases/file-distribution/distribution-stage.md
+                  - "Stage 3: Summary": operator-manual/github-actions/use-cases/file-distribution/summary-stage.md
+                  - Supporting Scripts: operator-manual/github-actions/use-cases/file-distribution/supporting-scripts.md
+                  - Workflow Configuration: operator-manual/github-actions/use-cases/file-distribution/workflow-config.md
+                  - Idempotency: operator-manual/github-actions/use-cases/file-distribution/idempotency.md
+                  - Error Handling: operator-manual/github-actions/use-cases/file-distribution/error-handling.md
+                  - Performance: operator-manual/github-actions/use-cases/file-distribution/performance.md
+                  - Extension Patterns: operator-manual/github-actions/use-cases/file-distribution/extension-patterns.md
+                  - Monitoring: operator-manual/github-actions/use-cases/file-distribution/monitoring.md
+                  - Security: operator-manual/github-actions/use-cases/file-distribution/security.md
+                  - Troubleshooting: operator-manual/github-actions/use-cases/file-distribution/troubleshooting.md
   - Roadmap: roadmap.md
