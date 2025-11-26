@@ -55,6 +55,32 @@ gh api graphql -f query='
     git diff
 ```
 
+### New Files Not Detected
+
+**Symptom**: Distribution reports "No changes needed" for repos missing the file
+
+**Root Cause**: Using `git diff --quiet` instead of `git status --porcelain`
+
+`git diff` only detects modifications to **tracked files**. When distributing a file
+to a repository that doesn't have it yet, the file is **untracked** and invisible
+to `git diff`.
+
+**Solution**: Use `git status --porcelain` for change detection:
+
+```bash
+# Wrong - misses untracked files
+if git diff --quiet; then
+  echo "No changes"
+fi
+
+# Correct - detects all changes including new files
+if [ -z "$(git status --porcelain)" ]; then
+  echo "No changes"
+fi
+```
+
+See [Change Detection](idempotency.md#change-detection) for the full pattern.
+
 ### Permission Denied
 
 **Symptom**: `403 Forbidden` errors

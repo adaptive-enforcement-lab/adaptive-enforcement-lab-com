@@ -55,7 +55,9 @@ distribute:
       id: changes
       working-directory: target
       run: |
-        if git diff --quiet; then
+        # Use git status --porcelain to detect both modified AND new untracked files
+        # git diff --quiet only sees tracked file changes, missing new files entirely
+        if [ -z "$(git status --porcelain)" ]; then
           echo "has_changes=false" >> $GITHUB_OUTPUT
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
