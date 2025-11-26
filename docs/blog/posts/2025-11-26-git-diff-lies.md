@@ -164,7 +164,7 @@ else
 fi
 ```
 
-Two lines changed. One comment added. Bug eliminated.
+One conditional swap. One comment added. Bug eliminated.
 
 ---
 
@@ -244,7 +244,7 @@ The defense: explicit enumeration of what you're detecting, regular review of ed
 
 ## Conclusion
 
-Two characters. `[ -z "$(git status --porcelain)" ]` instead of `git diff --quiet`.
+One conditional swap. `[ -z "$(git status --porcelain)" ]` instead of `git diff --quiet`.
 
 The distribution workflow now correctly detects new files and creates PRs for repositories that need them. Thirty-plus repositories that were silently skipped now receive their updates.
 
