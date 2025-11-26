@@ -22,18 +22,35 @@ git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
 ## Change Detection
 
 - Checks if file content actually changed
+- Detects both modified tracked files AND new untracked files
 - Skips commit/push if no changes
 - Avoids empty commits
+
+!!! warning "Use `git status`, not `git diff`"
+
+    `git diff --quiet` only detects modifications to **tracked files**.
+    When distributing files to repos that don't have them yet,
+    new files are **untracked** and `git diff` won't see them.
+
+    Use `git status --porcelain` instead—it detects everything.
 
 ```yaml
 - name: Check for changes
   id: changes
   working-directory: target
   run: |
-    if git diff --quiet; then
+    # git status --porcelain detects:
+    # - Modified tracked files
+    # - New untracked files
+    # - Deleted files
+    # - Renamed files
+    if [ -z "$(git status --porcelain)" ]; then
       echo "has_changes=false" >> $GITHUB_OUTPUT
+      echo "No changes needed"
     else
       echo "has_changes=true" >> $GITHUB_OUTPUT
+      echo "Changes detected:"
+      git status --short
     fi
 
 - name: Commit changes

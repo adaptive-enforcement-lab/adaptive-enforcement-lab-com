@@ -6,3 +6,11 @@ repos:
       - id: markdownlint
         args: ["--config", ".markdownlint.yml"]
         files: \.md$
+  - repo: local
+    hooks:
+      - id: mkdocs-build
+        name: mkdocs build
+        entry: mkdocs build --strict
+        language: system
+        pass_filenames: false
+        files: \.(md|yml|yaml)$
