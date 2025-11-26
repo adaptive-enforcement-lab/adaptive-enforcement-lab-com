@@ -79,7 +79,7 @@ if [ -z "$(git status --porcelain)" ]; then
 fi
 ```
 
-See [Change Detection](idempotency.md#change-detection) for the full pattern.
+See [Change Detection](idempotency.md#change_detection) for the full pattern.
 
 ### Permission Denied
 
