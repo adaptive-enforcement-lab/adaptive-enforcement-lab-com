@@ -11,7 +11,7 @@ slug: git-diff-lies-the-untracked-file-trap
 
 # Git Diff Lies: The Untracked File Trap in CI/CD Pipelines
 
-A two-character fix to a change detection script. That's all it took to unblock a file distribution workflow that had been silently failing for weeks.
+One conditional swap in a change detection script. That's all it took to unblock a file distribution workflow that had been silently failing for weeks.
 
 The bug? `git diff --quiet` doesn't see untracked files. And when you're distributing files to repositories that don't have them yet, every target file is untracked.
 
