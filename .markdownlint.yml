@@ -24,3 +24,7 @@ MD046: false
 
 # Disable single H1 check (MkDocs meta plugin title counts as first heading)
 MD025: false
+
+# Disable link fragment validation (conflicts with MkDocs pymdownx.slugs config)
+# MkDocs uses separator: "_" and case: lower, which markdownlint can't detect
+MD051: false
