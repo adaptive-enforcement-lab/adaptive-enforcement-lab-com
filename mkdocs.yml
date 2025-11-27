@@ -117,6 +117,16 @@ nav:
       - Connect: about/connect.md
   - Blog: blog/index.md
   - Operator Manual:
+      - Engineering Patterns:
+          - operator-manual/engineering-patterns/index.md
+          - Idempotency:
+              - operator-manual/engineering-patterns/idempotency/index.md
+              - Pros and Cons: operator-manual/engineering-patterns/idempotency/pros-and-cons.md
+              - Decision Matrix: operator-manual/engineering-patterns/idempotency/decision-matrix.md
+              - Implementation Patterns: operator-manual/engineering-patterns/idempotency/patterns.md
+              - Real-World Example: operator-manual/engineering-patterns/idempotency/real-world-example.md
+              - Testing: operator-manual/engineering-patterns/idempotency/testing.md
+              - Cache Considerations: operator-manual/engineering-patterns/idempotency/caches.md
       - GitHub Actions:
           - GitHub App Setup:
               - operator-manual/github-actions/github-app-setup/index.md
