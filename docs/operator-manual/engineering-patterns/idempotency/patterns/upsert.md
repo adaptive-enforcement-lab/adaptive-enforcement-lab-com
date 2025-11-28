@@ -20,6 +20,26 @@ api_upsert "$RESOURCE_ID" "$NEW_STATE"
 
 Upsert (update + insert) operations atomically create a resource if it doesn't exist, or update it if it does. No check required, no race conditions.
 
+```mermaid
+flowchart LR
+    subgraph CBA["Check-Before-Act"]
+        A1[Check] --> A2{Exists?}
+        A2 -->|Yes| A3[Skip]
+        A2 -->|No| A4[Create]
+    end
+
+    subgraph UP["Upsert"]
+        B1[Upsert] --> B2[Done]
+    end
+
+    style CBA fill:#3b4252,stroke:#bf616a,color:#eceff4
+    style UP fill:#3b4252,stroke:#a3be8c,color:#eceff4
+```
+
+!!! info "Atomic by Design"
+
+    Upsert eliminates race conditions because the check and action happen in a single atomic operation inside the API or database.
+
 ---
 
 ## When to Use
@@ -82,6 +102,10 @@ kubectl apply -f deployment.yaml
 ```
 
 Kubernetes compares desired state to current state and reconciles. Create if missing, update if different, no-op if same.
+
+!!! tip "Declarative Tools Are Upsert"
+
+    Tools like `kubectl apply`, `terraform apply`, and Ansible playbooks are all built around upsert semantics. Declare desired state, let the tool reconcile.
 
 ### Terraform (Infrastructure Upsert)
 
@@ -294,9 +318,11 @@ gh repo create my-repo  # Fails if exists, doesn't update
 
 ## Summary
 
-Upsert is the cleanest idempotency pattern when available:
+Upsert is the cleanest idempotency pattern when available.
 
-1. **Prefer native upsert** - `kubectl apply`, `git config`, `gh secret set`
-2. **Simulate when needed** - create-or-update fallback pattern
-3. **Watch for side effects** - create vs update may trigger different events
-4. **Don't assume** - verify your API actually supports upsert semantics
+!!! abstract "Key Takeaways"
+
+    1. **Prefer native upsert** - `kubectl apply`, `git config`, `gh secret set`
+    2. **Simulate when needed** - create-or-update fallback pattern
+    3. **Watch for side effects** - create vs update may trigger different events
+    4. **Don't assume** - verify your API actually supports upsert semantics

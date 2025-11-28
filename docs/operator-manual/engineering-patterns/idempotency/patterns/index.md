@@ -76,6 +76,25 @@ touch "$MARKER"
 
 ## Choosing a Pattern
 
+```mermaid
+flowchart TD
+    A[Need idempotency] --> B{API has upsert?}
+    B -->|Yes| C[Use Upsert]
+    B -->|No| D{Safe to overwrite?}
+    D -->|Yes| E[Use Force Overwrite]
+    D -->|No| F{Natural unique key?}
+    F -->|Yes| G[Use Unique Identifiers]
+    F -->|No| H{Multi-step operation?}
+    H -->|Yes| I[Use Tombstone Markers]
+    H -->|No| J[Use Check-Before-Act]
+
+    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
+    style E fill:#3b4252,stroke:#ebcb8b,color:#eceff4
+    style G fill:#3b4252,stroke:#88c0d0,color:#eceff4
+    style I fill:#3b4252,stroke:#b48ead,color:#eceff4
+    style J fill:#3b4252,stroke:#81a1c1,color:#eceff4
+```
+
 | Scenario | Recommended Pattern |
 |----------|-------------------|
 | Creating resources (PRs, branches, files) | [Check-Before-Act](check-before-act.md) |

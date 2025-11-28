@@ -21,6 +21,24 @@ create_resource "$ID"
 
 When IDs are derived deterministically from content or context, duplicate operations naturally target the same resource instead of creating new ones.
 
+```mermaid
+flowchart LR
+    A[Content] --> B[Hash Function]
+    B --> C[Deterministic ID]
+    C --> D[Same Resource]
+
+    A2[Same Content] --> B
+    B --> C
+
+    style B fill:#3b4252,stroke:#88c0d0,color:#eceff4
+    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
+    style D fill:#3b4252,stroke:#ebcb8b,color:#eceff4
+```
+
+!!! info "Content-Addressable by Design"
+
+    Same input always produces the same ID. Run twice with identical content, get identical IDs, target the same resource. Deduplication is automatic.
+
 ---
 
 ## When to Use
@@ -113,6 +131,16 @@ HASH=$(sha256sum file.txt | cut -c1-64)
 SHORT_HASH=$(sha256sum file.txt | cut -c1-8)
 ```
 
+!!! warning "Hash Length Tradeoffs"
+
+    | Length | Bits | Collision likely at |
+    |--------|------|---------------------|
+    | 4 chars | 16 | ~256 items |
+    | 8 chars | 32 | ~65,000 items |
+    | 16 chars | 64 | ~4 billion items |
+
+    For small datasets, 8 chars is usually fine. For large-scale systems, use 16+.
+
 ### MD5 for Speed (Non-Security)
 
 ```bash
@@ -147,6 +175,10 @@ COMBINED_HASH=$(echo "${INPUT1}${INPUT2}${INPUT3}" | sha256sum | cut -c1-16)
     # Key derived from lock file content
     key: npm-${{ hashFiles('package-lock.json') }}
 ```
+
+!!! tip "GitHub's hashFiles Function"
+
+    `hashFiles()` is purpose-built for deterministic cache keys. It handles glob patterns, sorts files consistently, and produces stable SHA-256 hashes across runs.
 
 ### Deterministic Artifact Names
 
@@ -314,9 +346,11 @@ ID=$(sha256sum file.txt | cut -c1-16)  # 64 bits
 
 ## Summary
 
-Unique identifiers make idempotency automatic:
+Unique identifiers make idempotency automatic.
 
-1. **Derive IDs from content** - same input = same ID = same resource
-2. **Use sufficient hash length** - balance readability vs collision risk
-3. **Keep inputs stable** - don't hash timestamps or random data
-4. **Consider the scope** - workflow run, day, content version?
+!!! abstract "Key Takeaways"
+
+    1. **Derive IDs from content** - same input = same ID = same resource
+    2. **Use sufficient hash length** - balance readability vs collision risk
+    3. **Keep inputs stable** - don't hash timestamps or random data
+    4. **Consider the scope** - workflow run, day, content version?

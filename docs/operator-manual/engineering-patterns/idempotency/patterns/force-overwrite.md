@@ -20,6 +20,20 @@ cp -f "$SOURCE" "$TARGET"
 
 Force overwrite skips existence checks entirely. The operation succeeds whether the target exists or not, and the final state is always the desired state.
 
+```mermaid
+flowchart LR
+    A[Source] --> B[Overwrite]
+    B --> C[Target = Source]
+
+    style A fill:#3b4252,stroke:#88c0d0,color:#eceff4
+    style B fill:#3b4252,stroke:#ebcb8b,color:#eceff4
+    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
+```
+
+!!! example "Zero Decisions"
+
+    Force overwrite has no branches in its logic. The target becomes the source, period. Previous state is irrelevant.
+
 ---
 
 ## When to Use
@@ -123,6 +137,10 @@ mv -f "$TARGET.tmp" "$TARGET"
 ```
 
 Atomic write prevents partial content if the process is interrupted.
+
+!!! tip "The Temp-Then-Move Pattern"
+
+    Always use write-to-temp + atomic move for critical files. A `mv` on the same filesystem is atomic; a multi-megabyte write is not.
 
 ### Backup Before Overwrite
 
@@ -240,6 +258,10 @@ cp -f release.tar.gz /deploy/
 
 ### Force Push Dangers
 
+!!! danger "Never Force Push to Shared Branches"
+
+    `git push --force` to `main` or `master` can destroy your team's work. Commits they pushed will vanish. Always use `--force-with-lease` at minimum.
+
 ```bash
 # DANGEROUS: can destroy team members' work
 git push --force origin main
@@ -317,9 +339,11 @@ fi
 
 ## Summary
 
-Force overwrite is the simplest idempotency pattern:
+Force overwrite is the simplest idempotency pattern.
 
-1. **Use for authoritative sources** - when your source is always correct
-2. **Add safety nets** - `--force-with-lease`, atomic writes, backups
-3. **Consider history** - don't destroy data you might need
-4. **Log changes** - add diff checks if you need visibility into what changed
+!!! abstract "Key Takeaways"
+
+    1. **Use for authoritative sources** - when your source is always correct
+    2. **Add safety nets** - `--force-with-lease`, atomic writes, backups
+    3. **Consider history** - don't destroy data you might need
+    4. **Log changes** - add diff checks if you need visibility into what changed

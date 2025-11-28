@@ -23,6 +23,19 @@ fi
 
 Check if the desired state exists. If yes, skip. If no, act.
 
+```mermaid
+flowchart LR
+    A[Start] --> B{State exists?}
+    B -->|Yes| C[Skip]
+    B -->|No| D[Create]
+    C --> E[Done]
+    D --> E
+
+    style B fill:#3b4252,stroke:#88c0d0,color:#eceff4
+    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
+    style D fill:#3b4252,stroke:#ebcb8b,color:#eceff4
+```
+
 ---
 
 ## When to Use
@@ -107,7 +120,9 @@ fi
 mkdir -p "$TARGET_DIR"
 ```
 
-Note: `mkdir -p` is a built-in example of check-before-act - it succeeds whether the directory exists or not.
+!!! tip "Built-in Idempotency"
+
+    `mkdir -p` is a built-in example of check-before-act - it succeeds whether the directory exists or not. Look for similar flags in other tools (`cp -n`, `ln -sf`).
 
 ---
 
@@ -148,7 +163,30 @@ Note: `mkdir -p` is a built-in example of check-before-act - it succeeds whether
 
 ### Race Conditions
 
+!!! danger "The TOCTOU Problem"
+
+    Time-of-check to time-of-use (TOCTOU) is the fundamental weakness of check-before-act. The state can change between checking and acting.
+
 The time between "check" and "act" creates a window for race conditions:
+
+```mermaid
+sequenceDiagram
+    participant W1 as Worker 1
+    participant S as Shared State
+    participant W2 as Worker 2
+
+    W1->>S: Check: exists?
+    S-->>W1: No
+    W2->>S: Check: exists?
+    S-->>W2: No
+    W1->>S: Create resource
+    W2->>S: Create resource
+    Note over S: Duplicate created!
+
+    rect rgb(59, 66, 82)
+        Note over W1,W2: Both workers pass the check<br/>before either acts
+    end
+```
 
 ```bash
 # Thread 1                    # Thread 2
@@ -277,9 +315,11 @@ fi
 
 ## Summary
 
-Check-Before-Act is the workhorse of idempotency patterns. It's explicit, debuggable, and works everywhere. Just remember:
+Check-Before-Act is the workhorse of idempotency patterns. It's explicit, debuggable, and works everywhere.
 
-1. **Check the right state** - remote vs local, specific vs broad
-2. **Log your decisions** - visibility beats silent skipping
-3. **Handle race conditions** - either accept them or use atomic alternatives
-4. **Consider partial state** - a resource existing isn't always enough
+!!! abstract "Key Takeaways"
+
+    1. **Check the right state** - remote vs local, specific vs broad
+    2. **Log your decisions** - visibility beats silent skipping
+    3. **Handle race conditions** - either accept them or use atomic alternatives
+    4. **Consider partial state** - a resource existing isn't always enough

@@ -28,6 +28,25 @@ touch "$MARKER"
 
 Create a marker file (or database record) when an operation completes. On rerun, check for the marker and skip if present.
 
+```mermaid
+flowchart TD
+    A[Start] --> B{Marker exists?}
+    B -->|Yes| C[Skip - Already done]
+    B -->|No| D[Do Work]
+    D --> E[Create Marker]
+    E --> F[Done]
+    C --> F
+
+    style B fill:#3b4252,stroke:#88c0d0,color:#eceff4
+    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
+    style D fill:#3b4252,stroke:#ebcb8b,color:#eceff4
+    style E fill:#3b4252,stroke:#b48ead,color:#eceff4
+```
+
+!!! info "Universal Fallback"
+
+    Tombstone markers work for any operation, even external API calls with no natural idempotency. If you can't use other patterns, markers are always an option.
+
 ---
 
 ## When to Use
@@ -267,6 +286,10 @@ ls .done-* | wc -l
 # 1000
 ```
 
+!!! tip "Schedule Regular Cleanup"
+
+    Add marker cleanup to your CI pipeline or cron jobs. Stale markers waste storage and make debugging harder.
+
 **Mitigation**: Include cleanup in your workflow:
 
 ```bash
@@ -275,6 +298,10 @@ find . -name ".done-*" -mtime +7 -delete
 ```
 
 ### Partial Completion
+
+!!! danger "The Gap Between Work and Marker"
+
+    If your script crashes after the operation succeeds but before the marker is created, a rerun will duplicate the work. The marker only helps if it's written.
 
 Operation fails after starting but before marker creation:
 
@@ -406,10 +433,12 @@ MARKER="/var/lib/myapp/.operation-done"
 
 ## Summary
 
-Tombstone markers are the universal fallback for idempotency:
+Tombstone markers are the universal fallback for idempotency.
 
-1. **Check marker first** - skip if present
-2. **Create marker last** - only after success
-3. **Include context** - operation ID, content hash, timestamp
-4. **Plan for cleanup** - markers accumulate without maintenance
-5. **Handle edge cases** - partial completion, stale markers, concurrent access
+!!! abstract "Key Takeaways"
+
+    1. **Check marker first** - skip if present
+    2. **Create marker last** - only after success
+    3. **Include context** - operation ID, content hash, timestamp
+    4. **Plan for cleanup** - markers accumulate without maintenance
+    5. **Handle edge cases** - partial completion, stale markers, concurrent access
