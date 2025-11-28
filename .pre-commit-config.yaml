@@ -10,7 +10,7 @@ repos:
     hooks:
       - id: mkdocs-build
         name: mkdocs build
-        entry: mkdocs build --strict
+        entry: bash -c 'if [ -f .venv/bin/mkdocs ]; then .venv/bin/mkdocs build --strict; else mkdocs build --strict; fi'
         language: system
         pass_filenames: false
         files: \.(md|yml|yaml)$
