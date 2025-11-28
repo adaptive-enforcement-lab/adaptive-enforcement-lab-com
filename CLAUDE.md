@@ -110,3 +110,29 @@ The operator manual covers GitHub Actions automation patterns:
 - Mermaid diagrams use Ghostty Hardcore theme colors
 - Code examples use YAML for workflows, bash for scripts
 - Tables document permissions, configuration options, and troubleshooting
+
+## Blog Post Standards
+
+See [CONTRIBUTING.md](CONTRIBUTING.md#blog-posts) for full details.
+
+**Key rules:**
+
+- **Frontmatter `description`** - Required for RSS feeds and social sharing
+- **`<!-- more -->` marker** - Separates RSS excerpt from full content
+- **Clean excerpts** - No admonitions or Mermaid above the `<!-- more -->` marker (RSS readers won't render them)
+- **Excerpt-only feeds** - Industry standard; full content stays on the site
+
+**Template:**
+
+```yaml
+---
+date: YYYY-MM-DD
+authors:
+  - mark
+categories:
+  - DevSecOps
+description: >-
+  Concise summary for RSS and social. Under 160 chars.
+slug: url-friendly-slug
+---
+```
