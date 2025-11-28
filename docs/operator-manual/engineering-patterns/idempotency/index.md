@@ -37,7 +37,7 @@ When your workflow fails at step 47 of 50, you have three options:
 |------|-------------|
 | [Pros and Cons](pros-and-cons.md) | Tradeoffs of investing in idempotency |
 | [Decision Matrix](decision-matrix.md) | When to invest, when to skip |
-| [Implementation Patterns](patterns.md) | Five patterns with code examples |
+| [Implementation Patterns](patterns/index.md) | Five patterns with code examples |
 | [Real-World Example](real-world-example.md) | File distribution across 40 repositories |
 | [Testing](testing.md) | How to verify idempotency |
 | [Cache Considerations](caches.md) | The hidden challenge of cached state |
