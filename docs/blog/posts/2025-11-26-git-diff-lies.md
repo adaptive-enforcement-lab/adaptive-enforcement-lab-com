@@ -3,9 +3,10 @@ date: 2025-11-26
 authors:
   - mark
 categories:
-  - DevSecOps
-  - GitHub Actions
-  - Automation
+  - Git
+  - CI/CD
+  - Debugging
+  - Shell Scripting
 slug: git-diff-lies-the-untracked-file-trap
 ---
 

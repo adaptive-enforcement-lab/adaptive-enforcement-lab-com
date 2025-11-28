@@ -3,9 +3,9 @@ date: 2025-11-27
 authors:
   - mark
 categories:
-  - DevSecOps
-  - GitHub Actions
-  - Automation
+  - CI/CD
+  - Resilience
+  - Engineering Patterns
 slug: idempotent-automation-why-reruns-shouldnt-scare-you
 ---
 

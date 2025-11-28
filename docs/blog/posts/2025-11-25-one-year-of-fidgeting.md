@@ -5,7 +5,9 @@ authors:
 categories:
   - DevSecOps
   - GitHub Actions
-  - Automation
+  - GitHub Apps
+  - CI/CD
+  - Retrospective
 slug: one-year-of-fidgeting-with-github-app-automation
 ---
 

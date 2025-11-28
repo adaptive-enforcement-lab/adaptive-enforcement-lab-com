@@ -79,11 +79,6 @@ plugins:
       blog_dir: blog
       post_date_format: yyyy-MM-dd
       archive_date_format: yyyy-MM
-      categories_allowed:
-        - DevSecOps
-        - GitHub Actions
-        - Automation
-        - Security
 markdown_extensions:
   - admonition
   - attr_list
