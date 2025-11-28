@@ -65,7 +65,8 @@ date: 2025-01-15
 authors:
   - mark
 categories:
-  - DevSecOps      # Must match categories_allowed in mkdocs.yml
+  - DevSecOps
+  - Automation
 description: >-
   A concise summary for RSS feeds and social sharing.
   Keep under 160 characters for optimal display.
