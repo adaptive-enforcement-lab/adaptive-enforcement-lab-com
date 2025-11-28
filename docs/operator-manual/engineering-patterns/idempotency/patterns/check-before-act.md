@@ -31,9 +31,11 @@ flowchart LR
     C --> E[Done]
     D --> E
 
-    style B fill:#3b4252,stroke:#88c0d0,color:#eceff4
-    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
-    style D fill:#3b4252,stroke:#ebcb8b,color:#eceff4
+    style A fill:#5e7175,color:#f8f8f3
+    style B fill:#fd971e,color:#1b1d1e
+    style C fill:#a7e22e,color:#1b1d1e
+    style D fill:#65d9ef,color:#1b1d1e
+    style E fill:#5e7175,color:#f8f8f3
 ```
 
 ---
@@ -183,7 +185,7 @@ sequenceDiagram
     W2->>S: Create resource
     Note over S: Duplicate created!
 
-    rect rgb(59, 66, 82)
+    rect rgb(27, 29, 30)
         Note over W1,W2: Both workers pass the check<br/>before either acts
     end
 ```

@@ -28,11 +28,12 @@ flowchart LR
     C --> D[Same Resource]
 
     A2[Same Content] --> B
-    B --> C
 
-    style B fill:#3b4252,stroke:#88c0d0,color:#eceff4
-    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
-    style D fill:#3b4252,stroke:#ebcb8b,color:#eceff4
+    style A fill:#65d9ef,color:#1b1d1e
+    style A2 fill:#65d9ef,color:#1b1d1e
+    style B fill:#9e6ffe,color:#1b1d1e
+    style C fill:#fd971e,color:#1b1d1e
+    style D fill:#a7e22e,color:#1b1d1e
 ```
 
 !!! info "Content-Addressable by Design"

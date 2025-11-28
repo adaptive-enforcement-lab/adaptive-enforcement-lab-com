@@ -25,9 +25,9 @@ flowchart LR
     A[Source] --> B[Overwrite]
     B --> C[Target = Source]
 
-    style A fill:#3b4252,stroke:#88c0d0,color:#eceff4
-    style B fill:#3b4252,stroke:#ebcb8b,color:#eceff4
-    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
+    style A fill:#65d9ef,color:#1b1d1e
+    style B fill:#fd971e,color:#1b1d1e
+    style C fill:#a7e22e,color:#1b1d1e
 ```
 
 !!! example "Zero Decisions"

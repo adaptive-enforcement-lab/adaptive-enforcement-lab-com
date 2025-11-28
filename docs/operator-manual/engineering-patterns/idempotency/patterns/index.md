@@ -88,11 +88,16 @@ flowchart TD
     H -->|Yes| I[Use Tombstone Markers]
     H -->|No| J[Use Check-Before-Act]
 
-    style C fill:#3b4252,stroke:#a3be8c,color:#eceff4
-    style E fill:#3b4252,stroke:#ebcb8b,color:#eceff4
-    style G fill:#3b4252,stroke:#88c0d0,color:#eceff4
-    style I fill:#3b4252,stroke:#b48ead,color:#eceff4
-    style J fill:#3b4252,stroke:#81a1c1,color:#eceff4
+    style A fill:#5e7175,color:#f8f8f3
+    style B fill:#fd971e,color:#1b1d1e
+    style C fill:#a7e22e,color:#1b1d1e
+    style D fill:#fd971e,color:#1b1d1e
+    style E fill:#e6db74,color:#1b1d1e
+    style F fill:#fd971e,color:#1b1d1e
+    style G fill:#65d9ef,color:#1b1d1e
+    style H fill:#fd971e,color:#1b1d1e
+    style I fill:#9e6ffe,color:#1b1d1e
+    style J fill:#65d9ef,color:#1b1d1e
 ```
 
 | Scenario | Recommended Pattern |
