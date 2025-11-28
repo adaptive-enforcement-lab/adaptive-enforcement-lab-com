@@ -21,6 +21,17 @@ This is a growing collection of engineering patterns distilled from real-world D
 
 ---
 
+## Pattern Overview
+
+| Pattern | Question | Action |
+|---------|----------|--------|
+| [**Idempotency**](idempotency/index.md) | "Safe to repeat?" | Make reruns safe |
+| **Fail Fast** | "Is something wrong?" | Stop immediately |
+| **Prerequisite Checks** | "Can it succeed?" | Validate before starting |
+| **Work Avoidance** | "Already done?" | Skip redundant work |
+
+---
+
 ## Available Patterns
 
 ### [Idempotency](idempotency/index.md)
@@ -41,6 +52,9 @@ Build automation that survives reruns. When workflows fail mid-execution, idempo
 
     This section expands as patterns are documented. Upcoming topics include:
 
+    - **Fail Fast** - Stop immediately when something is wrong
+    - **Prerequisite Checks** - Validate conditions before starting work
+    - **Work Avoidance** - Skip work that's already done
     - **Error Handling** - Fail loudly, recover gracefully
     - **Change Detection** - Know when something actually changed
     - **Rate Limiting** - Respect API boundaries at scale
