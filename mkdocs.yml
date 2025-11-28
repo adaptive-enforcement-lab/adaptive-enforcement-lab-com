@@ -127,7 +127,13 @@ nav:
               - operator-manual/engineering-patterns/idempotency/index.md
               - Pros and Cons: operator-manual/engineering-patterns/idempotency/pros-and-cons.md
               - Decision Matrix: operator-manual/engineering-patterns/idempotency/decision-matrix.md
-              - Implementation Patterns: operator-manual/engineering-patterns/idempotency/patterns.md
+              - Implementation Patterns:
+                  - operator-manual/engineering-patterns/idempotency/patterns/index.md
+                  - Check-Before-Act: operator-manual/engineering-patterns/idempotency/patterns/check-before-act.md
+                  - Upsert: operator-manual/engineering-patterns/idempotency/patterns/upsert.md
+                  - Force Overwrite: operator-manual/engineering-patterns/idempotency/patterns/force-overwrite.md
+                  - Unique Identifiers: operator-manual/engineering-patterns/idempotency/patterns/unique-identifiers.md
+                  - Tombstone Markers: operator-manual/engineering-patterns/idempotency/patterns/tombstone-markers.md
               - Real-World Example: operator-manual/engineering-patterns/idempotency/real-world-example.md
               - Testing: operator-manual/engineering-patterns/idempotency/testing.md
               - Cache Considerations: operator-manual/engineering-patterns/idempotency/caches.md

@@ -73,7 +73,7 @@ Each fix was simple. The challenge was finding them all.
 
 !!! tip "The Full Breakdown"
 
-    See [Implementation Patterns](../../operator-manual/engineering-patterns/idempotency/patterns.md) for the five patterns that emerged from this work.
+    See [Implementation Patterns](../../operator-manual/engineering-patterns/idempotency/patterns/index.md) for the five patterns that emerged from this work.
 
 ---
 
@@ -120,7 +120,7 @@ If you're dealing with flaky reruns:
 
 1. Read [Pros and Cons](../../operator-manual/engineering-patterns/idempotency/pros-and-cons.md) to understand the tradeoffs
 2. Score your workflow with the [Decision Matrix](../../operator-manual/engineering-patterns/idempotency/decision-matrix.md)
-3. Apply the relevant [Implementation Patterns](../../operator-manual/engineering-patterns/idempotency/patterns.md)
+3. Apply the relevant [Implementation Patterns](../../operator-manual/engineering-patterns/idempotency/patterns/index.md)
 4. [Test it](../../operator-manual/engineering-patterns/idempotency/testing.md) by running twice
 
 ---
