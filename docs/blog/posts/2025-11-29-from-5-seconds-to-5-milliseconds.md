@@ -190,74 +190,6 @@ flowchart TD
 
 ---
 
-## The Architecture That Emerged
-
-The final system looks like this:
-
-```mermaid
-flowchart TB
-    subgraph "Google Cloud"
-        GAR[Artifact Registry]
-        PS[Pub/Sub]
-    end
-
-    subgraph "Argo Events"
-        ES[EventSource]
-        EB[EventBus]
-        SE[Sensor]
-    end
-
-    subgraph "Argo Workflows"
-        WT[WorkflowTemplate]
-        WP[Workflow Pod]
-    end
-
-    subgraph "CLI"
-        OR[orchestrate]
-        CH[check]
-        RS[restart]
-    end
-
-    subgraph "Cache"
-        CM[ConfigMap]
-        MN[Volume Mount]
-    end
-
-    GAR -->|Push Event| PS
-    PS -->|Subscribe| ES
-    ES --> EB
-    EB --> SE
-    SE -->|Trigger| WT
-    WT -->|Create| WP
-    WP -->|Execute| OR
-    OR --> CH
-    CH -.->|Read| MN
-    MN -.->|Synced from| CM
-    CH --> RS
-
-    style MN fill:#a7e22e,color:#1b1d1e
-    style CM fill:#9e6ffe,color:#1b1d1e
-    style CH fill:#65d9ef,color:#1b1d1e
-```
-
----
-
-## When to Graduate from Bash to Go
-
-The bash scripts worked. They were readable, debuggable, and got the job done for months. But they hit a ceiling:
-
-!!! tip "Signs You Need a Real CLI"
-
-    1. **Performance matters**: Bash can't do O(1) hash lookups
-    2. **Error handling is painful**: `set -e` only gets you so far
-    3. **Testing is manual**: Go has `testing`, mocks, coverage
-    4. **Distribution is complex**: One binary beats script + dependencies
-    5. **Concurrency is needed**: Go's goroutines vs bash's `&`
-
-The Go CLI is ~2000 lines of code. It took a week to build. The bash scripts were ~100 lines and took an afternoon. But the Go version will scale to 10x the cluster size without changes.
-
----
-
 ## Lessons Learned
 
 !!! abstract "Key Takeaways"
@@ -276,6 +208,7 @@ This pattern, using ConfigMaps as a cache layer with volume mounts for zero-API 
 
 !!! info "Coming Soon"
 
+    - **Architecture Deep Dive**: Full system design with Argo Events, Workflows, and the CLI
     - **Argo Workflows Patterns**: Event-driven automation architecture
     - **Go CLI Architecture**: Building Kubernetes-native orchestration tools
     - **ConfigMap as Cache**: The pattern behind this optimization
