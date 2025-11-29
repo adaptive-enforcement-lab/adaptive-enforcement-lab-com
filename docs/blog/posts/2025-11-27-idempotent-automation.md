@@ -17,7 +17,7 @@ Your workflow failed at step 47 of 50. Do you fix the issue and rerun from the b
 
     If that question makes you nervous, your automation isn't idempotent. And that's a problem.
 
-This post shares the journey to making reruns boring. For the full technical deep-dive, see the [Idempotency Pattern Guide](../../operator-manual/engineering-patterns/idempotency/index.md).
+This post shares the journey to making reruns boring. For the full technical deep-dive, see the [Idempotency Pattern Guide](../../developer-guide/engineering-practices/patterns/idempotency/index.md).
 
 <!-- more -->
 
@@ -73,7 +73,7 @@ Each fix was simple. The challenge was finding them all.
 
 !!! tip "The Full Breakdown"
 
-    See [Implementation Patterns](../../operator-manual/engineering-patterns/idempotency/patterns/index.md) for the five patterns that emerged from this work.
+    See [Implementation Patterns](../../developer-guide/engineering-practices/patterns/idempotency/patterns/index.md) for the five patterns that emerged from this work.
 
 ---
 
@@ -93,7 +93,7 @@ No duplicates. No manual cleanup. No fear.
 
 Not every workflow needs this treatment. A one-off migration script? Just run it carefully. A local development tool? Optimize for speed, not resilience.
 
-The [Decision Matrix](../../operator-manual/engineering-patterns/idempotency/decision-matrix.md) helps calibrate where to invest. The short version:
+The [Decision Matrix](../../developer-guide/engineering-practices/patterns/idempotency/decision-matrix.md) helps calibrate where to invest. The short version:
 
 - **High failure risk + High recovery cost** = Full idempotency
 - **Low failure risk + Low recovery cost** = Don't bother
@@ -110,7 +110,7 @@ What happens when your idempotent workflow depends on a cache that expired? Or a
 
     If you deleted all caches and reran your workflow, would it still produce the same result?
 
-That's the next frontier. For now, see [Cache Considerations](../../operator-manual/engineering-patterns/idempotency/caches.md) for the traps I've identified.
+That's the next frontier. For now, see [Cache Considerations](../../developer-guide/engineering-practices/patterns/idempotency/caches.md) for the traps I've identified.
 
 ---
 
@@ -118,10 +118,10 @@ That's the next frontier. For now, see [Cache Considerations](../../operator-man
 
 If you're dealing with flaky reruns:
 
-1. Read [Pros and Cons](../../operator-manual/engineering-patterns/idempotency/pros-and-cons.md) to understand the tradeoffs
-2. Score your workflow with the [Decision Matrix](../../operator-manual/engineering-patterns/idempotency/decision-matrix.md)
-3. Apply the relevant [Implementation Patterns](../../operator-manual/engineering-patterns/idempotency/patterns/index.md)
-4. [Test it](../../operator-manual/engineering-patterns/idempotency/testing.md) by running twice
+1. Read [Pros and Cons](../../developer-guide/engineering-practices/patterns/idempotency/pros-and-cons.md) to understand the tradeoffs
+2. Score your workflow with the [Decision Matrix](../../developer-guide/engineering-practices/patterns/idempotency/decision-matrix.md)
+3. Apply the relevant [Implementation Patterns](../../developer-guide/engineering-practices/patterns/idempotency/patterns/index.md)
+4. [Test it](../../developer-guide/engineering-practices/patterns/idempotency/testing.md) by running twice
 
 ---
 

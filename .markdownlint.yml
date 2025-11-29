@@ -13,8 +13,11 @@ MD013:
 MD024:
   siblings_only: true
 
-# Disallow raw HTML
-MD033: true
+# Allow HTML for MkDocs Material components (grid cards, annotations, etc.)
+MD033: false
+
+# Allow flexible list marker spacing for MkDocs Material grid cards
+MD030: false
 
 # Disallow emphasis as headings
 MD036: true

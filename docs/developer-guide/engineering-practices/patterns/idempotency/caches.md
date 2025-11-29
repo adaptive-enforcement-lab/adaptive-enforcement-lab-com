@@ -149,4 +149,4 @@ If step 4 fails, your idempotency depends on cache state.
 
 !!! info "Deep Dive Coming"
 
-    Cache-resilient idempotency deserves its own comprehensive guide. Check the [Roadmap](../../../roadmap.md) for upcoming content on this topic.
+    Cache-resilient idempotency deserves its own comprehensive guide. Check the [Roadmap](../../../../roadmap.md) for upcoming content on this topic.
