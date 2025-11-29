@@ -101,7 +101,7 @@ This was a classic case for caching.
 Instead of scanning the cluster on every request, I built a cache:
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Image Push Event] --> B{Cache Hit?}
     B -->|Yes| C[Return Deployments]
     B -->|No| D[Scan Cluster]
@@ -109,10 +109,12 @@ flowchart TD
     E --> C
     C --> F[Restart Deployments]
 
+    style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style E fill:#9e6ffe,color:#1b1d1e
+    style F fill:#a7e22e,color:#1b1d1e
 ```
 
 The cache is a simple hash map stored in a Kubernetes ConfigMap:
@@ -166,7 +168,7 @@ volumeMounts:
 The CLI now has a two-tier access pattern:
 
 ```mermaid
-flowchart TD
+flowchart LR
     A[Check Image] --> B{Mount Available?}
     B -->|Yes| C[Read /etc/cache]
     B -->|No| D[GET ConfigMap API]
@@ -175,9 +177,12 @@ flowchart TD
     E -->|No| D
     D --> F
 
+    style A fill:#65d9ef,color:#1b1d1e
+    style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
-    style F fill:#65d9ef,color:#1b1d1e
+    style E fill:#fd971e,color:#1b1d1e
+    style F fill:#a7e22e,color:#1b1d1e
 ```
 
 !!! success "Final Results"
