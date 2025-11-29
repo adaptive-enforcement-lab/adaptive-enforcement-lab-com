@@ -60,4 +60,4 @@ Build automation that survives reruns. When workflows fail mid-execution, idempo
     - **Rate Limiting** - Respect API boundaries at scale
     - **State Management** - Track progress across distributed operations
 
-    Check the [Roadmap](../../roadmap.md) for the full list.
+    Check the [Roadmap](../../../roadmap.md) for the full list.
