@@ -50,6 +50,7 @@ Patterns are the *how*. Principles are the *why* and *when*.
 ### Patterns
 
 - **Idempotency** - Make operations safe to retry
+- **Workflow Patterns** - Structure scalable CI/CD workflows
 - **Caching** - Avoid redundant work
 - **Work Avoidance** - Skip unnecessary operations
 

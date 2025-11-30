@@ -23,12 +23,14 @@ This is a growing collection of engineering patterns distilled from real-world D
 
 ## Pattern Overview
 
-| Pattern | Question | Action |
-|---------|----------|--------|
-| [**Idempotency**](idempotency/index.md) | "Safe to repeat?" | Make reruns safe |
-| **Fail Fast** | "Is something wrong?" | Stop immediately |
-| **Prerequisite Checks** | "Can it succeed?" | Validate before starting |
-| **Work Avoidance** | "Already done?" | Skip redundant work |
+| Category | Pattern | Question | Action |
+|----------|---------|----------|--------|
+| Implementation | [**Idempotency**](idempotency/index.md) | "Safe to repeat?" | Make reruns safe |
+| Implementation | **Fail Fast** | "Is something wrong?" | Stop immediately |
+| Implementation | **Prerequisite Checks** | "Can it succeed?" | Validate before starting |
+| Implementation | **Work Avoidance** | "Already done?" | Skip redundant work |
+| Workflow | [**Three-Stage Design**](workflow-patterns/three-stage-design.md) | "How to structure?" | Separate discovery, execution, reporting |
+| Workflow | [**Matrix Distribution**](workflow-patterns/matrix-distribution.md) | "How to parallelize?" | Dynamic matrix strategies |
 
 ---
 
@@ -43,6 +45,16 @@ Build automation that survives reruns. When workflows fail mid-execution, idempo
     - Your workflows create duplicate PRs on rerun
     - You manually clean up state after failed jobs
     - You're afraid to rerun scheduled automation
+
+### [Workflow Patterns](workflow-patterns/index.md)
+
+Structural patterns for building scalable, maintainable CI/CD workflows. Learn how to separate concerns, parallelize operations, and handle complex multi-target scenarios.
+
+!!! tip "Start Here If..."
+
+    - Your workflows are becoming hard to maintain
+    - You need to process many targets (repos, services, files)
+    - You want clear observability into what happened
 
 ---
 

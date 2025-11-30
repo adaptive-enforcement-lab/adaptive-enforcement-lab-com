@@ -6,7 +6,13 @@ description: >-
 
 # Architecture
 
-## Three-Stage Workflow
+This workflow implements the [Three-Stage Design][three-stage] pattern
+with [Matrix Distribution][matrix] for parallel processing.
+
+[three-stage]: ../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md
+[matrix]: ../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution.md
+
+## Workflow Overview
 
 ```mermaid
 graph TB
@@ -37,23 +43,35 @@ graph TB
     style I fill:#9e6ffe,color:#1b1d1e
 ```
 
-## Stage Responsibilities
+## Stage Summary
 
-1. **Discovery**: Query organization for target repositories
-2. **Distribution**: Parallel distribution to each repository
-3. **Summary**: Aggregate and display results
+| Stage | Purpose | Implementation |
+|-------|---------|----------------|
+| [Discovery](discovery-stage.md) | Find target repositories via GraphQL | Query team membership |
+| [Distribution](distribution-stage.md) | Copy files and create PRs in parallel | Matrix strategy |
+| [Summary](summary-stage.md) | Report results | Workflow step summary |
 
-## Data Flow
+## Applied Patterns
 
-| Stage | Input | Output |
-|-------|-------|--------|
-| Discovery | GraphQL query | JSON array of repositories |
-| Distribution | Repository list | PRs created/updated |
-| Summary | Workflow results | Human-readable report |
+This workflow demonstrates several patterns from the [Developer Guide][dev-guide]:
 
-## Key Design Principles
+| Pattern | Application |
+|---------|-------------|
+| [Three-Stage Design][three-stage] | Separates discovery, execution, and reporting |
+| [Matrix Distribution][matrix] | Parallelizes file distribution across repos |
+| [Idempotency][idempotency] | Makes reruns safe with change detection |
 
-- **Decoupled stages** - Each stage operates independently
-- **Matrix parallelization** - Distribution scales horizontally
-- **Fail-fast disabled** - Individual failures don't block others
-- **Idempotent operations** - Safe to re-run at any point
+[dev-guide]: ../../../../developer-guide/index.md
+[idempotency]: ../../../../developer-guide/engineering-practices/patterns/idempotency/index.md
+
+## Key Configuration
+
+```yaml
+strategy:
+  matrix:
+    repo: ${{ fromJson(needs.discover.outputs.repositories) }}
+  fail-fast: false   # Continue if individual repos fail
+  max-parallel: 10   # Respect API rate limits
+```
+
+For detailed implementation of each stage, see the stage-specific pages.

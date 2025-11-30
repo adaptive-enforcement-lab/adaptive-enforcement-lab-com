@@ -173,6 +173,10 @@ nav:
                   - Real-World Example: developer-guide/engineering-practices/patterns/idempotency/real-world-example.md
                   - Testing: developer-guide/engineering-practices/patterns/idempotency/testing.md
                   - Cache Considerations: developer-guide/engineering-practices/patterns/idempotency/caches.md
+              - Workflow Patterns:
+                  - developer-guide/engineering-practices/patterns/workflow-patterns/index.md
+                  - Three-Stage Design: developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md
+                  - Matrix Distribution: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution.md
           - Principles:
               - developer-guide/engineering-practices/principles/index.md
   - Roadmap: roadmap.md

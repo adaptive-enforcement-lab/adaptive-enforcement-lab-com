@@ -4,53 +4,41 @@ description: >-
   Safe re-execution guarantees for file distribution workflows.
 ---
 
-# Idempotency Guarantees
+# Idempotency in File Distribution
 
-The workflow is designed to be fully idempotent.
+This workflow applies [idempotency patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) to ensure safe reruns.
 
-## Branch Management
+!!! tip "Learn the Pattern"
 
-- `git checkout -B` forces reset to remote state
-- No merge conflicts on subsequent runs
-- Safe to run multiple times
+    For comprehensive coverage of idempotency patterns, see the [Developer Guide: Idempotency](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md).
+
+---
+
+## Applied Patterns
+
+### Branch Management: Force Overwrite
+
+Uses [force overwrite](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/force-overwrite.md) to reset branch state:
 
 ```bash
-# Force reset to remote state
+# Force reset to remote state - idempotent
 git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
 ```
 
-## Change Detection
+### Change Detection: Check-Before-Act {#change_detection}
 
-- Checks if file content actually changed
-- Detects both modified tracked files AND new untracked files
-- Skips commit/push if no changes
-- Avoids empty commits
-
-!!! warning "Use `git status`, not `git diff`"
-
-    `git diff --quiet` only detects modifications to **tracked files**.
-    When distributing files to repos that don't have them yet,
-    new files are **untracked** and `git diff` won't see them.
-
-    Use `git status --porcelain` instead—it detects everything.
+Uses [check-before-act](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/check-before-act.md) to avoid empty commits:
 
 ```yaml
 - name: Check for changes
   id: changes
   working-directory: target
   run: |
-    # git status --porcelain detects:
-    # - Modified tracked files
-    # - New untracked files
-    # - Deleted files
-    # - Renamed files
+    # git status --porcelain detects all changes
     if [ -z "$(git status --porcelain)" ]; then
       echo "has_changes=false" >> $GITHUB_OUTPUT
-      echo "No changes needed"
     else
       echo "has_changes=true" >> $GITHUB_OUTPUT
-      echo "Changes detected:"
-      git status --short
     fi
 
 - name: Commit changes
@@ -58,16 +46,20 @@ git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
   # Only runs if changes exist
 ```
 
-## PR Management
+!!! warning "Use `git status`, not `git diff`"
 
-- Checks for existing PRs before creating
-- Updates existing PRs with new commits
-- No duplicate PRs created
+    `git diff --quiet` only detects modifications to **tracked files**.
+    New files are **untracked** and invisible to `git diff`.
+
+    Use `git status --porcelain` instead—it detects everything.
+
+### PR Creation: Upsert
+
+Uses [upsert pattern](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/upsert.md) for PR management:
 
 ```yaml
 - name: Create or update pull request
   run: |
-    # Check if PR exists
     PR_EXISTS=$(gh pr list \
       --head automated-update \
       --base ${{ matrix.repo.default_branch }} \
@@ -81,6 +73,8 @@ git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
     fi
 ```
 
+---
+
 ## Safe Re-execution
 
 | Operation | First Run | Subsequent Runs |
@@ -90,3 +84,15 @@ git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
 | Change detection | Detects changes | Reports no changes |
 | Commit | Creates commit | Skipped (no changes) |
 | PR creation | Creates PR | Updates existing PR |
+
+---
+
+## Why This Matters
+
+Matrix jobs processing 40 repositories might fail on job 37 due to rate limiting. With idempotent operations:
+
+1. Rerun the entire workflow
+2. Jobs 1-36 detect "no changes" and skip
+3. Jobs 37-40 retry and succeed
+
+Without idempotency, you'd need to manually identify which repos succeeded and run only the failures.
