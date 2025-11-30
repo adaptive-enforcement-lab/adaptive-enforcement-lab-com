@@ -25,7 +25,7 @@ Uses [force overwrite](../../../../developer-guide/engineering-practices/pattern
 git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
 ```
 
-### Change Detection: Check-Before-Act
+### Change Detection: Check-Before-Act {#change_detection}
 
 Uses [check-before-act](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/check-before-act.md) to avoid empty commits:
 
