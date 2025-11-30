@@ -6,6 +6,14 @@ description: >-
 
 # Extension Patterns
 
+Extend the basic file distribution workflow for more complex scenarios.
+
+!!! tip "General Pattern"
+
+    These extensions build on the [Matrix Distribution](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution.md) pattern. See that page for the underlying concepts.
+
+---
+
 ## Multiple File Distribution
 
 ```yaml
