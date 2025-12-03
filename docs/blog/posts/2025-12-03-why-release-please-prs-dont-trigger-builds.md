@@ -74,11 +74,11 @@ The consequence: release-please can create the most beautiful PR in the world, a
 
 First instinct: use a Personal Access Token. If `GITHUB_TOKEN` is the problem, replace it.
 
-This works. But it means:
+This works. But PATs come with [their own problems](../../operator-manual/github-actions/github-app-setup/index.md#why_use_a_core_app):
 
-- Managing PAT rotation and expiration
-- Broader permissions than necessary
-- Different authentication for release-please vs everything else
+- Tied to individual user accounts (revoked when someone leaves)
+- No granular permission control
+- Difficult to audit across repositories
 
 There's a simpler solution.
 
