@@ -153,6 +153,12 @@ nav:
                   - Monitoring: operator-manual/github-actions/use-cases/file-distribution/monitoring.md
                   - Security: operator-manual/github-actions/use-cases/file-distribution/security.md
                   - Troubleshooting: operator-manual/github-actions/use-cases/file-distribution/troubleshooting.md
+              - Release Pipelines:
+                  - operator-manual/github-actions/use-cases/release-pipelines/index.md
+                  - Release-Please Setup: operator-manual/github-actions/use-cases/release-pipelines/release-please-setup.md
+                  - Change Detection: operator-manual/github-actions/use-cases/release-pipelines/change-detection.md
+                  - Workflow Triggers: operator-manual/github-actions/use-cases/release-pipelines/workflow-triggers.md
+                  - Protected Branches: operator-manual/github-actions/use-cases/release-pipelines/protected-branches.md
   - Developer Guide:
       - developer-guide/index.md
       - Engineering Practices:
