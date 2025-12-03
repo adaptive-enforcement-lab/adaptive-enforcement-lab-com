@@ -1,6 +1,6 @@
 # Release-Please Configuration
 
-Release-please automates version management based on conventional commits. It creates release PRs with updated changelogs, version bumps, and Git tags.
+[Release-please](https://github.com/marketplace/actions/release-please-action) automates version management based on conventional commits. It creates release PRs with updated changelogs, version bumps, and Git tags.
 
 ---
 
@@ -299,3 +299,11 @@ This naming is important for [workflow triggers](workflow-triggers.md).
 
 - [Change Detection](change-detection.md) - Skip unnecessary builds
 - [Workflow Triggers](workflow-triggers.md) - GITHUB_TOKEN compatibility
+
+---
+
+## References
+
+- [Release-please Action](https://github.com/marketplace/actions/release-please-action) - GitHub Marketplace
+- [Release-please repository](https://github.com/googleapis/release-please) - googleapis
+- [Conventional Commits](https://www.conventionalcommits.org/) - Specification
