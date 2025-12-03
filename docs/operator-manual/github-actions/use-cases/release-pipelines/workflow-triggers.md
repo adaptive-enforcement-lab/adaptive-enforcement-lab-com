@@ -6,7 +6,7 @@ Handle the GITHUB_TOKEN limitation that prevents automation tools from triggerin
 
 ## The Problem
 
-Release-please creates PRs via the GitHub API using `GITHUB_TOKEN`. These PRs don't trigger `pull_request` workflows:
+[Release-please](https://github.com/marketplace/actions/release-please-action) creates PRs via the GitHub API using `GITHUB_TOKEN`. These PRs don't trigger `pull_request` workflows:
 
 ```mermaid
 flowchart LR
@@ -30,7 +30,7 @@ flowchart LR
 
 !!! warning "GITHUB_TOKEN Security Measure"
 
-    Actions triggered by `GITHUB_TOKEN` don't emit workflow events.
+    Actions triggered by `GITHUB_TOKEN` [don't emit workflow events](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow).
     This prevents infinite recursion but breaks automation compatibility.
 
 ---
@@ -249,3 +249,11 @@ Test your setup:
 
 - [Protected Branches](protected-branches.md) - Handle branch protection
 - [Change Detection](change-detection.md) - Optimize builds
+
+---
+
+## References
+
+- [Release-please Action](https://github.com/marketplace/actions/release-please-action) - GitHub Marketplace
+- [GITHUB_TOKEN automatic authentication](https://docs.github.com/en/actions/security-guides/automatic-token-authentication) - GitHub Docs
+- [Release-please repository](https://github.com/googleapis/release-please) - googleapis

@@ -26,7 +26,7 @@ This is the story of a GitHub Actions limitation that wastes hours of debugging 
 
 ## The Setup
 
-Release-please automates version management. It reads your conventional commits, generates changelogs, and creates release PRs. When those PRs merge, it tags releases.
+[Release-please](https://github.com/marketplace/actions/release-please-action) automates version management. It reads your conventional commits, generates changelogs, and creates release PRs. When those PRs merge, it tags releases.
 
 ```mermaid
 flowchart LR
@@ -64,7 +64,7 @@ When a developer pushes a branch and opens a PR through the GitHub UI, the `pull
 
 !!! warning "The GITHUB_TOKEN Limitation"
 
-    Actions triggered by `GITHUB_TOKEN` don't emit workflow events. This is a security measure to prevent recursive workflow triggers.
+    Actions triggered by `GITHUB_TOKEN` [don't emit workflow events](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow). This is a security measure to prevent recursive workflow triggers.
 
 The consequence: release-please can create the most beautiful PR in the world, and your CI pipeline will completely ignore it.
 
