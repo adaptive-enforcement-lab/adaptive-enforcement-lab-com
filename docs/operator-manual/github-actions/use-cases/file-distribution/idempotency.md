@@ -106,6 +106,6 @@ Without idempotency, you'd need to manually identify which repos succeeded and r
 
 ## Related
 
-- [Content Comparison](../work-avoidance/content-comparison.md) - Skip version-only changes
-- [Work Avoidance Patterns](../work-avoidance/index.md) - Skip unnecessary work entirely
+- [Work Avoidance Pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Engineering pattern for skipping unnecessary work
+- [Content Comparison](../work-avoidance/content-comparison.md) - Skip version-only changes (GitHub Actions)
 - [Idempotency Patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) - Theory and decision matrix

@@ -2,20 +2,11 @@
 
 Skip operations when output artifacts already exist.
 
----
-
-!!! note "Coming Soon"
-
-    This pattern documentation is planned. For now, see:
-
-    - [GitHub Actions: Caching](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows) - Dependency caching
-    - [actions/cache](https://github.com/actions/cache) - Cache action documentation
+This implements the [cache-based skip](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md) technique for GitHub Actions workflows.
 
 ---
 
-## Overview
-
-Cache-based skip uses artifact existence as a proxy for "work already done":
+## Implementation
 
 ```yaml
 - name: Check cache
@@ -30,9 +21,34 @@ Cache-based skip uses artifact existence as a proxy for "work already done":
   run: npm run build
 ```
 
+The cache key is derived from source file hashes. Same source = same output = skip the build.
+
+---
+
+## When to Use
+
+- **Build artifacts** - Skip compilation when source unchanged
+- **Dependencies** - Skip install when lockfile unchanged
+- **Generated files** - Skip generation when inputs unchanged
+
+---
+
+## Key Considerations
+
+- **Cache key design** - Include all inputs that affect output
+- **Cache invalidation** - Know when to bust the cache
+- **Partial hits** - Handle cases where cache is stale
+
+See the [engineering pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md) for conceptual details.
+
 ---
 
 ## Related
 
-- [Work Avoidance Patterns](index.md) - Pattern overview
+- [Work Avoidance in GitHub Actions](index.md) - Pattern overview
 - [Performance Optimization](../../actions-integration/performance-optimization.md) - Caching strategies
+
+## References
+
+- [GitHub Actions: Caching](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows) - Official documentation
+- [actions/cache](https://github.com/actions/cache) - Cache action

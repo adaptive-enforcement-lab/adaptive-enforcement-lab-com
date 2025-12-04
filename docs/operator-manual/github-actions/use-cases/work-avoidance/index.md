@@ -1,92 +1,33 @@
-# Work Avoidance Patterns
+# Work Avoidance in GitHub Actions
 
-Skip unnecessary work in CI/CD pipelines through intelligent detection and filtering.
-
----
-
-## Overview
-
-Efficient pipelines don't just run fast—they avoid running at all when work isn't needed. These patterns detect when operations can be safely skipped, reducing:
-
-- Compute costs
-- API rate limit consumption
-- PR noise across repositories
-- Developer context-switching
-
-```mermaid
-flowchart LR
-    subgraph trigger[Trigger Event]
-        Push[Push/PR/Schedule]
-    end
-
-    subgraph detect[Work Detection]
-        FileChange[File Changed?]
-        ContentChange[Content Changed?]
-        AlreadyDone[Already Applied?]
-    end
-
-    subgraph action[Action]
-        Skip[Skip]
-        Execute[Execute]
-    end
-
-    Push --> FileChange
-    FileChange -->|No| Skip
-    FileChange -->|Yes| ContentChange
-    ContentChange -->|No| Skip
-    ContentChange -->|Yes| AlreadyDone
-    AlreadyDone -->|Yes| Skip
-    AlreadyDone -->|No| Execute
-
-    style Push fill:#65d9ef,color:#1b1d1e
-    style FileChange fill:#fd971e,color:#1b1d1e
-    style ContentChange fill:#fd971e,color:#1b1d1e
-    style AlreadyDone fill:#fd971e,color:#1b1d1e
-    style Skip fill:#5e7175,color:#f8f8f3
-    style Execute fill:#a7e22e,color:#1b1d1e
-```
-
----
-
-## Patterns
-
-| Pattern | Use Case |
-|---------|----------|
-| [Content Comparison](content-comparison.md) | Skip when only metadata (versions, timestamps) changed |
-| [Path Filtering](path-filtering.md) | Skip jobs when relevant files haven't changed |
-| [Cache-Based Skip](cache-based-skip.md) | Skip when output already exists |
+Apply [work avoidance patterns](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) to skip unnecessary CI/CD operations.
 
 ---
 
 ## When to Apply
 
-Work avoidance is valuable when:
+Work avoidance is valuable in GitHub Actions when:
 
 - **Distribution workflows** push files to many repositories
-- **Monorepo builds** trigger on any change but only need subset builds
-- **Scheduled jobs** run regardless of whether work exists
 - **Release automation** bumps versions without content changes
+- **Scheduled jobs** run regardless of whether work exists
+- **Monorepo builds** trigger on any change but only need subset builds
 
 ---
 
-## Relationship to Idempotency
+## Implementation Patterns
 
-Work avoidance and [idempotency](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) are complementary:
-
-| Concern | Idempotency | Work Avoidance |
-|---------|-------------|----------------|
-| Focus | Safe re-execution | Skipping execution |
-| Question | "Can I run this again safely?" | "Should I run this at all?" |
-| Failure handling | Retry entire workflow | N/A (didn't run) |
-| Resource usage | Uses resources on rerun | Saves resources |
-
-Best practice: Apply **work avoidance first**, then ensure remaining operations are **idempotent**.
+| Pattern | Operator Manual | Engineering Pattern |
+|---------|-----------------|---------------------|
+| Skip version-only changes | [Content Comparison](content-comparison.md) | [Volatile Field Exclusion](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/volatile-field-exclusion.md) |
+| Skip unchanged paths | [Path Filtering](path-filtering.md) | N/A (native GitHub feature) |
+| Skip cached builds | [Cache-Based Skip](cache-based-skip.md) | [Cache-Based Skip](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md) |
 
 ---
 
-## Quick Example
+## Quick Reference
 
-A file distribution workflow that skips version-only changes:
+### Check for Meaningful Changes
 
 ```yaml
 - name: Check for meaningful changes
@@ -98,7 +39,8 @@ A file distribution workflow that skips version-only changes:
     }
 
     SOURCE=$(strip_version "source/CONFIG.md")
-    TARGET=$(git show HEAD:CONFIG.md 2>/dev/null | sed '/^version:.*# x-release-please-version$/d' || echo "")
+    TARGET=$(git show HEAD:CONFIG.md 2>/dev/null | \
+      sed '/^version:.*# x-release-please-version$/d' || echo "")
 
     if [ "$SOURCE" = "$TARGET" ]; then
       echo "skip=true" >> $GITHUB_OUTPUT
@@ -111,10 +53,38 @@ A file distribution workflow that skips version-only changes:
   run: ./distribute.sh
 ```
 
+### Path-Based Filtering
+
+```yaml
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'package.json'
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+```
+
+### Cache-Based Skip
+
+```yaml
+- name: Check cache
+  id: cache
+  uses: actions/cache@v4
+  with:
+    path: dist/
+    key: build-${{ hashFiles('src/**') }}
+
+- name: Build
+  if: steps.cache.outputs.cache-hit != 'true'
+  run: npm run build
+```
+
 ---
 
 ## Related
 
+- [Work Avoidance Pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Conceptual pattern and techniques
 - [File Distribution](../file-distribution/index.md) - Applies these patterns at scale
-- [Change Detection](../release-pipelines/change-detection.md) - File-level detection for builds
-- [Idempotency Patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) - Safe re-execution
+- [Idempotency](../file-distribution/idempotency.md) - Complementary pattern for safe reruns

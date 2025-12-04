@@ -184,6 +184,15 @@ nav:
                   - Real-World Example: developer-guide/engineering-practices/patterns/idempotency/real-world-example.md
                   - Testing: developer-guide/engineering-practices/patterns/idempotency/testing.md
                   - Cache Considerations: developer-guide/engineering-practices/patterns/idempotency/caches.md
+              - Work Avoidance:
+                  - developer-guide/engineering-practices/patterns/work-avoidance/index.md
+                  - Techniques:
+                      - developer-guide/engineering-practices/patterns/work-avoidance/techniques/index.md
+                      - Content Hashing: developer-guide/engineering-practices/patterns/work-avoidance/techniques/content-hashing.md
+                      - Volatile Field Exclusion: developer-guide/engineering-practices/patterns/work-avoidance/techniques/volatile-field-exclusion.md
+                      - Existence Checks: developer-guide/engineering-practices/patterns/work-avoidance/techniques/existence-checks.md
+                      - Cache-Based Skip: developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md
+                  - Anti-Patterns: developer-guide/engineering-practices/patterns/work-avoidance/anti-patterns.md
               - Workflow Patterns:
                   - developer-guide/engineering-practices/patterns/workflow-patterns/index.md
                   - Three-Stage Design: developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md

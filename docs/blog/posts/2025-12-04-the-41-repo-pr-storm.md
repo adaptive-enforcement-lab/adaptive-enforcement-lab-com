@@ -136,7 +136,7 @@ The `git show HEAD:CONTRIBUTING.md` command fails if the file doesn't exist in t
 
 ## The Pattern
 
-This is [content comparison](../../operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md)—a work avoidance pattern for filtering out noise before it becomes PRs.
+This is [work avoidance](../../developer-guide/engineering-practices/patterns/work-avoidance/index.md)—an engineering pattern for filtering out noise before it becomes PRs. The specific technique here is [volatile field exclusion](../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/volatile-field-exclusion.md).
 
 The principle extends beyond versions:
 
@@ -159,7 +159,8 @@ If the semantic content hasn't changed, the operation probably isn't needed.
 
 ## Deep Dive
 
-- [Content Comparison Pattern](../../operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md) - Full implementation details
+- [Work Avoidance Pattern](../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Engineering pattern and techniques
+- [Content Comparison (GitHub Actions)](../../operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md) - Implementation for workflows
 - [Release-Please Extra-Files](../../operator-manual/github-actions/use-cases/release-pipelines/release-please-setup.md#extra-files) - Version tracking in arbitrary files
 - [File Distribution Workflow](../../operator-manual/github-actions/use-cases/file-distribution/index.md) - Three-stage distribution architecture
 

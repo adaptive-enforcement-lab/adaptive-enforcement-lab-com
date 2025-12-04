@@ -28,7 +28,7 @@ This is a growing collection of engineering patterns distilled from real-world D
 | Implementation | [**Idempotency**](idempotency/index.md) | "Safe to repeat?" | Make reruns safe |
 | Implementation | **Fail Fast** | "Is something wrong?" | Stop immediately |
 | Implementation | **Prerequisite Checks** | "Can it succeed?" | Validate before starting |
-| Implementation | **Work Avoidance** | "Already done?" | Skip redundant work |
+| Implementation | [**Work Avoidance**](work-avoidance/index.md) | "Already done?" | Skip redundant work |
 | Workflow | [**Three-Stage Design**](workflow-patterns/three-stage-design.md) | "How to structure?" | Separate discovery, execution, reporting |
 | Workflow | [**Matrix Distribution**](workflow-patterns/matrix-distribution.md) | "How to parallelize?" | Dynamic matrix strategies |
 
@@ -45,6 +45,16 @@ Build automation that survives reruns. When workflows fail mid-execution, idempo
     - Your workflows create duplicate PRs on rerun
     - You manually clean up state after failed jobs
     - You're afraid to rerun scheduled automation
+
+### [Work Avoidance](work-avoidance/index.md)
+
+Detect when work isn't needed and skip it entirely. Unlike idempotency (which makes reruns safe), work avoidance prevents the run from happening at all—saving compute, API calls, and developer attention.
+
+!!! tip "Start Here If..."
+
+    - Your automation creates noise (version-only PRs, redundant builds)
+    - You want to skip operations when nothing meaningful changed
+    - You need to filter out volatile metadata before comparing
 
 ### [Workflow Patterns](workflow-patterns/index.md)
 
@@ -66,7 +76,6 @@ Structural patterns for building scalable, maintainable CI/CD workflows. Learn h
 
     - **Fail Fast** - Stop immediately when something is wrong
     - **Prerequisite Checks** - Validate conditions before starting work
-    - **Work Avoidance** - Skip work that's already done
     - **Error Handling** - Fail loudly, recover gracefully
     - **Change Detection** - Know when something actually changed
     - **Rate Limiting** - Respect API boundaries at scale

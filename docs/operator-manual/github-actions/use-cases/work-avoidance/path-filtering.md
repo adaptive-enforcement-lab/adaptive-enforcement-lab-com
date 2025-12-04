@@ -1,21 +1,12 @@
 # Path Filtering
 
-Skip jobs when relevant files haven't changed.
+Skip workflows when relevant files haven't changed.
 
 ---
 
-!!! note "Coming Soon"
+## Native GitHub Feature
 
-    This pattern documentation is planned. For now, see:
-
-    - [Change Detection](../release-pipelines/change-detection.md) - Path-based filtering for release pipelines
-    - [GitHub Actions: paths filter](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore) - Native workflow filtering
-
----
-
-## Overview
-
-Path filtering skips entire jobs or workflows when changes don't affect relevant directories:
+GitHub Actions provides built-in path filtering:
 
 ```yaml
 on:
@@ -28,9 +19,23 @@ on:
       - 'docs/**'
 ```
 
+This is a platform feature, not a pattern implementation. See the official documentation for full syntax.
+
+---
+
+## When to Use
+
+- **Monorepo builds** - Only build changed packages
+- **Documentation changes** - Skip CI for doc-only PRs
+- **Config changes** - Trigger only relevant pipelines
+
 ---
 
 ## Related
 
-- [Work Avoidance Patterns](index.md) - Pattern overview
-- [Change Detection](../release-pipelines/change-detection.md) - Monorepo change detection
+- [Work Avoidance in GitHub Actions](index.md) - Pattern overview
+- [Change Detection](../release-pipelines/change-detection.md) - Runtime path detection
+
+## References
+
+- [GitHub Actions: paths filter](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore) - Official documentation
