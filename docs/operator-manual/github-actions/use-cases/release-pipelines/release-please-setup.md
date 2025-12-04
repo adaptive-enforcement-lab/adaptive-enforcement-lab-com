@@ -171,6 +171,147 @@ Control how commits appear in changelogs:
 | `section` | Heading in changelog |
 | `hidden` | Exclude from changelog (still affects versioning) |
 
+### Scope Filtering
+
+Target specific commit scopes to hide noise while keeping other commits visible:
+
+```json
+{
+  "changelog-sections": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "chore", "scope": "deps", "section": "Dependencies", "hidden": true },
+    { "type": "chore", "section": "Maintenance" }
+  ]
+}
+```
+
+The `scope` field matches the parenthetical in conventional commits:
+
+| Commit | Matches | Result |
+|--------|---------|--------|
+| `chore(deps): bump lodash` | `scope: "deps"` | Hidden |
+| `chore: update config` | No scope match | Visible under Maintenance |
+| `chore(build): fix webpack` | No `scope: "build"` rule | Visible under Maintenance |
+
+This prevents dependency updates from cluttering changelogs while keeping other maintenance commits visible.
+
+---
+
+## Extra-Files {#extra-files}
+
+Track versions in arbitrary files using the `extra-files` configuration:
+
+```json
+{
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "extra-files": [
+        {
+          "type": "generic",
+          "path": "README.md",
+          "glob": false
+        },
+        {
+          "type": "generic",
+          "path": "CONTRIBUTING.md",
+          "glob": false
+        }
+      ]
+    }
+  }
+}
+```
+
+### Version Annotation
+
+Files must contain the `x-release-please-version` annotation:
+
+```markdown
+---
+title: Contributing Guidelines
+version: 2.5.5 # x-release-please-version
+---
+```
+
+Release-please finds this comment and updates the version number on the same line.
+
+### Use Cases
+
+| Use Case | File | Annotation |
+|----------|------|------------|
+| Documentation version | `README.md` | `Version: 1.0.0 # x-release-please-version` |
+| Distributed guidelines | `CONTRIBUTING.md` | `version: 1.0.0 # x-release-please-version` |
+| API version header | `openapi.yaml` | `version: '1.0.0' # x-release-please-version` |
+
+!!! warning "Distribution Side Effects"
+
+    When extra-files are distributed to other repositories, version bumps
+    trigger file changes. Use [content comparison](../work-avoidance/content-comparison.md)
+    to avoid creating PRs for version-only changes.
+
+---
+
+## Package Limitations
+
+Release-please packages are **directory-based**. Each package path must point to a directory, not a single file.
+
+### What Doesn't Work
+
+```json
+{
+  "packages": {
+    ".": { "release-type": "simple" },
+    "CONTRIBUTING.md": {
+      "release-type": "simple",
+      "component": "contributing"
+    }
+  }
+}
+```
+
+This fails because `CONTRIBUTING.md` is a file, not a directory.
+
+### Why This Limitation Exists
+
+1. **Changelogs need location** - `CHANGELOG.md` must live somewhere
+2. **Version files need context** - `package.json`, `Chart.yaml` exist in directories
+3. **Monorepos are directories** - Each package is a self-contained unit
+
+### The Solution
+
+Use `extra-files` to track versions in single files:
+
+```json
+{
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "extra-files": [
+        { "type": "generic", "path": "CONTRIBUTING.md", "glob": false }
+      ]
+    }
+  }
+}
+```
+
+The file shares the parent package's version. For independent versioning of single files, consider a directory wrapper or a different tool.
+
+---
+
+## Schema Validation
+
+Always validate configuration against the official schema:
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
+```
+
+This catches invalid options immediately. Options like `release-name` don't exist—the schema prevents wasted debugging time.
+
 ---
 
 ## Workflow Integration
@@ -321,8 +462,19 @@ This naming is important for [workflow triggers](workflow-triggers.md).
 
 ---
 
+## Related
+
+- [Content Comparison](../work-avoidance/content-comparison.md) - Skip version-only changes in distributed files
+- [Workflow Triggers](workflow-triggers.md) - GitHub App token for PR events
+- [Change Detection](change-detection.md) - Skip unnecessary builds
+
+---
+
 ## References
 
 - [Release-please Action](https://github.com/marketplace/actions/release-please-action) - GitHub Marketplace
-- [Release-please repository](https://github.com/googleapis/release-please) - googleapis
-- [Conventional Commits](https://www.conventionalcommits.org/) - Specification
+- [Release-please Repository](https://github.com/googleapis/release-please) - googleapis
+- [Manifest Releaser Documentation](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md) - Monorepo configuration
+- [Customizing Release-Please](https://github.com/googleapis/release-please/blob/main/docs/customizing.md) - Extra-files and version annotations
+- [Configuration Schema](https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json) - JSON schema for validation
+- [Conventional Commits](https://www.conventionalcommits.org/) - Commit message specification

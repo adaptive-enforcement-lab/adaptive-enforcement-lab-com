@@ -159,6 +159,11 @@ nav:
                   - Change Detection: operator-manual/github-actions/use-cases/release-pipelines/change-detection.md
                   - Workflow Triggers: operator-manual/github-actions/use-cases/release-pipelines/workflow-triggers.md
                   - Protected Branches: operator-manual/github-actions/use-cases/release-pipelines/protected-branches.md
+              - Work Avoidance:
+                  - operator-manual/github-actions/use-cases/work-avoidance/index.md
+                  - Content Comparison: operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md
+                  - Path Filtering: operator-manual/github-actions/use-cases/work-avoidance/path-filtering.md
+                  - Cache-Based Skip: operator-manual/github-actions/use-cases/work-avoidance/cache-based-skip.md
   - Developer Guide:
       - developer-guide/index.md
       - Engineering Practices:

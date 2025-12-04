@@ -33,13 +33,14 @@ An automated distribution workflow that:
 
 ## Patterns Applied
 
-This workflow implements patterns from the [Developer Guide](../../../../developer-guide/index.md):
+This workflow implements patterns from the [Developer Guide](../../../../developer-guide/index.md) and [Work Avoidance](../work-avoidance/index.md):
 
 | Pattern | Purpose |
 |---------|---------|
 | [Three-Stage Design](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md) | Separates discovery, execution, and reporting |
 | [Matrix Distribution](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution.md) | Parallelizes operations with conditional logic |
 | [Idempotency](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) | Ensures safe reruns after partial failures |
+| [Content Comparison](../work-avoidance/content-comparison.md) | Skips version-only changes |
 
 ---
 

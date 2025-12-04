@@ -27,7 +27,12 @@ git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
 
 ### Change Detection: Check-Before-Act {#change_detection}
 
-Uses [check-before-act](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/check-before-act.md) to avoid empty commits:
+Uses [check-before-act](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/check-before-act.md) to avoid empty commits.
+
+!!! tip "Content-Level Filtering"
+
+    For smarter detection that ignores version-only changes, see
+    [Content Comparison](../work-avoidance/content-comparison.md).
 
 ```yaml
 - name: Check for changes
@@ -96,3 +101,11 @@ Matrix jobs processing 40 repositories might fail on job 37 due to rate limiting
 3. Jobs 37-40 retry and succeed
 
 Without idempotency, you'd need to manually identify which repos succeeded and run only the failures.
+
+---
+
+## Related
+
+- [Content Comparison](../work-avoidance/content-comparison.md) - Skip version-only changes
+- [Work Avoidance Patterns](../work-avoidance/index.md) - Skip unnecessary work entirely
+- [Idempotency Patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) - Theory and decision matrix
