@@ -109,13 +109,19 @@ Kubernetes compares desired state to current state and reconciles. Create if mis
 
 !!! tip "Declarative Tools Are Upsert"
 
-    Tools like `kubectl apply`, `terraform apply`, and Ansible playbooks are all built around upsert semantics. Declare desired state, let the tool reconcile.
+    Tools like `kubectl apply`, Crossplane compositions, and Ansible playbooks are all built around upsert semantics. Declare desired state, let the tool reconcile.
 
-### Terraform (Infrastructure Upsert)
+### Crossplane (Infrastructure Upsert)
 
-```bash
-# Terraform plan + apply is declarative upsert at infrastructure scale
-terraform apply -auto-approve
+```yaml
+# Crossplane compositions are declarative upsert for cloud resources
+apiVersion: storage.gcp.crossplane.io/v1beta1
+kind: Bucket
+metadata:
+  name: my-bucket
+spec:
+  forProvider:
+    location: US
 ```
 
 ---

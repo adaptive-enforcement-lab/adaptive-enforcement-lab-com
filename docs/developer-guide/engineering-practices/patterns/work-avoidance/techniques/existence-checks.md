@@ -88,7 +88,7 @@ else
 fi
 ```
 
-### Cloud Resources (AWS S3)
+### Cloud Resources (GCS)
 
 ```go
 package main
@@ -98,30 +98,24 @@ import (
     "errors"
     "log"
 
-    "github.com/aws/aws-sdk-go-v2/service/s3"
-    "github.com/aws/aws-sdk-go-v2/service/s3/types"
+    "cloud.google.com/go/storage"
 )
 
-func ensureBucket(ctx context.Context, client *s3.Client, name, region string) error {
-    _, err := client.HeadBucket(ctx, &s3.HeadBucketInput{
-        Bucket: &name,
-    })
+func ensureBucket(ctx context.Context, client *storage.Client, projectID, bucketName string) error {
+    bucket := client.Bucket(bucketName)
+    _, err := bucket.Attrs(ctx)
     if err == nil {
-        log.Printf("Bucket %s exists", name)
+        log.Printf("Bucket %s exists", bucketName)
         return nil
     }
 
     // Check if error is "not found"
-    var notFound *types.NotFound
-    if !errors.As(err, &notFound) {
+    if !errors.Is(err, storage.ErrBucketNotExist) {
         return err // Some other error
     }
 
     // Bucket doesn't exist, create it
-    _, err = client.CreateBucket(ctx, &s3.CreateBucketInput{
-        Bucket: &name,
-    })
-    return err
+    return bucket.Create(ctx, projectID, nil)
 }
 ```
 
@@ -135,10 +129,10 @@ func ensureBucket(ctx context.Context, client *s3.Client, name, region string) e
 | GitHub | PR | `gh pr list --head X --json number` |
 | GitHub | Issue | `gh issue list --search "title"` |
 | Kubernetes | Any | `kubectl get TYPE NAME` |
-| AWS S3 | Bucket | `HeadBucket()` |
-| AWS EC2 | Instance | `DescribeInstances(Filters=...)` |
-| Docker | Image | `docker image inspect` |
-| Docker | Container | `docker container inspect` |
+| GCS | Bucket | `bucket.Attrs()` |
+| GCE | Instance | `instances.Get()` |
+| OCI | Image | `crane manifest IMAGE` |
+| OCI | Container | `crictl inspect` |
 
 ---
 

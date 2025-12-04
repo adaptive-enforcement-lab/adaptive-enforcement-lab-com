@@ -89,10 +89,10 @@ cacheKey := fmt.Sprintf("build-%s-%s-%s", sourceHash, depsHash, configHash)
   run: npm run build
 ```
 
-### Docker Layer Caching
+### OCI Layer Caching
 
 ```dockerfile
-# Order matters - less-changing layers first
+# Order matters - less-changing layers first (OCI/Containerfile)
 FROM node:20-alpine
 
 # Dependencies change less often than source

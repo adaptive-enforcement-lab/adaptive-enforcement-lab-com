@@ -61,7 +61,7 @@ flowchart TD
 | Scenario | Recommended Technique |
 |----------|----------------------|
 | File distribution with version bumps | [Volatile Field Exclusion](volatile-field-exclusion.md) |
-| Docker image rebuilds | [Content Hashing](content-hashing.md) |
+| OCI image rebuilds | [Content Hashing](content-hashing.md) |
 | PR/branch creation | [Existence Checks](existence-checks.md) |
 | Dependency installation | [Cache-Based Skip](cache-based-skip.md) |
 | API state synchronization | [Content Hashing](content-hashing.md) |
