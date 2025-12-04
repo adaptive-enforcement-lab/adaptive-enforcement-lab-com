@@ -175,7 +175,9 @@ Control how commits appear in changelogs:
 
 ## Workflow Integration
 
-### Basic Workflow
+### Recommended: GitHub App Token
+
+Use a GitHub App token to ensure release-please PRs trigger build pipelines correctly. See [Workflow Triggers](workflow-triggers.md) for why this matters.
 
 ```yaml
 name: Release Please
@@ -195,13 +197,30 @@ jobs:
       backend_release: ${{ steps.release.outputs['packages/backend--release_created'] }}
       frontend_release: ${{ steps.release.outputs['packages/frontend--release_created'] }}
     steps:
+      - name: Generate App Token
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.CORE_APP_ID }}
+          private-key: ${{ secrets.CORE_APP_PRIVATE_KEY }}
+          owner: your-org
+
       - uses: googleapis/release-please-action@v4
         id: release
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
           config-file: release-please-config.json
           manifest-file: .release-please-manifest.json
 ```
+
+For GitHub App setup, see [GitHub App Setup](../../github-app-setup/index.md).
+
+!!! warning "Why Not GITHUB_TOKEN?"
+
+    Using the default `GITHUB_TOKEN` prevents release-please PRs from
+    triggering build pipelines. This is a [GitHub security measure](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow)
+    to prevent infinite loops. GitHub Apps are treated as separate actors
+    and don't have this limitation.
 
 ### Output Reference
 
