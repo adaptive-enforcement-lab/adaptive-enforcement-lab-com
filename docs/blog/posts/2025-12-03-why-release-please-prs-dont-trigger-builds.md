@@ -14,6 +14,12 @@ slug: why-release-please-prs-dont-trigger-builds
 
 # Why Release-Please PRs Don't Trigger Your Builds
 
+!!! warning "Update: There's a Better Way"
+
+    The dual-trigger pattern described below is a **workaround**, not the real fix.
+    See [The Real Fix for Release-Please Triggers](./2025-12-04-the-real-fix-for-release-please-triggers.md)
+    for the proper solution using GitHub App tokens.
+
 The release-please PR looked perfect. Clean changelog. Proper version bump. Ready to merge.
 
 One problem: the build pipeline never ran. Branch protection blocked the merge. No required checks had passed, because no checks had started.

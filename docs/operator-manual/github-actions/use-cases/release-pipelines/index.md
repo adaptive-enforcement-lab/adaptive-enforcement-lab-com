@@ -9,32 +9,29 @@ Automated version management, changelog generation, and optimized builds for mon
 This guide covers implementing release automation with:
 
 - **Release-please** for version bumping and changelog generation
+- **GitHub App authentication** for proper workflow triggering
 - **Change detection** to skip unnecessary builds
 - **Cascade rebuilds** when shared dependencies change
-- **Dual-trigger patterns** for automation compatibility
 
 ```mermaid
 flowchart LR
-    subgraph triggers[Triggers]
-        PR[pull_request]
-        Push[push to release-please--**]
+    subgraph release[Release Pipeline]
+        Main[Push to Main] --> AppToken[GitHub App Token]
+        AppToken --> RP[Release-Please]
+        RP --> PR[Creates PR]
     end
 
-    subgraph pipeline[Build Pipeline]
-        DC[Detect Changes]
-        Test[Test]
-        Build[Build Components]
-        Status[Build Status]
+    subgraph build[Build Pipeline]
+        PR -->|pull_request event| DC[Detect Changes]
+        DC --> Test[Test]
+        Test --> Build[Build]
+        Build --> Status[Build Status]
     end
 
-    PR --> DC
-    Push --> DC
-    DC --> Test
-    Test --> Build
-    Build --> Status
-
-    style PR fill:#65d9ef,color:#1b1d1e
-    style Push fill:#65d9ef,color:#1b1d1e
+    style Main fill:#65d9ef,color:#1b1d1e
+    style AppToken fill:#9e6ffe,color:#1b1d1e
+    style RP fill:#9e6ffe,color:#1b1d1e
+    style PR fill:#fd971e,color:#1b1d1e
     style DC fill:#fd971e,color:#1b1d1e
     style Test fill:#9e6ffe,color:#1b1d1e
     style Build fill:#a7e22e,color:#1b1d1e
@@ -51,13 +48,7 @@ Traditional CI/CD pipelines rebuild everything on every commit. In a monorepo wi
 - Longer feedback loops for developers
 - Wasted resources on duplicate work
 
-Additionally, conventional release management requires manual:
-
-- Version bumping in package files
-- Changelog maintenance
-- Git tagging
-
-Release-please automates this based on conventional commits, but introduces a compatibility challenge with standard `pull_request` triggers.
+Additionally, release-please using the default `GITHUB_TOKEN` won't trigger build pipelines on its PRs - a [GitHub security measure](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow) to prevent infinite loops.
 
 ---
 
@@ -65,10 +56,10 @@ Release-please automates this based on conventional commits, but introduces a co
 
 A modular pipeline architecture that:
 
-1. Detects which components changed
-2. Only builds affected components
-3. Automatically versions and releases based on commits
-4. Works with protected branches and automation tools
+1. Uses a **GitHub App token** for release-please (triggers `pull_request` events correctly)
+2. Detects which components changed
+3. Only builds affected components
+4. Automatically versions and releases based on commits
 
 ---
 
@@ -76,10 +67,19 @@ A modular pipeline architecture that:
 
 | Guide | Description |
 |-------|-------------|
-| [Release-Please Configuration](release-please-setup.md) | Setting up automated versioning |
+| [Release-Please Configuration](release-please-setup.md) | Setting up automated versioning with GitHub App |
 | [Change Detection](change-detection.md) | Detecting and cascading changes |
-| [Workflow Triggers](workflow-triggers.md) | GITHUB_TOKEN limitations and workarounds |
+| [Workflow Triggers](workflow-triggers.md) | GitHub App token vs GITHUB_TOKEN |
 | [Protected Branches](protected-branches.md) | Working with branch protection rules |
+
+---
+
+## Prerequisites
+
+Before implementing release pipelines, set up a GitHub App for your organization:
+
+- [GitHub App Setup](../../github-app-setup/index.md) - Create and configure the App
+- [Token Generation](../../actions-integration/token-generation.md) - Generate tokens in workflows
 
 ---
 
@@ -87,7 +87,7 @@ A modular pipeline architecture that:
 
 ### Build Pipeline
 
-Runs on pull requests and release-please branches:
+Runs on pull requests (including release-please PRs with GitHub App token):
 
 ```mermaid
 flowchart TD
@@ -139,7 +139,8 @@ Runs on main branch pushes:
 
 ```mermaid
 flowchart LR
-    Main[Push to Main] --> RP[Release Please]
+    Main[Push to Main] --> Token[Generate App Token]
+    Token --> RP[Release Please]
     RP --> DC[Detect Changes]
     DC --> Test[Test]
     DC --> Build[Build]
@@ -147,6 +148,7 @@ flowchart LR
     Scan --> Deploy[Deploy Signal]
 
     style Main fill:#65d9ef,color:#1b1d1e
+    style Token fill:#9e6ffe,color:#1b1d1e
     style RP fill:#9e6ffe,color:#1b1d1e
     style DC fill:#fd971e,color:#1b1d1e
     style Test fill:#9e6ffe,color:#1b1d1e
@@ -159,14 +161,15 @@ flowchart LR
 
 ## Quick Start
 
-1. [Configure release-please](release-please-setup.md) for your repository
-2. [Set up change detection](change-detection.md) for your components
-3. [Add dual triggers](workflow-triggers.md) for automation compatibility
+1. [Set up GitHub App](../../github-app-setup/index.md) for your organization
+2. [Configure release-please](release-please-setup.md) with App token
+3. [Set up change detection](change-detection.md) for your components
 4. [Handle protected branches](protected-branches.md) if applicable
 
 ---
 
 ## Related
 
-- [Idempotency Patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) for making reruns safe
-- [Three-Stage Design](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md) for complex workflows
+- [GitHub App Setup](../../github-app-setup/index.md) - Machine identity for automation
+- [Idempotency Patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) - Making reruns safe
+- [Three-Stage Design](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md) - Complex workflows
