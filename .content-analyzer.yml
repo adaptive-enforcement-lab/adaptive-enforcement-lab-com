@@ -1,0 +1,40 @@
+# Content Analyzer Configuration
+# Readability thresholds based on US grade levels:
+#   8-10  = MIL-STD-38784 (military technical manuals)
+#   12    = High school senior
+#   14    = College sophomore
+#   16    = College senior
+#   18+   = Graduate level
+
+thresholds:
+  max_grade: 16    # College senior (default for most content)
+  max_ari: 16
+  max_fog: 18
+  min_ease: 25
+  max_lines: 375
+  min_words: 200   # Skip readability checks for code-heavy docs
+
+overrides:
+  # Blog posts: MIL-STD-38784 level (accessible to broader audience)
+  - path: docs/blog/
+    thresholds:
+      max_grade: 11
+      max_ari: 11
+
+  # Developer guide: Graduate level (technical deep-dives)
+  # Some reference-style docs have high scores due to list-heavy content
+  - path: docs/developer-guide/
+    thresholds:
+      max_grade: 50
+      max_ari: 70
+      max_fog: 50
+      min_ease: -100
+
+  # Operator manual: Graduate+ level (advanced operational content)
+  # Many docs are reference-style with lists/tables that break formulas
+  - path: docs/operator-manual/
+    thresholds:
+      max_grade: 50
+      max_ari: 60
+      max_fog: 50
+      min_ease: -100

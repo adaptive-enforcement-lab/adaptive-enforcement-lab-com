@@ -17,7 +17,7 @@ repos:
         exclude: ^(CHANGELOG|CONTRIBUTING)\.md$|^tools/
       - id: content-analyzer
         name: check documentation readability
-        entry: bash -c 'cd tools/content-analyzer && go run ./cmd/content-analyzer --check ../../docs/'
+        entry: bash -c 'cd tools/content-analyzer && go run ./cmd/content-analyzer --check --config ../../.content-analyzer.yml ../../docs/'
         language: system
         files: ^docs/.*\.md$
         pass_filenames: false

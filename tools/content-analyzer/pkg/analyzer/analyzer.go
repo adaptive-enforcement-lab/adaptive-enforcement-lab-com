@@ -5,6 +5,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/adaptive-enforcement-lab/content-analyzer/pkg/config"
 	"github.com/adaptive-enforcement-lab/content-analyzer/pkg/markdown"
 	"github.com/darkliquid/textstats"
 )
@@ -12,19 +13,37 @@ import (
 // Analyzer processes markdown files and computes metrics.
 type Analyzer struct {
 	Thresholds Thresholds
+	Config     *config.Config
 }
 
 // New creates a new Analyzer with default thresholds.
 func New() *Analyzer {
 	return &Analyzer{
 		Thresholds: DefaultThresholds(),
+		Config:     config.DefaultConfig(),
 	}
 }
 
 // NewWithThresholds creates an Analyzer with custom thresholds.
+// Deprecated: Use NewWithConfig instead.
 func NewWithThresholds(t Thresholds) *Analyzer {
 	return &Analyzer{
 		Thresholds: t,
+		Config:     config.DefaultConfig(),
+	}
+}
+
+// NewWithConfig creates an Analyzer with a configuration.
+func NewWithConfig(cfg *config.Config) *Analyzer {
+	return &Analyzer{
+		Config: cfg,
+		Thresholds: Thresholds{
+			MaxFleschKincaidGrade: cfg.Thresholds.MaxGrade,
+			MaxARI:                cfg.Thresholds.MaxARI,
+			MaxGunningFog:         cfg.Thresholds.MaxFog,
+			MinFleschReadingEase:  cfg.Thresholds.MinEase,
+			MaxLines:              cfg.Thresholds.MaxLines,
+		},
 	}
 }
 
@@ -120,19 +139,48 @@ func (a *Analyzer) AnalyzeDirectory(dir string) ([]*Result, error) {
 
 // checkStatus determines pass/fail based on thresholds.
 func (a *Analyzer) checkStatus(r *Result) string {
-	if r.Readability.FleschKincaidGrade > a.Thresholds.MaxFleschKincaidGrade {
-		return "fail"
+	// Get path-specific thresholds if config is available
+	var maxGrade, maxARI, maxFog, minEase float64
+	var maxLines, minWords int
+
+	if a.Config != nil {
+		t := a.Config.ThresholdsForPath(r.File)
+		maxGrade = t.MaxGrade
+		maxARI = t.MaxARI
+		maxFog = t.MaxFog
+		minEase = t.MinEase
+		maxLines = t.MaxLines
+		minWords = t.MinWords
+	} else {
+		maxGrade = a.Thresholds.MaxFleschKincaidGrade
+		maxARI = a.Thresholds.MaxARI
+		maxFog = a.Thresholds.MaxGunningFog
+		minEase = a.Thresholds.MinFleschReadingEase
+		maxLines = a.Thresholds.MaxLines
+		minWords = 100 // Default minimum
 	}
-	if r.Readability.ARI > a.Thresholds.MaxARI {
-		return "fail"
+
+	// Skip readability checks for very short/code-heavy documents
+	// Readability formulas produce unreliable results with sparse prose
+	skipReadability := minWords > 0 && r.Structural.Words < minWords
+
+	if !skipReadability {
+		if r.Readability.FleschKincaidGrade > maxGrade {
+			return "fail"
+		}
+		if r.Readability.ARI > maxARI {
+			return "fail"
+		}
+		if r.Readability.GunningFog > maxFog {
+			return "fail"
+		}
+		if r.Readability.FleschReadingEase < minEase {
+			return "fail"
+		}
 	}
-	if r.Readability.GunningFog > a.Thresholds.MaxGunningFog {
-		return "fail"
-	}
-	if r.Readability.FleschReadingEase < a.Thresholds.MinFleschReadingEase {
-		return "fail"
-	}
-	if a.Thresholds.MaxLines > 0 && r.Structural.Lines > a.Thresholds.MaxLines {
+
+	// Line limit always applies
+	if maxLines > 0 && r.Structural.Lines > maxLines {
 		return "fail"
 	}
 	return "pass"

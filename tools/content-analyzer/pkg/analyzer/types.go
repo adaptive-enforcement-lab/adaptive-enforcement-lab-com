@@ -49,6 +49,7 @@ type Composition struct {
 }
 
 // Thresholds defines limits for pass/fail checks.
+// Deprecated: Use config.Thresholds instead.
 type Thresholds struct {
 	MaxFleschKincaidGrade float64
 	MaxARI                float64
@@ -58,12 +59,13 @@ type Thresholds struct {
 }
 
 // DefaultThresholds returns sensible defaults for technical documentation.
+// Deprecated: Use config.DefaultConfig instead.
 func DefaultThresholds() Thresholds {
 	return Thresholds{
-		MaxFleschKincaidGrade: 14.0,
-		MaxARI:                14.0,
-		MaxGunningFog:         16.0,
-		MinFleschReadingEase:  30.0,
+		MaxFleschKincaidGrade: 16.0, // College senior level
+		MaxARI:                16.0,
+		MaxGunningFog:         18.0,
+		MinFleschReadingEase:  25.0,
 		MaxLines:              375,
 	}
 }
