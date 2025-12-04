@@ -143,21 +143,18 @@ jobs:
 
   deploy-docs:
     name: Deploy Documentation
-    needs: [detect-changes, analyze-docs]
+    needs: [release-please, detect-changes, analyze-docs]
     if: |
       always() && !cancelled() &&
       (needs.analyze-docs.result == 'success' || needs.analyze-docs.result == 'skipped')
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -176,20 +173,34 @@ jobs:
             mkdocs-material-
 
       - name: Install dependencies
-        run: pip install mkdocs-material pillow cairosvg mkdocs-rss-plugin
+        run: pip install -r requirements.txt
 
-      - name: Build site
-        run: mkdocs build
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: site/
-          retention-days: 1
+      - name: Get version info
+        id: version
+        run: |
+          if [ "${{ needs.release-please.outputs.site_release_created }}" = "true" ]; then
+            echo "version=${{ needs.release-please.outputs.site_version }}" >> "$GITHUB_OUTPUT"
+            echo "is_release=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=dev" >> "$GITHUB_OUTPUT"
+            echo "is_release=false" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy versioned docs (release)
+        if: steps.version.outputs.is_release == 'true'
+        run: |
+          mike deploy --push --update-aliases ${{ steps.version.outputs.version }} stable latest
+          mike set-default --push stable
+
+      - name: Deploy dev docs (non-release)
+        if: steps.version.outputs.is_release == 'false'
+        run: |
+          mike deploy --push dev
 
   release-status:
     name: Release Status

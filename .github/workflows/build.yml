@@ -64,7 +64,7 @@ jobs:
           python-version: "3.14"
 
       - name: Install dependencies
-        run: pip install mkdocs-material pillow cairosvg mkdocs-rss-plugin
+        run: pip install -r requirements.txt
 
       - name: Build MkDocs (validation)
         run: mkdocs build --strict
