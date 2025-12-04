@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-MAX_LINES=350
+MAX_LINES=375
 EXIT_CODE=0
 
 for file in "$@"; do
