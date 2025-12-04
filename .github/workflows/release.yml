@@ -27,9 +27,9 @@ jobs:
       contents: write
       pull-requests: write
     outputs:
-      site_release_created: ${{ steps.release.outputs['.'--release_created'] }}
-      site_tag_name: ${{ steps.release.outputs['.'--tag_name] }}
-      site_version: ${{ steps.release.outputs['.'--version] }}
+      site_release_created: ${{ steps.release.outputs['.--release_created'] }}
+      site_tag_name: ${{ steps.release.outputs['.--tag_name'] }}
+      site_version: ${{ steps.release.outputs['.--version'] }}
       content_analyzer_release_created: ${{ steps.release.outputs['tools/content-analyzer--release_created'] }}
       content_analyzer_tag_name: ${{ steps.release.outputs['tools/content-analyzer--tag_name'] }}
       content_analyzer_version: ${{ steps.release.outputs['tools/content-analyzer--version'] }}
@@ -44,12 +44,12 @@ jobs:
 
       - name: Output release info
         run: |
-          echo "## Release Please" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Component | Release Created | Version |" >> $GITHUB_STEP_SUMMARY
-          echo "|-----------|-----------------|---------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Site | ${{ steps.release.outputs['.'--release_created'] || 'false' }} | ${{ steps.release.outputs['.'--version] || '-' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Content Analyzer | ${{ steps.release.outputs['tools/content-analyzer--release_created'] || 'false' }} | ${{ steps.release.outputs['tools/content-analyzer--version'] || '-' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "## Release Please" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Release Created | Version |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|-----------------|---------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Site | ${{ steps.release.outputs['.--release_created'] || 'false' }} | ${{ steps.release.outputs['.--version'] || '-' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Analyzer | ${{ steps.release.outputs['tools/content-analyzer--release_created'] || 'false' }} | ${{ steps.release.outputs['tools/content-analyzer--version'] || '-' }} |" >> "$GITHUB_STEP_SUMMARY"
 
   detect-changes:
     name: Detect Changes
@@ -80,13 +80,13 @@ jobs:
 
       - name: Output change detection results
         run: |
-          echo "## Change Detection" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Component | Changed |" >> $GITHUB_STEP_SUMMARY
-          echo "|-----------|---------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Content Analyzer | ${{ steps.changes.outputs.content_analyzer_any_changed }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Force All | ${{ inputs.force_all }} |" >> $GITHUB_STEP_SUMMARY
+          echo "## Change Detection" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Changed |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|---------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Analyzer | ${{ steps.changes.outputs.content_analyzer_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Force All | ${{ inputs.force_all }} |" >> "$GITHUB_STEP_SUMMARY"
 
   build-content-analyzer:
     name: Build Content Analyzer
@@ -135,7 +135,7 @@ jobs:
 
       - name: Analyze documentation
         run: |
-          ./tools/content-analyzer/content-analyzer docs/ --format report >> $GITHUB_STEP_SUMMARY
+          ./tools/content-analyzer/content-analyzer docs/ --format report >> "$GITHUB_STEP_SUMMARY"
 
       - name: Check readability thresholds
         run: |
@@ -165,7 +165,7 @@ jobs:
           python-version: "3.12"
 
       - name: Set cache ID
-        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+        run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
       - name: Cache MkDocs Material
         uses: actions/cache@v4
@@ -199,14 +199,14 @@ jobs:
     steps:
       - name: Check release results
         run: |
-          echo "## Release Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Component | Changed | Result |" >> $GITHUB_STEP_SUMMARY
-          echo "|-----------|---------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Release Please | - | ${{ needs.release-please.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Content Analyzer | ${{ needs.detect-changes.outputs.content_analyzer_changed }} | ${{ needs.build-content-analyzer.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Doc Analysis | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.analyze-docs.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Deploy | - | ${{ needs.deploy-docs.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "## Release Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Changed | Result |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|---------|--------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Release Please | - | ${{ needs.release-please.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Analyzer | ${{ needs.detect-changes.outputs.content_analyzer_changed }} | ${{ needs.build-content-analyzer.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Doc Analysis | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.analyze-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Deploy | - | ${{ needs.deploy-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail if any required job failed
         if: |

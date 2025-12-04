@@ -41,13 +41,13 @@ jobs:
 
       - name: Output change detection results
         run: |
-          echo "## Change Detection" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Component | Changed |" >> $GITHUB_STEP_SUMMARY
-          echo "|-----------|---------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Content Analyzer | ${{ steps.changes.outputs.content_analyzer_any_changed }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Workflows | ${{ steps.changes.outputs.workflows_any_changed }} |" >> $GITHUB_STEP_SUMMARY
+          echo "## Change Detection" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Changed |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|---------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Analyzer | ${{ steps.changes.outputs.content_analyzer_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Workflows | ${{ steps.changes.outputs.workflows_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
 
   lint-docs:
     name: Lint Documentation
@@ -114,7 +114,7 @@ jobs:
 
       - name: Analyze documentation
         run: |
-          ./tools/content-analyzer/content-analyzer docs/ --format report >> $GITHUB_STEP_SUMMARY
+          ./tools/content-analyzer/content-analyzer docs/ --format report >> "$GITHUB_STEP_SUMMARY"
 
       - name: Check readability thresholds
         run: |
@@ -128,13 +128,13 @@ jobs:
     steps:
       - name: Check build results
         run: |
-          echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Component | Changed | Result |" >> $GITHUB_STEP_SUMMARY
-          echo "|-----------|---------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Docs | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.lint-docs.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Content Analyzer | ${{ needs.detect-changes.outputs.content_analyzer_changed }} | ${{ needs.build-content-analyzer.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Doc Analysis | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.analyze-docs.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "## Build Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Changed | Result |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|---------|--------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Docs | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.lint-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Analyzer | ${{ needs.detect-changes.outputs.content_analyzer_changed }} | ${{ needs.build-content-analyzer.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Doc Analysis | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.analyze-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail if any required job failed
         if: |
