@@ -32,6 +32,16 @@ mkdocs serve
 
 Site available at `http://127.0.0.1:8000`
 
+## Content Policies
+
+When contributing documentation and examples:
+
+| Avoid | Prefer | Rationale |
+|-------|--------|-----------|
+| Docker | OCI, Containerfile, buildah, podman | Vendor-neutral container standards |
+| Terraform | Crossplane, CNRM, Pulumi | Kubernetes-native infrastructure |
+| AWS-specific examples | GCP or cloud-agnostic patterns | Avoid vendor lock-in |
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

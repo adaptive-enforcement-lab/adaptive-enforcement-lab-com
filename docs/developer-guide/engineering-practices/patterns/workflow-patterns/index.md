@@ -15,7 +15,7 @@ Structural patterns for building workflows that scale.
 | Pattern | Problem | Solution |
 |---------|---------|----------|
 | [Three-Stage Design](three-stage-design.md) | Complex workflows become tangled | Separate discovery, execution, and reporting |
-| [Matrix Distribution](matrix-distribution.md) | Sequential processing is slow | Parallelize with dynamic matrices |
+| [Matrix Distribution](matrix-distribution/index.md) | Sequential processing is slow | Parallelize with dynamic matrices |
 
 ---
 

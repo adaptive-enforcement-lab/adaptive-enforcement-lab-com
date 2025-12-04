@@ -8,6 +8,12 @@ repos:
         files: \.md$
   - repo: local
     hooks:
+      - id: check-markdown-length
+        name: check markdown length
+        entry: scripts/check-markdown-length.sh
+        language: script
+        files: \.md$
+        exclude: ^(CHANGELOG|CONTRIBUTING)\.md$
       - id: mkdocs-build
         name: mkdocs build
         entry: bash -c 'if [ -f .venv/bin/mkdocs ]; then .venv/bin/mkdocs build --strict; else mkdocs build --strict; fi'

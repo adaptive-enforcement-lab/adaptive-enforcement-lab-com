@@ -255,7 +255,7 @@ This post covers the core problem and fix. For complete implementation guides:
 
 | Guide | Description |
 |-------|-------------|
-| [Release-Please Setup](../../operator-manual/github-actions/use-cases/release-pipelines/release-please-setup.md) | Configuration, changelog sections, monorepo patterns |
+| [Release-Please Setup](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/index.md) | Configuration, changelog sections, monorepo patterns |
 | [Change Detection](../../operator-manual/github-actions/use-cases/release-pipelines/change-detection.md) | Skip unnecessary builds, cascade dependencies |
 | [Workflow Triggers](../../operator-manual/github-actions/use-cases/release-pipelines/workflow-triggers.md) | GITHUB_TOKEN limitations, alternative approaches |
 | [Protected Branches](../../operator-manual/github-actions/use-cases/release-pipelines/protected-branches.md) | Working with branch protection rules |

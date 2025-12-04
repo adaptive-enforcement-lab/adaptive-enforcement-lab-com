@@ -67,7 +67,7 @@ A modular pipeline architecture that:
 
 | Guide | Description |
 |-------|-------------|
-| [Release-Please Configuration](release-please-setup.md) | Setting up automated versioning with GitHub App |
+| [Release-Please Configuration](release-please/index.md) | Setting up automated versioning with GitHub App |
 | [Change Detection](change-detection.md) | Detecting and cascading changes |
 | [Workflow Triggers](workflow-triggers.md) | GitHub App token vs GITHUB_TOKEN |
 | [Protected Branches](protected-branches.md) | Working with branch protection rules |
@@ -162,7 +162,7 @@ flowchart LR
 ## Quick Start
 
 1. [Set up GitHub App](../../github-app-setup/index.md) for your organization
-2. [Configure release-please](release-please-setup.md) with App token
+2. [Configure release-please](release-please/index.md) with App token
 3. [Set up change detection](change-detection.md) for your components
 4. [Handle protected branches](protected-branches.md) if applicable
 

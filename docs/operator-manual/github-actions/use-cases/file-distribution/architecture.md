@@ -10,7 +10,7 @@ This workflow implements the [Three-Stage Design][three-stage] pattern
 with [Matrix Distribution][matrix] for parallel processing.
 
 [three-stage]: ../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md
-[matrix]: ../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution.md
+[matrix]: ../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/index.md
 
 ## Workflow Overview
 

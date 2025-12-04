@@ -244,4 +244,4 @@ Configure bypass permissions carefully in repository settings.
 ## Related
 
 - [Workflow Triggers](workflow-triggers.md) - Handle automation events
-- [Release-Please Setup](release-please-setup.md) - Configure release automation
+- [Release-Please Setup](release-please/index.md) - Configure release automation

@@ -179,7 +179,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -f Dockerfile.backend .
+      - run: buildah bud -f Containerfile.backend .
 ```
 
 ---
@@ -289,9 +289,9 @@ Separate infrastructure from application code:
 
 ```yaml
 files_yaml: |
-  terraform:
-    - infrastructure/**/*.tf
-    - infrastructure/**/*.tfvars
+  crossplane:
+    - infrastructure/**/*.yaml
+    - compositions/**/*.yaml
   kubernetes:
     - k8s/**/*.yaml
     - charts/**
