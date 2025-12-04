@@ -36,7 +36,7 @@ Examples:
 		RunE: run,
 	}
 
-	rootCmd.Flags().StringVarP(&formatFlag, "format", "f", "table", "Output format: table, json")
+	rootCmd.Flags().StringVarP(&formatFlag, "format", "f", "table", "Output format: table, json, markdown, summary")
 	rootCmd.Flags().BoolVarP(&verboseFlag, "verbose", "v", false, "Show all metrics")
 	rootCmd.Flags().BoolVar(&checkFlag, "check", false, "Check against thresholds (exit 1 on failure)")
 	rootCmd.Flags().Float64Var(&maxGradeFlag, "max-grade", 14.0, "Maximum Flesch-Kincaid grade level")
@@ -91,6 +91,10 @@ func run(cmd *cobra.Command, args []string) error {
 		if err := output.JSON(os.Stdout, results); err != nil {
 			return fmt.Errorf("error writing JSON: %w", err)
 		}
+	case "markdown":
+		output.Markdown(os.Stdout, results)
+	case "summary":
+		output.Summary(os.Stdout, results)
 	default:
 		output.Table(os.Stdout, results, verboseFlag)
 	}
