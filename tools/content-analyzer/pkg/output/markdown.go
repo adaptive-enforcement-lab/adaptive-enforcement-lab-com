@@ -4,23 +4,36 @@ import (
 	"fmt"
 	"io"
 	"sort"
+	"strings"
 
 	"github.com/adaptive-enforcement-lab/content-analyzer/pkg/analyzer"
 )
 
-// Markdown writes results as a GitHub-flavored markdown table.
+// cleanPath strips relative path prefixes for cleaner display.
+func cleanPath(path string) string {
+	// Strip leading ../ sequences
+	for strings.HasPrefix(path, "../") {
+		path = path[3:]
+	}
+	// Strip leading ./
+	path = strings.TrimPrefix(path, "./")
+	return path
+}
+
+// Markdown writes full results as a GitHub-flavored markdown report.
 func Markdown(w io.Writer, results []*analyzer.Result) {
-	fmt.Fprintln(w, "## Documentation Readability Report")
-	fmt.Fprintln(w)
-
-	// Summary first
 	passed, failed, totalWords, totalLines := aggregateCounts(results)
-	fmt.Fprintf(w, "**%d files** analyzed | **%d passed** | **%d failed** | %d words | %d lines\n\n",
-		len(results), passed, failed, totalWords, totalLines)
 
-	// Table header
-	fmt.Fprintln(w, "| File | Lines | Words | FK Grade | ARI | Flesch | Status |")
-	fmt.Fprintln(w, "|------|------:|------:|---------:|----:|-------:|:------:|")
+	// Summary table
+	fmt.Fprintln(w, "| Metric | Value |")
+	fmt.Fprintln(w, "|--------|------:|")
+	fmt.Fprintf(w, "| Files | %d |\n", len(results))
+	fmt.Fprintf(w, "| Passed | %d |\n", passed)
+	fmt.Fprintf(w, "| Failed | %d |\n", failed)
+	fmt.Fprintf(w, "| Words | %d |\n", totalWords)
+	fmt.Fprintf(w, "| Lines | %d |\n", totalLines)
+	fmt.Fprintf(w, "| Reading time | %d min |\n", totalWords/200)
+	fmt.Fprintln(w)
 
 	// Sort by status (failed first), then by file path
 	sorted := make([]*analyzer.Result, len(results))
@@ -32,74 +45,151 @@ func Markdown(w io.Writer, results []*analyzer.Result) {
 		return sorted[i].File < sorted[j].File
 	})
 
+	// Results table
+	fmt.Fprintln(w, "| Status | File | Lines | Read | FK Grade | ARI | Flesch |")
+	fmt.Fprintln(w, "|:------:|------|------:|-----:|---------:|----:|-------:|")
+
 	for _, r := range sorted {
 		status := "✅"
 		if r.Status == "fail" {
 			status = "❌"
 		}
-		fmt.Fprintf(w, "| `%s` | %d | %d | %.1f | %.1f | %.1f | %s |\n",
-			r.File,
+		readTime := readingTime(r.Structural.Words)
+		fmt.Fprintf(w, "| %s | %s | %d | %s | %.1f | %.1f | %.1f |\n",
+			status,
+			cleanPath(r.File),
 			r.Structural.Lines,
-			r.Structural.Words,
+			readTime,
 			r.Readability.FleschKincaidGrade,
 			r.Readability.ARI,
 			r.Readability.FleschReadingEase,
-			status,
 		)
 	}
+}
+
+// readingTime formats word count as reading time estimate.
+func readingTime(words int) string {
+	minutes := words / 200
+	if minutes < 1 {
+		return "<1m"
+	}
+	return fmt.Sprintf("%dm", minutes)
 }
 
 // Summary writes only an aggregate summary in markdown format.
 func Summary(w io.Writer, results []*analyzer.Result) {
 	passed, failed, totalWords, totalLines := aggregateCounts(results)
 
-	fmt.Fprintln(w, "## Documentation Quality Summary")
-	fmt.Fprintln(w)
-
 	// Overall status
 	if failed == 0 {
-		fmt.Fprintln(w, "✅ **All documentation meets readability standards**")
+		fmt.Fprintln(w, "✅ **All files pass readability checks**")
 	} else {
-		fmt.Fprintf(w, "❌ **%d file(s) failed readability checks**\n", failed)
+		fmt.Fprintf(w, "❌ **%d file(s) failed**\n", failed)
 	}
 	fmt.Fprintln(w)
 
-	// Stats table
+	// Summary table
 	fmt.Fprintln(w, "| Metric | Value |")
 	fmt.Fprintln(w, "|--------|------:|")
-	fmt.Fprintf(w, "| Files analyzed | %d |\n", len(results))
+	fmt.Fprintf(w, "| Files | %d |\n", len(results))
 	fmt.Fprintf(w, "| Passed | %d |\n", passed)
 	fmt.Fprintf(w, "| Failed | %d |\n", failed)
-	fmt.Fprintf(w, "| Total words | %d |\n", totalWords)
-	fmt.Fprintf(w, "| Total lines | %d |\n", totalLines)
-	fmt.Fprintf(w, "| Avg reading time | %d min |\n", totalWords/200)
+	fmt.Fprintf(w, "| Words | %d |\n", totalWords)
+	fmt.Fprintf(w, "| Lines | %d |\n", totalLines)
+	fmt.Fprintf(w, "| Reading time | %d min |\n", totalWords/200)
 	fmt.Fprintln(w)
 
 	// Failed files list if any
 	if failed > 0 {
-		fmt.Fprintln(w, "### Files Requiring Attention")
+		fmt.Fprintln(w, "### Failed Files")
 		fmt.Fprintln(w)
-		fmt.Fprintln(w, "| File | FK Grade | Issue |")
-		fmt.Fprintln(w, "|------|:--------:|-------|")
+		fmt.Fprintln(w, "| File | FK Grade | ARI | Issue |")
+		fmt.Fprintln(w, "|------|:--------:|:---:|-------|")
 
 		for _, r := range results {
 			if r.Status == "fail" {
 				issue := identifyIssue(r)
-				fmt.Fprintf(w, "| `%s` | %.1f | %s |\n", r.File, r.Readability.FleschKincaidGrade, issue)
+				fmt.Fprintf(w, "| %s | %.1f | %.1f | %s |\n",
+					cleanPath(r.File),
+					r.Readability.FleschKincaidGrade,
+					r.Readability.ARI,
+					issue,
+				)
 			}
 		}
+		fmt.Fprintln(w)
 	}
 
 	// Readability distribution
-	fmt.Fprintln(w)
-	fmt.Fprintln(w, "### Readability Distribution")
+	fmt.Fprintln(w, "### Distribution")
 	fmt.Fprintln(w)
 	dist := calculateDistribution(results)
-	fmt.Fprintln(w, "| Level | Count | Percentage |")
-	fmt.Fprintln(w, "|-------|------:|-----------:|")
+	fmt.Fprintln(w, "| Level | Count | % |")
+	fmt.Fprintln(w, "|-------|------:|--:|")
 	for _, d := range dist {
-		fmt.Fprintf(w, "| %s | %d | %.0f%% |\n", d.Label, d.Count, d.Percent)
+		fmt.Fprintf(w, "| %s | %d | %.0f |\n", d.Label, d.Count, d.Percent)
 	}
+}
+
+// Report writes a standalone markdown report suitable for job summaries.
+// This is the recommended format for CI integration.
+func Report(w io.Writer, results []*analyzer.Result) {
+	passed, failed, totalWords, totalLines := aggregateCounts(results)
+
+	fmt.Fprintln(w, "## Documentation Readability")
+	fmt.Fprintln(w)
+
+	// Status badge
+	if failed == 0 {
+		fmt.Fprintln(w, "✅ All files pass")
+	} else {
+		fmt.Fprintf(w, "❌ %d/%d failed\n", failed, len(results))
+	}
+	fmt.Fprintln(w)
+
+	// Summary table
+	fmt.Fprintln(w, "| Metric | Value |")
+	fmt.Fprintln(w, "|--------|------:|")
+	fmt.Fprintf(w, "| Files | %d |\n", len(results))
+	fmt.Fprintf(w, "| Passed | %d |\n", passed)
+	fmt.Fprintf(w, "| Failed | %d |\n", failed)
+	fmt.Fprintf(w, "| Words | %d |\n", totalWords)
+	fmt.Fprintf(w, "| Lines | %d |\n", totalLines)
+	fmt.Fprintf(w, "| Reading time | ~%d min |\n", totalWords/200)
+	fmt.Fprintln(w)
+
+	// Only show failed files in report (keep it concise)
+	if failed > 0 {
+		fmt.Fprintln(w, "### Files Requiring Attention")
+		fmt.Fprintln(w)
+		fmt.Fprintln(w, "| File | FK | ARI | Issue |")
+		fmt.Fprintln(w, "|------|---:|----:|-------|")
+
+		for _, r := range results {
+			if r.Status == "fail" {
+				issue := identifyIssue(r)
+				fmt.Fprintf(w, "| %s | %.1f | %.1f | %s |\n",
+					cleanPath(r.File),
+					r.Readability.FleschKincaidGrade,
+					r.Readability.ARI,
+					issue,
+				)
+			}
+		}
+		fmt.Fprintln(w)
+	}
+
+	// Distribution (collapsed for brevity)
+	fmt.Fprintln(w, "<details>")
+	fmt.Fprintln(w, "<summary>Readability Distribution</summary>")
+	fmt.Fprintln(w)
+	dist := calculateDistribution(results)
+	fmt.Fprintln(w, "| Level | Count | % |")
+	fmt.Fprintln(w, "|-------|------:|--:|")
+	for _, d := range dist {
+		fmt.Fprintf(w, "| %s | %d | %.0f |\n", d.Label, d.Count, d.Percent)
+	}
+	fmt.Fprintln(w, "</details>")
 }
 
 func aggregateCounts(results []*analyzer.Result) (passed, failed, totalWords, totalLines int) {
@@ -145,13 +235,13 @@ type distribution struct {
 
 func calculateDistribution(results []*analyzer.Result) []distribution {
 	counts := map[string]int{
-		"Very Easy (90+)":       0,
-		"Easy (80-89)":          0,
-		"Fairly Easy (70-79)":   0,
-		"Standard (60-69)":      0,
+		"Very Easy (90+)":          0,
+		"Easy (80-89)":             0,
+		"Fairly Easy (70-79)":      0,
+		"Standard (60-69)":         0,
 		"Fairly Difficult (50-59)": 0,
-		"Difficult (30-49)":     0,
-		"Very Difficult (<30)":  0,
+		"Difficult (30-49)":        0,
+		"Very Difficult (<30)":     0,
 	}
 
 	for _, r := range results {
