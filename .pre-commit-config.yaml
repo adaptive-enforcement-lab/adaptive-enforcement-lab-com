@@ -6,6 +6,7 @@ repos:
       - id: markdownlint
         args: ["--config", ".markdownlint.yml"]
         files: \.md$
+        exclude: ^designs/
   - repo: local
     hooks:
       - id: check-markdown-length
@@ -13,7 +14,7 @@ repos:
         entry: scripts/check-markdown-length.sh
         language: script
         files: \.md$
-        exclude: ^(CHANGELOG|CONTRIBUTING)\.md$
+        exclude: ^(CHANGELOG|CONTRIBUTING|designs/)\.md$|^designs/
       - id: mkdocs-build
         name: mkdocs build
         entry: bash -c 'if [ -f .venv/bin/mkdocs ]; then .venv/bin/mkdocs build --strict; else mkdocs build --strict; fi'
