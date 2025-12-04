@@ -16,7 +16,8 @@
     ".": {
       "release-type": "simple",
       "component": "site",
-      "include-component-in-tag": false
+      "include-component-in-tag": false,
+      "exclude-paths": ["tools/content-analyzer"]
     },
     "tools/content-analyzer": {
       "release-type": "go",
