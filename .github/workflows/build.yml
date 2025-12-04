@@ -1,0 +1,144 @@
+name: Build Pipeline
+on:
+  push:
+    branches:
+      - "**"
+      - "!main"
+      - "!renovate/**"
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.head_ref || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  detect-changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      docs_changed: ${{ steps.changes.outputs.docs_any_changed }}
+      content_analyzer_changed: ${{ steps.changes.outputs.content_analyzer_any_changed }}
+      workflows_changed: ${{ steps.changes.outputs.workflows_any_changed }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed paths
+        id: changes
+        uses: tj-actions/changed-files@v45
+        with:
+          files_yaml: |
+            docs:
+              - docs/**
+              - mkdocs.yml
+              - overrides/**
+            content_analyzer:
+              - tools/content-analyzer/**
+            workflows:
+              - .github/workflows/**
+
+      - name: Output change detection results
+        run: |
+          echo "## Change Detection" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Changed |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|---------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Analyzer | ${{ steps.changes.outputs.content_analyzer_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Workflows | ${{ steps.changes.outputs.workflows_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+
+  lint-docs:
+    name: Lint Documentation
+    needs: detect-changes
+    if: needs.detect-changes.outputs.docs_changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install mkdocs-material pillow cairosvg mkdocs-rss-plugin
+
+      - name: Build MkDocs (validation)
+        run: mkdocs build --strict
+
+  build-content-analyzer:
+    name: Build Content Analyzer
+    needs: detect-changes
+    if: needs.detect-changes.outputs.content_analyzer_changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: tools/content-analyzer/go.mod
+
+      - name: Build
+        working-directory: tools/content-analyzer
+        run: go build -v ./...
+
+      - name: Test
+        working-directory: tools/content-analyzer
+        run: go test -v ./...
+
+  analyze-docs:
+    name: Analyze Documentation
+    needs: [detect-changes, build-content-analyzer]
+    if: |
+      always() && !cancelled() &&
+      needs.detect-changes.outputs.docs_changed == 'true' &&
+      (needs.build-content-analyzer.result == 'success' || needs.build-content-analyzer.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: tools/content-analyzer/go.mod
+
+      - name: Build content-analyzer
+        working-directory: tools/content-analyzer
+        run: go build -o content-analyzer ./cmd/content-analyzer/
+
+      - name: Analyze documentation
+        run: |
+          ./tools/content-analyzer/content-analyzer docs/ --format report >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Check readability thresholds
+        run: |
+          ./tools/content-analyzer/content-analyzer docs/ --check
+
+  build-status:
+    name: Build Status
+    runs-on: ubuntu-latest
+    needs: [detect-changes, lint-docs, build-content-analyzer, analyze-docs]
+    if: always()
+    steps:
+      - name: Check build results
+        run: |
+          echo "## Build Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Changed | Result |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|---------|--------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Docs | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.lint-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Analyzer | ${{ needs.detect-changes.outputs.content_analyzer_changed }} | ${{ needs.build-content-analyzer.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Doc Analysis | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.analyze-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail if any required job failed
+        if: |
+          needs.lint-docs.result == 'failure' ||
+          needs.build-content-analyzer.result == 'failure' ||
+          needs.analyze-docs.result == 'failure'
+        run: exit 1
