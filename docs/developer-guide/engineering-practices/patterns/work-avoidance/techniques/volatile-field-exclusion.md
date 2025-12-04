@@ -6,14 +6,16 @@ Strip fields that change without affecting semantics before comparison.
 
 ## The Technique
 
-Some fields change automatically without representing meaningful changes:
+Some fields change automatically without representing meaningful changes. These include version numbers, timestamps, build IDs, and generated comments. When these fields update, they create noise in content comparisons.
+
+Common volatile fields include:
 
 - Version numbers (bumped by release automation)
 - Timestamps (updated on every generation)
 - Build IDs (change every build)
 - Generated comments (auto-updated headers)
 
-Exclude these fields before comparing content to avoid false positives.
+Exclude these fields before comparing content. This prevents false positives from triggering unnecessary work.
 
 ```go
 package main
@@ -46,10 +48,12 @@ func meaningfulChange(source, target string) bool {
 
 ## When to Use
 
-- **Release automation** bumps versions in distributed files
-- **Generated files** include timestamps or build metadata
-- **Config files** have auto-updated fields
-- **Documentation** with version headers
+This technique applies when automated processes update fields that don't affect functionality. Consider using volatile field exclusion when:
+
+- **Release automation** bumps versions in distributed files.
+- **Generated files** include timestamps or build metadata.
+- **Config files** have auto-updated fields.
+- **Documentation** contains version headers.
 
 ---
 
@@ -137,6 +141,8 @@ strip_volatile() {
 
 ## Pattern Design
 
+Design patterns carefully to avoid stripping meaningful content. Follow these guidelines.
+
 ### Be Specific
 
 ```bash
@@ -149,7 +155,7 @@ sed '/^version:.*# x-release-please-version$/d' "$1"
 
 ### Use Markers
 
-Add explicit markers to volatile fields to make them easy to identify:
+Add explicit markers to volatile fields. This makes them easy to identify and strip reliably.
 
 ```yaml
 # In your source file
@@ -157,7 +163,7 @@ version: 1.2.3  # x-release-please-version
 updated: 2025-01-01  # auto-updated
 ```
 
-This makes the stripping pattern unambiguous:
+The markers make stripping patterns unambiguous. Use consistent markers across your codebase.
 
 ```bash
 sed '/#\s*x-release-please-version$/d'
@@ -166,7 +172,7 @@ sed '/#\s*auto-updated$/d'
 
 ### Document Patterns
 
-Keep volatile field patterns documented alongside the comparison logic:
+Keep volatile field patterns documented alongside the comparison logic. This helps maintainers understand what gets stripped and why.
 
 ```bash
 # VOLATILE_FIELDS.md
@@ -191,7 +197,7 @@ Keep volatile field patterns documented alongside the comparison logic:
 
 ## Real-World Example
 
-A file distribution workflow that skips version-only changes:
+This example shows a file distribution workflow that skips version-only changes. The workflow compares stripped content to detect meaningful updates.
 
 ```yaml
 - name: Check for meaningful changes
