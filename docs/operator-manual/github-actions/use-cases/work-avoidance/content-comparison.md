@@ -128,5 +128,5 @@ For JSON/YAML files, see the [engineering pattern](../../../../developer-guide/e
 ## Related
 
 - [Work Avoidance Pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Conceptual pattern
-- [Release-Please Extra-Files](../release-pipelines/release-please-setup.md#extra-files) - Version annotation format
+- [Release-Please Extra-Files](../release-pipelines/release-please/extra-files.md) - Version annotation format
 - [File Distribution Idempotency](../file-distribution/idempotency.md) - Complementary check-before-act pattern

@@ -30,7 +30,7 @@ This is a growing collection of engineering patterns distilled from real-world D
 | Implementation | **Prerequisite Checks** | "Can it succeed?" | Validate before starting |
 | Implementation | [**Work Avoidance**](work-avoidance/index.md) | "Already done?" | Skip redundant work |
 | Workflow | [**Three-Stage Design**](workflow-patterns/three-stage-design.md) | "How to structure?" | Separate discovery, execution, reporting |
-| Workflow | [**Matrix Distribution**](workflow-patterns/matrix-distribution.md) | "How to parallelize?" | Dynamic matrix strategies |
+| Workflow | [**Matrix Distribution**](workflow-patterns/matrix-distribution/index.md) | "How to parallelize?" | Dynamic matrix strategies |
 
 ---
 

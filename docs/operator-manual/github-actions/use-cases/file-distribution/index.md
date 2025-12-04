@@ -38,7 +38,7 @@ This workflow implements patterns from the [Developer Guide](../../../../develop
 | Pattern | Purpose |
 |---------|---------|
 | [Three-Stage Design](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md) | Separates discovery, execution, and reporting |
-| [Matrix Distribution](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution.md) | Parallelizes operations with conditional logic |
+| [Matrix Distribution](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/index.md) | Parallelizes operations with conditional logic |
 | [Idempotency](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) | Ensures safe reruns after partial failures |
 | [Work Avoidance](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) | Skips version-only changes |
 

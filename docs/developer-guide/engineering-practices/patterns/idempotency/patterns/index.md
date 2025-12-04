@@ -19,7 +19,7 @@ Five patterns for making operations idempotent. Each has tradeoffs; choose based
 | [Upsert](upsert.md) | APIs with atomic operations | Not universally available |
 | [Force Overwrite](force-overwrite.md) | Content that can be safely replaced | Destructive if misused |
 | [Unique Identifiers](unique-identifiers.md) | Natural deduplication | ID logic can be complex |
-| [Tombstone Markers](tombstone-markers.md) | Multi-step operations | Markers need cleanup |
+| [Tombstone Markers](tombstone-markers/index.md) | Multi-step operations | Markers need cleanup |
 
 ---
 
@@ -61,7 +61,7 @@ Generate deterministic IDs so duplicate operations target the same resource.
 BRANCH="update-$(sha256sum file.txt | cut -c1-8)"
 ```
 
-### [Tombstone/Marker Files](tombstone-markers.md)
+### [Tombstone/Marker Files](tombstone-markers/index.md)
 
 Leave markers indicating operations completed.
 
@@ -105,7 +105,7 @@ flowchart TD
 | Creating resources (PRs, branches, files) | [Check-Before-Act](check-before-act.md) |
 | Updating existing resources | [Upsert](upsert.md) or [Force Overwrite](force-overwrite.md) |
 | Operations with natural keys | [Unique Identifiers](unique-identifiers.md) |
-| Complex multi-step operations | [Tombstone Markers](tombstone-markers.md) |
+| Complex multi-step operations | [Tombstone Markers](tombstone-markers/index.md) |
 | API supports atomic operations | [Upsert](upsert.md) |
 
 !!! tip "Combine Patterns"

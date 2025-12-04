@@ -155,7 +155,12 @@ nav:
                   - Troubleshooting: operator-manual/github-actions/use-cases/file-distribution/troubleshooting.md
               - Release Pipelines:
                   - operator-manual/github-actions/use-cases/release-pipelines/index.md
-                  - Release-Please Setup: operator-manual/github-actions/use-cases/release-pipelines/release-please-setup.md
+                  - Release-Please:
+                      - operator-manual/github-actions/use-cases/release-pipelines/release-please/index.md
+                      - Release Types: operator-manual/github-actions/use-cases/release-pipelines/release-please/release-types.md
+                      - Extra-Files: operator-manual/github-actions/use-cases/release-pipelines/release-please/extra-files.md
+                      - Workflow Integration: operator-manual/github-actions/use-cases/release-pipelines/release-please/workflow-integration.md
+                      - Troubleshooting: operator-manual/github-actions/use-cases/release-pipelines/release-please/troubleshooting.md
                   - Change Detection: operator-manual/github-actions/use-cases/release-pipelines/change-detection.md
                   - Workflow Triggers: operator-manual/github-actions/use-cases/release-pipelines/workflow-triggers.md
                   - Protected Branches: operator-manual/github-actions/use-cases/release-pipelines/protected-branches.md
@@ -180,7 +185,10 @@ nav:
                       - Upsert: developer-guide/engineering-practices/patterns/idempotency/patterns/upsert.md
                       - Force Overwrite: developer-guide/engineering-practices/patterns/idempotency/patterns/force-overwrite.md
                       - Unique Identifiers: developer-guide/engineering-practices/patterns/idempotency/patterns/unique-identifiers.md
-                      - Tombstone Markers: developer-guide/engineering-practices/patterns/idempotency/patterns/tombstone-markers.md
+                      - Tombstone Markers:
+                          - developer-guide/engineering-practices/patterns/idempotency/patterns/tombstone-markers/index.md
+                          - CI/CD Examples: developer-guide/engineering-practices/patterns/idempotency/patterns/tombstone-markers/ci-cd-examples.md
+                          - Edge Cases: developer-guide/engineering-practices/patterns/idempotency/patterns/tombstone-markers/edge-cases.md
                   - Real-World Example: developer-guide/engineering-practices/patterns/idempotency/real-world-example.md
                   - Testing: developer-guide/engineering-practices/patterns/idempotency/testing.md
                   - Cache Considerations: developer-guide/engineering-practices/patterns/idempotency/caches.md
@@ -196,7 +204,11 @@ nav:
               - Workflow Patterns:
                   - developer-guide/engineering-practices/patterns/workflow-patterns/index.md
                   - Three-Stage Design: developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md
-                  - Matrix Distribution: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution.md
+                  - Matrix Distribution:
+                      - developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/index.md
+                      - Conditional Distribution: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/conditional-distribution.md
+                      - Template Rendering: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/template-rendering.md
+                      - Anti-Patterns: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/anti-patterns.md
           - Principles:
               - developer-guide/engineering-practices/principles/index.md
   - Roadmap: roadmap.md

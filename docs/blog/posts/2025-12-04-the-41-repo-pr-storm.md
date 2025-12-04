@@ -24,7 +24,7 @@ Then release-please bumped the version from 2.5.4 to 2.5.5.
 
 ## The Setup
 
-We track CONTRIBUTING.md version alongside our platform version using [release-please extra-files](../../operator-manual/github-actions/use-cases/release-pipelines/release-please-setup.md#extra-files):
+We track CONTRIBUTING.md version alongside our platform version using [release-please extra-files](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/extra-files.md):
 
 ```markdown
 ---
@@ -161,7 +161,7 @@ If the semantic content hasn't changed, the operation probably isn't needed.
 
 - [Work Avoidance Pattern](../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Engineering pattern and techniques
 - [Content Comparison (GitHub Actions)](../../operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md) - Implementation for workflows
-- [Release-Please Extra-Files](../../operator-manual/github-actions/use-cases/release-pipelines/release-please-setup.md#extra-files) - Version tracking in arbitrary files
+- [Release-Please Extra-Files](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/extra-files.md) - Version tracking in arbitrary files
 - [File Distribution Workflow](../../operator-manual/github-actions/use-cases/file-distribution/index.md) - Three-stage distribution architecture
 
 ---
