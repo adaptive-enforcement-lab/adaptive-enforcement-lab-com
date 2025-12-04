@@ -23,6 +23,8 @@ jobs:
     name: Release Please
     runs-on: ubuntu-latest
     if: ${{ !inputs.skip_release_please }}
+    # TODO: Remove continue-on-error once GitHub App is set up (issue #70)
+    continue-on-error: true
     permissions:
       contents: write
       pull-requests: write
@@ -35,6 +37,8 @@ jobs:
       content_analyzer_version: ${{ steps.release.outputs['tools/content-analyzer--version'] }}
       releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
+      # TODO: Use GitHub App token once CORE_APP is set up in this org
+      # See: https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/70
       - uses: googleapis/release-please-action@v4
         id: release
         with:
