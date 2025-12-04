@@ -8,17 +8,33 @@ Use artifact existence as a proxy for "work already done."
 
 If the output of an operation already exists and inputs haven't changed, skip the operation entirely.
 
-```python
-def build_if_needed(source_hash: str) -> Path:
-    cache_path = CACHE_DIR / f"build-{source_hash}"
+```go
+package main
 
-    if cache_path.exists():
-        log("Build cached, skipping")
-        return cache_path
+import (
+    "log"
+    "os"
+    "path/filepath"
+)
 
-    result = build()
-    result.save(cache_path)
-    return cache_path
+func buildIfNeeded(cacheDir, sourceHash string) (string, error) {
+    cachePath := filepath.Join(cacheDir, "build-"+sourceHash)
+
+    if _, err := os.Stat(cachePath); err == nil {
+        log.Println("Build cached, skipping")
+        return cachePath, nil
+    }
+
+    result, err := build()
+    if err != nil {
+        return "", err
+    }
+
+    if err := result.Save(cachePath); err != nil {
+        return "", err
+    }
+    return cachePath, nil
+}
 ```
 
 ---
@@ -36,12 +52,12 @@ def build_if_needed(source_hash: str) -> Path:
 
 The cache key must include **all inputs** that affect the output:
 
-```python
-# BAD: Missing inputs
-cache_key = f"build-{version}"  # Ignores source changes!
+```go
+// BAD: Missing inputs
+cacheKey := fmt.Sprintf("build-%s", version) // Ignores source changes!
 
-# GOOD: All relevant inputs
-cache_key = f"build-{source_hash}-{deps_hash}-{config_hash}"
+// GOOD: All relevant inputs
+cacheKey := fmt.Sprintf("build-%s-%s-%s", sourceHash, depsHash, configHash)
 ```
 
 ### Common Cache Key Components

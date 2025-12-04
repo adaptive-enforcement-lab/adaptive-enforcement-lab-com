@@ -8,16 +8,27 @@ Compare content hashes to detect meaningful changes.
 
 Instead of comparing entire files byte-by-byte, compute cryptographic hashes and compare those. If hashes match, content is identical.
 
-```python
-import hashlib
+```go
+package main
 
-def content_changed(source: bytes, target: bytes) -> bool:
-    return hashlib.sha256(source).digest() != hashlib.sha256(target).digest()
+import (
+    "crypto/sha256"
+    "bytes"
+)
 
-if content_changed(new_config, existing_config):
-    deploy(new_config)
-else:
-    log("No changes, skipping deployment")
+func contentChanged(source, target []byte) bool {
+    sourceHash := sha256.Sum256(source)
+    targetHash := sha256.Sum256(target)
+    return !bytes.Equal(sourceHash[:], targetHash[:])
+}
+
+func main() {
+    if contentChanged(newConfig, existingConfig) {
+        deploy(newConfig)
+    } else {
+        log.Println("No changes, skipping deployment")
+    }
+}
 ```
 
 ---
@@ -68,22 +79,33 @@ fi
 
 ### API Response Comparison
 
-```python
-import hashlib
-import json
+```go
+package main
 
-def normalize_and_hash(data: dict) -> str:
-    """Hash JSON after sorting keys for consistent comparison."""
-    normalized = json.dumps(data, sort_keys=True, separators=(',', ':'))
-    return hashlib.sha256(normalized.encode()).hexdigest()
+import (
+    "crypto/sha256"
+    "encoding/hex"
+    "encoding/json"
+    "log"
+)
 
-current_state = fetch_api_state()
-desired_state = load_desired_state()
+func normalizeAndHash(data map[string]any) string {
+    // JSON marshal with sorted keys for consistent comparison
+    normalized, _ := json.Marshal(data)
+    hash := sha256.Sum256(normalized)
+    return hex.EncodeToString(hash[:])
+}
 
-if normalize_and_hash(current_state) == normalize_and_hash(desired_state):
-    log("State already matches, skipping sync")
-else:
-    apply_state(desired_state)
+func main() {
+    currentState := fetchAPIState()
+    desiredState := loadDesiredState()
+
+    if normalizeAndHash(currentState) == normalizeAndHash(desiredState) {
+        log.Println("State already matches, skipping sync")
+    } else {
+        applyState(desiredState)
+    }
+}
 ```
 
 ---
@@ -112,14 +134,30 @@ For work avoidance (non-security), speed often matters more than cryptographic s
 
 ### Streaming Large Files
 
-```python
-def hash_file(path: str, chunk_size: int = 8192) -> str:
-    """Hash large files without loading entirely into memory."""
-    hasher = hashlib.sha256()
-    with open(path, 'rb') as f:
-        while chunk := f.read(chunk_size):
-            hasher.update(chunk)
-    return hasher.hexdigest()
+```go
+package main
+
+import (
+    "crypto/sha256"
+    "encoding/hex"
+    "io"
+    "os"
+)
+
+func hashFile(path string) (string, error) {
+    f, err := os.Open(path)
+    if err != nil {
+        return "", err
+    }
+    defer f.Close()
+
+    h := sha256.New()
+    if _, err := io.Copy(h, f); err != nil {
+        return "", err
+    }
+
+    return hex.EncodeToString(h.Sum(nil)), nil
+}
 ```
 
 ---

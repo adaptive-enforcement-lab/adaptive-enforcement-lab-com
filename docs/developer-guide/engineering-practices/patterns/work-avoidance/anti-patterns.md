@@ -10,18 +10,22 @@ Skipping based on insufficient criteria leads to missed updates.
 
 ### The Problem
 
-```python
-# BAD: Skipping based on filename only
-if target_file.exists():
-    skip()  # Content might have changed!
+```go
+// BAD: Skipping based on filename only
+if _, err := os.Stat(targetFile); err == nil {
+    return // Content might have changed!
+}
 ```
 
 ### The Fix
 
-```python
-# GOOD: Check content, not just existence
-if target_file.exists() and content_matches(source, target_file):
-    skip()
+```go
+// GOOD: Check content, not just existence
+if _, err := os.Stat(targetFile); err == nil {
+    if contentMatches(source, targetFile) {
+        return
+    }
+}
 ```
 
 **Rule**: Always verify the **condition you care about**, not a proxy for it.
@@ -34,18 +38,22 @@ Assuming a marker means success can hide failures.
 
 ### The Problem
 
-```python
-# BAD: Marker exists but work might have failed
-if cache_marker.exists():
-    skip()  # Previous run might have failed after creating marker
+```go
+// BAD: Marker exists but work might have failed
+if _, err := os.Stat(cacheMarker); err == nil {
+    return // Previous run might have failed after creating marker
+}
 ```
 
 ### The Fix
 
-```python
-# GOOD: Validate the cached result
-if cache_marker.exists() and validate_cache(cache_marker):
-    skip()
+```go
+// GOOD: Validate the cached result
+if _, err := os.Stat(cacheMarker); err == nil {
+    if validateCache(cacheMarker) {
+        return
+    }
+}
 ```
 
 **Rule**: Always validate cached or previous results before trusting them.
@@ -58,18 +66,19 @@ Overly broad patterns destroy semantic content.
 
 ### The Problem
 
-```python
-# BAD: Stripping all numbers (destroys semantic content)
-content = re.sub(r'\d+', '', content)
+```go
+// BAD: Stripping all numbers (destroys semantic content)
+content = regexp.MustCompile(`\d+`).ReplaceAllString(content, "")
 
-# Turns "max_connections: 100" into "max_connections: "
+// Turns "max_connections: 100" into "max_connections: "
 ```
 
 ### The Fix
 
-```python
-# GOOD: Strip only known volatile patterns
-content = re.sub(r'^version:\s*[\d.]+\s*#.*$', '', content, flags=re.MULTILINE)
+```go
+// GOOD: Strip only known volatile patterns
+pattern := regexp.MustCompile(`(?m)^version:\s*[\d.]+\s*#.*$`)
+content = pattern.ReplaceAllString(content, "")
 ```
 
 **Rule**: Use specific patterns with markers. When in doubt, don't strip.
@@ -131,21 +140,24 @@ Time-of-check-to-time-of-use gaps can cause duplicate work or failures.
 
 ### The Problem
 
-```python
-# BAD: Race condition window
-if not resource_exists():      # Check
-    time.sleep(1)              # Window for race
-    create_resource()          # Use - might fail if created by another process
+```go
+// BAD: Race condition window
+if !resourceExists() {           // Check
+    time.Sleep(time.Second)      // Window for race
+    createResource()             // Use - might fail if created by another process
+}
 ```
 
 ### The Fix
 
-```python
-# GOOD: Atomic operation or graceful conflict handling
-try:
-    create_resource()
-except AlreadyExistsError:
-    log("Created by another process, continuing")
+```go
+// GOOD: Atomic operation or graceful conflict handling
+err := createResource()
+if errors.Is(err, ErrAlreadyExists) {
+    log.Println("Created by another process, continuing")
+    return nil
+}
+return err
 ```
 
 **Rule**: Prefer atomic operations. When impossible, handle conflicts gracefully.
@@ -184,20 +196,22 @@ Static conditions don't adapt to changes.
 
 ### The Problem
 
-```python
-# BAD: Hardcoded list - requires code changes to update
-SKIP_REPOS = ["legacy-app", "deprecated-service"]
+```go
+// BAD: Hardcoded list - requires code changes to update
+var skipRepos = []string{"legacy-app", "deprecated-service"}
 
-if repo in SKIP_REPOS:
-    skip()
+if slices.Contains(skipRepos, repo.Name) {
+    return
+}
 ```
 
 ### The Fix
 
-```python
-# GOOD: Dynamic detection
-if repo.archived or "deprecated" in repo.topics:
-    skip()
+```go
+// GOOD: Dynamic detection
+if repo.Archived || slices.Contains(repo.Topics, "deprecated") {
+    return
+}
 ```
 
 **Rule**: Derive skip conditions from data, not hardcoded lists.

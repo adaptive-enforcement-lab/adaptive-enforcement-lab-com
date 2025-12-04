@@ -8,16 +8,31 @@ Skip creation when the resource already exists.
 
 Before creating a resource, check if it already exists. If it does, skip creation entirely.
 
-```python
-def ensure_branch(repo, branch_name: str, base_sha: str) -> None:
-    try:
-        repo.get_branch(branch_name)
-        log(f"Branch {branch_name} exists, skipping creation")
-    except GithubException as e:
-        if e.status == 404:
-            repo.create_git_ref(f"refs/heads/{branch_name}", base_sha)
-        else:
-            raise
+```go
+package main
+
+import (
+    "context"
+    "log"
+
+    "github.com/google/go-github/v57/github"
+)
+
+func ensureBranch(ctx context.Context, client *github.Client, owner, repo, branchName, baseSHA string) error {
+    _, _, err := client.Repositories.GetBranch(ctx, owner, repo, branchName, 0)
+    if err == nil {
+        log.Printf("Branch %s exists, skipping creation", branchName)
+        return nil
+    }
+
+    // Branch doesn't exist, create it
+    ref := &github.Reference{
+        Ref:    github.String("refs/heads/" + branchName),
+        Object: &github.GitObject{SHA: github.String(baseSHA)},
+    }
+    _, _, err = client.Git.CreateRef(ctx, owner, repo, ref)
+    return err
+}
 ```
 
 ---
@@ -73,18 +88,41 @@ else
 fi
 ```
 
-### Cloud Resources (Terraform-style)
+### Cloud Resources (AWS S3)
 
-```python
-def ensure_bucket(name: str, region: str) -> None:
-    try:
-        s3.head_bucket(Bucket=name)
-        log(f"Bucket {name} exists")
-    except ClientError as e:
-        if e.response['Error']['Code'] == '404':
-            s3.create_bucket(Bucket=name, ...)
-        else:
-            raise
+```go
+package main
+
+import (
+    "context"
+    "errors"
+    "log"
+
+    "github.com/aws/aws-sdk-go-v2/service/s3"
+    "github.com/aws/aws-sdk-go-v2/service/s3/types"
+)
+
+func ensureBucket(ctx context.Context, client *s3.Client, name, region string) error {
+    _, err := client.HeadBucket(ctx, &s3.HeadBucketInput{
+        Bucket: &name,
+    })
+    if err == nil {
+        log.Printf("Bucket %s exists", name)
+        return nil
+    }
+
+    // Check if error is "not found"
+    var notFound *types.NotFound
+    if !errors.As(err, &notFound) {
+        return err // Some other error
+    }
+
+    // Bucket doesn't exist, create it
+    _, err = client.CreateBucket(ctx, &s3.CreateBucketInput{
+        Bucket: &name,
+    })
+    return err
+}
 ```
 
 ---
@@ -97,8 +135,8 @@ def ensure_bucket(name: str, region: str) -> None:
 | GitHub | PR | `gh pr list --head X --json number` |
 | GitHub | Issue | `gh issue list --search "title"` |
 | Kubernetes | Any | `kubectl get TYPE NAME` |
-| AWS S3 | Bucket | `head_bucket()` |
-| AWS EC2 | Instance | `describe_instances(Filters=...)` |
+| AWS S3 | Bucket | `HeadBucket()` |
+| AWS EC2 | Instance | `DescribeInstances(Filters=...)` |
 | Docker | Image | `docker image inspect` |
 | Docker | Container | `docker container inspect` |
 
@@ -129,22 +167,19 @@ For state validation, combine with [Content Hashing](content-hashing.md).
 
 Existence checks have a time-of-check-to-time-of-use (TOCTOU) gap:
 
-```python
-# BAD: Race condition possible
-if not resource_exists():
-    create_resource()  # Might fail if created between check and create
+```go
+// BAD: Race condition possible
+if !resourceExists(name) {
+    createResource(name) // Might fail if created between check and create
+}
 
-# BETTER: Use atomic operations where available
-try:
-    create_resource_if_not_exists()  # Single atomic operation
-except AlreadyExistsError:
-    pass
-
-# OR: Handle conflict gracefully
-try:
-    create_resource()
-except AlreadyExistsError:
-    log("Resource created by another process, continuing")
+// BETTER: Handle conflict gracefully
+err := createResource(name)
+if errors.Is(err, ErrAlreadyExists) {
+    log.Println("Resource created by another process, continuing")
+    return nil
+}
+return err
 ```
 
 ---
@@ -160,22 +195,30 @@ Some resources can exist in multiple states:
 | Pending | Wait or skip |
 | Failed | May need cleanup first |
 
-```python
-def ensure_resource(name: str) -> None:
-    resource = get_resource(name)
+```go
+func ensureResource(ctx context.Context, name string) error {
+    resource, err := getResource(ctx, name)
+    if errors.Is(err, ErrNotFound) {
+        return createResource(ctx, name)
+    }
+    if err != nil {
+        return err
+    }
 
-    if resource is None:
-        create_resource(name)
-    elif resource.status == 'deleted':
-        # Restore or recreate
-        restore_resource(name)
-    elif resource.status == 'failed':
-        # Cleanup and recreate
-        delete_resource(name)
-        create_resource(name)
-    else:
-        # Active or pending - skip
-        log(f"Resource {name} exists with status {resource.status}")
+    switch resource.Status {
+    case StatusDeleted:
+        return restoreResource(ctx, name)
+    case StatusFailed:
+        if err := deleteResource(ctx, name); err != nil {
+            return err
+        }
+        return createResource(ctx, name)
+    default:
+        // Active or pending - skip
+        log.Printf("Resource %s exists with status %s", name, resource.Status)
+        return nil
+    }
+}
 ```
 
 ---

@@ -15,23 +15,31 @@ Some fields change automatically without representing meaningful changes:
 
 Exclude these fields before comparing content to avoid false positives.
 
-```python
-import re
+```go
+package main
 
-def strip_volatile(content: str) -> str:
-    """Remove version stamps and timestamps before comparison."""
-    patterns = [
-        r'^version:.*# x-release-please-version$',
-        r'^updated:\s*\d{4}-\d{2}-\d{2}',
-        r'^generated:\s*.*$',
-    ]
-    result = content
-    for pattern in patterns:
-        result = re.sub(pattern, '', result, flags=re.MULTILINE)
-    return result
+import (
+    "regexp"
+    "strings"
+)
 
-def meaningful_change(source: str, target: str) -> bool:
-    return strip_volatile(source) != strip_volatile(target)
+var volatilePatterns = []*regexp.Regexp{
+    regexp.MustCompile(`(?m)^version:.*# x-release-please-version$`),
+    regexp.MustCompile(`(?m)^updated:\s*\d{4}-\d{2}-\d{2}`),
+    regexp.MustCompile(`(?m)^generated:\s*.*$`),
+}
+
+func stripVolatile(content string) string {
+    result := content
+    for _, pattern := range volatilePatterns {
+        result = pattern.ReplaceAllString(result, "")
+    }
+    return strings.TrimSpace(result)
+}
+
+func meaningfulChange(source, target string) bool {
+    return stripVolatile(source) != stripVolatile(target)
+}
 ```
 
 ---
