@@ -1,0 +1,43 @@
+# Changelog
+
+## [0.2.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.1.0...0.2.0) (2025-12-04)
+
+
+### Features
+
+* add AEL custom commands for content management ([#54](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/54)) ([7c23565](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/7c23565c5eec0bd995cac86a25778791afe79604))
+* Add content-analyzer tool for documentation readability ([#59](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/59)) ([11c53e8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/11c53e8f329be50735f8f6c4973e8488a4bbd666))
+* **ci:** implement modular release pipeline with change detection ([#67](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/67)) ([132435e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/132435edf64c4fdc96066dcca408ff25ad3b9830))
+* enable native breadcrumbs navigation ([b1569c0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b1569c071ec30294bed3ecf21a5c55f2fd2b9017))
+* enable native breadcrumbs navigation ([a55e725](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/a55e725a237c94afc358c9d0993353f50a3cb369))
+
+
+### Bug Fixes
+
+* **ci:** add continue-on-error for release-please until GitHub App setup ([5a2ad17](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/5a2ad179d8779d11edd693a885cc841afbff5add))
+* **ci:** add exclude-paths to isolate site releases from content-analyzer ([0a70892](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/0a708928a6d547bec040f4e9937e53427921e30b))
+* remove continue-on-error workaround after org policy fix ([cd19f71](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/cd19f71dcd9c7094e1a1976813e43885f038d1e7)), closes [#70](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/70)
+* Update the github workflow python version ([906bb99](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/906bb996f1527e5ba826f67f82a2c4b963a283ab))
+
+
+### Code Refactoring
+
+* split use case patterns between Developer Guide and Operator Manual ([#49](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/49)) ([705b7fa](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/705b7fa9bbbdddbac11bcd46a0bdfd7ecf6f0ada))
+
+
+### Maintenance
+
+* Configure Renovate ([2c73aeb](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/2c73aebcd001f066ade528bc21c3108500289729))
+* **deps:** update actions/checkout action to v6 ([4e274ea](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4e274ea88dfa11c0a36a865671f9dc3e050d194b))
+* **deps:** update actions/checkout action to v6 ([c57808f](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c57808f96aa782dda44e2dd22667f525d432eb81))
+* **deps:** update actions/checkout action to v6 ([#69](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/69)) ([25e0e90](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/25e0e90d56dae34b0f90109c6663f6eff1ddaa9c))
+* **deps:** update actions/setup-python action to v6 ([8045dd9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8045dd94fc5052cbd82e90169cbd0f219cc1cf2e))
+* **deps:** update actions/setup-python action to v6 ([17e8e17](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/17e8e17a2a4ddf89f9139fd5bb1d568e5c38f69c))
+* **deps:** update actions/setup-python action to v6 ([#19](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/19)) ([d73afc8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/d73afc8144d90a6a40376963eaeecc440edd1b40))
+* **deps:** update actions/upload-pages-artifact action to v4 ([9a15c78](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9a15c78701b24421d282b154c11fbf5cfe4d4000))
+* **deps:** update actions/upload-pages-artifact action to v4 ([752b9d3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/752b9d3eee69cdb0ccf6f4322a41111080363617))
+* **deps:** update corentinmusard/otel-cicd-action action to v2 ([#22](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/22)) ([a4275f6](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/a4275f60ee4991f83692247c29413d6cb5762fd8))
+* **deps:** update dependency python to 3.14 ([3942757](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/39427575fb2384ae4c1a20048d7001a1eb0ed033))
+* **deps:** update dependency python to 3.14 ([5c99f9d](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/5c99f9d56c0ee2f41cab209d55ad75844552039c))
+* **deps:** update dependency python to 3.14 ([#68](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/68)) ([7ee429e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/7ee429e91b507a6a5caca37e3ed25e3ee68dda90))
+* Improve docs build workflow ([#18](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/18)) ([906bb99](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/906bb996f1527e5ba826f67f82a2c4b963a283ab))
