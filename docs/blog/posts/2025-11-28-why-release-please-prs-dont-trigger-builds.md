@@ -1,5 +1,5 @@
 ---
-date: 2025-12-03
+date: 2025-11-28
 authors:
   - mark
 categories:
@@ -17,7 +17,7 @@ slug: why-release-please-prs-dont-trigger-builds
 !!! warning "Update: There's a Better Way"
 
     The dual-trigger pattern described below is a **workaround**, not the real fix.
-    See [The Real Fix for Release-Please Triggers](./2025-12-04-the-real-fix-for-release-please-triggers.md)
+    See [The Real Fix for Release-Please Triggers](./2025-12-02-the-real-fix-for-release-please-triggers.md)
     for the proper solution using GitHub App tokens.
 
 The release-please PR looked perfect. Clean changelog. Proper version bump. Ready to merge.

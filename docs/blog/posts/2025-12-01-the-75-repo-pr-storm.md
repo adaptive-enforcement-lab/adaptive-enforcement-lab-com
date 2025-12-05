@@ -1,5 +1,5 @@
 ---
-date: 2025-12-04
+date: 2025-12-01
 authors:
   - mark
 categories:
@@ -7,16 +7,16 @@ categories:
   - GitHub Actions
   - Engineering Patterns
 description: >-
-  A version bump nearly triggered 41 useless PRs across our organization.
+  A version bump nearly triggered 75 useless PRs across our organization.
   Content-based change detection saved us from PR fatigue.
-slug: the-41-repo-pr-storm
+slug: the-75-repo-pr-storm
 ---
 
-# The 41-Repo PR Storm We Almost Created
+# The 75-Repo PR Storm We Almost Created
 
-The workflow looked perfect. CONTRIBUTING.md in our central repository, automatically distributed to all 41 platform repositories. Any change triggers PRs across the organization.
+The workflow looked perfect. CONTRIBUTING.md in our central repository, automatically distributed to all 75 repositories. Any change triggers PRs across the organization.
 
-Then release-please bumped the version from 2.5.4 to 2.5.5.
+Then release-please bumped the version from 1.4.1 to 1.4.2.
 
 <!-- more -->
 
@@ -28,8 +28,8 @@ We track CONTRIBUTING.md version alongside our platform version using [release-p
 
 ```markdown
 ---
-title: Contributing to Platform Projects
-version: 2.5.5 # x-release-please-version
+title: Contributing Guidelines
+version: 1.4.2 # x-release-please-version
 ---
 ```
 
@@ -51,14 +51,14 @@ fi
 
 This catches everything. Including version-only changes.
 
-The workflow would have created 41 PRs, each containing exactly one line difference:
+The workflow would have created 75 PRs, each containing exactly one line difference:
 
 ```diff
-- version: 2.5.4 # x-release-please-version
-+ version: 2.5.5 # x-release-please-version
+- version: 1.4.1 # x-release-please-version
++ version: 1.4.2 # x-release-please-version
 ```
 
-Forty-one PRs. Forty-one notifications. Forty-one reviews needed. Zero meaningful content.
+Seventy-five PRs. Seventy-five notifications. Seventy-five reviews needed. Zero meaningful content.
 
 ---
 
@@ -67,7 +67,7 @@ Forty-one PRs. Forty-one notifications. Forty-one reviews needed. Zero meaningfu
 We caught it before it ran. The release-please PR merged, the distribution workflow triggered, and we watched the logs:
 
 ```text
-Processing repo 1/41: service-alpha
+Processing repo 1/75: service-alpha
   Changes detected: true
   Creating PR...
 ```
@@ -110,7 +110,7 @@ The sed pattern strips the version line before comparison. If the remaining cont
 Next workflow run:
 
 ```text
-Processed: 41 repositories
+Processed: 75 repositories
 PRs created: 0
 Reason: Version-only changes detected, distribution skipped
 ```
@@ -166,4 +166,4 @@ If the semantic content hasn't changed, the operation probably isn't needed.
 
 ---
 
-*The next time release-please bumps our version, 41 repositories will quietly ignore it. As they should.*
+*The next time release-please bumps our version, 75 repositories will quietly ignore it. As they should.*
