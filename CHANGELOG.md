@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.1...0.3.2) (2025-12-05)
+
+
+### Bug Fixes
+
+* add fetch-depth for RSS plugin dates ([625d33b](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/625d33bd53b54d1b87737e66705f00270f6cfda2))
+
+
+### Maintenance
+
+* **deps:** update actions/setup-python action to v6 ([#88](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/88)) ([974c64a](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/974c64ab2d5d504180c7ecdbe3b2e0315bb78774))
+* **deps:** update actions/upload-pages-artifact action to v4 ([#89](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/89)) ([9c8159c](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9c8159c402cf0c550139af287a5eed05d4a71ccd))
+
 ## [0.3.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.0...0.3.1) (2025-12-05)
 
 
