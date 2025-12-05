@@ -1,5 +1,5 @@
 ---
-date: 2025-12-04
+date: 2025-11-30
 authors:
   - mark
 categories:
@@ -24,7 +24,7 @@ Release-please said no.
 
 ## The Goal
 
-Our CONTRIBUTING.md lives in a central repository and gets distributed to 40+ other repos. When we update the guidelines, we wanted:
+Our CONTRIBUTING.md lives in a central repository and gets distributed to 75+ other repos. When we update the guidelines, we wanted:
 
 1. A dedicated changelog for contribution guideline changes
 2. Tags like `contributing-1.0.0`, `contributing-1.1.0`
@@ -99,7 +99,7 @@ The file gets its version updated alongside the main package. Add the annotation
 ```markdown
 ---
 title: Contributing Guidelines
-version: 2.5.5 # x-release-please-version
+version: 1.4.2 # x-release-please-version
 ---
 ```
 

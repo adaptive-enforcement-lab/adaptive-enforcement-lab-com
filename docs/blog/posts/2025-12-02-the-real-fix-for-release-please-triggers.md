@@ -1,5 +1,5 @@
 ---
-date: 2025-12-04
+date: 2025-12-02
 authors:
   - mark
 categories:
@@ -14,7 +14,7 @@ slug: the-real-fix-for-release-please-triggers
 
 # The Real Fix for Release-Please Triggers
 
-Yesterday I wrote about [why release-please PRs don't trigger builds](./2025-11-27-idempotent-automation.md) and proposed a dual-trigger pattern as the fix. Today I discovered that pattern is a workaround with side effects. Here's the actual solution.
+A few days ago I wrote about [why release-please PRs don't trigger builds](./2025-11-28-why-release-please-prs-dont-trigger-builds.md) and proposed a dual-trigger pattern as the fix. Today I discovered that pattern is a workaround with side effects. Here's the actual solution.
 
 <!-- more -->
 
@@ -22,7 +22,7 @@ Yesterday I wrote about [why release-please PRs don't trigger builds](./2025-11-
 
 ## The Workaround I Documented
 
-The [previous post](./2025-12-03-why-release-please-prs-dont-trigger-builds.md) explained that `GITHUB_TOKEN` actions don't emit workflow events, and proposed adding a secondary `push` trigger:
+The [previous post](./2025-11-28-why-release-please-prs-dont-trigger-builds.md) explained that `GITHUB_TOKEN` actions don't emit workflow events, and proposed adding a secondary `push` trigger:
 
 ```yaml
 on:
