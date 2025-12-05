@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.2.0...0.3.0) (2025-12-05)
+
+
+### Features
+
+* add MkDocs Material versioning with mike ([#74](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/74)) ([4a9c2d2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4a9c2d23e4b4d07ce601d593f337db9fa3ea7683))
+
+
+### Bug Fixes
+
+* **ci:** remove gh api call and use 'latest' for continuous deployments ([#78](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/78)) ([6800bbd](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6800bbdd0a6204b15d1d55d0c696398ad5496ae0))
+
+
+### Maintenance
+
+* **deps:** update actions/setup-go action to v6 ([#77](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/77)) ([4e8c8d0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4e8c8d0154f565890ca2731e85f3c2e0fe647df7))
+* **deps:** update dependency go to 1.25 ([#76](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/76)) ([45564ca](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/45564ca30a72192978e400111e37868a87aea84f))
+* **main:** release content-analyzer 0.2.0 ([#73](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/73)) ([e1e04db](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e1e04db31abd38e0c2cc73191bc5b5ec1c87f19c))
+
 ## [0.2.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.1.0...0.2.0) (2025-12-04)
 
 
