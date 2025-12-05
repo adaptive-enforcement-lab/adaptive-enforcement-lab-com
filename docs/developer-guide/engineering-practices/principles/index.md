@@ -64,6 +64,10 @@ From the [deployment automation blog post](../../../blog/posts/2025-11-29-from-5
 - **No final tier** - Every fallback can fail
 - **Expensive default** - Using Tier 3 as the happy path
 
+!!! tip "Full Implementation Guide"
+
+    See [Graceful Degradation Pattern](../patterns/graceful-degradation/index.md) for code examples, metrics instrumentation, and detailed implementation checklist.
+
 ---
 
 ## Fail Fast
