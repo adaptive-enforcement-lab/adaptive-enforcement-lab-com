@@ -2,7 +2,7 @@
 
 Skip file distribution when only version metadata changed.
 
-This implements the [volatile field exclusion](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/volatile-field-exclusion.md) technique for GitHub Actions workflows.
+This implements the [volatile field exclusion](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md) technique for GitHub Actions workflows.
 
 ---
 
@@ -121,12 +121,12 @@ strip_volatile() {
 }
 ```
 
-For JSON/YAML files, see the [engineering pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/volatile-field-exclusion.md) for jq/yq examples.
+For JSON/YAML files, see the [engineering pattern](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md) for jq/yq examples.
 
 ---
 
 ## Related
 
-- [Work Avoidance Pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Conceptual pattern
+- [Work Avoidance Pattern](../../../../developer-guide/efficiency-patterns/work-avoidance/index.md) - Conceptual pattern
 - [Release-Please Extra-Files](../release-pipelines/release-please/extra-files.md) - Version annotation format
 - [File Distribution Idempotency](../file-distribution/idempotency.md) - Complementary check-before-act pattern

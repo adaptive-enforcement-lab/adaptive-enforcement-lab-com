@@ -221,4 +221,4 @@ Caches can become corrupted or incomplete. Validate after restore:
 
 - [Content Hashing](content-hashing.md) - Hash computation for cache keys
 - [Techniques Overview](index.md) - All work avoidance techniques
-- [Cache-Based Skip (GitHub Actions)](../../../../../operator-manual/github-actions/use-cases/work-avoidance/cache-based-skip.md) - CI/CD implementation
+- [Cache-Based Skip (GitHub Actions)](../../../../operator-manual/github-actions/use-cases/work-avoidance/cache-based-skip.md) - CI/CD implementation

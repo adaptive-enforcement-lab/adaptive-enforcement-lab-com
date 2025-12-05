@@ -85,5 +85,5 @@ Before implementing prerequisite checks:
 |---------|--------------------------------|
 | [Fail Fast](../fail-fast/index.md) | Prerequisite checks are structured fail-fast validation |
 | [Graceful Degradation](../graceful-degradation/index.md) | Prerequisites determine if graceful degradation is even possible |
-| [Idempotency](../idempotency/index.md) | Check-before-act is a prerequisite pattern |
-| [Work Avoidance](../work-avoidance/index.md) | Prerequisites can include "work already done" checks |
+| [Idempotency](../../efficiency-patterns/idempotency/index.md) | Check-before-act is a prerequisite pattern |
+| [Work Avoidance](../../efficiency-patterns/work-avoidance/index.md) | Prerequisites can include "work already done" checks |

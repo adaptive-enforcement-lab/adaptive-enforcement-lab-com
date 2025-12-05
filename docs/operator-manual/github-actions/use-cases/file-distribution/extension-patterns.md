@@ -10,7 +10,7 @@ Extend the basic file distribution workflow for more complex scenarios.
 
 !!! tip "General Pattern"
 
-    These extensions build on the [Matrix Distribution](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/index.md) pattern. See that page for the underlying concepts.
+    These extensions build on the [Matrix Distribution](../../../../developer-guide/workflow-architecture/matrix-distribution/index.md) pattern. See that page for the underlying concepts.
 
 ---
 

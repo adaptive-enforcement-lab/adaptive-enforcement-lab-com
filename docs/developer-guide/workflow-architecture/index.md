@@ -1,10 +1,10 @@
 ---
-title: Workflow Patterns
+title: Workflow Architecture
 description: >-
   Reusable patterns for designing scalable, maintainable CI/CD workflows.
 ---
 
-# Workflow Patterns
+# Workflow Architecture
 
 Structural patterns for building workflows that scale.
 
@@ -57,7 +57,7 @@ graph TB
     style D fill:#a7e22e,color:#1b1d1e
 ```
 
-A three-stage workflow uses [idempotency](../idempotency/index.md) to make reruns safe. Matrix distribution uses [work avoidance](../index.md) to skip unnecessary operations.
+A three-stage workflow uses [idempotency](../efficiency-patterns/idempotency/index.md) to make reruns safe. Matrix distribution uses [work avoidance](../efficiency-patterns/work-avoidance/index.md) to skip unnecessary operations.
 
 ---
 

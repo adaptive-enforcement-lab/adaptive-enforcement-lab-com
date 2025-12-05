@@ -1,6 +1,6 @@
 # Work Avoidance in GitHub Actions
 
-Apply [work avoidance patterns](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) to skip unnecessary CI/CD operations.
+Apply [work avoidance patterns](../../../../developer-guide/efficiency-patterns/work-avoidance/index.md) to skip unnecessary CI/CD operations.
 
 ---
 
@@ -19,9 +19,9 @@ Work avoidance is valuable in GitHub Actions when:
 
 | Pattern | Operator Manual | Engineering Pattern |
 |---------|-----------------|---------------------|
-| Skip version-only changes | [Content Comparison](content-comparison.md) | [Volatile Field Exclusion](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/volatile-field-exclusion.md) |
+| Skip version-only changes | [Content Comparison](content-comparison.md) | [Volatile Field Exclusion](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md) |
 | Skip unchanged paths | [Path Filtering](path-filtering.md) | N/A (native GitHub feature) |
-| Skip cached builds | [Cache-Based Skip](cache-based-skip.md) | [Cache-Based Skip](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md) |
+| Skip cached builds | [Cache-Based Skip](cache-based-skip.md) | [Cache-Based Skip](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md) |
 
 ---
 
@@ -85,6 +85,6 @@ on:
 
 ## Related
 
-- [Work Avoidance Pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Conceptual pattern and techniques
+- [Work Avoidance Pattern](../../../../developer-guide/efficiency-patterns/work-avoidance/index.md) - Conceptual pattern and techniques
 - [File Distribution](../file-distribution/index.md) - Applies these patterns at scale
 - [Idempotency](../file-distribution/idempotency.md) - Complementary pattern for safe reruns

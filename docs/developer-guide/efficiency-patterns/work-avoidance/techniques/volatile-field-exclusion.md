@@ -229,4 +229,4 @@ This example shows a file distribution workflow that skips version-only changes.
 
 - [Content Hashing](content-hashing.md) - When exact comparison is needed
 - [Techniques Overview](index.md) - All work avoidance techniques
-- [Content Comparison (GitHub Actions)](../../../../../operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md) - CI/CD implementation
+- [Content Comparison (GitHub Actions)](../../../../operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md) - CI/CD implementation

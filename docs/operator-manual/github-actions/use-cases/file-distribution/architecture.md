@@ -9,8 +9,8 @@ description: >-
 This workflow implements the [Three-Stage Design][three-stage] pattern
 with [Matrix Distribution][matrix] for parallel processing.
 
-[three-stage]: ../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md
-[matrix]: ../../../../developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/index.md
+[three-stage]: ../../../../developer-guide/workflow-architecture/three-stage-design.md
+[matrix]: ../../../../developer-guide/workflow-architecture/matrix-distribution/index.md
 
 ## Workflow Overview
 
@@ -62,7 +62,7 @@ This workflow demonstrates several patterns from the [Developer Guide][dev-guide
 | [Idempotency][idempotency] | Makes reruns safe with change detection |
 
 [dev-guide]: ../../../../developer-guide/index.md
-[idempotency]: ../../../../developer-guide/engineering-practices/patterns/idempotency/index.md
+[idempotency]: ../../../../developer-guide/efficiency-patterns/idempotency/index.md
 
 ## Key Configuration
 

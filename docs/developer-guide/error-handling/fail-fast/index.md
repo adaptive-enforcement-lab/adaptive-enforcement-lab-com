@@ -330,8 +330,8 @@ Before implementing fail fast:
 |---------|----------------------|
 | [Graceful Degradation](../graceful-degradation/index.md) | Complementary: fail fast on preconditions, degrade on runtime |
 | [Prerequisite Checks](../prerequisite-checks/index.md) | Specialized form of fail fast for complex preconditions |
-| [Idempotency](../idempotency/index.md) | Fail fast prevents partial state that breaks idempotency |
-| [Error Handling](../../../../operator-manual/github-actions/actions-integration/error-handling.md) | Fail fast is the "reject early" error handling strategy |
+| [Idempotency](../../efficiency-patterns/idempotency/index.md) | Fail fast prevents partial state that breaks idempotency |
+| [Error Handling](../../../operator-manual/github-actions/actions-integration/error-handling.md) | Fail fast is the "reject early" error handling strategy |
 
 ---
 
