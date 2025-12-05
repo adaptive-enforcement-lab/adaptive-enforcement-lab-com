@@ -128,6 +128,7 @@ jobs:
     needs: [detect-changes, analyze-docs]
     if: |
       always() && !cancelled() &&
+      (needs.detect-changes.outputs.docs_changed == 'true' || inputs.force_all == true) &&
       (needs.analyze-docs.result == 'success' || needs.analyze-docs.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
