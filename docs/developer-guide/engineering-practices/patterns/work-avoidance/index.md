@@ -132,4 +132,5 @@ This applies [Volatile Field Exclusion](techniques/volatile-field-exclusion.md) 
 ## Related
 
 - [Idempotency](../idempotency/index.md) - Making operations safe to repeat
+- [Graceful Degradation](../graceful-degradation/index.md) - Fallback when detection fails
 - [Three-Stage Design](../workflow-patterns/three-stage-design.md) - Workflow structure that enables work avoidance

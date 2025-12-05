@@ -26,6 +26,7 @@ This is a growing collection of engineering patterns distilled from real-world D
 | Category | Pattern | Question | Action |
 |----------|---------|----------|--------|
 | Implementation | [**Idempotency**](idempotency/index.md) | "Safe to repeat?" | Make reruns safe |
+| Implementation | [**Graceful Degradation**](graceful-degradation/index.md) | "What if it fails?" | Fallback to slower alternatives |
 | Implementation | **Fail Fast** | "Is something wrong?" | Stop immediately |
 | Implementation | **Prerequisite Checks** | "Can it succeed?" | Validate before starting |
 | Implementation | [**Work Avoidance**](work-avoidance/index.md) | "Already done?" | Skip redundant work |
@@ -55,6 +56,16 @@ Detect when work isn't needed and skip it entirely. Unlike idempotency (which ma
     - Your automation creates noise (version-only PRs, redundant builds)
     - You want to skip operations when nothing meaningful changed
     - You need to filter out volatile metadata before comparing
+
+### [Graceful Degradation](graceful-degradation/index.md)
+
+When the fast path fails, fall back to progressively slower but more reliable alternatives. Degrade performance, not availability.
+
+!!! tip "Start Here If..."
+
+    - Your caches miss sometimes and break workflows
+    - You want systems that survive component failures
+    - You need tiered fallbacks (mount → API → rebuild)
 
 ### [Workflow Patterns](workflow-patterns/index.md)
 

@@ -195,6 +195,7 @@ nav:
                   - Real-World Example: developer-guide/engineering-practices/patterns/idempotency/real-world-example.md
                   - Testing: developer-guide/engineering-practices/patterns/idempotency/testing.md
                   - Cache Considerations: developer-guide/engineering-practices/patterns/idempotency/caches.md
+              - Graceful Degradation: developer-guide/engineering-practices/patterns/graceful-degradation/index.md
               - Work Avoidance:
                   - developer-guide/engineering-practices/patterns/work-avoidance/index.md
                   - Techniques:
