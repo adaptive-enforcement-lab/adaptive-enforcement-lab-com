@@ -9,26 +9,41 @@ Principles answer the *why* and *when* questions. For implementation details, se
 ## Pattern Decision Matrix
 
 ```mermaid
+---
+config:
+  quadrantChart:
+    quadrantPadding: 10
+  themeVariables:
+    quadrant1Fill: "#a7e22e"
+    quadrant2Fill: "#fd971e"
+    quadrant3Fill: "#f92572"
+    quadrant4Fill: "#9e6ffe"
+    quadrant1TextFill: "#1b1d1e"
+    quadrant2TextFill: "#1b1d1e"
+    quadrant3TextFill: "#1b1d1e"
+    quadrant4TextFill: "#1b1d1e"
+    quadrantPointFill: "#65d9ef"
+    quadrantPointTextFill: "#f8f8f3"
+---
 quadrantChart
-    title Pattern Selection by Timing and Recovery
-    x-axis Fail on Error --> Recover from Error
-    y-axis During Execution --> Before Execution
-    quadrant-1 Graceful Degradation
-    quadrant-2 Prerequisite Checks
-    quadrant-3 Idempotency
-    quadrant-4 Fail Fast
-    Fail Fast: [0.15, 0.25]
-    Prerequisite Checks: [0.25, 0.75]
-    Graceful Degradation: [0.85, 0.75]
-    Idempotency: [0.75, 0.25]
-    Work Avoidance: [0.50, 0.85]
-    Workflow Patterns: [0.50, 0.50]
+    title Pattern Selection Matrix
+    x-axis Stop on Error --> Recover from Error
+    y-axis Runtime --> Pre-flight
+    quadrant-1 Skip if done
+    quadrant-2 Validate first
+    quadrant-3 Abort early
+    quadrant-4 Handle gracefully
+    Fail Fast: [0.20, 0.30]
+    Prerequisite Checks: [0.20, 0.80]
+    Graceful Degradation: [0.85, 0.30]
+    Idempotency: [0.70, 0.40]
+    Work Avoidance: [0.70, 0.80]
 ```
 
 **Reading the matrix:**
 
-- **Y-axis**: When does the pattern apply? Before execution starts, or during execution?
-- **X-axis**: What happens on error? Fail immediately, or attempt recovery?
+- **Y-axis**: When? Pre-flight (before work starts) or runtime (during execution)
+- **X-axis**: Strategy? Stop immediately on error, or attempt recovery
 
 ---
 
@@ -47,25 +62,22 @@ quadrantChart
 | Resource already exists | [Idempotency](../patterns/idempotency/index.md) | Create-or-update safely |
 | Content unchanged | [Work Avoidance](../patterns/work-avoidance/index.md) | Skip unnecessary work |
 | Build artifact cached | [Work Avoidance](../patterns/work-avoidance/index.md) | Reuse previous results |
-| Multi-repo operations | [Workflow Patterns](../patterns/workflow-patterns/index.md) | Coordinate parallel work |
-| Matrix job orchestration | [Workflow Patterns](../patterns/workflow-patterns/index.md) | Fan-out/fan-in execution |
 
 ---
 
 ## Condition Matrix
 
-| Condition | Fail Fast | Graceful Degradation | Prerequisite Checks | Idempotency | Work Avoidance | Workflow Patterns |
-|-----------|:---------:|:--------------------:|:-------------------:|:-----------:|:--------------:|:-----------------:|
-| Before execution starts | ✓ | | ✓ | | ✓ | |
-| During execution | | ✓ | | ✓ | | ✓ |
-| No fallback available | ✓ | | | | | |
-| Fallback exists | | ✓ | | | | |
-| Has preconditions | | | ✓ | | | |
-| May be retried | | | | ✓ | | |
-| Result is cacheable | | | | | ✓ | |
-| Multi-step/parallel | | | | | | ✓ |
-| Integrity critical | ✓ | | | | | |
-| Availability critical | | ✓ | | | | |
+| Condition | Fail Fast | Prerequisite Checks | Graceful Degradation | Idempotency | Work Avoidance |
+|-----------|:---------:|:-------------------:|:--------------------:|:-----------:|:--------------:|
+| Before execution starts | ✓ | ✓ | | | ✓ |
+| During execution | | | ✓ | ✓ | |
+| No fallback available | ✓ | | | | |
+| Fallback exists | | | ✓ | | |
+| Has preconditions | | ✓ | | | |
+| May be retried | | | | ✓ | |
+| Result is cacheable | | | | | ✓ |
+| Integrity critical | ✓ | | | | |
+| Availability critical | | | ✓ | | |
 
 ---
 
@@ -74,11 +86,10 @@ quadrantChart
 | Pattern | When to Apply | Trade-off |
 |---------|---------------|-----------|
 | [Fail Fast](../patterns/fail-fast/index.md) | Early detection prevents cascading failure | Speed vs thoroughness |
-| [Graceful Degradation](../patterns/graceful-degradation/index.md) | System has fallback options | Complexity vs availability |
 | [Prerequisite Checks](../patterns/prerequisite-checks/index.md) | Operations have preconditions | Latency vs correctness |
+| [Graceful Degradation](../patterns/graceful-degradation/index.md) | System has fallback options | Complexity vs availability |
 | [Idempotency](../patterns/idempotency/index.md) | Operations may be retried | Complexity vs reliability |
 | [Work Avoidance](../patterns/work-avoidance/index.md) | Results can be cached/reused | Cache invalidation vs speed |
-| [Workflow Patterns](../patterns/workflow-patterns/index.md) | Complex multi-step automation | Maintainability vs flexibility |
 
 ---
 
