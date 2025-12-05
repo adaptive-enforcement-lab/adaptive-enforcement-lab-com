@@ -150,7 +150,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
@@ -188,37 +187,19 @@ jobs:
             echo "version=${{ needs.release-please.outputs.site_version }}" >> "$GITHUB_OUTPUT"
             echo "is_release=true" >> "$GITHUB_OUTPUT"
           else
-            echo "version=dev" >> "$GITHUB_OUTPUT"
             echo "is_release=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Deploy versioned docs (release)
         if: steps.version.outputs.is_release == 'true'
         run: |
-          mike deploy --push --update-aliases ${{ steps.version.outputs.version }} stable latest
+          mike deploy --push --update-aliases ${{ steps.version.outputs.version }} stable
           mike set-default --push stable
 
-      - name: Deploy dev docs (non-release)
+      - name: Deploy latest docs (non-release)
         if: steps.version.outputs.is_release == 'false'
         run: |
-          mike deploy --push dev
-
-      - name: Configure GitHub Pages source
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Check current pages config
-          current_source=$(gh api repos/${{ github.repository }}/pages --jq '.build_type' 2>/dev/null || echo "none")
-          if [ "$current_source" != "legacy" ]; then
-            echo "Updating GitHub Pages to use gh-pages branch..."
-            gh api repos/${{ github.repository }}/pages \
-              -X PUT \
-              -f build_type=legacy \
-              -f source[branch]=gh-pages \
-              -f source[path]=/
-          else
-            echo "GitHub Pages already configured for gh-pages branch"
-          fi
+          mike deploy --push --update-aliases latest
 
   release-status:
     name: Release Status
