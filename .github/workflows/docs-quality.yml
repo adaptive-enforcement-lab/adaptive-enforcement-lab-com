@@ -1,40 +1,43 @@
 name: Documentation Quality
 
 on:
-  pull_request:
-    paths:
-      - 'docs/**/*.md'
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**/*.md'
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      fail_on_threshold:
+        description: 'Fail the workflow if thresholds are exceeded'
+        type: boolean
+        default: true
 
 permissions:
   contents: read
 
 jobs:
-  readability:
+  analyze:
+    name: Analyze Documentation
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v6
 
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
-          go-version: '1.25'
-          cache-dependency-path: tools/content-analyzer/go.sum
+          go-version-file: tools/content-analyzer/go.mod
+
+      - name: Build content-analyzer
+        working-directory: tools/content-analyzer
+        run: go build -o content-analyzer ./cmd/content-analyzer/
 
       - name: Generate readability report
-        working-directory: tools/content-analyzer
         run: |
-          echo "## Documentation Readability Report" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          go run ./cmd/content-analyzer ../../docs/ --format markdown >> $GITHUB_STEP_SUMMARY
+          ./tools/content-analyzer/content-analyzer docs/ --format report >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Check thresholds
-        working-directory: tools/content-analyzer
+      - name: Check readability thresholds
+        if: inputs.fail_on_threshold
         run: |
-          go run ./cmd/content-analyzer ../../docs/ --check || echo "::warning::Some documentation files exceed readability thresholds"
+          ./tools/content-analyzer/content-analyzer docs/ --check
+
+      - name: Check readability thresholds (warn only)
+        if: ${{ !inputs.fail_on_threshold }}
+        run: |
+          ./tools/content-analyzer/content-analyzer docs/ --check || echo "::warning::Some documentation files exceed readability thresholds"

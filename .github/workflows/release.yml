@@ -119,27 +119,9 @@ jobs:
       always() && !cancelled() &&
       (needs.detect-changes.outputs.docs_changed == 'true' || inputs.force_all == true) &&
       (needs.build-content-analyzer.result == 'success' || needs.build-content-analyzer.result == 'skipped')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v6
-
-      - name: Setup Go
-        uses: actions/setup-go@v6
-        with:
-          go-version-file: tools/content-analyzer/go.mod
-
-      - name: Build content-analyzer
-        working-directory: tools/content-analyzer
-        run: go build -o content-analyzer ./cmd/content-analyzer/
-
-      - name: Analyze documentation
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --format report >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Check readability thresholds
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --check
+    uses: ./.github/workflows/docs-quality.yml
+    with:
+      fail_on_threshold: true
 
   deploy-docs:
     name: Deploy Documentation
