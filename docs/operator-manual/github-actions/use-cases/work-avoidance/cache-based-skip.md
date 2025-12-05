@@ -2,7 +2,7 @@
 
 Skip operations when output artifacts already exist.
 
-This implements the [cache-based skip](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md) technique for GitHub Actions workflows.
+This implements the [cache-based skip](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md) technique for GitHub Actions workflows.
 
 ---
 
@@ -39,7 +39,7 @@ The cache key is derived from source file hashes. Same source = same output = sk
 - **Cache invalidation** - Know when to bust the cache
 - **Partial hits** - Handle cases where cache is stale
 
-See the [engineering pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md) for conceptual details.
+See the [engineering pattern](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md) for conceptual details.
 
 ---
 

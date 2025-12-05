@@ -114,7 +114,7 @@ execute:
 
 - Use matrix strategy for parallelization
 - Set `fail-fast: false` to process all targets even if some fail
-- Each job should be [idempotent](../idempotency/index.md)
+- Each job should be [idempotent](../efficiency-patterns/idempotency/index.md)
 
 ### Stage 3: Summary
 
@@ -283,7 +283,7 @@ Always use `if: always()` on summary stages.
 - **Security Scanning** - Enumerate targets, scan each, aggregate findings
 - **Configuration Drift** - Query resources, compare to desired state, report drift
 
-See [File Distribution](../../../../operator-manual/github-actions/use-cases/file-distribution/index.md) for a complete implementation example.
+See [File Distribution](../../operator-manual/github-actions/use-cases/file-distribution/index.md) for a complete implementation example.
 
 ---
 

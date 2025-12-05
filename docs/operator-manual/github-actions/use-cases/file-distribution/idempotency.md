@@ -6,11 +6,11 @@ description: >-
 
 # Idempotency in File Distribution
 
-This workflow applies [idempotency patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) to ensure safe reruns.
+This workflow applies [idempotency patterns](../../../../developer-guide/efficiency-patterns/idempotency/index.md) to ensure safe reruns.
 
 !!! tip "Learn the Pattern"
 
-    For comprehensive coverage of idempotency patterns, see the [Developer Guide: Idempotency](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md).
+    For comprehensive coverage of idempotency patterns, see the [Developer Guide: Idempotency](../../../../developer-guide/efficiency-patterns/idempotency/index.md).
 
 ---
 
@@ -18,7 +18,7 @@ This workflow applies [idempotency patterns](../../../../developer-guide/enginee
 
 ### Branch Management: Force Overwrite
 
-Uses [force overwrite](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/force-overwrite.md) to reset branch state:
+Uses [force overwrite](../../../../developer-guide/efficiency-patterns/idempotency/patterns/force-overwrite.md) to reset branch state:
 
 ```bash
 # Force reset to remote state - idempotent
@@ -27,7 +27,7 @@ git checkout -B "$BRANCH_NAME" "origin/$BRANCH_NAME"
 
 ### Change Detection: Check-Before-Act {#change_detection}
 
-Uses [check-before-act](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/check-before-act.md) to avoid empty commits.
+Uses [check-before-act](../../../../developer-guide/efficiency-patterns/idempotency/patterns/check-before-act.md) to avoid empty commits.
 
 !!! tip "Content-Level Filtering"
 
@@ -60,7 +60,7 @@ Uses [check-before-act](../../../../developer-guide/engineering-practices/patter
 
 ### PR Creation: Upsert
 
-Uses [upsert pattern](../../../../developer-guide/engineering-practices/patterns/idempotency/patterns/upsert.md) for PR management:
+Uses [upsert pattern](../../../../developer-guide/efficiency-patterns/idempotency/patterns/upsert.md) for PR management:
 
 ```yaml
 - name: Create or update pull request
@@ -106,6 +106,6 @@ Without idempotency, you'd need to manually identify which repos succeeded and r
 
 ## Related
 
-- [Work Avoidance Pattern](../../../../developer-guide/engineering-practices/patterns/work-avoidance/index.md) - Engineering pattern for skipping unnecessary work
+- [Work Avoidance Pattern](../../../../developer-guide/efficiency-patterns/work-avoidance/index.md) - Engineering pattern for skipping unnecessary work
 - [Content Comparison](../work-avoidance/content-comparison.md) - Skip version-only changes (GitHub Actions)
-- [Idempotency Patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) - Theory and decision matrix
+- [Idempotency Patterns](../../../../developer-guide/efficiency-patterns/idempotency/index.md) - Theory and decision matrix

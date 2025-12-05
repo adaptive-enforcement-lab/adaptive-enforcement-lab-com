@@ -124,13 +124,13 @@ This applies [Volatile Field Exclusion](techniques/volatile-field-exclusion.md) 
 
 ## Implementation Examples
 
-- [GitHub Actions: Work Avoidance](../../../../operator-manual/github-actions/use-cases/work-avoidance/index.md) - CI/CD implementation patterns
-- [File Distribution](../../../../operator-manual/github-actions/use-cases/file-distribution/index.md) - Real-world workflow using these patterns
+- [GitHub Actions: Work Avoidance](../../../operator-manual/github-actions/use-cases/work-avoidance/index.md) - CI/CD implementation patterns
+- [File Distribution](../../../operator-manual/github-actions/use-cases/file-distribution/index.md) - Real-world workflow using these patterns
 
 ---
 
 ## Related
 
 - [Idempotency](../idempotency/index.md) - Making operations safe to repeat
-- [Graceful Degradation](../graceful-degradation/index.md) - Fallback when detection fails
-- [Three-Stage Design](../workflow-patterns/three-stage-design.md) - Workflow structure that enables work avoidance
+- [Graceful Degradation](../../error-handling/graceful-degradation/index.md) - Fallback when detection fails
+- [Three-Stage Design](../../workflow-architecture/three-stage-design.md) - Workflow structure that enables work avoidance

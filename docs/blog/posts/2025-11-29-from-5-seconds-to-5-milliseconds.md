@@ -202,7 +202,7 @@ flowchart LR
     1. **Cache aggressively**: If the answer changes rarely, don't recompute it
     2. **Use Kubernetes primitives**: ConfigMaps are free, Redis is not
     3. **Mount over API**: Volume mounts eliminate network round-trips
-    4. **[Graceful degradation](../../developer-guide/engineering-practices/patterns/graceful-degradation/index.md)**: Always have a fallback (mount → API → rebuild)
+    4. **[Graceful degradation](../../developer-guide/error-handling/graceful-degradation/index.md)**: Always have a fallback (mount → API → rebuild)
     5. **Measure first**: I didn't know the cluster scan was slow until I measured
 
 ---

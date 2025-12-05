@@ -86,7 +86,7 @@ Some caches restore partial state that breaks assumptions:
 
 ## Strategies for Cache-Resilient Idempotency
 
-These strategies align with the [Graceful Degradation](../graceful-degradation/index.md) pattern: design for cache hits, but survive cache misses.
+These strategies align with the [Graceful Degradation](../../error-handling/graceful-degradation/index.md) pattern: design for cache hits, but survive cache misses.
 
 ### Strategy 1: Verify Cache Validity
 
@@ -151,4 +151,4 @@ If step 4 fails, your idempotency depends on cache state.
 
 !!! info "Deep Dive Coming"
 
-    Cache-resilient idempotency deserves its own comprehensive guide. Check the [Roadmap](../../../../roadmap.md) for upcoming content on this topic.
+    Cache-resilient idempotency deserves its own comprehensive guide. Check the [Roadmap](../../../roadmap.md) for upcoming content on this topic.

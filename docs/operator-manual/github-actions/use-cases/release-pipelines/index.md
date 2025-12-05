@@ -171,5 +171,5 @@ flowchart LR
 ## Related
 
 - [GitHub App Setup](../../github-app-setup/index.md) - Machine identity for automation
-- [Idempotency Patterns](../../../../developer-guide/engineering-practices/patterns/idempotency/index.md) - Making reruns safe
-- [Three-Stage Design](../../../../developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md) - Complex workflows
+- [Idempotency Patterns](../../../../developer-guide/efficiency-patterns/idempotency/index.md) - Making reruns safe
+- [Three-Stage Design](../../../../developer-guide/workflow-architecture/three-stage-design.md) - Complex workflows

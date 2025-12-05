@@ -64,7 +64,7 @@ Each tier must:
 
 ### Cache Access Pattern
 
-From [From 5 Seconds to 5 Milliseconds](../../../../blog/posts/2025-11-29-from-5-seconds-to-5-milliseconds.md):
+From [From 5 Seconds to 5 Milliseconds](../../../blog/posts/2025-11-29-from-5-seconds-to-5-milliseconds.md):
 
 ```text
 Volume Mount → API Call → Rebuild Cache
@@ -272,15 +272,15 @@ Before implementing graceful degradation:
 
 | Pattern | How Graceful Degradation Applies |
 |---------|----------------------------------|
-| [Caching](../idempotency/caches.md) | Fallback tiers when cache misses |
-| [Work Avoidance](../work-avoidance/index.md) | When detection fails, do the work anyway |
-| [Idempotency](../idempotency/index.md) | Safe retries as fallback mechanism |
-| Fail Fast | Complementary: fail fast on preconditions, degrade on runtime |
-| [Error Handling](../../../../operator-manual/github-actions/actions-integration/error-handling.md) | Recovery strategy selection |
+| [Caching](../../efficiency-patterns/idempotency/caches.md) | Fallback tiers when cache misses |
+| [Work Avoidance](../../efficiency-patterns/work-avoidance/index.md) | When detection fails, do the work anyway |
+| [Idempotency](../../efficiency-patterns/idempotency/index.md) | Safe retries as fallback mechanism |
+| [Fail Fast](../fail-fast/index.md) | Complementary: fail fast on preconditions, degrade on runtime |
+| [Error Handling](../../../operator-manual/github-actions/actions-integration/error-handling.md) | Recovery strategy selection |
 
 ---
 
 ## Further Reading
 
-- [From 5 Seconds to 5 Milliseconds](../../../../blog/posts/2025-11-29-from-5-seconds-to-5-milliseconds.md) - The cache optimization story that demonstrates this pattern
-- [Cache Considerations](../idempotency/caches.md) - Cache-resilient idempotency strategies
+- [From 5 Seconds to 5 Milliseconds](../../../blog/posts/2025-11-29-from-5-seconds-to-5-milliseconds.md) - The cache optimization story that demonstrates this pattern
+- [Cache Considerations](../../efficiency-patterns/idempotency/caches.md) - Cache-resilient idempotency strategies

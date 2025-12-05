@@ -7,7 +7,7 @@ description: >-
 
 # Real-World Example: File Distribution
 
-A workflow distributing files to 40 repositories needs idempotency at multiple levels. For the complete implementation, see the [File Distribution Use Case](../../../../operator-manual/github-actions/use-cases/file-distribution/index.md) in the Operator Manual.
+A workflow distributing files to 40 repositories needs idempotency at multiple levels. For the complete implementation, see the [File Distribution Use Case](../../../operator-manual/github-actions/use-cases/file-distribution/index.md) in the Operator Manual.
 
 ---
 
@@ -41,7 +41,7 @@ fi
 
 **Pattern**: State inspection before action
 
-**Why**: Uses `git status --porcelain` instead of `git diff --quiet` to detect both modified tracked files AND new untracked files. See [Git Diff Lies](../../../../blog/posts/2025-11-26-git-diff-lies.md) for the full story on this bug.
+**Why**: Uses `git status --porcelain` instead of `git diff --quiet` to detect both modified tracked files AND new untracked files. See [Git Diff Lies](../../../blog/posts/2025-11-26-git-diff-lies.md) for the full story on this bug.
 
 ---
 

@@ -171,47 +171,52 @@ nav:
                   - Cache-Based Skip: operator-manual/github-actions/use-cases/work-avoidance/cache-based-skip.md
   - Developer Guide:
       - developer-guide/index.md
-      - Engineering Practices:
-          - developer-guide/engineering-practices/index.md
-          - Patterns:
-              - developer-guide/engineering-practices/patterns/index.md
-              - Idempotency:
-                  - developer-guide/engineering-practices/patterns/idempotency/index.md
-                  - Pros and Cons: developer-guide/engineering-practices/patterns/idempotency/pros-and-cons.md
-                  - Decision Matrix: developer-guide/engineering-practices/patterns/idempotency/decision-matrix.md
-                  - Implementation Patterns:
-                      - developer-guide/engineering-practices/patterns/idempotency/patterns/index.md
-                      - Check-Before-Act: developer-guide/engineering-practices/patterns/idempotency/patterns/check-before-act.md
-                      - Upsert: developer-guide/engineering-practices/patterns/idempotency/patterns/upsert.md
-                      - Force Overwrite: developer-guide/engineering-practices/patterns/idempotency/patterns/force-overwrite.md
-                      - Unique Identifiers: developer-guide/engineering-practices/patterns/idempotency/patterns/unique-identifiers.md
-                      - Tombstone Markers:
-                          - developer-guide/engineering-practices/patterns/idempotency/patterns/tombstone-markers/index.md
-                          - CI/CD Examples: developer-guide/engineering-practices/patterns/idempotency/patterns/tombstone-markers/ci-cd-examples.md
-                          - Edge Cases: developer-guide/engineering-practices/patterns/idempotency/patterns/tombstone-markers/edge-cases.md
-                  - Real-World Example: developer-guide/engineering-practices/patterns/idempotency/real-world-example.md
-                  - Testing: developer-guide/engineering-practices/patterns/idempotency/testing.md
-                  - Cache Considerations: developer-guide/engineering-practices/patterns/idempotency/caches.md
-              - Graceful Degradation: developer-guide/engineering-practices/patterns/graceful-degradation/index.md
-              - Work Avoidance:
-                  - developer-guide/engineering-practices/patterns/work-avoidance/index.md
-                  - Techniques:
-                      - developer-guide/engineering-practices/patterns/work-avoidance/techniques/index.md
-                      - Content Hashing: developer-guide/engineering-practices/patterns/work-avoidance/techniques/content-hashing.md
-                      - Volatile Field Exclusion: developer-guide/engineering-practices/patterns/work-avoidance/techniques/volatile-field-exclusion.md
-                      - Existence Checks: developer-guide/engineering-practices/patterns/work-avoidance/techniques/existence-checks.md
-                      - Cache-Based Skip: developer-guide/engineering-practices/patterns/work-avoidance/techniques/cache-based-skip.md
-                  - Anti-Patterns: developer-guide/engineering-practices/patterns/work-avoidance/anti-patterns.md
-              - Workflow Patterns:
-                  - developer-guide/engineering-practices/patterns/workflow-patterns/index.md
-                  - Three-Stage Design: developer-guide/engineering-practices/patterns/workflow-patterns/three-stage-design.md
-                  - Matrix Distribution:
-                      - developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/index.md
-                      - Conditional Distribution: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/conditional-distribution.md
-                      - Template Rendering: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/template-rendering.md
-                      - Anti-Patterns: developer-guide/engineering-practices/patterns/workflow-patterns/matrix-distribution/anti-patterns.md
-          - Principles:
-              - developer-guide/engineering-practices/principles/index.md
+      - Pattern Selection Guide: developer-guide/pattern-selection-guide/index.md
+      - Error Handling:
+          - developer-guide/error-handling/index.md
+          - Fail Fast: developer-guide/error-handling/fail-fast/index.md
+          - Prerequisite Checks:
+              - developer-guide/error-handling/prerequisite-checks/index.md
+              - Check Ordering: developer-guide/error-handling/prerequisite-checks/ordering.md
+              - Anti-Patterns: developer-guide/error-handling/prerequisite-checks/anti-patterns.md
+              - Examples: developer-guide/error-handling/prerequisite-checks/examples.md
+          - Graceful Degradation: developer-guide/error-handling/graceful-degradation/index.md
+      - Efficiency Patterns:
+          - developer-guide/efficiency-patterns/index.md
+          - Idempotency:
+              - developer-guide/efficiency-patterns/idempotency/index.md
+              - Pros and Cons: developer-guide/efficiency-patterns/idempotency/pros-and-cons.md
+              - Decision Matrix: developer-guide/efficiency-patterns/idempotency/decision-matrix.md
+              - Implementation Patterns:
+                  - developer-guide/efficiency-patterns/idempotency/patterns/index.md
+                  - Check-Before-Act: developer-guide/efficiency-patterns/idempotency/patterns/check-before-act.md
+                  - Upsert: developer-guide/efficiency-patterns/idempotency/patterns/upsert.md
+                  - Force Overwrite: developer-guide/efficiency-patterns/idempotency/patterns/force-overwrite.md
+                  - Unique Identifiers: developer-guide/efficiency-patterns/idempotency/patterns/unique-identifiers.md
+                  - Tombstone Markers:
+                      - developer-guide/efficiency-patterns/idempotency/patterns/tombstone-markers/index.md
+                      - CI/CD Examples: developer-guide/efficiency-patterns/idempotency/patterns/tombstone-markers/ci-cd-examples.md
+                      - Edge Cases: developer-guide/efficiency-patterns/idempotency/patterns/tombstone-markers/edge-cases.md
+              - Real-World Example: developer-guide/efficiency-patterns/idempotency/real-world-example.md
+              - Testing: developer-guide/efficiency-patterns/idempotency/testing.md
+              - Cache Considerations: developer-guide/efficiency-patterns/idempotency/caches.md
+          - Work Avoidance:
+              - developer-guide/efficiency-patterns/work-avoidance/index.md
+              - Techniques:
+                  - developer-guide/efficiency-patterns/work-avoidance/techniques/index.md
+                  - Content Hashing: developer-guide/efficiency-patterns/work-avoidance/techniques/content-hashing.md
+                  - Volatile Field Exclusion: developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md
+                  - Existence Checks: developer-guide/efficiency-patterns/work-avoidance/techniques/existence-checks.md
+                  - Cache-Based Skip: developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md
+              - Anti-Patterns: developer-guide/efficiency-patterns/work-avoidance/anti-patterns.md
+      - Workflow Architecture:
+          - developer-guide/workflow-architecture/index.md
+          - Three-Stage Design: developer-guide/workflow-architecture/three-stage-design.md
+          - Matrix Distribution:
+              - developer-guide/workflow-architecture/matrix-distribution/index.md
+              - Conditional Distribution: developer-guide/workflow-architecture/matrix-distribution/conditional-distribution.md
+              - Template Rendering: developer-guide/workflow-architecture/matrix-distribution/template-rendering.md
+              - Anti-Patterns: developer-guide/workflow-architecture/matrix-distribution/anti-patterns.md
   - Roadmap: roadmap.md
   - About:
       - about/index.md
