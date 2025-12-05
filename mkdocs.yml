@@ -196,6 +196,8 @@ nav:
               - Graceful Degradation: developer-guide/engineering-practices/patterns/graceful-degradation/index.md
               - Prerequisite Checks:
                   - developer-guide/engineering-practices/patterns/prerequisite-checks/index.md
+                  - Check Ordering: developer-guide/engineering-practices/patterns/prerequisite-checks/ordering.md
+                  - Anti-Patterns: developer-guide/engineering-practices/patterns/prerequisite-checks/anti-patterns.md
                   - Examples: developer-guide/engineering-practices/patterns/prerequisite-checks/examples.md
               - Work Avoidance:
                   - developer-guide/engineering-practices/patterns/work-avoidance/index.md
