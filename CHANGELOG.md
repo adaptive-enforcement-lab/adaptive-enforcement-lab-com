@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.0...0.3.1) (2025-12-05)
+
+
+### Bug Fixes
+
+* **ci:** detect release from git tag for versioned docs deploy ([#84](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/84)) ([e6a2faf](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e6a2fafe41058e1f89b41f029901cc17dcef0910))
+
+
+### Code Refactoring
+
+* backdate and anonymize release-please blog posts ([#80](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/80)) ([9b2add2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9b2add2ab7dffcacbeb63f3c8083f19cf6ce38e1))
+* convert docs-quality to reusable workflow ([#81](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/81)) ([6218beb](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6218beb85ce68d19ef3c7ad27417f792b55fecd4))
+
 ## [0.3.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.2.0...0.3.0) (2025-12-05)
 
 
