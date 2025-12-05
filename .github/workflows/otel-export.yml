@@ -2,7 +2,9 @@ name: Export OpenTelemetry Traces to Dash0
 on:
   workflow_run:
     workflows:
-      - "Deploy MkDocs to GitHub Pages"
+      - "Build Pipeline"
+      - "Release Pipeline"
+      - "Documentation Quality"
     types:
       - completed
 jobs:
