@@ -183,22 +183,39 @@ jobs:
       - name: Get version info
         id: version
         run: |
+          # Check if release-please created a release in this run
           if [ "${{ needs.release-please.outputs.site_release_created }}" = "true" ]; then
             echo "version=${{ needs.release-please.outputs.site_version }}" >> "$GITHUB_OUTPUT"
             echo "is_release=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "is_release=false" >> "$GITHUB_OUTPUT"
+            echo "Release detected from release-please outputs"
+            exit 0
           fi
+
+          # Fallback: Check if HEAD commit has a site version tag (for release PR merges)
+          # This handles the case where release-please creates the release but doesn't
+          # report it in outputs (happens when merging release PRs)
+          SITE_TAG=$(git tag --points-at HEAD | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' | head -1)
+          if [ -n "$SITE_TAG" ]; then
+            echo "version=$SITE_TAG" >> "$GITHUB_OUTPUT"
+            echo "is_release=true" >> "$GITHUB_OUTPUT"
+            echo "Release detected from git tag: $SITE_TAG"
+            exit 0
+          fi
+
+          echo "is_release=false" >> "$GITHUB_OUTPUT"
+          echo "No release detected, deploying to latest"
 
       - name: Deploy versioned docs (release)
         if: steps.version.outputs.is_release == 'true'
         run: |
+          echo "Deploying version ${{ steps.version.outputs.version }} as stable"
           mike deploy --push --update-aliases ${{ steps.version.outputs.version }} stable
           mike set-default --push stable
 
       - name: Deploy latest docs (non-release)
         if: steps.version.outputs.is_release == 'false'
         run: |
+          echo "Deploying to latest (no release detected)"
           mike deploy --push --update-aliases latest
 
   release-status:
