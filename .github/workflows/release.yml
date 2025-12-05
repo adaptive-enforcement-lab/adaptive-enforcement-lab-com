@@ -166,7 +166,7 @@ jobs:
   deploy-docs:
     name: Deploy Documentation
     needs: [build-docs]
-    if: needs.build-docs.result == 'success'
+    if: always() && !cancelled() && needs.build-docs.result == 'success'
     runs-on: ubuntu-latest
     permissions:
       pages: write
