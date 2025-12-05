@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.2...0.3.3) (2025-12-05)
+
+
+### Bug Fixes
+
+* **ci:** add work avoidance to build-docs job ([#92](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/92)) ([8711345](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/87113450447fbe2a53a795f9786a99319bd8bbea))
+* **ci:** ensure deploy-docs runs when build-docs succeeds ([#90](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/90)) ([4a2977e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4a2977efbcd4336e3c3824cbfb2d116b0b143b85))
+
 ## [0.3.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.1...0.3.2) (2025-12-05)
 
 
