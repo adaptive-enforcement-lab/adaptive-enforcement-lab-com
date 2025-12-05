@@ -2,137 +2,52 @@
 
 Architectural guidance for building resilient automation.
 
-Principles answer the *why* and *when* questions. They're decision frameworks, not code snippets.
+Principles answer the *why* and *when* questions. For implementation details, see the linked pattern guides.
 
 ---
 
-## Overview
-
-| Principle | When to Apply | Trade-off |
-|-----------|---------------|-----------|
-| [Graceful Degradation](#graceful_degradation) | System has fallback options | Complexity vs availability |
-| [Fail Fast](#fail_fast) | Early detection prevents cascading failure | Speed vs thoroughness |
-| [Prerequisite Checks](#prerequisite_checks) | Operations have preconditions | Latency vs correctness |
-
----
-
-## Graceful Degradation
-
-!!! abstract "Principle"
-
-    When the optimal path fails, fall back to progressively more expensive but reliable alternatives.
-
-### The Tiered Fallback Pattern
+## Decision Matrix
 
 ```mermaid
-flowchart LR
-    A[Request] --> B{Tier 1?}
-    B -->|Success| C[Fast Response]
-    B -->|Fail| D{Tier 2?}
-    D -->|Success| E[Slower Response]
-    D -->|Fail| F[Tier 3]
-    F --> G[Guaranteed Response]
+flowchart TD
+    A[Error or Failure] --> B{When did it occur?}
+
+    B -->|Before execution| C{Can it be fixed?}
+    B -->|During execution| D{Are fallbacks available?}
+
+    C -->|No - invalid input/config| E[Fail Fast]
+    C -->|Yes - missing prereqs| F[Prerequisite Checks]
+
+    D -->|Yes| G[Graceful Degradation]
+    D -->|No| H[Fail Fast]
+
+    click E "../../patterns/fail-fast/" "Fail Fast Pattern"
+    click F "../../patterns/prerequisite-checks/" "Prerequisite Checks Pattern"
+    click G "../../patterns/graceful-degradation/" "Graceful Degradation Pattern"
 
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
-    style C fill:#a7e22e,color:#1b1d1e
+    style C fill:#fd971e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
-    style E fill:#a7e22e,color:#1b1d1e
-    style F fill:#f92572,color:#1b1d1e
+    style E fill:#f92572,color:#1b1d1e
+    style F fill:#ae81ff,color:#1b1d1e
     style G fill:#a7e22e,color:#1b1d1e
-```
-
-### Real-World Example
-
-From the [deployment automation blog post](../../../blog/posts/2025-11-29-from-5-seconds-to-5-milliseconds.md):
-
-| Tier | Method | Latency | Fallback Trigger |
-|------|--------|---------|------------------|
-| 1 | Volume mount | 1-5ms | Mount not available |
-| 2 | API call | 50-200ms | API error |
-| 3 | Full rebuild | 5-10s | Always succeeds |
-
-### When to Apply
-
-- System has multiple ways to get the same result
-- Availability is more important than consistency
-- Degraded service is better than no service
-
-### Anti-Patterns
-
-- **Silent degradation** - Falling back without logging
-- **No final tier** - Every fallback can fail
-- **Expensive default** - Using Tier 3 as the happy path
-
----
-
-## Fail Fast
-
-!!! abstract "Principle"
-
-    Detect and report problems as early as possible, before they cascade into larger failures.
-
-### When to Apply
-
-- Invalid input would cause downstream failures
-- Resources are expensive to allocate
-- Partial execution leaves inconsistent state
-
-### When NOT to Apply
-
-- Fallback options exist (use graceful degradation instead)
-- Transient failures are expected (use retry instead)
-- Partial success is acceptable
-
-### Example
-
-```yaml
-# Fail fast: Check permissions before starting
-- name: Validate access
-  run: |
-    gh auth status || exit 1
-    gh repo view ${{ github.repository }} || exit 1
-
-# Now proceed with actual work
-- name: Create release
-  run: gh release create v1.0.0
+    style H fill:#f92572,color:#1b1d1e
 ```
 
 ---
 
-## Prerequisite Checks
+## Pattern Selection Guide
 
-!!! abstract "Principle"
-
-    Validate all preconditions before executing expensive or irreversible operations.
-
-### When to Apply
-
-- Operations are expensive (time, money, resources)
-- Operations are irreversible (deletes, deployments)
-- Multiple preconditions must all be true
-
-### Example
-
-```bash
-# Check all prerequisites before deployment
-check_prerequisites() {
-  # Required tools
-  command -v kubectl >/dev/null || { echo "kubectl not found"; return 1; }
-  command -v helm >/dev/null || { echo "helm not found"; return 1; }
-
-  # Required access
-  kubectl auth can-i create deployments || { echo "No deploy permission"; return 1; }
-
-  # Required state
-  helm status my-release >/dev/null 2>&1 || { echo "Release not found"; return 1; }
-
-  echo "All prerequisites met"
-}
-
-check_prerequisites || exit 1
-# Now safe to proceed
-```
+| Scenario | Pattern | Reasoning |
+|----------|---------|-----------|
+| Invalid user input | [Fail Fast](../patterns/fail-fast/index.md) | User error, report immediately |
+| Missing required config | [Fail Fast](../patterns/fail-fast/index.md) | Can't continue safely |
+| Complex preconditions | [Prerequisite Checks](../patterns/prerequisite-checks/index.md) | Validate all upfront |
+| Deployment requirements | [Prerequisite Checks](../patterns/prerequisite-checks/index.md) | Check tools, access, state |
+| Cache miss | [Graceful Degradation](../patterns/graceful-degradation/index.md) | Expensive path still works |
+| API timeout | [Graceful Degradation](../patterns/graceful-degradation/index.md) | Retry or use backup |
+| Service unavailable | [Graceful Degradation](../patterns/graceful-degradation/index.md) | Fall back to alternatives |
 
 ---
 
@@ -142,11 +57,21 @@ Principles sometimes conflict. Here's how to choose:
 
 | Scenario | Choose | Because |
 |----------|--------|---------|
-| Recoverable error with fallback | Graceful degradation | Better UX than failing |
-| Unrecoverable error | Fail fast | Prevent cascade |
-| Expensive operation | Prerequisite check | Avoid wasted work |
-| User-facing service | Graceful degradation | Availability matters |
-| Data integrity operation | Fail fast | Consistency matters |
+| Recoverable error with fallback | [Graceful Degradation](../patterns/graceful-degradation/index.md) | Better UX than failing |
+| Unrecoverable error | [Fail Fast](../patterns/fail-fast/index.md) | Prevent cascade |
+| Expensive operation | [Prerequisite Checks](../patterns/prerequisite-checks/index.md) | Avoid wasted work |
+| User-facing service | [Graceful Degradation](../patterns/graceful-degradation/index.md) | Availability matters |
+| Data integrity operation | [Fail Fast](../patterns/fail-fast/index.md) | Consistency matters |
+
+---
+
+## Quick Reference
+
+| Pattern | When to Apply | Trade-off |
+|---------|---------------|-----------|
+| [Graceful Degradation](../patterns/graceful-degradation/index.md) | System has fallback options | Complexity vs availability |
+| [Fail Fast](../patterns/fail-fast/index.md) | Early detection prevents cascading failure | Speed vs thoroughness |
+| [Prerequisite Checks](../patterns/prerequisite-checks/index.md) | Operations have preconditions | Latency vs correctness |
 
 ---
 
