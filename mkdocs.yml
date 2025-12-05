@@ -10,9 +10,6 @@ copyright: |
 extra:
   generator: false
   homepage: https://adaptive-enforcement-lab.com
-  version:
-    provider: mike
-    default: stable
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/adaptive-enforcement-lab
