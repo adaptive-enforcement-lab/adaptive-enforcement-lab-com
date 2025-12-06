@@ -169,6 +169,11 @@ nav:
                   - Content Comparison: operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md
                   - Path Filtering: operator-manual/github-actions/use-cases/work-avoidance/path-filtering.md
                   - Cache-Based Skip: operator-manual/github-actions/use-cases/work-avoidance/cache-based-skip.md
+              - Versioned Documentation:
+                  - operator-manual/github-actions/use-cases/versioned-docs/index.md
+                  - Mike Configuration: operator-manual/github-actions/use-cases/versioned-docs/mike-configuration.md
+                  - Pipeline Integration: operator-manual/github-actions/use-cases/versioned-docs/pipeline-integration.md
+                  - Version Strategies: operator-manual/github-actions/use-cases/versioned-docs/version-strategies.md
   - Developer Guide:
       - developer-guide/index.md
       - Pattern Selection Guide: developer-guide/pattern-selection-guide/index.md
