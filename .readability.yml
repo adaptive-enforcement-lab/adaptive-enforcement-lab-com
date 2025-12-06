@@ -15,11 +15,20 @@ thresholds:
   min_words: 200   # Skip readability checks for code-heavy docs
 
 overrides:
+  # About pages: Allow more complex prose for brand/mission content
+  - path: docs/about/
+    thresholds:
+      max_grade: 18
+      max_ari: 18
+      min_ease: 20
+
   # Blog posts: MIL-STD-38784 level (accessible to broader audience)
+  # Note: Blog posts don't need min_ease enforcement (narrative style varies)
   - path: docs/blog/
     thresholds:
       max_grade: 11
       max_ari: 11
+      min_ease: 0
 
   # Developer guide: Graduate level (technical deep-dives)
   # Some reference-style docs have high scores due to list-heavy content
