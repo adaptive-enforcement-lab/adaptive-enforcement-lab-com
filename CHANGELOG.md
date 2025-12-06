@@ -1,5 +1,31 @@
 # Changelog
 
+## [0.4.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.3...0.4.0) (2025-12-06)
+
+
+### Features
+
+* upgrade to readability v0.3.2 and re-enable summary ([49ee2e9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/49ee2e934a03da5973739e4a7d9279ec1591050c))
+* upgrade to readability v0.4.0 with automatic summary ([#101](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/101)) ([56f96ac](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/56f96ac0203798bc08f75e0f02bde004bdfed889))
+
+
+### Bug Fixes
+
+* **ci:** trigger OTEL export after all workflows ([#93](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/93)) ([8cd4b2d](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8cd4b2d68b91e3d708a118febe856e1f39120e20))
+* remove broken summary step from docs-quality workflow ([6e27b1f](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6e27b1fe34190d3890fb57ca3840096dcb5bbcd3))
+
+
+### Code Refactoring
+
+* complete migration to external readability action ([#100](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/100)) ([2edeca9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/2edeca96042062ac45a9e7f2d370008c8709dea7))
+
+
+### Maintenance
+
+* **deps:** update adaptive-enforcement-lab/readability action to v0.5.0 ([#102](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/102)) ([5ee69db](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/5ee69db4fbca517b7032d9dff76a5e10bf0dbe61))
+* **deps:** update tj-actions/changed-files action to v47 ([#95](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/95)) ([7e6d43d](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/7e6d43d60dc348662f9d0ede9d51f3770e9e0d89))
+* enable always-update for release-please PRs ([#96](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/96)) ([c52025b](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c52025bed96047079ae4e655cb5dfada1c62b03e))
+
 ## [0.3.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.2...0.3.3) (2025-12-05)
 
 
