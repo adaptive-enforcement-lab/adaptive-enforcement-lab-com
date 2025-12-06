@@ -20,18 +20,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Analyze documentation
-        id: readability
-        uses: adaptive-enforcement-lab/readability@0.3.2
+        uses: adaptive-enforcement-lab/readability@0.4.0
         with:
           path: docs/
-          format: report
           check: ${{ inputs.fail_on_threshold }}
-
-      - name: Add report to summary
-        run: echo "${{ steps.readability.outputs.report }}" | jq -r '
-          "## Documentation Readability Report",
-          "",
-          "| File | Grade | ARI | Fog | Ease | Status |",
-          "|------|-------|-----|-----|------|--------|",
-          (.[] | "| \(.file) | \(.readability.flesch_kincaid_grade | . * 10 | round / 10) | \(.readability.ari | . * 10 | round / 10) | \(.readability.gunning_fog | . * 10 | round / 10) | \(.readability.flesch_reading_ease | . * 10 | round / 10) | \(.status) |")
-        ' >> "$GITHUB_STEP_SUMMARY"

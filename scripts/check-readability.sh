@@ -4,7 +4,7 @@
 
 set -e
 
-READABILITY_VERSION="0.3.2"
+READABILITY_VERSION="0.4.0"
 CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/readability"
 BINARY="$CACHE_DIR/readability"
 
