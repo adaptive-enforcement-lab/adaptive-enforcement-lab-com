@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.4.0...0.5.0) (2025-12-06)
+
+
+### Features
+
+* use native pre-commit hook for readability ([#103](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/103)) ([eee7351](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/eee735100190e650c42f87aa2067d76c6d03e822))
+
+
+### Maintenance
+
+* **deps:** update adaptive-enforcement-lab/readability action to v0.6.0 ([#104](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/104)) ([f7f566f](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/f7f566f27f89cf3b350caa1e365f1383d41c3a3e))
+
 ## [0.4.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.3.3...0.4.0) (2025-12-06)
 
 
