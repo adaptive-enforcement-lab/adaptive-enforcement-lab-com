@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.0...0.6.1) (2025-12-06)
+
+
+### Bug Fixes
+
+* improve Mermaid diagram readability ([c8c8bae](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c8c8baecf44e7b10135d80ce99891ebcbc108fc7))
+
 ## [0.6.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.5.0...0.6.0) (2025-12-06)
 
 
