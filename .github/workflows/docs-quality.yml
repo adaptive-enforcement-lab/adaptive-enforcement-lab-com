@@ -19,25 +19,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v6
 
-      - name: Setup Go
-        uses: actions/setup-go@v6
+      - name: Analyze documentation
+        id: readability
+        uses: adaptive-enforcement-lab/readability@v0
         with:
-          go-version-file: tools/content-analyzer/go.mod
+          path: docs/
+          format: report
+          config: .content-analyzer.yml
+          check: ${{ inputs.fail_on_threshold }}
 
-      - name: Build content-analyzer
-        working-directory: tools/content-analyzer
-        run: go build -o content-analyzer ./cmd/content-analyzer/
-
-      - name: Generate readability report
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --format report >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Check readability thresholds
-        if: inputs.fail_on_threshold
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --check
-
-      - name: Check readability thresholds (warn only)
-        if: ${{ !inputs.fail_on_threshold }}
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --check || echo "::warning::Some documentation files exceed readability thresholds"
+      - name: Add report to summary
+        run: echo "${{ steps.readability.outputs.report }}" >> "$GITHUB_STEP_SUMMARY"
