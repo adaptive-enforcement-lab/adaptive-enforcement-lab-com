@@ -19,25 +19,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v6
 
-      - name: Setup Go
-        uses: actions/setup-go@v6
-        with:
-          go-version-file: tools/content-analyzer/go.mod
-
-      - name: Build content-analyzer
-        working-directory: tools/content-analyzer
-        run: go build -o content-analyzer ./cmd/content-analyzer/
-
       - name: Generate readability report
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --format report >> "$GITHUB_STEP_SUMMARY"
+        uses: adaptive-enforcement-lab/readability@v0.1.1
+        with:
+          path: docs/
+          format: markdown
 
       - name: Check readability thresholds
         if: inputs.fail_on_threshold
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --check
+        uses: adaptive-enforcement-lab/readability@v0.1.1
+        with:
+          path: docs/
+          check: 'true'
 
       - name: Check readability thresholds (warn only)
         if: ${{ !inputs.fail_on_threshold }}
-        run: |
-          ./tools/content-analyzer/content-analyzer docs/ --check || echo "::warning::Some documentation files exceed readability thresholds"
+        continue-on-error: true
+        uses: adaptive-enforcement-lab/readability@v0.1.1
+        with:
+          path: docs/
+          check: 'true'
