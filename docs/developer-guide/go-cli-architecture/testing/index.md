@@ -18,19 +18,11 @@ A well-tested CLI uses different testing strategies at different levels. This se
 
 ```mermaid
 graph TB
-    subgraph E2E["E2E Tests (Few)"]
-        E2ETests[Full workflow in<br/>real cluster]
-    end
+    E2E[E2E Tests<br/>Full workflow in real cluster]
+    Integration[Integration Tests<br/>Real API server with kind/envtest]
+    Unit[Unit Tests<br/>Fake clients and mock interfaces]
 
-    subgraph Integration["Integration Tests (Some)"]
-        IntTests[Real API server<br/>kind/envtest]
-    end
-
-    subgraph Unit["Unit Tests (Many)"]
-        UnitTests[Fake clients<br/>Mock interfaces]
-    end
-
-    E2ETests --> IntTests --> UnitTests
+    E2E --> Integration --> Unit
 
     style E2E fill:#9e6ffe,color:#1b1d1e
     style Integration fill:#65d9ef,color:#1b1d1e

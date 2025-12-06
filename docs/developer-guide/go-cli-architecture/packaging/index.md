@@ -18,22 +18,16 @@ Packaging a Go CLI for Kubernetes involves creating small, secure container imag
 
 ```mermaid
 graph LR
-    subgraph Build["Build Stage (~800MB)"]
-        Go[golang:1.23-alpine]
-        Deps[Download Dependencies]
-        Compile[Compile Binary]
-    end
+    Go[golang:1.23-alpine] --> Deps[Download Dependencies]
+    Deps --> Compile[Compile Binary]
+    Compile --> Binary[Static Binary]
+    Distroless[distroless/static] --> Binary
 
-    subgraph Runtime["Runtime Stage (~2MB)"]
-        Distroless[distroless/static]
-        Binary[Static Binary]
-    end
-
-    Go --> Deps --> Compile --> Binary
-    Distroless --> Binary
-
-    style Build fill:#65d9ef,color:#1b1d1e
-    style Runtime fill:#a7e22e,color:#1b1d1e
+    style Go fill:#65d9ef,color:#1b1d1e
+    style Deps fill:#65d9ef,color:#1b1d1e
+    style Compile fill:#65d9ef,color:#1b1d1e
+    style Distroless fill:#a7e22e,color:#1b1d1e
+    style Binary fill:#a7e22e,color:#1b1d1e
 ```
 
 ---

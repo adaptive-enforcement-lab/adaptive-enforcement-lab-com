@@ -20,17 +20,21 @@ For complex workflows, use a single entry point that coordinates subcommands:
 
 ```mermaid
 graph LR
-    subgraph Orchestrator["orchestrate command"]
-        Start[Start] --> Check[check]
-        Check -->|Cache Valid| Skip[Skip Rebuild]
-        Check -->|Cache Invalid| Rebuild[rebuild]
-        Rebuild --> Select[select]
-        Select --> Restart[restart]
-        Restart --> Done[Done]
-        Skip --> Done
-    end
+    Start[Start] --> Check[check]
+    Check -->|Cache Valid| Skip[Skip Rebuild]
+    Check -->|Cache Invalid| Rebuild[rebuild]
+    Rebuild --> Select[select]
+    Select --> Restart[restart]
+    Restart --> Done[Done]
+    Skip --> Done
 
-    style Orchestrator fill:#65d9ef,color:#1b1d1e
+    style Start fill:#5e7175,color:#f8f8f3
+    style Check fill:#fd971e,color:#1b1d1e
+    style Skip fill:#65d9ef,color:#1b1d1e
+    style Rebuild fill:#65d9ef,color:#1b1d1e
+    style Select fill:#65d9ef,color:#1b1d1e
+    style Restart fill:#65d9ef,color:#1b1d1e
+    style Done fill:#a7e22e,color:#1b1d1e
 ```
 
 ---
