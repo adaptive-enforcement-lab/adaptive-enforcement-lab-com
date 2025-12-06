@@ -1,0 +1,74 @@
+# Kubernetes Integration
+
+Integrate your Go CLI with Kubernetes using client-go.
+
+---
+
+## Overview
+
+A well-designed Kubernetes CLI works seamlessly both on developer laptops and inside cluster pods. This section covers:
+
+- **[Client Configuration](client-configuration.md)** - Automatic config detection for all environments
+- **[RBAC Setup](rbac-setup.md)** - Service accounts and permissions
+- **[Common Operations](common-operations.md)** - List, patch, and restart resources
+
+---
+
+## Configuration Flow
+
+```mermaid
+graph TB
+    Start[Client Request] --> ExplicitKC{Explicit<br/>kubeconfig?}
+    ExplicitKC -->|Yes| UseExplicit[Use Specified Path]
+    ExplicitKC -->|No| InCluster{In-Cluster<br/>Token Exists?}
+
+    InCluster -->|Yes| UseInCluster[Use In-Cluster Config]
+    InCluster -->|No| EnvKC{KUBECONFIG<br/>Env Set?}
+
+    EnvKC -->|Yes| UseEnv[Use KUBECONFIG Path]
+    EnvKC -->|No| UseHome[Use ~/.kube/config]
+
+    UseExplicit --> CreateClient[Create Clientset]
+    UseInCluster --> CreateClient
+    UseEnv --> CreateClient
+    UseHome --> CreateClient
+
+    CreateClient --> Ready[Client Ready]
+
+    style Start fill:#65d9ef,color:#1b1d1e
+    style Ready fill:#a7e22e,color:#1b1d1e
+```
+
+---
+
+## Quick Start
+
+```go
+import "k8s.io/client-go/kubernetes"
+
+// Create a client that works everywhere
+client, err := k8s.NewClient(kubeconfig, namespace)
+if err != nil {
+    return fmt.Errorf("failed to create client: %w", err)
+}
+
+// Use the client
+deployments, err := client.ListDeployments(ctx)
+```
+
+---
+
+## Best Practices
+
+| Practice | Description |
+|----------|-------------|
+| **Use contexts everywhere** | Pass `context.Context` to all Kubernetes operations |
+| **Handle cancellation** | Respect context cancellation for clean shutdowns |
+| **Wrap errors with context** | Include resource type and name in error messages |
+| **Default to current namespace** | Match kubectl behavior for namespace resolution |
+| **Support both configs** | Always handle in-cluster and out-of-cluster scenarios |
+| **Minimal RBAC** | Request only the permissions your CLI needs |
+
+---
+
+*Build clients that work everywhere: laptop, CI runner, or pod.*

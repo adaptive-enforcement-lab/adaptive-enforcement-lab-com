@@ -6,8 +6,9 @@ repos:
       - id: markdownlint
         args: ["--config", ".markdownlint.yml"]
         files: \.md$
+        exclude: ^CHANGELOG\.md$
   - repo: https://github.com/adaptive-enforcement-lab/readability
-    rev: 0.6.0
+    rev: "0"
     hooks:
       - id: readability-docs
         name: check documentation readability

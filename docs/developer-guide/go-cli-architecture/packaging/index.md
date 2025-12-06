@@ -1,0 +1,65 @@
+# Packaging
+
+Build minimal, secure container images for your Go CLI.
+
+---
+
+## Overview
+
+Packaging a Go CLI for Kubernetes involves creating small, secure container images that can run anywhere. This section covers:
+
+- **[Container Builds](container-builds.md)** - Multi-stage Dockerfiles with distroless
+- **[Helm Charts](helm-charts.md)** - Deploy your CLI with Helm
+- **[Release Automation](release-automation.md)** - Multi-arch builds and GoReleaser
+
+---
+
+## Build Flow
+
+```mermaid
+graph LR
+    subgraph Build["Build Stage (~800MB)"]
+        Go[golang:1.23-alpine]
+        Deps[Download Dependencies]
+        Compile[Compile Binary]
+    end
+
+    subgraph Runtime["Runtime Stage (~2MB)"]
+        Distroless[distroless/static]
+        Binary[Static Binary]
+    end
+
+    Go --> Deps --> Compile --> Binary
+    Distroless --> Binary
+
+    style Build fill:#65d9ef,color:#1b1d1e
+    style Runtime fill:#a7e22e,color:#1b1d1e
+```
+
+---
+
+## Base Image Selection
+
+| Image | Size | Use Case |
+|-------|------|----------|
+| `gcr.io/distroless/static` | ~2MB | Pure Go, no CGO |
+| `gcr.io/distroless/base` | ~20MB | Needs libc |
+| `alpine:3.19` | ~7MB | Need shell/debugging |
+| `scratch` | 0MB | Maximum minimal (no TLS certs) |
+
+---
+
+## Best Practices
+
+| Practice | Description |
+|----------|-------------|
+| **Static binaries** | Use `CGO_ENABLED=0` for portable builds |
+| **Non-root user** | Always run as non-root in containers |
+| **Read-only filesystem** | Set `readOnlyRootFilesystem: true` |
+| **Drop capabilities** | Remove all capabilities with `drop: ALL` |
+| **Version in binary** | Inject version at build time |
+| **Multi-arch support** | Build for both amd64 and arm64 |
+
+---
+
+*Ship binaries that run anywhere Kubernetes runs.*
