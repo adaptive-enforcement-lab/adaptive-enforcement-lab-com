@@ -6,7 +6,6 @@ repos:
       - id: markdownlint
         args: ["--config", ".markdownlint.yml"]
         files: \.md$
-        exclude: ^tools/
   - repo: local
     hooks:
       - id: check-markdown-length
@@ -14,11 +13,11 @@ repos:
         entry: scripts/check-markdown-length.sh
         language: script
         files: \.md$
-        exclude: ^(CHANGELOG|CONTRIBUTING)\.md$|^tools/
+        exclude: ^(CHANGELOG|CONTRIBUTING)\.md$
       - id: content-analyzer
         name: check documentation readability
-        entry: bash -c 'cd tools/content-analyzer && go run ./cmd/content-analyzer --check --config ../../.content-analyzer.yml ../../docs/'
-        language: system
+        entry: scripts/check-readability.sh
+        language: script
         files: ^docs/.*\.md$
         pass_filenames: false
       - id: mkdocs-build
