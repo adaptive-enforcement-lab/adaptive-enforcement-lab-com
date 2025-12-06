@@ -236,7 +236,12 @@ nav:
               - developer-guide/go-cli-architecture/kubernetes-integration/index.md
               - Client Configuration: developer-guide/go-cli-architecture/kubernetes-integration/client-configuration.md
               - RBAC Setup: developer-guide/go-cli-architecture/kubernetes-integration/rbac-setup.md
-              - Common Operations: developer-guide/go-cli-architecture/kubernetes-integration/common-operations.md
+              - Common Operations:
+                  - developer-guide/go-cli-architecture/kubernetes-integration/common-operations/index.md
+                  - List Resources: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/list-resources.md
+                  - Rollout Restart: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/rollout-restart.md
+                  - ConfigMap Operations: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/configmap-operations.md
+                  - Watch Resources: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/watch-resources.md
           - Command Architecture:
               - developer-guide/go-cli-architecture/command-architecture/index.md
               - Orchestrator Pattern: developer-guide/go-cli-architecture/command-architecture/orchestrator-pattern.md
