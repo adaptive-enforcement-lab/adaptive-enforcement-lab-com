@@ -5,6 +5,8 @@ site_description: >-
   DevSecOps automation patterns for enterprise-grade GitHub workflows.
   Battle-tested GitHub App configurations, secure content distribution,
   and policy enforcement at scale.
+repo_url: https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com
+repo_name: adaptive-enforcement-lab/adaptive-enforcement-lab-com
 copyright: |
   &copy; 2025 <a href="https://adaptive-enforcement-lab.com" target="_blank" rel="noopener">Adaptive Enforcement Lab</a>
 extra:
@@ -22,6 +24,8 @@ extra_css:
 theme:
   name: material
   custom_dir: overrides
+  icon:
+    repo: fontawesome/brands/github
   logo: assets/ael-logo.png
   favicon: assets/ael-logo.png
   features:
