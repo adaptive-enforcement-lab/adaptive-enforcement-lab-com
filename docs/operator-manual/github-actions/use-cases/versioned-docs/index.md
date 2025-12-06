@@ -104,3 +104,7 @@ Users selecting "v1" always get the latest 1.x release. The `latest` alias point
 - [Release-Please Configuration](../release-pipelines/release-please/index.md) - Version management
 - [Change Detection](../release-pipelines/change-detection.md) - Skip unnecessary builds
 - [Work Avoidance](../work-avoidance/index.md) - Conditional job execution
+
+## Live Example
+
+See this pattern in action at [readability.adaptive-enforcement-lab.com](https://readability.adaptive-enforcement-lab.com) - a docs site with version selector powered by mike and release-please.
