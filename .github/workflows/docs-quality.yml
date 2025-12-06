@@ -25,7 +25,6 @@ jobs:
         with:
           path: docs/
           format: report
-          config: .content-analyzer.yml
           check: ${{ inputs.fail_on_threshold }}
 
       - name: Add report to summary

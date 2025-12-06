@@ -30,9 +30,6 @@ jobs:
       site_release_created: ${{ steps.release.outputs['.--release_created'] }}
       site_tag_name: ${{ steps.release.outputs['.--tag_name'] }}
       site_version: ${{ steps.release.outputs['.--version'] }}
-      content_analyzer_release_created: ${{ steps.release.outputs['tools/content-analyzer--release_created'] }}
-      content_analyzer_tag_name: ${{ steps.release.outputs['tools/content-analyzer--tag_name'] }}
-      content_analyzer_version: ${{ steps.release.outputs['tools/content-analyzer--version'] }}
       releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
       - uses: googleapis/release-please-action@v4
@@ -49,7 +46,6 @@ jobs:
           echo "| Component | Release Created | Version |" >> "$GITHUB_STEP_SUMMARY"
           echo "|-----------|-----------------|---------|" >> "$GITHUB_STEP_SUMMARY"
           echo "| Site | ${{ steps.release.outputs['.--release_created'] || 'false' }} | ${{ steps.release.outputs['.--version'] || '-' }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Content Analyzer | ${{ steps.release.outputs['tools/content-analyzer--release_created'] || 'false' }} | ${{ steps.release.outputs['tools/content-analyzer--version'] || '-' }} |" >> "$GITHUB_STEP_SUMMARY"
 
   detect-changes:
     name: Detect Changes
@@ -58,7 +54,6 @@ jobs:
     if: always() && !cancelled()
     outputs:
       docs_changed: ${{ steps.changes.outputs.docs_any_changed }}
-      content_analyzer_changed: ${{ steps.changes.outputs.content_analyzer_any_changed }}
       force_all: ${{ inputs.force_all }}
     steps:
       - name: Checkout Repository
@@ -75,8 +70,6 @@ jobs:
               - docs/**
               - mkdocs.yml
               - overrides/**
-            content_analyzer:
-              - tools/content-analyzer/**
 
       - name: Output change detection results
         run: |
@@ -85,40 +78,14 @@ jobs:
           echo "| Component | Changed |" >> "$GITHUB_STEP_SUMMARY"
           echo "|-----------|---------|" >> "$GITHUB_STEP_SUMMARY"
           echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Content Analyzer | ${{ steps.changes.outputs.content_analyzer_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Force All | ${{ inputs.force_all }} |" >> "$GITHUB_STEP_SUMMARY"
-
-  build-content-analyzer:
-    name: Build Content Analyzer
-    needs: [release-please, detect-changes]
-    if: |
-      always() && !cancelled() &&
-      (needs.detect-changes.outputs.content_analyzer_changed == 'true' || inputs.force_all == true)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v6
-
-      - name: Setup Go
-        uses: actions/setup-go@v6
-        with:
-          go-version-file: tools/content-analyzer/go.mod
-
-      - name: Build
-        working-directory: tools/content-analyzer
-        run: go build -v ./...
-
-      - name: Test
-        working-directory: tools/content-analyzer
-        run: go test -v ./...
 
   analyze-docs:
     name: Analyze Documentation
-    needs: [detect-changes, build-content-analyzer]
+    needs: [detect-changes]
     if: |
       always() && !cancelled() &&
-      (needs.detect-changes.outputs.docs_changed == 'true' || inputs.force_all == true) &&
-      (needs.build-content-analyzer.result == 'success' || needs.build-content-analyzer.result == 'skipped')
+      (needs.detect-changes.outputs.docs_changed == 'true' || inputs.force_all == true)
     uses: ./.github/workflows/docs-quality.yml
     with:
       fail_on_threshold: true
@@ -183,7 +150,7 @@ jobs:
   release-status:
     name: Release Status
     runs-on: ubuntu-latest
-    needs: [release-please, detect-changes, build-content-analyzer, analyze-docs, build-docs, deploy-docs]
+    needs: [release-please, detect-changes, analyze-docs, build-docs, deploy-docs]
     if: always()
     steps:
       - name: Check release results
@@ -193,14 +160,12 @@ jobs:
           echo "| Component | Changed | Result |" >> "$GITHUB_STEP_SUMMARY"
           echo "|-----------|---------|--------|" >> "$GITHUB_STEP_SUMMARY"
           echo "| Release Please | - | ${{ needs.release-please.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
-          echo "| Content Analyzer | ${{ needs.detect-changes.outputs.content_analyzer_changed }} | ${{ needs.build-content-analyzer.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Doc Analysis | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.analyze-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Build Docs | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.build-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Deploy | - | ${{ needs.deploy-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail if any required job failed
         if: |
-          needs.build-content-analyzer.result == 'failure' ||
           needs.analyze-docs.result == 'failure' ||
           needs.build-docs.result == 'failure' ||
           needs.deploy-docs.result == 'failure'

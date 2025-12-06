@@ -39,5 +39,5 @@ else
   fi
 fi
 
-# Run readability check
-exec "$BINARY" docs/ --check --config .content-analyzer.yml
+# Run readability check (auto-detects .readability.yml in repo root)
+exec "$BINARY" docs/ --check
