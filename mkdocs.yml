@@ -226,6 +226,32 @@ nav:
               - Conditional Distribution: developer-guide/workflow-architecture/matrix-distribution/conditional-distribution.md
               - Template Rendering: developer-guide/workflow-architecture/matrix-distribution/template-rendering.md
               - Anti-Patterns: developer-guide/workflow-architecture/matrix-distribution/anti-patterns.md
+      - Go CLI Architecture:
+          - developer-guide/go-cli-architecture/index.md
+          - Framework Selection:
+              - developer-guide/go-cli-architecture/framework-selection/index.md
+              - CLI Frameworks: developer-guide/go-cli-architecture/framework-selection/cli-frameworks.md
+              - Viper Configuration: developer-guide/go-cli-architecture/framework-selection/viper-configuration.md
+          - Kubernetes Integration:
+              - developer-guide/go-cli-architecture/kubernetes-integration/index.md
+              - Client Configuration: developer-guide/go-cli-architecture/kubernetes-integration/client-configuration.md
+              - RBAC Setup: developer-guide/go-cli-architecture/kubernetes-integration/rbac-setup.md
+              - Common Operations: developer-guide/go-cli-architecture/kubernetes-integration/common-operations.md
+          - Command Architecture:
+              - developer-guide/go-cli-architecture/command-architecture/index.md
+              - Orchestrator Pattern: developer-guide/go-cli-architecture/command-architecture/orchestrator-pattern.md
+              - Subcommand Design: developer-guide/go-cli-architecture/command-architecture/subcommand-design.md
+              - I/O Contracts: developer-guide/go-cli-architecture/command-architecture/io-contracts.md
+          - Packaging:
+              - developer-guide/go-cli-architecture/packaging/index.md
+              - Container Builds: developer-guide/go-cli-architecture/packaging/container-builds.md
+              - Helm Charts: developer-guide/go-cli-architecture/packaging/helm-charts.md
+              - Release Automation: developer-guide/go-cli-architecture/packaging/release-automation.md
+          - Testing:
+              - developer-guide/go-cli-architecture/testing/index.md
+              - Unit Testing: developer-guide/go-cli-architecture/testing/unit-testing.md
+              - Integration Testing: developer-guide/go-cli-architecture/testing/integration-testing.md
+              - E2E Testing: developer-guide/go-cli-architecture/testing/e2e-testing.md
   - Roadmap: roadmap.md
   - About:
       - about/index.md

@@ -50,6 +50,14 @@ This guide covers patterns and architecture for reliable automation at scale. Wh
 
     [:octicons-arrow-right-24: Workflow Architecture](workflow-architecture/index.md)
 
+-   :material-language-go:{ .lg .middle } **Go CLI Architecture**
+
+    ---
+
+    Build Kubernetes-native orchestration CLIs.
+
+    [:octicons-arrow-right-24: Go CLI Architecture](go-cli-architecture/index.md)
+
 </div>
 
 ---
@@ -65,6 +73,11 @@ This guide covers patterns and architecture for reliable automation at scale. Wh
 | Efficiency | [Work Avoidance](efficiency-patterns/work-avoidance/index.md) | Skip unnecessary operations |
 | Architecture | [Three-Stage Design](workflow-architecture/three-stage-design.md) | Discovery, execution, summary |
 | Architecture | [Matrix Distribution](workflow-architecture/matrix-distribution/index.md) | Parallel multi-target operations |
+| Go CLI | [Framework Selection](go-cli-architecture/framework-selection/index.md) | Choose CLI frameworks and config |
+| Go CLI | [Kubernetes Integration](go-cli-architecture/kubernetes-integration/index.md) | client-go patterns and RBAC |
+| Go CLI | [Command Architecture](go-cli-architecture/command-architecture/index.md) | Orchestrator and subcommand design |
+| Go CLI | [Packaging](go-cli-architecture/packaging/index.md) | Container builds and Helm charts |
+| Go CLI | [Testing](go-cli-architecture/testing/index.md) | Unit, integration, and E2E testing |
 
 ---
 
