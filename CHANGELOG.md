@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.5.0...0.6.0) (2025-12-06)
+
+
+### Features
+
+* add GitHub repository link to header ([#108](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/108)) ([b78fb64](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b78fb64623a2c754fc918fed359e084b7e4268a9))
+
+
+### Maintenance
+
+* use floating major tag for readability action ([#106](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/106)) ([21ebcd0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/21ebcd097d681952dbdfc89d29ce70dc2fec8263))
+
 ## [0.5.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.4.0...0.5.0) (2025-12-06)
 
 
