@@ -31,19 +31,23 @@ overrides:
       min_ease: 0
 
   # Developer guide: Graduate level (technical deep-dives)
-  # Some reference-style docs have high scores due to list-heavy content
+  # Reference-style docs with lists/tables break readability formulas
+  # Admonitions optional - many pages are pure reference material
   - path: docs/developer-guide/
     thresholds:
       max_grade: 50
       max_ari: 60
       max_fog: 50
       min_ease: -100
+      min_admonitions: -1  # Disable admonition requirement
 
   # Operator manual: Graduate+ level (advanced operational content)
-  # Many docs are reference-style with lists/tables that break formulas
+  # Reference-style docs with lists/tables break readability formulas
+  # Admonitions optional - many pages are pure reference material
   - path: docs/operator-manual/
     thresholds:
       max_grade: 50
       max_ari: 60
       max_fog: 50
       min_ease: -100
+      min_admonitions: -1  # Disable admonition requirement

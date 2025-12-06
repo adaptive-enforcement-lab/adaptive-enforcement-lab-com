@@ -41,9 +41,10 @@ But it's solving the wrong problem.
 
 ## The Actual Problem
 
-The issue isn't that we need a different trigger. The issue is that `GITHUB_TOKEN` is the wrong authentication mechanism for release-please.
+!!! warning "Root Cause"
+    `GITHUB_TOKEN` is the wrong authentication mechanism for release-please.
 
-GitHub Apps are treated as separate actors. When a GitHub App creates a PR, the `pull_request` event fires normally. No workarounds needed.
+The issue isn't that we need a different trigger. When a GitHub App creates a PR, the `pull_request` event fires normally. No workarounds needed.
 
 ```mermaid
 flowchart LR
@@ -68,6 +69,9 @@ flowchart LR
 ---
 
 ## The Real Fix
+
+!!! tip "The Solution"
+    Generate a GitHub App token. The PR will trigger `pull_request` events like any developer-created PR.
 
 Generate a GitHub App token and pass it to release-please:
 

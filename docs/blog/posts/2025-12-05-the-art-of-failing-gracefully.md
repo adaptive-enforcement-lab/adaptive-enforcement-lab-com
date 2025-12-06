@@ -23,6 +23,9 @@ The answer isn't "return an error." It's "try the next thing."
 
 ## The Three-Tier Pattern
 
+!!! abstract "The Core Principle"
+    Degrade performance, not availability. Every operation should have a guaranteed fallback.
+
 Every robust system I've built follows the same structure:
 
 ```mermaid
@@ -104,6 +107,9 @@ Notice the `metrics.RecordTier()` calls. You need to know which tier is serving 
 ---
 
 ## Fail Fast vs Degrade Gracefully
+
+!!! tip "Decision Rule"
+    Fail fast on **precondition failures**. Degrade gracefully on **runtime failures**.
 
 These patterns aren't opposites. They solve different problems:
 
