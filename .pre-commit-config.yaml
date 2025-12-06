@@ -6,6 +6,11 @@ repos:
       - id: markdownlint
         args: ["--config", ".markdownlint.yml"]
         files: \.md$
+  - repo: https://github.com/adaptive-enforcement-lab/readability
+    rev: 0.5.0
+    hooks:
+      - id: readability-docs
+        name: check documentation readability
   - repo: local
     hooks:
       - id: check-markdown-length
@@ -14,12 +19,6 @@ repos:
         language: script
         files: \.md$
         exclude: ^(CHANGELOG|CONTRIBUTING)\.md$
-      - id: content-analyzer
-        name: check documentation readability
-        entry: scripts/check-readability.sh
-        language: script
-        files: ^docs/.*\.md$
-        pass_filenames: false
       - id: mkdocs-build
         name: mkdocs build
         entry: bash -c 'if [ -f .venv/bin/mkdocs ]; then .venv/bin/mkdocs build --strict; else mkdocs build --strict; fi'
