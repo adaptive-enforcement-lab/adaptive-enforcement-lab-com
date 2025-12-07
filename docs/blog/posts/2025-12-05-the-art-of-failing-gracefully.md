@@ -189,4 +189,11 @@ The full pattern documentation is in the Developer Guide:
 
 ---
 
+## Related
+
+- [Should Work ≠ Does Work](2025-12-08-always-works-qa-methodology.md) - Verification methodology
+- [CLI UX Patterns for AI Agents](2025-12-07-cli-ux-patterns-for-ai-agents.md) - Error messages that guide fixes
+
+---
+
 *The best systems don't avoid failure. They survive it.*

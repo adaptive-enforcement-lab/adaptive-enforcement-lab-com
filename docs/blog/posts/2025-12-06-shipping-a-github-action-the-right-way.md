@@ -161,4 +161,13 @@ The readability action is at [adaptive-enforcement-lab/readability](https://gith
 
 ---
 
+## Related
+
+- [Building GitHub Actions in Go](2025-12-09-building-github-actions-in-go.md) - The technical implementation guide
+- [Pre-commit Hooks with Binary Releases](2025-12-10-pre-commit-hooks-binary-releases.md) - Same patterns for pre-commit
+- [CLI UX Patterns for AI Agents](2025-12-07-cli-ux-patterns-for-ai-agents.md) - Design error messages AI can use
+- [Should Work ≠ Does Work](2025-12-08-always-works-qa-methodology.md) - Always verify locally before shipping
+
+---
+
 *Ship actions like you ship software. Automate the boring parts.*

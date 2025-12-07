@@ -83,6 +83,7 @@ plugins:
       blog_dir: blog
       post_date_format: yyyy-MM-dd
       archive_date_format: yyyy-MM
+      draft_if_future_date: true
 markdown_extensions:
   - admonition
   - attr_list
@@ -252,6 +253,8 @@ nav:
               - Container Builds: developer-guide/go-cli-architecture/packaging/container-builds.md
               - Helm Charts: developer-guide/go-cli-architecture/packaging/helm-charts.md
               - Release Automation: developer-guide/go-cli-architecture/packaging/release-automation.md
+              - GitHub Actions: developer-guide/go-cli-architecture/packaging/github-actions.md
+              - Pre-commit Hooks: developer-guide/go-cli-architecture/packaging/pre-commit-hooks.md
           - Testing:
               - developer-guide/go-cli-architecture/testing/index.md
               - Unit Testing: developer-guide/go-cli-architecture/testing/unit-testing.md
