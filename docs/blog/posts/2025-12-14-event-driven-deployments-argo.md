@@ -178,7 +178,7 @@ This blog post tells the story. The implementation details—YAML manifests, Go 
 
 !!! info "Deep Dives"
 
-    - **[Argo Events Setup Guide](../../developer-guide/argo-events/setup/index.md)**: EventSource, EventBus, and Sensor configuration
+    - **[Argo Events Setup Guide](../../operator-manual/argo-events/setup/index.md)**: EventSource, EventBus, and Sensor configuration
     - **[ConfigMap as Cache Pattern](../../developer-guide/efficiency-patterns/idempotency/caches.md)**: Volume mounts for zero-API reads
     - **[Argo Workflows Patterns](../../developer-guide/argo-workflows/index.md)**: WorkflowTemplate design and error handling
 
