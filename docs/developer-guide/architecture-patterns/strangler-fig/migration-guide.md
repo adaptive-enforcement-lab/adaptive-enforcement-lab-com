@@ -9,6 +9,9 @@ description: >-
 
 Strangler Fig migrations follow eight phases over 8 weeks. Each phase has validation criteria. Don't proceed to next phase until current phase is stable.
 
+!!! tip "Migration Pattern"
+    This guide covers the Strangler Fig pattern for incremental system migration. Review all sections for complete implementation strategy.
+
 ---
 
 ## Migration Checklist

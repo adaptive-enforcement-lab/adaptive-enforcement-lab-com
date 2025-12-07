@@ -9,6 +9,9 @@ description: >-
 
 Three core implementation patterns enable gradual migration: feature flags for traffic control, parallel run for validation, and dual writes for data migration.
 
+!!! tip "Migration Pattern"
+    This guide covers the Strangler Fig pattern for incremental system migration. Review all sections for complete implementation strategy.
+
 ---
 
 ## Implementation with Feature Flags

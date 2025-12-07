@@ -9,6 +9,9 @@ description: >-
 
 Three optimization techniques reduce redundant matrix jobs: deduplication with include/exclude, conditional expansion based on context, and automatic discovery from repository structure.
 
+!!! tip "Performance Optimization"
+    These patterns reduce workflow execution time and cost. Combine multiple techniques for maximum efficiency.
+
 ---
 
 ## Pattern 4: Matrix Deduplication

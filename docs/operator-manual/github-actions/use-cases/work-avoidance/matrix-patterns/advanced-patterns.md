@@ -9,6 +9,9 @@ description: >-
 
 Two advanced techniques: segregate critical checks from optional validations with fail-fast control, and combine multiple filtering strategies for maximum efficiency.
 
+!!! tip "Performance Optimization"
+    These patterns reduce workflow execution time and cost. Combine multiple techniques for maximum efficiency.
+
 ---
 
 ## Pattern 8: Fast-Fail with Required Checks

@@ -9,6 +9,9 @@ description: >-
 
 CI catches issues after commit. Pre-commit hooks catch them before.
 
+!!! warning "Security Foundation"
+    These controls form the baseline security posture. All controls must be implemented for audit compliance.
+
 Block bad code from ever entering git history.
 
 ---

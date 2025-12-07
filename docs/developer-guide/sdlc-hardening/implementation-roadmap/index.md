@@ -9,6 +9,9 @@ description: >-
 
 You can't harden everything at once. Prioritize controls by risk and audit value.
 
+!!! warning "Phased Rollout"
+    Follow the 12-week timeline to avoid disrupting existing workflows. Skip phases at your own risk.
+
 Three-month plan from foundation to full enforcement.
 
 ---

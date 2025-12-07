@@ -9,6 +9,9 @@ description: >-
 
 Three approaches to filter workflows by changed files: static path triggers, dynamic matrix generation, and declarative path filters with dependency handling.
 
+!!! tip "Performance Optimization"
+    These patterns reduce workflow execution time and cost. Combine multiple techniques for maximum efficiency.
+
 ---
 
 ## Pattern 1: Path-Based Filtering

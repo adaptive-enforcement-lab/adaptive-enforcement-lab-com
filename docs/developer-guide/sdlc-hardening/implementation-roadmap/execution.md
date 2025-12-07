@@ -17,6 +17,9 @@ description: >-
 - [ ] Evidence archive workflow running
 - [ ] First month's evidence collected
 
+!!! warning "Phased Rollout"
+    Follow the 12-week timeline to avoid disrupting existing workflows. Skip phases at your own risk.
+
 ### Month 2 Checklist
 
 - [ ] Secrets detection (pre-commit + CI)

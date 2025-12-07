@@ -9,6 +9,9 @@ description: >-
 
 Monitor both systems in parallel. Compare metrics. Rollback instantly if new system degrades.
 
+!!! tip "Migration Pattern"
+    This guide covers the Strangler Fig pattern for incremental system migration. Review all sections for complete implementation strategy.
+
 ---
 
 ## Monitoring During Migration

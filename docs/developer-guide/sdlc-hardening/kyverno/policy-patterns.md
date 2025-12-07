@@ -9,6 +9,9 @@ description: >-
 
 Production-tested policy patterns for Kubernetes admission control. These patterns enforce security, compliance, and operational standards at the cluster boundary.
 
+!!! note "Policy Enforcement"
+    Start policies in Audit mode before switching to Enforce to avoid breaking production deployments.
+
 ---
 
 ## Image Provenance

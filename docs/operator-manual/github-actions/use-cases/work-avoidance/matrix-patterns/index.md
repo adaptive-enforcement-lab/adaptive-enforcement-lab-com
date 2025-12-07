@@ -9,6 +9,9 @@ description: >-
 
 GitHub Actions matrix builds run jobs in parallel. By default, they run everything. Every time.
 
+!!! tip "Performance Optimization"
+    These patterns reduce workflow execution time and cost. Combine multiple techniques for maximum efficiency.
+
 This wastes compute. Changed one microservice? Don't rebuild all 47. Modified a Helm chart? Don't run Go tests.
 
 Filtering prevents redundant work. Deduplication eliminates duplicate configurations. Dynamic generation builds matrices based on what changed.

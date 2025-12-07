@@ -9,6 +9,9 @@ description: >-
 
 Three techniques avoid redundant work: skip expensive operations when dependencies haven't changed, cache deterministic build outputs, and build once then reuse artifacts across test jobs.
 
+!!! tip "Performance Optimization"
+    These patterns reduce workflow execution time and cost. Combine multiple techniques for maximum efficiency.
+
 ---
 
 ## Pattern 7: Skipping Unchanged Dependencies

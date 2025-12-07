@@ -9,6 +9,9 @@ description: >-
 
 The strangler fig vine grows around a host tree. Eventually the vine takes over completely, and the original tree dies.
 
+!!! tip "Migration Pattern"
+    This guide covers the Strangler Fig pattern for incremental system migration. Review all sections for complete implementation strategy.
+
 Your new system gradually replaces the old one. Both run in parallel. Traffic shifts incrementally. When the old system has zero traffic, you remove it.
 
 Zero downtime. Rollback at any point. Migration validated in production.

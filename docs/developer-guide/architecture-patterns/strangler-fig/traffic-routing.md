@@ -9,6 +9,9 @@ description: >-
 
 Three routing strategies control traffic distribution: percentage-based for gradual rollout, user-based for consistent experience, and canary deployment for replica-level control.
 
+!!! tip "Migration Pattern"
+    This guide covers the Strangler Fig pattern for incremental system migration. Review all sections for complete implementation strategy.
+
 ---
 
 ## Strategy 1: Percentage-Based

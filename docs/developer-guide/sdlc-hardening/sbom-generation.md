@@ -9,6 +9,9 @@ description: >-
 
 Auditors want to know what's in your containers. Not just what you say is in them - what's actually there.
 
+!!! warning "Security Foundation"
+    These controls form the baseline security posture. All controls must be implemented for audit compliance.
+
 SBOMs (Software Bill of Materials) provide the inventory.
 
 ---

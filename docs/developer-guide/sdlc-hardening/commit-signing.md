@@ -9,6 +9,9 @@ description: >-
 
 Who actually authored this commit? Can they deny it?
 
+!!! warning "Security Foundation"
+    These controls form the baseline security posture. All controls must be implemented for audit compliance.
+
 Git's author field is trivial to forge. GPG signatures provide cryptographic proof.
 
 ---

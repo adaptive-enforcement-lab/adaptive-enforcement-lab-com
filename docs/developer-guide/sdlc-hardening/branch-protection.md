@@ -9,6 +9,9 @@ description: >-
 
 Branch protection turns security policies from suggestions into hard requirements.
 
+!!! warning "Security Foundation"
+    These controls form the baseline security posture. All controls must be implemented for audit compliance.
+
 GitHub enforces the rules. No bypasses. Full audit trail.
 
 ---

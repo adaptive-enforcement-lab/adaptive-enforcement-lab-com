@@ -9,6 +9,9 @@ description: >-
 
 Auditors don't trust documentation. They trust systems that make security inevitable.
 
+!!! warning "Security Foundation"
+    These controls form the baseline security posture. All controls must be implemented for audit compliance.
+
 This section covers the enforcement patterns that pass SOC 2, ISO 27001, and PCI-DSS audits.
 
 ---
