@@ -2,6 +2,9 @@
 
 Use artifact existence as a proxy for "work already done."
 
+!!! tip "Cache Key Discipline"
+    Include all inputs that affect the output in your cache key. Missing inputs cause stale cache hits.
+
 ---
 
 ## The Technique

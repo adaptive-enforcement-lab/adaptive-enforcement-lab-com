@@ -2,6 +2,9 @@
 
 Deploy your CLI with Helm for Kubernetes environments.
 
+!!! abstract "Helm for CLIs"
+    Package your CLI as a Job resource with proper RBAC. Helm makes it deployable with standard Kubernetes tooling and configurable via values.
+
 ---
 
 ## Chart Structure

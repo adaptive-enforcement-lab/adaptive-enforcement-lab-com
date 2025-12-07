@@ -2,6 +2,9 @@
 
 [Release-please](https://github.com/marketplace/actions/release-please-action) automates version management based on conventional commits. It creates release PRs with updated changelogs, version bumps, and Git tags.
 
+!!! tip "Schema Validation"
+    Always include the `$schema` property in your config file. It catches invalid options immediately and saves debugging time.
+
 ---
 
 ## Overview

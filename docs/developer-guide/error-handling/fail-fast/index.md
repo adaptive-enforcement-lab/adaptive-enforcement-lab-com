@@ -2,6 +2,9 @@
 
 Detect and report problems as early as possible, before they cascade into larger failures.
 
+!!! abstract "Key Insight"
+    Fail before you start, not in the middle. Validate preconditions before executing expensive or irreversible operations.
+
 ---
 
 ## Overview

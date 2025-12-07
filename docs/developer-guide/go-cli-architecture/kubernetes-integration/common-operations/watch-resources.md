@@ -2,6 +2,9 @@
 
 React to real-time Kubernetes resource changes.
 
+!!! warning "Always Stop Watches"
+    Use `defer watcher.Stop()` to clean up resources. Watches hold server connections that must be released.
+
 ---
 
 ## Watch Interface

@@ -6,6 +6,9 @@ description: >-
 
 # Token Scope Validation
 
+!!! tip "Test Before Deploy"
+    Validate token permissions before running production workflows. Catch misconfigurations early.
+
 ## Verify Organization Access
 
 Test if your token has organization-level permissions:

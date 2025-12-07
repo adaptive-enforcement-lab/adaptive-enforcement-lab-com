@@ -2,6 +2,9 @@
 
 Skip work when the outcome won't change.
 
+!!! tip "Detect Before Execute"
+    Check if work is needed before starting it. Avoid creating PRs for unchanged content, running builds for unchanged code, or processing already-processed items.
+
 ---
 
 ## Overview

@@ -2,6 +2,9 @@
 
 Compare Go CLI frameworks to choose the right foundation for your tool.
 
+!!! tip "Match the Ecosystem"
+    Cobra powers kubectl, docker, and gh. Your users already know its patterns. Start there unless you have specific reasons otherwise.
+
 ---
 
 ## Cobra

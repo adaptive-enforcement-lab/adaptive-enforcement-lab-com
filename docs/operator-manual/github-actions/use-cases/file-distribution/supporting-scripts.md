@@ -6,6 +6,9 @@ description: >-
 
 # Supporting Scripts
 
+!!! abstract "Reusable Components"
+    Extract branch management and authentication into scripts. Keeps workflow YAML readable and enables testing.
+
 ## Branch Preparation Script
 
 Create `scripts/prepare-branch.sh` for idempotent branch management:

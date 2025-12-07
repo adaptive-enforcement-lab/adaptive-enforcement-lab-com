@@ -39,6 +39,9 @@ When someone merges a `feat:` commit, release-please bumps the version everywher
 
 ## The Problem
 
+!!! danger "The Risk"
+    Simple change detection catches everything—including version-only changes that don't matter.
+
 Our change detection was simple:
 
 ```bash
@@ -136,7 +139,10 @@ The `git show HEAD:CONTRIBUTING.md` command fails if the file doesn't exist in t
 
 ## The Pattern
 
-This is [work avoidance](../../developer-guide/efficiency-patterns/work-avoidance/index.md)—an engineering pattern for filtering out noise before it becomes PRs. The specific technique here is [volatile field exclusion](../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md).
+!!! tip "Work Avoidance"
+    Filter out noise before it becomes PRs. Compare semantic content, not file bytes.
+
+This is [work avoidance](../../developer-guide/efficiency-patterns/work-avoidance/index.md)—an engineering pattern for filtering out noise. The specific technique here is [volatile field exclusion](../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md).
 
 The principle extends beyond versions:
 

@@ -2,6 +2,9 @@
 
 Integrate your Go CLI with Kubernetes using client-go.
 
+!!! tip "Universal Client"
+    Build clients that work everywhere: developer laptops, CI runners, and cluster pods. Automatic config detection handles the differences.
+
 ---
 
 ## Overview

@@ -2,6 +2,9 @@
 
 Techniques for detecting when work can be safely skipped.
 
+!!! abstract "Layer Your Checks"
+    Start with cheap checks (existence), then content hashes, then semantic comparison. Each layer catches different scenarios.
+
 ---
 
 ## Overview

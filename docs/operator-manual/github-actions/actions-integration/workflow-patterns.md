@@ -8,6 +8,9 @@ description: >-
 
 # Common Workflow Patterns
 
+!!! abstract "Production-Ready Templates"
+    These patterns are extracted from real workflows. Copy, adapt, and deploy.
+
 ## Pattern 1: Query Team Repositories
 
 ```yaml

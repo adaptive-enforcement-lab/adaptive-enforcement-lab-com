@@ -2,6 +2,9 @@
 
 Implement common Kubernetes operations in your CLI.
 
+!!! abstract "Idiomatic Kubernetes"
+    Use label selectors for filtering, strategic merge patches for updates, and proper error handling with `apierrors.IsNotFound()`.
+
 ---
 
 ## Overview

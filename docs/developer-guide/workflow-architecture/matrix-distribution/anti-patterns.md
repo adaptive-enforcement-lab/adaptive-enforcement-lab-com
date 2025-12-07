@@ -2,6 +2,9 @@
 
 Common mistakes to avoid in matrix distribution workflows.
 
+!!! danger "Production Failures"
+    Each anti-pattern here has caused workflow failures in production. Learn to recognize and avoid them.
+
 ---
 
 ## Hardcoded Target Lists

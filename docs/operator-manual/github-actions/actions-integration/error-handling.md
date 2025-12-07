@@ -7,6 +7,9 @@ description: >-
 
 # Error Handling
 
+!!! danger "Don't Fail Silently"
+    Always check for failures and provide actionable error messages. Silent failures waste hours of debugging.
+
 ## Handle Token Generation Failures
 
 ```yaml

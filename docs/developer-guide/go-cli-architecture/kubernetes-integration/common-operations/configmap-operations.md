@@ -2,6 +2,9 @@
 
 Store and retrieve configuration data in Kubernetes.
 
+!!! tip "Get-or-Create Pattern"
+    Check `apierrors.IsNotFound(err)` before creating resources. This makes operations idempotent and safe to re-run.
+
 ---
 
 ## Get or Create Pattern

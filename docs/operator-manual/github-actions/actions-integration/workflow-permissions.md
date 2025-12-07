@@ -7,6 +7,9 @@ description: >-
 
 # Workflow Permissions
 
+!!! warning "Explicit Permissions Required"
+    Workflows with restricted permissions must declare `id-token: write` for Core App token generation.
+
 ## Required Workflow Permissions
 
 Declare minimum permissions for workflows using Core App tokens:

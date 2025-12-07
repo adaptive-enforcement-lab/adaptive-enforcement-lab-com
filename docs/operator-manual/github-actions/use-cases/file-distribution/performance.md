@@ -6,6 +6,9 @@ description: >-
 
 # Performance Optimization
 
+!!! tip "Start Conservative"
+    Begin with `max-parallel: 10` and increase after monitoring rate limits. Aggressive parallelism triggers rate limits.
+
 ## Parallel Processing
 
 ```yaml

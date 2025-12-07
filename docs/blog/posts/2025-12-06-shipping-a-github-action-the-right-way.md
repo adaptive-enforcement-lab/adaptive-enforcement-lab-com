@@ -21,6 +21,9 @@ I just published [readability](https://github.com/adaptive-enforcement-lab/reada
 
 ## The Problem
 
+!!! warning "The Reality"
+    Most GitHub Actions ship without a real release system. Every release becomes a manual checklist.
+
 Most GitHub Actions ship without a real release system:
 
 - No versioned docs that match releases
@@ -129,6 +132,9 @@ Commits drive the release. `feat:` bumps minor. `fix:` bumps patch. `feat!:` bum
 ---
 
 ## The Result
+
+!!! success "Zero Manual Steps"
+    Push, merge, release. Everything else is automated.
 
 Push a fix to main:
 

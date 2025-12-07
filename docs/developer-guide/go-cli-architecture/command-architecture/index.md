@@ -2,6 +2,9 @@
 
 Design command structures that are intuitive, composable, and maintainable.
 
+!!! abstract "Design Philosophy"
+    Commands should work both independently and as part of larger workflows. The orchestrator coordinates; individual commands do the work.
+
 ---
 
 ## Overview

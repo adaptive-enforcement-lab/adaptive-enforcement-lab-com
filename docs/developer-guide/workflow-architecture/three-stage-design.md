@@ -9,6 +9,9 @@ description: >-
 
 Separate concerns into discovery, execution, and reporting phases.
 
+!!! abstract "Key Insight"
+    Complex workflows become tangled when discovery, execution, and reporting logic interleave. Separating them into distinct stages improves testability, debuggability, and observability.
+
 ---
 
 ## The Pattern

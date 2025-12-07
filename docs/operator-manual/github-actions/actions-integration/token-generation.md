@@ -10,6 +10,9 @@ description: >-
 GitHub provides the official `actions/create-github-app-token` action for
 generating short-lived tokens from your Core App credentials.
 
+!!! tip "Owner Parameter"
+    Always specify the `owner` parameter for organization-level operations. Without it, tokens are scoped only to the current repository.
+
 ## Basic Usage
 
 ```yaml

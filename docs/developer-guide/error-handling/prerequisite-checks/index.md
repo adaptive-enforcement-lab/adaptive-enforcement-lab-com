@@ -2,6 +2,9 @@
 
 Validate all preconditions before executing expensive or irreversible operations.
 
+!!! tip "Key Insight"
+    Check everything, then do everything. Consolidate validation into a dedicated phase before any work begins.
+
 ---
 
 ## Overview

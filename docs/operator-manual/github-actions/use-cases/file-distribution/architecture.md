@@ -9,6 +9,9 @@ description: >-
 This workflow implements the [Three-Stage Design][three-stage] pattern
 with [Matrix Distribution][matrix] for parallel processing.
 
+!!! tip "Separation of Concerns"
+    Discovery finds targets. Distribution processes them in parallel. Summary reports results. Each stage has a single responsibility.
+
 [three-stage]: ../../../../developer-guide/workflow-architecture/three-stage-design.md
 [matrix]: ../../../../developer-guide/workflow-architecture/matrix-distribution/index.md
 

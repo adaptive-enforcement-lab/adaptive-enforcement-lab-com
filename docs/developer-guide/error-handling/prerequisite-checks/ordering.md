@@ -2,6 +2,9 @@
 
 Order checks from cheapest to most expensive.
 
+!!! tip "Key Insight"
+    Fail on cheap checks before running expensive ones. Configuration errors should be caught in milliseconds, not after API calls.
+
 ---
 
 ## Cost-Based Ordering

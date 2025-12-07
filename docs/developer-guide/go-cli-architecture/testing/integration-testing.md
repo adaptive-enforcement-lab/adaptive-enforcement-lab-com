@@ -2,6 +2,9 @@
 
 Test against real Kubernetes API servers with envtest.
 
+!!! tip "Real API, Fast Tests"
+    envtest provides a real Kubernetes API server without the overhead of a full cluster. Catch API contract issues that unit tests miss.
+
 ---
 
 ## Setup with envtest

@@ -2,6 +2,9 @@
 
 Skip file distribution when only version metadata changed.
 
+!!! warning "Version Noise"
+    Release automation creates PRs for version-only changes across 40+ repos. Filter them out before creating PR fatigue.
+
 This implements the [volatile field exclusion](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md) technique for GitHub Actions workflows.
 
 ---

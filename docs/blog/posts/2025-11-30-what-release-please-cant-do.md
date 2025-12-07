@@ -24,7 +24,10 @@ Release-please said no.
 
 ## The Goal
 
-Our CONTRIBUTING.md lives in a central repository and gets distributed to 75+ other repos. When we update the guidelines, we wanted:
+!!! info "The Scenario"
+    Our CONTRIBUTING.md lives in a central repository and gets distributed to 75+ other repos.
+
+When we update the guidelines, we wanted:
 
 1. A dedicated changelog for contribution guideline changes
 2. Tags like `contributing-1.0.0`, `contributing-1.1.0`
@@ -57,7 +60,10 @@ Error: `contributing` is not a directory.
 
 ## The Discovery
 
-Release-please packages are **directory-based**. The path in the configuration must point to a directory containing versionable files, not to a single file.
+!!! warning "Key Limitation"
+    Release-please packages are **directory-based**. The path must point to a directory, not a single file.
+
+The configuration path must point to a directory containing versionable files.
 
 From the [release-please documentation](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md):
 

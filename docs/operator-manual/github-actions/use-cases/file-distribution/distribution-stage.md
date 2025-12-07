@@ -8,6 +8,9 @@ description: >-
 
 Distribute files to all repositories using matrix strategy.
 
+!!! tip "Fail-Fast: False"
+    Always set `fail-fast: false` so one failing repository doesn't cancel others. Process all targets, report all failures.
+
 ## Implementation
 
 ```yaml

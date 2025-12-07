@@ -2,6 +2,9 @@
 
 Design commands to work in pipelines and automation.
 
+!!! abstract "Dual Audience"
+    Design for both humans and scripts: table format for eyes, JSON/names format for pipes and automation.
+
 ---
 
 ## Structured Output for Piping

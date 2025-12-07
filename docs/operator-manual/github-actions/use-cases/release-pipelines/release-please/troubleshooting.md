@@ -2,6 +2,9 @@
 
 Common release-please issues and solutions.
 
+!!! tip "Validate Config First"
+    Most issues stem from configuration. Use the JSON schema and verify paths match between config and manifest files.
+
 ---
 
 ## Common Issues

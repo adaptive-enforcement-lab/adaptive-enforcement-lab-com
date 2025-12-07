@@ -2,6 +2,9 @@
 
 Patterns for detecting, reporting, and recovering from failures.
 
+!!! tip "Core Principle"
+    Fail fast on **precondition failures**. Degrade gracefully on **runtime failures**.
+
 ---
 
 ## Overview

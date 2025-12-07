@@ -2,6 +2,9 @@
 
 Patterns for managing documentation versions and aliases.
 
+!!! tip "Major Version Aliases"
+    Point `v1`, `v2` aliases to the latest patch release. Users linking to `/v1/` always get the latest 1.x documentation without updating their links.
+
 ---
 
 ## Alias Patterns

@@ -2,6 +2,9 @@
 
 Skip operations when output artifacts already exist.
 
+!!! tip "Hash-Based Cache Keys"
+    Derive cache keys from source file hashes. Same source = same output = skip the build.
+
 This implements the [cache-based skip](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md) technique for GitHub Actions workflows.
 
 ---

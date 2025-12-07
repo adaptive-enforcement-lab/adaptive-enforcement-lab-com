@@ -2,7 +2,8 @@
 
 Build resilient, maintainable automation systems.
 
-This guide covers patterns and architecture for reliable automation at scale. While the Operator Manual focuses on configuring and running systems, this guide focuses on building them well.
+!!! abstract "Guide Purpose"
+    Patterns and architecture for reliable automation at scale. While the Operator Manual focuses on configuring and running systems, this guide focuses on building them well.
 
 ---
 

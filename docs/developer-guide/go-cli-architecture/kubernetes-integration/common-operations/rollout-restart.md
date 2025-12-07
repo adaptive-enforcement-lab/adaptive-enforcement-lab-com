@@ -2,6 +2,9 @@
 
 Trigger rolling restarts without downtime.
 
+!!! info "Annotation Patch Trick"
+    Kubernetes has no native restart. Patch the pod template with a `restartedAt` annotation to trigger a rolling update.
+
 ---
 
 ## How It Works

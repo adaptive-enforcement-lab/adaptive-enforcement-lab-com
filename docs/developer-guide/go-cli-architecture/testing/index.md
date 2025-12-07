@@ -2,6 +2,9 @@
 
 Build confidence in your CLI with comprehensive testing at every level.
 
+!!! abstract "Test at the Right Level"
+    Unit tests catch logic bugs with fakes. Integration tests catch API contract issues. E2E tests catch workflow bugs in real clusters.
+
 ---
 
 ## Overview

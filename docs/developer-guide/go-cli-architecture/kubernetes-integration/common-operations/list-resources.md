@@ -2,6 +2,9 @@
 
 Query Kubernetes resources with label selectors.
 
+!!! tip "Server-Side Filtering"
+    Always filter resources server-side using label selectors. This reduces network traffic and memory usage compared to client-side filtering.
+
 ---
 
 ## List All Deployments

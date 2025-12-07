@@ -2,6 +2,9 @@
 
 Apply [work avoidance patterns](../../../../developer-guide/efficiency-patterns/work-avoidance/index.md) to skip unnecessary CI/CD operations.
 
+!!! tip "Skip Before Execute"
+    Detect unchanged content, cached builds, and irrelevant paths before running expensive operations.
+
 ---
 
 ## When to Apply
