@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.1...0.6.2) (2025-12-07)
+
+
+### Bug Fixes
+
+* add admonitions and update readability config ([#114](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/114)) ([40b967b](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/40b967b3440c1ba51bd2cb8804320ea8c6220f3f))
+
+
+### Code Refactoring
+
+* split common-operations into separate files ([#113](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/113)) ([02e7db8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/02e7db818866438f7c3e23e0eba87a810e5a5168))
+
 ## [0.6.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.0...0.6.1) (2025-12-06)
 
 
