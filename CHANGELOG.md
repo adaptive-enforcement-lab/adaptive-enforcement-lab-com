@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.6.4](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.3...0.6.4) (2025-12-07)
+
+
+### Bug Fixes
+
+* add Argo Events and Workflows to developer guide index ([ab12e1c](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/ab12e1c7651163187b22da0fe0ac71deb14e6b69))
+* exclude bot PRs from Claude code review ([#123](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/123)) ([6c446b5](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6c446b5b0ac2cbd4c21e23196e5b8856a58a0d9d))
+* grant write permissions to Claude workflow ([#125](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/125)) ([102b25c](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/102b25c4a7b40f354ddd711efa556cf31d44e3de))
+
+
+### Code Refactoring
+
+* reorganize Argo content between Developer Guide and Operator Manual ([#135](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/135)) ([3eff916](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/3eff9163679114f6d06e66d926027e4df5cce795))
+
+
+### Maintenance
+
+* **deps:** update actions/checkout action to v6 ([#122](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/122)) ([43049f9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/43049f91b6d9dd54db4281059ab0ab477be26472))
+
 ## [0.6.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.2...0.6.3) (2025-12-07)
 
 
