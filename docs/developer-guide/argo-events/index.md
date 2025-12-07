@@ -35,20 +35,18 @@ flowchart LR
 
 | Category | Description |
 |----------|-------------|
-| [Setup Guide](setup/index.md) | EventSource, EventBus, and Sensor configuration |
 | [Event Routing](routing/index.md) | Multi-action routing, filtering, and transformations |
 | [Reliability Patterns](reliability/index.md) | Retry strategies, dead letter queues, and backpressure |
-| [Troubleshooting](troubleshooting/index.md) | Debugging event flows and common issues |
 
 ---
 
-## Quick Start
+## Operational Guides
 
-1. **Deploy EventBus** - The message broker that connects everything
-2. **Create EventSource** - Connect to your event producer (Pub/Sub, webhooks, etc.)
-3. **Create Sensor** - Define filters and triggers for workflows
+For deploying and managing Argo Events in production, see the [Operator Manual](../../operator-manual/index.md):
 
-See the [Setup Guide](setup/index.md) for detailed instructions.
+- [Setup Guide](../../operator-manual/argo-events/setup/index.md) - EventSource, EventBus, and Sensor configuration
+- [Troubleshooting](../../operator-manual/argo-events/troubleshooting/index.md) - Debugging event flows and common issues
+- [High Availability](../../operator-manual/argo-events/reliability/high-availability.md) - Production HA architecture
 
 ---
 

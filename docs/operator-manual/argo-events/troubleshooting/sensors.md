@@ -300,6 +300,6 @@ This shows you exactly what fields exist and their paths.
 ## Related
 
 - [Sensor Configuration](../setup/sensors.md) - Setup reference
-- [Filtering](../routing/filtering.md) - Filter patterns
+- [Filtering](../../../developer-guide/argo-events/routing/filtering.md) - Filter patterns
 - [EventSource Issues](eventsources.md) - Previous debugging step
 - [Official Sensor Docs](https://argoproj.github.io/argo-events/sensors/intro/) - Complete reference

@@ -73,7 +73,7 @@ This Sensor only triggers when images are pushed with tags starting with `v` or 
 ---
 
 !!! note "Filter Evaluation"
-    Filters are evaluated in order. The first matching filter wins. If no filters match, the event is dropped without triggering any action. Use the [Sensor troubleshooting guide](../troubleshooting/sensors.md) to debug filter issues.
+    Filters are evaluated in order. The first matching filter wins. If no filters match, the event is dropped without triggering any action. Use the [Sensor troubleshooting guide](../../../operator-manual/argo-events/troubleshooting/sensors.md) to debug filter issues.
 
 ---
 
@@ -81,5 +81,5 @@ This Sensor only triggers when images are pushed with tags starting with `v` or 
 
 - [Simple Filtering](filtering.md) - Basic filter expressions
 - [Multi-Trigger Actions](multi-trigger.md) - Fan-out patterns
-- [Sensor Configuration](../setup/sensors.md) - Basic Sensor setup
+- [Sensor Configuration](../../../operator-manual/argo-events/setup/sensors.md) - Basic Sensor setup
 - [Official Sensor Docs](https://argoproj.github.io/argo-events/sensors/intro/) - Complete reference

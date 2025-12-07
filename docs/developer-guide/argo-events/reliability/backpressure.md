@@ -217,4 +217,4 @@ kubectl get workflows -n argo-workflows --field-selector status.phase=Pending | 
 
 - [Retry Strategies](retry.md) - Handle transient failures
 - [Semaphore Patterns](../../argo-workflows/concurrency/semaphores.md) - Workflow concurrency
-- [High Availability](high-availability.md) - Scale for throughput
+- [High Availability](../../../operator-manual/argo-events/reliability/high-availability.md) - Scale for throughput

@@ -179,6 +179,18 @@ nav:
                   - Mike Configuration: operator-manual/github-actions/use-cases/versioned-docs/mike-configuration.md
                   - Pipeline Integration: operator-manual/github-actions/use-cases/versioned-docs/pipeline-integration.md
                   - Version Strategies: operator-manual/github-actions/use-cases/versioned-docs/version-strategies.md
+      - Argo Events:
+          - Setup Guide:
+              - operator-manual/argo-events/setup/index.md
+              - EventSource Configuration: operator-manual/argo-events/setup/event-sources.md
+              - EventBus Configuration: operator-manual/argo-events/setup/event-bus.md
+              - Sensor Configuration: operator-manual/argo-events/setup/sensors.md
+          - Troubleshooting:
+              - operator-manual/argo-events/troubleshooting/index.md
+              - EventSource Issues: operator-manual/argo-events/troubleshooting/eventsources.md
+              - Sensor Issues: operator-manual/argo-events/troubleshooting/sensors.md
+              - Common Patterns: operator-manual/argo-events/troubleshooting/common-patterns.md
+          - High Availability: operator-manual/argo-events/reliability/high-availability.md
   - Developer Guide:
       - developer-guide/index.md
       - Pattern Selection Guide: developer-guide/pattern-selection-guide/index.md
@@ -262,11 +274,6 @@ nav:
               - E2E Testing: developer-guide/go-cli-architecture/testing/e2e-testing.md
       - Argo Events:
           - developer-guide/argo-events/index.md
-          - Setup Guide:
-              - developer-guide/argo-events/setup/index.md
-              - EventSource Configuration: developer-guide/argo-events/setup/event-sources.md
-              - EventBus Configuration: developer-guide/argo-events/setup/event-bus.md
-              - Sensor Configuration: developer-guide/argo-events/setup/sensors.md
           - Event Routing:
               - developer-guide/argo-events/routing/index.md
               - Simple Filtering: developer-guide/argo-events/routing/filtering.md
@@ -278,12 +285,6 @@ nav:
               - Retry Strategies: developer-guide/argo-events/reliability/retry.md
               - Dead Letter Queues: developer-guide/argo-events/reliability/dead-letter.md
               - Backpressure Handling: developer-guide/argo-events/reliability/backpressure.md
-              - High Availability: developer-guide/argo-events/reliability/high-availability.md
-          - Troubleshooting:
-              - developer-guide/argo-events/troubleshooting/index.md
-              - EventSource Issues: developer-guide/argo-events/troubleshooting/eventsources.md
-              - Sensor Issues: developer-guide/argo-events/troubleshooting/sensors.md
-              - Common Patterns: developer-guide/argo-events/troubleshooting/common-patterns.md
       - Argo Workflows:
           - developer-guide/argo-workflows/index.md
           - WorkflowTemplate Patterns:

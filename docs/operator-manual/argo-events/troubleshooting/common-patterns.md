@@ -159,7 +159,7 @@ spec:
 2. **Event republished**: Source system sending duplicates
 3. **Retry after partial success**: Trigger succeeded but ack failed
 
-**Fix**: Make workflows idempotent (see [Idempotency Patterns](../../efficiency-patterns/idempotency/index.md)).
+**Fix**: Make workflows idempotent (see [Idempotency Patterns](../../../developer-guide/efficiency-patterns/idempotency/index.md)).
 
 ---
 
@@ -258,4 +258,4 @@ For webhook-based sources, this isn't usually an issue.
 
 - [EventSource Issues](eventsources.md) - EventSource-specific debugging
 - [Sensor Issues](sensors.md) - Sensor-specific debugging
-- [Reliability Patterns](../reliability/index.md) - Prevent issues proactively
+- [Reliability Patterns](../../../developer-guide/argo-events/reliability/index.md) - Prevent issues proactively

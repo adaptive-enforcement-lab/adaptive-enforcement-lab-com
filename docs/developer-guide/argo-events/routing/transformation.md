@@ -209,5 +209,5 @@ The template outputs a JSON string that becomes the parameter value.
 
 - [Simple Filtering](filtering.md) - Control which events trigger
 - [Multi-Trigger Actions](multi-trigger.md) - Fan-out patterns
-- [Sensor Configuration](../setup/sensors.md) - Basic Sensor setup
+- [Sensor Configuration](../../../operator-manual/argo-events/setup/sensors.md) - Basic Sensor setup
 - [Official Parameterization Docs](https://argoproj.github.io/argo-events/sensors/trigger-parameterization/) - Complete reference

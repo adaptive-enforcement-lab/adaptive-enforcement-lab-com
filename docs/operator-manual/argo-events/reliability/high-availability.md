@@ -266,5 +266,5 @@ If events stop flowing when a single pod dies, your HA configuration isn't worki
 ## Related
 
 - [EventBus Configuration](../setup/event-bus.md) - Basic EventBus setup
-- [Backpressure Handling](backpressure.md) - Handle high load
-- [Retry Strategies](retry.md) - Recover from transient failures
+- [Backpressure Handling](../../../developer-guide/argo-events/reliability/backpressure.md) - Handle high load
+- [Retry Strategies](../../../developer-guide/argo-events/reliability/retry.md) - Recover from transient failures
