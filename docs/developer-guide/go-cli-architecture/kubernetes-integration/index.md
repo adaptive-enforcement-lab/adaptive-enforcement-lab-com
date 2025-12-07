@@ -13,7 +13,7 @@ A well-designed Kubernetes CLI works seamlessly both on developer laptops and in
 
 - **[Client Configuration](client-configuration.md)** - Automatic config detection for all environments
 - **[RBAC Setup](rbac-setup.md)** - Service accounts and permissions
-- **[Common Operations](common-operations.md)** - List, patch, and restart resources
+- **[Common Operations](common-operations/index.md)** - List, patch, and restart resources
 
 ---
 
