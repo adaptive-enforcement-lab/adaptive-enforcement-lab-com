@@ -14,6 +14,12 @@ repos:
         name: check documentation readability
   - repo: local
     hooks:
+      - id: check-forbidden-tech
+        name: block forbidden technologies
+        entry: scripts/check-forbidden-tech.sh
+        language: script
+        files: \.(md|yaml|yml|sh|tf|Dockerfile|Containerfile)$
+        pass_filenames: true
       - id: check-markdown-length
         name: check markdown length
         entry: scripts/check-markdown-length.sh

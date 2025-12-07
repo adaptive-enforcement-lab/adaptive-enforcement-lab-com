@@ -341,6 +341,7 @@ The setup pays off. Better experience for devs. Better code.
 
 ## Related
 
+- **[Pre-commit Hooks as Security Gates](2025-12-04-pre-commit-security-gates.md)** - Enforce security policies at commit time
 - [Building GitHub Actions in Go](2025-12-09-building-github-actions-in-go.md) - Same patterns for GitHub Actions
 - [CLI UX Patterns for AI Agents](2025-12-07-cli-ux-patterns-for-ai-agents.md) - Design error messages AI can use
 - [golangci-lint v2 Migration](2025-12-11-golangci-lint-v2-migration.md) - Keep your linting current

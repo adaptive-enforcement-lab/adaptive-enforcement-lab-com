@@ -213,15 +213,10 @@ This pattern, using ConfigMaps as a cache layer with volume mounts for zero-API 
 
 !!! success "Related Content"
 
-    - **[Event-Driven Deployments with Argo](2025-12-14-event-driven-deployments-argo.md)**: Full architecture deep dive with Argo Events, Workflows, and production patterns
+    - **[ConfigMap as Cache Pattern](2025-12-03-configmap-cache-zero-api.md)**: Deep dive into the zero-API lookup pattern
+    - **[Event-Driven Deployments with Argo](2025-12-14-event-driven-deployments-argo.md)**: Full architecture with Argo Events, Workflows, and production patterns
     - **[Go CLI Architecture](../../developer-guide/go-cli-architecture/index.md)**: Building Kubernetes-native orchestration tools
-
-!!! info "Coming Soon"
-
-    - **ConfigMap as Cache Pattern**: The engineering pattern behind this optimization
-    - **Argo Workflows Operator Manual**: Production-ready workflow templates and best practices
-
-    See the [Roadmap](../../roadmap.md) for upcoming documentation.
+    - **[Cache Considerations](../../developer-guide/efficiency-patterns/idempotency/caches.md)**: Cache-resilient idempotency patterns
 
 ---
 
