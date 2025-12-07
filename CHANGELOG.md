@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.2...0.6.3) (2025-12-07)
+
+
+### Bug Fixes
+
+* update blog post categories to reflect actual content ([184b31e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/184b31e467868562eb1426abb63ddadfa44a2558))
+
 ## [0.6.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.1...0.6.2) (2025-12-07)
 
 
