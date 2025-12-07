@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # Daily at 00:05 UTC - publishes scheduled blog posts
+    - cron: "5 0 * * *"
   workflow_dispatch:
     inputs:
       skip_release_please:
@@ -55,6 +58,7 @@ jobs:
     outputs:
       docs_changed: ${{ steps.changes.outputs.docs_any_changed }}
       force_all: ${{ inputs.force_all }}
+      is_scheduled: ${{ github.event_name == 'schedule' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
@@ -79,13 +83,16 @@ jobs:
           echo "|-----------|---------|" >> "$GITHUB_STEP_SUMMARY"
           echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Force All | ${{ inputs.force_all }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Scheduled | ${{ github.event_name == 'schedule' }} |" >> "$GITHUB_STEP_SUMMARY"
 
   analyze-docs:
     name: Analyze Documentation
     needs: [detect-changes]
     if: |
       always() && !cancelled() &&
-      (needs.detect-changes.outputs.docs_changed == 'true' || inputs.force_all == true)
+      (needs.detect-changes.outputs.docs_changed == 'true' ||
+       needs.detect-changes.outputs.is_scheduled == 'true' ||
+       inputs.force_all == true)
     uses: ./.github/workflows/docs-quality.yml
     with:
       fail_on_threshold: true
@@ -95,7 +102,9 @@ jobs:
     needs: [detect-changes, analyze-docs]
     if: |
       always() && !cancelled() &&
-      (needs.detect-changes.outputs.docs_changed == 'true' || inputs.force_all == true) &&
+      (needs.detect-changes.outputs.docs_changed == 'true' ||
+       needs.detect-changes.outputs.is_scheduled == 'true' ||
+       inputs.force_all == true) &&
       (needs.analyze-docs.result == 'success' || needs.analyze-docs.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
