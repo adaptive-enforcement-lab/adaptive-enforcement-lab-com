@@ -9,6 +9,9 @@ description: >-
 
 Once you've generated a token, here's how to use it with various tools.
 
+!!! tip "GH_TOKEN Environment Variable"
+    Set `GH_TOKEN` to automatically authenticate all `gh` CLI commands. No manual configuration needed.
+
 ## With GitHub CLI (gh)
 
 The most common integration is with the GitHub CLI:

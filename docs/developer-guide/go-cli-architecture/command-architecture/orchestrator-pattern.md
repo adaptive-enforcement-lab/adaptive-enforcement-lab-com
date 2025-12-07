@@ -2,6 +2,9 @@
 
 Coordinate multi-step workflows through a single entry point.
 
+!!! tip "Single Entry Point"
+    For complex workflows, expose one command that coordinates subcommands. Users run `myctl orchestrate` instead of chaining multiple commands.
+
 ---
 
 ## Implementation

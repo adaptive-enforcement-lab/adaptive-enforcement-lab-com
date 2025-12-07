@@ -2,6 +2,9 @@
 
 Unified release pipeline that handles versioning, builds, and documentation deployment.
 
+!!! tip "Conditional Deployment"
+    Build docs only when needed: docs changed, force flag set, or release created. Skip unnecessary builds when only code changes.
+
 ---
 
 ## Complete Workflow

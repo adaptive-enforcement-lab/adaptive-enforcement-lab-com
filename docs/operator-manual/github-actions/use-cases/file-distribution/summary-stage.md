@@ -8,6 +8,9 @@ description: >-
 
 Aggregate results and display PR links.
 
+!!! tip "Always Run Summary"
+    Use `if: always()` so the summary runs even when distribution jobs fail. Users need visibility into failures.
+
 ## Implementation
 
 ```yaml

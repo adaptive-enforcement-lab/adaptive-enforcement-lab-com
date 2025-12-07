@@ -2,6 +2,9 @@
 
 Common mistakes when implementing prerequisite checks.
 
+!!! danger "Recognize These Mistakes"
+    Each anti-pattern here has caused production incidents. Learn to spot them before they cause problems.
+
 ---
 
 ## 1. Scattered Prerequisites

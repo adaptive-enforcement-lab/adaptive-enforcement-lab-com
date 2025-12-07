@@ -2,6 +2,9 @@
 
 Variable substitution and file transformations for distributed content.
 
+!!! tip "Templates Over Copies"
+    Use templates with variable substitution to generate target-specific configurations. One template serves many targets.
+
 ---
 
 ## Simple Substitution

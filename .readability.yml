@@ -39,7 +39,6 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
-      min_admonitions: -1  # Disable admonition requirement
 
   # Operator manual: Graduate+ level (advanced operational content)
   # Reference-style docs with lists/tables break readability formulas
@@ -50,4 +49,3 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
-      min_admonitions: -1  # Disable admonition requirement

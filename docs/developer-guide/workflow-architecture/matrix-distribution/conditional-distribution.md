@@ -2,6 +2,9 @@
 
 Target type detection and filtering for selective distribution.
 
+!!! tip "Right Content, Right Target"
+    Detect target characteristics at runtime to distribute type-specific configurations. A Node.js project gets ESLint; a Go project gets golangci-lint.
+
 ---
 
 ## Target Type Detection

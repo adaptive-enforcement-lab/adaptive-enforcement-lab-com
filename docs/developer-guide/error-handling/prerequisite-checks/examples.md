@@ -2,6 +2,9 @@
 
 Real-world implementations of prerequisite validation patterns.
 
+!!! example "Production-Ready Code"
+    These examples are extracted from production systems and demonstrate the check-then-execute pattern across different environments.
+
 ---
 
 ## Kubernetes Deployment Prerequisites

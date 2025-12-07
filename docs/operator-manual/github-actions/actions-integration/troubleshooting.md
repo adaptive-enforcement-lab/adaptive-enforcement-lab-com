@@ -6,6 +6,9 @@ description: >-
 
 # Troubleshooting
 
+!!! tip "Debug Workflow First"
+    Run the debug workflow at the bottom of this page to quickly identify token scope and permission issues.
+
 ## Common Issues
 
 ### Token Scope Too Narrow

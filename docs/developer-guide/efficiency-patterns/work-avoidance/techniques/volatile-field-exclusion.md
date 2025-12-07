@@ -2,6 +2,9 @@
 
 Strip fields that change without affecting semantics before comparison.
 
+!!! tip "Key Insight"
+    Version numbers, timestamps, and build IDs change automatically. Exclude them before comparing to avoid false positives.
+
 ---
 
 ## The Technique

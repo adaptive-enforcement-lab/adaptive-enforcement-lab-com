@@ -10,6 +10,9 @@ description: >-
 This guide explains how to integrate your GitHub Core App with GitHub Actions
 workflows for organization-level automation.
 
+!!! abstract "What You'll Learn"
+    Generate short-lived tokens, use them with GitHub CLI and APIs, implement common workflow patterns, and handle errors gracefully.
+
 ## Prerequisites
 
 Before integrating, ensure you have:

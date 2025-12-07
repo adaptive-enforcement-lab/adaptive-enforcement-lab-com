@@ -7,6 +7,9 @@ description: >-
 
 # Security Best Practices
 
+!!! danger "Never Log Tokens"
+    Tokens in logs are visible to anyone with workflow access. Use `GH_TOKEN` environment variable, never echo or print tokens.
+
 ## Token Exposure Prevention
 
 ```yaml

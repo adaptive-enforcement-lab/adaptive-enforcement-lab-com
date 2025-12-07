@@ -2,6 +2,9 @@
 
 Compare content hashes to detect meaningful changes.
 
+!!! tip "When to Use"
+    Use content hashing when exact byte equality matters—file comparisons, config sync, and artifact validation.
+
 ---
 
 ## The Technique

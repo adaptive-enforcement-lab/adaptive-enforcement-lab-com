@@ -6,6 +6,9 @@ description: >-
 
 # Error Handling
 
+!!! warning "Expect Failures"
+    Large matrix operations will have failures. Design for visibility: report failures clearly, continue processing others, and make reruns safe.
+
 ## Failure Strategies
 
 ```yaml

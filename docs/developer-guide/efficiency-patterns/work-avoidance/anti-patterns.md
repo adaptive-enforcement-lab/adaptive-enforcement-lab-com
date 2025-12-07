@@ -1,6 +1,7 @@
 # Work Avoidance Anti-Patterns
 
-Common mistakes that undermine work avoidance strategies.
+!!! warning "Common Pitfalls"
+    These mistakes undermine work avoidance strategies and lead to false positives or missed updates.
 
 ---
 

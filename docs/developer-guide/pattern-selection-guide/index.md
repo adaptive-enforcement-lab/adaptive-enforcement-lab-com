@@ -2,7 +2,8 @@
 
 Choose the right pattern for your situation.
 
-Use this decision matrix to determine which pattern applies to your scenario. For implementation details, see the linked pattern guides.
+!!! abstract "Quick Reference"
+    Use this decision matrix to determine which pattern applies to your scenario. For implementation details, see the linked pattern guides.
 
 ---
 

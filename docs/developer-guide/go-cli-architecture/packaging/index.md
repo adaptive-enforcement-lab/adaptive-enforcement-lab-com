@@ -2,6 +2,9 @@
 
 Build minimal, secure container images for your Go CLI.
 
+!!! tip "Minimal Images"
+    Static Go binaries on distroless base images give you ~5MB images with no shell attack surface. Small image + non-root + read-only = secure container.
+
 ---
 
 ## Overview

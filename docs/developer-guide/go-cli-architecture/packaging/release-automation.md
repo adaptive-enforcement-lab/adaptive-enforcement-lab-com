@@ -2,6 +2,9 @@
 
 Automate multi-architecture builds and releases with GitHub Actions and GoReleaser.
 
+!!! tip "One Tag, Full Release"
+    Push a git tag, get binaries for all platforms, container images for amd64/arm64, and an auto-generated changelog. GoReleaser handles the complexity.
+
 ---
 
 ## GitHub Actions Workflow

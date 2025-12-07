@@ -6,6 +6,9 @@ description: >-
 
 # Performance Optimization
 
+!!! tip "Generate Once, Use Many"
+    Generate a single token per job and reuse it across steps. Tokens are valid for 1 hour.
+
 ## Reuse Tokens Across Steps
 
 ```yaml

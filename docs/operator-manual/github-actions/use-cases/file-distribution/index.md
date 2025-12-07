@@ -9,6 +9,9 @@ description: >-
 
 Automated file distribution across multiple repositories using GitHub Actions and GitHub Apps.
 
+!!! abstract "Pattern Overview"
+    A three-stage workflow that discovers targets, distributes files in parallel, and reports results. Idempotent design ensures safe reruns.
+
 ---
 
 ## Problem

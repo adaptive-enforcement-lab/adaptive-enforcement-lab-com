@@ -6,6 +6,9 @@ description: >-
 
 # Security Considerations
 
+!!! danger "Principle of Least Privilege"
+    Grant minimum permissions. Use short-lived tokens. Require PR review. Never distribute sensitive files.
+
 ## Token Scope
 
 ```yaml

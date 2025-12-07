@@ -6,6 +6,9 @@ description: >-
 
 # Troubleshooting
 
+!!! tip "Debug Workflow"
+    Use the debug workflow at the bottom of this page to systematically verify token scope, org access, and team queries.
+
 ## Common Issues
 
 ### No Repositories Found

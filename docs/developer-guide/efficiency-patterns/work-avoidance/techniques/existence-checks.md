@@ -2,6 +2,9 @@
 
 Skip creation when the resource already exists.
 
+!!! note "Existence vs State"
+    Existence checks verify **presence**, not **correctness**. For state validation, combine with content hashing.
+
 ---
 
 ## The Technique

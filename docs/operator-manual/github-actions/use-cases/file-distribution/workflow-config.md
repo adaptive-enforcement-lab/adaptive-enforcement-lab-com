@@ -6,6 +6,9 @@ description: >-
 
 # Workflow Configuration
 
+!!! abstract "Configuration Reference"
+    Triggers, permissions, and environment variables for file distribution workflows.
+
 ## Trigger Configuration
 
 ```yaml

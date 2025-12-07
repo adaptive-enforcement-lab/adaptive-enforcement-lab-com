@@ -2,6 +2,9 @@
 
 Implement common Kubernetes operations in your CLI.
 
+!!! tip "API Idioms"
+    Use the Kubernetes API idiomatically: label selectors for filtering, strategic merge patches for updates, and proper error handling for all operations.
+
 ---
 
 ## List Deployments

@@ -8,6 +8,9 @@ description: >-
 
 Structural patterns for building workflows that scale.
 
+!!! tip "Design for Failure"
+    Workflows that survive production are designed with failure in mind. Separate concerns, isolate failures, and always report results.
+
 ---
 
 ## Available Patterns

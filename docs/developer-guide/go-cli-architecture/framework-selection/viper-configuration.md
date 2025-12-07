@@ -2,6 +2,9 @@
 
 Layer configuration sources for flexible CLI behavior.
 
+!!! abstract "Configuration Precedence"
+    Flags override environment variables override config files override defaults. This layering gives users flexibility while maintaining sane defaults.
+
 ---
 
 ## Configuration Hierarchy

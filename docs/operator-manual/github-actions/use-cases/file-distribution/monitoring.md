@@ -6,6 +6,9 @@ description: >-
 
 # Monitoring and Observability
 
+!!! abstract "Visibility Matters"
+    Summaries, badges, and notifications turn automation from a black box into a transparent process.
+
 ## Workflow Summary Format
 
 ```markdown

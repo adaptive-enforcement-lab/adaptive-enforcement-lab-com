@@ -2,6 +2,9 @@
 
 Patterns for avoiding unnecessary work and ensuring safe retries.
 
+!!! abstract "Two Strategies"
+    Idempotency makes reruns safe. Work avoidance prevents reruns entirely. Use both together for maximum efficiency.
+
 ---
 
 ## Overview

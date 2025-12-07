@@ -1,6 +1,7 @@
 # CI/CD Examples
 
-Tombstone marker implementations for GitHub Actions and other CI/CD systems.
+!!! example "Implementation Reference"
+    Tombstone marker implementations for GitHub Actions and other CI/CD systems.
 
 ---
 

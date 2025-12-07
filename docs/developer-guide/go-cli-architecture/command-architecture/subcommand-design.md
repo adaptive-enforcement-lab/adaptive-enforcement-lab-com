@@ -2,6 +2,9 @@
 
 Each subcommand should be independently useful.
 
+!!! tip "Composable Commands"
+    Each command should work independently but compose well with others. `myctl select | myctl restart -` demonstrates good pipeline design.
+
 ---
 
 ## Check Command

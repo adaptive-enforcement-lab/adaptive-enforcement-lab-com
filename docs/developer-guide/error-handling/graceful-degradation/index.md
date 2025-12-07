@@ -2,6 +2,9 @@
 
 When the optimal path fails, fall back to progressively more expensive but reliable alternatives.
 
+!!! abstract "Key Insight"
+    Degrade performance, not availability. Every operation should have a guaranteed fallback that always succeeds.
+
 ---
 
 ## Overview

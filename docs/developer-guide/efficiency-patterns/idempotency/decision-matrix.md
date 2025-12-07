@@ -7,7 +7,8 @@ description: >-
 
 # Decision Matrix
 
-Not every workflow needs bulletproof idempotency. Use this matrix to decide how much investment makes sense.
+!!! tip "Investment Guide"
+    Not every workflow needs bulletproof idempotency. Use this matrix to decide how much investment makes sense.
 
 ## Visual Guide
 

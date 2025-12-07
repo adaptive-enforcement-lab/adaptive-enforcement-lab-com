@@ -2,6 +2,9 @@
 
 Skip workflows when relevant files haven't changed.
 
+!!! tip "Native GitHub Feature"
+    Path filtering is built into GitHub Actions. No custom code required—just configure `paths` and `paths-ignore` in your workflow triggers.
+
 ---
 
 ## Native GitHub Feature

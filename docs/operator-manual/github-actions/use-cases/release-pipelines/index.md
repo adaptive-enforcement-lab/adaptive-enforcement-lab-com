@@ -2,6 +2,9 @@
 
 Automated version management, changelog generation, and optimized builds for monorepos.
 
+!!! abstract "Smart Builds"
+    Only build what changed. GitHub App tokens trigger builds correctly. Release-please handles versions automatically.
+
 ---
 
 ## Overview

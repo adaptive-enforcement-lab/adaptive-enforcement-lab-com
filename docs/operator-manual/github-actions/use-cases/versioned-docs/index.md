@@ -2,6 +2,9 @@
 
 Deploy documentation versions that align with software releases using MkDocs Material and mike.
 
+!!! abstract "Version Alignment"
+    Users need docs that match the version they're running. Integrate release-please with mike to deploy version-tagged documentation alongside software releases.
+
 ---
 
 ## Overview
