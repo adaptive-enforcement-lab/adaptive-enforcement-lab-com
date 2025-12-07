@@ -3,9 +3,9 @@ date: 2025-12-05
 authors:
   - mark
 categories:
+  - Error Handling
+  - Resilience
   - Engineering Patterns
-  - DevSecOps
-  - Reliability
 slug: the-art-of-failing-gracefully
 description: >-
   When your fast path fails, don't crash. Build tiered fallbacks that degrade performance, not availability.

@@ -4,7 +4,8 @@ authors:
   - mark
 categories:
   - Go
-  - CI/CD
+  - Linting
+  - Code Quality
 description: >-
   Stricter errcheck rules break most Go projects. Here's the fix pattern
   that keeps your code clean.

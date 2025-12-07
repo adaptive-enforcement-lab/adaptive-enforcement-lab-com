@@ -4,8 +4,8 @@ authors:
   - mark
 categories:
   - Go
-  - Automation
   - GitHub Actions
+  - Release Engineering
 description: >-
   Single-binary distribution, millisecond cold starts, zero runtime deps.
   Ship Go-based GitHub Actions the right way.

@@ -3,8 +3,9 @@ date: 2025-12-08
 authors:
   - mark
 categories:
-  - DevSecOps
-  - Engineering Practices
+  - QA
+  - Testing
+  - Developer Workflow
 description: >-
   Pattern matching isn't verification. Build a habit of running code,
   not just reading it.

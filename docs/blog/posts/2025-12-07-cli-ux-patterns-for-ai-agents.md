@@ -3,8 +3,8 @@ date: 2025-12-07
 authors:
   - mark
 categories:
-  - DevSecOps
-  - Automation
+  - AI Agents
+  - CLI Design
   - Go
 description: >-
   AI agents take error messages literally. Design CLI output that guides

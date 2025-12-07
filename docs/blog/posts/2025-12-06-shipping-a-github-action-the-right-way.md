@@ -3,8 +3,8 @@ date: 2025-12-06
 authors:
   - mark
 categories:
-  - DevSecOps
   - GitHub Actions
+  - Release Engineering
   - Open Source
 slug: shipping-a-github-action-the-right-way
 description: >-

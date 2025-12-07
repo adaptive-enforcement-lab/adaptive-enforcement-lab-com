@@ -3,9 +3,9 @@ date: 2025-12-10
 authors:
   - mark
 categories:
-  - DevSecOps
   - Go
-  - CI/CD
+  - Pre-commit
+  - Developer Tools
 description: >-
   Binary releases eliminate the 30-second cold start penalty. Ship pre-commit
   hooks developers actually want to use.
