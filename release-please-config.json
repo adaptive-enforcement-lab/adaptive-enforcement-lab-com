@@ -4,11 +4,11 @@
   "tag-separator": "-",
   "always-update": true,
   "changelog-sections": [
-    { "type": "feat", "section": "Features" },
-    { "type": "fix", "section": "Bug Fixes" },
+    { "type": "feat", "section": "New Content" },
+    { "type": "docs", "section": "Documentation Updates" },
+    { "type": "fix", "section": "Content Fixes" },
+    { "type": "refactor", "section": "Content Refactoring" },
     { "type": "perf", "section": "Performance" },
-    { "type": "refactor", "section": "Code Refactoring" },
-    { "type": "docs", "section": "Documentation", "hidden": true },
     { "type": "chore", "section": "Maintenance" },
     { "type": "test", "section": "Tests", "hidden": true },
     { "type": "ci", "section": "CI/CD", "hidden": true }
