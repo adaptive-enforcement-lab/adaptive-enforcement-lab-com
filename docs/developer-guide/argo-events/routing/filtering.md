@@ -150,7 +150,8 @@ This triggers only for:
 ---
 
 !!! warning "Silent Drops"
-    Filtered events are dropped silently. No logs, no errors, no indication that an event was received and rejected. Start with permissive filters and add restrictions incrementally. The [Sensor troubleshooting guide](../troubleshooting/sensors.md) covers debugging filter issues.
+    Filtered events are dropped silently. No logs, no errors, no indication that an event was received and rejected. Start with permissive filters and add restrictions incrementally.
+    The [Sensor troubleshooting guide](../../../operator-manual/argo-events/troubleshooting/sensors.md) covers debugging filter issues.
 
 ---
 
@@ -158,5 +159,5 @@ This triggers only for:
 
 - [Multi-Trigger Actions](multi-trigger.md) - Multiple actions from one event
 - [Event Transformation](transformation.md) - Modify payloads before triggering
-- [Troubleshooting Sensors](../troubleshooting/sensors.md) - Debug filter issues
+- [Troubleshooting Sensors](../../../operator-manual/argo-events/troubleshooting/sensors.md) - Debug filter issues
 - [Official Filters Docs](https://argoproj.github.io/argo-events/sensors/filters/intro/) - Complete reference

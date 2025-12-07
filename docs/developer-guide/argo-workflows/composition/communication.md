@@ -253,5 +253,5 @@ With correlation IDs, you can:
 ## Related
 
 - [Spawning Child Workflows](spawning-children.md) - Coupled alternative to message-based communication
-- [Argo Events Setup](../../argo-events/setup/index.md) - Configuring EventSource and Sensors
-- [Sensor Configuration](../../argo-events/setup/sensors.md) - Event filtering and routing
+- [Argo Events Setup](../../../operator-manual/argo-events/setup/index.md) - Configuring EventSource and Sensors
+- [Sensor Configuration](../../../operator-manual/argo-events/setup/sensors.md) - Event filtering and routing

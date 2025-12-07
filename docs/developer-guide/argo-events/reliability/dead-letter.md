@@ -248,5 +248,5 @@ spec:
 ## Related
 
 - [Retry Strategies](retry.md) - Before events hit DLQ
-- [Troubleshooting Sensors](../troubleshooting/sensors.md) - Debug trigger failures
+- [Troubleshooting Sensors](../../../operator-manual/argo-events/troubleshooting/sensors.md) - Debug trigger failures
 - [Alerting Patterns](../../efficiency-patterns/index.md) - Notification setup

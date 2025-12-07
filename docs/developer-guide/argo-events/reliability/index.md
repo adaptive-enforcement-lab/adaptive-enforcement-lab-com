@@ -35,7 +35,6 @@ flowchart TD
 | [Retry Strategies](retry.md) | Handle transient failures | Low |
 | [Dead Letter Queues](dead-letter.md) | Capture failed events | Medium |
 | [Backpressure Handling](backpressure.md) | Prevent overload | Medium |
-| [High Availability](high-availability.md) | Redundant deployments | High |
 
 ---
 
@@ -101,5 +100,6 @@ With persistence enabled, events survive EventBus pod restarts. The 3-replica co
 
 - [Retry Strategies](retry.md) - Transient failure handling
 - [Dead Letter Queues](dead-letter.md) - Failed event capture
-- [EventBus Configuration](../setup/event-bus.md) - Persistence setup
+- [EventBus Configuration](../../../operator-manual/argo-events/setup/event-bus.md) - Persistence setup
+- [High Availability](../../../operator-manual/argo-events/reliability/high-availability.md) - Production HA architecture
 - [Official Reliability Docs](https://argoproj.github.io/argo-events/sensors/more-about-sensors-and-triggers/) - Complete reference

@@ -67,7 +67,7 @@ Build resilient, maintainable automation systems.
 
     [:octicons-arrow-right-24: Argo Events](argo-events/index.md)
 
--   :material-workflow:{ .lg .middle } **Argo Workflows**
+-   :material-state-machine:{ .lg .middle } **Argo Workflows**
 
     ---
 
@@ -95,10 +95,8 @@ Build resilient, maintainable automation systems.
 | Go CLI | [Command Architecture](go-cli-architecture/command-architecture/index.md) | Orchestrator and subcommand design |
 | Go CLI | [Packaging](go-cli-architecture/packaging/index.md) | Container builds and Helm charts |
 | Go CLI | [Testing](go-cli-architecture/testing/index.md) | Unit, integration, and E2E testing |
-| Argo Events | [Setup Guide](argo-events/setup/index.md) | EventSource, EventBus, and Sensor configuration |
 | Argo Events | [Event Routing](argo-events/routing/index.md) | Filtering, transformations, and multi-trigger |
-| Argo Events | [Reliability](argo-events/reliability/index.md) | Retries, dead letter queues, and backpressure |
-| Argo Events | [Troubleshooting](argo-events/troubleshooting/index.md) | Debug event flows and common issues |
+| Argo Events | [Reliability Patterns](argo-events/reliability/index.md) | Retries, dead letter queues, and backpressure |
 | Argo Workflows | [WorkflowTemplates](argo-workflows/templates/index.md) | Reusable templates with RBAC and volumes |
 | Argo Workflows | [Concurrency](argo-workflows/concurrency/index.md) | Mutex, semaphores, and TTL strategies |
 | Argo Workflows | [Composition](argo-workflows/composition/index.md) | Parent/child and cross-workflow patterns |

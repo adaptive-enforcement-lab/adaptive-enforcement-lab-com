@@ -225,5 +225,5 @@ triggers:
 
 - [Simple Filtering](filtering.md) - Pre-sensor filtering
 - [Multi-Trigger Actions](multi-trigger.md) - Fan-out patterns
-- [Troubleshooting Sensors](../troubleshooting/sensors.md) - Debug routing issues
+- [Troubleshooting Sensors](../../../operator-manual/argo-events/troubleshooting/sensors.md) - Debug routing issues
 - [Official Conditions Docs](https://argoproj.github.io/argo-events/sensors/trigger-conditions/) - Complete reference

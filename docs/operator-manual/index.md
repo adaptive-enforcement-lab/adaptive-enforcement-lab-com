@@ -40,6 +40,40 @@ Enterprise-grade GitHub automation with centralized authentication and cross-rep
 
 ---
 
+## Argo Events
+
+Event-driven workflow automation for Kubernetes. Deploy, configure, and troubleshoot Argo Events in production.
+
+<div class="grid cards" markdown>
+
+-   :material-cog:{ .lg .middle } **Setup Guide**
+
+    ---
+
+    Configure EventSource, EventBus, and Sensor components for production.
+
+    [:octicons-arrow-right-24: Setup Guide](argo-events/setup/index.md)
+
+-   :material-bug:{ .lg .middle } **Troubleshooting**
+
+    ---
+
+    Debug event flows, identify failures, and resolve common issues.
+
+    [:octicons-arrow-right-24: Troubleshooting Guide](argo-events/troubleshooting/index.md)
+
+-   :material-server-network:{ .lg .middle } **High Availability**
+
+    ---
+
+    Deploy redundant, production-grade Argo Events infrastructure.
+
+    [:octicons-arrow-right-24: HA Guide](argo-events/reliability/high-availability.md)
+
+</div>
+
+---
+
 ## What's Covered
 
 ### GitHub App Setup
@@ -62,6 +96,14 @@ Enterprise-grade GitHub automation with centralized authentication and cross-rep
 - Three-stage workflow pattern (Discovery → Distribution → Summary)
 - Idempotent operations for safe reruns
 
+### Argo Events
+
+- EventSource configuration for external systems
+- EventBus deployment with JetStream
+- Sensor configuration for workflow triggers
+- High availability and production deployment
+- Troubleshooting event flows and failures
+
 ---
 
 ## Coming Soon
@@ -70,10 +112,9 @@ Enterprise-grade GitHub automation with centralized authentication and cross-rep
 
     Future additions to the Operator Manual:
 
-    - **Argo Workflows** - Event-driven Kubernetes automation
-    - **Argo Events** - Event source configuration
+    - **Argo Workflows** - CronWorkflow deployment and scheduling
     - **Monitoring** - Observability and alerting setup
-    - **Troubleshooting** - Common issues and solutions
+    - **Security** - RBAC, network policies, and secrets management
 
     See the [Roadmap](../roadmap.md) for the full list.
 

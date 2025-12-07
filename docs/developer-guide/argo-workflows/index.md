@@ -70,6 +70,6 @@ kubectl auth can-i patch deployments \
 
 ## Related
 
-- [Argo Events Setup](../argo-events/setup/index.md) - EventSource, EventBus, and Sensor configuration
+- [Argo Events Setup](../../operator-manual/argo-events/setup/index.md) - EventSource, EventBus, and Sensor configuration
 - [ConfigMap as Cache](../efficiency-patterns/idempotency/caches.md) - Volume mounts for zero-API reads
 - [Event-Driven Deployments](../../blog/posts/2025-12-14-event-driven-deployments-argo.md) - The journey to zero-latency automation

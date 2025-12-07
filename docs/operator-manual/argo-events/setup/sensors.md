@@ -298,4 +298,4 @@ For workflow-level retries, configure the retry strategy within the WorkflowTemp
 
 - [EventSource Configuration](event-sources.md) - Connect to external event sources
 - [EventBus Configuration](event-bus.md) - Message delivery configuration
-- [Argo Workflows Patterns](../../argo-workflows/index.md) - WorkflowTemplate design
+- [Argo Workflows Patterns](../../../developer-guide/argo-workflows/index.md) - WorkflowTemplate design
