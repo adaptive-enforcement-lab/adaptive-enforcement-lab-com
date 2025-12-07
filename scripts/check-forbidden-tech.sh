@@ -16,6 +16,7 @@ EXCEPTION_PATHS=(
     "CHANGELOG.md"
     "docs/blog/posts/.*forbidden.*"  # Blog posts about the pattern itself
     "docs/blog/posts/2025-12-04-pre-commit-security-gates.md"  # Examples of violations
+    ".content-machine/"  # Internal content planning documents
 )
 
 # Forbidden patterns by category

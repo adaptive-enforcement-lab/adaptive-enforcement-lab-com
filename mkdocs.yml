@@ -174,6 +174,12 @@ nav:
                   - Content Comparison: operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md
                   - Path Filtering: operator-manual/github-actions/use-cases/work-avoidance/path-filtering.md
                   - Cache-Based Skip: operator-manual/github-actions/use-cases/work-avoidance/cache-based-skip.md
+                  - Matrix Filtering:
+                      - operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/index.md
+                      - Path Filtering: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/path-filtering.md
+                      - Matrix Optimization: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/matrix-optimization.md
+                      - Caching and Artifacts: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/caching-artifacts.md
+                      - Advanced Patterns: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/advanced-patterns.md
               - Versioned Documentation:
                   - operator-manual/github-actions/use-cases/versioned-docs/index.md
                   - Mike Configuration: operator-manual/github-actions/use-cases/versioned-docs/mike-configuration.md
@@ -239,6 +245,47 @@ nav:
               - Conditional Distribution: developer-guide/workflow-architecture/matrix-distribution/conditional-distribution.md
               - Template Rendering: developer-guide/workflow-architecture/matrix-distribution/template-rendering.md
               - Anti-Patterns: developer-guide/workflow-architecture/matrix-distribution/anti-patterns.md
+      - Architecture Patterns:
+          - developer-guide/architecture-patterns/index.md
+          - Separation of Concerns:
+              - developer-guide/architecture-patterns/separation-of-concerns/index.md
+              - Implementation Techniques: developer-guide/architecture-patterns/separation-of-concerns/implementation.md
+              - Usage Guide: developer-guide/architecture-patterns/separation-of-concerns/guide.md
+          - Hub and Spoke:
+              - developer-guide/architecture-patterns/hub-and-spoke/index.md
+              - Implementation Examples: developer-guide/architecture-patterns/hub-and-spoke/examples.md
+              - Operations Guide: developer-guide/architecture-patterns/hub-and-spoke/operations.md
+          - Strangler Fig:
+              - developer-guide/architecture-patterns/strangler-fig/index.md
+              - Implementation: developer-guide/architecture-patterns/strangler-fig/implementation.md
+              - Traffic Routing: developer-guide/architecture-patterns/strangler-fig/traffic-routing.md
+              - Monitoring and Rollback: developer-guide/architecture-patterns/strangler-fig/monitoring.md
+              - Migration Guide: developer-guide/architecture-patterns/strangler-fig/migration-guide.md
+      - SDLC Hardening:
+          - developer-guide/sdlc-hardening/index.md
+          - Branch Protection: developer-guide/sdlc-hardening/branch-protection.md
+          - Status Checks:
+              - developer-guide/sdlc-hardening/status-checks/index.md
+              - Configuration Patterns: developer-guide/sdlc-hardening/status-checks/configuration.md
+              - Operations Guide: developer-guide/sdlc-hardening/status-checks/operations.md
+          - GitHub Apps:
+              - developer-guide/sdlc-hardening/github-apps/index.md
+              - Common Patterns: developer-guide/sdlc-hardening/github-apps/patterns.md
+              - Operations Guide: developer-guide/sdlc-hardening/github-apps/operations.md
+          - Commit Signing: developer-guide/sdlc-hardening/commit-signing.md
+          - Pre-commit Hooks: developer-guide/sdlc-hardening/pre-commit-hooks.md
+          - SBOM Generation: developer-guide/sdlc-hardening/sbom-generation.md
+          - Audit Evidence: developer-guide/sdlc-hardening/audit-evidence.md
+          - Implementation Roadmap:
+              - developer-guide/sdlc-hardening/implementation-roadmap/index.md
+              - Execution Guide: developer-guide/sdlc-hardening/implementation-roadmap/execution.md
+          - Kyverno:
+              - developer-guide/sdlc-hardening/kyverno/index.md
+              - Policy Patterns: developer-guide/sdlc-hardening/kyverno/policy-patterns.md
+              - Testing Approaches: developer-guide/sdlc-hardening/kyverno/testing-approaches.md
+              - Exception Handling: developer-guide/sdlc-hardening/kyverno/exceptions.md
+              - CI/CD Integration: developer-guide/sdlc-hardening/kyverno/ci-cd-integration.md
+              - Operations Guide: developer-guide/sdlc-hardening/kyverno/operations.md
       - Go CLI Architecture:
           - developer-guide/go-cli-architecture/index.md
           - Framework Selection:

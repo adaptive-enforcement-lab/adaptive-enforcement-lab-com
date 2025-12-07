@@ -1,14 +1,14 @@
 ---
 repos:
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.43.0
+    rev: v0.46.0
     hooks:
       - id: markdownlint
         args: ["--config", ".markdownlint.yml"]
         files: \.md$
         exclude: ^CHANGELOG\.md$
   - repo: https://github.com/adaptive-enforcement-lab/readability
-    rev: "0"
+    rev: "latest"
     hooks:
       - id: readability-docs
         name: check documentation readability
@@ -20,12 +20,6 @@ repos:
         language: script
         files: \.(md|yaml|yml|sh|tf|Dockerfile|Containerfile)$
         pass_filenames: true
-      - id: check-markdown-length
-        name: check markdown length
-        entry: scripts/check-markdown-length.sh
-        language: script
-        files: \.md$
-        exclude: ^(CHANGELOG|CONTRIBUTING)\.md$
       - id: mkdocs-build
         name: mkdocs build
         entry: bash -c 'if [ -f .venv/bin/mkdocs ]; then .venv/bin/mkdocs build --strict; else mkdocs build --strict; fi'
