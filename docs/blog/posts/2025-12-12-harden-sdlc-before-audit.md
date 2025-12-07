@@ -42,6 +42,9 @@ The auditor needed proof that controls were:
 
 They wanted to see the machine that makes good practices inevitable, not the document that asks nicely.
 
+!!! warning "The Audit Reality"
+    Documentation proves intent. Enforcement proves compliance. Auditors want evidence that controls can't be bypassed, not promises that they won't be.
+
 ---
 
 ## The Hierarchy of Enforcement
@@ -261,7 +264,7 @@ See [Audit Evidence Collection](../../developer-guide/sdlc-hardening/audit-evide
 ## The Transformation
 
 | Control | Before (Documentation) | After (Enforcement) |
-|---------|------------------------|---------------------|
+| ------- | ---------------------- | ------------------- |
 | Code review | "All code must be reviewed" | Branch protection requires 1+ approval |
 | Testing | "Run tests before merge" | Required status check blocks merge |
 | Secrets | "Don't commit secrets" | Pre-commit hook blocks commits |

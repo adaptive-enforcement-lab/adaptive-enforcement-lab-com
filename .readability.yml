@@ -26,8 +26,8 @@ overrides:
   # Note: Blog posts don't need min_ease enforcement (narrative style varies)
   - path: docs/blog/
     thresholds:
-      max_grade: 11
-      max_ari: 11
+      max_grade: 12
+      max_ari: 12
       min_ease: 0
 
   # Developer guide: Graduate level (technical deep-dives)

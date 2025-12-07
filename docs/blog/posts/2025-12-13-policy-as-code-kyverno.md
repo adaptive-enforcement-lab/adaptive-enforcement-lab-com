@@ -13,11 +13,11 @@ slug: policy-as-code-kyverno
 
 # Policy-as-Code with Kyverno: Kubernetes Validation at Admission Time
 
-The deployment reached production with no resource limits. Memory leaked. The node crashed. Three other pods died.
+The deployment had no resource limits. Memory leaked. The node crashed. Three pods died.
 
-The developer didn't know limits were required. The code review missed it. CI passed because tests don't check resource configs.
+The developer missed the requirement. Code review missed it. CI passed. Tests skip resource checks.
 
-Admission controllers stop this at the boundary. Before etcd. Before production. Before the incident.
+Admission control stops this. Before etcd. Before production. Before damage.
 
 <!-- more -->
 
@@ -25,9 +25,9 @@ Admission controllers stop this at the boundary. Before etcd. Before production.
 
 ## The Problem with Documentation
 
-README says "all deployments must have resource limits." Nobody reads it. Or they read it and forget. Or they're new and don't know it exists.
+README says "all deployments need resource limits." Nobody reads it. People forget. New hires miss it.
 
-Documentation doesn't enforce anything.
+Documentation doesn't enforce.
 
 ```mermaid
 flowchart LR
@@ -41,9 +41,12 @@ flowchart LR
     style D fill:#f92572,color:#1b1d1e
 ```
 
-Admission controllers validate resources before they're persisted. No limits? Rejected. No labels? Rejected. Wrong image registry? Rejected.
+Admission controllers validate before persistence. No limits? Rejected. No labels? Rejected. Wrong registry? Rejected.
 
 Policy becomes code, not documentation.
+
+!!! tip "Prevention at the Gate"
+    Admission Controllers enforce policies before etcd. They block violations at the API boundary. Production never sees them.
 
 ---
 

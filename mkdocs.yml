@@ -261,6 +261,9 @@ nav:
               - Traffic Routing: developer-guide/architecture-patterns/strangler-fig/traffic-routing.md
               - Monitoring and Rollback: developer-guide/architecture-patterns/strangler-fig/monitoring.md
               - Migration Guide: developer-guide/architecture-patterns/strangler-fig/migration-guide.md
+          - Environment Progression:
+              - developer-guide/architecture-patterns/environment-progression.md
+              - Operations: developer-guide/architecture-patterns/environment-progression-operations.md
       - SDLC Hardening:
           - developer-guide/sdlc-hardening/index.md
           - Branch Protection: developer-guide/sdlc-hardening/branch-protection.md
