@@ -9,11 +9,13 @@ Build minimal, secure container images for your Go CLI.
 
 ## Overview
 
-Packaging a Go CLI for Kubernetes involves creating small, secure container images that can run anywhere. This section covers:
+Packaging a Go CLI involves creating distributable artifacts that run anywhere. This section covers:
 
 - **[Container Builds](container-builds.md)** - Multi-stage Dockerfiles with distroless
 - **[Helm Charts](helm-charts.md)** - Deploy your CLI with Helm
 - **[Release Automation](release-automation.md)** - Multi-arch builds and GoReleaser
+- **[GitHub Actions](github-actions.md)** - Distribute as a reusable GitHub Action
+- **[Pre-commit Hooks](pre-commit-hooks.md)** - Distribute as pre-commit hooks
 
 ---
 
