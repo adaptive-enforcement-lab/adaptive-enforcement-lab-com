@@ -163,6 +163,7 @@ The readability action is at [adaptive-enforcement-lab/readability](https://gith
 
 ## Related
 
+- **[How to Harden Your SDLC Before the Audit Comes](2025-12-12-harden-sdlc-before-audit.md)** - Security automation patterns for compliance
 - [Building GitHub Actions in Go](2025-12-09-building-github-actions-in-go.md) - The technical implementation guide
 - [Pre-commit Hooks with Binary Releases](2025-12-10-pre-commit-hooks-binary-releases.md) - Same patterns for pre-commit
 - [CLI UX Patterns for AI Agents](2025-12-07-cli-ux-patterns-for-ai-agents.md) - Design error messages AI can use

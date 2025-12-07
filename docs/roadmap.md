@@ -16,11 +16,17 @@ Adaptive Enforcement Lab is actively building. Here's what's coming.
 
 !!! info "Blog & Tactical Content"
 
-    We're building a content pipeline for actionable security guidance. First up:
+    We're building a content pipeline for actionable security guidance. Recent posts:
 
-    - **How to Harden Your SDLC Before the Audit Comes**
-    - Policy-as-code enforcement patterns
-    - CI/CD pipeline security deep dives
+    - ✅ **[How to Harden Your SDLC Before the Audit Comes](blog/posts/2025-12-12-harden-sdlc-before-audit.md)**
+    - ✅ **[ConfigMap as Cache Pattern](blog/posts/2025-12-03-configmap-cache-zero-api.md)**
+    - ✅ **[Pre-commit Hooks as Security Gates](blog/posts/2025-12-04-pre-commit-security-gates.md)**
+
+    Coming next:
+
+    - Policy-as-code with Kyverno
+    - Zero-vulnerability container pipelines
+    - Environment progression testing
 
 !!! info "Community Hub"
 
