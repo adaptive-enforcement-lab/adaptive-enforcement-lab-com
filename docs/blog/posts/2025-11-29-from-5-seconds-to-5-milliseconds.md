@@ -211,12 +211,15 @@ flowchart LR
 
 This pattern, using ConfigMaps as a cache layer with volume mounts for zero-API reads, is applicable beyond deployment automation. I'm documenting it as a reusable engineering pattern.
 
+!!! success "Related Content"
+
+    - **[Event-Driven Deployments with Argo](2025-12-14-event-driven-deployments-argo.md)**: Full architecture deep dive with Argo Events, Workflows, and production patterns
+    - **[Go CLI Architecture](../../developer-guide/go-cli-architecture/index.md)**: Building Kubernetes-native orchestration tools
+
 !!! info "Coming Soon"
 
-    - **Architecture Deep Dive**: Full system design with Argo Events, Workflows, and the CLI
-    - **Argo Workflows Patterns**: Event-driven automation architecture
-    - **Go CLI Architecture**: Building Kubernetes-native orchestration tools
-    - **ConfigMap as Cache**: The pattern behind this optimization
+    - **ConfigMap as Cache Pattern**: The engineering pattern behind this optimization
+    - **Argo Workflows Operator Manual**: Production-ready workflow templates and best practices
 
     See the [Roadmap](../../roadmap.md) for upcoming documentation.
 

@@ -338,7 +338,7 @@ changelog:
 
 - [Release Automation](release-automation.md) - GoReleaser and multi-arch builds
 - [Pre-commit Hooks](pre-commit-hooks.md) - Same patterns for pre-commit
-- [CLI UX Patterns](/blog/posts/2025-12-07-cli-ux-patterns-for-ai-agents/) - Design error messages AI can use
+- [CLI UX Patterns](../../../blog/posts/2025-12-07-cli-ux-patterns-for-ai-agents.md) - Design error messages AI can use
 
 ---
 

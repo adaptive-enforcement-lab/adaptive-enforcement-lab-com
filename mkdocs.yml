@@ -260,6 +260,56 @@ nav:
               - Unit Testing: developer-guide/go-cli-architecture/testing/unit-testing.md
               - Integration Testing: developer-guide/go-cli-architecture/testing/integration-testing.md
               - E2E Testing: developer-guide/go-cli-architecture/testing/e2e-testing.md
+      - Argo Events:
+          - developer-guide/argo-events/index.md
+          - Setup Guide:
+              - developer-guide/argo-events/setup/index.md
+              - EventSource Configuration: developer-guide/argo-events/setup/event-sources.md
+              - EventBus Configuration: developer-guide/argo-events/setup/event-bus.md
+              - Sensor Configuration: developer-guide/argo-events/setup/sensors.md
+          - Event Routing:
+              - developer-guide/argo-events/routing/index.md
+              - Simple Filtering: developer-guide/argo-events/routing/filtering.md
+              - Multi-Trigger Actions: developer-guide/argo-events/routing/multi-trigger.md
+              - Event Transformation: developer-guide/argo-events/routing/transformation.md
+              - Conditional Routing: developer-guide/argo-events/routing/conditional.md
+          - Reliability Patterns:
+              - developer-guide/argo-events/reliability/index.md
+              - Retry Strategies: developer-guide/argo-events/reliability/retry.md
+              - Dead Letter Queues: developer-guide/argo-events/reliability/dead-letter.md
+              - Backpressure Handling: developer-guide/argo-events/reliability/backpressure.md
+              - High Availability: developer-guide/argo-events/reliability/high-availability.md
+          - Troubleshooting:
+              - developer-guide/argo-events/troubleshooting/index.md
+              - EventSource Issues: developer-guide/argo-events/troubleshooting/eventsources.md
+              - Sensor Issues: developer-guide/argo-events/troubleshooting/sensors.md
+              - Common Patterns: developer-guide/argo-events/troubleshooting/common-patterns.md
+      - Argo Workflows:
+          - developer-guide/argo-workflows/index.md
+          - WorkflowTemplate Patterns:
+              - developer-guide/argo-workflows/templates/index.md
+              - Basic Structure: developer-guide/argo-workflows/templates/basic-structure.md
+              - Retry Strategy: developer-guide/argo-workflows/templates/retry-strategy.md
+              - Init Containers: developer-guide/argo-workflows/templates/init-containers.md
+              - Volume Patterns: developer-guide/argo-workflows/templates/volume-patterns.md
+              - RBAC Configuration: developer-guide/argo-workflows/templates/rbac.md
+          - Concurrency Control:
+              - developer-guide/argo-workflows/concurrency/index.md
+              - Mutex Synchronization: developer-guide/argo-workflows/concurrency/mutex.md
+              - Semaphores: developer-guide/argo-workflows/concurrency/semaphores.md
+              - TTL Strategy: developer-guide/argo-workflows/concurrency/ttl.md
+          - Workflow Composition:
+              - developer-guide/argo-workflows/composition/index.md
+              - Spawning Child Workflows: developer-guide/argo-workflows/composition/spawning-children.md
+              - Parallel Execution: developer-guide/argo-workflows/composition/parallel.md
+              - DAG Orchestration: developer-guide/argo-workflows/composition/dag.md
+              - Cross-Workflow Communication: developer-guide/argo-workflows/composition/communication.md
+          - Scheduled Workflows:
+              - developer-guide/argo-workflows/scheduled/index.md
+              - Basic CronWorkflow: developer-guide/argo-workflows/scheduled/basic.md
+              - Concurrency Policies: developer-guide/argo-workflows/scheduled/concurrency-policy.md
+              - Orchestration: developer-guide/argo-workflows/scheduled/orchestration.md
+              - GitHub Integration: developer-guide/argo-workflows/scheduled/github-integration.md
   - Roadmap: roadmap.md
   - About:
       - about/index.md

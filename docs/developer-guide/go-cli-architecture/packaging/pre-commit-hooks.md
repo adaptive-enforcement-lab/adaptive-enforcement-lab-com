@@ -178,7 +178,7 @@ if failed > 0 && tooLong > 0 {
 }
 ```
 
-See [CLI UX Patterns for AI Agents](/blog/posts/2025-12-07-cli-ux-patterns-for-ai-agents/) for detailed guidance.
+See [CLI UX Patterns for AI Agents](../../../blog/posts/2025-12-07-cli-ux-patterns-for-ai-agents.md) for detailed guidance.
 
 ---
 
@@ -235,7 +235,7 @@ jobs:
 
 - [GitHub Actions Distribution](github-actions.md) - Same patterns for GitHub Actions
 - [Release Automation](release-automation.md) - GoReleaser and floating tags
-- [CLI UX Patterns](/blog/posts/2025-12-07-cli-ux-patterns-for-ai-agents/) - Error messages AI can use
+- [CLI UX Patterns](../../../blog/posts/2025-12-07-cli-ux-patterns-for-ai-agents.md) - Error messages AI can use
 
 ---
 
