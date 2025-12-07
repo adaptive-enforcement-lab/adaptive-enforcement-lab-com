@@ -7,7 +7,8 @@ categories:
   - CI/CD
   - Engineering Patterns
 description: >-
-  Policy-as-code patterns that pass SOC 2 audits. Build security into pipelines, not documentation.
+  The audit email arrives in 30 days. Documentation won't save you.
+  Enforcement will. Here's what actually passes SOC 2.
 slug: harden-sdlc-before-audit
 ---
 
@@ -23,7 +24,7 @@ Auditors don't want to hear what you say you do. They want to see what the syste
 
 ---
 
-## What Auditors Actually Check
+## The Confrontation
 
 The auditor opened our GitHub organization. First question: "Show me how you enforce code review."
 
@@ -33,21 +34,19 @@ I pointed to our documentation: "All code must be reviewed before merge."
 
 That's when I realized documentation doesn't prove anything. A PDF that says "we require reviews" could have been written yesterday. Or ignored for months.
 
-!!! warning "Documentation Is Not Evidence"
+The auditor needed proof that controls were:
 
-    Auditors need proof that controls are:
+1. **Automated** - Can't be bypassed
+2. **Logged** - Every action is traceable
+3. **Continuous** - Applied consistently over time
 
-    1. **Automated** - Can't be bypassed
-    2. **Logged** - Every action is traceable
-    3. **Continuous** - Applied consistently over time
-
-They want to see the machine that makes good practices inevitable, not the document that asks nicely.
+They wanted to see the machine that makes good practices inevitable, not the document that asks nicely.
 
 ---
 
-## The Enforcement Hierarchy
+## The Hierarchy of Enforcement
 
-From weakest to strongest:
+We learned enforcement comes in layers:
 
 ```mermaid
 flowchart TD
@@ -69,437 +68,303 @@ flowchart TD
     style H fill:#65d9ef,color:#1b1d1e
 ```
 
-Auditors care about the green and blue layers. Everything else is "best effort."
+Red and orange layers? "Best effort." Green and blue? Actual enforcement.
+
+Auditors only care about what can't be bypassed.
 
 ---
 
-## Pattern 1: Branch Protection as Policy Enforcement
+## What We Built
 
-GitHub branch protection turns policies into hard requirements.
+In 30 days, we transformed from documentation to enforcement. Here's what actually worked.
 
-### Before (Documentation)
+### Branch Protection: Policies as Code
 
-> "All code must be reviewed by at least one other engineer before merging to main."
-
-Provable? No. A developer could merge their own PR. The policy says they shouldn't, but nothing stops them.
-
-### After (Enforcement)
+We turned "code must be reviewed" into a GitHub configuration that prevents merging without approval.
 
 ```yaml
-# Enforced via GitHub branch protection rules
-branch_protection:
-  required_pull_request_reviews:
-    required_approving_review_count: 1
-    dismiss_stale_reviews: true
-    require_code_owner_reviews: true
-
-  required_status_checks:
-    strict: true
-    contexts:
-      - "ci/tests"
-      - "security/scan"
-
-  enforce_admins: true
-  required_linear_history: true
+required_pull_request_reviews:
+  required_approving_review_count: 1
+  dismiss_stale_reviews: true
+  require_code_owner_reviews: true
+enforce_admins: true
 ```
 
-Now it's impossible to merge without review. The audit trail shows:
-- Who reviewed
-- When they reviewed
-- What status checks passed
-- No exceptions (even for admins)
+No exceptions. Not even for administrators.
 
-!!! success "Audit Evidence"
+The auditor pointed to the `enforce_admins` setting. "This is what I need to see."
 
-    Point the auditor to branch protection settings. Show the API response. The configuration is proof.
+See [Branch Protection Enforcement](../../developer-guide/sdlc-hardening/branch-protection.md) for full implementation.
 
 ---
 
-## Pattern 2: Required Status Checks as Validation Gates
+### Status Checks: CI as Gatekeeper
 
-Branch protection can require CI checks to pass. This turns "you should test" into "untested code cannot merge."
-
-### The Status Check Contract
+We made CI failures block merges. No green checkmarks, no deployment.
 
 ```yaml
-# .github/workflows/required-checks.yml
-name: Required Checks
-
-on:
-  pull_request:
-    branches: [main]
-
-jobs:
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run tests
-        run: make test
-
-  security-scan:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Container scan
-        run: |
-          trivy image --severity HIGH,CRITICAL --exit-code 1 \
-            gcr.io/project/app:${{ github.sha }}
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Lint
-        run: golangci-lint run
+required_status_checks:
+  strict: true
+  contexts:
+    - "tests"
+    - "security-scan"
+    - "lint"
 ```
 
-Configure branch protection to require these checks. Code that fails tests, has HIGH CVEs, or doesn't pass linting cannot merge.
+Untested code can't merge. Vulnerable containers can't deploy. The pipeline decides, not developers.
 
-The audit trail is automatic:
-- GitHub stores check results
-- Logs show what was scanned
-- Timestamps prove continuous enforcement
+See [Required Status Checks](../../developer-guide/sdlc-hardening/status-checks/index.md) for patterns.
 
 ---
 
-## Pattern 3: Pre-commit Hooks as First Defense
+### Pre-commit Hooks: First Defense
 
-CI catches issues after commit. Pre-commit hooks catch them before.
-
-### Secrets Detection
-
-```yaml
-# .pre-commit-config.yaml
-repos:
-  - repo: https://github.com/trufflesecurity/trufflehog
-    rev: v3.63.0
-    hooks:
-      - id: trufflehog
-        name: TruffleHog
-        entry: trufflehog filesystem --fail --no-update
-        language: system
-```
-
-A developer tries to commit AWS credentials:
+Secrets detection before code enters git history:
 
 ```bash
-$ git commit -m "Add deployment config"
+$ git commit -m "Add config"
 TruffleHog.........................................................Failed
-- hook id: trufflehog
 
 Found verified result:
 Detector Type: AWS
 File: deploy/config.yaml
 ```
 
-The commit is blocked. The secret never enters git history.
+The commit was blocked. The secret never entered git history.
 
-!!! info "Defense in Depth"
+Pre-commit hooks are bypassable (`--no-verify`), so we also validate in CI. Defense in depth.
 
-    Pre-commit hooks are local and bypassable. Always validate in CI too.
-
-    See [Pre-commit Hooks as Security Gates](2025-12-04-pre-commit-security-gates.md) for full implementation.
+See [Pre-commit Security Gates](2025-12-04-pre-commit-security-gates.md) and [Pre-commit Hooks Guide](../../developer-guide/sdlc-hardening/pre-commit-hooks.md).
 
 ---
 
-## Pattern 4: GitHub Apps for Machine Authentication
+### GitHub Apps: Authentication Without People
 
-Personal Access Tokens fail audits. They're tied to individuals who leave. Rotation is manual. Scope is too broad.
+Personal Access Tokens tied to individuals fail audits. What happens when Mark leaves? Whose token is this?
 
-### The PAT Problem
-
-```yaml
-# FAILS AUDIT
-- uses: actions/create-release@v1
-  with:
-    token: ${{ secrets.MARK_GITHUB_TOKEN }}
-```
-
-Questions this raises:
-- What happens when Mark leaves?
-- Who can rotate Mark's token?
-- What else can this token do?
-- How do we audit its use across repositories?
-
-### GitHub App Solution
+GitHub Apps solved it:
 
 ```yaml
-# PASSES AUDIT
 - name: Generate App Token
-  id: app-token
   uses: actions/create-github-app-token@v2
   with:
-    app-id: ${{ secrets.RELEASE_APP_ID }}
-    private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
-    owner: adaptive-enforcement-lab
-
-- uses: actions/create-release@v1
-  with:
-    token: ${{ steps.app-token.outputs.token }}
+    app-id: ${{ secrets.APP_ID }}
+    private-key: ${{ secrets.PRIVATE_KEY }}
 ```
 
-This answers every question:
-- Token lifecycle independent of employees
-- Scoped to specific permissions (read/write releases)
-- Rotation via private key management
-- Full audit trail of app actions
+Token lifecycle independent of employees. Scoped permissions. Full audit trail.
 
-See the [GitHub App Setup Guide](../../operator-manual/github-actions/github-app-setup/index.md) for implementation.
+The auditor approved immediately.
+
+See [GitHub Apps for Machine Authentication](../../developer-guide/sdlc-hardening/github-apps/index.md) for migration guide.
 
 ---
 
-## Pattern 5: Signed Commits for Non-Repudiation
+### Signed Commits: Non-Repudiation
 
-Who actually authored this commit? Can they deny it?
-
-### Unsigned Commits (Weak Evidence)
-
-```bash
-$ git log --pretty=format:"%h %an %s"
-abc123d Mark Cheret Add feature
-```
-
-Anyone can set `user.name` to "Mark Cheret." This proves nothing.
-
-### Signed Commits (Strong Evidence)
+Anyone can set `git config user.name "Mark Cheret"`. GPG signatures can't be forged without the private key.
 
 ```bash
 $ git log --show-signature
-commit abc123d (HEAD -> main)
-gpg: Signature made Thu Dec 12 10:23:45 2025 PST
-gpg: using RSA key ABCD1234
 gpg: Good signature from "Mark Cheret <mark@example.com>"
-Author: Mark Cheret <mark@example.com>
 ```
 
-The commit is cryptographically signed. Mark can't deny authorship. Forging it requires stealing his private key.
+Branch protection can require signatures. Unsigned commits can't be pushed.
 
-Enforcement:
-
-```yaml
-# Branch protection
-required_signatures: true
-```
-
-Unsigned commits cannot be pushed.
+See [Commit Signing](../../developer-guide/sdlc-hardening/commit-signing.md) for setup.
 
 ---
 
-## Pattern 6: SBOM Generation for Supply Chain Security
+### SBOM Generation: Supply Chain Visibility
 
-Auditors care about supply chain attacks. You need to prove what's in your containers.
+"Show me what's in your production containers."
+
+We generated SBOMs for every build:
 
 ```yaml
-# .github/workflows/build.yml
-- name: Build container
-  run: |
-    buildah bud -t app:${{ github.sha }} .
-
 - name: Generate SBOM
   uses: anchore/sbom-action@v0
   with:
     image: app:${{ github.sha }}
     format: cyclonedx-json
     output-file: sbom.json
-
-- name: Upload SBOM
-  uses: actions/upload-artifact@v4
-  with:
-    name: sbom
-    path: sbom.json
 ```
 
-The SBOM (Software Bill of Materials) lists every dependency. Auditors can verify:
-- No GPL-licensed code in proprietary software
-- No libraries with known HIGH CVEs
-- Dependencies match declared versions
+Auditor could verify: No GPL licenses. No HIGH CVEs. Dependencies matched versions.
 
-This artifact is permanent. Even if the container is deleted, the SBOM proves what was in it.
+See [SBOM Generation](../../developer-guide/sdlc-hardening/sbom-generation.md) and [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md).
 
 ---
 
-## Evidence Collection Strategy
+### Runtime Enforcement: Kyverno
 
-Auditors need to sample random time periods and verify controls were active.
+SDLC doesn't end at CI/CD. It extends to runtime.
 
-### What They Ask For
+Kyverno enforces policies in Kubernetes clusters:
 
-"Show me code reviews from March 2025."
-
-**Bad answer**: "Here's our documentation from March."
-
-**Good answer**: GitHub API query:
-
-```bash
-gh api \
-  'repos/org/repo/pulls?state=closed&base=main' \
-  --jq '.[] | select(.merged_at | startswith("2025-03")) |
-    {number, title, reviews: .requested_reviewers | length,
-     merged: .merged_at}'
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-resource-limits
+spec:
+  validationFailureAction: Enforce
+  rules:
+    - name: check-limits
+      match:
+        resources:
+          kinds: [Pod]
+      validate:
+        message: "CPU and memory limits required"
+        pattern:
+          spec:
+            containers:
+              - resources:
+                  limits:
+                    memory: "?*"
+                    cpu: "?*"
 ```
 
-The API returns:
-- PR numbers
+Pods without resource limits get rejected. Policy runs in the cluster, not just CI.
+
+See [Policy-as-Code with Kyverno](2025-12-13-policy-as-code-kyverno.md) for end-to-end enforcement.
+
+---
+
+## The Evidence Collection
+
+Auditors sampled March 2025. "Show me PRs merged that month."
+
+We ran an API query:
+
+```bash
+gh api 'repos/org/repo/pulls?state=closed&base=main' \
+  --jq '.[] | select(.merged_at | startswith("2025-03")) |
+    {number, title, reviews, merged_at}'
+```
+
+The response showed:
+
+- Every PR number
 - Review counts
 - Merge timestamps
 - Reviewer identities
 
-This is machine-readable evidence that controls were active.
+Machine-readable. Verifiable. Irrefutable.
 
-### Retention Strategy
+We had monthly archives of branch protection configs, workflow runs, and SBOMs. The audit trail was complete.
 
-GitHub retains data, but for due diligence, archive key evidence:
-
-```yaml
-# .github/workflows/audit-archive.yml
-name: Audit Evidence Archive
-
-on:
-  schedule:
-    - cron: '0 0 1 * *'  # Monthly
-
-jobs:
-  archive:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Export branch protection
-        run: |
-          gh api repos/org/repo/branches/main/protection \
-            > evidence/branch-protection-$(date +%Y-%m).json
-
-      - name: Export merged PRs
-        run: |
-          gh api 'repos/org/repo/pulls?state=closed&base=main' \
-            > evidence/merged-prs-$(date +%Y-%m).json
-
-      - name: Upload to compliance storage
-        run: |
-          gsutil cp evidence/*.json gs://audit-evidence/
-```
+See [Audit Evidence Collection](../../developer-guide/sdlc-hardening/audit-evidence.md) for retention strategies.
 
 ---
 
-## The Before/After Comparison
+## The Transformation
 
-| Control | Documentation Approach | Enforcement Approach |
-|---------|------------------------|----------------------|
+| Control | Before (Documentation) | After (Enforcement) |
+|---------|------------------------|---------------------|
 | Code review | "All code must be reviewed" | Branch protection requires 1+ approval |
 | Testing | "Run tests before merge" | Required status check blocks merge |
 | Secrets | "Don't commit secrets" | Pre-commit hook blocks commits |
 | Dependencies | "Track what we use" | SBOM generated per build |
 | Authentication | PAT in Mark's name | GitHub App with scoped permissions |
 | Authorship | Git author field | Signed commits required |
+| Runtime | "Follow deployment standards" | Kyverno enforces policies in-cluster |
 
 The right column survives audit scrutiny. The left doesn't.
 
 ---
 
-## Implementation Roadmap
+## The 90-Day Roadmap
 
-You can't harden everything at once. Prioritize controls by risk and audit importance.
+We didn't do this in 30 days. We should have started months earlier.
+
+Here's the phased approach that works:
 
 ### Month 1: Foundation
 
-1. **Enable branch protection** on main/production branches
-2. **Require status checks** for tests and linting
-3. **Set up GitHub App** for automation authentication
-4. **Archive first month** of evidence (PRs, checks, protections)
+- Week 1: Branch protection on production branches
+- Week 2: Required status checks (tests, lint)
+- Week 3: GitHub App setup
+- Week 4: Evidence archive automation
 
 ### Month 2: Hardening
 
-5. **Add secrets detection** (pre-commit + CI)
-6. **Require signed commits** on protected branches
-7. **Generate SBOMs** for all container builds
-8. **Document exception process** (when to use `--no-verify`, admin overrides)
+- Week 5: Secrets detection (pre-commit + CI)
+- Week 6: Signed commits required
+- Week 7: SBOM generation
+- Week 8: Complete PAT migration
 
 ### Month 3: Validation
 
-9. **Audit simulation** - Pull evidence like an auditor would
-10. **Remediation process** - Fix gaps found in simulation
-11. **Runbook creation** - How to respond to audit requests
-12. **Team training** - Why these controls exist, how to work with them
+- Week 9: Vulnerability scanning
+- Week 10: Kyverno deployment
+- Week 11: Audit simulation
+- Week 12: Remediation and runbook
+
+See [Implementation Roadmap](../../developer-guide/sdlc-hardening/implementation-roadmap.md) for detailed timelines.
 
 ---
 
-## Common Objections
+## Common Objections We Heard
 
-### "This slows down development"
+### "This slows down development."
 
 Slowdowns happen when controls catch real issues. That's the point.
 
-Fast merges with security issues cost more than slow merges with validation.
+Fast merges with vulnerabilities cost more than slow merges with validation.
 
-### "We trust our developers"
+### "We trust our developers."
 
 Auditors don't trust anybody. They trust systems.
 
 Controls protect developers from mistakes and prove diligence when incidents happen.
 
-### "Emergency hotfixes need exceptions"
+### "Emergency hotfixes need exceptions."
 
-Fine. Document the exception process. Require post-merge review. Log every use.
+Fine. Document the exception. Log the bypass. Require post-merge review.
 
-The audit trail should show: "Emergency bypass used 3 times in 2024. All reviewed within 24 hours."
+The audit trail should show: "Bypass used 3 times in 2024. All reviewed within 24 hours."
 
-Not: "We bypass controls whenever it's convenient."
-
----
-
-## Measuring Success
-
-Track control effectiveness:
-
-```yaml
-# Weekly report
-security_metrics:
-  pre_commit_blocks: 12        # Secrets caught before commit
-  ci_failures: 8               # High CVEs blocked
-  unsigned_commits_rejected: 3 # Branch protection enforced
-  prs_without_review: 0        # Zero exceptions
-```
-
-Green numbers prove controls work. Auditors like green numbers.
+Not: "We bypass whenever it's convenient."
 
 ---
 
-## When the Auditor Arrives
+## The Audit Result
 
-You're ready when you can say:
+Day 18. The auditor closed their laptop.
 
-!!! success "Audit Readiness Checklist"
+"Controls are automated and provably enforced. Branch protection verified. Status checks logged. Evidence collection continuous. Zero findings."
 
-    - [ ] Branch protection enforced on all production branches
-    - [ ] Required status checks configured and passing
-    - [ ] GitHub Apps replace PATs for automation
-    - [ ] Pre-commit hooks deployed (secrets, policy enforcement)
-    - [ ] Signed commits required
-    - [ ] SBOM generation integrated
-    - [ ] Evidence archive process running
-    - [ ] Exception process documented
-    - [ ] Metrics dashboard showing control effectiveness
+We passed.
 
-Then you open GitHub, run API queries, and show the machine that makes security inevitable.
+Not because of our documentation. Because we built systems that make security inevitable.
+
+---
+
+## Where to Start
+
+If an audit email lands tomorrow, start here:
+
+1. **[Branch Protection](../../developer-guide/sdlc-hardening/branch-protection.md)** - Turn policies into enforcement
+2. **[Required Status Checks](../../developer-guide/sdlc-hardening/status-checks/index.md)** - CI as gatekeeper
+3. **[GitHub Apps](../../developer-guide/sdlc-hardening/github-apps/index.md)** - Replace PATs
+4. **[Evidence Collection](../../developer-guide/sdlc-hardening/audit-evidence.md)** - Start archiving now
+
+The full stack includes pre-commit hooks, commit signing, SBOMs, and runtime policy enforcement with Kyverno.
+
+See the [SDLC Hardening section](../../developer-guide/sdlc-hardening/index.md) for complete implementation guides.
 
 ---
 
 ## Related Patterns
 
-SDLC hardening is a stack of enforcement layers:
+The full defense stack:
 
-!!! info "Full Defense Stack"
-
-    - **Pre-commit hooks**: [Security Gates](2025-12-04-pre-commit-security-gates.md) - Block at commit time
-    - **GitHub Apps**: [Setup Guide](../../operator-manual/github-actions/github-app-setup/index.md) - Proper authentication
-    - **Branch Protection**: Required reviews and status checks
-    - **CI/CD**: Automated validation (tests, scans, SBOM)
-    - **Policy-as-Code**: [Kyverno Admission Control](2025-12-13-policy-as-code-kyverno.md) - Enforce at deployment time
-    - **Container Security**: [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md) - Block vulnerable images
-    - **Progressive Deployment**: [Environment Progression](2025-12-16-environment-progression-testing.md) - Test before production
-    - **Evidence Collection**: Audit trails and retention
-
-See the [Roadmap](../../roadmap.md) for upcoming security patterns.
+- **[Pre-commit Security Gates](2025-12-04-pre-commit-security-gates.md)** - Block at commit time
+- **[Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md)** - Block vulnerable images
+- **[Policy-as-Code with Kyverno](2025-12-13-policy-as-code-kyverno.md)** - Runtime admission control
+- **[Environment Progression Testing](2025-12-16-environment-progression-testing.md)** - Validate before production
 
 ---
 
-*The audit completed in 18 days. Zero findings. The auditor's notes: "Controls are automated and provably enforced." That's the only review that matters.*
+*The Monday email became a 90-day transformation. Documentation was replaced with automation. Controls were proven, not promised. The audit passed. Security became inevitable.*

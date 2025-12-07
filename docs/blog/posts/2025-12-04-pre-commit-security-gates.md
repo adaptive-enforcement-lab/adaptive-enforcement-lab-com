@@ -387,11 +387,13 @@ git commit --no-verify -m "emergency fix"
 This bypasses all hooks. Should you allow it?
 
 **Arguments for:**
+
 - Emergency hotfixes need speed
 - Developers own their commits
 - CI is the real gate
 
 **Arguments against:**
+
 - Secrets committed in emergencies
 - "Just this once" becomes habit
 - Audit compliance requires prevention
@@ -415,6 +417,7 @@ func logViolation(v Violation) {
 ```
 
 Dashboards show:
+
 - Which rules catch the most violations
 - Which file types are riskiest
 - When developers bypass hooks (CI violations vs. pre-commit blocks)

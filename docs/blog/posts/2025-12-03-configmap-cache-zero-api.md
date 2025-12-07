@@ -201,6 +201,7 @@ ConfigMaps max out at 1MB. A large cluster with thousands of deployments and ima
 My cache tracked ~200 images and ~300 deployments. Total size: ~50KB. Plenty of headroom.
 
 If you hit the limit, consider:
+
 - Multiple ConfigMaps (shard by namespace or image prefix)
 - More aggressive pruning (remove stale entries)
 - Different storage (custom resource, external cache)
@@ -226,6 +227,7 @@ rules:
 ## When to Use This Pattern
 
 **Good fit:**
+
 - Data changes infrequently (hours/days)
 - Read-heavy access pattern
 - Sub-100ms latency requirements
@@ -233,6 +235,7 @@ rules:
 - Data size under 1MB
 
 **Poor fit:**
+
 - Strong consistency required (seconds matter)
 - Data changes frequently (minutes)
 - Large datasets (>500KB)
