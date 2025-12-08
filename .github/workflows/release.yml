@@ -87,11 +87,12 @@ jobs:
 
   analyze-docs:
     name: Analyze Documentation
-    needs: [detect-changes]
+    needs: [release-please, detect-changes]
     if: |
       always() && !cancelled() &&
       (needs.detect-changes.outputs.docs_changed == 'true' ||
        needs.detect-changes.outputs.is_scheduled == 'true' ||
+       needs.release-please.outputs.site_release_created == 'true' ||
        inputs.force_all == true)
     uses: ./.github/workflows/docs-quality.yml
     with:
@@ -99,11 +100,12 @@ jobs:
 
   build-docs:
     name: Build Documentation
-    needs: [detect-changes, analyze-docs]
+    needs: [release-please, detect-changes, analyze-docs]
     if: |
       always() && !cancelled() &&
       (needs.detect-changes.outputs.docs_changed == 'true' ||
        needs.detect-changes.outputs.is_scheduled == 'true' ||
+       needs.release-please.outputs.site_release_created == 'true' ||
        inputs.force_all == true) &&
       (needs.analyze-docs.result == 'success' || needs.analyze-docs.result == 'skipped')
     runs-on: ubuntu-latest
