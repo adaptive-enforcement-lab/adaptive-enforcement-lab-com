@@ -237,14 +237,6 @@ nav:
                   - Existence Checks: developer-guide/efficiency-patterns/work-avoidance/techniques/existence-checks.md
                   - Cache-Based Skip: developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md
               - Anti-Patterns: developer-guide/efficiency-patterns/work-avoidance/anti-patterns.md
-      - Workflow Architecture:
-          - developer-guide/workflow-architecture/index.md
-          - Three-Stage Design: developer-guide/workflow-architecture/three-stage-design.md
-          - Matrix Distribution:
-              - developer-guide/workflow-architecture/matrix-distribution/index.md
-              - Conditional Distribution: developer-guide/workflow-architecture/matrix-distribution/conditional-distribution.md
-              - Template Rendering: developer-guide/workflow-architecture/matrix-distribution/template-rendering.md
-              - Anti-Patterns: developer-guide/workflow-architecture/matrix-distribution/anti-patterns.md
       - Architecture Patterns:
           - developer-guide/architecture-patterns/index.md
           - Separation of Concerns:
@@ -264,6 +256,12 @@ nav:
           - Environment Progression:
               - developer-guide/architecture-patterns/environment-progression.md
               - Operations: developer-guide/architecture-patterns/environment-progression-operations.md
+          - Three-Stage Design: developer-guide/architecture-patterns/three-stage-design.md
+          - Matrix Distribution:
+              - developer-guide/architecture-patterns/matrix-distribution/index.md
+              - Conditional Distribution: developer-guide/architecture-patterns/matrix-distribution/conditional-distribution.md
+              - Template Rendering: developer-guide/architecture-patterns/matrix-distribution/template-rendering.md
+              - Anti-Patterns: developer-guide/architecture-patterns/matrix-distribution/anti-patterns.md
       - SDLC Hardening:
           - developer-guide/sdlc-hardening/index.md
           - Branch Protection: developer-guide/sdlc-hardening/branch-protection.md

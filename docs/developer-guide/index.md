@@ -43,13 +43,13 @@ Build resilient, maintainable automation systems.
 
     [:octicons-arrow-right-24: Efficiency Patterns](efficiency-patterns/index.md)
 
--   :material-sitemap:{ .lg .middle } **Workflow Architecture**
+-   :material-sitemap:{ .lg .middle } **Architecture Patterns**
 
     ---
 
-    Structure scalable CI/CD workflows.
+    System design patterns for scalability and maintainability.
 
-    [:octicons-arrow-right-24: Workflow Architecture](workflow-architecture/index.md)
+    [:octicons-arrow-right-24: Architecture Patterns](architecture-patterns/index.md)
 
 -   :material-language-go:{ .lg .middle } **Go CLI Architecture**
 

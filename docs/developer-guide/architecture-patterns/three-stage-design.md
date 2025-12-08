@@ -41,7 +41,7 @@ Complex workflows become tangled when discovery, execution, and reporting logic 
 ## Stage Responsibilities
 
 | Stage | Input | Output | Purpose |
-|-------|-------|--------|---------|
+| ----- | ----- | ------ | ------- |
 | **Discovery** | Trigger event | Target list | Determine what to process |
 | **Execution** | Target list | Results | Perform the actual work |
 | **Summary** | Results | Report | Aggregate and communicate |

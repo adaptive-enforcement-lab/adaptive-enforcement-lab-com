@@ -43,7 +43,7 @@ flowchart LR
 Both patterns make automation safe to rerun, but they optimize for different things:
 
 | Concern | Idempotency | Work Avoidance |
-|---------|-------------|----------------|
+| ------- | ----------- | -------------- |
 | Focus | Safe re-execution | Skipping execution |
 | Question | "Can I run this again safely?" | "Should I run this at all?" |
 | Resource usage | Uses resources on rerun | Saves resources |
@@ -58,7 +58,7 @@ Best practice: Apply **work avoidance first**, then ensure remaining operations 
 Work avoidance uses different techniques depending on what you're checking:
 
 | Technique | Question | Best For |
-|-----------|----------|----------|
+| --------- | -------- | -------- |
 | [Content Hashing](techniques/content-hashing.md) | "Is the content different?" | File comparisons, config sync |
 | [Volatile Field Exclusion](techniques/volatile-field-exclusion.md) | "Did anything meaningful change?" | Version bumps, timestamps |
 | [Existence Checks](techniques/existence-checks.md) | "Does it already exist?" | Resource creation (PRs, branches) |
@@ -136,4 +136,4 @@ This applies [Volatile Field Exclusion](techniques/volatile-field-exclusion.md) 
 
 - [Idempotency](../idempotency/index.md) - Making operations safe to repeat
 - [Graceful Degradation](../../error-handling/graceful-degradation/index.md) - Fallback when detection fails
-- [Three-Stage Design](../../workflow-architecture/three-stage-design.md) - Workflow structure that enables work avoidance
+- [Three-Stage Design](../../architecture-patterns/three-stage-design.md) - Workflow structure that enables work avoidance

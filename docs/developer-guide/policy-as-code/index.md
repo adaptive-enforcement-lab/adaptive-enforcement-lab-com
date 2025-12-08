@@ -252,7 +252,7 @@ Local (warn) → CI (fail) → Runtime (block).
 - **[SDLC Hardening](../sdlc-hardening/index.md)** - Broader enforcement strategies
 - **[Kyverno Implementation](../sdlc-hardening/kyverno/index.md)** - Runtime policy details
 - **[Pre-commit Hooks](../sdlc-hardening/pre-commit-hooks.md)** - Complementary local checks
-- **[CI/CD Patterns](../workflow-architecture/index.md)** - Pipeline architecture
+- **[CI/CD Patterns](../architecture-patterns/index.md)** - Pipeline architecture
 
 ---
 
