@@ -274,7 +274,10 @@ nav:
               - Common Patterns: developer-guide/sdlc-hardening/github-apps/patterns.md
               - Operations Guide: developer-guide/sdlc-hardening/github-apps/operations.md
           - Commit Signing: developer-guide/sdlc-hardening/commit-signing.md
-          - Pre-commit Hooks: developer-guide/sdlc-hardening/pre-commit-hooks.md
+          - Pre-commit Hooks:
+              - developer-guide/sdlc-hardening/pre-commit-hooks.md
+              - Implementation Patterns: developer-guide/sdlc-hardening/pre-commit-hooks-patterns.md
+          - Vulnerability Scanning: developer-guide/sdlc-hardening/vulnerability-scanning.md
           - SBOM Generation: developer-guide/sdlc-hardening/sbom-generation.md
           - Audit Evidence: developer-guide/sdlc-hardening/audit-evidence.md
           - Implementation Roadmap:
