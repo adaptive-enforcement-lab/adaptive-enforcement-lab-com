@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.10](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.9...0.6.10) (2025-12-08)
+
+
+### Content Refactoring
+
+* move Policy-as-Code under SDLC Hardening with Kyverno nested ([#152](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/152)) ([83d58d9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/83d58d9f559ebbab222196e40bfc99dde553f51c))
+
 ## [0.6.9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.8...0.6.9) (2025-12-08)
 
 
