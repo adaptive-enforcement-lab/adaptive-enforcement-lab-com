@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.7...0.6.8) (2025-12-08)
+
+
+### Content Fixes
+
+* use correct release-please output for docs build trigger ([#148](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/148)) ([a14f5fc](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/a14f5fccb964d744067c74856ff03a42b58c1b9a))
+
 ## [0.6.7](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.6...0.6.7) (2025-12-08)
 
 
