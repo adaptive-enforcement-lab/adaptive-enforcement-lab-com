@@ -12,8 +12,8 @@ with [Matrix Distribution][matrix] for parallel processing.
 !!! tip "Separation of Concerns"
     Discovery finds targets. Distribution processes them in parallel. Summary reports results. Each stage has a single responsibility.
 
-[three-stage]: ../../../../developer-guide/workflow-architecture/three-stage-design.md
-[matrix]: ../../../../developer-guide/workflow-architecture/matrix-distribution/index.md
+[three-stage]: ../../../../developer-guide/architecture-patterns/three-stage-design.md
+[matrix]: ../../../../developer-guide/architecture-patterns/matrix-distribution/index.md
 
 ## Workflow Overview
 
@@ -49,7 +49,7 @@ graph TB
 ## Stage Summary
 
 | Stage | Purpose | Implementation |
-|-------|---------|----------------|
+| ----- | ------- | -------------- |
 | [Discovery](discovery-stage.md) | Find target repositories via GraphQL | Query team membership |
 | [Distribution](distribution-stage.md) | Copy files and create PRs in parallel | Matrix strategy |
 | [Summary](summary-stage.md) | Report results | Workflow step summary |
@@ -59,7 +59,7 @@ graph TB
 This workflow demonstrates several patterns from the [Developer Guide][dev-guide]:
 
 | Pattern | Application |
-|---------|-------------|
+| ------- | ----------- |
 | [Three-Stage Design][three-stage] | Separates discovery, execution, and reporting |
 | [Matrix Distribution][matrix] | Parallelizes file distribution across repos |
 | [Idempotency][idempotency] | Makes reruns safe with change detection |

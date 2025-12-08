@@ -13,7 +13,7 @@ description: >-
     This guide is part of a modular documentation set. Refer to related guides in the navigation for complete context.
 
 | Aspect | Sequential | Hub and Spoke |
-|--------|------------|---------------|
+| -------- | ------------ | --------------- |
 | Parallelism | None | Full |
 | Time complexity | O(n) | O(1) (longest spoke) |
 | Resource usage | One worker | n workers |
@@ -149,8 +149,8 @@ Alert when:
 ## Related Patterns
 
 - **[Separation of Concerns](../separation-of-concerns/index.md)** - Hub is orchestrator, spokes are executors
-- **[Three-Stage Design](../../workflow-architecture/three-stage-design.md)** - Discovery → Distribution → Summary
-- **[Matrix Distribution](../../workflow-architecture/matrix-distribution/index.md)** - GitHub Actions equivalent
+- **[Three-Stage Design](../../architecture-patterns/three-stage-design.md)** - Discovery → Distribution → Summary
+- **[Matrix Distribution](../../architecture-patterns/matrix-distribution/index.md)** - GitHub Actions equivalent
 
 ---
 

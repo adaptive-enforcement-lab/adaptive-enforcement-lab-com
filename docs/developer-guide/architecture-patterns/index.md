@@ -46,6 +46,26 @@ Incremental migration from legacy systems. Run old and new in parallel. Graduall
 
 ---
 
+### [Three-Stage Design](three-stage-design.md)
+
+Separate discovery, execution, and reporting phases. Workflows that fail gracefully and report completely.
+
+**Use when:** Building complex CI/CD workflows, multi-step automation
+
+**Key benefit:** Observability - always know what happened, even on failure
+
+---
+
+### [Matrix Distribution](matrix-distribution/index.md)
+
+Parallel processing of multiple targets. Dynamic matrices for scalability.
+
+**Use when:** Processing many targets, scaling workflows, reducing execution time
+
+**Key benefit:** Performance - parallel execution instead of sequential
+
+---
+
 ## How These Patterns Relate
 
 ```mermaid
@@ -77,7 +97,8 @@ These architectural patterns complement:
 
 - **[Efficiency Patterns](../efficiency-patterns/index.md)** - Idempotency, work avoidance
 - **[Error Handling](../error-handling/index.md)** - Fail fast, graceful degradation
-- **[Workflow Architecture](../workflow-architecture/index.md)** - Three-stage design, matrix distribution
+- **[Argo Workflows](../argo-workflows/index.md)** - Production workflow orchestration
+- **[Argo Events](../argo-events/index.md)** - Event-driven automation
 
 ---
 

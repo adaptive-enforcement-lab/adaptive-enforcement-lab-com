@@ -69,7 +69,7 @@ A modular pipeline architecture that:
 ## Guides
 
 | Guide | Description |
-|-------|-------------|
+| ----- | ----------- |
 | [Release-Please Configuration](release-please/index.md) | Setting up automated versioning with GitHub App |
 | [Change Detection](change-detection.md) | Detecting and cascading changes |
 | [Workflow Triggers](workflow-triggers.md) | GitHub App token vs GITHUB_TOKEN |
@@ -175,4 +175,4 @@ flowchart LR
 
 - [GitHub App Setup](../../github-app-setup/index.md) - Machine identity for automation
 - [Idempotency Patterns](../../../../developer-guide/efficiency-patterns/idempotency/index.md) - Making reruns safe
-- [Three-Stage Design](../../../../developer-guide/workflow-architecture/three-stage-design.md) - Complex workflows
+- [Three-Stage Design](../../../../developer-guide/architecture-patterns/three-stage-design.md) - Complex workflows
