@@ -92,7 +92,7 @@ jobs:
       always() && !cancelled() &&
       (needs.detect-changes.outputs.docs_changed == 'true' ||
        needs.detect-changes.outputs.is_scheduled == 'true' ||
-       needs.release-please.outputs.site_release_created == 'true' ||
+       needs.release-please.outputs.releases_created == 'true' ||
        inputs.force_all == true)
     uses: ./.github/workflows/docs-quality.yml
     with:
@@ -105,7 +105,7 @@ jobs:
       always() && !cancelled() &&
       (needs.detect-changes.outputs.docs_changed == 'true' ||
        needs.detect-changes.outputs.is_scheduled == 'true' ||
-       needs.release-please.outputs.site_release_created == 'true' ||
+       needs.release-please.outputs.releases_created == 'true' ||
        inputs.force_all == true) &&
       (needs.analyze-docs.result == 'success' || needs.analyze-docs.result == 'skipped')
     runs-on: ubuntu-latest
