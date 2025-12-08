@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.6.5](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.4...0.6.5) (2025-12-08)
+
+
+### Documentation Updates
+
+* Add comprehensive Policy-as-Code implementation guide ([#140](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/140)) ([067f5bf](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/067f5bf3d725c76bb67e35689fd8382b65a6052e))
+* add P1 and P2 blog posts with comprehensive SDLC guides ([#136](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/136)) ([5a272a1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/5a272a11443caad38117c6e7bb71899eb43eee5b))
+
+
+### Content Fixes
+
+* make docs commits visible in CHANGELOG for documentation repo ([#138](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/138)) ([db5f74d](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/db5f74deada777102eb145b394fb4ed0b94bb552))
+
+
+### Maintenance
+
+* remove .python-version file ([#141](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/141)) ([e3d2d11](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e3d2d11e1b0907c232539d316aa0f01d65666753))
+
 ## [0.6.4](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.3...0.6.4) (2025-12-07)
 
 
