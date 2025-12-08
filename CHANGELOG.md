@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.7](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.6...0.6.7) (2025-12-08)
+
+
+### Content Refactoring
+
+* merge Workflow Architecture into Architecture Patterns ([#146](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/146)) ([5eb1caf](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/5eb1cafd86e5a8a03ec39485dfd9fe360e80458e))
+
 ## [0.6.6](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.5...0.6.6) (2025-12-08)
 
 
