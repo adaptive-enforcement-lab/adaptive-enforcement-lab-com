@@ -303,4 +303,4 @@ helm upgrade --install security-policy \
 - **[Operations](../operations/index.md)** - Day-to-day policy lifecycle management
 - **[Multi-Source Policies](../multi-source-policies/index.md)** - Aggregate policies from multiple repos
 - **[Policy Packaging](../policy-packaging/index.md)** - Build policy-platform container
-- **[Kyverno Deep Dive](../../sdlc-hardening/kyverno/index.md)** - Advanced Kyverno patterns
+- **[Kyverno Deep Dive](../kyverno/index.md)** - Advanced Kyverno patterns
