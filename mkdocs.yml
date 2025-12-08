@@ -283,38 +283,38 @@ nav:
           - Implementation Roadmap:
               - developer-guide/sdlc-hardening/implementation-roadmap/index.md
               - Execution Guide: developer-guide/sdlc-hardening/implementation-roadmap/execution.md
-          - Kyverno:
-              - developer-guide/sdlc-hardening/kyverno/index.md
-              - Policy Patterns: developer-guide/sdlc-hardening/kyverno/policy-patterns.md
-              - Testing Approaches: developer-guide/sdlc-hardening/kyverno/testing-approaches.md
-              - Exception Handling: developer-guide/sdlc-hardening/kyverno/exceptions.md
-              - CI/CD Integration: developer-guide/sdlc-hardening/kyverno/ci-cd-integration.md
-              - Operations Guide: developer-guide/sdlc-hardening/kyverno/operations.md
-      - Policy-as-Code:
-          - developer-guide/policy-as-code/index.md
-          - Local Development:
-              - developer-guide/policy-as-code/local-development/index.md
-              - Advanced Validation: developer-guide/policy-as-code/local-development/advanced-validation.md
-              - Workflow Integration: developer-guide/policy-as-code/local-development/workflow-integration.md
-          - CI Integration:
-              - developer-guide/policy-as-code/ci-integration/index.md
-              - GitHub Actions: developer-guide/policy-as-code/ci-integration/github-actions.md
-          - Runtime Deployment:
-              - developer-guide/policy-as-code/runtime-deployment/index.md
-              - Policy Enforcement: developer-guide/policy-as-code/runtime-deployment/policy-enforcement.md
-              - Monitoring: developer-guide/policy-as-code/runtime-deployment/monitoring.md
-          - Multi-Source Policies:
-              - developer-guide/policy-as-code/multi-source-policies/index.md
-              - Policy Management: developer-guide/policy-as-code/multi-source-policies/policy-management.md
-              - Testing and Operations: developer-guide/policy-as-code/multi-source-policies/testing-and-operations.md
-          - Policy Packaging:
-              - developer-guide/policy-as-code/policy-packaging/index.md
-              - Distribution: developer-guide/policy-as-code/policy-packaging/distribution.md
-              - Maintenance: developer-guide/policy-as-code/policy-packaging/maintenance.md
-          - Operations:
-              - developer-guide/policy-as-code/operations/index.md
-              - Monitoring: developer-guide/policy-as-code/operations/monitoring.md
-              - Workflows: developer-guide/policy-as-code/operations/workflows.md
+          - Policy-as-Code:
+              - developer-guide/sdlc-hardening/policy-as-code/index.md
+              - Local Development:
+                  - developer-guide/sdlc-hardening/policy-as-code/local-development/index.md
+                  - Advanced Validation: developer-guide/sdlc-hardening/policy-as-code/local-development/advanced-validation.md
+                  - Workflow Integration: developer-guide/sdlc-hardening/policy-as-code/local-development/workflow-integration.md
+              - CI Integration:
+                  - developer-guide/sdlc-hardening/policy-as-code/ci-integration/index.md
+                  - GitHub Actions: developer-guide/sdlc-hardening/policy-as-code/ci-integration/github-actions.md
+              - Runtime Deployment:
+                  - developer-guide/sdlc-hardening/policy-as-code/runtime-deployment/index.md
+                  - Policy Enforcement: developer-guide/sdlc-hardening/policy-as-code/runtime-deployment/policy-enforcement.md
+                  - Monitoring: developer-guide/sdlc-hardening/policy-as-code/runtime-deployment/monitoring.md
+              - Multi-Source Policies:
+                  - developer-guide/sdlc-hardening/policy-as-code/multi-source-policies/index.md
+                  - Policy Management: developer-guide/sdlc-hardening/policy-as-code/multi-source-policies/policy-management.md
+                  - Testing and Operations: developer-guide/sdlc-hardening/policy-as-code/multi-source-policies/testing-and-operations.md
+              - Policy Packaging:
+                  - developer-guide/sdlc-hardening/policy-as-code/policy-packaging/index.md
+                  - Distribution: developer-guide/sdlc-hardening/policy-as-code/policy-packaging/distribution.md
+                  - Maintenance: developer-guide/sdlc-hardening/policy-as-code/policy-packaging/maintenance.md
+              - Kyverno:
+                  - developer-guide/sdlc-hardening/policy-as-code/kyverno/index.md
+                  - Policy Patterns: developer-guide/sdlc-hardening/policy-as-code/kyverno/policy-patterns.md
+                  - Testing Approaches: developer-guide/sdlc-hardening/policy-as-code/kyverno/testing-approaches.md
+                  - Exception Handling: developer-guide/sdlc-hardening/policy-as-code/kyverno/exceptions.md
+                  - CI/CD Integration: developer-guide/sdlc-hardening/policy-as-code/kyverno/ci-cd-integration.md
+                  - Operations Guide: developer-guide/sdlc-hardening/policy-as-code/kyverno/operations.md
+              - Operations:
+                  - developer-guide/sdlc-hardening/policy-as-code/operations/index.md
+                  - Monitoring: developer-guide/sdlc-hardening/policy-as-code/operations/monitoring.md
+                  - Workflows: developer-guide/sdlc-hardening/policy-as-code/operations/workflows.md
       - Go CLI Architecture:
           - developer-guide/go-cli-architecture/index.md
           - Framework Selection:

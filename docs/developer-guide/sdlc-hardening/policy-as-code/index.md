@@ -172,7 +172,7 @@ This section covers complete policy-as-code implementation:
 - Kubernetes cluster (for runtime deployment)
 - Container runtime (Docker/Podman for local dev)
 - CI platform (GitHub Actions, Bitbucket Pipelines, GitLab CI)
-- Basic Kyverno knowledge (see [Kyverno guide](../sdlc-hardening/kyverno/index.md))
+- Basic Kyverno knowledge (see [Kyverno guide](kyverno/index.md))
 
 ---
 
@@ -249,10 +249,10 @@ Local (warn) → CI (fail) → Runtime (block).
 
 ## Related Patterns
 
-- **[SDLC Hardening](../sdlc-hardening/index.md)** - Broader enforcement strategies
-- **[Kyverno Implementation](../sdlc-hardening/kyverno/index.md)** - Runtime policy details
-- **[Pre-commit Hooks](../sdlc-hardening/pre-commit-hooks.md)** - Complementary local checks
-- **[CI/CD Patterns](../architecture-patterns/index.md)** - Pipeline architecture
+- **[SDLC Hardening](../index.md)** - Broader enforcement strategies
+- **[Kyverno Implementation](kyverno/index.md)** - Runtime policy details
+- **[Pre-commit Hooks](../pre-commit-hooks.md)** - Complementary local checks
+- **[CI/CD Patterns](../../architecture-patterns/index.md)** - Pipeline architecture
 
 ---
 

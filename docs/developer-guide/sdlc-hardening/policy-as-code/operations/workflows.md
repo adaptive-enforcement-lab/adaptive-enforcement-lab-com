@@ -161,6 +161,6 @@ resourceFilters:
 
 **Related Resources**:
 
-- **[SDLC Hardening](../../sdlc-hardening/index.md)** - Broader enforcement patterns
-- **[Kyverno Guide](../../sdlc-hardening/kyverno/index.md)** - Deep dive on Kyverno
-- **[Pre-commit Hooks](../../sdlc-hardening/pre-commit-hooks.md)** - Complementary local checks
+- **[SDLC Hardening](../../index.md)** - Broader enforcement patterns
+- **[Kyverno Guide](../kyverno/index.md)** - Deep dive on Kyverno
+- **[Pre-commit Hooks](../../pre-commit-hooks.md)** - Complementary local checks
