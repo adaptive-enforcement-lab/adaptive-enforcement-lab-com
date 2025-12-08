@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.8...0.6.9) (2025-12-08)
+
+
+### Documentation Updates
+
+* add orphaned files to navigation ([#150](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/150)) ([3e2f04e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/3e2f04ed46af27867dbca5547339c5e9a70a1ec6))
+
 ## [0.6.8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.7...0.6.8) (2025-12-08)
 
 
