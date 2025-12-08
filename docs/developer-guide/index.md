@@ -79,29 +79,4 @@ Build resilient, maintainable automation systems.
 
 ---
 
-## All Patterns
-
-| Category | Pattern | Purpose |
-|----------|---------|---------|
-| Error Handling | [Fail Fast](error-handling/fail-fast/index.md) | Stop immediately on unrecoverable errors |
-| Error Handling | [Prerequisite Checks](error-handling/prerequisite-checks/index.md) | Validate all preconditions upfront |
-| Error Handling | [Graceful Degradation](error-handling/graceful-degradation/index.md) | Fall back to safer states |
-| Efficiency | [Idempotency](efficiency-patterns/idempotency/index.md) | Make operations safe to retry |
-| Efficiency | [Work Avoidance](efficiency-patterns/work-avoidance/index.md) | Skip unnecessary operations |
-| Architecture | [Three-Stage Design](workflow-architecture/three-stage-design.md) | Discovery, execution, summary |
-| Architecture | [Matrix Distribution](workflow-architecture/matrix-distribution/index.md) | Parallel multi-target operations |
-| Go CLI | [Framework Selection](go-cli-architecture/framework-selection/index.md) | Choose CLI frameworks and config |
-| Go CLI | [Kubernetes Integration](go-cli-architecture/kubernetes-integration/index.md) | client-go patterns and RBAC |
-| Go CLI | [Command Architecture](go-cli-architecture/command-architecture/index.md) | Orchestrator and subcommand design |
-| Go CLI | [Packaging](go-cli-architecture/packaging/index.md) | Container builds and Helm charts |
-| Go CLI | [Testing](go-cli-architecture/testing/index.md) | Unit, integration, and E2E testing |
-| Argo Events | [Event Routing](argo-events/routing/index.md) | Filtering, transformations, and multi-trigger |
-| Argo Events | [Reliability Patterns](argo-events/reliability/index.md) | Retries, dead letter queues, and backpressure |
-| Argo Workflows | [WorkflowTemplates](argo-workflows/templates/index.md) | Reusable templates with RBAC and volumes |
-| Argo Workflows | [Concurrency](argo-workflows/concurrency/index.md) | Mutex, semaphores, and TTL strategies |
-| Argo Workflows | [Composition](argo-workflows/composition/index.md) | Parent/child and cross-workflow patterns |
-| Argo Workflows | [Scheduled](argo-workflows/scheduled/index.md) | CronWorkflow and GitHub integration |
-
----
-
 *Building automation that survives contact with production.*
