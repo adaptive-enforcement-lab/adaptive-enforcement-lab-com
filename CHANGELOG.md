@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.11](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.10...0.6.11) (2025-12-13)
+
+
+### Maintenance
+
+* **deps:** update actions/cache action to v5 ([#157](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/157)) ([ede14fc](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/ede14fc9baf04d7941e9f7ac45c5cb6dbba6f171))
+* **deps:** update adaptive-enforcement-lab/readability action to v1 ([#155](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/155)) ([23b48c2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/23b48c22d2e8b31fe92eb28f65b91bcdee0aea1a))
+
 ## [0.6.10](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.9...0.6.10) (2025-12-08)
 
 
