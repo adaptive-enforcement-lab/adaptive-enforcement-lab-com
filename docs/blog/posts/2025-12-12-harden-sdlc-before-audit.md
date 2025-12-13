@@ -22,8 +22,6 @@ Auditors don't want to hear what you say you do. They want to see what the syste
 
 <!-- more -->
 
----
-
 ## The Confrontation
 
 The auditor opened our GitHub organization. First question: "Show me how you enforce code review."
@@ -75,8 +73,6 @@ Red and orange layers? "Best effort." Green and blue? Actual enforcement.
 
 Auditors only care about what can't be bypassed.
 
----
-
 ## What We Built
 
 In 30 days, we transformed from documentation to enforcement. Here's what actually worked.
@@ -99,8 +95,6 @@ The auditor pointed to the `enforce_admins` setting. "This is what I need to see
 
 See [Branch Protection Enforcement](../../developer-guide/sdlc-hardening/branch-protection.md) for full implementation.
 
----
-
 ### Status Checks: CI as Gatekeeper
 
 We made CI failures block merges. No green checkmarks, no deployment.
@@ -117,8 +111,6 @@ required_status_checks:
 Untested code can't merge. Vulnerable containers can't deploy. The pipeline decides, not developers.
 
 See [Required Status Checks](../../developer-guide/sdlc-hardening/status-checks/index.md) for patterns.
-
----
 
 ### Pre-commit Hooks: First Defense
 
@@ -138,8 +130,6 @@ The commit was blocked. The secret never entered git history.
 Pre-commit hooks are bypassable (`--no-verify`), so we also validate in CI. Defense in depth.
 
 See [Pre-commit Security Gates](2025-12-04-pre-commit-security-gates.md) and [Pre-commit Hooks Guide](../../developer-guide/sdlc-hardening/pre-commit-hooks.md).
-
----
 
 ### GitHub Apps: Authentication Without People
 
@@ -161,8 +151,6 @@ The auditor approved immediately.
 
 See [GitHub Apps for Machine Authentication](../../developer-guide/sdlc-hardening/github-apps/index.md) for migration guide.
 
----
-
 ### Signed Commits: Non-Repudiation
 
 Anyone can set `git config user.name "Mark Cheret"`. GPG signatures can't be forged without the private key.
@@ -175,8 +163,6 @@ gpg: Good signature from "Mark Cheret <mark@example.com>"
 Branch protection can require signatures. Unsigned commits can't be pushed.
 
 See [Commit Signing](../../developer-guide/sdlc-hardening/commit-signing.md) for setup.
-
----
 
 ### SBOM Generation: Supply Chain Visibility
 
@@ -195,9 +181,9 @@ We generated SBOMs for every build:
 
 Auditor could verify: No GPL licenses. No HIGH CVEs. Dependencies matched versions.
 
-See [SBOM Generation](../../developer-guide/sdlc-hardening/sbom-generation.md) and [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md).
+These same practices earned our readability project OpenSSF Best Practices certification—read about the [2-hour documentation sprint](2025-12-17-openssf-badge-two-hours.md).
 
----
+See [SBOM Generation](../../developer-guide/sdlc-hardening/sbom-generation.md) and [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md).
 
 ### Runtime Enforcement: Kyverno
 
@@ -232,8 +218,6 @@ Pods without resource limits get rejected. Policy runs in the cluster, not just 
 
 See [Policy-as-Code with Kyverno](2025-12-13-policy-as-code-kyverno.md) for end-to-end enforcement.
 
----
-
 ## The Evidence Collection
 
 Auditors sampled March 2025. "Show me PRs merged that month."
@@ -259,8 +243,6 @@ We had monthly archives of branch protection configs, workflow runs, and SBOMs. 
 
 See [Audit Evidence Collection](../../developer-guide/sdlc-hardening/audit-evidence.md) for retention strategies.
 
----
-
 ## The Transformation
 
 | Control | Before (Documentation) | After (Enforcement) |
@@ -274,8 +256,6 @@ See [Audit Evidence Collection](../../developer-guide/sdlc-hardening/audit-evide
 | Runtime | "Follow deployment standards" | Kyverno enforces policies in-cluster |
 
 The right column survives audit scrutiny. The left doesn't.
-
----
 
 ## The 90-Day Roadmap
 
@@ -330,8 +310,6 @@ The audit trail should show: "Bypass used 3 times in 2024. All reviewed within 2
 
 Not: "We bypass whenever it's convenient."
 
----
-
 ## The Audit Result
 
 Day 18. The auditor closed their laptop.
@@ -341,8 +319,6 @@ Day 18. The auditor closed their laptop.
 We passed.
 
 Not because of our documentation. Because we built systems that make security inevitable.
-
----
 
 ## Where to Start
 
@@ -357,8 +333,6 @@ The full stack includes pre-commit hooks, commit signing, SBOMs, and runtime pol
 
 See the [SDLC Hardening section](../../developer-guide/sdlc-hardening/index.md) for complete implementation guides.
 
----
-
 ## Related Patterns
 
 The full defense stack:
@@ -367,7 +341,5 @@ The full defense stack:
 - **[Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md)** - Block vulnerable images
 - **[Policy-as-Code with Kyverno](2025-12-13-policy-as-code-kyverno.md)** - Runtime admission control
 - **[Environment Progression Testing](2025-12-16-environment-progression-testing.md)** - Validate before production
-
----
 
 *The Monday email became a 90-day transformation. Documentation was replaced with automation. Controls were proven, not promised. The audit passed. Security became inevitable.*

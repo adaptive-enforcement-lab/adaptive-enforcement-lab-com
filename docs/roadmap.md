@@ -18,15 +18,16 @@ Adaptive Enforcement Lab is actively building. Here's what's coming.
 
     We're building a content pipeline for actionable security guidance. Recent posts:
 
+    - ✅ **[OpenSSF Best Practices Badge in 2 Hours](blog/posts/2025-12-17-openssf-badge-two-hours.md)**
+    - ✅ **[Policy-as-Code with Kyverno](blog/posts/2025-12-13-policy-as-code-kyverno.md)**
     - ✅ **[How to Harden Your SDLC Before the Audit Comes](blog/posts/2025-12-12-harden-sdlc-before-audit.md)**
-    - ✅ **[ConfigMap as Cache Pattern](blog/posts/2025-12-03-configmap-cache-zero-api.md)**
     - ✅ **[Pre-commit Hooks as Security Gates](blog/posts/2025-12-04-pre-commit-security-gates.md)**
 
     Coming next:
 
-    - Policy-as-code with Kyverno
     - Zero-vulnerability container pipelines
     - Environment progression testing
+    - Event-driven deployments with Argo
 
 !!! info "Community Hub"
 

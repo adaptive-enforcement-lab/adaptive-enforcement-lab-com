@@ -26,7 +26,7 @@ Pre-commit hooks stop this before it starts.
 CI catches security issues after they're committed. By then:
 
 - Code is in git history (even if the PR never merges)
-- Secrets, if committed, are already exposed
+- Secrets, if committed, are already exposed (we later added TruffleHog scanning to catch this—see [OpenSSF Certification](2025-12-17-openssf-badge-two-hours.md))
 - Audit trails show violations happened
 - Fixing requires force-push or explanation
 
