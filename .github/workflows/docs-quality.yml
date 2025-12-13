@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Analyze documentation
-        uses: adaptive-enforcement-lab/readability@1
+        uses: adaptive-enforcement-lab/readability@latest
         with:
           path: docs/
           check: ${{ inputs.fail_on_threshold }}
