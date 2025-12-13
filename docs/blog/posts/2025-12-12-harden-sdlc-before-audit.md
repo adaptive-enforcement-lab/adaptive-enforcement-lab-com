@@ -304,7 +304,7 @@ Here's the phased approach that works:
 - Week 11: Audit simulation
 - Week 12: Remediation and runbook
 
-See [Implementation Roadmap](../../developer-guide/sdlc-hardening/implementation-roadmap.md) for detailed timelines.
+See [Implementation Roadmap](../../developer-guide/sdlc-hardening/implementation-roadmap/index.md) for detailed timelines.
 
 ---
 
