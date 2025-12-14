@@ -187,7 +187,7 @@ fi
       deps-
 ```
 
-Falls back to older cache if exact match fails—useful for dependencies where partial cache is still valuable.
+Falls back to older cache if exact match fails. This is useful for dependencies where partial cache is still valuable.
 
 ---
 

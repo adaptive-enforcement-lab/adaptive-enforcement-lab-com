@@ -1,11 +1,11 @@
 ---
-title: Separation of Concerns - Pattern Overview
+title: Separation of Concerns Pattern Overview
 description: >-
   Single-responsibility components with clear boundaries. Orchestration separate from execution.
   Build maintainable systems through isolation.
 ---
 
-# Separation of Concerns - Pattern Overview
+# Separation of Concerns Pattern Overview
 
 Every component should do one thing well. Orchestration logic separated from business logic. Testability through clear boundaries.
 
@@ -242,17 +242,17 @@ func (b *ImageBuilder) Build(ctx context.Context, config *AppConfig) error {
 
 Layers:
 
-1. **Entry point** - `main.go` just calls cobra
-2. **CLI layer** - Parses flags, no business logic
-3. **Orchestrator** - Coordinates execution
-4. **Executors** - Do actual work
+1. **Entry point**: `main.go` just calls cobra
+2. **CLI layer**: Parses flags, no business logic
+3. **Orchestrator**: Coordinates execution
+4. **Executors**: Do actual work
 
 ---
 
 ## Next Steps
 
-- **[Implementation Techniques](implementation.md)** - Testing, interfaces, dependency injection, error handling
-- **[Usage Guide](guide.md)** - When to apply, common mistakes, real-world examples
+- **[Implementation Techniques](implementation.md)**: Testing, interfaces, dependency injection, error handling
+- **[Usage Guide](guide.md)**: When to apply, common mistakes, real-world examples
 
 ---
 

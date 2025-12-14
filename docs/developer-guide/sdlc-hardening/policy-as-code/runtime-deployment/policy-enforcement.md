@@ -97,14 +97,14 @@ done
 
 ### Enforce vs Audit
 
-**Enforce** - Block non-compliant resources:
+**Enforce** blocks non-compliant resources:
 
 ```yaml
 spec:
   validationFailureAction: Enforce
 ```
 
-**Audit** - Log violations, allow deployment:
+**Audit** logs violations while allowing deployment:
 
 ```yaml
 spec:
@@ -260,6 +260,6 @@ helm install security-policy /repos/security-policy/charts/security-policy
 
 ## Next Steps
 
-- **[Monitoring](monitoring.md)** - Dashboards, metrics, alerts, troubleshooting
-- **[Operations](../operations/index.md)** - Policy lifecycle management
-- **[CI Integration](../ci-integration/index.md)** - Automated pipeline validation
+- **[Monitoring](monitoring.md)**: Dashboards, metrics, alerts, troubleshooting
+- **[Operations](../operations/index.md)**: Policy lifecycle management
+- **[CI Integration](../ci-integration/index.md)**: Automated pipeline validation

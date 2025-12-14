@@ -1,11 +1,11 @@
 ---
-title: Kyverno - Operations and Monitoring
+title: Kyverno Operations and Monitoring
 description: >-
   Policy Reporter integration, monitoring and alerting setup, policy lifecycle management,
   and end-to-end CI/CD workflow integration.
 ---
 
-# Kyverno - Operations and Monitoring
+# Kyverno Operations and Monitoring
 
 ## Monitoring and Alerting
 
@@ -180,7 +180,7 @@ graph TD;
     style M fill:#a7e22e,color:#1b1d1e
 ```
 
-**Shift-left:** Local validation + CI checks catch 90% of violations.
+**Shift-left:** Local validation and CI checks catch 90% of violations.
 
 **Shift-down:** Runtime admission control catches the remaining 10%.
 
@@ -188,9 +188,9 @@ graph TD;
 
 ## Related Guides
 
-- **[Kyverno Basics](index.md)** - Installation and policy structure
-- **[Policy Patterns](policy-patterns.md)** - Common validation patterns
-- **[Testing and Exceptions](testing-approaches.md)** - Local testing and exceptions
+- **[Kyverno Basics](index.md)** for Installation and policy structure
+- **[Policy Patterns](policy-patterns.md)** for Common validation patterns
+- **[Testing and Exceptions](testing-approaches.md)** for Local testing and exceptions
 
 ---
 

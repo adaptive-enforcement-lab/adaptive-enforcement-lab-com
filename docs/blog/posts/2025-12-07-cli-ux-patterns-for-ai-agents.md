@@ -14,7 +14,7 @@ slug: cli-ux-patterns-for-ai-agents
 
 # Designing Error Messages AI Agents Can't Misinterpret
 
-AI coding assistants are increasingly the first responders to pre-commit failures and CI errors. The error messages your CLI produces directly influence how these agents attempt fixes—often without human review.
+AI coding assistants are increasingly the first responders to pre-commit failures and CI errors. The error messages your CLI produces directly influence how these agents attempt fixes. Often, these fixes happen without human review.
 
 Here's how to design CLI output that guides AI agents toward correct remediation.
 
@@ -182,7 +182,7 @@ Well-designed error messages mean:
 - No accidental content destruction
 - Happy developers who trust their tools
 
-The investment in better error messages pays dividends every time an AI agent encounters your CLI—which is increasingly often.
+The investment in better error messages pays dividends every time an AI agent encounters your CLI. As AI agents become more prevalent in development workflows, this investment compounds.
 
 ---
 

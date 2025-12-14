@@ -1,6 +1,6 @@
 # Retry Strategies
 
-Transient failures—network timeouts, temporary service unavailability, rate limits—are common in distributed systems. Retry strategies automatically recover from these failures without manual intervention. For the complete reference, see the [official Trigger Retry docs](https://argoproj.github.io/argo-events/sensors/triggers/intro/#policy).
+Transient failures like network timeouts, temporary service unavailability, and rate limits are common in distributed systems. Retry strategies automatically recover from these failures without manual intervention. For the complete reference, see the [official Trigger Retry docs](https://argoproj.github.io/argo-events/sensors/triggers/intro/#policy).
 
 ---
 

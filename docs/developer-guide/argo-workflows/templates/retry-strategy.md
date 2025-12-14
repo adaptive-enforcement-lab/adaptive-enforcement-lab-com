@@ -8,7 +8,7 @@ Transient failures are inevitable in distributed systems. API servers become tem
 
 The first instinct when a workflow fails is to check what went wrong. But many failures fix themselves. A Kubernetes API server might return a 503 for a few seconds during a rolling update. A rate-limited external API recovers after the quota window resets.
 
-Without retry logic, these transient issues become permanent failures. Someone has to notice, investigate, and manually re-trigger the workflow. That breaks the promise of automation—the system should handle routine failures on its own.
+Without retry logic, these transient issues become permanent failures. Someone has to notice, investigate, and manually re-trigger the workflow. This breaks the promise of automation. The system should handle routine failures on its own.
 
 The flip side is that not everything should be retried. An RBAC permission denied error won't fix itself. Invalid parameters won't become valid. A deleted resource won't reappear. Retrying these wastes time and can mask real problems.
 
@@ -46,7 +46,7 @@ The `backoff` configuration implements exponential backoff: first retry after 5 
 
 The `retryPolicy` field controls which failures trigger retries:
 
-**`Always`**: Retry on any failure—script errors, container crashes, timeouts. Use this when you can't predict failure modes and want maximum resilience.
+**`Always`**: Retry on any failure: script errors, container crashes, and timeouts. Use this when you can't predict failure modes and want maximum resilience.
 
 **`OnFailure`**: Retry only when the container exits with a non-zero code. System errors (like pod eviction) don't trigger retries. Use this when you trust your script to handle transient issues internally.
 
@@ -66,7 +66,7 @@ The `retryPolicy` field controls which failures trigger retries:
 | Invalid parameters | No | Need human correction |
 | Resource not found | Maybe | Depends on whether it might appear |
 
-The "maybe" category requires judgment. If your workflow expects a resource that another workflow creates, a brief retry period makes sense—the resource might appear momentarily. But if the resource should already exist, failing fast is better.
+The "maybe" category requires judgment. If your workflow expects a resource that another workflow creates, a brief retry period makes sense. The resource might appear momentarily. But if the resource should already exist, failing fast is better.
 
 ---
 
@@ -133,7 +133,7 @@ templates:
       command: [process, /data/input.json]
 ```
 
-The `fetch-data` step uses aggressive retries because network requests are prone to transient failures. The `process-data` step uses minimal retries because processing failures are usually permanent—the input is either valid or it isn't.
+The `fetch-data` step uses aggressive retries because network requests are prone to transient failures. The `process-data` step uses minimal retries because processing failures are usually permanent. The input is either valid or it isn't.
 
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: Pre-commit Hooks - Implementation Guide
+title: Pre-commit Hooks Implementation Guide
 description: >-
   Implement pattern detection hooks, manage exceptions, and integrate with CI/CD
   for comprehensive pre-commit security enforcement.
 ---
 
-# Pre-commit Hooks - Implementation Guide
+# Pre-commit Hooks Implementation Guide
 
 ## Implementation: Pattern Detection Hook
 
@@ -170,8 +170,8 @@ Block Forbidden Technologies................................Failed
 
 FORBIDDEN TECHNOLOGY DETECTED
 
-  scripts/build.sh:12 - Docker: docker build
-  scripts/build.sh:15 - Docker: docker push
+  scripts/build.sh:12: Docker (docker build)
+  scripts/build.sh:15: Docker (docker push)
 
 See content policies: README.md
 ```

@@ -154,7 +154,7 @@ This pattern aligns with [Graceful Degradation](../../developer-guide/error-hand
 
 Reads are fast. Writes are where it gets interesting.
 
-The workflow can't write to the volume mount directly—it's read-only. Updates must go through the API:
+The volume mount is read-only, so the workflow can't write to it directly. Updates must go through the API:
 
 ```go
 func updateCache(client kubernetes.Interface, cache *Cache) error {

@@ -1,11 +1,11 @@
 ---
-title: Environment Progression - Operations
+title: Environment Progression Operations
 description: >-
   Feature flags, monitoring, quality gates, and operational patterns for progressive
   deployment across environments.
 ---
 
-# Environment Progression - Operations
+# Environment Progression Operations
 
 !!! tip "Operational Patterns"
     Advanced operational patterns for progressive deployment. These patterns build on the core deployment strategies.
@@ -158,16 +158,16 @@ Automated smoke tests or they don't happen consistently.
 
 Building environment progression:
 
-1. **Define environments** - Dev, staging, production at minimum
-2. **Namespace isolation** - NetworkPolicies enforce boundaries
-3. **Configuration management** - Kustomize overlays or Helm values
-4. **Smoke tests** - Automated validation at each stage
-5. **Quality gates** - Metrics thresholds between environments
-6. **Load testing** - Staging simulates production load
-7. **Rollback automation** - Auto-rollback on smoke test failure
-8. **Feature flags** - Progressive enablement across environments
-9. **Monitoring** - Per-environment dashboards
-10. **Approval gates** - Manual approval before production
+1. **Define environments:** Dev, staging, production at minimum
+2. **Namespace isolation:** NetworkPolicies enforce boundaries
+3. **Configuration management:** Kustomize overlays or Helm values
+4. **Smoke tests:** Automated validation at each stage
+5. **Quality gates:** Metrics thresholds between environments
+6. **Load testing:** Staging simulates production load
+7. **Rollback automation:** Auto-rollback on smoke test failure
+8. **Feature flags:** Progressive enablement across environments
+9. **Monitoring:** Per-environment dashboards
+10. **Approval gates:** Manual approval before production
 
 ---
 
@@ -175,9 +175,9 @@ Building environment progression:
 
 Environment progression fits into SDLC hardening:
 
-- **[SDLC Hardening](../../blog/posts/2025-12-12-harden-sdlc-before-audit.md)** - Build security into pipelines
-- **[Zero-Vulnerability Pipelines](../../blog/posts/2025-12-15-zero-vulnerability-pipelines.md)** - Scan before each environment
-- **[Policy-as-Code with Kyverno](../../blog/posts/2025-12-13-policy-as-code-kyverno.md)** - Enforce standards per environment
+- **[SDLC Hardening](../../blog/posts/2025-12-12-harden-sdlc-before-audit.md):** Build security into pipelines
+- **[Zero-Vulnerability Pipelines](../../blog/posts/2025-12-15-zero-vulnerability-pipelines.md):** Scan before each environment
+- **[Policy-as-Code with Kyverno](../../blog/posts/2025-12-13-policy-as-code-kyverno.md):** Enforce standards per environment
 
 ---
 

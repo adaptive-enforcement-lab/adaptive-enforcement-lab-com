@@ -204,7 +204,7 @@ kubectl get cronworkflow scheduled-sync -o yaml
 kubectl get workflows -l workflows.argoproj.io/cron-workflow=scheduled-sync
 ```
 
-The Argo UI provides a better experience—click through the hierarchy to see each child's status, logs, and duration.
+The Argo UI provides a better experience. Click through the hierarchy to see each child's status, logs, and duration.
 
 ---
 
@@ -215,6 +215,6 @@ The Argo UI provides a better experience—click through the hierarchy to see ea
 
 ## Related
 
-- [Basic CronWorkflow](basic.md) - Simple scheduled execution
-- [Spawning Child Workflows](../composition/spawning-children.md) - The resource.action pattern
-- [Concurrency Policies](concurrency-policy.md) - Handling overlapping runs
+- [Basic CronWorkflow](basic.md): Simple scheduled execution
+- [Spawning Child Workflows](../composition/spawning-children.md): The resource.action pattern
+- [Concurrency Policies](concurrency-policy.md): Handling overlapping runs

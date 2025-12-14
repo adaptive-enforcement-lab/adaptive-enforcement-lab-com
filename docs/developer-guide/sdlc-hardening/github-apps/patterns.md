@@ -1,11 +1,11 @@
 ---
-title: GitHub Apps - Patterns and Best Practices
+title: GitHub Apps Patterns and Best Practices
 description: >-
   PAT vs GitHub App comparison, common automation patterns,
   and security best practices for GitHub Apps.
 ---
 
-# GitHub Apps - Patterns and Best Practices
+# GitHub Apps Patterns and Best Practices
 
 ## Comparison: PATs vs GitHub Apps
 

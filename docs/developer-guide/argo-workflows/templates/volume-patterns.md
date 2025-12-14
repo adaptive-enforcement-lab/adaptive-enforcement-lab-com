@@ -51,7 +51,7 @@ spec:
 
 ## EmptyDir for Scratch Space
 
-EmptyDir volumes provide temporary storage that multiple containers can share. The data exists only while the pod runs—when the pod terminates, the data is gone.
+EmptyDir volumes provide temporary storage that multiple containers can share. The data exists only while the pod runs. When the pod terminates, the data is gone.
 
 ```yaml
 spec:
@@ -100,7 +100,7 @@ spec:
             readOnly: true
 ```
 
-The `optional: true` flag prevents workflow failures when the ConfigMap doesn't exist. This is useful for caches that might not be populated yet—the workflow can handle the missing data gracefully instead of failing immediately.
+The `optional: true` flag prevents workflow failures when the ConfigMap doesn't exist. This is useful for caches that might not be populated yet. The workflow can handle the missing data gracefully instead of failing immediately.
 
 **ConfigMap as cache pattern:**
 
@@ -125,7 +125,7 @@ Reading this file takes milliseconds. Scanning the cluster for the same informat
 
 ## Secrets for Credentials
 
-Secrets store sensitive data—passwords, API keys, certificates. They work like ConfigMaps but with additional protections: they're not logged, stored in etcd encrypted, and can be restricted via RBAC.
+Secrets store sensitive data: passwords, API keys, and certificates. They work like ConfigMaps but with additional protections. They're not logged, stored in etcd with encryption, and can be restricted via RBAC.
 
 ```yaml
 spec:
@@ -202,7 +202,7 @@ volumeMounts:
     readOnly: true          # Secrets must be read-only
 ```
 
-**Always mount secrets and ConfigMaps as read-only.** Workflows should never modify their configuration at runtime—that creates state that's invisible to version control and impossible to reproduce.
+**Always mount secrets and ConfigMaps as read-only.** Workflows should never modify their configuration at runtime. Doing so creates state that's invisible to version control and impossible to reproduce.
 
 ---
 

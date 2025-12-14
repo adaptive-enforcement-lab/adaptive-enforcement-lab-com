@@ -33,14 +33,14 @@ version: 1.4.2 # x-release-please-version
 ---
 ```
 
-When someone merges a `feat:` commit, release-please bumps the version everywhere—including CONTRIBUTING.md. The file distribution workflow sees "file changed" and springs into action.
+When someone merges a `feat:` commit, release-please bumps the version everywhere. This includes CONTRIBUTING.md. The file distribution workflow sees "file changed" and springs into action.
 
 ---
 
 ## The Problem
 
 !!! danger "The Risk"
-    Simple change detection catches everything—including version-only changes that don't matter.
+    Simple change detection catches everything. This includes version-only changes that don't matter.
 
 Our change detection was simple:
 
@@ -133,7 +133,7 @@ The script handles several scenarios:
 | Content + version change | Distribute (real changes) |
 | File missing in target | Distribute (new file) |
 
-The `git show HEAD:CONTRIBUTING.md` command fails if the file doesn't exist in the target repo. That's fine—fall through and distribute.
+The `git show HEAD:CONTRIBUTING.md` command fails if the file doesn't exist in the target repo. That's fine. Fall through and distribute.
 
 ---
 
@@ -142,7 +142,7 @@ The `git show HEAD:CONTRIBUTING.md` command fails if the file doesn't exist in t
 !!! tip "Work Avoidance"
     Filter out noise before it becomes PRs. Compare semantic content, not file bytes.
 
-This is [work avoidance](../../developer-guide/efficiency-patterns/work-avoidance/index.md)—an engineering pattern for filtering out noise. The specific technique here is [volatile field exclusion](../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md).
+This is [work avoidance](../../developer-guide/efficiency-patterns/work-avoidance/index.md). It's an engineering pattern for filtering out noise. The specific technique here is [volatile field exclusion](../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md).
 
 The principle extends beyond versions:
 

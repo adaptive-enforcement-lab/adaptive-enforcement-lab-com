@@ -181,7 +181,7 @@ We generated SBOMs for every build:
 
 Auditor could verify: No GPL licenses. No HIGH CVEs. Dependencies matched versions.
 
-These same practices earned our readability project OpenSSF Best Practices certification—read about the [2-hour documentation sprint](2025-12-17-openssf-badge-two-hours.md).
+These same practices earned our readability project OpenSSF Best Practices certification. Read about the [2-hour documentation sprint](2025-12-17-openssf-badge-two-hours.md).
 
 **Supply Chain Defense Stack:**
 

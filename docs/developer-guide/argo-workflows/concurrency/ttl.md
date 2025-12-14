@@ -13,7 +13,7 @@ Every completed workflow remains in the cluster as a Workflow resource. Each wor
 - **UI performance**: The Argo UI struggles with large workflow counts
 - **Resource quotas**: Completed workflows count against namespace quotas
 
-TTL prevents this by automatically deleting workflows after they've served their purpose. Successful workflows might be deleted quickly—you don't need to debug them. Failed workflows might be kept longer for investigation.
+TTL prevents this by automatically deleting workflows after they've served their purpose. Successful workflows might be deleted quickly because you don't need to debug them. Failed workflows might be kept longer for investigation.
 
 ---
 
@@ -93,7 +93,7 @@ spec:
   revisionHistoryLimit: 3
 ```
 
-The `revisionHistoryLimit` controls how many sensor revisions (configuration versions) to keep. This is different from workflow TTL—it's about the sensor itself, not the workflows it triggers.
+The `revisionHistoryLimit` controls how many sensor revisions (configuration versions) to keep. This is different from workflow TTL. It's about the sensor itself, not the workflows it triggers.
 
 **CronWorkflow history:**
 
@@ -123,7 +123,7 @@ History limits and TTL work together:
 
 ## Disabling TTL
 
-Some workflows should never auto-delete—audit trails, compliance records, forensic evidence. Set TTL to 0 or omit the field entirely:
+Some workflows should never auto-delete. These include audit trails, compliance records, and forensic evidence. Set TTL to 0 or omit the field entirely:
 
 ```yaml
 spec:

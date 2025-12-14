@@ -92,7 +92,7 @@ With persistence enabled, events survive EventBus pod restarts. The 3-replica co
 ---
 
 !!! warning "At-Least-Once Semantics"
-    Argo Events guarantees at-least-once delivery, not exactly-once. Your workflows must be idempotent—processing the same event twice should produce the same result. See [Idempotency Patterns](../../efficiency-patterns/idempotency/index.md) for implementation strategies.
+    Argo Events guarantees at-least-once delivery, not exactly-once. Your workflows must be idempotent - processing the same event twice should produce the same result. See [Idempotency Patterns](../../efficiency-patterns/idempotency/index.md) for implementation strategies.
 
 ---
 

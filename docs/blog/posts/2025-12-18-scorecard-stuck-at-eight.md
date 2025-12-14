@@ -60,7 +60,7 @@ They don't prove:
 
 A signature says "this file is what I released." It doesn't say "this file came from a trusted build process."
 
-That gap—between signed and **provably built**—is what SLSA Level 3 fills.
+There's a critical gap between signed and **provably built**. That's exactly what SLSA Level 3 fills.
 
 ---
 

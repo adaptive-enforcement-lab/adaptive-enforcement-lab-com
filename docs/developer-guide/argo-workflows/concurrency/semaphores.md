@@ -1,6 +1,6 @@
 # Semaphores
 
-Semaphores limit concurrent access to a resource without requiring exclusive access. Unlike mutexes (which allow exactly one holder), semaphores allow N concurrent holders. This enables controlled parallelism—multiple workflows can run simultaneously, but not unlimited numbers.
+Semaphores limit concurrent access to a resource without requiring exclusive access. Unlike mutexes (which allow exactly one holder), semaphores allow N concurrent holders. This enables controlled parallelism. Multiple workflows can run simultaneously, but not unlimited numbers.
 
 ---
 
@@ -85,7 +85,7 @@ kubectl patch configmap workflow-semaphores \
   -p '{"data":{"build-limit":"5"}}'
 ```
 
-New workflows see the updated limit immediately. Running workflows aren't affected—they keep their permits until completion.
+New workflows see the updated limit immediately. Running workflows aren't affected. They keep their permits until completion.
 
 **Use cases for dynamic adjustment:**
 

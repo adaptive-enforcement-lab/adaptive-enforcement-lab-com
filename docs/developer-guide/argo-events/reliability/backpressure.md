@@ -1,6 +1,6 @@
 # Backpressure Handling
 
-When events arrive faster than they can be processed, systems must apply backpressure—slowing or rejecting new events to prevent overload. Without backpressure, queues grow unbounded, memory exhausts, and systems crash.
+When events arrive faster than they can be processed, systems must apply backpressure by slowing or rejecting new events to prevent overload. Without backpressure, queues grow unbounded, memory exhausts, and systems crash.
 
 ---
 

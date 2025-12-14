@@ -47,7 +47,7 @@ gh release create v1.0.0 --notes "Release" || gh release edit v1.0.0 --notes "Re
 
 ### [Force Overwrite](force-overwrite.md)
 
-Don't check - just overwrite. Safe when overwriting with identical content is acceptable.
+Don't check, just overwrite. Safe when overwriting with identical content is acceptable.
 
 ```bash
 git push --force-with-lease origin "$BRANCH"

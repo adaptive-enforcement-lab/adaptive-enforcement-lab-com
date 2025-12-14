@@ -42,7 +42,7 @@ dependencies:
 - `value`: List of acceptable values (OR logic)
 - `comparator`: Comparison operator (`=`, `!=`, `>=`, `<=`, `>`, `<`)
 
-Multiple data filters use AND logic—all must match for the event to trigger.
+Multiple data filters use AND logic: all must match for the event to trigger.
 
 ---
 

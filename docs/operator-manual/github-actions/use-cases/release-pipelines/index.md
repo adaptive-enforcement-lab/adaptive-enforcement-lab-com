@@ -51,7 +51,7 @@ Traditional CI/CD pipelines rebuild everything on every commit. In a monorepo wi
 - Longer feedback loops for developers
 - Wasted resources on duplicate work
 
-Additionally, release-please using the default `GITHUB_TOKEN` won't trigger build pipelines on its PRs - a [GitHub security measure](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow) to prevent infinite loops.
+Additionally, release-please using the default `GITHUB_TOKEN` won't trigger build pipelines on its PRs -- a [GitHub security measure](https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow) to prevent infinite loops.
 
 ---
 

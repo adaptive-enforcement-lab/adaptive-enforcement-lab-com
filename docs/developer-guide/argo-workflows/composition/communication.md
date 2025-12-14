@@ -90,16 +90,16 @@ The build workflow publishes without knowing about deployment. The deploy workfl
 
 **Benefits:**
 
-- **Fire-and-forget**: Producer doesn't wait for consumer
-- **Multiple subscribers**: One message can trigger multiple workflows
-- **Cross-cluster**: Pub/Sub works across Kubernetes clusters
-- **Retry isolation**: Consumer failures don't affect producer
+- **Fire-and-forget** - Producer does not wait for consumer
+- **Multiple subscribers** - One message can trigger multiple workflows
+- **Cross-cluster** - Pub/Sub works across Kubernetes clusters
+- **Retry isolation** - Consumer failures do not affect producer
 
 **Tradeoffs:**
 
-- **Invisible connections**: The UI doesn't show producer-consumer relationships
-- **Debugging complexity**: Tracing requires correlating logs across systems
-- **Message loss risk**: Without proper persistence, messages can be lost
+- **Invisible connections** - The UI does not show producer-consumer relationships
+- **Debugging complexity** - Tracing requires correlating logs across systems
+- **Message loss risk** - Without proper persistence, messages can be lost
 
 ---
 
@@ -170,7 +170,7 @@ templates:
         name: pipeline-status-{{workflow.parameters.run-id}}
 ```
 
-ConfigMaps work well for coordination metadata—status flags, URLs, timestamps. They're visible in the Kubernetes API and can be read by any resource with appropriate RBAC.
+ConfigMaps work well for coordination metadata like status flags, URLs, and timestamps. They're visible in the Kubernetes API and can be read by any resource with appropriate RBAC.
 
 ---
 
@@ -204,7 +204,7 @@ templates:
           claimName: "{{workflow.parameters.pvc-name}}"
 ```
 
-PVCs provide filesystem semantics that work naturally with most tools. But `ReadWriteOnce` access mode means only one pod can mount the volume at a time—coordinate access carefully.
+PVCs provide filesystem semantics that work naturally with most tools. However, `ReadWriteOnce` access mode means only one pod can mount the volume at a time. Coordinate access carefully to avoid conflicts.
 
 ---
 

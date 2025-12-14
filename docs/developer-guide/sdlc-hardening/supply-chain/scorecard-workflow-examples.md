@@ -267,4 +267,4 @@ gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
 
 ---
 
-*This pattern achieves OpenSSF Scorecard 10/10 on Signed-Releases and 0 Token-Permissions alerts. Adapt permissions to your project's actual needs—these are examples, not requirements.*
+*This pattern achieves OpenSSF Scorecard 10/10 on Signed-Releases and 0 Token-Permissions alerts. Adapt permissions to your project's actual needs. These are examples, not requirements.*

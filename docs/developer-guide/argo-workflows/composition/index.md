@@ -6,11 +6,13 @@ As automation pipelines grow, a single monolithic workflow becomes unmaintainabl
 
 ## Why Compose Workflows?
 
-The obvious approach to building a multi-stage pipeline is putting everything in one WorkflowTemplate. Clone the repository, run tests, build the artifact, deploy to staging, run integration tests, promote to production—all in a single workflow with sequential steps.
+The obvious approach to building a multi-stage pipeline is putting everything in one WorkflowTemplate. Clone the repository, run tests, build the artifact, deploy to staging, run integration tests, and promote to production. All of this runs as a single workflow with sequential steps.
 
 This works until it doesn't.
 
-The problems emerge gradually. First, you need the same build step in a different pipeline. So you copy it. Now you have two copies. Then someone fixes a bug in one copy but forgets the other. Then you need to run just the build step for debugging. But you can't—it's entangled with everything else.
+The problems emerge gradually. First, you need the same build step in a different pipeline. So you copy it. Now you have two copies. Then someone fixes a bug in one copy but forgets the other.
+
+Then you need to run just the build step for debugging. But you can't, because it's entangled with everything else.
 
 Composition solves this by treating workflows as functions. Each workflow does one thing well. Parent workflows orchestrate the pieces. When you need the build step elsewhere, you call it. When you need to test the build step in isolation, you run it directly.
 

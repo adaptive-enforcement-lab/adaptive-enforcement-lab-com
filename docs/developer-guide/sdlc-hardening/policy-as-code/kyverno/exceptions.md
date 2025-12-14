@@ -1,11 +1,11 @@
 ---
-title: Kyverno Testing - Exception Management
+title: Kyverno Testing Exception Management
 description: >-
   Exception management strategies, PolicyException resource usage,
   common pitfalls, and debugging policy failures.
 ---
 
-# Kyverno Testing - Exception Management
+# Kyverno Testing Exception Management
 
 ## Exception Management
 
@@ -242,9 +242,9 @@ results:
 
 ## Related Guides
 
-- **[Kyverno Basics](index.md)** - Installation and policy structure
-- **[Policy Patterns](policy-patterns.md)** - Common validation patterns
-- **[CI/CD Integration](ci-cd-integration.md)** - Automated testing in pipelines
+- **[Kyverno Basics](index.md)** for Installation and policy structure
+- **[Policy Patterns](policy-patterns.md)** for Common validation patterns
+- **[CI/CD Integration](ci-cd-integration.md)** for Automated testing in pipelines
 
 ---
 

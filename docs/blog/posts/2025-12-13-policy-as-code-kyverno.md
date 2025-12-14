@@ -73,7 +73,7 @@ Two options for Kubernetes policy enforcement:
 - **Choose OPA** if you need policies across multiple platforms (databases, APIs, cloud IAM, service mesh)
 - **Choose Kyverno** if your policies are Kubernetes-specific and you want native K8s resource awareness
 
-Neither is "more powerful"—they target different problems.
+Neither is "more powerful." They target different problems.
 
 ---
 

@@ -6,7 +6,7 @@ Init containers run sequentially before the main container, each completing befo
 
 ## Why Init Containers?
 
-The obvious approach to a build pipeline is cramming everything into one container image. Git, build tools, testing frameworks, deployment utilities—all in one image. This works, but the image grows large and updates become risky. Changing the Go version might break the deployment scripts.
+The obvious approach to a build pipeline is cramming everything into one container image: Git, build tools, testing frameworks, and deployment utilities. This works, but the image grows large and updates become risky. Changing the Go version might break the deployment scripts.
 
 Init containers offer an alternative: use purpose-built images for each stage. The git image handles cloning. The Go image handles compilation. The deployment image handles publishing. Each image is small, focused, and independently versioned.
 
@@ -81,7 +81,7 @@ Each stage has a clear contract: what it expects to find, what it produces. When
 
 ## Failure Behavior
 
-If any init container fails, the entire template fails. The main container never runs. This is usually what you want—there's no point running the build if the clone failed.
+If any init container fails, the entire template fails and the main container never runs. This is usually what you want. There's no point running the build if the clone failed.
 
 ```mermaid
 flowchart TD
@@ -102,7 +102,7 @@ flowchart TD
     style F fill:#f92572,color:#1b1d1e
 ```
 
-For cases where you need partial success handling—run the tests even if linting fails—use steps or DAG patterns instead of init containers.
+For cases where you need partial success handling (for example, running tests even if linting fails), use steps or DAG patterns instead of init containers.
 
 ---
 

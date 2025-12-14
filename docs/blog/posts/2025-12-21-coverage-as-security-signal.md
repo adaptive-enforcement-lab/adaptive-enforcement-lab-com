@@ -17,7 +17,7 @@ The OpenSSF Best Practices **Passing** badge doesn't mandate a specific coverage
 
 We set our bar at **95% minimum**. Above even Gold (90%). Self-imposed. Strategic.
 
-We started at 0%. We wanted the Passing badge. But we knew: easier to build high standards into a young project than retrofit them later. When we go for Gold, 95% would already be habit.
+We started at 0%. We wanted the Passing badge. But we knew something important: it's easier to build high standards into a young project than retrofit them later. When we go for Gold, 95% would already be habit.
 
 <!-- more -->
 
@@ -56,7 +56,7 @@ Starting from zero tests, we built comprehensive test suites for five packages i
 | cmd/readability | 36.8% | CLI integration |
 | **Total** | **85.8%** | **Below requirement** |
 
-The output formatters were easy—pure functions. The parser required mocking file I/O. The analyzer needed table-driven tests for metric variations.
+The output formatters were easy because they were pure functions. The parser required mocking file I/O. The analyzer needed table-driven tests for metric variations.
 
 But the CLI package dragged down the total. **85.8% wasn't our 95% target.**
 
@@ -84,7 +84,7 @@ Testing all 35 paths in `main.run()` required:
 - Success vs failure for each layer
 - Error injection at multiple depths
 
-The tests would be unmaintainable. The problem wasn't test coverage—it was **code structure**.
+The tests would be unmaintainable. The problem wasn't test coverage. It was **code structure**.
 
 ---
 

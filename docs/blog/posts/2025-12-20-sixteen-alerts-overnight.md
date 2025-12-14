@@ -107,7 +107,7 @@ One commit. 16 alerts → 0 alerts.
 
 ## The Source Archive Gap
 
-Scorecard checks every asset in a release. Not just the ones we upload—all of them.
+Scorecard checks every asset in a release. This includes not just the ones we upload, but all of them.
 
 GitHub auto-generates source archives for every release:
 
@@ -209,4 +209,4 @@ The principle of least privilege applies at job level, not workflow level.
 
 ---
 
-*Sixteen alerts appeared. The workflows looked fine. The problem was invisible—permissions scoped too broadly. Job-level scoping cleared the alerts. Least privilege works at the narrowest scope.*
+*Sixteen alerts appeared. The workflows looked fine. The problem was invisible: permissions scoped too broadly. Job-level scoping cleared the alerts. Least privilege works at the narrowest scope.*

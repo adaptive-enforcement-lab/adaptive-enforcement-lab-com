@@ -109,7 +109,7 @@ Always validate configuration against the official schema:
 }
 ```
 
-This catches invalid options immediately. Options like `release-name` don't exist—the schema prevents wasted debugging time.
+This catches invalid options immediately. Options like `release-name` don't exist. The schema prevents wasted debugging time.
 
 ---
 
