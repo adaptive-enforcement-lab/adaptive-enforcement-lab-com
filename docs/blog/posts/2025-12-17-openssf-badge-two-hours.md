@@ -163,4 +163,11 @@ Repository: [adaptive-enforcement-lab/readability](https://github.com/adaptive-e
 
 ---
 
-**Next**: [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md) - How Trivy, SBOM, and GitHub Security integration satisfy OpenSSF vulnerability criteria.
+## Beyond the Badge
+
+The badge certifies the foundation. The journey continues:
+
+- **[The Score That Wouldn't Move](2025-12-18-scorecard-stuck-at-eight.md)** - From signed releases (8/10) to cryptographic provenance (10/10)
+- **[The Wall at 85%](2025-12-19-the-wall-at-eighty-five-percent.md)** - How refactoring unlocked 99% coverage
+- **[Sixteen Alerts Overnight](2025-12-20-sixteen-alerts-overnight.md)** - OpenSSF Scorecard compliance in practice
+- **[Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md)** - Trivy, SBOM, and GitHub Security integration

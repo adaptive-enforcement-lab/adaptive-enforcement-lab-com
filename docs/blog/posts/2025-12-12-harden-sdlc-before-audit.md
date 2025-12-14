@@ -183,7 +183,11 @@ Auditor could verify: No GPL licenses. No HIGH CVEs. Dependencies matched versio
 
 These same practices earned our readability project OpenSSF Best Practices certification—read about the [2-hour documentation sprint](2025-12-17-openssf-badge-two-hours.md).
 
-See [SBOM Generation](../../developer-guide/sdlc-hardening/sbom-generation.md) and [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md).
+**Supply Chain Defense Stack:**
+
+- [SBOM Generation](../../developer-guide/sdlc-hardening/sbom-generation.md) and [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md) - Scan and attest
+- [The Score That Wouldn't Move](2025-12-18-scorecard-stuck-at-eight.md) - SLSA provenance journey from 8/10 to 10/10
+- [Sixteen Alerts Overnight](2025-12-20-sixteen-alerts-overnight.md) - OpenSSF Scorecard compliance in practice
 
 ### Runtime Enforcement: Kyverno
 
