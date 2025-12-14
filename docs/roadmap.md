@@ -18,6 +18,11 @@ Adaptive Enforcement Lab is actively building. Here's what's coming.
 
     We're building a content pipeline for actionable security guidance. Recent posts:
 
+    - ✅ **[The Regex That Fixed Everything](blog/posts/2025-12-25-regex-that-fixed-everything.md)** - Codecov component paths
+    - ✅ **[One Line: secrets: inherit](blog/posts/2025-12-24-one-line-secrets-inherit.md)** - Reusable workflow secrets
+    - ✅ **[The File That Wouldn't Verify](blog/posts/2025-12-23-file-wouldnt-verify.md)** - SLSA version tag requirement
+    - ✅ **[Go's Boring Security Tooling](blog/posts/2025-12-22-go-boring-security-tooling.md)** - Standard toolkit over SaaS
+    - ✅ **[Test Coverage as Security Signal](blog/posts/2025-12-21-coverage-as-security-signal.md)** - 0% to 99% for OpenSSF compliance
     - ✅ **[Sixteen Alerts Overnight](blog/posts/2025-12-20-sixteen-alerts-overnight.md)** - When permissions look fine but Scorecard disagrees
     - ✅ **[The Wall at 85%](blog/posts/2025-12-19-the-wall-at-eighty-five-percent.md)** - When tests aren't the problem
     - ✅ **[The Score That Wouldn't Move](blog/posts/2025-12-18-scorecard-stuck-at-eight.md)** - Stuck at 8/10 with signed releases
