@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.8.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.7.0...0.8.0) (2025-12-14)
+
+
+### New Content
+
+* add OpenSSF journey story posts and developer guide articles ([#166](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/166)) ([36c56aa](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/36c56aa18356c9efd61c29da25c1b035e034f004))
+* **blog:** Add OpenSSF implementation discovery posts ([#169](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/169)) ([6c07f7b](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6c07f7b584082b52c0a85e8c898675897ab87ad9))
+
+
+### Content Fixes
+
+* **commands:** emphasize blog vs article distinction in content commands ([#168](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/168)) ([59a756f](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/59a756f8313f9f221507d31d66be076ebe932742))
+
 ## [0.7.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.11...0.7.0) (2025-12-14)
 
 
