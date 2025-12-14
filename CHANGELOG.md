@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.8.0...0.8.1) (2025-12-14)
+
+
+### Documentation Updates
+
+* update roadmap with 5 new blog posts from PR [#169](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/169) ([#171](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/171)) ([cd811aa](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/cd811aa6ad145466b079d0979b996620f09dea65)), closes [#170](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/170)
+
 ## [0.8.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.7.0...0.8.0) (2025-12-14)
 
 
