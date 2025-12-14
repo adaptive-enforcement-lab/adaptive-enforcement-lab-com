@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.8.1...0.8.2) (2025-12-14)
+
+
+### Content Fixes
+
+* **readability:** eliminate all mid-sentence dash patterns for v1.11.0 ([#173](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/173)) ([ac33dc3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/ac33dc3b4aea833b57ba54681bdce800f7bb426e))
+
 ## [0.8.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.8.0...0.8.1) (2025-12-14)
 
 
