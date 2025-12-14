@@ -7,17 +7,17 @@ categories:
   - Quality Assurance
   - DevSecOps
 description: >-
-  Started at 0% coverage. OpenSSF required 95%. Hit a wall at 85%. Refactoring broke through. 99% became the security signal.
+  Started at 0% coverage. OpenSSF Gold requires 90%. We targeted 95%. Hit a wall at 85%. Refactoring broke through. 99% became the security signal.
 slug: coverage-as-security-signal
 ---
 
 # The Coverage That Mattered: When 99% Became a Security Signal
 
-The OpenSSF Best Practices badge has one non-negotiable requirement for testing: **95% code coverage**.
+The OpenSSF Best Practices Gold badge requires **90% statement coverage** and **80% branch coverage**.
 
-Not 80%. Not "comprehensive tests." **95% minimum**, enforced.
+We set our bar higher: **95% minimum**. Self-imposed. Non-negotiable.
 
-We started at 0%. We needed that badge.
+We started at 0%. We wanted that badge. Enterprise users check for it. Auditors recognize it.
 
 <!-- more -->
 
@@ -27,15 +27,16 @@ We started at 0%. We needed that badge.
 
 OpenSSF Best Practices isn't a suggestion. It's certification that your project follows security best practices.
 
-The testing criteria are clear:
+The Gold-level testing criteria:
 
 - ✅ Automated test suite
 - ✅ Tests invocable with standard command (`go test ./...`)
-- ✅ **95%+ code coverage**
+- ✅ **90% statement coverage** + **80% branch coverage** (Gold requirement)
+- ✅ **95%+ our internal standard** (exceeding Gold)
 - ✅ Race detection enabled
 - ✅ Tests run in CI
 
-Most projects have the first four. The coverage threshold stops them.
+Most projects have the automation. The coverage threshold stops them.
 
 ---
 
@@ -56,7 +57,7 @@ Starting from zero tests, we built comprehensive test suites for five packages i
 
 The output formatters were easy—pure functions. The parser required mocking file I/O. The analyzer needed table-driven tests for metric variations.
 
-But the CLI package dragged down the total. **85.8% wasn't 95%.**
+But the CLI package dragged down the total. **85.8% wasn't our 95% target.**
 
 We wrote more tests. Coverage didn't move.
 
@@ -172,15 +173,17 @@ Coverage became a **blocking gate**, not a suggestion.
 
 This wasn't about quality for quality's sake. It was about **certification**.
 
-OpenSSF Best Practices badge criteria:
+OpenSSF Best Practices Gold badge criteria:
 
 - ✅ **test** - Automated test suite exists
 - ✅ **test_invocation** - `go test ./...` works
-- ✅ **test_most** - 95%+ coverage
+- ✅ **test_statement_coverage90** - 90% statement coverage (Gold)
+- ✅ **test_branch_coverage80** - 80% branch coverage (Gold)
+- ✅ **Our standard** - 95%+ coverage (exceeding Gold)
 - ✅ **test_continuous_integration** - CI runs tests
 - ✅ **dynamic_analysis** - Race detector enabled
 
-Without 95% coverage, you don't pass. Without passing, you don't get the badge. Without the badge, you don't signal security maturity to auditors and enterprise users.
+Without meeting Gold requirements, you don't get the badge. Without the badge, you don't signal security maturity to auditors and enterprise users. We exceeded Gold (90%/80%) by targeting 95%.
 
 **Coverage became a security signal.** Not because tests prevent bugs (they do), but because coverage thresholds prove you take quality seriously enough to measure and enforce it.
 
@@ -234,9 +237,9 @@ Coverage went from a quality metric to a **security certification requirement**.
 ## Related Patterns
 
 - **[The Wall at 85%](2025-12-19-the-wall-at-eighty-five-percent.md)** - Complexity blocking coverage (same journey, different angle)
-- **[OpenSSF Best Practices Badge](2025-12-17-openssf-badge-two-hours.md)** - The badge that required 95% coverage
+- **[OpenSSF Best Practices Badge](2025-12-17-openssf-badge-two-hours.md)** - The Gold badge that requires 90% coverage (we exceeded it)
 - **[SDLC Hardening](2025-12-12-harden-sdlc-before-audit.md)** - Testing in audit context
 
 ---
 
-*Started at 0%. OpenSSF required 95%. Hit a wall at 85%. Refactoring broke through. 99% became enforced. Coverage became the security signal auditors recognize.*
+*Started at 0%. OpenSSF Gold requires 90%. We targeted 95%. Hit a wall at 85%. Refactoring broke through. 99% became enforced. Coverage became the security signal auditors recognize.*
