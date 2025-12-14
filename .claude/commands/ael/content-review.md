@@ -109,14 +109,30 @@ This PR introduces content that matches roadmap item: "ROADMAP_ITEM"
 **Related Issues to Close**:
 - #NUMBER - ISSUE_TITLE
 
+### Content Type Validation
+
+**CRITICAL CHECK**: Blog posts vs Articles distinction
+
+For each blog post in the PR:
+- Check if it contains workflows, code blocks, or step-by-step instructions
+- If YES → FLAG: This should be an article, not a blog post
+- Blog posts should tell emotional journeys and link to articles for tactics
+
+For each article in the PR:
+- Check if it's in the correct location (developer-guide, operator-manual, sdlc-hardening)
+- Check if blog posts link to it for implementation details
+- Articles should be matter-of-fact how-to guides
+
 ### Content Standards Check
 
 | Standard | Status | Notes |
 |----------|--------|-------|
+| **Blog vs Article** | PASS/FLAG | Blog posts must NOT be how-tos |
 | Frontmatter complete | PASS/FAIL | missing: X |
 | `<!-- more -->` marker | PASS/FAIL/N/A | |
 | Description under 160 chars | PASS/FAIL | current: X chars |
 | No admonitions above fold | PASS/FAIL | |
+| Blog posts link to articles | PASS/FAIL/N/A | Blog posts should reference articles |
 
 ### Recommendations
 
@@ -125,8 +141,11 @@ This PR introduces content that matches roadmap item: "ROADMAP_ITEM"
 
 ## Important Rules
 
-1. **Be precise about category status** - Clearly distinguish existing, planned, and unexpected new categories
-2. **Connect to roadmap** - Always check if new content advances roadmap items
-3. **Surface closeable issues** - If creating a planned category, find related issues
-4. **Validate standards** - Check blog post format requirements from CONTRIBUTING.md
-5. **Suggest, don't block** - Provide recommendations, not hard failures
+1. **VALIDATE CONTENT TYPE** - Blog posts with workflows/code/how-tos are WRONG. They should be articles. This is the most critical check.
+2. **Articles are matter-of-fact** - How-to guides belong in developer-guide, operator-manual, or sdlc-hardening
+3. **Blog posts are emotional journeys** - They tell stories and link to articles for implementation
+4. **Be precise about category status** - Clearly distinguish existing, planned, and unexpected new categories
+5. **Connect to roadmap** - Always check if new content advances roadmap items
+6. **Surface closeable issues** - If creating a planned category, find related issues
+7. **Validate standards** - Check blog post format requirements from CONTRIBUTING.md
+8. **Suggest, don't block** - Provide recommendations, not hard failures
