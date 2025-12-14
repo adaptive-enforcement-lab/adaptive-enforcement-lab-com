@@ -52,23 +52,28 @@ Policy becomes code, not documentation.
 
 ## OPA vs Kyverno
 
-Two main options for policy enforcement:
+Two options for Kubernetes policy enforcement:
 
 ### Open Policy Agent (OPA)
 
-- General-purpose policy engine
-- Rego language (new language to learn)
-- Works everywhere (K8s, CI/CD, APIs)
-- More powerful, more complex
+- **Language**: Rego (purpose-built policy language)
+- **Scope**: General-purpose (K8s, APIs, cloud services, application logic)
+- **Learning curve**: Steeper (new language, abstract concepts)
+- **Use case**: Multi-platform policy enforcement across entire stack
 
 ### Kyverno
 
-- Kubernetes-native
-- YAML policies (same as manifests)
-- Built for K8s admission control
-- Simpler learning curve
+- **Language**: YAML + JMESPath (no new language to learn)
+- **Scope**: Kubernetes-focused (admission control, CLI validation, mutations, generation)
+- **Learning curve**: Gentler (if you know K8s YAML, you know Kyverno)
+- **Use case**: Kubernetes policy enforcement with built-in K8s intelligence
 
-For Kubernetes-only enforcement, Kyverno wins on simplicity.
+**Both run in admission control, CI/CD, and local development.** The choice depends on scope:
+
+- **Choose OPA** if you need policies across multiple platforms (databases, APIs, cloud IAM, service mesh)
+- **Choose Kyverno** if your policies are Kubernetes-specific and you want native K8s resource awareness
+
+Neither is "more powerful"—they target different problems.
 
 ---
 
