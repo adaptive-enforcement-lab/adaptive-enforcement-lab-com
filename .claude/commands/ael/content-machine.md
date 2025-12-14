@@ -49,22 +49,56 @@ If this is a topic or keyword, use it as a content focus area.
 
 Analyze all gathered context to identify content opportunities:
 
+### CRITICAL: Content Type Distinction
+
+**Articles** (Developer Guide, Operator Manual, SDLC Hardening):
+
+- Matter-of-fact code, tactics, and strategy
+- How-to guides with workflows, commands, configuration
+- Reference material for implementation
+- Examples: "SLSA Provenance Implementation", "Scorecard Compliance Patterns"
+
+**Blog Posts**:
+
+- Emotional journey: struggle → discovery → victory
+- Storytelling with links to articles for tactical details
+- NO how-to content (that belongs in articles)
+- Examples: "The Score That Wouldn't Move", "Sixteen Alerts Overnight"
+
+**If a blog post contains workflows, code blocks, or step-by-step instructions, it's wrong. Write an article instead.**
+
+### New Article Opportunities
+
+Articles are needed when:
+
+- Issues request how-to guides or implementation patterns
+- Blog posts need tactical reference material to link to
+- Gaps exist in Developer Guide, Operator Manual, or SDLC Hardening
+- Users need configuration examples, workflow patterns, or command reference
+
+Articles belong in:
+
+- `docs/developer-guide/` - Application code patterns
+- `docs/developer-guide/sdlc-hardening/` - CI/CD enforcement patterns
+- `docs/operator-manual/` - Infrastructure operations
+
 ### New Blog Post Opportunities
 
 Blog posts are ideal for:
 
-- Lessons learned from implementation work
-- Pattern discoveries or refinements
-- Corrections or evolutions of previous posts (always create follow-ups, never edit old posts)
-- Deep dives on topics mentioned in issues or roadmap
-- Responses to external resources that align with AEL's mission
+- Lessons learned from implementation work (the emotional journey, NOT the how-to)
+- Pattern discoveries with struggle/breakthrough narrative
+- Responses to external resources (tell the story, link to articles for tactics)
+- Follow-ups to previous posts (never edit old posts)
+
+**Blog posts MUST link to articles for implementation details.**
 
 ### Documentation Updates
 
 Look for:
 
 - Gaps in the operator manual
-- Missing how-to guides
+- Missing how-to guides (these are ARTICLES, not blog posts)
 - Outdated procedures
 - New categories or sections needed
 
@@ -85,7 +119,7 @@ Provide a structured content recommendation report:
 
 ### Priority 1: Immediate Actions
 
-[List high-value, low-effort content that should be created now]
+[List high-value, low-effort content that should be created now - separate articles from blog posts]
 
 ### Priority 2: Planned Content
 
@@ -99,15 +133,25 @@ Provide a structured content recommendation report:
 
 [List any old blog posts that should link to new content when created]
 
+### Suggested Article Outlines
+
+For each recommended article, provide:
+- **Title**: Clear, descriptive (e.g., "SLSA Provenance Implementation")
+- **Location**: developer-guide/, operator-manual/, or sdlc-hardening/
+- **Type**: How-to guide, reference, configuration pattern
+- **Key Sections**: What tactical content it should contain
+- **Linked From**: Which blog posts will link to this for implementation details
+
 ### Suggested Blog Post Outlines
 
 For each recommended blog post, provide:
-- **Title**: Compelling, action-oriented
+- **Title**: Compelling, emotional hook (e.g., "The Score That Wouldn't Move")
 - **Slug**: URL-friendly
 - **Categories**: From existing or suggest new
 - **Description**: Under 160 chars for RSS/social
-- **Key Points**: 3-5 bullet points
-- **Links From**: Which existing posts should link to this new one
+- **Story Arc**: Hook → Struggle → Discovery → Victory
+- **Links To**: Which articles provide the tactical implementation
+- **NO CODE**: Blog posts tell the story, articles have the how-to
 ```
 
 ## Content Guidelines
@@ -121,8 +165,12 @@ Remember these rules from CONTRIBUTING.md:
 
 ## Important Rules
 
-1. **Never suggest editing existing blog posts** - Always create follow-up posts
-2. **Always suggest linking** - Old posts should link to new related content
-3. **Stay on-mission** - Content must align with "secure development as enforced standard"
-4. **Be specific** - Provide actionable outlines, not vague ideas
-5. **Consider the roadmap** - Prioritize content that advances roadmap items
+1. **ARTICLES FIRST, BLOG POSTS SECOND** - If tactical how-to content is needed, create articles first. Blog posts come second to tell the story and link to the articles.
+2. **Blog posts are NOT how-tos** - If you're suggesting a blog post with code blocks, workflows, or step-by-step instructions, it's wrong. Write an article instead.
+3. **Articles are matter-of-fact** - Code, tactics, configuration, commands. No storytelling, no emotional journey.
+4. **Blog posts are emotional journeys** - Struggle → discovery → victory. Link to articles for implementation.
+5. **Never suggest editing existing blog posts** - Always create follow-up posts
+6. **Always suggest linking** - Old posts should link to new related content, blog posts link to articles
+7. **Stay on-mission** - Content must align with "secure development as enforced standard"
+8. **Be specific** - Provide actionable outlines, not vague ideas
+9. **Consider the roadmap** - Prioritize content that advances roadmap items
