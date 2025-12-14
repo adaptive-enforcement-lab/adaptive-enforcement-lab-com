@@ -298,9 +298,9 @@ Refactor for testability first. Coverage follows.
 ## Related Patterns
 
 - [Coverage Enforcement](coverage-enforcement.md) - CI, pre-commit, Codecov integration
-- [OpenSSF Best Practices Badge](../../blog/posts/2025-12-17-openssf-badge-two-hours.md) - High coverage made certification trivial
-- [Always Works QA](../../blog/posts/2025-12-08-always-works-qa-methodology.md) - Coverage as quality gate
-- [SDLC Hardening](../../blog/posts/2025-12-12-harden-sdlc-before-audit.md) - Testing in audit context
+- [OpenSSF Best Practices Badge](../../../blog/posts/2025-12-17-openssf-badge-two-hours.md) - High coverage made certification trivial
+- [Always Works QA](../../../blog/posts/2025-12-08-always-works-qa-methodology.md) - Coverage as quality gate
+- [SDLC Hardening](../../../blog/posts/2025-12-12-harden-sdlc-before-audit.md) - Testing in audit context
 
 ---
 

@@ -279,6 +279,13 @@ nav:
               - Implementation Patterns: developer-guide/sdlc-hardening/pre-commit-hooks-patterns.md
           - Vulnerability Scanning: developer-guide/sdlc-hardening/vulnerability-scanning.md
           - SBOM Generation: developer-guide/sdlc-hardening/sbom-generation.md
+          - Supply Chain Security:
+              - SLSA Provenance: developer-guide/sdlc-hardening/supply-chain/slsa-provenance.md
+              - Scorecard Compliance: developer-guide/sdlc-hardening/supply-chain/scorecard-compliance.md
+              - Workflow Examples: developer-guide/sdlc-hardening/supply-chain/scorecard-workflow-examples.md
+          - Testing Enforcement:
+              - Coverage Patterns: developer-guide/sdlc-hardening/testing/coverage-patterns.md
+              - Coverage Enforcement: developer-guide/sdlc-hardening/testing/coverage-enforcement.md
           - Audit Evidence: developer-guide/sdlc-hardening/audit-evidence.md
           - Implementation Roadmap:
               - developer-guide/sdlc-hardening/implementation-roadmap/index.md

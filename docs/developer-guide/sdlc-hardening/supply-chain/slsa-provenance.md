@@ -217,8 +217,8 @@ This is the gap between "I signed this" and "GitHub's infrastructure built this 
 ## Related Patterns
 
 - [OpenSSF Scorecard Compliance](scorecard-compliance.md) - Job-level permissions, dependency pinning
-- [SBOM Generation](../sdlc-hardening/sbom-generation.md) - Complete attestation stack
-- [Zero-Vulnerability Pipelines](../../blog/posts/2025-12-15-zero-vulnerability-pipelines.md) - Trivy + SBOM + SLSA
+- [SBOM Generation](../sbom-generation.md) - Complete attestation stack
+- [Zero-Vulnerability Pipelines](../../../blog/posts/2025-12-15-zero-vulnerability-pipelines.md) - Trivy + SBOM + SLSA
 
 ---
 

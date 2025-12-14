@@ -263,7 +263,7 @@ gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
 
 - [Scorecard Compliance](scorecard-compliance.md) - Principles behind these patterns
 - [SLSA Provenance](slsa-provenance.md) - Deep dive on provenance generation
-- [SBOM Generation](../sdlc-hardening/sbom-generation.md) - Complete attestation stack
+- [SBOM Generation](../sbom-generation.md) - Complete attestation stack
 
 ---
 

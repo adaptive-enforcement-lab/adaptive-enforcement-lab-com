@@ -192,7 +192,7 @@ We moved from "we signed our releases" to "our builds are cryptographically prov
 The jump from 8 to 10 wasn't about doing more. It was about proving more.
 
 !!! tip "Implementation Guide"
-    See [SLSA Provenance Implementation](../../developer-guide/supply-chain/slsa-provenance.md) for workflow code, hash generation patterns, and verification commands.
+    See [SLSA Provenance Implementation](../../developer-guide/sdlc-hardening/supply-chain/slsa-provenance.md) for workflow code, hash generation patterns, and verification commands.
 
 ---
 

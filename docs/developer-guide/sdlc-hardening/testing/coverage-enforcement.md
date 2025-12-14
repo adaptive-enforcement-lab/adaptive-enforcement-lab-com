@@ -163,7 +163,7 @@ High coverage with proper enforcement satisfies multiple OpenSSF Best Practices 
 - **CI enforcement** (fails PR on coverage drop)
 - **Pre-commit enforcement** (prevents low-coverage commits)
 
-See: [OpenSSF Best Practices Badge](../../blog/posts/2025-12-17-openssf-badge-two-hours.md)
+See: [OpenSSF Best Practices Badge](../../../blog/posts/2025-12-17-openssf-badge-two-hours.md)
 
 ---
 
@@ -230,8 +230,8 @@ See: [OpenSSF Best Practices Badge](../../blog/posts/2025-12-17-openssf-badge-tw
 ## Related Patterns
 
 - [Coverage Patterns](coverage-patterns.md) - Refactoring for testability
-- [OpenSSF Best Practices Badge](../../blog/posts/2025-12-17-openssf-badge-two-hours.md) - Coverage requirements
-- [Always Works QA](../../blog/posts/2025-12-08-always-works-qa-methodology.md) - Coverage as quality gate
+- [OpenSSF Best Practices Badge](../../../blog/posts/2025-12-17-openssf-badge-two-hours.md) - Coverage requirements
+- [Always Works QA](../../../blog/posts/2025-12-08-always-works-qa-methodology.md) - Coverage as quality gate
 
 ---
 
