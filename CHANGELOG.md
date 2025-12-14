@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.11...0.7.0) (2025-12-14)
+
+
+### New Content
+
+* add OpenSSF Best Practices Badge blog post ([#164](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/164)) ([0df2574](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/0df25745fc6dea8e00e1e0ae52c0abcfe1ead14d))
+* add shift-left validation to Kyverno blog post ([#165](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/165)) ([213eebc](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/213eebc542039e93c29ce58b949c845143ff26a0))
+
+
+### Content Fixes
+
+* update readability action reference from [@1](https://github.com/1) to [@latest](https://github.com/latest) ([#158](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/158)) ([c646b09](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c646b0921254a3c8f4eb403cf1e6876714f45ae6))
+
 ## [0.6.11](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.6.10...0.6.11) (2025-12-13)
 
 
