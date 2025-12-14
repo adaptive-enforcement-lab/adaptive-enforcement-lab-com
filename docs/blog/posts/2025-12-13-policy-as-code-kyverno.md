@@ -72,6 +72,57 @@ For Kubernetes-only enforcement, Kyverno wins on simplicity.
 
 ---
 
+## Shift Left: CI/CD and Local Validation
+
+Kyverno isn't just runtime admission control. It runs **anywhere**:
+
+### Local Development
+
+Test policies before committing:
+
+```bash
+# Install Kyverno CLI
+brew install kyverno
+
+# Validate manifests locally
+kyverno apply policy.yaml --resource deployment.yaml
+
+# Test against all manifests in a directory
+kyverno apply policies/ --resource manifests/
+```
+
+Developer catches violations **before** pushing to CI. Faster feedback loop.
+
+### CI/CD Pipeline
+
+Block deployments with policy violations:
+
+```yaml
+- name: Validate with Kyverno
+  run: |
+    kyverno apply policies/ --resource k8s/
+    if [ $? -ne 0 ]; then
+      echo "Policy violations detected. Fix before merging."
+      exit 1
+    fi
+```
+
+PR can't merge with policy violations. Same policies, different enforcement points.
+
+### Kyverno Playground
+
+Experiment without installing anything: **[playground.kyverno.io](https://playground.kyverno.io/)**
+
+- Write policies in browser
+- Test against sample resources
+- Share examples with team
+- Learn policy syntax interactively
+
+!!! tip "Three Enforcement Points"
+    Run the same Kyverno policies in three places: locally (fast feedback), CI/CD (PR gate), and runtime (final defense). Each layer catches what developers miss.
+
+---
+
 ## Implementation Guide
 
 Kyverno enforces policies at multiple layers:
@@ -85,14 +136,15 @@ Kyverno enforces policies at multiple layers:
 
 ## The Stack
 
-Policy enforcement is layered:
+Policy enforcement is layered. **Kyverno runs at three of these layers**:
 
 1. **Pre-commit hooks** - Block forbidden tech before commit
-2. **CI validation** - Kyverno CLI tests manifests
-3. **Admission control** - Kyverno blocks invalid resources
-4. **Runtime enforcement** - Pod Security Standards, Network Policies
+2. **Local validation** - `kyverno apply` in developer workflow
+3. **CI validation** - Kyverno CLI fails PR builds
+4. **Admission control** - Kyverno blocks at Kubernetes API
+5. **Runtime enforcement** - Pod Security Standards, Network Policies
 
-Each layer catches what previous layers miss.
+Same policies. Different enforcement points. Each layer catches what previous layers miss.
 
 See [How to Harden Your SDLC Before the Audit Comes](2025-12-12-harden-sdlc-before-audit.md) for the full stack.
 
