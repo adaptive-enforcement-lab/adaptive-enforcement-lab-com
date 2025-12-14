@@ -83,7 +83,7 @@ Uses [upsert pattern](../../../../developer-guide/efficiency-patterns/idempotenc
 ## Safe Re-execution
 
 | Operation | First Run | Subsequent Runs |
-|-----------|-----------|-----------------|
+| ----------- | ----------- | ----------------- |
 | Branch creation | Creates new branch | Resets to remote state |
 | File copy | Copies files | Overwrites with same content |
 | Change detection | Detects changes | Reports no changes |

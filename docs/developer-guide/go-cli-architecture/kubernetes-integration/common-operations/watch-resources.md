@@ -134,7 +134,7 @@ func (c *Client) WaitForDeploymentReady(ctx context.Context, name string, timeou
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Use context cancellation** | Pass context for clean shutdown |
 | **Always defer Stop()** | Release watch connections |
 | **Handle reconnection** | Watches can disconnect; implement retry logic |

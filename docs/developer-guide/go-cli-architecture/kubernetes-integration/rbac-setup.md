@@ -97,7 +97,7 @@ roleRef:
 ## Permission Patterns
 
 | Operation | API Group | Resource | Verbs |
-|-----------|-----------|----------|-------|
+| ----------- | ----------- | ---------- | ------- |
 | List deployments | `apps` | `deployments` | `get`, `list`, `watch` |
 | Rollout restart | `apps` | `deployments` | `patch` |
 | Read pod status | `""` (core) | `pods` | `get`, `list` |

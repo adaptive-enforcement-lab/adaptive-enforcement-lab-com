@@ -14,7 +14,7 @@ Five patterns for making operations idempotent. Each has tradeoffs; choose based
 ## Pattern Overview
 
 | Pattern | Best For | Tradeoff |
-|---------|----------|----------|
+| --------- | ---------- | ---------- |
 | [Check-Before-Act](check-before-act.md) | Creating resources | Race conditions possible |
 | [Upsert](upsert.md) | APIs with atomic operations | Not universally available |
 | [Force Overwrite](force-overwrite.md) | Content that can be safely replaced | Destructive if misused |
@@ -101,7 +101,7 @@ flowchart TD
 ```
 
 | Scenario | Recommended Pattern |
-|----------|-------------------|
+| ---------- | ------------------- |
 | Creating resources (PRs, branches, files) | [Check-Before-Act](check-before-act.md) |
 | Updating existing resources | [Upsert](upsert.md) or [Force Overwrite](force-overwrite.md) |
 | Operations with natural keys | [Unique Identifiers](unique-identifiers.md) |

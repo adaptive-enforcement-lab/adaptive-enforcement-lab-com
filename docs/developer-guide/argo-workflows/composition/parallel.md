@@ -129,7 +129,7 @@ steps:
 Now both tasks run to completion regardless of failures. The step's overall status depends on both results:
 
 | Tests | Lint | Step Status |
-|-------|------|-------------|
+| ------- | ------ | ------------- |
 | Pass | Pass | Succeeded |
 | Pass | Fail | Failed |
 | Fail | Pass | Failed |

@@ -22,7 +22,7 @@ This section covers:
     For Kubernetes-native CLIs, use **Cobra + Viper**. It powers kubectl, docker, gh, and most ecosystem tools. Your users already know the patterns.
 
 | Need | Recommendation |
-|------|----------------|
+| ------ | ---------------- |
 | Kubernetes ecosystem CLI | **Cobra** + Viper |
 | Simple utility | **urfave/cli** |
 | Type-safe struct definitions | **Kong** |
@@ -32,7 +32,7 @@ This section covers:
 ## Decision Matrix
 
 | Criteria | Cobra | urfave/cli | Kong |
-|----------|-------|------------|------|
+| ---------- | ------- | ------------ | ------ |
 | Ecosystem maturity | High | Medium | Growing |
 | Learning curve | Medium | Low | Low |
 | Type safety | Low | Low | High |

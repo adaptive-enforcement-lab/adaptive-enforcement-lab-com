@@ -12,7 +12,7 @@ Patterns for detecting, reporting, and recovering from failures.
 Error handling is about **when** and **how** your automation responds to problems.
 
 | Pattern | When to Use | Strategy |
-|---------|-------------|----------|
+| --------- | ------------- | ---------- |
 | [Fail Fast](fail-fast/index.md) | Invalid input, missing config | Stop immediately, report clearly |
 | [Prerequisite Checks](prerequisite-checks/index.md) | Complex preconditions | Validate all upfront before work |
 | [Graceful Degradation](graceful-degradation/index.md) | Fallbacks exist | Degrade to safer state, continue |
@@ -42,7 +42,7 @@ flowchart TD
 ## Quick Reference
 
 | Scenario | Pattern | Reasoning |
-|----------|---------|-----------|
+| ---------- | --------- | ----------- |
 | Missing required config | Fail Fast | Can't continue safely |
 | Invalid user input | Fail Fast | User error, report immediately |
 | Complex deployment requirements | Prerequisite Checks | Validate tools, access, state |

@@ -48,7 +48,7 @@ Release-please finds this comment and updates the version number on the same lin
 ## Use Cases
 
 | Use Case | File | Annotation |
-|----------|------|------------|
+| ---------- | ------ | ------------ |
 | Documentation version | `README.md` | `Version: 1.0.0 # x-release-please-version` |
 | Distributed guidelines | `CONTRIBUTING.md` | `version: 1.0.0 # x-release-please-version` |
 | API version header | `openapi.yaml` | `version: '1.0.0' # x-release-please-version` |

@@ -7,7 +7,7 @@ This guide covers EventSource, EventBus, and Sensor configuration for event-driv
 ## Components
 
 | Component | Purpose | Guide |
-|-----------|---------|-------|
+| ----------- | --------- | ------- |
 | **EventSource** | Connect to external systems (Pub/Sub, webhooks) | [EventSource Configuration](event-sources.md) |
 | **EventBus** | Message broker for event delivery | [EventBus Configuration](event-bus.md) |
 | **Sensor** | Filter events and trigger workflows | [Sensor Configuration](sensors.md) |

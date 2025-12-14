@@ -109,7 +109,7 @@ myctl select --output names | xargs -I {} kubectl describe deployment/{}
 ## Output Format Guidelines
 
 | Format | Use Case | Example |
-|--------|----------|---------|
+| -------- | ---------- | --------- |
 | `table` | Human reading in terminal | Default, formatted columns |
 | `json` | Scripting and parsing | `jq` processing |
 | `names` | Piping to other commands | One item per line |
@@ -176,7 +176,7 @@ func debug(format string, args ...interface{}) {
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Default to table** | Human-readable output by default |
 | **Support JSON** | Enable scripting and automation |
 | **One item per line** | For `names` format, enable easy piping |

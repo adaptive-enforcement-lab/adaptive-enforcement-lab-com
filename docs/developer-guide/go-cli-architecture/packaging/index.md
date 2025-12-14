@@ -40,7 +40,7 @@ graph LR
 ## Base Image Selection
 
 | Image | Size | Use Case |
-|-------|------|----------|
+| ------- | ------ | ---------- |
 | `gcr.io/distroless/static` | ~2MB | Pure Go, no CGO |
 | `gcr.io/distroless/base` | ~20MB | Needs libc |
 | `alpine:3.19` | ~7MB | Need shell/debugging |
@@ -51,7 +51,7 @@ graph LR
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Static binaries** | Use `CGO_ENABLED=0` for portable builds |
 | **Non-root user** | Always run as non-root in containers |
 | **Read-only filesystem** | Set `readOnlyRootFilesystem: true` |

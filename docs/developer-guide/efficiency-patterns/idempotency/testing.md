@@ -95,7 +95,7 @@ The real test is partial failure:
 ## Common Test Failures
 
 | Symptom | Likely Cause |
-|---------|--------------|
+| --------- | -------------- |
 | Duplicate PRs | Missing check-before-create |
 | "Branch already exists" error | Not using `-B` flag or not checking first |
 | Empty commit error | Not checking for changes before commit |

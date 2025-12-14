@@ -146,7 +146,7 @@ The first version had none of this. Events that failed just... failed. I'd notic
 From image push to deployment restart:
 
 | Phase | V1 (Polling) | V2 (Events) |
-|-------|--------------|-------------|
+| ------- | -------------- | ------------- |
 | Detection | 30-60s | <1s |
 | Lookup | 5-10s | <5ms |
 | Restart | 1-2s | 1-2s |

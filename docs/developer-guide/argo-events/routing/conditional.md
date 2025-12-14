@@ -89,7 +89,7 @@ Only the trigger whose condition matches will fire.
 Conditions use CEL (Common Expression Language):
 
 | Operator | Description | Example |
-|----------|-------------|---------|
+| ---------- | ------------- | --------- |
 | `==` | Equality | `body.branch == "main"` |
 | `!=` | Inequality | `body.author != "bot"` |
 | `matches` | Regex match | `body.tag matches "^v[0-9]+"` |

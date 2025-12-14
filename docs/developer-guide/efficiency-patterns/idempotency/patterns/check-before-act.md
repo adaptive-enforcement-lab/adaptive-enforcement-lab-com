@@ -307,7 +307,7 @@ fi
 ## Comparison with Other Patterns
 
 | Aspect | Check-Before-Act | [Upsert](upsert.md) | [Force Overwrite](force-overwrite.md) |
-|--------|-----------------|--------|-----------------|
+| -------- | ----------------- | -------- | ----------------- |
 | Race condition safe | No | Yes | Yes |
 | Requires API support | No | Yes | Depends |
 | Visibility into state | High | Low | Low |

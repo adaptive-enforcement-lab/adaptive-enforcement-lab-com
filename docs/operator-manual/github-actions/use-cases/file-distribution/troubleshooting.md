@@ -175,7 +175,7 @@ jobs:
 ## Error Reference
 
 | Error | Cause | Solution |
-|-------|-------|----------|
+| ------- | ------- | ---------- |
 | `404 Not Found` | Repo doesn't exist or no access | Check installation scope |
 | `403 Forbidden` | Insufficient permissions | Review app permissions |
 | `422 Unprocessable` | Invalid PR parameters | Check base/head branch names |

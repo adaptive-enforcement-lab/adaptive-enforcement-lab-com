@@ -49,7 +49,7 @@ The flask integrated with the gear shows that **experimentation and automation a
 ## Color Palette
 
 | Color | Hex | Usage |
-|-------|-----|-------|
+| ------- | ----- | ------- |
 | Shield Blue | `#2196F3` | Primary brand, protection elements |
 | Lab Teal | `#26A69A` | Experimentation, growth, success states |
 | Dark Background | `#121212` | Contrast, focus, professional tone |

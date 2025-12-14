@@ -21,7 +21,7 @@ The tradeoff is complexity. Composed workflows have more moving parts, more YAML
 ## Patterns
 
 | Pattern | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Spawning Child Workflows](spawning-children.md) | Create and wait for child workflow completion |
 | [Parallel Execution](parallel.md) | Run multiple workflows simultaneously |
 | [DAG Orchestration](dag.md) | Dependency-based execution ordering |

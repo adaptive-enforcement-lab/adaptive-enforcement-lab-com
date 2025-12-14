@@ -167,7 +167,7 @@ This pattern is useful when a volume needs preparation that requires elevated pr
 ## When to Use Init Containers vs Steps
 
 | Aspect | Init Containers | Steps |
-|--------|-----------------|-------|
+| -------- | ----------------- | ------- |
 | Execution | Sequential only | Sequential or parallel |
 | Failure handling | Fail-fast | Configurable |
 | Resource sharing | Shared volumes | Explicit passing |

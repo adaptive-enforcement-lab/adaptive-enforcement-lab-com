@@ -79,7 +79,7 @@ deployments, err := client.ListDeployments(ctx)
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Use contexts everywhere** | Pass `context.Context` to all Kubernetes operations |
 | **Handle cancellation** | Respect context cancellation for clean shutdowns |
 | **Wrap errors with context** | Include resource type and name in error messages |

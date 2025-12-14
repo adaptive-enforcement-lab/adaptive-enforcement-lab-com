@@ -24,7 +24,7 @@ spec:
 ```
 
 | Policy | Behavior | Use When |
-|--------|----------|----------|
+| -------- | ---------- | ---------- |
 | `Allow` | Run concurrently (default) | Workflows are independent |
 | `Forbid` | Skip new if previous running | Overlap would cause conflicts |
 | `Replace` | Cancel previous, start new | Only latest result matters |

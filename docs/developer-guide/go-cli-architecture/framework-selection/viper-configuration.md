@@ -182,7 +182,7 @@ func getDefaultNamespace() string {
 ## Configuration Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Environment prefix** | Use `MYCTL_` prefix for all env vars |
 | **Nested config** | Support `cache.ttl` style nested values |
 | **Config file optional** | Never require a config file to exist |

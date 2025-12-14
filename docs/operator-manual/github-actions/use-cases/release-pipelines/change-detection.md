@@ -81,7 +81,7 @@ jobs:
 With `files_yaml`, outputs follow the pattern `<category>_any_changed`:
 
 | YAML Category | Output Variable |
-|---------------|-----------------|
+| --------------- | ----------------- |
 | `contracts:` | `contracts_any_changed` |
 | `backend:` | `backend_any_changed` |
 | `charts:` | `charts_any_changed` |
@@ -196,7 +196,7 @@ if: |
 ```
 
 | Condition | Purpose |
-|-----------|---------|
+| ----------- | --------- |
 | `always()` | Run regardless of dependency status |
 | `!cancelled()` | Don't run if workflow was cancelled |
 | `result == 'success'` | Dependency completed successfully |
@@ -225,7 +225,7 @@ build-status:
         echo "## Build Summary" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "| Component | Changed | Result |" >> $GITHUB_STEP_SUMMARY
-        echo "|-----------|---------|--------|" >> $GITHUB_STEP_SUMMARY
+        echo " | ----------- |--------- | -------- |" >> $GITHUB_STEP_SUMMARY
         echo "| Backend | ${{ needs.detect-changes.outputs.backend_needs_build }} | ${{ needs.build-backend.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
         echo "| Frontend | ${{ needs.detect-changes.outputs.frontend_needs_build }} | ${{ needs.build-frontend.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
         echo "| Charts | ${{ needs.detect-changes.outputs.charts_changed }} | ${{ needs.helm-charts.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
@@ -315,7 +315,7 @@ outputs:
 ## Troubleshooting
 
 | Issue | Cause | Solution |
-|-------|-------|----------|
+| ------- | ------- | ---------- |
 | All jobs skip | Wrong output name | Use `<category>_any_changed` pattern |
 | Cascade not working | Missing OR condition | Check cascade logic includes shared dependencies |
 | Dependent job fails | Skipped dependency | Add `always() && !cancelled()` pattern |

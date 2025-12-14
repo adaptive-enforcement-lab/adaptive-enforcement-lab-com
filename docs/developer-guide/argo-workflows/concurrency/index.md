@@ -19,7 +19,7 @@ Mutex synchronization ensures only one build runs at a time. B's build waits for
 ## Patterns
 
 | Pattern | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Mutex Synchronization](mutex.md) | Exclusive access to shared resources |
 | [Semaphores](semaphores.md) | Limited concurrent access |
 | [TTL Strategy](ttl.md) | Automatic cleanup of completed workflows |

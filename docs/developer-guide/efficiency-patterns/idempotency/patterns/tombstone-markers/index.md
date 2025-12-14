@@ -173,7 +173,7 @@ echo "$RESULT" > "$MARKER_DIR/result.json"
 ## Comparison with Other Patterns
 
 | Aspect | [Check-Before-Act](../check-before-act.md) | [Unique Identifiers](../unique-identifiers.md) | Tombstone Markers |
-|--------|-----------------|-------------------|-------------------|
+| -------- | ----------------- | ------------------- | ------------------- |
 | Tracks completion | No | No | Yes |
 | Works for any operation | No | No | Yes |
 | Requires storage | No | No | Yes |

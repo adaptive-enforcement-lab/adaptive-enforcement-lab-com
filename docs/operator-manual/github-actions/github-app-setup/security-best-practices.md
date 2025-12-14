@@ -35,7 +35,7 @@ Essential security guidelines for managing your GitHub Core App.
 GitHub App tokens generated in workflows:
 
 | Aspect | Details |
-|--------|---------|
+| -------- | --------- |
 | **Lifetime** | 1 hour (automatic expiration) |
 | **Scope** | Exact permissions granted to app |
 | **Renewal** | Regenerated per workflow run |

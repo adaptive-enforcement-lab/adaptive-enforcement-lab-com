@@ -50,7 +50,7 @@ templates:
 **Key elements:**
 
 | Field | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `generateName` | Unique name for each child instance |
 | `workflowTemplateRef` | Reference to the WorkflowTemplate to instantiate |
 | `successCondition` | Status that marks parent step as successful |

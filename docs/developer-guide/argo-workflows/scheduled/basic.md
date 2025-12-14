@@ -41,7 +41,7 @@ This runs every 6 hours. The workflow rebuilds a cache used by other automation.
 ## Configuration Fields
 
 | Field | Purpose | Example |
-|-------|---------|---------|
+| ------- | --------- | --------- |
 | `schedule` | Cron expression for when to run | `"0 */6 * * *"` |
 | `timezone` | Timezone for schedule interpretation | `"Europe/Zurich"` |
 | `startingDeadlineSeconds` | Grace period to start after scheduled time | `60` |

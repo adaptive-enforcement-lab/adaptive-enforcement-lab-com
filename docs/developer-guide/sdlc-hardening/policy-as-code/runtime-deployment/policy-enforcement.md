@@ -178,11 +178,11 @@ features:
 
 **Recommendations**:
 
-| Cluster Size | Scan Interval | Rationale                           |
-|--------------|---------------|-------------------------------------|
-| < 100 nodes  | 1h            | Fast drift detection                |
-| 100-500 nodes| 6h (default)  | Balance between load and compliance |
-| > 500 nodes  | 12h           | Reduce controller load              |
+| Cluster Size | Scan Interval | Rationale                          |
+| -------------- | --------------- | ------------------------------------- |
+| < 100 nodes | 1h           | Fast drift detection               |
+| 100-500 nodes | 6h (default) | Balance between load and compliance |
+| > 500 nodes | 12h          | Reduce controller load             |
 
 !!! note "Background Scans Generate Reports Only"
     Background scans don't block resources. They generate PolicyReports for existing violations. Use these reports to track compliance drift.

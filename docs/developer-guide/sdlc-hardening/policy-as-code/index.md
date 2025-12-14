@@ -28,11 +28,11 @@ graph LR
 
 Traditional approaches fail in predictable ways:
 
-| Approach                       | Problem                    | Result                   |
-|--------------------------------|----------------------------|--------------------------|
-| Documentation only             | Nobody reads it            | Violations in production |
-| CI-only checks                 | Local testing incomplete   | Broken pipelines         |
-| Runtime-only admission control | Issues caught too late     | Failed deployments       |
+| Approach                      | Problem                   | Result                  |
+| -------------------------------- | ---------------------------- | -------------------------- |
+| Documentation only            | Nobody reads it           | Violations in production |
+| CI-only checks | Local testing incomplete | Broken pipelines |
+| Runtime-only admission control | Issues caught too late | Failed deployments |
 
 !!! warning "The Gap Problem"
     CI checks resource limits, but Kyverno policy doesn't match. Developer tests locally, CI passes, runtime rejects deployment. This gap causes production failures.
@@ -144,11 +144,11 @@ spec:
 
 ## Enforcement Guarantees
 
-| Stage   | Enforcement          | Bypassable?            | Purpose                        |
-|---------|----------------------|------------------------|--------------------------------|
-| Local   | Developer-initiated  | Yes (developer choice) | Fast feedback, early detection |
-| CI      | Automated on PR      | No (blocks merge)      | Gate for code review           |
-| Runtime | Admission webhook    | No (rejects pod)       | Production safety              |
+| Stage  | Enforcement         | Bypassable?           | Purpose                       |
+| --------- | ---------------------- | ------------------------ | -------------------------------- |
+| Local | Developer-initiated | Yes (developer choice) | Fast feedback, early detection |
+| CI     | Automated on PR     | No (blocks merge)     | Gate for code review          |
+| Runtime | Admission webhook   | No (rejects pod)      | Production safety             |
 
 **Key Insight**: Local and CI use **same container**, runtime uses **same policies**.
 

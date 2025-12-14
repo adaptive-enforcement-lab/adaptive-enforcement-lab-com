@@ -21,7 +21,7 @@ Step-by-step guide to creating a GitHub Core App for your organization.
 Fill in the application details:
 
 | Field | Value | Notes |
-|-------|-------|-------|
+| ------- | ------- | ------- |
 | **GitHub App name** | `CORE App` | Or your organization's naming convention |
 | **Homepage URL** | `https://github.com/{ORG}` | Can be organization homepage |
 | **Webhook** | Unchecked | Core apps typically don't use webhooks |
@@ -34,7 +34,7 @@ Configure permissions based on your automation needs:
 ### Essential Permissions
 
 | Permission | Access Level | Purpose |
-|------------|--------------|---------|
+| ------------ | -------------- | --------- |
 | **Contents** | Read & Write | Clone repos, push changes, create branches |
 | **Pull Requests** | Read & Write | Create and manage PRs |
 | **Metadata** | Read | Access repository metadata (auto-granted) |
@@ -42,7 +42,7 @@ Configure permissions based on your automation needs:
 ### Optional Permissions
 
 | Permission | Access Level | Use Case |
-|------------|--------------|----------|
+| ------------ | -------------- | ---------- |
 | **Actions** | Read & Write | Manage workflow files, trigger runs |
 | **Administration** | Write | Create repositories, manage settings |
 | **Issues** | Read & Write | Automated issue management |
@@ -57,7 +57,7 @@ Configure permissions based on your automation needs:
 Configure organization-level permissions:
 
 | Permission | Access Level | Purpose |
-|------------|--------------|---------|
+| ------------ | -------------- | --------- |
 | **Members** | Read | Query team membership, access team repositories |
 
 !!! warning "Critical Permission"

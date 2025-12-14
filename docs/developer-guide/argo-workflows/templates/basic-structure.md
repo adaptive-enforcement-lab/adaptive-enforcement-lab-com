@@ -135,7 +135,7 @@ The `enum` field restricts parameter values to a specific set. The workflow fail
 WorkflowTemplates support several template types for different use cases:
 
 | Type | Use Case | Argo Docs |
-|------|----------|-----------|
+| ------ | ---------- | ----------- |
 | `script` | Inline code execution | [Script Template](https://argo-workflows.readthedocs.io/en/latest/workflow-concepts/#script) |
 | `container` | Run a container command | [Container Template](https://argo-workflows.readthedocs.io/en/latest/workflow-concepts/#container) |
 | `resource` | Create/patch Kubernetes resources | [Resource Template](https://argo-workflows.readthedocs.io/en/latest/workflow-concepts/#resource) |

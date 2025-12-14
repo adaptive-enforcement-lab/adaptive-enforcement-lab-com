@@ -329,7 +329,7 @@ fi
 ## Comparison with Other Patterns
 
 | Aspect | [Check-Before-Act](check-before-act.md) | [Upsert](upsert.md) | Force Overwrite |
-|--------|-----------------|--------|-----------------|
+| -------- | ----------------- | -------- | ----------------- |
 | Preserves history | Yes | Depends | No |
 | Requires existence check | Yes | No | No |
 | Shows if content changed | Yes | Sometimes | No (unless you add diff) |

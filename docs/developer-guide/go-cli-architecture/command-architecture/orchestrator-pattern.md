@@ -135,7 +135,7 @@ func runRebuild(cmd *cobra.Command, args []string) error {
 ### Consistent Exit Codes
 
 | Code | Meaning |
-|------|---------|
+| ------ | --------- |
 | 0 | Success |
 | 1 | Operation failed or condition not met |
 | 2 | Invalid usage or configuration error |

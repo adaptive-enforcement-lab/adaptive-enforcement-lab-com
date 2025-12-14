@@ -31,7 +31,7 @@ flowchart TD
 ## Reliability Patterns
 
 | Pattern | Purpose | Complexity |
-|---------|---------|------------|
+| --------- | --------- | ------------ |
 | [Retry Strategies](retry.md) | Handle transient failures | Low |
 | [Dead Letter Queues](dead-letter.md) | Capture failed events | Medium |
 | [Backpressure Handling](backpressure.md) | Prevent overload | Medium |

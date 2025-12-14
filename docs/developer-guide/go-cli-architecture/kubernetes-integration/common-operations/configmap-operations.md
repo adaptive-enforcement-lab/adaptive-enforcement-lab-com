@@ -97,7 +97,7 @@ func (c *Client) LoadCache(ctx context.Context) (map[string]string, error) {
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Idempotent operations** | Get-or-create for safe re-runs |
 | **Check error types** | Use `apierrors.IsNotFound()` before creating |
 | **Initialize Data field** | Always initialize maps: `Data: make(map[string]string)` |

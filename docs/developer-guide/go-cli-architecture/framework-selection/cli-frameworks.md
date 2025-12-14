@@ -195,7 +195,7 @@ func main() {
 ### Flag Naming
 
 | Pattern | Example | Notes |
-|---------|---------|-------|
+| --------- | --------- | ------- |
 | Kebab-case for flags | `--dry-run` | Standard convention |
 | Short flags for common options | `-n` for namespace | Match kubectl patterns |
 | Avoid abbreviations | `--namespace` not `--ns` | Clarity over brevity |

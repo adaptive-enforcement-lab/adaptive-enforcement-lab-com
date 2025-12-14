@@ -99,7 +99,7 @@ New workflows see the updated limit immediately. Running workflows aren't affect
 ## Semaphore vs Mutex
 
 | Aspect | Mutex | Semaphore |
-|--------|-------|-----------|
+| -------- | ------- | ----------- |
 | Concurrent holders | 1 | N (configurable) |
 | Configuration | Inline in workflow | ConfigMap reference |
 | Dynamic adjustment | No | Yes (via ConfigMap) |

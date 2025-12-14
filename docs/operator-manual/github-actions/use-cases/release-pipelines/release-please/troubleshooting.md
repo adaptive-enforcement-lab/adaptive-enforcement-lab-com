@@ -10,7 +10,7 @@ Common release-please issues and solutions.
 ## Common Issues
 
 | Issue | Cause | Solution |
-|-------|-------|----------|
+| ------- | ------- | ---------- |
 | No PR created | No conventional commits | Use `feat:`, `fix:`, etc. prefixes |
 | Wrong version bump | Commit type mismatch | Check commit types match changelog-sections |
 | Changelog empty | Hidden sections | Remove `hidden: true` from desired sections |

@@ -41,7 +41,7 @@ spec:
 **Choosing the right volume type:**
 
 | Volume Type | Survives Pod Restart | Survives Workflow Completion | Use Case |
-|-------------|---------------------|------------------------------|----------|
+| ------------- | --------------------- | ------------------------------ | ---------- |
 | `emptyDir` | No | No | Scratch space, inter-container communication |
 | `configMap` | N/A (read-only) | N/A | Configuration files, cache data |
 | `secret` | N/A (read-only) | N/A | Credentials, certificates |
@@ -175,7 +175,7 @@ spec:
 PVCs have access mode constraints:
 
 | Access Mode | Description | Use Case |
-|-------------|-------------|----------|
+| ------------- | ------------- | ---------- |
 | `ReadWriteOnce` | Single pod read/write | Most workflows |
 | `ReadOnlyMany` | Multiple pods read | Shared reference data |
 | `ReadWriteMany` | Multiple pods read/write | Parallel processing |

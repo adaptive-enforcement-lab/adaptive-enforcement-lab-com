@@ -29,7 +29,7 @@ Check each component in order. The failure is usually at the first component tha
 ## Troubleshooting Guides
 
 | Guide | When to Use |
-|-------|-------------|
+| ------- | ------------- |
 | [EventSource Issues](eventsources.md) | Events not arriving from external systems |
 | [Sensor Issues](sensors.md) | Events arrive but don't trigger actions |
 | [Common Patterns](common-patterns.md) | Frequently encountered problems and solutions |

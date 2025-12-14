@@ -27,13 +27,13 @@ Before touching the OpenSSF questionnaire, the project had:
 
 ### Test Coverage: 97-100%
 
-| Package          | Coverage |
-|------------------|----------|
-| cmd/readability  | 97.5%    |
-| pkg/analyzer     | 99.1%    |
-| pkg/config       | 100.0%   |
-| pkg/markdown     | 98.8%    |
-| pkg/output       | 99.6%    |
+| Package         | Coverage |
+| ------------------ | ---------- |
+| cmd/readability | 97.5%   |
+| pkg/analyzer    | 99.1%   |
+| pkg/config      | 100.0%  |
+| pkg/markdown    | 98.8%   |
+| pkg/output      | 99.6%   |
 
 95% minimum enforced in CI. Race detector enabled. No exceptions.
 

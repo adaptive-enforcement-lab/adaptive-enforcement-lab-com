@@ -223,7 +223,7 @@ Configure bypass permissions carefully in repository settings.
 ## Troubleshooting
 
 | Issue | Cause | Solution |
-|-------|-------|----------|
+| ------- | ------- | ---------- |
 | Push declined | Branch protection | Add conditional `if: github.ref_name != 'main'` |
 | Outdated docs on main | Docs generated after merge | Trigger docs on PR, not main |
 | Status check never completes | Skipped job as required check | Use summary job pattern |

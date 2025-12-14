@@ -50,7 +50,7 @@ The key insight: **degrade performance, not availability**.
 Every graceful degradation implementation follows this structure:
 
 | Tier | Characteristics | Example |
-|------|-----------------|---------|
+| ------ | ----------------- | --------- |
 | **Tier 1: Optimal** | Fast, cheap, preferred | Volume mount read |
 | **Tier 2: Acceptable** | Slower, costlier, reliable | API call |
 | **Tier 3: Guaranteed** | Expensive but always works | Full rebuild |
@@ -149,7 +149,7 @@ SSO → API Token → Service Account → Anonymous (read-only)
 These patterns are **complementary**, not contradictory:
 
 | Scenario | Pattern | Reasoning |
-|----------|---------|-----------|
+| ---------- | --------- | ----------- |
 | **Precondition not met** | Fail Fast | Don't waste resources on doomed operations |
 | **Runtime component fails** | Graceful Degradation | Continue with fallback |
 | **Invalid input** | Fail Fast | User error, report immediately |
@@ -274,7 +274,7 @@ Before implementing graceful degradation:
 ## Relationship to Other Patterns
 
 | Pattern | How Graceful Degradation Applies |
-|---------|----------------------------------|
+| --------- | ---------------------------------- |
 | [Caching](../../efficiency-patterns/idempotency/caches.md) | Fallback tiers when cache misses |
 | [Work Avoidance](../../efficiency-patterns/work-avoidance/index.md) | When detection fails, do the work anyway |
 | [Idempotency](../../efficiency-patterns/idempotency/index.md) | Safe retries as fallback mechanism |

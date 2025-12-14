@@ -81,7 +81,7 @@ The visual representation matches the dependency declaration. You declare what d
 ## DAG vs Steps
 
 | Aspect | Steps | DAG |
-|--------|-------|-----|
+| -------- | ------- | ----- |
 | Mental model | Execution order | Dependency structure |
 | Parallelism | Explicit groups | Automatic from dependencies |
 | Complex dependencies | Awkward | Natural |

@@ -61,7 +61,7 @@ The ServiceAccount defines the identity. The ClusterRole defines what operations
 The choice between Role and ClusterRole depends on scope:
 
 | Type | Scope | Use Case |
-|------|-------|----------|
+| ------ | ------- | ---------- |
 | Role + RoleBinding | Single namespace | Workflow operates in one namespace |
 | ClusterRole + RoleBinding | Single namespace | Reusable permissions, namespace-specific binding |
 | ClusterRole + ClusterRoleBinding | All namespaces | Workflow operates across namespaces |
@@ -149,7 +149,7 @@ The `--as` flag impersonates the ServiceAccount. The response tells you whether 
 **Common mistakes:**
 
 | Symptom | Cause | Fix |
-|---------|-------|-----|
+| --------- | ------- | ----- |
 | `forbidden: User "system:serviceaccount:..."` | Missing verb | Add the verb to rules |
 | `cannot get resource "deployments"` | Missing resource | Add the resource to rules |
 | `not found` | Wrong namespace | Check namespace in subjects |

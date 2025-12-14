@@ -63,7 +63,7 @@ myctl
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Flat hierarchy** | Avoid deeply nested subcommands (max 2 levels) |
 | **Verb-noun ordering** | `myctl restart deployment` not `myctl deployment restart` |
 | **Consistent flags** | Use same flag names across commands |

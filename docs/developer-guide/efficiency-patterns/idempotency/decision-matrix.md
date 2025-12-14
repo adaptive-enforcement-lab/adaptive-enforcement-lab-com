@@ -54,7 +54,7 @@ quadrantChart
 ## Scoring Factors
 
 | Factor | Low Priority (0 pts) | High Priority (1 pt) |
-|--------|---------------------|----------------------|
+| -------- | --------------------- | ---------------------- |
 | **Failure frequency** | Rarely fails | Fails often (network, APIs, rate limits) |
 | **Recovery cost** | Quick manual fix | Hours of manual intervention |
 | **Operation count** | Single operation | Many operations (matrix, loops) |

@@ -116,7 +116,7 @@ Release-please finds `x-release-please-version` and updates the number.
 ## What This Means
 
 | Want | Reality |
-|------|---------|
+| ------ | --------- |
 | Independent versioning | Shares version with parent package |
 | Separate changelog | Changes appear in main changelog |
 | Dedicated tags | No separate tags |

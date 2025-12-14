@@ -76,7 +76,7 @@ Control how commits appear in changelogs:
 ```
 
 | Property | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | `type` | Conventional commit type to match |
 | `section` | Heading in changelog |
 | `hidden` | Exclude from changelog (still affects versioning) |
@@ -101,7 +101,7 @@ Target specific commit scopes to hide noise while keeping other commits visible:
 The `scope` field matches the parenthetical in conventional commits:
 
 | Commit | Matches | Result |
-|--------|---------|--------|
+| -------- | --------- | -------- |
 | `chore(deps): bump lodash` | `scope: "deps"` | Hidden |
 | `chore: update config` | No scope match | Visible under Maintenance |
 | `chore(build): fix webpack` | No `scope: "build"` rule | Visible under Maintenance |

@@ -95,7 +95,7 @@ All three triggers fire simultaneously when an image push event arrives.
 Different actions for different purposes:
 
 | Trigger Type | Purpose | Argo Docs |
-|--------------|---------|-----------|
+| -------------- | --------- | ----------- |
 | `argoWorkflow` | Submit Argo Workflows | [Argo Workflow Trigger](https://argoproj.github.io/argo-events/sensors/triggers/argo-workflow/) |
 | `http` | HTTP/webhook requests | [HTTP Trigger](https://argoproj.github.io/argo-events/sensors/triggers/http/) |
 | `k8s` | Create/patch K8s resources | [Kubernetes Trigger](https://argoproj.github.io/argo-events/sensors/triggers/k8s/) |

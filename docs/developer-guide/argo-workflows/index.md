@@ -15,7 +15,7 @@ Argo Workflows provides higher-level abstractions designed for automation. Defin
 ## Pattern Categories
 
 | Category | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | [WorkflowTemplate Patterns](templates/index.md) | Reusable workflow definitions with error handling, volumes, and RBAC |
 | [Concurrency Control](concurrency/index.md) | Mutex synchronization, semaphores, and TTL strategies |
 | [Workflow Composition](composition/index.md) | Parent/child workflows, orchestration, and cross-workflow communication |

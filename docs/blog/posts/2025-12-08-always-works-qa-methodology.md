@@ -42,7 +42,7 @@ Common anti-patterns that lead to broken pushes:
 Before declaring any task complete, answer YES to all:
 
 | Question | Verification Method |
-|----------|---------------------|
+| ---------- | --------------------- |
 | Did I run/build the code? | `go build ./...` succeeded |
 | Did I trigger the exact feature I changed? | Ran the specific command |
 | Did I see the expected result? | Observed output, not assumed |
@@ -64,7 +64,7 @@ This test catches the gap between "probably works" and "definitely works."
 ## Time Economics
 
 | Action | Time Cost |
-|--------|-----------|
+| -------- | ----------- |
 | Running tests before push | 30 seconds |
 | Investigating CI failure | 5 minutes |
 | Second round of fixes | 10 minutes |
@@ -136,7 +136,7 @@ gh run view <run-id> --log
 ## Phrases to Avoid vs. Use
 
 | Avoid | Replace With |
-|-------|--------------|
+| ------- | -------------- |
 | "This should work now" | "I verified this works by running..." |
 | "I've fixed the issue" | "All tests pass after..." |
 | "Try it now" | "I tested [scenario] and observed..." |

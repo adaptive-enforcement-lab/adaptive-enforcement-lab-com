@@ -47,7 +47,7 @@ A GitHub Core App enables:
 ## Core App vs. Standard GitHub Apps
 
 | Aspect | Core App | Standard App |
-|--------|----------|--------------|
+| -------- | ---------- | -------------- |
 | **Scope** | Organization-wide | Single repository or selected repos |
 | **Purpose** | Infrastructure automation | Feature-specific functionality |
 | **Permissions** | Broad, covers common operations | Narrow, task-specific |

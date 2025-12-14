@@ -188,13 +188,13 @@ Kubernetes syncs the change to all volume mounts. Typically within seconds, but 
 
 This pattern isn't free.
 
-**Staleness Window**
+### Staleness Window
 
 The volume mount syncs periodically, not immediately. Updates take 1-30 seconds to propagate. If consistency is critical within seconds, this pattern won't work.
 
 For my use case (image-to-deployment mapping), staleness was acceptable. The mapping only changed when deployments were created or modified. A 10-second delay was fine.
 
-**ConfigMap Size Limits**
+### ConfigMap Size Limits
 
 ConfigMaps max out at 1MB. A large cluster with thousands of deployments and images could exceed this.
 
@@ -206,7 +206,7 @@ If you hit the limit, consider:
 - More aggressive pruning (remove stale entries)
 - Different storage (custom resource, external cache)
 
-**RBAC Complexity**
+### RBAC Complexity
 
 The workflow needs read access to the ConfigMap. In namespaced setups, this requires cluster-scoped roles or cross-namespace access.
 
@@ -246,7 +246,7 @@ rules:
 ## Results
 
 | Metric | Before (API) | After (Mount) |
-|--------|--------------|---------------|
+| -------- | -------------- | --------------- |
 | Latency | 50-200ms | 1-5ms |
 | API calls | 1 per lookup | 0 |
 | Data transfer | 50-200KB | 0 bytes |

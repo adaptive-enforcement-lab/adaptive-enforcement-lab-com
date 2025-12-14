@@ -65,7 +65,7 @@ This allows push operations to use the GitHub App token.
 ## Branch State Handling
 
 | Scenario | Action |
-|----------|--------|
+| ---------- | -------- |
 | Branch exists remotely | Reset to remote state |
 | Branch exists locally only | Checkout local branch |
 | Branch doesn't exist | Create from default branch |

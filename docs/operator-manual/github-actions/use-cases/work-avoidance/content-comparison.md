@@ -103,7 +103,7 @@ sed '/^version:.*# x-release-please-version$/d'
 ## Edge Cases
 
 | Scenario | Behavior |
-|----------|----------|
+| ---------- | ---------- |
 | No changes at all | Skip immediately |
 | Version-only change | Strip, compare, skip |
 | Content + version change | Distribute (real changes) |

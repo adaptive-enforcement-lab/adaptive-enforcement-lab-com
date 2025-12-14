@@ -34,7 +34,7 @@ The most specific setting wins. A successful workflow uses `secondsAfterSuccess`
 ## Choosing TTL Values
 
 | Workflow Type | Success TTL | Failure TTL | Rationale |
-|---------------|-------------|-------------|-----------|
+| --------------- | ------------- | ------------- | ----------- |
 | CI builds | 30 min | 24 hours | Debug failures; successes are routine |
 | Deployments | 1 hour | 72 hours | Need time to verify, longer for rollback investigation |
 | Scheduled jobs | 2 hours | 48 hours | Compare recent runs; investigate failures |

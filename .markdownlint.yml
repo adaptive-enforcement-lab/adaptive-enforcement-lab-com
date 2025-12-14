@@ -22,6 +22,11 @@ MD030: false
 # Disallow emphasis as headings
 MD036: true
 
+# Disable table column style enforcement (MD060)
+# Tables have different styles (compact vs aligned) and enforcing consistency
+# across 200+ files is not productive. Focus on content quality instead.
+MD060: false
+
 # Disable code block style check (conflicts with MkDocs admonitions)
 MD046: false
 

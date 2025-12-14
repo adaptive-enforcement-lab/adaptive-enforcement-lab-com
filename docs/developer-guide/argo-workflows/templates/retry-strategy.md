@@ -33,7 +33,7 @@ The `backoff` configuration implements exponential backoff: first retry after 5 
 **Configuration options:**
 
 | Field | Purpose | Example |
-|-------|---------|---------|
+| ------- | --------- | --------- |
 | `limit` | Maximum retry attempts | `3` |
 | `retryPolicy` | When to retry | `Always`, `OnFailure`, `OnError` |
 | `backoff.duration` | Initial wait time | `"5s"` |
@@ -57,7 +57,7 @@ The `retryPolicy` field controls which failures trigger retries:
 ## When to Retry
 
 | Failure Type | Retry? | Why |
-|--------------|--------|-----|
+| -------------- | -------- | ----- |
 | API rate limits | Yes | Backoff gives quota time to reset |
 | Network timeouts | Yes | Transient by nature |
 | 5xx server errors | Yes | Usually temporary |

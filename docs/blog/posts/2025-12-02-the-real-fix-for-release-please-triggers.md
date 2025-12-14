@@ -140,7 +140,7 @@ on:
 ## Before and After
 
 | Aspect | Dual-Trigger Workaround | GitHub App Token |
-|--------|------------------------|------------------|
+| -------- | ------------------------ | ------------------ |
 | Event type | `push` | `pull_request` |
 | PR context available | Limited | Full |
 | Duplicate runs risk | Yes, if both triggers exist | No |

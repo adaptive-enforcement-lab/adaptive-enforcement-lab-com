@@ -83,7 +83,7 @@ This creates separate locks for each environment. Deployments to `staging` and `
 **Common patterns:**
 
 | Scenario | Mutex Pattern |
-|----------|---------------|
+| ---------- | --------------- |
 | Single build at a time | `mutexes: [{name: build-lock}]` |
 | Per-environment locks | `mutexes: [{name: "deploy-{{workflow.parameters.env}}"}]` |
 | Per-repository locks | `mutexes: [{name: "build-{{workflow.parameters.repo}}"}]` |
@@ -125,7 +125,7 @@ kubectl get workflow <name> -o jsonpath='{.status.synchronization}'
 **Common issues:**
 
 | Symptom | Cause | Fix |
-|---------|-------|-----|
+| --------- | ------- | ----- |
 | Workflow stuck in Pending | Waiting for mutex | Check which workflow holds the lock |
 | Workflows never start | Mutex held by failed workflow | Terminate the failed workflow |
 | Inconsistent mutex names | Parameter typo | Verify parameter values match |

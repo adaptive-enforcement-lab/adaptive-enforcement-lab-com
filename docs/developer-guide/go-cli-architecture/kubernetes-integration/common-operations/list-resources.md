@@ -54,7 +54,7 @@ func (c *Client) ListDeploymentsWithLabel(ctx context.Context, labelSelector str
 ## Label Selector Examples
 
 | Selector | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | `app=nginx` | Exact match |
 | `app!=nginx` | Not equal |
 | `app in (nginx,haproxy)` | Set membership |

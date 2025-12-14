@@ -12,7 +12,7 @@ Idempotency isn't free. Understanding the tradeoffs helps you decide where to in
 ## At a Glance
 
 | Pros | Cons |
-|------|------|
+| ------ | ------ |
 | [Safe Reruns](#safe_reruns) - Click rerun, walk away | [Implementation Complexity](#implementation_complexity) - Every op needs guards |
 | [Partial Failure Recovery](#partial_failure_recovery) - Matrix jobs retry cleanly | [Performance Overhead](#performance_overhead) - Extra API calls add up |
 | [Simplified Debugging](#simplified_debugging) - Debug without changing state | [Hidden Failures](#hidden_failures) - Silent skips mask real errors |

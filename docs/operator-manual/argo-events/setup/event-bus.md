@@ -30,7 +30,7 @@ spec:
 **Why persistence matters:**
 
 | Feature | Without Persistence | With Persistence |
-|---------|---------------------|------------------|
+| --------- | --------------------- | ------------------ |
 | Pod restart | Events lost | Events buffered |
 | Network partition | Silent drops | Retry on reconnect |
 | Burst handling | Overflow drops | Queue to disk |
@@ -81,7 +81,7 @@ spec:
 **JetStream vs NATS Native:**
 
 | Feature | NATS Native | JetStream |
-|---------|-------------|-----------|
+| --------- | ------------- | ----------- |
 | Message persistence | Manual config | Built-in |
 | Stream management | Basic | Advanced (retention, limits) |
 | Consumer groups | Limited | Full support |

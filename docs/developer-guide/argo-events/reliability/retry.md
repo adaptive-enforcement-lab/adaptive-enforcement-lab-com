@@ -25,7 +25,7 @@ triggers:
 **Retry parameters:**
 
 | Field | Purpose | Example |
-|-------|---------|---------|
+| ------- | --------- | --------- |
 | `steps` | Maximum retry attempts | `5` |
 | `duration` | Initial delay between retries | `5s` |
 | `factor` | Multiplier for exponential backoff | `2` |
@@ -38,7 +38,7 @@ triggers:
 With the configuration above, retry timing follows this pattern:
 
 | Attempt | Base Delay | With Jitter (±20%) |
-|---------|------------|-------------------|
+| --------- | ------------ | ------------------- |
 | 1 | 5s | 4-6s |
 | 2 | 10s | 8-12s |
 | 3 | 20s | 16-24s |

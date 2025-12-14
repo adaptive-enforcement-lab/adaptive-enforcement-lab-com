@@ -36,7 +36,7 @@ description: >-
 ## Secret Management
 
 | Secret | Storage Level | Access |
-|--------|---------------|--------|
+| -------- | --------------- | -------- |
 | `CORE_APP_ID` | Organization | All repos |
 | `CORE_APP_PRIVATE_KEY` | Organization | All repos |
 | Workflow token | Job scope | Single run |

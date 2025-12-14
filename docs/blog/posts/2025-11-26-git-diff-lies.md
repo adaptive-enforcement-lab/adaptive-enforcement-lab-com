@@ -122,7 +122,7 @@ The `--porcelain` flag guarantees machine-parseable output that won't change bet
 ### The Behavior Difference
 
 | Scenario | `git diff --quiet` | `git status --porcelain` |
-|----------|-------------------|-------------------------|
+| ---------- | ------------------- | ------------------------- |
 | Modified tracked file | Detects | Detects |
 | New untracked file | **Misses** | Detects |
 | Deleted tracked file | Detects | Detects |

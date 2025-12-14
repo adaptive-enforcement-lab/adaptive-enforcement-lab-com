@@ -19,7 +19,7 @@ WorkflowTemplates solve this by extracting the workflow logic into a standalone 
 ## Patterns
 
 | Pattern | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Basic Structure](basic-structure.md) | Fundamental WorkflowTemplate anatomy and parameter handling |
 | [Retry Strategy](retry-strategy.md) | Error handling with exponential backoff |
 | [Init Containers](init-containers.md) | Multi-stage pipelines with sequential setup |

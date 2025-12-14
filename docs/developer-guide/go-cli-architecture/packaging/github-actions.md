@@ -98,7 +98,7 @@ runs:
 
         if [ "$VERSION" = "latest" ]; then
           VERSION=$(curl -sL "https://api.github.com/repos/OWNER/REPO/releases/latest" \
-            | jq -r '.tag_name')
+           | jq -r '.tag_name')
         fi
 
         ARCH="amd64"
@@ -126,7 +126,7 @@ runs:
 GitHub Actions use exit codes to determine success:
 
 | Exit Code | Meaning | Action Result |
-|-----------|---------|---------------|
+| ----------- | --------- | --------------- |
 | 0 | Success | Step passes |
 | 1 | Failure | Step fails |
 | Other | Error | Step fails |
@@ -218,7 +218,7 @@ func writeJobSummary(results []*Result) error {
 
     fmt.Fprintln(f, "## Analysis Results")
     fmt.Fprintln(f, "| File | Status |")
-    fmt.Fprintln(f, "|------|--------|")
+    fmt.Fprintln(f, " | ------ |--------|")
     for _, r := range results {
         status := "Pass"
         if r.Failed {
@@ -324,7 +324,7 @@ changelog:
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Binary distribution** | Pre-built binaries avoid compilation delays |
 | **Floating tags** | `v1` always points to latest `v1.x.x` |
 | **Version input** | Allow pinning to specific versions |

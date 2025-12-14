@@ -10,7 +10,7 @@ Distribute your Go CLI as a pre-commit hook with binary releases.
 ## Why Binary Releases?
 
 | Traditional (`language: golang`) | Binary Release |
-|----------------------------------|----------------|
+| ---------------------------------- | ---------------- |
 | 30+ second first run (go install) | ~1 second execution |
 | Requires Go on user's machine | Works without Go |
 | Go version mismatches cause failures | Same binary everywhere |
@@ -55,7 +55,7 @@ my-tool/
 ```
 
 | Field | Description |
-|-------|-------------|
+| ------- | ------------- |
 | `id` | Unique identifier users reference |
 | `entry` | Command to execute |
 | `language` | How to install/run (golang, system, python) |
@@ -69,7 +69,7 @@ my-tool/
 ### Exit Codes
 
 | Exit Code | Meaning | Hook Result |
-|-----------|---------|-------------|
+| ----------- | --------- | ------------- |
 | 0 | All files pass | Hook passes |
 | 1 | One or more failed | Hook fails |
 
@@ -212,7 +212,7 @@ jobs:
 ## Troubleshooting
 
 | Issue | Solution |
-|-------|----------|
+| ------- | ---------- |
 | Hook not found | Ensure `.pre-commit-hooks.yaml` is committed |
 | Wrong version | Run `pre-commit clean && pre-commit install` |
 | Slow first run | Normal for `language: golang` (builds from source) |
@@ -222,7 +222,7 @@ jobs:
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Two hook variants** | File-based and directory-based options |
 | **--check flag** | Always fail on issues by default |
 | **Multiple file args** | Handle `pass_filenames: true` correctly |

@@ -127,7 +127,7 @@ Exactly right. The version bumped, the workflow ran, and nothing happened. Becau
 The script handles several scenarios:
 
 | Scenario | Behavior |
-|----------|----------|
+| ---------- | ---------- |
 | No changes at all | Skip immediately |
 | Version-only change | Strip, compare, skip |
 | Content + version change | Distribute (real changes) |

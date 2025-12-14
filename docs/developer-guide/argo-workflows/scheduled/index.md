@@ -20,7 +20,7 @@ CronWorkflows provide the full power of Argo Workflows on a schedule. Multi-step
 ## Patterns
 
 | Pattern | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Basic CronWorkflow](basic.md) | Simple scheduled execution |
 | [Concurrency Policies](concurrency-policy.md) | Handling overlapping runs |
 | [Orchestration](orchestration.md) | Scheduled pipelines that spawn child workflows |
@@ -40,7 +40,7 @@ CronWorkflows provide the full power of Argo Workflows on a schedule. Multi-step
 ## Cron Syntax Quick Reference
 
 | Expression | Meaning |
-|------------|---------|
+| ------------ | --------- |
 | `0 * * * *` | Every hour at minute 0 |
 | `0 0 * * *` | Daily at midnight |
 | `0 0 * * 0` | Weekly on Sunday at midnight |

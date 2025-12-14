@@ -63,7 +63,7 @@ This technique applies when automated processes update fields that don't affect 
 ## Common Volatile Fields
 
 | Field Type | Examples | Pattern |
-|------------|----------|---------|
+| ------------ | ---------- | --------- |
 | Version stamps | `version: 1.2.3` | `^version:\s*[\d.]+` |
 | Release annotations | `version: 1.2.3 # x-release-please-version` | `^version:.*# x-release-please-version$` |
 | Timestamps | `updated: 2025-01-01` | `^updated:\s*\d{4}-\d{2}-\d{2}` |
@@ -190,7 +190,7 @@ Keep volatile field patterns documented alongside the comparison logic. This hel
 ## Edge Cases
 
 | Scenario | Handling |
-|----------|----------|
+| ---------- | ---------- |
 | Pattern matches content | Use more specific markers |
 | Multiple volatile fields | Chain sed expressions |
 | Nested fields (JSON/YAML) | Use jq/yq instead of sed |

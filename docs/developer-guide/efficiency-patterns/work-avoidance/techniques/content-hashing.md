@@ -116,7 +116,7 @@ func main() {
 ## Hash Algorithm Selection
 
 | Algorithm | Speed | Security | Use Case |
-|-----------|-------|----------|----------|
+| ----------- | ------- | ---------- | ---------- |
 | MD5 | Fast | Weak | Non-security comparisons |
 | SHA-1 | Fast | Weak | Git compatibility |
 | SHA-256 | Medium | Strong | General purpose |
@@ -129,7 +129,7 @@ For work avoidance (non-security), speed often matters more than cryptographic s
 ## Edge Cases
 
 | Scenario | Handling |
-|----------|----------|
+| ---------- | ---------- |
 | File doesn't exist | Treat as "changed" (needs creation) |
 | Empty file | Hash the empty content (valid state) |
 | Binary files | Works identically to text |
