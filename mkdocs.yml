@@ -279,6 +279,12 @@ nav:
               - Implementation Patterns: developer-guide/sdlc-hardening/pre-commit-hooks-patterns.md
           - Vulnerability Scanning: developer-guide/sdlc-hardening/vulnerability-scanning.md
           - SBOM Generation: developer-guide/sdlc-hardening/sbom-generation.md
+          - Go Security Tooling:
+              - developer-guide/sdlc-hardening/go-security/index.md
+              - Standard Toolkit: developer-guide/sdlc-hardening/go-security/tools.md
+              - Workflow Integration: developer-guide/sdlc-hardening/go-security/integration.md
+              - Compliance: developer-guide/sdlc-hardening/go-security/compliance.md
+              - Conclusion: developer-guide/sdlc-hardening/go-security/conclusion.md
           - Supply Chain Security:
               - SLSA Provenance: developer-guide/sdlc-hardening/supply-chain/slsa-provenance.md
               - Scorecard Compliance: developer-guide/sdlc-hardening/supply-chain/scorecard-compliance.md

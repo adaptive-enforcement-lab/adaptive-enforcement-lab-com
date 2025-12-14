@@ -54,6 +54,7 @@ Each layer provides defense in depth. No single control is sufficient.
 - **[GitHub Apps Authentication](github-apps/index.md)** - Machine authentication without PATs
 - **[SBOM Generation](sbom-generation.md)** - Software Bill of Materials for supply chain security
 - **[Vulnerability Scanning](vulnerability-scanning.md)** - Trivy integration for container security
+- **[Go Security Tooling](go-security/index.md)** - Standard Go security toolkit (race detector, golangci-lint, Trivy)
 
 ### Supply Chain Security
 
