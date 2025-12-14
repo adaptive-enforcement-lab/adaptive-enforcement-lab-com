@@ -39,7 +39,7 @@ For organization-wide usage (recommended):
 ## Secret Naming Conventions
 
 | Secret Name | Contents | Example |
-|-------------|----------|---------|
+| ------------- | ---------- | --------- |
 | `CORE_APP_ID` | Numeric app ID | `123456` |
 | `CORE_APP_PRIVATE_KEY` | Complete PEM file contents | `-----BEGIN RSA PRIVATE KEY-----...` |
 
@@ -48,7 +48,7 @@ For organization-wide usage (recommended):
 ### Repository vs Organization Secrets
 
 | Aspect | Repository Secrets | Organization Secrets |
-|--------|-------------------|---------------------|
+| -------- | ------------------- | --------------------- |
 | **Scope** | Single repository | Multiple repositories |
 | **Management** | Per-repo updates | Centralized updates |
 | **Rotation** | Update each repo | Update once |

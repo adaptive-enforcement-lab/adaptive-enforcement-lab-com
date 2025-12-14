@@ -71,7 +71,7 @@ The key insight: **degrade performance, not availability**.
 In [From 5 Seconds to 5 Milliseconds](2025-11-29-from-5-seconds-to-5-milliseconds.md), I documented how a ConfigMap cache transformed deployment automation. But the story doesn't end at "use a cache." The real pattern is the fallback chain:
 
 | Tier | Method | Latency | API Calls |
-|------|--------|---------|-----------|
+| ------ | -------- | --------- | ----------- |
 | 1 | Volume mount | 1-5ms | 0 |
 | 2 | API call | 50-200ms | 1 |
 | 3 | Cluster scan | 5-10s | 100+ |
@@ -114,7 +114,7 @@ Notice the `metrics.RecordTier()` calls. You need to know which tier is serving 
 These patterns aren't opposites. They solve different problems:
 
 | Scenario | Pattern | Why |
-|----------|---------|-----|
+| ---------- | --------- | ----- |
 | Invalid input | Fail Fast | User error, report immediately |
 | Missing config | Fail Fast | Can't continue safely |
 | Cache miss | Graceful Degradation | Expensive path still works |

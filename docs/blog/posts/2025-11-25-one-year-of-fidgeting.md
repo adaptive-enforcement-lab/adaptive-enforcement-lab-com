@@ -24,7 +24,7 @@ Then came today. A marathon session to wire everything together.
 The discovery stage that had been working in isolation.
 The distribution logic refined over months of incremental improvements.
 The idempotency patterns born from countless failed reruns.
-Today was assembly day—taking a year of atomic improvements and building the complete content distribution system.
+Today was assembly day. I took a year of atomic improvements and built the complete content distribution system.
 
 This post covers that journey from "let's automate some file syncing" to "we need enterprise-grade security for 40 repositories."
 

@@ -23,7 +23,7 @@ Here's how to go from code to release.
 ## Why Go for GitHub Actions?
 
 | Advantage | Impact |
-|-----------|--------|
+| ----------- | -------- |
 | Single binary | No `node_modules` or virtual env needed |
 | Fast cold start | Starts in milliseconds, not seconds |
 | Cross-platform | One codebase builds for Linux, macOS, Windows |
@@ -91,7 +91,7 @@ runs:
 
         if [ "$VERSION" = "latest" ]; then
           VERSION=$(curl -sL "https://api.github.com/repos/OWNER/REPO/releases/latest" \
-            | jq -r '.tag_name')
+           | jq -r '.tag_name')
         fi
 
         ARCH="amd64"
@@ -262,7 +262,7 @@ func writeJobSummary(results []*Result) error {
 
     fmt.Fprintln(f, "## Analysis Results")
     fmt.Fprintln(f, "| File | Status |")
-    fmt.Fprintln(f, "|------|--------|")
+    fmt.Fprintln(f, " | ------ |--------|")
     for _, r := range results {
         status := "Pass"
         if r.Failed {

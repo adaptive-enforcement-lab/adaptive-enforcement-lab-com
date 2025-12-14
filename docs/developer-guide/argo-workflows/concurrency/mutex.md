@@ -8,7 +8,7 @@ A mutex (mutual exclusion) ensures only one workflow instance can run at a time.
 
 Some operations must be atomic. A database migration can't run twice simultaneously. A deployment to production must complete before another starts. A cache rebuild mustn't overlap with itself.
 
-Without mutexes, you rely on timing. If events arrive slowly enough, workflows don't overlap. But under load—during a deployment storm, after a network partition resolves, when a backlog drains—multiple workflows trigger at once. The system that worked fine in testing fails in production.
+Without mutexes, you rely on timing. If events arrive slowly enough, workflows don't overlap. But under load, multiple workflows trigger at once: during a deployment storm, after a network partition resolves, or when a backlog drains. The system that worked fine in testing fails in production.
 
 Mutexes make the single-execution guarantee explicit. The system behaves the same whether one event arrives or a hundred arrive simultaneously.
 
@@ -63,7 +63,7 @@ sequenceDiagram
     Note over C: Running...
 ```
 
-Workflows execute in FIFO order. The first to request the lock gets it. Others queue up. No workflow starves indefinitely—eventually it reaches the front of the queue.
+Workflows execute in FIFO order. The first to request the lock gets it. Others queue up. No workflow starves indefinitely. Eventually it reaches the front of the queue.
 
 ---
 
@@ -83,7 +83,7 @@ This creates separate locks for each environment. Deployments to `staging` and `
 **Common patterns:**
 
 | Scenario | Mutex Pattern |
-|----------|---------------|
+| ---------- | --------------- |
 | Single build at a time | `mutexes: [{name: build-lock}]` |
 | Per-environment locks | `mutexes: [{name: "deploy-{{workflow.parameters.env}}"}]` |
 | Per-repository locks | `mutexes: [{name: "build-{{workflow.parameters.repo}}"}]` |
@@ -125,7 +125,7 @@ kubectl get workflow <name> -o jsonpath='{.status.synchronization}'
 **Common issues:**
 
 | Symptom | Cause | Fix |
-|---------|-------|-----|
+| --------- | ------- | ----- |
 | Workflow stuck in Pending | Waiting for mutex | Check which workflow holds the lock |
 | Workflows never start | Mutex held by failed workflow | Terminate the failed workflow |
 | Inconsistent mutex names | Parameter typo | Verify parameter values match |

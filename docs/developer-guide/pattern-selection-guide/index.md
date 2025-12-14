@@ -51,7 +51,7 @@ quadrantChart
 ## Pattern Selection by Scenario
 
 | Scenario | Pattern | Reasoning |
-|----------|---------|-----------|
+| ---------- | --------- | ----------- |
 | Invalid user input | [Fail Fast](../error-handling/fail-fast/index.md) | User error, report immediately |
 | Missing required config | [Fail Fast](../error-handling/fail-fast/index.md) | Can't continue safely |
 | Complex preconditions | [Prerequisite Checks](../error-handling/prerequisite-checks/index.md) | Validate all upfront |
@@ -69,7 +69,7 @@ quadrantChart
 ## Condition Matrix
 
 | Condition | Fail Fast | Prerequisite Checks | Graceful Degradation | Idempotency | Work Avoidance |
-|-----------|:---------:|:-------------------:|:--------------------:|:-----------:|:--------------:|
+| ----------- | :---------: | :-------------------: | :--------------------: | :-----------: | :--------------: |
 | Before execution starts | ✓ | ✓ | | | ✓ |
 | During execution | | | ✓ | ✓ | |
 | No fallback available | ✓ | | | | |
@@ -85,7 +85,7 @@ quadrantChart
 ## Quick Reference
 
 | Pattern | When to Apply | Trade-off |
-|---------|---------------|-----------|
+| --------- | --------------- | ----------- |
 | [Fail Fast](../error-handling/fail-fast/index.md) | Early detection prevents cascading failure | Speed vs thoroughness |
 | [Prerequisite Checks](../error-handling/prerequisite-checks/index.md) | Operations have preconditions | Latency vs correctness |
 | [Graceful Degradation](../error-handling/graceful-degradation/index.md) | System has fallback options | Complexity vs availability |

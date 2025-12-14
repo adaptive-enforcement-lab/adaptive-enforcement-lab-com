@@ -6,7 +6,7 @@ Argo Workflows can trigger GitHub Actions workflows and repository dispatches, e
 
 ## Why Integrate with GitHub?
 
-Some automation belongs in Kubernetes—deployment orchestration, cluster management, scheduled jobs. Other automation belongs in GitHub Actions—code testing, artifact building, release management.
+Some automation belongs in Kubernetes (deployment orchestration, cluster management, scheduled jobs). Other automation belongs in GitHub Actions (code testing, artifact building, release management).
 
 Integration enables:
 
@@ -102,7 +102,7 @@ INSTALLATION_TOKEN=$(curl -s -X POST \
   -H "Authorization: Bearer $JWT" \
   -H "Accept: application/vnd.github+json" \
   "https://api.github.com/app/installations/$GITHUB_INSTALLATION_ID/access_tokens" \
-  | jq -r '.token')
+ | jq -r '.token')
 
 # Configure gh CLI
 echo "$INSTALLATION_TOKEN" | gh auth login --with-token
@@ -195,19 +195,19 @@ This creates commit statuses that appear in GitHub PRs and commit views, showing
 ## Security Considerations
 
 | Concern | Mitigation |
-|---------|------------|
+| --------- | ------------ |
 | Token exposure | Use GitHub App, not PAT; rotate credentials |
 | Broad permissions | Request minimal scopes in App manifest |
 | Secret leakage | Mount secrets read-only; don't log tokens |
 | Rate limits | Cache tokens; batch operations; respect limits |
 
 !!! warning "Never Log Tokens"
-    GitHub tokens in logs can be scraped and abused. Use `set +x` around authentication code and redirect sensitive output to `/dev/null`.
+    GitHub tokens in logs can be scraped and abused. Use `set +x` around authentication code. Redirect sensitive output to `/dev/null`.
 
 ---
 
 ## Related
 
-- [Basic CronWorkflow](basic.md) - Scheduling fundamentals
-- [RBAC Configuration](../templates/rbac.md) - Secret access permissions
-- [Cross-Workflow Communication](../composition/communication.md) - Other integration patterns
+- [Basic CronWorkflow](basic.md): Scheduling fundamentals
+- [RBAC Configuration](../templates/rbac.md): Secret access permissions
+- [Cross-Workflow Communication](../composition/communication.md): Other integration patterns

@@ -12,7 +12,7 @@ Ongoing care, key rotation, and lifecycle management for your GitHub Core App.
 ## Regular Tasks
 
 | Task | Frequency | Action |
-|------|-----------|--------|
+| ------ | ----------- | -------- |
 | **Permission Review** | Quarterly | Audit and adjust permissions |
 | **Key Rotation** | Semi-annually | Generate new private key |
 | **Usage Audit** | Monthly | Review audit logs |
@@ -97,7 +97,7 @@ gh api /installation/repositories --jq '.repositories[].full_name'
 # App API activity (last 30 days)
 gh api "/orgs/{ORG}/audit-log" \
   --jq '.[] | select(.actor | contains("app/"))' \
-  | head -50
+ | head -50
 ```
 
 ### Rate Limit Tracking
@@ -161,16 +161,16 @@ gh run list --workflow=test.yml --limit=1
 
 !!! example "Suggested Schedule"
 
-    | Month | Task |
-    |-------|------|
-    | January | Permission audit |
-    | March | Key rotation |
-    | April | Permission audit |
-    | June | Usage review |
-    | July | Permission audit |
-    | September | Key rotation |
-    | October | Permission audit |
-    | December | Annual review |
+   | Month | Task |
+    | ------- |------|
+   | January | Permission audit |
+   | March | Key rotation |
+   | April | Permission audit |
+   | June | Usage review |
+   | July | Permission audit |
+   | September | Key rotation |
+   | October | Permission audit |
+   | December | Annual review |
 
 ## Documentation
 

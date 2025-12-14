@@ -6,7 +6,7 @@ When child workflows don't depend on each other, run them in parallel. This redu
 
 ## Why Parallel Execution?
 
-Sequential execution is safe but slow. If tests take 5 minutes and linting takes 2 minutes, running them sequentially takes 7 minutes. Running them in parallel takes 5 minutes—the longer of the two.
+Sequential execution is safe but slow. If tests take 5 minutes and linting takes 2 minutes, running them sequentially takes 7 minutes. Running them in parallel takes 5 minutes, the time of the longer task.
 
 The savings compound. With three 5-minute independent tasks, sequential takes 15 minutes; parallel takes 5. With ten tasks, the difference is 50 minutes versus 5.
 
@@ -129,7 +129,7 @@ steps:
 Now both tasks run to completion regardless of failures. The step's overall status depends on both results:
 
 | Tests | Lint | Step Status |
-|-------|------|-------------|
+| ------- | ------ | ------------- |
 | Pass | Pass | Succeeded |
 | Pass | Fail | Failed |
 | Fail | Pass | Failed |
@@ -165,10 +165,10 @@ spec:
 
 Before parallelizing, calculate total resource requirements:
 
-- **CPU**: Sum of all parallel tasks' requests
-- **Memory**: Sum of all parallel tasks' requests
-- **API quota**: Parallel tasks make concurrent API calls
-- **Storage**: Parallel tasks may compete for I/O bandwidth
+- **CPU** - Sum of all parallel tasks' requests
+- **Memory** - Sum of all parallel tasks' requests
+- **API quota** - Parallel tasks make concurrent API calls
+- **Storage** - Parallel tasks may compete for I/O bandwidth
 
 Adjust cluster capacity or `parallelism` limits accordingly.
 

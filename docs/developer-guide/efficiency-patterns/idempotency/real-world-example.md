@@ -99,7 +99,7 @@ git push --force-with-lease -u origin "$BRANCH"
     The entire workflow can be rerun at any point. Failed repos retry cleanly. Successful repos skip efficiently.
 
 | Operation | Idempotency Pattern | Behavior on Rerun |
-|-----------|--------------------|--------------------|
+| ----------- | -------------------- | -------------------- |
 | Branch checkout | Check + Force reset | Resets to remote state |
 | Change detection | State inspection | Reports same result |
 | Commit | Conditional | Skips if no changes |

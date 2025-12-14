@@ -132,7 +132,7 @@ component_management:
 
 ## The Pattern
 
-### Before (Glob - Wrong for Codecov)
+### Before (Glob: Wrong for Codecov)
 
 ```yaml
 paths:
@@ -140,7 +140,7 @@ paths:
   - pkg/analyzer/**     # Glob pattern
 ```
 
-### After (Regex - Correct for Codecov)
+### After (Regex: Correct for Codecov)
 
 ```yaml
 paths:
@@ -282,9 +282,9 @@ One syntax change fixed everything.
 
 ## Related Patterns
 
-- **[The Wall at 85%](2025-12-19-the-wall-at-eighty-five-percent.md)** - The coverage journey that needed component tracking
-- **[Test Coverage as Security Signal](2025-12-21-coverage-as-security-signal.md)** - Why coverage components matter
-- **[SDLC Hardening](2025-12-12-harden-sdlc-before-audit.md)** - Quality gates in audit context
+- **[The Wall at 85%](2025-12-19-the-wall-at-eighty-five-percent.md)**: The coverage journey that needed component tracking
+- **[Test Coverage as Security Signal](2025-12-21-coverage-as-security-signal.md)**: Why coverage components matter
+- **[SDLC Hardening](2025-12-12-harden-sdlc-before-audit.md)**: Quality gates in audit context
 
 ---
 

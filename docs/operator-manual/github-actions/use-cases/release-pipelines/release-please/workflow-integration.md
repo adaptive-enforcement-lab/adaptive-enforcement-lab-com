@@ -58,14 +58,14 @@ For GitHub App setup, see [GitHub App Setup](../../../github-app-setup/index.md)
 Release-please outputs follow the pattern `<path>--<output>`:
 
 | Config Path | Output Variable |
-|-------------|-----------------|
+| ------------- | ----------------- |
 | `packages/backend` | `packages/backend--release_created` |
 | `charts/my-chart` | `charts/my-chart--tag_name` |
 
 Available outputs per package:
 
 | Output | Description |
-|--------|-------------|
+| -------- | ------------- |
 | `release_created` | Boolean, true if release was created |
 | `tag_name` | Git tag for the release |
 | `version` | Semantic version (e.g., `1.2.3`) |

@@ -66,7 +66,7 @@ Members: Read
 ## Permission Matrix
 
 | Permission | Read-Only | Standard | Full |
-|------------|:---------:|:--------:|:----:|
+| ------------ | :---------: | :--------: | :----: |
 | Contents | Read | Read & Write | Read & Write |
 | Pull Requests | Read | Read & Write | Read & Write |
 | Issues | Read | - | Read & Write |

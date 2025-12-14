@@ -173,11 +173,13 @@ Several issues request dedicated pattern documentation:
 **Potential New Category: "Architecture Patterns"**
 
 Currently engineering patterns are split across:
+
 - `efficiency-patterns/` (idempotency, work avoidance)
 - `error-handling/` (fail fast, prerequisite checks, graceful degradation)
 - `workflow-architecture/` (three-stage, matrix distribution)
 
 Issues #111, #40, #39 suggest patterns that don't fit cleanly:
+
 - Separation of Concerns (architectural principle)
 - Hub and Spoke (distributed system pattern)
 - Strangler Fig (migration strategy)
@@ -198,7 +200,7 @@ Issues #111, #40, #39 suggest patterns that don't fit cleanly:
 **Blog posts that should link to new content when created:**
 
 | Existing Post | Link To | When |
-|---------------|---------|------|
+| --------------- | --------- | ------ |
 | 2025-11-29-from-5-seconds-to-5-milliseconds.md | ConfigMap cache pattern post | When #1 written |
 | 2025-12-14-event-driven-deployments-argo.md | ConfigMap cache pattern post | When #1 written |
 | 2025-12-10-pre-commit-hooks-binary-releases.md | Pre-commit security gates post | When #2 written |
@@ -359,7 +361,7 @@ slug: harden-sdlc-before-audit
 
 ## Before/After
 | Manual Process | Automated Enforcement |
-|----------------|----------------------|
+| ---------------- | ---------------------- |
 | "We document security reviews" | Required reviewers + CODEOWNERS |
 | "Devs should scan containers" | Build breaks on HIGH CVEs |
 | "No secrets in code" | Pre-commit hook blocks patterns |
@@ -373,6 +375,7 @@ slug: harden-sdlc-before-audit
 ## Recommendations Summary
 
 **Write immediately:**
+
 1. ConfigMap cache pattern (closes #43, #134)
 2. Pre-commit security gates (closes #132, advances #56)
 3. SDLC hardening (closes #118, roadmap priority)
@@ -383,6 +386,7 @@ slug: harden-sdlc-before-audit
 6. Environment progression testing (closes #133)
 
 **Documentation work:**
+
 - Create `architecture-patterns/` section
 - Add separation of concerns pattern (#111)
 - Add hub and spoke pattern (#40)
@@ -390,9 +394,11 @@ slug: harden-sdlc-before-audit
 - Expand work avoidance with matrix patterns (#55)
 
 **Category creation:**
+
 - `Architecture Patterns` (new Developer Guide section)
 
 **Link maintenance:**
+
 - Update performance posts when cache pattern publishes
 - Update pre-commit posts when security gates publishes
 - Update all CI/CD posts when SDLC hardening publishes
@@ -402,12 +408,14 @@ slug: harden-sdlc-before-audit
 ## Context Analysis
 
 ### Repository State
+
 - **16 blog posts** published (Nov-Dec 2025)
 - **Existing categories**: 27 distinct categories in use
 - **Documentation structure**: Well-organized operator manual + developer guide
 - **Recent activity**: Heavy focus on Go CLI, Argo patterns, release engineering
 
 ### Open Issues Analysis
+
 - **22 open issues** total
 - **Content requests**: 10 issues for blog posts or documentation
 - **High priority**: SDLC hardening (#118) matches roadmap "In Progress"
@@ -417,6 +425,7 @@ slug: harden-sdlc-before-audit
 ### Content Themes
 
 Strong existing coverage:
+
 - GitHub Actions patterns (7 posts)
 - Release engineering (3 posts)
 - Performance optimization (2 posts)

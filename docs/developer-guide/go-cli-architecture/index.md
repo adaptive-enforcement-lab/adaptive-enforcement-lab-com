@@ -172,7 +172,7 @@ myctl/
 ## Key Design Principles
 
 | Principle | Description |
-|-----------|-------------|
+| ----------- | ------------- |
 | **Separation of concerns** | Commands handle CLI logic; `pkg/` handles business logic |
 | **[Testable by default](testing/index.md)** | Interfaces for external dependencies enable fake clients |
 | **[Fail fast](../error-handling/fail-fast/index.md)** | Validate configuration and connectivity before operations |

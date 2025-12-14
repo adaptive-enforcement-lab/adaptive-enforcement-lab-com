@@ -1,6 +1,6 @@
 # Spawning Child Workflows
 
-The `resource.action: create` pattern spawns a child workflow and waits for its completion. This is the fundamental building block of composition—the parent creates a child, monitors its status, and proceeds or fails based on the result.
+The `resource.action: create` pattern spawns a child workflow and waits for its completion. This is the fundamental building block of composition. The parent creates a child, monitors its status, and proceeds or fails based on the result.
 
 ---
 
@@ -50,7 +50,7 @@ templates:
 **Key elements:**
 
 | Field | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `generateName` | Unique name for each child instance |
 | `workflowTemplateRef` | Reference to the WorkflowTemplate to instantiate |
 | `successCondition` | Status that marks parent step as successful |
@@ -81,7 +81,7 @@ sequenceDiagram
     Note over P: Step completes (success)
 ```
 
-The parent polls the child's status until it reaches a terminal state. This happens automatically—you don't implement the polling. But understand that there's latency: the parent doesn't immediately know when the child finishes.
+The parent polls the child's status until it reaches a terminal state. This happens automatically; you don't implement the polling. However, there's latency: the parent doesn't immediately know when the child finishes.
 
 ---
 
@@ -156,7 +156,7 @@ spec:
         failureCondition: status.phase in (Failed, Error)
 ```
 
-If any child fails, the parent fails and remaining steps don't execute. This fail-fast behavior is usually correct—there's no point building if the clone failed.
+If any child fails, the parent fails and remaining steps don't execute. This fail-fast behavior is usually correct. There's no point building if the clone failed.
 
 ---
 
@@ -190,7 +190,7 @@ Extract parameters from parent inputs or workflow context:
           name: build-template
 ```
 
-The `{{workflow.name}}` reference passes the parent's name to the child. This enables correlation—you can find all children spawned by a specific parent.
+The `{{workflow.name}}` reference passes the parent's name to the child. This enables correlation so you can find all children spawned by a specific parent.
 
 ---
 

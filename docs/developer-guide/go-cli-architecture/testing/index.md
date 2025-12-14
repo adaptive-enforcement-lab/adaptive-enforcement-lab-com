@@ -78,7 +78,7 @@ test-e2e:
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Interface first** | Design for testability with interfaces |
 | **Table-driven tests** | Cover edge cases systematically |
 | **Parallel tests** | Use `t.Parallel()` where safe |

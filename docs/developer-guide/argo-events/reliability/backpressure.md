@@ -1,6 +1,6 @@
 # Backpressure Handling
 
-When events arrive faster than they can be processed, systems must apply backpressure—slowing or rejecting new events to prevent overload. Without backpressure, queues grow unbounded, memory exhausts, and systems crash.
+When events arrive faster than they can be processed, systems must apply backpressure by slowing or rejecting new events to prevent overload. Without backpressure, queues grow unbounded, memory exhausts, and systems crash.
 
 ---
 
@@ -46,7 +46,7 @@ spec:
 ```
 
 | Setting | Purpose | Behavior When Exceeded |
-|---------|---------|----------------------|
+| --------- | --------- | ---------------------- |
 | `max_msgs` | Maximum messages in stream | New messages rejected |
 | `max_bytes` | Maximum total bytes | New messages rejected |
 | `max_msg_size` | Maximum single message size | Message rejected |
@@ -191,7 +191,7 @@ triggers:
 Watch these metrics for backpressure issues:
 
 | Metric | Warning Sign |
-|--------|--------------|
+| -------- | -------------- |
 | EventBus queue depth | Consistently near max_msgs |
 | Sensor processing latency | Increasing over time |
 | Workflow pending count | Growing queue of waiting workflows |

@@ -222,7 +222,7 @@ if repo.Archived || slices.Contains(repo.Topics, "deprecated") {
 ## Summary
 
 | Anti-Pattern | Symptom | Fix |
-|--------------|---------|-----|
+| -------------- | --------- | ----- |
 | Over-Aggressive Skipping | Missed updates | Verify actual condition |
 | Ignoring Error States | Silent failures | Validate cached results |
 | Stripping Too Much | Wrong comparisons | Use specific patterns |

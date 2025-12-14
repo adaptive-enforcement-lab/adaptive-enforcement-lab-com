@@ -77,7 +77,7 @@ graph TB
 Mike manages documentation versions with aliases:
 
 | Version | Alias | Purpose |
-|---------|-------|---------|
+| --------- | ------- | --------- |
 | `1.2.3` | `v1`, `latest` | Current stable release |
 | `1.1.0` | | Previous releases |
 | `dev` | | Continuous from main branch |
@@ -87,7 +87,7 @@ Users selecting "v1" always get the latest 1.x release. The `latest` alias point
 ### Deployment Strategy
 
 | Trigger | Action |
-|---------|--------|
+| --------- | -------- |
 | Release created | Deploy versioned docs with aliases |
 | Docs changed (no release) | Deploy to `dev` only |
 | No docs changes | Skip documentation build entirely |
@@ -110,4 +110,4 @@ Users selecting "v1" always get the latest 1.x release. The `latest` alias point
 
 ## Live Example
 
-See this pattern in action at [readability.adaptive-enforcement-lab.com](https://readability.adaptive-enforcement-lab.com) - a docs site with version selector powered by mike and release-please.
+See this pattern in action at [readability.adaptive-enforcement-lab.com](https://readability.adaptive-enforcement-lab.com): a docs site with version selector powered by mike and release-please.

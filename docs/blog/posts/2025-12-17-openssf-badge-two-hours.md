@@ -7,7 +7,7 @@ categories:
   - Open Source
   - Quality Assurance
 description: >-
-  Earned OpenSSF Best Practices certification in 2 hours. The gap wasn't code quality—it was contributor documentation.
+  Earned OpenSSF Best Practices certification in 2 hours. The gap wasn't code quality. It was contributor documentation.
 slug: openssf-badge-two-hours
 ---
 
@@ -15,7 +15,7 @@ slug: openssf-badge-two-hours
 
 Six pull requests. Two hours. OpenSSF Best Practices badge earned.
 
-The readability project passed certification on December 13, 2025. But the work didn't start that day—it started months earlier when we built the infrastructure the badge measures.
+The readability project passed certification on December 13, 2025. But the work didn't start that day. It started months earlier when we built the infrastructure the badge measures.
 
 <!-- more -->
 
@@ -27,13 +27,13 @@ Before touching the OpenSSF questionnaire, the project had:
 
 ### Test Coverage: 97-100%
 
-| Package          | Coverage |
-|------------------|----------|
-| cmd/readability  | 97.5%    |
-| pkg/analyzer     | 99.1%    |
-| pkg/config       | 100.0%   |
-| pkg/markdown     | 98.8%    |
-| pkg/output       | 99.6%    |
+| Package         | Coverage |
+| ------------------ | ---------- |
+| cmd/readability | 97.5%   |
+| pkg/analyzer    | 99.1%   |
+| pkg/config      | 100.0%  |
+| pkg/markdown    | 98.8%   |
+| pkg/output      | 99.6%   |
 
 95% minimum enforced in CI. Race detector enabled. No exceptions.
 
@@ -47,7 +47,7 @@ Before touching the OpenSSF questionnaire, the project had:
 **Code Quality:**
 
 - golangci-lint with comprehensive ruleset including gosec
-- Zero issues policy—every commit must pass
+- Zero issues policy: every commit must pass
 - gofmt enforcement
 - Standard Go tooling (`go build`, `go test`)
 
@@ -63,7 +63,7 @@ Badge criteria: mostly already met. What was missing? **Contributor documentatio
 
 ## The 2-Hour Documentation Sprint
 
-**21:05** - PR #93: CONTRIBUTING.md
+**21:05**: PR #93 (CONTRIBUTING.md)
 
 - Bug reporting process
 - Feature request guidelines
@@ -71,7 +71,7 @@ Badge criteria: mostly already met. What was missing? **Contributor documentatio
 - Code style requirements
 - Testing requirements (95% threshold documented)
 
-**21:17** - PR #94: SECURITY.md
+**21:17**: PR #94 (SECURITY.md)
 
 - Supported versions table
 - Private disclosure via GitHub Security Advisories
@@ -80,22 +80,22 @@ Badge criteria: mostly already met. What was missing? **Contributor documentatio
   - Status Update: Within 7 days
   - Resolution Target: Within 90 days
 
-**21:18** - PR #95: Issue templates
+**21:18**: PR #95 (Issue templates)
 
 - `.github/ISSUE_TEMPLATE/bug_report.yml`
 - `.github/ISSUE_TEMPLATE/feature_request.yml`
 - Config redirecting security issues to private reporting
 
-**21:19** - PR #96: Enable blank issues
+**21:19**: PR #96 (Enable blank issues)
 
 - Allow free-form alongside structured templates
 
-**21:35** - PR #98: TruffleHog CI integration
+**21:35**: PR #98 (TruffleHog CI integration)
 
 - Secret scanning with `--only-verified` flag
 - Added to existing security job
 
-**21:42** - PR #99: Badge in README
+**21:42**: PR #99 (Badge in README)
 
 - Display the certification
 
@@ -139,9 +139,9 @@ Either way, you win.
 
 1. **Build security infrastructure before you need a badge.** High coverage, scanning, and quality tools pay off regardless.
 
-2. **Documentation is the certification gap.** Most projects have the practices—they just haven't documented them.
+2. **Documentation is the certification gap.** Most projects have the practices. They just haven't documented them.
 
-3. **GitHub's security features integrate perfectly.** Private reporting, Dependabot, security advisories—all free, all OpenSSF-aligned.
+3. **GitHub's security features integrate perfectly.** Private reporting, Dependabot, security advisories. All free, all OpenSSF-aligned.
 
 4. **N/A is valid.** Many criteria (especially cryptography) don't apply to all projects. Mark them N/A with explanation.
 
@@ -167,7 +167,7 @@ Repository: [adaptive-enforcement-lab/readability](https://github.com/adaptive-e
 
 The badge certifies the foundation. The journey continues:
 
-- **[The Score That Wouldn't Move](2025-12-18-scorecard-stuck-at-eight.md)** - From signed releases (8/10) to cryptographic provenance (10/10)
-- **[The Wall at 85%](2025-12-19-the-wall-at-eighty-five-percent.md)** - How refactoring unlocked 99% coverage
-- **[Sixteen Alerts Overnight](2025-12-20-sixteen-alerts-overnight.md)** - OpenSSF Scorecard compliance in practice
-- **[Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md)** - Trivy, SBOM, and GitHub Security integration
+- **[The Score That Wouldn't Move](2025-12-18-scorecard-stuck-at-eight.md)**: From signed releases (8/10) to cryptographic provenance (10/10)
+- **[The Wall at 85%](2025-12-19-the-wall-at-eighty-five-percent.md)**: How refactoring unlocked 99% coverage
+- **[Sixteen Alerts Overnight](2025-12-20-sixteen-alerts-overnight.md)**: OpenSSF Scorecard compliance in practice
+- **[Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md)**: Trivy, SBOM, and GitHub Security integration

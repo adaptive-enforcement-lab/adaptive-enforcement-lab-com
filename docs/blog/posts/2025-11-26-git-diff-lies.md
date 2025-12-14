@@ -73,7 +73,7 @@ Three factors make this bug particularly nasty:
 
 If the target repository already has the file and you're updating it, `git diff` works perfectly. The file is tracked. Changes are detected. PRs get created.
 
-The bug only manifests for repositories **missing the file entirely**. These are often new repositories or edge cases—exactly the ones you're least likely to test manually.
+The bug only manifests for repositories **missing the file entirely**. These are often new repositories or edge cases. These are exactly the ones you're least likely to test manually.
 
 ### 2. Green CI Masks the Failure
 
@@ -85,11 +85,11 @@ No changes needed
 
 No error. No warning. Just a lie.
 
-CI dashboards show green. Notifications don't fire. The only symptom is the absence of expected PRs—which requires someone to notice something didn't happen.
+CI dashboards show green. Notifications don't fire. The only symptom is the absence of expected PRs. Someone has to notice something didn't happen.
 
 ### 3. The Pattern Looks Correct
 
-`git diff --quiet` is a legitimate idiom. Search Stack Overflow, read shell scripting guides, check other workflows—you'll find this pattern everywhere.
+`git diff --quiet` is a legitimate idiom. Search Stack Overflow, read shell scripting guides, check other workflows. You'll find this pattern everywhere.
 
 It's not wrong. It's just incomplete.
 
@@ -122,7 +122,7 @@ The `--porcelain` flag guarantees machine-parseable output that won't change bet
 ### The Behavior Difference
 
 | Scenario | `git diff --quiet` | `git status --porcelain` |
-|----------|-------------------|-------------------------|
+| ---------- | ------------------- | ------------------------- |
 | Modified tracked file | Detects | Detects |
 | New untracked file | **Misses** | Detects |
 | Deleted tracked file | Detects | Detects |
@@ -253,4 +253,4 @@ Next time you write change detection in a CI/CD pipeline, remember: `git diff` i
 
 ---
 
-*Found a bug in your automation? That's not failure—that's learning. Document it, fix it, share it.*
+*Found a bug in your automation? That's not failure. That's learning. Document it, fix it, share it.*

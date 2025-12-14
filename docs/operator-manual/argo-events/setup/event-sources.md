@@ -30,7 +30,7 @@ spec:
 **Key settings:**
 
 | Setting | Value | Purpose |
-|---------|-------|---------|
+| --------- | ------- | --------- |
 | `jsonBody` | `true` | Parse Pub/Sub messages as JSON |
 | `deleteSubscriptionOnFinish` | `false` | Keep subscription across pod restarts |
 | `credentialSecret` | secret reference | GCP service account with `pubsub.subscriber` role |
@@ -83,7 +83,7 @@ spec:
 **Key settings:**
 
 | Setting | Purpose |
-|---------|---------|
+| --------- | --------- |
 | `githubApp` | GitHub App auth (preferred over personal tokens) |
 | `webhook.url` | External URL where GitHub sends events |
 | `events` | GitHub event types to listen for |

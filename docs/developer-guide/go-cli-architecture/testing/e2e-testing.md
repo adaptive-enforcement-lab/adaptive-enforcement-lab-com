@@ -173,7 +173,7 @@ echo "Smoke tests passed!"
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Isolated namespaces** | Create unique namespaces per test run |
 | **Cleanup on exit** | Always clean up, even on failure |
 | **Timeouts** | Set reasonable timeouts for resource waits |

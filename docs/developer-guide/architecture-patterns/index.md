@@ -22,7 +22,7 @@ Single-responsibility components with clear boundaries. Orchestration separate f
 
 **Use when:** Building CLIs, microservices, or any system with distinct responsibilities
 
-**Key benefit:** Maintainability - change one thing without breaking everything
+**Key benefit:** Maintainability – change one thing without breaking everything
 
 ---
 
@@ -32,7 +32,7 @@ Centralized orchestration with distributed execution. One coordinator, many work
 
 **Use when:** Scaling workflows, managing distributed systems, event-driven architectures
 
-**Key benefit:** Scalability - add workers without changing orchestration
+**Key benefit:** Scalability – add workers without changing orchestration
 
 ---
 
@@ -42,7 +42,7 @@ Incremental migration from legacy systems. Run old and new in parallel. Graduall
 
 **Use when:** Replacing monoliths, migrating to new tech, risky system rewrites
 
-**Key benefit:** Risk reduction - rollback at any point, validate in production
+**Key benefit:** Risk reduction – rollback at any point, validate in production
 
 ---
 
@@ -52,7 +52,7 @@ Separate discovery, execution, and reporting phases. Workflows that fail gracefu
 
 **Use when:** Building complex CI/CD workflows, multi-step automation
 
-**Key benefit:** Observability - always know what happened, even on failure
+**Key benefit:** Observability – always know what happened, even on failure
 
 ---
 
@@ -62,7 +62,7 @@ Parallel processing of multiple targets. Dynamic matrices for scalability.
 
 **Use when:** Processing many targets, scaling workflows, reducing execution time
 
-**Key benefit:** Performance - parallel execution instead of sequential
+**Key benefit:** Performance – parallel execution instead of sequential
 
 ---
 
@@ -95,10 +95,10 @@ Separation of Concerns provides the foundation. Hub and Spoke scales it. Strangl
 
 These architectural patterns complement:
 
-- **[Efficiency Patterns](../efficiency-patterns/index.md)** - Idempotency, work avoidance
-- **[Error Handling](../error-handling/index.md)** - Fail fast, graceful degradation
-- **[Argo Workflows](../argo-workflows/index.md)** - Production workflow orchestration
-- **[Argo Events](../argo-events/index.md)** - Event-driven automation
+- **[Efficiency Patterns](../efficiency-patterns/index.md):** Idempotency, work avoidance
+- **[Error Handling](../error-handling/index.md):** Fail fast, graceful degradation
+- **[Argo Workflows](../argo-workflows/index.md):** Production workflow orchestration
+- **[Argo Events](../argo-events/index.md):** Event-driven automation
 
 ---
 

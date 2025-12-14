@@ -1,6 +1,6 @@
 # Scheduled Workflows
 
-CronWorkflows run automation on a schedule—hourly builds, nightly backups, weekly reports. They combine the reliability of Kubernetes cron jobs with the power of Argo Workflows, enabling complex scheduled automation that survives cluster restarts and handles failures gracefully.
+CronWorkflows run automation on a schedule: hourly builds, nightly backups, weekly reports. They combine the reliability of Kubernetes cron jobs with the power of Argo Workflows, enabling complex scheduled automation that survives cluster restarts and handles failures gracefully.
 
 ---
 
@@ -13,14 +13,14 @@ Kubernetes CronJobs work for simple scheduled tasks. But they have limitations:
 - No workflow visualization
 - Basic retry logic
 
-CronWorkflows provide the full power of Argo Workflows on a schedule. Multi-step pipelines, sophisticated retry strategies, visual debugging, artifact management—all available for scheduled automation.
+CronWorkflows provide the full power of Argo Workflows on a schedule. Multi-step pipelines, sophisticated retry strategies, visual debugging, and artifact management are all available for scheduled automation.
 
 ---
 
 ## Patterns
 
 | Pattern | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Basic CronWorkflow](basic.md) | Simple scheduled execution |
 | [Concurrency Policies](concurrency-policy.md) | Handling overlapping runs |
 | [Orchestration](orchestration.md) | Scheduled pipelines that spawn child workflows |
@@ -40,7 +40,7 @@ CronWorkflows provide the full power of Argo Workflows on a schedule. Multi-step
 ## Cron Syntax Quick Reference
 
 | Expression | Meaning |
-|------------|---------|
+| ------------ | --------- |
 | `0 * * * *` | Every hour at minute 0 |
 | `0 0 * * *` | Daily at midnight |
 | `0 0 * * 0` | Weekly on Sunday at midnight |
@@ -55,6 +55,6 @@ CronWorkflows provide the full power of Argo Workflows on a schedule. Multi-step
 
 ## Related
 
-- [WorkflowTemplate Patterns](../templates/index.md) - Building workflow templates to schedule
-- [Concurrency Control](../concurrency/index.md) - Mutex and semaphore patterns
-- [Workflow Composition](../composition/index.md) - Complex scheduled pipelines
+- [WorkflowTemplate Patterns](../templates/index.md): Building workflow templates to schedule
+- [Concurrency Control](../concurrency/index.md): Mutex and semaphore patterns
+- [Workflow Composition](../composition/index.md): Complex scheduled pipelines

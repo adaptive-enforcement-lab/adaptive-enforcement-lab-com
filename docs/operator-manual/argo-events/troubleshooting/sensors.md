@@ -1,6 +1,6 @@
 # Sensor Troubleshooting
 
-Sensors receive events from the EventBus and trigger actions. When events arrive but workflows don't start, the problem is usually in the Sensor—filters, conditions, or trigger configuration.
+Sensors receive events from the EventBus and trigger actions. When events arrive but workflows don't start, the problem is usually in the Sensor configuration: filters, conditions, or triggers.
 
 ---
 

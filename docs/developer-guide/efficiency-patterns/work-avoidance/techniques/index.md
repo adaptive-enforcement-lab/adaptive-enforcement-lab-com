@@ -12,7 +12,7 @@ Techniques for detecting when work can be safely skipped.
 Each technique answers a specific question:
 
 | Technique | Question | Best For |
-|-----------|----------|----------|
+| ----------- | ---------- | ---------- |
 | [Content Hashing](content-hashing.md) | "Is the content different?" | File comparisons, config sync |
 | [Volatile Field Exclusion](volatile-field-exclusion.md) | "Did anything meaningful change?" | Version bumps, timestamps |
 | [Existence Checks](existence-checks.md) | "Does it already exist?" | Resource creation (PRs, branches) |
@@ -62,7 +62,7 @@ flowchart TD
 ## Choosing a Technique
 
 | Scenario | Recommended Technique |
-|----------|----------------------|
+| ---------- | ---------------------- |
 | File distribution with version bumps | [Volatile Field Exclusion](volatile-field-exclusion.md) |
 | OCI image rebuilds | [Content Hashing](content-hashing.md) |
 | PR/branch creation | [Existence Checks](existence-checks.md) |

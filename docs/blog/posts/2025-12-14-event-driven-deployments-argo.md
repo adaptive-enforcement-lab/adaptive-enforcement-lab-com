@@ -28,7 +28,7 @@ I remember watching Jenkins poll SCM every minute. Every sixty seconds, a reques
 
 ArgoCD syncs on a timer. Flux polls Git repositories. Every CD tool I'd used was fundamentally reactive to a clock, not to reality.
 
-The waste bothered me. Not the compute cycles—those are cheap. The latency. The best-case response time is half your poll interval. Push at the wrong moment and you wait almost a full interval for the system to notice.
+The waste bothered me. Not the compute cycles. Those are cheap. The latency bothered me. The best-case response time is half your poll interval. Push at the wrong moment and you wait almost a full interval for the system to notice.
 
 But what really broke me was scale. More repositories meant more API calls. The polling load grew linearly with the number of things you wanted to watch. At some point, you're spending more resources asking "anything new?" than actually doing the work.
 
@@ -70,7 +70,7 @@ Simple in concept. The devil was in the details.
 
 ## The EventSource Discovery
 
-Argo Events has an EventSource abstraction that connects to external systems. The Pub/Sub integration worked out of the box—mostly.
+Argo Events has an EventSource abstraction that connects to external systems. The Pub/Sub integration worked out of the box. Mostly.
 
 The first version silently dropped events. No errors, no logs. Just... nothing happened.
 
@@ -89,7 +89,7 @@ Between EventSource and Sensor sits the EventBus. Initially I used the default J
 
 Then I restarted a pod during an image push storm.
 
-Events vanished. Not delivered late—gone. The EventBus wasn't persisting them. When the subscriber reconnected, the events it missed were already garbage collected.
+Events vanished. Not delayed in delivery. Just gone. The EventBus wasn't persisting them. When the subscriber reconnected, the events it missed were already garbage collected.
 
 The fix was persistence. NATS with storage. Events survive pod restarts. The system recovers from failures without losing work.
 
@@ -146,7 +146,7 @@ The first version had none of this. Events that failed just... failed. I'd notic
 From image push to deployment restart:
 
 | Phase | V1 (Polling) | V2 (Events) |
-|-------|--------------|-------------|
+| ------- | -------------- | ------------- |
 | Detection | 30-60s | <1s |
 | Lookup | 5-10s | <5ms |
 | Restart | 1-2s | 1-2s |
@@ -174,7 +174,7 @@ If I were starting over:
 
 ## What's Next
 
-This blog post tells the story. The implementation details—YAML manifests, Go code, RBAC configurations—live in the developer guide:
+This blog post tells the story. The implementation details, including YAML manifests, Go code, and RBAC configurations, live in the developer guide:
 
 !!! info "Deep Dives"
 

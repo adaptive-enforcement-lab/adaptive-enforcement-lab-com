@@ -66,7 +66,7 @@ cacheKey := fmt.Sprintf("build-%s-%s-%s", sourceHash, depsHash, configHash)
 ### Common Cache Key Components
 
 | Component | Hash Source |
-|-----------|-------------|
+| ----------- | ------------- |
 | Source code | `hashFiles('src/**')` |
 | Dependencies | `hashFiles('package-lock.json')` |
 | Build config | `hashFiles('webpack.config.js')` |
@@ -170,7 +170,7 @@ fi
 ## Cache Strategies
 
 | Strategy | Pros | Cons |
-|----------|------|------|
+| ---------- | ------ | ------ |
 | **Exact match** | Simple, predictable | Cache misses on any change |
 | **Prefix match** | Partial hits useful | Stale data risk |
 | **Layered** | Granular invalidation | Complex key management |
@@ -187,7 +187,7 @@ fi
       deps-
 ```
 
-Falls back to older cache if exact match fails—useful for dependencies where partial cache is still valuable.
+Falls back to older cache if exact match fails. This is useful for dependencies where partial cache is still valuable.
 
 ---
 

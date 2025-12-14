@@ -62,7 +62,7 @@ jobs:
 ## Environment Variables
 
 | Variable | Description | Source |
-|----------|-------------|--------|
+| ---------- | ------------- | -------- |
 | `CORE_APP_ID` | GitHub App ID | Repository secret |
 | `CORE_APP_PRIVATE_KEY` | GitHub App private key | Repository secret |
 | `GH_TOKEN` | Generated token | Workflow step output |
@@ -117,7 +117,7 @@ on:
 Format: `minute hour day-of-month month day-of-week`
 
 | Pattern | Schedule |
-|---------|----------|
+| --------- | ---------- |
 | `0 6 * * 6,0` | Saturdays and Sundays at 06:00 UTC |
 | `0 0 * * 1` | Mondays at midnight UTC |
 | `0 */6 * * *` | Every 6 hours |

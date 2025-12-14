@@ -9,7 +9,7 @@ Frequently encountered issues and their solutions. These patterns appear across 
 When events don't trigger workflows, check in order:
 
 | Step | Check | Command |
-|------|-------|---------|
+| ------ | ------- | --------- |
 | 1 | EventSource running | `kubectl get eventsources -n argo-events` |
 | 2 | EventSource receiving | `kubectl logs -l eventsource-name=<name>` |
 | 3 | EventBus healthy | `kubectl get eventbus -n argo-events` |

@@ -134,11 +134,11 @@ SHORT_HASH=$(sha256sum file.txt | cut -c1-8)
 
 !!! warning "Hash Length Tradeoffs"
 
-    | Length | Bits | Collision likely at |
-    |--------|------|---------------------|
-    | 4 chars | 16 | ~256 items |
-    | 8 chars | 32 | ~65,000 items |
-    | 16 chars | 64 | ~4 billion items |
+   | Length | Bits | Collision likely at |
+    | -------- |------ | --------------------- |
+   | 4 chars | 16 | ~256 items |
+   | 8 chars | 32 | ~65,000 items |
+   | 16 chars | 64 | ~4 billion items |
 
     For small datasets, 8 chars is usually fine. For large-scale systems, use 16+.
 
@@ -337,7 +337,7 @@ ID=$(sha256sum file.txt | cut -c1-16)  # 64 bits
 ## Comparison with Other Patterns
 
 | Aspect | [Check-Before-Act](check-before-act.md) | [Upsert](upsert.md) | Unique Identifiers |
-|--------|-----------------|--------|-------------------|
+| -------- | ----------------- | -------- | ------------------- |
 | Requires existence check | Yes | No | No |
 | Natural deduplication | No | No | Yes |
 | ID predictability | N/A | N/A | High |

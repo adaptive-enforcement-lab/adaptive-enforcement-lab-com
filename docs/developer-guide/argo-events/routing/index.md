@@ -37,7 +37,7 @@ flowchart LR
 ## Routing Patterns
 
 | Pattern | Use Case | Complexity |
-|---------|----------|------------|
+| --------- | ---------- | ------------ |
 | [Simple Filtering](filtering.md) | Route events based on field values | Low |
 | [Multi-Trigger Actions](multi-trigger.md) | Execute multiple actions from one event | Medium |
 | [Event Transformation](transformation.md) | Modify payloads before triggering | Medium |

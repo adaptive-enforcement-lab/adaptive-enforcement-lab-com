@@ -39,7 +39,7 @@ The result: developers disable pre-commit hooks.
 ## Binary Release Advantages
 
 | Aspect | Source Build | Binary Release |
-|--------|--------------|----------------|
+| -------- | -------------- | ---------------- |
 | First run | 30+ seconds | ~1 second |
 | Go required | Yes | No |
 | Version issues | Depends on user's Go | Same binary for all |
@@ -80,7 +80,7 @@ Define hooks in your tool repo:
 ## Key Hook Definition Fields
 
 | Field | Purpose |
-|-------|---------|
+| ------- | --------- |
 | `id` | Name users put in their config |
 | `entry` | Command to execute |
 | `language` | Runtime: golang, system, python |

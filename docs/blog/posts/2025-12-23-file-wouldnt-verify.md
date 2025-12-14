@@ -238,4 +238,4 @@ The file wouldn't verify. We followed best practices. We didn't understand the t
 
 ---
 
-*Provenance generated. Verification failed. SHA pins contradicted version tag requirements. Exception documented. Trade-offs understood. Security isn't dogma—it's informed decisions.*
+*Provenance generated. Verification failed. SHA pins contradicted version tag requirements. Exception documented. Trade-offs understood. Security isn't dogma. It's informed decisions.*

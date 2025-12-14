@@ -62,7 +62,7 @@ Policy validation is environment-specific. Detect target environment from branch
 ```
 
 !!! warning "Environment Detection is Critical"
-    Production policies are stricter than dev. Wrong environment detection means applying dev policies to production code, creating security gaps.
+    Production policies are stricter than dev. Wrong environment detection means applying dev policies to production code. This creates security gaps.
 
 ---
 
@@ -98,7 +98,7 @@ Validate Helm values against schemas **before** rendering manifests:
 - Type mismatches
 - Invalid enum values
 
-**Fails fast** - no point rendering manifests if values are invalid.
+**Fails fast**: no point rendering manifests if values are invalid.
 
 ---
 
@@ -149,9 +149,9 @@ Render environment-specific manifests:
 
 **Three artifact types**:
 
-1. **security-policy.yaml** - Security rules (resource limits, image policies, etc.)
-2. **devops-policy.yaml** - Operational rules (labels, annotations, naming)
-3. **backend-app.yaml** - Application manifests to validate
+1. **security-policy.yaml** for Security rules (resource limits, image policies, etc.)
+2. **devops-policy.yaml** for Operational rules (labels, annotations, naming)
+3. **backend-app.yaml** for Application manifests to validate
 
 ---
 
@@ -349,7 +349,7 @@ pipelines:
 
 ## Next Steps
 
-- **[GitHub Actions Integration](github-actions.md)** - GitHub Actions workflow examples
-- **[Runtime Deployment](../runtime-deployment/index.md)** - Deploy Kyverno admission control
-- **[Multi-Source Policies](../multi-source-policies/index.md)** - Aggregate multiple policy repos
-- **[Operations](../operations/index.md)** - Day-to-day policy management
+- **[GitHub Actions Integration](github-actions.md)** for GitHub Actions workflow examples
+- **[Runtime Deployment](../runtime-deployment/index.md)** for Deploy Kyverno admission control
+- **[Multi-Source Policies](../multi-source-policies/index.md)** for Aggregate multiple policy repos
+- **[Operations](../operations/index.md)** for Day-to-day policy management

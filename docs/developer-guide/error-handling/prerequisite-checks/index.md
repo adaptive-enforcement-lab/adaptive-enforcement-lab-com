@@ -48,7 +48,7 @@ The key insight: **check everything, then do everything**.
 ## Categories of Prerequisites
 
 | Category | What to Check | Example |
-|----------|---------------|---------|
+| ---------- | --------------- |---------|
 | **Tools** | Required binaries exist | `kubectl`, `helm`, `jq` |
 | **Access** | Permissions are granted | API tokens, RBAC roles |
 | **State** | System is in expected state | Resource exists, not locked |
@@ -75,7 +75,7 @@ Before implementing prerequisite checks:
 ## Deep Dives
 
 | Topic | Description |
-|-------|-------------|
+| ------- | ------------- |
 | [Check Ordering](ordering.md) | Cost-based ordering strategy |
 | [Anti-Patterns](anti-patterns.md) | Common mistakes to avoid |
 | [Examples](examples.md) | Real-world implementations |
@@ -85,7 +85,7 @@ Before implementing prerequisite checks:
 ## Relationship to Other Patterns
 
 | Pattern | How Prerequisite Checks Applies |
-|---------|--------------------------------|
+| --------- | -------------------------------- |
 | [Fail Fast](../fail-fast/index.md) | Prerequisite checks are structured fail-fast validation |
 | [Graceful Degradation](../graceful-degradation/index.md) | Prerequisites determine if graceful degradation is even possible |
 | [Idempotency](../../efficiency-patterns/idempotency/index.md) | Check-before-act is a prerequisite pattern |

@@ -75,7 +75,7 @@ summary:
 ## Error Categories
 
 | Error Type | Handling | Recovery |
-|------------|----------|----------|
+| ------------ | ---------- | ---------- |
 | Auth failure | Job fails | Check secrets configuration |
 | Clone failure | Job fails | Verify repo access |
 | Push failure | Job fails | Check branch protection |

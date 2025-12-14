@@ -21,7 +21,7 @@ Work avoidance is valuable in GitHub Actions when:
 ## Implementation Patterns
 
 | Pattern | Operator Manual | Engineering Pattern |
-|---------|-----------------|---------------------|
+| --------- | ----------------- | --------------------- |
 | Skip version-only changes | [Content Comparison](content-comparison.md) | [Volatile Field Exclusion](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md) |
 | Skip unchanged paths | [Path Filtering](path-filtering.md) | N/A (native GitHub feature) |
 | Skip cached builds | [Cache-Based Skip](cache-based-skip.md) | [Cache-Based Skip](../../../../developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md) |

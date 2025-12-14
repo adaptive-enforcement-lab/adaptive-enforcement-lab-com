@@ -8,7 +8,7 @@ Workflows execute with the permissions of their ServiceAccount. The principle of
 
 A workflow that can list all secrets in the cluster can exfiltrate credentials. A workflow that can patch deployments in any namespace can modify production services. A workflow that can create pods can mine cryptocurrency.
 
-Most workflows need narrow permissions—read one ConfigMap, restart specific deployments, write to one PVC. But the default ServiceAccount often has no permissions, causing workflows to fail with cryptic RBAC errors. The temptation is to grant broad permissions to make things work. Don't.
+Most workflows need narrow permissions: read one ConfigMap, restart specific deployments, write to one PVC. But the default ServiceAccount often has no permissions, causing workflows to fail with cryptic RBAC errors. The temptation is to grant broad permissions to make things work quickly. Don't.
 
 Take the time to figure out exactly what permissions your workflow needs. Grant those and nothing more. When the workflow's requirements change, update the RBAC to match.
 
@@ -61,7 +61,7 @@ The ServiceAccount defines the identity. The ClusterRole defines what operations
 The choice between Role and ClusterRole depends on scope:
 
 | Type | Scope | Use Case |
-|------|-------|----------|
+| ------ | ------- | ---------- |
 | Role + RoleBinding | Single namespace | Workflow operates in one namespace |
 | ClusterRole + RoleBinding | Single namespace | Reusable permissions, namespace-specific binding |
 | ClusterRole + ClusterRoleBinding | All namespaces | Workflow operates across namespaces |
@@ -84,7 +84,7 @@ rules:
     resourceNames: ["deployment-image-cache"]
 ```
 
-This workflow can only read the `deployment-image-cache` ConfigMap—not any other ConfigMap. If compromised, it can't access other configuration or secrets stored in ConfigMaps.
+This workflow can only read the `deployment-image-cache` ConfigMap and no other ConfigMaps. If compromised, it can't access other configuration or secrets stored in ConfigMaps.
 
 **Use `resourceNames` whenever possible.** It significantly reduces blast radius.
 
@@ -149,7 +149,7 @@ The `--as` flag impersonates the ServiceAccount. The response tells you whether 
 **Common mistakes:**
 
 | Symptom | Cause | Fix |
-|---------|-------|-----|
+| --------- | ------- | ----- |
 | `forbidden: User "system:serviceaccount:..."` | Missing verb | Add the verb to rules |
 | `cannot get resource "deployments"` | Missing resource | Add the resource to rules |
 | `not found` | Wrong namespace | Check namespace in subjects |
@@ -169,7 +169,7 @@ spec:
       serviceAccountName: deployment-restarter  # Can also specify per-template
 ```
 
-The `serviceAccountName` at the spec level applies to all templates. Per-template overrides allow different templates to run with different permissions—useful for multi-stage workflows where some stages need broader access than others.
+The `serviceAccountName` at the spec level applies to all templates. Per-template overrides allow different templates to run with different permissions. This is useful for multi-stage workflows where some stages need broader access than others.
 
 ---
 

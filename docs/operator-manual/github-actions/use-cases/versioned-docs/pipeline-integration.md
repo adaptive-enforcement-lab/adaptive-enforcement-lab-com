@@ -149,7 +149,7 @@ The build-docs job runs when:
 2. **Force flag** - Manual rebuild requested
 3. **Release created** - Always update docs on release
 
-This implements [work avoidance](../work-avoidance/index.md) - no wasted builds when only code changes.
+This implements [work avoidance](../work-avoidance/index.md) -- no wasted builds when only code changes.
 
 ### always() and !cancelled()
 

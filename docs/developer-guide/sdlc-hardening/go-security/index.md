@@ -1,6 +1,6 @@
 # Go Security Tooling
 
-Security-focused tooling built into the Go ecosystem. No exotic tools needed—everything is standard, integrated, and runs every commit.
+Security-focused tooling built into the Go ecosystem. No exotic tools needed. Everything is standard, integrated, and runs every commit.
 
 !!! tip "Boring is Better"
     Go's "boring" standard tools catch real vulnerabilities because they're frictionless to run. Exotic tools gather dust. Standard tools run on every commit.

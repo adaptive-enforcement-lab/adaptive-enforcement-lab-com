@@ -1,11 +1,11 @@
 ---
-title: Hub and Spoke - Operations Guide
+title: Hub and Spoke Operations Guide
 description: >-
   Scaling characteristics, failure handling, summary collection,
   monitoring, and when to use hub and spoke pattern.
 ---
 
-# Hub and Spoke - Operations Guide
+# Hub and Spoke Operations Guide
 
 ## Scaling Characteristics
 
@@ -15,10 +15,10 @@ description: >-
 | Aspect | Sequential | Hub and Spoke |
 | -------- | ------------ | --------------- |
 | Parallelism | None | Full |
-| Time complexity | O(n) | O(1) (longest spoke) |
+| Time complexity | O(n) | O(1), limited by longest spoke |
 | Resource usage | One worker | n workers |
 | Failure isolation | One failure stops all | Failures isolated to spokes |
-| Debugging | Easy (linear) | Harder (distributed) |
+| Debugging | Easy, linear flow | Harder, distributed system |
 
 ---
 
@@ -140,7 +140,7 @@ count(argo_workflow_status{workflow_template="spoke-worker",phase="Running"})
 
 Alert when:
 
-- Hub fails (critical - no spokes spawn)
+- Hub fails (critical: no spokes spawn)
 - Spoke failure rate > 10% (degraded operation)
 - Spokes stuck running (timeout issue)
 
@@ -148,9 +148,9 @@ Alert when:
 
 ## Related Patterns
 
-- **[Separation of Concerns](../separation-of-concerns/index.md)** - Hub is orchestrator, spokes are executors
-- **[Three-Stage Design](../../architecture-patterns/three-stage-design.md)** - Discovery → Distribution → Summary
-- **[Matrix Distribution](../../architecture-patterns/matrix-distribution/index.md)** - GitHub Actions equivalent
+- **[Separation of Concerns](../separation-of-concerns/index.md):** Hub is orchestrator, spokes are executors
+- **[Three-Stage Design](../../architecture-patterns/three-stage-design.md):** Discovery → Distribution → Summary
+- **[Matrix Distribution](../../architecture-patterns/matrix-distribution/index.md):** GitHub Actions equivalent
 
 ---
 

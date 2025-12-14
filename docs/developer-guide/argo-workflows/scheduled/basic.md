@@ -1,6 +1,6 @@
 # Basic CronWorkflow
 
-A CronWorkflow runs a workflow on a cron schedule. It's the Argo Workflows equivalent of a Kubernetes CronJob, but with full workflow capabilities—multi-step execution, sophisticated retry logic, and visual debugging.
+A CronWorkflow runs a workflow on a cron schedule. It's the Argo Workflows equivalent of a Kubernetes CronJob, but with full workflow capabilities: multi-step execution, sophisticated retry logic, and visual debugging.
 
 ---
 
@@ -41,7 +41,7 @@ This runs every 6 hours. The workflow rebuilds a cache used by other automation.
 ## Configuration Fields
 
 | Field | Purpose | Example |
-|-------|---------|---------|
+| ------- | --------- | --------- |
 | `schedule` | Cron expression for when to run | `"0 */6 * * *"` |
 | `timezone` | Timezone for schedule interpretation | `"Europe/Zurich"` |
 | `startingDeadlineSeconds` | Grace period to start after scheduled time | `60` |
@@ -76,7 +76,7 @@ spec:
   startingDeadlineSeconds: 60
 ```
 
-If the controller can't start the workflow within 60 seconds of midnight, it's skipped. This prevents backlog accumulation during outages—you don't want 24 missed jobs all starting at once when the system recovers.
+If the controller can't start the workflow within 60 seconds of midnight, it's skipped. This prevents backlog accumulation during outages. You don't want 24 missed jobs all starting at once when the system recovers.
 
 Without a starting deadline, missed jobs might start late (depending on `concurrencyPolicy`). Set a reasonable deadline for time-sensitive work.
 
@@ -134,6 +134,6 @@ The status shows:
 
 ## Related
 
-- [Concurrency Policies](concurrency-policy.md) - Handling overlapping runs
-- [Orchestration](orchestration.md) - Complex scheduled pipelines
-- [TTL Strategy](../concurrency/ttl.md) - Cleaning up completed runs
+- [Concurrency Policies](concurrency-policy.md): Handling overlapping runs
+- [Orchestration](orchestration.md): Complex scheduled pipelines
+- [TTL Strategy](../concurrency/ttl.md): Cleaning up completed runs

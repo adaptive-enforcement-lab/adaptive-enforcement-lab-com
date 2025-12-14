@@ -98,7 +98,7 @@ No special handling for release-please branches required.
 Personal Access Tokens also trigger workflow events, but they're the wrong tool:
 
 | Aspect | PAT | GitHub App |
-|--------|-----|------------|
+| -------- | ----- | ------------ |
 | Identity | Tied to user account | Machine identity |
 | Lifecycle | Revoked when user leaves | Survives personnel changes |
 | Permissions | Broad, user-level | Fine-grained, scoped |
@@ -134,7 +134,7 @@ on:
 Even with `GITHUB_TOKEN`, pushing commits to a branch emits `push` events. Only PR operations are silent:
 
 | Action | Git Push | API (GITHUB_TOKEN) |
-|--------|----------|-------------------|
+| -------- | ---------- | ------------------- |
 | Push to branch | `push` event | `push` event |
 | Create PR | `pull_request` event | **No event** |
 | Update PR | `pull_request` event | **No event** |
@@ -144,7 +144,7 @@ Even with `GITHUB_TOKEN`, pushing commits to a branch emits `push` events. Only 
 Release-please uses specific branch naming:
 
 | Repository Type | Branch Pattern |
-|-----------------|---------------|
+| ----------------- | --------------- |
 | Simple repo | `release-please--branches--main` |
 | Monorepo | `release-please--branches--main--component` |
 
@@ -193,7 +193,7 @@ on:
 The same principle applies to other tools:
 
 | Tool | Recommended | Fallback |
-|------|-------------|----------|
+| ------ | ------------- | ---------- |
 | Release-please | GitHub App token | `push` trigger for `release-please--**` |
 | Renovate (self-hosted) | GitHub App token | `push` trigger for `renovate/**` |
 | Custom bots | GitHub App token | Tool-specific branch patterns |
@@ -212,7 +212,7 @@ concurrency:
 ```
 
 | Variable | Context |
-|----------|---------|
+| ---------- | --------- |
 | `github.head_ref` | PR source branch (exists for PRs) |
 | `github.ref` | Full ref (fallback for push events) |
 
@@ -229,7 +229,7 @@ concurrency:
 ## Troubleshooting
 
 | Issue | Cause | Solution |
-|-------|-------|----------|
+| ------- | ------- | ---------- |
 | No build on release PR | Using `GITHUB_TOKEN` | Use GitHub App token for release-please |
 | Duplicate builds | Both App token and push trigger | Remove the push trigger workaround |
 | Wrong ref in build | Using `github.ref` on PR | Use `github.head_ref` for PR builds |

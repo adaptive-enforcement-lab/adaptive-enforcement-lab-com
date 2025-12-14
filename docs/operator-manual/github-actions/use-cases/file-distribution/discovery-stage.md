@@ -146,7 +146,7 @@ The `--paginate` flag automatically follows `pageInfo.hasNextPage` and aggregate
 ### Choosing an Approach
 
 | Team Size | Approach | Rationale |
-|-----------|----------|-----------|
+| ----------- | ---------- | ----------- |
 | < 50 repos | Simple query | No risk of hitting limit |
 | 50-100 repos | Fail-fast guard | Catch limit before it's a problem |
 | > 100 repos | Full pagination | Required for completeness |

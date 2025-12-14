@@ -6,7 +6,7 @@ WorkflowTemplates are the foundation of reusable automation in Argo Workflows. R
 
 ## Why WorkflowTemplates Matter
 
-The naive approach to workflow automation is embedding all logic directly in the triggering resource—a Sensor, CronWorkflow, or manual submission. This works for simple cases but quickly becomes unmaintainable.
+The naive approach to workflow automation is embedding all logic directly in the triggering resource: a Sensor, CronWorkflow, or manual submission. This works for simple cases but quickly becomes unmaintainable.
 
 Consider a documentation build pipeline. The first version might be a simple script triggered by a GitHub push. But then you need the same build for scheduled refreshes. And manual triggers for debugging. And a "full rebuild" variant that processes all repositories instead of just the changed one.
 
@@ -19,7 +19,7 @@ WorkflowTemplates solve this by extracting the workflow logic into a standalone 
 ## Patterns
 
 | Pattern | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Basic Structure](basic-structure.md) | Fundamental WorkflowTemplate anatomy and parameter handling |
 | [Retry Strategy](retry-strategy.md) | Error handling with exponential backoff |
 | [Init Containers](init-containers.md) | Multi-stage pipelines with sequential setup |

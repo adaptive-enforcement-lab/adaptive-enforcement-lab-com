@@ -12,14 +12,14 @@ Without concurrency control, the system behavior depends on timing. Sometimes wo
 
 Consider a documentation build pipeline triggered by Git pushes. Developer A pushes a change and the build starts. Developer B pushes another change before A's build completes. Now two builds run simultaneously, both reading from and writing to the same directories.
 
-Mutex synchronization ensures only one build runs at a time. B's build waits for A's to complete. The output is always consistent. The tradeoff is latency—B waits instead of starting immediately. But consistent results are worth more than fast chaos.
+Mutex synchronization ensures only one build runs at a time. B's build waits for A's to complete. The output is always consistent. The tradeoff is latency. B waits instead of starting immediately. But consistent results are worth more than fast chaos.
 
 ---
 
 ## Patterns
 
 | Pattern | Description |
-|---------|-------------|
+| --------- | ------------- |
 | [Mutex Synchronization](mutex.md) | Exclusive access to shared resources |
 | [Semaphores](semaphores.md) | Limited concurrent access |
 | [TTL Strategy](ttl.md) | Automatic cleanup of completed workflows |

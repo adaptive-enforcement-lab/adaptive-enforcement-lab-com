@@ -46,7 +46,7 @@ graph TB
 ## Best Practices
 
 | Practice | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | **Use label selectors** | Filter resources server-side, not client-side |
 | **Prefer patches over updates** | Patches are safer for concurrent modifications |
 | **Use strategic merge patches** | Kubernetes-native patch format for resources |

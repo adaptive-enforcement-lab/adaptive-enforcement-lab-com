@@ -1,11 +1,11 @@
 ---
-title: Separation of Concerns - Usage Guide
+title: Separation of Concerns Usage Guide
 description: >-
   When to apply separation of concerns, common mistakes to avoid,
   and real-world examples of the pattern in production systems.
 ---
 
-# Separation of Concerns - Usage Guide
+# Separation of Concerns Usage Guide
 
 ## When to Apply This Pattern
 
@@ -53,10 +53,10 @@ Don't separate concerns that don't exist yet. Wait until you have two different 
 ### Mistake 3: Wrong Boundaries
 
 ```go
-// Bad - cuts across natural boundaries
+// Bad: cuts across natural boundaries
 func parseAndValidate(path string) (*Config, error)  // Parser + validator mixed
 
-// Good - natural boundaries
+// Good: natural boundaries
 func parse(path string) (*Config, error)
 func validate(config *Config) error
 ```
@@ -71,11 +71,11 @@ See [Go CLI Architecture](../../go-cli-architecture/command-architecture/orchest
 
 ## Related Patterns
 
-- **[Pattern Overview](index.md)** - Core concepts and CLI orchestrator pattern
-- **[Implementation Techniques](implementation.md)** - Testing, interfaces, dependency injection
-- **[Hub and Spoke](../hub-and-spoke/index.md)** - Distributed version of orchestration
-- **[Fail Fast](../../error-handling/fail-fast/index.md)** - Error handling at boundaries
-- **[Prerequisite Checks](../../error-handling/prerequisite-checks/index.md)** - Validation separation
+- **[Pattern Overview](index.md):** Core concepts and CLI orchestrator pattern
+- **[Implementation Techniques](implementation.md):** Testing, interfaces, dependency injection
+- **[Hub and Spoke](../hub-and-spoke/index.md):** Distributed version of orchestration
+- **[Fail Fast](../../error-handling/fail-fast/index.md):** Error handling at boundaries
+- **[Prerequisite Checks](../../error-handling/prerequisite-checks/index.md):** Validation separation
 
 ---
 

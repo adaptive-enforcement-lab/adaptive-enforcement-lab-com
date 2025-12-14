@@ -1,11 +1,11 @@
 ---
-title: GitHub Apps - Operations Guide
+title: GitHub Apps Operations Guide
 description: >-
   Troubleshooting token generation, security best practices,
   and operational patterns for GitHub Apps.
 ---
 
-# GitHub Apps - Operations Guide
+# GitHub Apps Operations Guide
 
 ## Migration from PATs
 
@@ -65,9 +65,9 @@ Generate fresh token mid-workflow:
 
 ## Related Patterns
 
-- **[GitHub App Setup Guide](../../../operator-manual/github-actions/github-app-setup/index.md)** - Complete installation walkthrough
-- **[Actions Integration](../../../operator-manual/github-actions/actions-integration/index.md)** - Workflow patterns
-- **[File Distribution](../../../operator-manual/github-actions/use-cases/file-distribution/index.md)** - Cross-repo automation
+- **[GitHub App Setup Guide](../../../operator-manual/github-actions/github-app-setup/index.md)**: Complete installation walkthrough
+- **[Actions Integration](../../../operator-manual/github-actions/actions-integration/index.md)**: Workflow patterns
+- **[File Distribution](../../../operator-manual/github-actions/use-cases/file-distribution/index.md)**: Cross-repo automation
 
 ---
 

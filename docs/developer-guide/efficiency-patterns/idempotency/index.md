@@ -34,7 +34,7 @@ When your workflow fails at step 47 of 50, you have three options:
 ## In This Section
 
 | Page | Description |
-|------|-------------|
+| ------ | ------------- |
 | [Pros and Cons](pros-and-cons.md) | Tradeoffs of investing in idempotency |
 | [Decision Matrix](decision-matrix.md) | When to invest, when to skip |
 | [Implementation Patterns](patterns/index.md) | Five patterns with code examples |

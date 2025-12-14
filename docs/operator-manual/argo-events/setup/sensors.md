@@ -66,7 +66,7 @@ The `eventSourceName` and `eventName` fields connect this sensor to a specific E
 Filters prevent unwanted events from triggering workflows. Without proper filtering, your workflows might run on every event, wasting resources and potentially causing unintended side effects. Argo Events supports multiple filter types that can be combined with AND logic.
 
 | Filter | Purpose | Example |
-|--------|---------|---------|
+| -------- | --------- | --------- |
 | `action: INSERT` | Only new images | Skip deletions |
 | `digest != ""` | Valid digests only | Skip incomplete events |
 | `path: body.tag` | Match image patterns | Filter by registry |
@@ -198,7 +198,7 @@ spec:
 **Key patterns in multi-action routing:**
 
 | Pattern | Purpose |
-|---------|---------|
+| --------- | --------- |
 | Multiple `dependencies` | Define different event filters for each action type |
 | `conditions` on triggers | Match triggers to specific dependencies by name |
 | `dataKey: body` | Extract the full event payload for downstream processing |

@@ -47,7 +47,7 @@ Continuous deployment from main branch:
 mike deploy --push dev
 ```
 
-No aliases for `dev` - it's a moving target that shouldn't be linked to.
+No aliases for `dev` -- it's a moving target that shouldn't be linked to.
 
 ---
 

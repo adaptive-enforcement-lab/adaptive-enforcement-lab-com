@@ -97,14 +97,14 @@ done
 
 ### Enforce vs Audit
 
-**Enforce** - Block non-compliant resources:
+**Enforce** blocks non-compliant resources:
 
 ```yaml
 spec:
   validationFailureAction: Enforce
 ```
 
-**Audit** - Log violations, allow deployment:
+**Audit** logs violations while allowing deployment:
 
 ```yaml
 spec:
@@ -178,11 +178,11 @@ features:
 
 **Recommendations**:
 
-| Cluster Size | Scan Interval | Rationale                           |
-|--------------|---------------|-------------------------------------|
-| < 100 nodes  | 1h            | Fast drift detection                |
-| 100-500 nodes| 6h (default)  | Balance between load and compliance |
-| > 500 nodes  | 12h           | Reduce controller load              |
+| Cluster Size | Scan Interval | Rationale                          |
+| -------------- | --------------- | ------------------------------------- |
+| < 100 nodes | 1h           | Fast drift detection               |
+| 100-500 nodes | 6h (default) | Balance between load and compliance |
+| > 500 nodes | 12h          | Reduce controller load             |
 
 !!! note "Background Scans Generate Reports Only"
     Background scans don't block resources. They generate PolicyReports for existing violations. Use these reports to track compliance drift.
@@ -260,6 +260,6 @@ helm install security-policy /repos/security-policy/charts/security-policy
 
 ## Next Steps
 
-- **[Monitoring](monitoring.md)** - Dashboards, metrics, alerts, troubleshooting
-- **[Operations](../operations/index.md)** - Policy lifecycle management
-- **[CI Integration](../ci-integration/index.md)** - Automated pipeline validation
+- **[Monitoring](monitoring.md)**: Dashboards, metrics, alerts, troubleshooting
+- **[Operations](../operations/index.md)**: Policy lifecycle management
+- **[CI Integration](../ci-integration/index.md)**: Automated pipeline validation

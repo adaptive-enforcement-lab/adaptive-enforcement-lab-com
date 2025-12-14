@@ -318,7 +318,7 @@ gh repo create my-repo  # Fails if exists, doesn't update
 ## Comparison with Other Patterns
 
 | Aspect | [Check-Before-Act](check-before-act.md) | Upsert | [Force Overwrite](force-overwrite.md) |
-|--------|-----------------|--------|-----------------|
+| -------- | ----------------- | -------- | ----------------- |
 | Race condition safe | No | Yes | Yes |
 | Requires API support | No | Yes | Depends |
 | Know if created vs updated | Yes | Sometimes | No |

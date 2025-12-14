@@ -64,17 +64,17 @@ flowchart LR
 ```bash
 # Check if branch exists on remote
 if git ls-remote --heads origin "$BRANCH" | grep -q "$BRANCH"; then
-  # Branch exists - reset to remote state
+  # Branch exists: reset to remote state
   git checkout -B "$BRANCH" "origin/$BRANCH"
   echo "Checked out existing branch"
 else
-  # Branch doesn't exist - create it
+  # Branch doesn't exist: create it
   git checkout -b "$BRANCH"
   echo "Created new branch"
 fi
 ```
 
-The `-B` flag is critical here - it force-resets an existing local branch to match the remote, handling diverged state from previous failed runs.
+The `-B` flag is critical here. It force-resets an existing local branch to match the remote, handling diverged state from previous failed runs.
 
 ### Pull Request Creation
 
@@ -124,7 +124,7 @@ mkdir -p "$TARGET_DIR"
 
 !!! tip "Built-in Idempotency"
 
-    `mkdir -p` is a built-in example of check-before-act - it succeeds whether the directory exists or not. Look for similar flags in other tools (`cp -n`, `ln -sf`).
+    `mkdir -p` is a built-in example of check-before-act. It succeeds whether the directory exists or not. Look for similar flags in other tools (`cp -n`, `ln -sf`).
 
 ---
 
@@ -206,12 +206,12 @@ fi                           fi
 Remote state can change between check and act:
 
 ```bash
-# Check passes - PR doesn't exist
+# Check passes: PR doesn't exist
 EXISTING=$(gh pr list --head "$BRANCH" --json number --jq 'length')
 
 # Meanwhile, another process creates the PR...
 
-# Act fails - PR now exists
+# Act fails: PR now exists
 gh pr create ...  # Error: PR already exists
 ```
 
@@ -242,7 +242,7 @@ What if the previous run created the resource but didn't configure it?
 if [ "$EXISTING" -eq 0 ]; then
   gh pr create --title "Update" --label "automated"
 else
-  # PR exists - but does it have the label?
+  # PR exists, but does it have the label?
   # This check-before-act missed the incomplete state
 fi
 ```
@@ -307,7 +307,7 @@ fi
 ## Comparison with Other Patterns
 
 | Aspect | Check-Before-Act | [Upsert](upsert.md) | [Force Overwrite](force-overwrite.md) |
-|--------|-----------------|--------|-----------------|
+| -------- | ----------------- | -------- | ----------------- |
 | Race condition safe | No | Yes | Yes |
 | Requires API support | No | Yes | Depends |
 | Visibility into state | High | Low | Low |
@@ -321,7 +321,7 @@ Check-Before-Act is the workhorse of idempotency patterns. It's explicit, debugg
 
 !!! abstract "Key Takeaways"
 
-    1. **Check the right state** - remote vs local, specific vs broad
-    2. **Log your decisions** - visibility beats silent skipping
-    3. **Handle race conditions** - either accept them or use atomic alternatives
-    4. **Consider partial state** - a resource existing isn't always enough
+    1. **Check the right state**: remote vs local, specific vs broad
+    2. **Log your decisions**: visibility beats silent skipping
+    3. **Handle race conditions**: either accept them or use atomic alternatives
+    4. **Consider partial state**: a resource existing isn't always enough

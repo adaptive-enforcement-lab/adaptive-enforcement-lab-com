@@ -81,7 +81,7 @@ Choosing the right installation scope for your GitHub Core App.
 ## Comparison Matrix
 
 | Aspect | Org-Wide | Team-Scoped | Hybrid |
-|--------|----------|-------------|--------|
+| -------- | ---------- | ------------- | -------- |
 | **Setup Complexity** | Low | Medium | Low |
 | **Maintenance** | None | High | None |
 | **Blast Radius** | Large | Small | Controlled |

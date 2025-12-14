@@ -87,7 +87,7 @@ Scan repositories and create issues for findings.
 ## Quick Reference
 
 | Use Case | Contents | PRs | Issues | Actions | Admin | Members |
-|----------|:--------:|:---:|:------:|:-------:|:-----:|:-------:|
+| ---------- | :--------: | :---: | :------: | :-------: | :-----: | :-------: |
 | File Distribution | R/W | R/W | - | - | - | R |
 | CI/CD Orchestration | R | - | - | R/W | - | - |
 | Repository Management | R/W | - | - | - | W | R |

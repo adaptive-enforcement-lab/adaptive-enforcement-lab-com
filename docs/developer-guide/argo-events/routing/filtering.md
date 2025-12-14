@@ -9,7 +9,7 @@ Filters determine which events trigger actions. Well-designed filters reduce noi
 Argo Events supports multiple filter types that can be combined:
 
 | Filter Type | Purpose | Argo Docs |
-|-------------|---------|-----------|
+| ------------- | --------- | ----------- |
 | `data` | Match event payload fields | [Data Filters](https://argoproj.github.io/argo-events/sensors/filters/data/) |
 | `context` | Match CloudEvents context | [Context Filters](https://argoproj.github.io/argo-events/sensors/filters/context/) |
 | `time` | Match time windows | [Time Filters](https://argoproj.github.io/argo-events/sensors/filters/time/) |
@@ -42,7 +42,7 @@ dependencies:
 - `value`: List of acceptable values (OR logic)
 - `comparator`: Comparison operator (`=`, `!=`, `>=`, `<=`, `>`, `<`)
 
-Multiple data filters use AND logic—all must match for the event to trigger.
+Multiple data filters use AND logic: all must match for the event to trigger.
 
 ---
 

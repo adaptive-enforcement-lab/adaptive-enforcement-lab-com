@@ -1,11 +1,11 @@
 ---
-title: Hub and Spoke - Implementation Examples
+title: Hub and Spoke Implementation Examples
 description: >-
   GitHub Actions hub distributing changes, event-driven hubs with Argo Events,
   and communication patterns between hub and spokes.
 ---
 
-# Hub and Spoke - Implementation Examples
+# Hub and Spoke Implementation Examples
 
 ## GitHub Actions Example
 
@@ -16,7 +16,7 @@ Hub distributes file changes across repositories:
 
 ```yaml
 # .github/workflows/distribute.yml
-name: Hub - File Distribution
+name: Hub File Distribution
 
 on:
   workflow_dispatch:
@@ -68,7 +68,7 @@ Hub finds repos, triggers spoke workflows via matrix, summarizes at the end.
 Argo Events hub reacts to events:
 
 ```yaml
-# EventSource - listens for image pushes
+# EventSource: listens for image pushes
 apiVersion: argoproj.io/v1alpha1
 kind: EventSource
 metadata:
@@ -79,7 +79,7 @@ spec:
       projectID: my-project
       topic: image-pushes
 
-# Sensor - hub that spawns spokes
+# Sensor: hub that spawns spokes
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:

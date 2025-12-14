@@ -116,7 +116,7 @@ Release-please finds `x-release-please-version` and updates the number.
 ## What This Means
 
 | Want | Reality |
-|------|---------|
+| ------ | --------- |
 | Independent versioning | Shares version with parent package |
 | Separate changelog | Changes appear in main changelog |
 | Dedicated tags | No separate tags |
@@ -124,7 +124,7 @@ Release-please finds `x-release-please-version` and updates the number.
 
 For most use cases, this is fine. The file version updates automatically. Distribution workflows can read it. Consumers know which version they have.
 
-If you truly need independent versioning for a single file, you need a different tool—or a directory wrapper.
+If you truly need independent versioning for a single file, you need a different tool or a directory wrapper.
 
 ---
 
@@ -159,7 +159,7 @@ One more lesson: **always validate against the schema**.
 }
 ```
 
-I initially tried `release-name` to customize the release title. The option doesn't exist—it was a hallucination. The schema would have caught it immediately.
+I initially tried `release-name` to customize the release title. The option doesn't exist. It was a hallucination. The schema would have caught it immediately.
 
 ---
 

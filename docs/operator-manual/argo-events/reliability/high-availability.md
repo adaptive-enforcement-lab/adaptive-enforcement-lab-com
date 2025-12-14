@@ -75,7 +75,7 @@ spec:
 **Key HA settings:**
 
 | Setting | Purpose |
-|---------|---------|
+| --------- | --------- |
 | `replicas: 3` | Raft consensus requires odd number, 3 minimum |
 | `persistence` | Survives pod restarts |
 | `podAntiAffinity` | Spreads pods across nodes |

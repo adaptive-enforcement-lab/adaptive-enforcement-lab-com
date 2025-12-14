@@ -30,7 +30,7 @@ flowchart TD
 ## Order by Cost
 
 | Order | Category | Cost | Example |
-|-------|----------|------|---------|
+| ------- | ---------- |------ | --------- |
 | 1 | Configuration | Free | Check required fields are set |
 | 2 | Tools | Cheap | Check binaries exist |
 | 3 | Local State | Cheap | Check local files exist |

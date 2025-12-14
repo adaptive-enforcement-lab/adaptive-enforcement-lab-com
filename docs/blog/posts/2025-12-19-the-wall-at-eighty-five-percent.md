@@ -7,7 +7,7 @@ categories:
   - Go
   - Quality Assurance
 description: >-
-  85% coverage. Comprehensive tests. Couldn't go higher. The blocker wasn't tests—it was code.
+  85% coverage. Comprehensive tests. Couldn't go higher. The blocker wasn't tests. It was code.
 slug: wall-at-eighty-five-percent
 ---
 
@@ -219,4 +219,4 @@ Coverage reached 99% when code became simple enough to test.
 
 ---
 
-*The coverage was stuck. More tests didn't help. Refactoring broke the wall. Code became testable. Coverage reached 99%. The blocker wasn't tests—it was complexity.*
+*The coverage was stuck. More tests didn't help. Refactoring broke the wall. Code became testable. Coverage reached 99%. The blocker wasn't tests. It was complexity.*

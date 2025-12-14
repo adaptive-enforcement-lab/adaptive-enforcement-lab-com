@@ -1,11 +1,11 @@
 ---
-title: Implementation Roadmap - Execution Guide
+title: Implementation Roadmap Execution Guide
 description: >-
   Track progress, verify audit readiness, plan rollbacks, estimate costs,
   and measure success metrics for SDLC hardening rollout.
 ---
 
-# Implementation Roadmap - Execution Guide
+# Implementation Roadmap Execution Guide
 
 ## Progress Tracking
 
@@ -22,7 +22,7 @@ description: >-
 
 ### Month 2 Checklist
 
-- [ ] Secrets detection (pre-commit + CI)
+- [ ] Secrets detection (pre-commit and CI)
 - [ ] Signed commits required on protected branches
 - [ ] SBOM generation in all build pipelines
 - [ ] All PATs migrated to GitHub Apps
@@ -143,14 +143,14 @@ Not: "We bypass whenever it's convenient."
 
 ## Related Resources
 
-- **[Phased Rollout](index.md)** - 90-day implementation plan
-- **[Branch Protection](../branch-protection.md)** - Month 1, Week 1
-- **[Status Checks](../status-checks/index.md)** - Month 1, Week 2
-- **[GitHub Apps](../github-apps/index.md)** - Month 1, Week 3
-- **[Pre-commit Hooks](../pre-commit-hooks.md)** - Month 2, Week 5
-- **[Commit Signing](../commit-signing.md)** - Month 2, Week 6
-- **[SBOM Generation](../sbom-generation.md)** - Month 2, Week 7
-- **[Audit Evidence](../audit-evidence.md)** - Month 1, Week 4; Month 3, Week 11
+- **[Phased Rollout](index.md)** for 90-day implementation plan
+- **[Branch Protection](../branch-protection.md)** for Month 1, Week 1
+- **[Status Checks](../status-checks/index.md)** for Month 1, Week 2
+- **[GitHub Apps](../github-apps/index.md)** for Month 1, Week 3
+- **[Pre-commit Hooks](../pre-commit-hooks.md)** for Month 2, Week 5
+- **[Commit Signing](../commit-signing.md)** for Month 2, Week 6
+- **[SBOM Generation](../sbom-generation.md)** for Month 2, Week 7
+- **[Audit Evidence](../audit-evidence.md)** for Month 1, Week 4; Month 3, Week 11
 
 ---
 

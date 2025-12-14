@@ -89,7 +89,7 @@ When a PR introduces content that matches a roadmap item:
 ### Category Validation
 
 | File | Categories | Status | Notes |
-|------|------------|--------|-------|
+| ------ | ------------ | -------- | ------- |
 | path/to/file.md | [cat1, cat2] | PASS/FLAG/NEW | details |
 
 ### Existing Category Alignment
@@ -126,7 +126,7 @@ For each article in the PR:
 ### Content Standards Check
 
 | Standard | Status | Notes |
-|----------|--------|-------|
+| ---------- | -------- | ------- |
 | **Blog vs Article** | PASS/FLAG | Blog posts must NOT be how-tos |
 | Frontmatter complete | PASS/FAIL | missing: X |
 | `<!-- more -->` marker | PASS/FAIL/N/A | |

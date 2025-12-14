@@ -1,11 +1,11 @@
 ---
-title: Separation of Concerns - Implementation Techniques
+title: Separation of Concerns Implementation Techniques
 description: >-
   Testing isolated components, defining interface boundaries, dependency injection,
   and separating error handling from business logic.
 ---
 
-# Separation of Concerns - Implementation Techniques
+# Separation of Concerns Implementation Techniques
 
 ## Testing Benefits
 
@@ -182,10 +182,10 @@ func main() {
 
 ## Related Guides
 
-- **[Pattern Overview](index.md)** - Core concepts and CLI orchestrator pattern
-- **[Usage Guide](guide.md)** - When to apply, common mistakes, real-world examples
-- **[Fail Fast](../../error-handling/fail-fast/index.md)** - Error handling at boundaries
-- **[Prerequisite Checks](../../error-handling/prerequisite-checks/index.md)** - Validation separation
+- **[Pattern Overview](index.md)**: Core concepts and CLI orchestrator pattern
+- **[Usage Guide](guide.md)**: When to apply, common mistakes, real-world examples
+- **[Fail Fast](../../error-handling/fail-fast/index.md)**: Error handling at boundaries
+- **[Prerequisite Checks](../../error-handling/prerequisite-checks/index.md)**: Validation separation
 
 ---
 

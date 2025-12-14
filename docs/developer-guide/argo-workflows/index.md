@@ -6,7 +6,7 @@ Production patterns for Argo Workflows: reusable templates, error handling, conc
 
 ## Why Argo Workflows?
 
-Kubernetes provides primitives—Pods, Jobs, CronJobs—but building complex automation from primitives is painful. You end up with shell scripts that check Pod status in loops, cleanup logic scattered across multiple places, and debugging that requires correlating logs from dozens of sources.
+Kubernetes provides primitives (Pods, Jobs, CronJobs), but building complex automation from primitives is painful. You end up with shell scripts that check Pod status in loops, cleanup logic scattered across multiple places, and debugging that requires correlating logs from dozens of sources.
 
 Argo Workflows provides higher-level abstractions designed for automation. Define workflows declaratively. Let the controller handle scheduling, retries, and cleanup. Visualize execution in a purpose-built UI. Focus on what the automation does, not how to orchestrate it.
 
@@ -15,7 +15,7 @@ Argo Workflows provides higher-level abstractions designed for automation. Defin
 ## Pattern Categories
 
 | Category | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | [WorkflowTemplate Patterns](templates/index.md) | Reusable workflow definitions with error handling, volumes, and RBAC |
 | [Concurrency Control](concurrency/index.md) | Mutex synchronization, semaphores, and TTL strategies |
 | [Workflow Composition](composition/index.md) | Parent/child workflows, orchestration, and cross-workflow communication |

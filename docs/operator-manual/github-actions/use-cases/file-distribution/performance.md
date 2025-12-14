@@ -39,7 +39,7 @@ fi
 ## Rate Limit Tiers
 
 | Tier | Requests/Hour | Typical Use Case |
-|------|---------------|------------------|
+| ------ | --------------- | ------------------ |
 | Unauthenticated | 60 | Not recommended |
 | User PAT | 5,000 | Small orgs |
 | GitHub App | 5,000 per installation | Enterprise |

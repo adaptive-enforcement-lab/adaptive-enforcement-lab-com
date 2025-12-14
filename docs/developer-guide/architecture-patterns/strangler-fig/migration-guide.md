@@ -17,7 +17,7 @@ Strangler Fig migrations follow eight phases over 8 weeks. Each phase has valida
 ## Migration Checklist
 
 | Phase | Actions | Validation |
-|-------|---------|------------|
+| ------- | --------- | ------------ |
 | **1. Shadow** | New system runs in background | Mismatch logging, zero production impact |
 | **2. Dual Write** | Write to both databases | Data consistency checks |
 | **3. 1% Traffic** | Route 1% to new system | Error rates, latency P95 |

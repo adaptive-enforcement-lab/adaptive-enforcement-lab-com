@@ -47,7 +47,7 @@ The key insight: **fail before you start, not in the middle**.
 ## When to Apply
 
 | Scenario | Apply Fail Fast? | Reasoning |
-|----------|------------------|-----------|
+| ---------- | ------------------ | ----------- |
 | Invalid user input | Yes | User error, report immediately |
 | Missing required config | Yes | Can't continue safely |
 | Insufficient permissions | Yes | Operation will fail anyway |
@@ -198,7 +198,7 @@ flowchart TD
 ```
 
 | Error Type | Pattern | Example |
-|------------|---------|---------|
+| ------------ | --------- | --------- |
 | Missing config | Fail Fast | Can't start without database URL |
 | Database timeout | Graceful Degradation | Retry, then use cache |
 | Invalid input | Fail Fast | Reject malformed request |
@@ -330,7 +330,7 @@ Before implementing fail fast:
 ## Relationship to Other Patterns
 
 | Pattern | How Fail Fast Applies |
-|---------|----------------------|
+| --------- | ---------------------- |
 | [Graceful Degradation](../graceful-degradation/index.md) | Complementary: fail fast on preconditions, degrade on runtime |
 | [Prerequisite Checks](../prerequisite-checks/index.md) | Specialized form of fail fast for complex preconditions |
 | [Idempotency](../../efficiency-patterns/idempotency/index.md) | Fail fast prevents partial state that breaks idempotency |

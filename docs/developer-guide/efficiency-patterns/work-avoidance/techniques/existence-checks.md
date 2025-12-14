@@ -127,7 +127,7 @@ func ensureBucket(ctx context.Context, client *storage.Client, projectID, bucket
 ## Check Methods by Platform
 
 | Platform | Resource | Check Method |
-|----------|----------|--------------|
+| ---------- | ---------- | -------------- |
 | GitHub | Branch | `git ls-remote --heads` |
 | GitHub | PR | `gh pr list --head X --json number` |
 | GitHub | Issue | `gh issue list --search "title"` |
@@ -186,7 +186,7 @@ return err
 Some resources can exist in multiple states:
 
 | State | Behavior |
-|-------|----------|
+| ------- | ---------- |
 | Active | Skip creation |
 | Deleted/Archived | May need recreation |
 | Pending | Wait or skip |

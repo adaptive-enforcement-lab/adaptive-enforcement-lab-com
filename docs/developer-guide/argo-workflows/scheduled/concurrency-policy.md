@@ -1,12 +1,12 @@
 # Concurrency Policies
 
-When a scheduled run triggers while a previous run is still active, the `concurrencyPolicy` determines what happens. Choose the policy that matches your workflow's behavior—some workflows can overlap, others must not.
+When a scheduled run triggers while a previous run is still active, the `concurrencyPolicy` determines what happens. Choose the policy that matches your workflow's behavior: some workflows can overlap, others must not.
 
 ---
 
 ## Why Concurrency Policies Matter
 
-Consider a scheduled database backup that runs every hour. If a backup takes 90 minutes, the next scheduled run triggers while the previous is still running. Without a concurrency policy:
+Consider a scheduled database backup that runs every hour. If a backup takes 90 minutes, the next scheduled run will trigger while the previous is still running. Without a concurrency policy:
 
 - Do both backups run simultaneously? (They might conflict)
 - Does the new backup wait? (It might fall further behind)
@@ -24,7 +24,7 @@ spec:
 ```
 
 | Policy | Behavior | Use When |
-|--------|----------|----------|
+| -------- | ---------- | ---------- |
 | `Allow` | Run concurrently (default) | Workflows are independent |
 | `Forbid` | Skip new if previous running | Overlap would cause conflicts |
 | `Replace` | Cancel previous, start new | Only latest result matters |
@@ -197,6 +197,6 @@ If runs are frequently skipped:
 
 ## Related
 
-- [Basic CronWorkflow](basic.md) - CronWorkflow fundamentals
-- [Mutex Synchronization](../concurrency/mutex.md) - Cross-workflow locking
-- [TTL Strategy](../concurrency/ttl.md) - Automatic cleanup
+- [Basic CronWorkflow](basic.md): CronWorkflow fundamentals
+- [Mutex Synchronization](../concurrency/mutex.md): Cross-workflow locking
+- [TTL Strategy](../concurrency/ttl.md): Automatic cleanup

@@ -27,10 +27,10 @@ graph TD
 
 **Timeline**:
 
-- Dev: Immediate
-- QAC: 1 week in Audit mode
-- Staging: 1 week in Enforce mode
-- Production: After 0 violations in Staging
+- **Dev**: Immediate
+- **QAC**: 1 week in Audit mode
+- **Staging**: 1 week in Enforce mode
+- **Production**: After 0 violations in Staging
 
 ---
 
@@ -117,50 +117,50 @@ resourceFilters:
 
 ### 1. Version Everything
 
-- Policy repos: Semantic versions
-- policy-platform container: Tagged versions
-- Helm deployments: Track release history
+- **Policy repos**: Semantic versions
+- **policy-platform container**: Tagged versions
+- **Helm deployments**: Track release history
 
 ### 2. Monitor Continuously
 
-- PolicyReporter dashboard
-- Prometheus alerts
-- Slack notifications
+- **PolicyReporter dashboard**: Real-time violation tracking
+- **Prometheus alerts**: Automated alert notifications
+- **Slack notifications**: Team communication channels
 
 ### 3. Test Before Enforce
 
-- New policies start in Audit mode
-- Monitor for 1+ week
-- Fix violations before Enforce
+- **New policies start in Audit mode**: Never deploy directly to Enforce
+- **Monitor for 1+ week**: Collect violation data before enforcement
+- **Fix violations before Enforce**: Remediate issues in Audit phase
 
 ### 4. Document Exceptions
 
-- Require JIRA tickets
-- Set expiration dates
-- Quarterly reviews
+- **Require JIRA tickets**: Track all policy exceptions
+- **Set expiration dates**: Enforce time-bound exceptions
+- **Quarterly reviews**: Audit exception validity regularly
 
 ### 5. Automate Evidence Collection
 
-- Monthly policy exports
-- Automated compliance reports
-- Audit trail preservation
+- **Monthly policy exports**: Snapshot policy state regularly
+- **Automated compliance reports**: Generate reports automatically
+- **Audit trail preservation**: Retain evidence for audits
 
 ---
 
 ## Key Takeaways
 
-✅ **Local dev** - Run policies in containers before commit
+✅ **Local dev**: Run policies in containers before commit
 
-✅ **CI integration** - Automated validation in pipelines
+✅ **CI integration**: Automated validation in pipelines
 
-✅ **Runtime enforcement** - Kyverno admission control
+✅ **Runtime enforcement**: Kyverno admission control
 
-✅ **Multi-source** - Aggregate policies from multiple repos
+✅ **Multi-source**: Aggregate policies from multiple repos
 
-✅ **Operations** - Monitor, update, and audit
+✅ **Operations**: Monitor, update, and audit
 
 **Related Resources**:
 
-- **[SDLC Hardening](../../index.md)** - Broader enforcement patterns
-- **[Kyverno Guide](../kyverno/index.md)** - Deep dive on Kyverno
-- **[Pre-commit Hooks](../../pre-commit-hooks.md)** - Complementary local checks
+- **[SDLC Hardening](../../index.md)**: Broader enforcement patterns
+- **[Kyverno Guide](../kyverno/index.md)**: Deep dive on Kyverno
+- **[Pre-commit Hooks](../../pre-commit-hooks.md)**: Complementary local checks

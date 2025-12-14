@@ -95,7 +95,7 @@ There's a simpler solution.
 Here's what's often missed: release-please doesn't just create PRs. It also commits to the PR branch. And commits emit `push` events, even when made by `GITHUB_TOKEN`.
 
 | Action | Event Emitted with GITHUB_TOKEN |
-|--------|--------------------------------|
+| -------- | -------------------------------- |
 | Create PR | No |
 | Commit to branch | Yes |
 | Update PR | No |
@@ -254,7 +254,7 @@ For release-please specifically, the dual-trigger approach is cleanest.
 This post covers the core problem and fix. For complete implementation guides:
 
 | Guide | Description |
-|-------|-------------|
+| ------- | ------------- |
 | [Release-Please Setup](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/index.md) | Configuration, changelog sections, monorepo patterns |
 | [Change Detection](../../operator-manual/github-actions/use-cases/release-pipelines/change-detection.md) | Skip unnecessary builds, cascade dependencies |
 | [Workflow Triggers](../../operator-manual/github-actions/use-cases/release-pipelines/workflow-triggers.md) | GITHUB_TOKEN limitations, alternative approaches |

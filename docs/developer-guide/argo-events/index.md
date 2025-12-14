@@ -23,7 +23,7 @@ flowchart LR
 ```
 
 | Component | Purpose | Argo Docs |
-|-----------|---------|-----------|
+| ----------- | --------- | ----------- |
 | **EventSource** | Connects to external systems | [EventSource Types](https://argoproj.github.io/argo-events/eventsources/setup/intro/) |
 | **EventBus** | Message broker for delivery | [EventBus](https://argoproj.github.io/argo-events/eventbus/) |
 | **Sensor** | Filters events and triggers | [Sensors](https://argoproj.github.io/argo-events/sensors/intro/) |
@@ -34,7 +34,7 @@ flowchart LR
 ## Pattern Categories
 
 | Category | Description |
-|----------|-------------|
+| ---------- | ------------- |
 | [Event Routing](routing/index.md) | Multi-action routing, filtering, and transformations |
 | [Reliability Patterns](reliability/index.md) | Retry strategies, dead letter queues, and backpressure |
 

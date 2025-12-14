@@ -82,7 +82,7 @@ Tracks current versions for each package:
 ### Global Options
 
 | Option | Description | Example |
-|--------|-------------|---------|
+| -------- | ------------- | --------- |
 | `include-v-in-tag` | Prefix tags with `v` | `true` = `v1.0.0`, `false` = `1.0.0` |
 | `tag-separator` | Separator between component and version | `-` = `backend-1.0.0` |
 | `separate-pull-requests` | Create one PR per component | Recommended for monorepos |
@@ -91,7 +91,7 @@ Tracks current versions for each package:
 ### Package Options
 
 | Option | Description | Values |
-|--------|-------------|--------|
+| -------- | ------------- | -------- |
 | `release-type` | Package ecosystem | `node`, `helm`, `simple`, `python`, `go`, etc. |
 | `component` | Component name for tagging | Any string |
 | `include-component-in-tag` | Include component in tag | `true` = `backend-1.0.0` |
@@ -109,7 +109,7 @@ Always validate configuration against the official schema:
 }
 ```
 
-This catches invalid options immediately. Options like `release-name` don't exist—the schema prevents wasted debugging time.
+This catches invalid options immediately. Options like `release-name` don't exist. The schema prevents wasted debugging time.
 
 ---
 
