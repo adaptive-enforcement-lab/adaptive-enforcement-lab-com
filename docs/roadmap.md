@@ -18,14 +18,16 @@ Adaptive Enforcement Lab is actively building. Here's what's coming.
 
     We're building a content pipeline for actionable security guidance. Recent posts:
 
+    - ✅ **[Sixteen Alerts Overnight](blog/posts/2025-12-20-sixteen-alerts-overnight.md)** - When permissions look fine but Scorecard disagrees
+    - ✅ **[The Wall at 85%](blog/posts/2025-12-19-the-wall-at-eighty-five-percent.md)** - When tests aren't the problem
+    - ✅ **[The Score That Wouldn't Move](blog/posts/2025-12-18-scorecard-stuck-at-eight.md)** - Stuck at 8/10 with signed releases
     - ✅ **[OpenSSF Best Practices Badge in 2 Hours](blog/posts/2025-12-17-openssf-badge-two-hours.md)**
     - ✅ **[Policy-as-Code with Kyverno](blog/posts/2025-12-13-policy-as-code-kyverno.md)**
     - ✅ **[How to Harden Your SDLC Before the Audit Comes](blog/posts/2025-12-12-harden-sdlc-before-audit.md)**
-    - ✅ **[Pre-commit Hooks as Security Gates](blog/posts/2025-12-04-pre-commit-security-gates.md)**
 
     Coming next:
 
-    - Zero-vulnerability container pipelines
+    - Zero-vulnerability container pipelines (enhanced with SLSA + SBOM integration)
     - Environment progression testing
     - Event-driven deployments with Argo
 

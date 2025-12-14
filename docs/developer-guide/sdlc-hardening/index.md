@@ -53,6 +53,18 @@ Each layer provides defense in depth. No single control is sufficient.
 - **[Required Status Checks](status-checks/index.md)** - Tests, linting, security scans as merge gates
 - **[GitHub Apps Authentication](github-apps/index.md)** - Machine authentication without PATs
 - **[SBOM Generation](sbom-generation.md)** - Software Bill of Materials for supply chain security
+- **[Vulnerability Scanning](vulnerability-scanning.md)** - Trivy integration for container security
+
+### Supply Chain Security
+
+- **[SLSA Provenance](supply-chain/slsa-provenance.md)** - Level 3 build attestations for cryptographic build integrity
+- **[Scorecard Compliance](supply-chain/scorecard-compliance.md)** - OpenSSF Scorecard compliance patterns
+- **[Scorecard Workflow Examples](supply-chain/scorecard-workflow-examples.md)** - Production-ready workflow patterns
+
+### Testing Enforcement
+
+- **[Coverage Patterns](testing/coverage-patterns.md)** - Refactoring for testability and high coverage
+- **[Coverage Enforcement](testing/coverage-enforcement.md)** - CI, pre-commit, and Codecov integration
 
 ### Evidence Collection
 
