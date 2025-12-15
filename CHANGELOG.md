@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.9.0...0.9.1) (2025-12-15)
+
+
+### Content Fixes
+
+* remove operator-manual duplication, keep pattern in developer-guide ([#177](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/177)) ([db85adc](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/db85adce84287f331506e9f1ccf766716d9607e5))
+
 ## [0.9.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.8.2...0.9.0) (2025-12-15)
 
 
