@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.8.2...0.9.0) (2025-12-15)
+
+
+### New Content
+
+* add queue cleanup work avoidance pattern ([#175](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/175)) ([e7043f6](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e7043f603af02479b1006f57643092bd3ae7a3f2))
+
 ## [0.8.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.8.1...0.8.2) (2025-12-14)
 
 
