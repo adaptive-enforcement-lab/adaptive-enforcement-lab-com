@@ -243,15 +243,17 @@ The `{{workflow.name}}` template variable expands at runtime. The current workfl
 
 ---
 
-## Operational Considerations
-
-For detailed operational guidance including monitoring, metrics, troubleshooting, and reusable Helm templates, see the [Queue Cleanup Operations](../../operator-manual/argo-workflows/queue-cleanup.md) guide.
-
----
-
 ## The Pattern Library
 
-This "work avoidance" pattern is now documented in the developer guide: [Queue Cleanup](../../developer-guide/efficiency-patterns/work-avoidance/techniques/queue-cleanup.md).
+This "work avoidance" pattern is documented in the developer guide: [Queue Cleanup](../../developer-guide/efficiency-patterns/work-avoidance/techniques/queue-cleanup.md).
+
+The technique page includes complete operational guidance:
+
+- Monitoring procedures and real-time log access
+- Metrics to track with alert thresholds
+- Troubleshooting common issues (permissions, prefix matching, self-deletion)
+- Reusable Helm chart template for adoption
+- Production validation data
 
 For more work avoidance techniques, see [Work Avoidance Overview](../../developer-guide/efficiency-patterns/work-avoidance/index.md).
 
