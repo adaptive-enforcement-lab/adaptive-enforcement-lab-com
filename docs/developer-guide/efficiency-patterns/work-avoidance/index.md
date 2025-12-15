@@ -63,6 +63,7 @@ Work avoidance uses different techniques depending on what you're checking:
 | [Volatile Field Exclusion](techniques/volatile-field-exclusion.md) | "Did anything meaningful change?" | Version bumps, timestamps |
 | [Existence Checks](techniques/existence-checks.md) | "Does it already exist?" | Resource creation (PRs, branches) |
 | [Cache-Based Skip](techniques/cache-based-skip.md) | "Is the output already built?" | Build artifacts, dependencies |
+| [Queue Cleanup](techniques/queue-cleanup.md) | "Should queued work execute?" | Mutex-locked workflows |
 
 See [Techniques Overview](techniques/index.md) for detailed comparisons and when to use each.
 
@@ -77,6 +78,7 @@ Work avoidance is valuable when:
 - **Scheduled jobs** run regardless of whether work exists
 - **Monorepo builds** trigger on any change but only need subset builds
 - **API synchronization** needs to detect actual drift
+- **Mutex-locked workflows** queue identical operations behind a lock
 
 ---
 

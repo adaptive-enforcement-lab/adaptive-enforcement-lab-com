@@ -197,6 +197,8 @@ nav:
               - Sensor Issues: operator-manual/argo-events/troubleshooting/sensors.md
               - Common Patterns: operator-manual/argo-events/troubleshooting/common-patterns.md
           - High Availability: operator-manual/argo-events/reliability/high-availability.md
+      - Argo Workflows:
+          - Queue Cleanup: operator-manual/argo-workflows/queue-cleanup.md
   - Developer Guide:
       - developer-guide/index.md
       - Pattern Selection Guide: developer-guide/pattern-selection-guide/index.md
