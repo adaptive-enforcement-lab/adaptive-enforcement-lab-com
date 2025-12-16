@@ -340,8 +340,15 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
+  - About:
+      - about/index.md
+      - Mission: about/mission.md
+      - Audience: about/audience.md
+      - Principles: about/principles.md
+      - Approach: about/approach.md
+      - Brand: about/brand.md
+      - Connect: about/connect.md
   - Blog: blog/index.md
-  - Tags: tags.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
@@ -623,11 +630,4 @@ nav:
               - Orchestration: patterns/argo-workflows/scheduled/orchestration.md
               - GitHub Integration: patterns/argo-workflows/scheduled/github-integration.md
   - Roadmap: roadmap.md
-  - About:
-      - about/index.md
-      - Mission: about/mission.md
-      - Audience: about/audience.md
-      - Principles: about/principles.md
-      - Approach: about/approach.md
-      - Brand: about/brand.md
-      - Connect: about/connect.md
+  - Tags: tags.md
