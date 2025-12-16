@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.0.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.9.1...1.0.0) (2025-12-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **docs:** Complete documentation restructure changes all URLs
+
+### Content Refactoring
+
+* **docs:** restructure from 2-section to 4-section taxonomy ([#179](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/179)) ([e6a7621](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e6a762189012a968616ef7b30ba78e54ec4fa2eb))
+
+
+### Maintenance
+
+* **nav:** reorder navigation to match brand positioning ([#181](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/181)) ([d24b813](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/d24b81389ab23828c83ff59c38ed2d941c35b7ad))
+
 ## [0.9.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.9.0...0.9.1) (2025-12-15)
 
 
