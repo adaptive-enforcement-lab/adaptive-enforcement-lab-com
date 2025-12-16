@@ -177,7 +177,7 @@ Release-please is built for packages, not files. Once I accepted that, the confi
 
 ## Deep Dive
 
-- [Release-Please Setup](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/index.md) - Configuration options including extra-files
+- [Release-Please Setup](../../build/release-pipelines/release-please/index.md) - Configuration options including extra-files
 - [Release-Please Manifest Documentation](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md) - Official monorepo guide
 - [Customizing Release-Please](https://github.com/googleapis/release-please/blob/main/docs/customizing.md) - Extra-files and version annotations
 

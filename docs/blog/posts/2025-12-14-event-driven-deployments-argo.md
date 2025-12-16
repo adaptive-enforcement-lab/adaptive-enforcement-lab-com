@@ -180,8 +180,8 @@ This blog post tells the story. The implementation details, including YAML manif
 
     - **[ConfigMap as Cache Pattern](2025-12-03-configmap-cache-zero-api.md)**: Zero-API lookup implementation details
     - **[From 5 Seconds to 5 Milliseconds](2025-11-29-from-5-seconds-to-5-milliseconds.md)**: The cache optimization story
-    - **[Argo Events Setup Guide](../../operator-manual/argo-events/setup/index.md)**: EventSource, EventBus, and Sensor configuration
-    - **[Argo Workflows Patterns](../../developer-guide/argo-workflows/index.md)**: WorkflowTemplate design and error handling
+    - **[Argo Events Setup Guide](../../patterns/argo-events/setup/index.md)**: EventSource, EventBus, and Sensor configuration
+    - **[Argo Workflows Patterns](../../patterns/argo-workflows/index.md)**: WorkflowTemplate design and error handling
 
 See the [Roadmap](../../roadmap.md) for upcoming patterns and operator manual entries.
 

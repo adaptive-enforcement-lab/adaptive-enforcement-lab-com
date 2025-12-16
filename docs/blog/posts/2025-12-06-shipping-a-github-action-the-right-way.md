@@ -157,7 +157,7 @@ With this infrastructure in place:
 - **Work ships fast** - No waiting for manual releases
 - **It scales** - Same pattern across all actions
 
-The readability action is at [adaptive-enforcement-lab/readability](https://github.com/adaptive-enforcement-lab/readability) with docs at [readability.adaptive-enforcement-lab.com](https://readability.adaptive-enforcement-lab.com). The workflow pattern is documented at [Versioned Documentation](../../operator-manual/github-actions/use-cases/versioned-docs/index.md).
+The readability action is at [adaptive-enforcement-lab/readability](https://github.com/adaptive-enforcement-lab/readability) with docs at [readability.adaptive-enforcement-lab.com](https://readability.adaptive-enforcement-lab.com). The workflow pattern is documented at [Versioned Documentation](../../build/versioned-docs/index.md).
 
 ---
 

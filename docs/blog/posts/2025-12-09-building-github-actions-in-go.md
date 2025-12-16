@@ -338,4 +338,4 @@ The setup effort pays off. You get better reliability and user experience.
 - [Shipping a GitHub Action the Right Way](2025-12-06-shipping-a-github-action-the-right-way.md) - The motivation for this guide
 - [Pre-commit Hooks with Binary Releases](2025-12-10-pre-commit-hooks-binary-releases.md) - Same patterns for pre-commit
 - [Should Work ≠ Does Work](2025-12-08-always-works-qa-methodology.md) - Verify your action before release
-- [Go CLI Architecture](../../developer-guide/go-cli-architecture/index.md) - Comprehensive CLI design patterns
+- [Go CLI Architecture](../../build/go-cli-architecture/index.md) - Comprehensive CLI design patterns

@@ -249,7 +249,7 @@ Skip the security vendor bingo card. Use boring tools:
 **Maintenance**: Minimal (standard tools)
 
 !!! tip "Implementation Guide"
-    See [Go Security Tooling](../../developer-guide/sdlc-hardening/go-security-tooling.md) for complete setup: race detector, golangci-lint configuration, CI integration, and pre-commit hooks.
+    See [Go Security Tooling](../../enforce/go-security-tooling.md) for complete setup: race detector, golangci-lint configuration, CI integration, and pre-commit hooks.
 
 ---
 

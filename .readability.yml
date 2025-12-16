@@ -30,20 +30,40 @@ overrides:
       max_ari: 12
       min_ease: 0
 
-  # Developer guide: Graduate level (technical deep-dives)
+  # Patterns: Graduate level (technical deep-dives)
   # Reference-style docs with lists/tables break readability formulas
   # Admonitions optional - many pages are pure reference material
-  - path: docs/developer-guide/
+  - path: docs/patterns/
     thresholds:
       max_grade: 50
       max_ari: 60
       max_fog: 50
       min_ease: -100
 
-  # Operator manual: Graduate+ level (advanced operational content)
+  # Build: Graduate+ level (advanced technical content)
   # Reference-style docs with lists/tables break readability formulas
   # Admonitions optional - many pages are pure reference material
-  - path: docs/operator-manual/
+  - path: docs/build/
+    thresholds:
+      max_grade: 50
+      max_ari: 60
+      max_fog: 50
+      min_ease: -100
+
+  # Enforce: Graduate+ level (policy enforcement content)
+  # Reference-style docs with lists/tables break readability formulas
+  # Admonitions optional - many pages are pure reference material
+  - path: docs/enforce/
+    thresholds:
+      max_grade: 50
+      max_ari: 60
+      max_fog: 50
+      min_ease: -100
+
+  # Secure: Graduate+ level (security tooling content)
+  # Reference-style docs with lists/tables break readability formulas
+  # Admonitions optional - many pages are pure reference material
+  - path: docs/secure/
     thresholds:
       max_grade: 50
       max_ari: 60

@@ -204,7 +204,7 @@ Production pods can't talk to dev pods. Boundaries enforced.
 
 ---
 
-See **[Environment Progression Testing Guide](../../developer-guide/architecture-patterns/environment-progression.md)** for:
+See **[Environment Progression Testing Guide](../../patterns/architecture/environment-progression.md)** for:
 
 - Argo CD configurations
 - Smoke test patterns
@@ -214,7 +214,7 @@ See **[Environment Progression Testing Guide](../../developer-guide/architecture
 
 ## Related Patterns
 
-- **[Strangler Fig Pattern](../../developer-guide/architecture-patterns/strangler-fig/index.md)** - Incremental system migration
+- **[Strangler Fig Pattern](../../patterns/architecture/strangler-fig/index.md)** - Incremental system migration
 - **[SDLC Hardening](2025-12-12-harden-sdlc-before-audit.md)** - Security across environments
 - **[Policy-as-Code](2025-12-13-policy-as-code-kyverno.md)** - Runtime validation
 

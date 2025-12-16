@@ -184,8 +184,8 @@ Before shipping graceful degradation:
 
 The full pattern documentation is in the Developer Guide:
 
-- [Graceful Degradation Pattern](../../developer-guide/error-handling/graceful-degradation/index.md) - Complete implementation guide
-- [Cache Considerations](../../developer-guide/efficiency-patterns/idempotency/caches.md) - Cache-resilient strategies
+- [Graceful Degradation Pattern](../../patterns/error-handling/graceful-degradation/index.md) - Complete implementation guide
+- [Cache Considerations](../../patterns/efficiency/idempotency/caches.md) - Cache-resilient strategies
 
 ---
 

@@ -112,7 +112,7 @@ Personal Access Tokens also work, but they're the wrong tool:
 - Broader permissions than needed
 - Manual rotation required
 
-GitHub Apps are [the proper solution](../../operator-manual/github-actions/github-app-setup/index.md) for machine-to-machine authentication.
+GitHub Apps are [the proper solution](../../secure/github-apps/index.md) for machine-to-machine authentication.
 
 ---
 
@@ -163,7 +163,7 @@ But for production pipelines, use the GitHub App approach.
 
 ## Updated Documentation
 
-The [Release Pipelines guide](../../operator-manual/github-actions/use-cases/release-pipelines/index.md) has been updated to reflect this. The dual-trigger pattern is now documented as a fallback, not the primary solution.
+The [Release Pipelines guide](../../build/release-pipelines/index.md) has been updated to reflect this. The dual-trigger pattern is now documented as a fallback, not the primary solution.
 
 ---
 

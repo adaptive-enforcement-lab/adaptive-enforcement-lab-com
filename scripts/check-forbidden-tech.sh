@@ -11,12 +11,12 @@ VIOLATIONS=()
 # Exceptions: paths where historical reference is acceptable
 EXCEPTION_PATHS=(
     "docs/migration-guides/"
-    "docs/developer-guide/"  # Technical documentation may reference common tools
     "scripts/check-forbidden-tech.sh"  # This script itself contains the patterns
     "CHANGELOG.md"
     "docs/blog/posts/.*forbidden.*"  # Blog posts about the pattern itself
     "docs/blog/posts/2025-12-04-pre-commit-security-gates.md"  # Examples of violations
     ".content-machine/"  # Internal content planning documents
+    "docs/enforce/policy-as-code/"  # Policy enforcement examples showing what to block
 )
 
 # Forbidden patterns by category

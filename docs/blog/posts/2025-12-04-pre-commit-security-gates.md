@@ -186,4 +186,4 @@ See [Pre-commit Hooks That Don't Make You Wait](2025-12-10-pre-commit-hooks-bina
 
 *The Terraform config never makes it to git history. The Docker reference gets caught at commit time. The audit shows zero violations. Prevention works.*
 
-For implementation details, see **[Pre-commit Hooks Implementation Guide](../../developer-guide/sdlc-hardening/pre-commit-hooks-patterns.md)**.
+For implementation details, see **[Pre-commit Hooks Implementation Guide](../../enforce/pre-commit-hooks/pre-commit-hooks-patterns.md)**.

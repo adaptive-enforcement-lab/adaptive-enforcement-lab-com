@@ -202,7 +202,7 @@ flowchart LR
     1. **Cache aggressively**: If the answer changes rarely, don't recompute it
     2. **Use Kubernetes primitives**: ConfigMaps are free, Redis is not
     3. **Mount over API**: Volume mounts eliminate network round-trips
-    4. **[Graceful degradation](../../developer-guide/error-handling/graceful-degradation/index.md)**: Always have a fallback (mount → API → rebuild)
+    4. **[Graceful degradation](../../patterns/error-handling/graceful-degradation/index.md)**: Always have a fallback (mount → API → rebuild)
     5. **Measure first**: I didn't know the cluster scan was slow until I measured
 
 ---
@@ -215,8 +215,8 @@ This pattern, using ConfigMaps as a cache layer with volume mounts for zero-API 
 
     - **[ConfigMap as Cache Pattern](2025-12-03-configmap-cache-zero-api.md)**: Deep dive into the zero-API lookup pattern
     - **[Event-Driven Deployments with Argo](2025-12-14-event-driven-deployments-argo.md)**: Full architecture with Argo Events, Workflows, and production patterns
-    - **[Go CLI Architecture](../../developer-guide/go-cli-architecture/index.md)**: Building Kubernetes-native orchestration tools
-    - **[Cache Considerations](../../developer-guide/efficiency-patterns/idempotency/caches.md)**: Cache-resilient idempotency patterns
+    - **[Go CLI Architecture](../../build/go-cli-architecture/index.md)**: Building Kubernetes-native orchestration tools
+    - **[Cache Considerations](../../patterns/efficiency/idempotency/caches.md)**: Cache-resilient idempotency patterns
 
 ---
 

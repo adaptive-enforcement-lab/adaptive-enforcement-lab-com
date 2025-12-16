@@ -230,7 +230,7 @@ The difference isn't the tests. It's the **enforcement** and **verification**.
 Coverage went from a quality metric to a **security certification requirement**.
 
 !!! tip "Implementation Details"
-    See [Test Coverage Patterns](../../developer-guide/sdlc-hardening/testing/coverage-patterns.md) for refactoring techniques and [Coverage Enforcement](../../developer-guide/sdlc-hardening/testing/coverage-enforcement.md) for CI integration and threshold management.
+    See [Test Coverage Patterns](../../enforce/testing/coverage-patterns.md) for refactoring techniques and [Coverage Enforcement](../../enforce/testing/coverage-enforcement.md) for CI integration and threshold management.
 
 ---
 

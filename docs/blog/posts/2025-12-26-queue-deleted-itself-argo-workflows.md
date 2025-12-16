@@ -245,7 +245,7 @@ The `{{workflow.name}}` template variable expands at runtime. The current workfl
 
 ## The Pattern Library
 
-This "work avoidance" pattern is documented in the developer guide: [Queue Cleanup](../../developer-guide/efficiency-patterns/work-avoidance/techniques/queue-cleanup.md).
+This "work avoidance" pattern is documented in the operator manual: [Queue Cleanup](../../patterns/efficiency/work-avoidance/techniques/queue-cleanup.md).
 
 The technique page includes complete operational guidance:
 
@@ -255,7 +255,7 @@ The technique page includes complete operational guidance:
 - Reusable Helm chart template for adoption
 - Production validation data
 
-For more work avoidance techniques, see [Work Avoidance Overview](../../developer-guide/efficiency-patterns/work-avoidance/index.md).
+For more work avoidance techniques, see [Work Avoidance Overview](../../patterns/efficiency/work-avoidance/index.md).
 
 ---
 

@@ -22,7 +22,7 @@
   - 2025-11-29-from-5-seconds-to-5-milliseconds.md (mentions cache but doesn't detail it)
   - 2025-12-14-event-driven-deployments-argo.md (references cache integration)
 - **Related Issue**: #43 "Add ConfigMap as Cache Pattern to Engineering Patterns"
-- **Status**: Documentation exists at developer-guide/efficiency-patterns/idempotency/caches.md but blog post would tell the story
+- **Status**: Documentation exists at developer-guide/efficiency/idempotency/caches.md but blog post would tell the story
 
 ### 2. Pre-commit Hooks as Security Gates
 
@@ -118,7 +118,7 @@ Several issues request dedicated pattern documentation:
 **7. Separation of Concerns Pattern**
 
 - **Issue**: #111
-- **Location**: `developer-guide/efficiency-patterns/` or new `developer-guide/architecture-patterns/`
+- **Location**: `developer-guide/efficiency/` or new `developer-guide/architecture-patterns/`
 - **Content**: CLI orchestrator pattern, single-responsibility functions, testability boundaries
 - **Blog Opportunity**: Could spawn "Building Maintainable CLIs" post
 
@@ -162,7 +162,7 @@ Several issues request dedicated pattern documentation:
 **13. Volume Mount Zero-API Pattern**
 
 - **Issue**: #134
-- **Location**: Expand `developer-guide/efficiency-patterns/idempotency/caches.md`
+- **Location**: Expand `developer-guide/efficiency/idempotency/caches.md`
 - **Content**: Add volume mount pattern details, YAML examples, rebuild-on-miss logic
 - **Blog Opportunity**: Covered in Priority 1 item #1
 
@@ -174,7 +174,7 @@ Several issues request dedicated pattern documentation:
 
 Currently engineering patterns are split across:
 
-- `efficiency-patterns/` (idempotency, work avoidance)
+- `efficiency/` (idempotency, work avoidance)
 - `error-handling/` (fail fast, prerequisite checks, graceful degradation)
 - `workflow-architecture/` (three-stage, matrix distribution)
 
@@ -259,7 +259,7 @@ slug: configmap-cache-pattern
 [Metrics from actual implementation]
 
 ## Deep Dive
-Links to developer-guide/efficiency-patterns/idempotency/caches.md
+Links to developer-guide/efficiency/idempotency/caches.md
 ```
 
 ---
