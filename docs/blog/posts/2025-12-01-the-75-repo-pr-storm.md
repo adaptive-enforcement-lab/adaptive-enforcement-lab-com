@@ -24,7 +24,7 @@ Then release-please bumped the version from 1.4.1 to 1.4.2.
 
 ## The Setup
 
-We track CONTRIBUTING.md version alongside our platform version using [release-please extra-files](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/extra-files.md):
+We track CONTRIBUTING.md version alongside our platform version using [release-please extra-files](../../build/release-pipelines/release-please/extra-files.md):
 
 ```markdown
 ---
@@ -142,7 +142,7 @@ The `git show HEAD:CONTRIBUTING.md` command fails if the file doesn't exist in t
 !!! tip "Work Avoidance"
     Filter out noise before it becomes PRs. Compare semantic content, not file bytes.
 
-This is [work avoidance](../../developer-guide/efficiency-patterns/work-avoidance/index.md). It's an engineering pattern for filtering out noise. The specific technique here is [volatile field exclusion](../../developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md).
+This is [work avoidance](../../patterns/efficiency/work-avoidance/index.md). It's an engineering pattern for filtering out noise. The specific technique here is [volatile field exclusion](../../patterns/efficiency/work-avoidance/techniques/volatile-field-exclusion.md).
 
 The principle extends beyond versions:
 
@@ -165,10 +165,10 @@ If the semantic content hasn't changed, the operation probably isn't needed.
 
 ## Deep Dive
 
-- [Work Avoidance Pattern](../../developer-guide/efficiency-patterns/work-avoidance/index.md) - Engineering pattern and techniques
-- [Content Comparison (GitHub Actions)](../../operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md) - Implementation for workflows
-- [Release-Please Extra-Files](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/extra-files.md) - Version tracking in arbitrary files
-- [File Distribution Workflow](../../operator-manual/github-actions/use-cases/file-distribution/index.md) - Three-stage distribution architecture
+- [Work Avoidance Pattern](../../patterns/efficiency/work-avoidance/index.md) - Engineering pattern and techniques
+- [Content Comparison (GitHub Actions)](../../patterns/github-actions/use-cases/work-avoidance/content-comparison.md) - Implementation for workflows
+- [Release-Please Extra-Files](../../build/release-pipelines/release-please/extra-files.md) - Version tracking in arbitrary files
+- [File Distribution Workflow](../../patterns/github-actions/use-cases/file-distribution/index.md) - Three-stage distribution architecture
 
 ---
 

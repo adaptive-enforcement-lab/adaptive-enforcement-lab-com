@@ -18,7 +18,7 @@ Field notes from the trenches of DevSecOps automation. Real-world patterns, trou
 
 !!! tip "Looking for Implementation Guides?"
 
-    The [Operator Manual](../operator-manual/github-actions/github-app-setup/index.md) contains step-by-step setup instructions. This blog covers the *why* behind those patterns and documents the journey of building them.
+    The [Operator Manual](../secure/github-apps/index.md) contains step-by-step setup instructions. This blog covers the *why* behind those patterns and documents the journey of building them.
 
 !!! info "What's Coming"
 

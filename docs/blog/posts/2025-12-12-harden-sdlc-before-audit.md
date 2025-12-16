@@ -93,7 +93,7 @@ No exceptions. Not even for administrators.
 
 The auditor pointed to the `enforce_admins` setting. "This is what I need to see."
 
-See [Branch Protection Enforcement](../../developer-guide/sdlc-hardening/branch-protection.md) for full implementation.
+See [Branch Protection Enforcement](../../enforce/branch-protection/branch-protection.md) for full implementation.
 
 ### Status Checks: CI as Gatekeeper
 
@@ -110,7 +110,7 @@ required_status_checks:
 
 Untested code can't merge. Vulnerable containers can't deploy. The pipeline decides, not developers.
 
-See [Required Status Checks](../../developer-guide/sdlc-hardening/status-checks/index.md) for patterns.
+See [Required Status Checks](../../enforce/status-checks/index.md) for patterns.
 
 ### Pre-commit Hooks: First Defense
 
@@ -129,7 +129,7 @@ The commit was blocked. The secret never entered git history.
 
 Pre-commit hooks are bypassable (`--no-verify`), so we also validate in CI. Defense in depth.
 
-See [Pre-commit Security Gates](2025-12-04-pre-commit-security-gates.md) and [Pre-commit Hooks Guide](../../developer-guide/sdlc-hardening/pre-commit-hooks.md).
+See [Pre-commit Security Gates](2025-12-04-pre-commit-security-gates.md) and [Pre-commit Hooks Guide](../../enforce/pre-commit-hooks/pre-commit-hooks.md).
 
 ### GitHub Apps: Authentication Without People
 
@@ -149,7 +149,7 @@ Token lifecycle independent of employees. Scoped permissions. Full audit trail.
 
 The auditor approved immediately.
 
-See [GitHub Apps for Machine Authentication](../../developer-guide/sdlc-hardening/github-apps/index.md) for migration guide.
+See [GitHub Apps for Machine Authentication](../../secure/github-apps/index.md) for migration guide.
 
 ### Signed Commits: Non-Repudiation
 
@@ -162,7 +162,7 @@ gpg: Good signature from "Mark Cheret <mark@example.com>"
 
 Branch protection can require signatures. Unsigned commits can't be pushed.
 
-See [Commit Signing](../../developer-guide/sdlc-hardening/commit-signing.md) for setup.
+See [Commit Signing](../../enforce/commit-signing/commit-signing.md) for setup.
 
 ### SBOM Generation: Supply Chain Visibility
 
@@ -185,7 +185,7 @@ These same practices earned our readability project OpenSSF Best Practices certi
 
 **Supply Chain Defense Stack:**
 
-- [SBOM Generation](../../developer-guide/sdlc-hardening/sbom-generation.md) and [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md) - Scan and attest
+- [SBOM Generation](../../secure/sbom/sbom-generation.md) and [Zero-Vulnerability Pipelines](2025-12-15-zero-vulnerability-pipelines.md) - Scan and attest
 - [The Score That Wouldn't Move](2025-12-18-scorecard-stuck-at-eight.md) - SLSA provenance journey from 8/10 to 10/10
 - [Sixteen Alerts Overnight](2025-12-20-sixteen-alerts-overnight.md) - OpenSSF Scorecard compliance in practice
 
@@ -245,7 +245,7 @@ Machine-readable. Verifiable. Irrefutable.
 
 We had monthly archives of branch protection configs, workflow runs, and SBOMs. The audit trail was complete.
 
-See [Audit Evidence Collection](../../developer-guide/sdlc-hardening/audit-evidence.md) for retention strategies.
+See [Audit Evidence Collection](../../enforce/audit-compliance/audit-evidence.md) for retention strategies.
 
 ## The Transformation
 
@@ -288,7 +288,7 @@ Here's the phased approach that works:
 - Week 11: Audit simulation
 - Week 12: Remediation and runbook
 
-See [Implementation Roadmap](../../developer-guide/sdlc-hardening/implementation-roadmap/index.md) for detailed timelines.
+See [Implementation Roadmap](../../enforce/implementation-roadmap/index.md) for detailed timelines.
 
 ---
 
@@ -328,14 +328,14 @@ Not because of our documentation. Because we built systems that make security in
 
 If an audit email lands tomorrow, start here:
 
-1. **[Branch Protection](../../developer-guide/sdlc-hardening/branch-protection.md)** - Turn policies into enforcement
-2. **[Required Status Checks](../../developer-guide/sdlc-hardening/status-checks/index.md)** - CI as gatekeeper
-3. **[GitHub Apps](../../developer-guide/sdlc-hardening/github-apps/index.md)** - Replace PATs
-4. **[Evidence Collection](../../developer-guide/sdlc-hardening/audit-evidence.md)** - Start archiving now
+1. **[Branch Protection](../../enforce/branch-protection/branch-protection.md)** - Turn policies into enforcement
+2. **[Required Status Checks](../../enforce/status-checks/index.md)** - CI as gatekeeper
+3. **[GitHub Apps](../../secure/github-apps/index.md)** - Replace PATs
+4. **[Evidence Collection](../../enforce/audit-compliance/audit-evidence.md)** - Start archiving now
 
 The full stack includes pre-commit hooks, commit signing, SBOMs, and runtime policy enforcement with Kyverno.
 
-See the [SDLC Hardening section](../../developer-guide/sdlc-hardening/index.md) for complete implementation guides.
+See the [SDLC Hardening section](../../enforce/index.md) for complete implementation guides.
 
 ## Related Patterns
 

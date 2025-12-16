@@ -72,6 +72,8 @@ plugins:
         - en
   - social
   - meta
+  - tags
+  # - redirects  # Temporarily disabled - will configure after testing build
   - rss:
       match_path: blog/posts/.*
       date_from_meta:
@@ -118,288 +120,287 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Blog: blog/index.md
-  - Operator Manual:
-      - operator-manual/index.md
+  - Tags: tags.md
+  - Secure:
+      - secure/index.md
+      - GitHub Apps:
+          - secure/github-apps/index.md
+          - Creating the App: secure/github-apps/creating-the-app.md
+          - Storing Credentials: secure/github-apps/storing-credentials.md
+          - Permission Patterns: secure/github-apps/permission-patterns.md
+          - Security Best Practices: secure/github-apps/security-best-practices.md
+          - Installation Scopes: secure/github-apps/installation-scopes.md
+          - Common Permissions: secure/github-apps/common-permissions.md
+          - Troubleshooting: secure/github-apps/troubleshooting.md
+          - Maintenance: secure/github-apps/maintenance.md
+      - Vulnerability Scanning: secure/vulnerability-scanning/vulnerability-scanning.md
+      - SBOM: secure/sbom/sbom-generation.md
+      - Go Security:
+          - secure/go-security/index.md
+          - Standard Toolkit: secure/go-security/tools.md
+          - Workflow Integration: secure/go-security/integration.md
+          - Compliance: secure/go-security/compliance.md
+          - Conclusion: secure/go-security/conclusion.md
+      - Scorecard:
+          - Scorecard Compliance: secure/scorecard/scorecard-compliance.md
+          - Workflow Examples: secure/scorecard/scorecard-workflow-examples.md
+  - Enforce:
+      - enforce/index.md
+      - Branch Protection: enforce/branch-protection/branch-protection.md
+      - Commit Signing: enforce/commit-signing/commit-signing.md
+      - Pre-commit Hooks:
+          - enforce/pre-commit-hooks/pre-commit-hooks.md
+          - Implementation Patterns: enforce/pre-commit-hooks/pre-commit-hooks-patterns.md
+      - Status Checks:
+          - enforce/status-checks/index.md
+          - Configuration Patterns: enforce/status-checks/configuration.md
+          - Operations Guide: enforce/status-checks/operations.md
+      - Policy-as-Code:
+          - enforce/policy-as-code/index.md
+          - Local Development:
+              - enforce/policy-as-code/local-development/index.md
+              - Advanced Validation: enforce/policy-as-code/local-development/advanced-validation.md
+              - Workflow Integration: enforce/policy-as-code/local-development/workflow-integration.md
+          - CI Integration:
+              - enforce/policy-as-code/ci-integration/index.md
+              - GitHub Actions: enforce/policy-as-code/ci-integration/github-actions.md
+          - Runtime Deployment:
+              - enforce/policy-as-code/runtime-deployment/index.md
+              - Policy Enforcement: enforce/policy-as-code/runtime-deployment/policy-enforcement.md
+              - Monitoring: enforce/policy-as-code/runtime-deployment/monitoring.md
+          - Multi-Source Policies:
+              - enforce/policy-as-code/multi-source-policies/index.md
+              - Policy Management: enforce/policy-as-code/multi-source-policies/policy-management.md
+              - Testing and Operations: enforce/policy-as-code/multi-source-policies/testing-and-operations.md
+          - Policy Packaging:
+              - enforce/policy-as-code/policy-packaging/index.md
+              - Distribution: enforce/policy-as-code/policy-packaging/distribution.md
+              - Maintenance: enforce/policy-as-code/policy-packaging/maintenance.md
+          - Kyverno:
+              - enforce/policy-as-code/kyverno/index.md
+              - Policy Patterns: enforce/policy-as-code/kyverno/policy-patterns.md
+              - Testing Approaches: enforce/policy-as-code/kyverno/testing-approaches.md
+              - Exception Handling: enforce/policy-as-code/kyverno/exceptions.md
+              - CI/CD Integration: enforce/policy-as-code/kyverno/ci-cd-integration.md
+              - Operations Guide: enforce/policy-as-code/kyverno/operations.md
+          - Operations:
+              - enforce/policy-as-code/operations/index.md
+              - Monitoring: enforce/policy-as-code/operations/monitoring.md
+              - Workflows: enforce/policy-as-code/operations/workflows.md
+      - SLSA Provenance: enforce/slsa-provenance/slsa-provenance.md
+      - Testing Enforcement:
+          - Coverage Patterns: enforce/testing-enforcement/coverage-patterns.md
+          - Coverage Enforcement: enforce/testing-enforcement/coverage-enforcement.md
+      - Audit & Compliance: enforce/audit-compliance/audit-evidence.md
+      - Implementation Roadmap:
+          - enforce/implementation-roadmap/index.md
+          - Execution Guide: enforce/implementation-roadmap/execution.md
+  - Build:
+      - build/index.md
+      - Go CLI Architecture:
+          - build/go-cli-architecture/index.md
+          - Framework Selection:
+              - build/go-cli-architecture/framework-selection/index.md
+              - CLI Frameworks: build/go-cli-architecture/framework-selection/cli-frameworks.md
+              - Viper Configuration: build/go-cli-architecture/framework-selection/viper-configuration.md
+          - Kubernetes Integration:
+              - build/go-cli-architecture/kubernetes-integration/index.md
+              - Client Configuration: build/go-cli-architecture/kubernetes-integration/client-configuration.md
+              - RBAC Setup: build/go-cli-architecture/kubernetes-integration/rbac-setup.md
+              - Common Operations:
+                  - build/go-cli-architecture/kubernetes-integration/common-operations/index.md
+                  - List Resources: build/go-cli-architecture/kubernetes-integration/common-operations/list-resources.md
+                  - Rollout Restart: build/go-cli-architecture/kubernetes-integration/common-operations/rollout-restart.md
+                  - ConfigMap Operations: build/go-cli-architecture/kubernetes-integration/common-operations/configmap-operations.md
+                  - Watch Resources: build/go-cli-architecture/kubernetes-integration/common-operations/watch-resources.md
+          - Command Architecture:
+              - build/go-cli-architecture/command-architecture/index.md
+              - Orchestrator Pattern: build/go-cli-architecture/command-architecture/orchestrator-pattern.md
+              - Subcommand Design: build/go-cli-architecture/command-architecture/subcommand-design.md
+              - I/O Contracts: build/go-cli-architecture/command-architecture/io-contracts.md
+          - Packaging:
+              - build/go-cli-architecture/packaging/index.md
+              - Container Builds: build/go-cli-architecture/packaging/container-builds.md
+              - Helm Charts: build/go-cli-architecture/packaging/helm-charts.md
+              - Release Automation: build/go-cli-architecture/packaging/release-automation.md
+              - GitHub Actions: build/go-cli-architecture/packaging/github-actions.md
+              - Pre-commit Hooks: build/go-cli-architecture/packaging/pre-commit-hooks.md
+          - Testing:
+              - build/go-cli-architecture/testing/index.md
+              - Unit Testing: build/go-cli-architecture/testing/unit-testing.md
+              - Integration Testing: build/go-cli-architecture/testing/integration-testing.md
+              - E2E Testing: build/go-cli-architecture/testing/e2e-testing.md
+      - Coverage Patterns: build/coverage-patterns/coverage-patterns.md
+      - Release Pipelines:
+          - build/release-pipelines/index.md
+          - Release-Please:
+              - build/release-pipelines/release-please/index.md
+              - Release Types: build/release-pipelines/release-please/release-types.md
+              - Extra-Files: build/release-pipelines/release-please/extra-files.md
+              - Workflow Integration: build/release-pipelines/release-please/workflow-integration.md
+              - Troubleshooting: build/release-pipelines/release-please/troubleshooting.md
+          - Change Detection: build/release-pipelines/change-detection.md
+          - Workflow Triggers: build/release-pipelines/workflow-triggers.md
+          - Protected Branches: build/release-pipelines/protected-branches.md
+      - Versioned Docs:
+          - build/versioned-docs/index.md
+          - Mike Configuration: build/versioned-docs/mike-configuration.md
+          - Pipeline Integration: build/versioned-docs/pipeline-integration.md
+          - Version Strategies: build/versioned-docs/version-strategies.md
+  - Patterns:
+      - patterns/index.md
+      - Architecture:
+          - patterns/architecture/index.md
+          - Separation of Concerns:
+              - patterns/architecture/separation-of-concerns/index.md
+              - Implementation: patterns/architecture/separation-of-concerns/implementation.md
+              - Usage Guide: patterns/architecture/separation-of-concerns/guide.md
+          - Hub and Spoke:
+              - patterns/architecture/hub-and-spoke/index.md
+              - Implementation Examples: patterns/architecture/hub-and-spoke/examples.md
+              - Operations Guide: patterns/architecture/hub-and-spoke/operations.md
+          - Strangler Fig:
+              - patterns/architecture/strangler-fig/index.md
+              - Implementation: patterns/architecture/strangler-fig/implementation.md
+              - Traffic Routing: patterns/architecture/strangler-fig/traffic-routing.md
+              - Monitoring: patterns/architecture/strangler-fig/monitoring.md
+              - Migration Guide: patterns/architecture/strangler-fig/migration-guide.md
+          - Environment Progression:
+              - patterns/architecture/environment-progression.md
+              - Operations: patterns/architecture/environment-progression-operations.md
+          - Three-Stage Design: patterns/architecture/three-stage-design.md
+          - Matrix Distribution:
+              - patterns/architecture/matrix-distribution/index.md
+              - Conditional Distribution: patterns/architecture/matrix-distribution/conditional-distribution.md
+              - Template Rendering: patterns/architecture/matrix-distribution/template-rendering.md
+              - Anti-Patterns: patterns/architecture/matrix-distribution/anti-patterns.md
+      - Efficiency:
+          - patterns/efficiency/index.md
+          - Idempotency:
+              - patterns/efficiency/idempotency/index.md
+              - Pros and Cons: patterns/efficiency/idempotency/pros-and-cons.md
+              - Decision Matrix: patterns/efficiency/idempotency/decision-matrix.md
+              - Implementation Patterns:
+                  - patterns/efficiency/idempotency/patterns/index.md
+                  - Check-Before-Act: patterns/efficiency/idempotency/patterns/check-before-act.md
+                  - Upsert: patterns/efficiency/idempotency/patterns/upsert.md
+                  - Force Overwrite: patterns/efficiency/idempotency/patterns/force-overwrite.md
+                  - Unique Identifiers: patterns/efficiency/idempotency/patterns/unique-identifiers.md
+                  - Tombstone Markers:
+                      - patterns/efficiency/idempotency/patterns/tombstone-markers/index.md
+                      - CI/CD Examples: patterns/efficiency/idempotency/patterns/tombstone-markers/ci-cd-examples.md
+                      - Edge Cases: patterns/efficiency/idempotency/patterns/tombstone-markers/edge-cases.md
+              - Real-World Example: patterns/efficiency/idempotency/real-world-example.md
+              - Testing: patterns/efficiency/idempotency/testing.md
+              - Cache Considerations: patterns/efficiency/idempotency/caches.md
+          - Work Avoidance:
+              - patterns/efficiency/work-avoidance/index.md
+              - Techniques:
+                  - patterns/efficiency/work-avoidance/techniques/index.md
+                  - Content Hashing: patterns/efficiency/work-avoidance/techniques/content-hashing.md
+                  - Volatile Field Exclusion: patterns/efficiency/work-avoidance/techniques/volatile-field-exclusion.md
+                  - Existence Checks: patterns/efficiency/work-avoidance/techniques/existence-checks.md
+                  - Cache-Based Skip: patterns/efficiency/work-avoidance/techniques/cache-based-skip.md
+                  - Queue Cleanup: patterns/efficiency/work-avoidance/techniques/queue-cleanup.md
+              - Anti-Patterns: patterns/efficiency/work-avoidance/anti-patterns.md
+      - Error Handling:
+          - patterns/error-handling/index.md
+          - Fail Fast: patterns/error-handling/fail-fast/index.md
+          - Prerequisite Checks:
+              - patterns/error-handling/prerequisite-checks/index.md
+              - Check Ordering: patterns/error-handling/prerequisite-checks/ordering.md
+              - Anti-Patterns: patterns/error-handling/prerequisite-checks/anti-patterns.md
+              - Examples: patterns/error-handling/prerequisite-checks/examples.md
+          - Graceful Degradation: patterns/error-handling/graceful-degradation/index.md
       - GitHub Actions:
-          - GitHub App Setup:
-              - operator-manual/github-actions/github-app-setup/index.md
-              - Creating the App: operator-manual/github-actions/github-app-setup/creating-the-app.md
-              - Storing Credentials: operator-manual/github-actions/github-app-setup/storing-credentials.md
-              - Permission Patterns: operator-manual/github-actions/github-app-setup/permission-patterns.md
-              - Security Best Practices: operator-manual/github-actions/github-app-setup/security-best-practices.md
-              - Installation Scopes: operator-manual/github-actions/github-app-setup/installation-scopes.md
-              - Common Permissions: operator-manual/github-actions/github-app-setup/common-permissions.md
-              - Troubleshooting: operator-manual/github-actions/github-app-setup/troubleshooting.md
-              - Maintenance: operator-manual/github-actions/github-app-setup/maintenance.md
           - Actions Integration:
-              - operator-manual/github-actions/actions-integration/index.md
-              - Token Generation: operator-manual/github-actions/actions-integration/token-generation.md
-              - Using Tokens: operator-manual/github-actions/actions-integration/using-tokens.md
-              - Workflow Patterns: operator-manual/github-actions/actions-integration/workflow-patterns.md
-              - Token Validation: operator-manual/github-actions/actions-integration/token-validation.md
-              - Workflow Permissions: operator-manual/github-actions/actions-integration/workflow-permissions.md
-              - Error Handling: operator-manual/github-actions/actions-integration/error-handling.md
-              - Security Best Practices: operator-manual/github-actions/actions-integration/security-best-practices.md
-              - Troubleshooting: operator-manual/github-actions/actions-integration/troubleshooting.md
-              - Performance Optimization: operator-manual/github-actions/actions-integration/performance-optimization.md
+              - patterns/github-actions/actions-integration/index.md
+              - Token Generation: patterns/github-actions/actions-integration/token-generation.md
+              - Using Tokens: patterns/github-actions/actions-integration/using-tokens.md
+              - Workflow Patterns: patterns/github-actions/actions-integration/workflow-patterns.md
+              - Token Validation: patterns/github-actions/actions-integration/token-validation.md
+              - Workflow Permissions: patterns/github-actions/actions-integration/workflow-permissions.md
+              - Error Handling: patterns/github-actions/actions-integration/error-handling.md
+              - Security Best Practices: patterns/github-actions/actions-integration/security-best-practices.md
+              - Troubleshooting: patterns/github-actions/actions-integration/troubleshooting.md
+              - Performance Optimization: patterns/github-actions/actions-integration/performance-optimization.md
           - Use Cases:
               - File Distribution:
-                  - operator-manual/github-actions/use-cases/file-distribution/index.md
-                  - Architecture: operator-manual/github-actions/use-cases/file-distribution/architecture.md
-                  - "Stage 1: Discovery": operator-manual/github-actions/use-cases/file-distribution/discovery-stage.md
-                  - "Stage 2: Distribution": operator-manual/github-actions/use-cases/file-distribution/distribution-stage.md
-                  - "Stage 3: Summary": operator-manual/github-actions/use-cases/file-distribution/summary-stage.md
-                  - Supporting Scripts: operator-manual/github-actions/use-cases/file-distribution/supporting-scripts.md
-                  - Workflow Configuration: operator-manual/github-actions/use-cases/file-distribution/workflow-config.md
-                  - Idempotency: operator-manual/github-actions/use-cases/file-distribution/idempotency.md
-                  - Error Handling: operator-manual/github-actions/use-cases/file-distribution/error-handling.md
-                  - Performance: operator-manual/github-actions/use-cases/file-distribution/performance.md
-                  - Extension Patterns: operator-manual/github-actions/use-cases/file-distribution/extension-patterns.md
-                  - Monitoring: operator-manual/github-actions/use-cases/file-distribution/monitoring.md
-                  - Security: operator-manual/github-actions/use-cases/file-distribution/security.md
-                  - Troubleshooting: operator-manual/github-actions/use-cases/file-distribution/troubleshooting.md
-              - Release Pipelines:
-                  - operator-manual/github-actions/use-cases/release-pipelines/index.md
-                  - Release-Please:
-                      - operator-manual/github-actions/use-cases/release-pipelines/release-please/index.md
-                      - Release Types: operator-manual/github-actions/use-cases/release-pipelines/release-please/release-types.md
-                      - Extra-Files: operator-manual/github-actions/use-cases/release-pipelines/release-please/extra-files.md
-                      - Workflow Integration: operator-manual/github-actions/use-cases/release-pipelines/release-please/workflow-integration.md
-                      - Troubleshooting: operator-manual/github-actions/use-cases/release-pipelines/release-please/troubleshooting.md
-                  - Change Detection: operator-manual/github-actions/use-cases/release-pipelines/change-detection.md
-                  - Workflow Triggers: operator-manual/github-actions/use-cases/release-pipelines/workflow-triggers.md
-                  - Protected Branches: operator-manual/github-actions/use-cases/release-pipelines/protected-branches.md
+                  - patterns/github-actions/use-cases/file-distribution/index.md
+                  - Architecture: patterns/github-actions/use-cases/file-distribution/architecture.md
+                  - "Stage 1: Discovery": patterns/github-actions/use-cases/file-distribution/discovery-stage.md
+                  - "Stage 2: Distribution": patterns/github-actions/use-cases/file-distribution/distribution-stage.md
+                  - "Stage 3: Summary": patterns/github-actions/use-cases/file-distribution/summary-stage.md
+                  - Supporting Scripts: patterns/github-actions/use-cases/file-distribution/supporting-scripts.md
+                  - Workflow Configuration: patterns/github-actions/use-cases/file-distribution/workflow-config.md
+                  - Idempotency: patterns/github-actions/use-cases/file-distribution/idempotency.md
+                  - Error Handling: patterns/github-actions/use-cases/file-distribution/error-handling.md
+                  - Performance: patterns/github-actions/use-cases/file-distribution/performance.md
+                  - Extension Patterns: patterns/github-actions/use-cases/file-distribution/extension-patterns.md
+                  - Monitoring: patterns/github-actions/use-cases/file-distribution/monitoring.md
+                  - Security: patterns/github-actions/use-cases/file-distribution/security.md
+                  - Troubleshooting: patterns/github-actions/use-cases/file-distribution/troubleshooting.md
               - Work Avoidance:
-                  - operator-manual/github-actions/use-cases/work-avoidance/index.md
-                  - Content Comparison: operator-manual/github-actions/use-cases/work-avoidance/content-comparison.md
-                  - Path Filtering: operator-manual/github-actions/use-cases/work-avoidance/path-filtering.md
-                  - Cache-Based Skip: operator-manual/github-actions/use-cases/work-avoidance/cache-based-skip.md
+                  - patterns/github-actions/use-cases/work-avoidance/index.md
+                  - Content Comparison: patterns/github-actions/use-cases/work-avoidance/content-comparison.md
+                  - Path Filtering: patterns/github-actions/use-cases/work-avoidance/path-filtering.md
+                  - Cache-Based Skip: patterns/github-actions/use-cases/work-avoidance/cache-based-skip.md
                   - Matrix Filtering:
-                      - operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/index.md
-                      - Path Filtering: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/path-filtering.md
-                      - Matrix Optimization: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/matrix-optimization.md
-                      - Caching and Artifacts: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/caching-artifacts.md
-                      - Advanced Patterns: operator-manual/github-actions/use-cases/work-avoidance/matrix-patterns/advanced-patterns.md
-              - Versioned Documentation:
-                  - operator-manual/github-actions/use-cases/versioned-docs/index.md
-                  - Mike Configuration: operator-manual/github-actions/use-cases/versioned-docs/mike-configuration.md
-                  - Pipeline Integration: operator-manual/github-actions/use-cases/versioned-docs/pipeline-integration.md
-                  - Version Strategies: operator-manual/github-actions/use-cases/versioned-docs/version-strategies.md
+                      - patterns/github-actions/use-cases/work-avoidance/matrix-patterns/index.md
+                      - Path Filtering: patterns/github-actions/use-cases/work-avoidance/matrix-patterns/path-filtering.md
+                      - Matrix Optimization: patterns/github-actions/use-cases/work-avoidance/matrix-patterns/matrix-optimization.md
+                      - Caching and Artifacts: patterns/github-actions/use-cases/work-avoidance/matrix-patterns/caching-artifacts.md
+                      - Advanced Patterns: patterns/github-actions/use-cases/work-avoidance/matrix-patterns/advanced-patterns.md
       - Argo Events:
-          - Setup Guide:
-              - operator-manual/argo-events/setup/index.md
-              - EventSource Configuration: operator-manual/argo-events/setup/event-sources.md
-              - EventBus Configuration: operator-manual/argo-events/setup/event-bus.md
-              - Sensor Configuration: operator-manual/argo-events/setup/sensors.md
-          - Troubleshooting:
-              - operator-manual/argo-events/troubleshooting/index.md
-              - EventSource Issues: operator-manual/argo-events/troubleshooting/eventsources.md
-              - Sensor Issues: operator-manual/argo-events/troubleshooting/sensors.md
-              - Common Patterns: operator-manual/argo-events/troubleshooting/common-patterns.md
-          - High Availability: operator-manual/argo-events/reliability/high-availability.md
-  - Developer Guide:
-      - developer-guide/index.md
-      - Pattern Selection Guide: developer-guide/pattern-selection-guide/index.md
-      - Error Handling:
-          - developer-guide/error-handling/index.md
-          - Fail Fast: developer-guide/error-handling/fail-fast/index.md
-          - Prerequisite Checks:
-              - developer-guide/error-handling/prerequisite-checks/index.md
-              - Check Ordering: developer-guide/error-handling/prerequisite-checks/ordering.md
-              - Anti-Patterns: developer-guide/error-handling/prerequisite-checks/anti-patterns.md
-              - Examples: developer-guide/error-handling/prerequisite-checks/examples.md
-          - Graceful Degradation: developer-guide/error-handling/graceful-degradation/index.md
-      - Efficiency Patterns:
-          - developer-guide/efficiency-patterns/index.md
-          - Idempotency:
-              - developer-guide/efficiency-patterns/idempotency/index.md
-              - Pros and Cons: developer-guide/efficiency-patterns/idempotency/pros-and-cons.md
-              - Decision Matrix: developer-guide/efficiency-patterns/idempotency/decision-matrix.md
-              - Implementation Patterns:
-                  - developer-guide/efficiency-patterns/idempotency/patterns/index.md
-                  - Check-Before-Act: developer-guide/efficiency-patterns/idempotency/patterns/check-before-act.md
-                  - Upsert: developer-guide/efficiency-patterns/idempotency/patterns/upsert.md
-                  - Force Overwrite: developer-guide/efficiency-patterns/idempotency/patterns/force-overwrite.md
-                  - Unique Identifiers: developer-guide/efficiency-patterns/idempotency/patterns/unique-identifiers.md
-                  - Tombstone Markers:
-                      - developer-guide/efficiency-patterns/idempotency/patterns/tombstone-markers/index.md
-                      - CI/CD Examples: developer-guide/efficiency-patterns/idempotency/patterns/tombstone-markers/ci-cd-examples.md
-                      - Edge Cases: developer-guide/efficiency-patterns/idempotency/patterns/tombstone-markers/edge-cases.md
-              - Real-World Example: developer-guide/efficiency-patterns/idempotency/real-world-example.md
-              - Testing: developer-guide/efficiency-patterns/idempotency/testing.md
-              - Cache Considerations: developer-guide/efficiency-patterns/idempotency/caches.md
-          - Work Avoidance:
-              - developer-guide/efficiency-patterns/work-avoidance/index.md
-              - Techniques:
-                  - developer-guide/efficiency-patterns/work-avoidance/techniques/index.md
-                  - Content Hashing: developer-guide/efficiency-patterns/work-avoidance/techniques/content-hashing.md
-                  - Volatile Field Exclusion: developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md
-                  - Existence Checks: developer-guide/efficiency-patterns/work-avoidance/techniques/existence-checks.md
-                  - Cache-Based Skip: developer-guide/efficiency-patterns/work-avoidance/techniques/cache-based-skip.md
-              - Anti-Patterns: developer-guide/efficiency-patterns/work-avoidance/anti-patterns.md
-      - Architecture Patterns:
-          - developer-guide/architecture-patterns/index.md
-          - Separation of Concerns:
-              - developer-guide/architecture-patterns/separation-of-concerns/index.md
-              - Implementation Techniques: developer-guide/architecture-patterns/separation-of-concerns/implementation.md
-              - Usage Guide: developer-guide/architecture-patterns/separation-of-concerns/guide.md
-          - Hub and Spoke:
-              - developer-guide/architecture-patterns/hub-and-spoke/index.md
-              - Implementation Examples: developer-guide/architecture-patterns/hub-and-spoke/examples.md
-              - Operations Guide: developer-guide/architecture-patterns/hub-and-spoke/operations.md
-          - Strangler Fig:
-              - developer-guide/architecture-patterns/strangler-fig/index.md
-              - Implementation: developer-guide/architecture-patterns/strangler-fig/implementation.md
-              - Traffic Routing: developer-guide/architecture-patterns/strangler-fig/traffic-routing.md
-              - Monitoring and Rollback: developer-guide/architecture-patterns/strangler-fig/monitoring.md
-              - Migration Guide: developer-guide/architecture-patterns/strangler-fig/migration-guide.md
-          - Environment Progression:
-              - developer-guide/architecture-patterns/environment-progression.md
-              - Operations: developer-guide/architecture-patterns/environment-progression-operations.md
-          - Three-Stage Design: developer-guide/architecture-patterns/three-stage-design.md
-          - Matrix Distribution:
-              - developer-guide/architecture-patterns/matrix-distribution/index.md
-              - Conditional Distribution: developer-guide/architecture-patterns/matrix-distribution/conditional-distribution.md
-              - Template Rendering: developer-guide/architecture-patterns/matrix-distribution/template-rendering.md
-              - Anti-Patterns: developer-guide/architecture-patterns/matrix-distribution/anti-patterns.md
-      - SDLC Hardening:
-          - developer-guide/sdlc-hardening/index.md
-          - Branch Protection: developer-guide/sdlc-hardening/branch-protection.md
-          - Status Checks:
-              - developer-guide/sdlc-hardening/status-checks/index.md
-              - Configuration Patterns: developer-guide/sdlc-hardening/status-checks/configuration.md
-              - Operations Guide: developer-guide/sdlc-hardening/status-checks/operations.md
-          - GitHub Apps:
-              - developer-guide/sdlc-hardening/github-apps/index.md
-              - Common Patterns: developer-guide/sdlc-hardening/github-apps/patterns.md
-              - Operations Guide: developer-guide/sdlc-hardening/github-apps/operations.md
-          - Commit Signing: developer-guide/sdlc-hardening/commit-signing.md
-          - Pre-commit Hooks:
-              - developer-guide/sdlc-hardening/pre-commit-hooks.md
-              - Implementation Patterns: developer-guide/sdlc-hardening/pre-commit-hooks-patterns.md
-          - Vulnerability Scanning: developer-guide/sdlc-hardening/vulnerability-scanning.md
-          - SBOM Generation: developer-guide/sdlc-hardening/sbom-generation.md
-          - Go Security Tooling:
-              - developer-guide/sdlc-hardening/go-security/index.md
-              - Standard Toolkit: developer-guide/sdlc-hardening/go-security/tools.md
-              - Workflow Integration: developer-guide/sdlc-hardening/go-security/integration.md
-              - Compliance: developer-guide/sdlc-hardening/go-security/compliance.md
-              - Conclusion: developer-guide/sdlc-hardening/go-security/conclusion.md
-          - Supply Chain Security:
-              - SLSA Provenance: developer-guide/sdlc-hardening/supply-chain/slsa-provenance.md
-              - Scorecard Compliance: developer-guide/sdlc-hardening/supply-chain/scorecard-compliance.md
-              - Workflow Examples: developer-guide/sdlc-hardening/supply-chain/scorecard-workflow-examples.md
-          - Testing Enforcement:
-              - Coverage Patterns: developer-guide/sdlc-hardening/testing/coverage-patterns.md
-              - Coverage Enforcement: developer-guide/sdlc-hardening/testing/coverage-enforcement.md
-          - Audit Evidence: developer-guide/sdlc-hardening/audit-evidence.md
-          - Implementation Roadmap:
-              - developer-guide/sdlc-hardening/implementation-roadmap/index.md
-              - Execution Guide: developer-guide/sdlc-hardening/implementation-roadmap/execution.md
-          - Policy-as-Code:
-              - developer-guide/sdlc-hardening/policy-as-code/index.md
-              - Local Development:
-                  - developer-guide/sdlc-hardening/policy-as-code/local-development/index.md
-                  - Advanced Validation: developer-guide/sdlc-hardening/policy-as-code/local-development/advanced-validation.md
-                  - Workflow Integration: developer-guide/sdlc-hardening/policy-as-code/local-development/workflow-integration.md
-              - CI Integration:
-                  - developer-guide/sdlc-hardening/policy-as-code/ci-integration/index.md
-                  - GitHub Actions: developer-guide/sdlc-hardening/policy-as-code/ci-integration/github-actions.md
-              - Runtime Deployment:
-                  - developer-guide/sdlc-hardening/policy-as-code/runtime-deployment/index.md
-                  - Policy Enforcement: developer-guide/sdlc-hardening/policy-as-code/runtime-deployment/policy-enforcement.md
-                  - Monitoring: developer-guide/sdlc-hardening/policy-as-code/runtime-deployment/monitoring.md
-              - Multi-Source Policies:
-                  - developer-guide/sdlc-hardening/policy-as-code/multi-source-policies/index.md
-                  - Policy Management: developer-guide/sdlc-hardening/policy-as-code/multi-source-policies/policy-management.md
-                  - Testing and Operations: developer-guide/sdlc-hardening/policy-as-code/multi-source-policies/testing-and-operations.md
-              - Policy Packaging:
-                  - developer-guide/sdlc-hardening/policy-as-code/policy-packaging/index.md
-                  - Distribution: developer-guide/sdlc-hardening/policy-as-code/policy-packaging/distribution.md
-                  - Maintenance: developer-guide/sdlc-hardening/policy-as-code/policy-packaging/maintenance.md
-              - Kyverno:
-                  - developer-guide/sdlc-hardening/policy-as-code/kyverno/index.md
-                  - Policy Patterns: developer-guide/sdlc-hardening/policy-as-code/kyverno/policy-patterns.md
-                  - Testing Approaches: developer-guide/sdlc-hardening/policy-as-code/kyverno/testing-approaches.md
-                  - Exception Handling: developer-guide/sdlc-hardening/policy-as-code/kyverno/exceptions.md
-                  - CI/CD Integration: developer-guide/sdlc-hardening/policy-as-code/kyverno/ci-cd-integration.md
-                  - Operations Guide: developer-guide/sdlc-hardening/policy-as-code/kyverno/operations.md
-              - Operations:
-                  - developer-guide/sdlc-hardening/policy-as-code/operations/index.md
-                  - Monitoring: developer-guide/sdlc-hardening/policy-as-code/operations/monitoring.md
-                  - Workflows: developer-guide/sdlc-hardening/policy-as-code/operations/workflows.md
-      - Go CLI Architecture:
-          - developer-guide/go-cli-architecture/index.md
-          - Framework Selection:
-              - developer-guide/go-cli-architecture/framework-selection/index.md
-              - CLI Frameworks: developer-guide/go-cli-architecture/framework-selection/cli-frameworks.md
-              - Viper Configuration: developer-guide/go-cli-architecture/framework-selection/viper-configuration.md
-          - Kubernetes Integration:
-              - developer-guide/go-cli-architecture/kubernetes-integration/index.md
-              - Client Configuration: developer-guide/go-cli-architecture/kubernetes-integration/client-configuration.md
-              - RBAC Setup: developer-guide/go-cli-architecture/kubernetes-integration/rbac-setup.md
-              - Common Operations:
-                  - developer-guide/go-cli-architecture/kubernetes-integration/common-operations/index.md
-                  - List Resources: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/list-resources.md
-                  - Rollout Restart: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/rollout-restart.md
-                  - ConfigMap Operations: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/configmap-operations.md
-                  - Watch Resources: developer-guide/go-cli-architecture/kubernetes-integration/common-operations/watch-resources.md
-          - Command Architecture:
-              - developer-guide/go-cli-architecture/command-architecture/index.md
-              - Orchestrator Pattern: developer-guide/go-cli-architecture/command-architecture/orchestrator-pattern.md
-              - Subcommand Design: developer-guide/go-cli-architecture/command-architecture/subcommand-design.md
-              - I/O Contracts: developer-guide/go-cli-architecture/command-architecture/io-contracts.md
-          - Packaging:
-              - developer-guide/go-cli-architecture/packaging/index.md
-              - Container Builds: developer-guide/go-cli-architecture/packaging/container-builds.md
-              - Helm Charts: developer-guide/go-cli-architecture/packaging/helm-charts.md
-              - Release Automation: developer-guide/go-cli-architecture/packaging/release-automation.md
-              - GitHub Actions: developer-guide/go-cli-architecture/packaging/github-actions.md
-              - Pre-commit Hooks: developer-guide/go-cli-architecture/packaging/pre-commit-hooks.md
-          - Testing:
-              - developer-guide/go-cli-architecture/testing/index.md
-              - Unit Testing: developer-guide/go-cli-architecture/testing/unit-testing.md
-              - Integration Testing: developer-guide/go-cli-architecture/testing/integration-testing.md
-              - E2E Testing: developer-guide/go-cli-architecture/testing/e2e-testing.md
-      - Argo Events:
-          - developer-guide/argo-events/index.md
+          - patterns/argo-events/index.md
+          - Setup:
+              - patterns/argo-events/setup/index.md
+              - EventSource Configuration: patterns/argo-events/setup/event-sources.md
+              - EventBus Configuration: patterns/argo-events/setup/event-bus.md
+              - Sensor Configuration: patterns/argo-events/setup/sensors.md
           - Event Routing:
-              - developer-guide/argo-events/routing/index.md
-              - Simple Filtering: developer-guide/argo-events/routing/filtering.md
-              - Multi-Trigger Actions: developer-guide/argo-events/routing/multi-trigger.md
-              - Event Transformation: developer-guide/argo-events/routing/transformation.md
-              - Conditional Routing: developer-guide/argo-events/routing/conditional.md
-          - Reliability Patterns:
-              - developer-guide/argo-events/reliability/index.md
-              - Retry Strategies: developer-guide/argo-events/reliability/retry.md
-              - Dead Letter Queues: developer-guide/argo-events/reliability/dead-letter.md
-              - Backpressure Handling: developer-guide/argo-events/reliability/backpressure.md
+              - patterns/argo-events/routing/index.md
+              - Simple Filtering: patterns/argo-events/routing/filtering.md
+              - Multi-Trigger Actions: patterns/argo-events/routing/multi-trigger.md
+              - Event Transformation: patterns/argo-events/routing/transformation.md
+              - Conditional Routing: patterns/argo-events/routing/conditional.md
+          - Reliability:
+              - patterns/argo-events/reliability/index.md
+              - High Availability: patterns/argo-events/reliability/high-availability.md
+              - Retry Strategies: patterns/argo-events/reliability/retry.md
+              - Dead Letter Queues: patterns/argo-events/reliability/dead-letter.md
+              - Backpressure Handling: patterns/argo-events/reliability/backpressure.md
+          - Troubleshooting:
+              - patterns/argo-events/troubleshooting/index.md
+              - EventSource Issues: patterns/argo-events/troubleshooting/eventsources.md
+              - Sensor Issues: patterns/argo-events/troubleshooting/sensors.md
+              - Common Patterns: patterns/argo-events/troubleshooting/common-patterns.md
       - Argo Workflows:
-          - developer-guide/argo-workflows/index.md
-          - WorkflowTemplate Patterns:
-              - developer-guide/argo-workflows/templates/index.md
-              - Basic Structure: developer-guide/argo-workflows/templates/basic-structure.md
-              - Retry Strategy: developer-guide/argo-workflows/templates/retry-strategy.md
-              - Init Containers: developer-guide/argo-workflows/templates/init-containers.md
-              - Volume Patterns: developer-guide/argo-workflows/templates/volume-patterns.md
-              - RBAC Configuration: developer-guide/argo-workflows/templates/rbac.md
+          - patterns/argo-workflows/index.md
+          - Templates:
+              - patterns/argo-workflows/templates/index.md
+              - Basic Structure: patterns/argo-workflows/templates/basic-structure.md
+              - Retry Strategy: patterns/argo-workflows/templates/retry-strategy.md
+              - Init Containers: patterns/argo-workflows/templates/init-containers.md
+              - Volume Patterns: patterns/argo-workflows/templates/volume-patterns.md
+              - RBAC Configuration: patterns/argo-workflows/templates/rbac.md
           - Concurrency Control:
-              - developer-guide/argo-workflows/concurrency/index.md
-              - Mutex Synchronization: developer-guide/argo-workflows/concurrency/mutex.md
-              - Semaphores: developer-guide/argo-workflows/concurrency/semaphores.md
-              - TTL Strategy: developer-guide/argo-workflows/concurrency/ttl.md
-          - Workflow Composition:
-              - developer-guide/argo-workflows/composition/index.md
-              - Spawning Child Workflows: developer-guide/argo-workflows/composition/spawning-children.md
-              - Parallel Execution: developer-guide/argo-workflows/composition/parallel.md
-              - DAG Orchestration: developer-guide/argo-workflows/composition/dag.md
-              - Cross-Workflow Communication: developer-guide/argo-workflows/composition/communication.md
+              - patterns/argo-workflows/concurrency/index.md
+              - Mutex Synchronization: patterns/argo-workflows/concurrency/mutex.md
+              - Semaphores: patterns/argo-workflows/concurrency/semaphores.md
+              - TTL Strategy: patterns/argo-workflows/concurrency/ttl.md
+          - Composition:
+              - patterns/argo-workflows/composition/index.md
+              - Spawning Child Workflows: patterns/argo-workflows/composition/spawning-children.md
+              - Parallel Execution: patterns/argo-workflows/composition/parallel.md
+              - DAG Orchestration: patterns/argo-workflows/composition/dag.md
+              - Cross-Workflow Communication: patterns/argo-workflows/composition/communication.md
           - Scheduled Workflows:
-              - developer-guide/argo-workflows/scheduled/index.md
-              - Basic CronWorkflow: developer-guide/argo-workflows/scheduled/basic.md
-              - Concurrency Policies: developer-guide/argo-workflows/scheduled/concurrency-policy.md
-              - Orchestration: developer-guide/argo-workflows/scheduled/orchestration.md
-              - GitHub Integration: developer-guide/argo-workflows/scheduled/github-integration.md
+              - patterns/argo-workflows/scheduled/index.md
+              - Basic CronWorkflow: patterns/argo-workflows/scheduled/basic.md
+              - Concurrency Policies: patterns/argo-workflows/scheduled/concurrency-policy.md
+              - Orchestration: patterns/argo-workflows/scheduled/orchestration.md
+              - GitHub Integration: patterns/argo-workflows/scheduled/github-integration.md
   - Roadmap: roadmap.md
   - About:
       - about/index.md

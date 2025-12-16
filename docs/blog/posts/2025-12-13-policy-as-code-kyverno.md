@@ -132,10 +132,10 @@ Experiment without installing anything: **[playground.kyverno.io](https://playgr
 
 Kyverno enforces policies at multiple layers:
 
-- **[Kyverno Basics](../../developer-guide/sdlc-hardening/policy-as-code/kyverno/index.md)** - Installation, validation policies, audit vs enforce modes
-- **[Policy Patterns](../../developer-guide/sdlc-hardening/policy-as-code/kyverno/policy-patterns.md)** - Resource limits, image provenance, required labels, mutations
-- **[Testing and Exceptions](../../developer-guide/sdlc-hardening/policy-as-code/kyverno/testing-approaches.md)** - Policy testing, exception management, troubleshooting
-- **[CI/CD Integration](../../developer-guide/sdlc-hardening/policy-as-code/kyverno/ci-cd-integration.md)** - Pre-deploy validation, monitoring, policy lifecycle
+- **[Kyverno Basics](../../enforce/policy-as-code/kyverno/index.md)** - Installation, validation policies, audit vs enforce modes
+- **[Policy Patterns](../../enforce/policy-as-code/kyverno/policy-patterns.md)** - Resource limits, image provenance, required labels, mutations
+- **[Testing and Exceptions](../../enforce/policy-as-code/kyverno/testing-approaches.md)** - Policy testing, exception management, troubleshooting
+- **[CI/CD Integration](../../enforce/policy-as-code/kyverno/ci-cd-integration.md)** - Pre-deploy validation, monitoring, policy lifecycle
 
 ---
 

@@ -80,7 +80,7 @@ The consequence: release-please can create the most beautiful PR in the world, a
 
 First instinct: use a Personal Access Token. If `GITHUB_TOKEN` is the problem, replace it.
 
-This works. But PATs come with [their own problems](../../operator-manual/github-actions/github-app-setup/index.md#why_use_a_core_app):
+This works. But PATs come with [their own problems](../../secure/github-apps/index.md#why_use_a_core_app):
 
 - Tied to individual user accounts (revoked when someone leaves)
 - No granular permission control
@@ -255,10 +255,10 @@ This post covers the core problem and fix. For complete implementation guides:
 
 | Guide | Description |
 | ------- | ------------- |
-| [Release-Please Setup](../../operator-manual/github-actions/use-cases/release-pipelines/release-please/index.md) | Configuration, changelog sections, monorepo patterns |
-| [Change Detection](../../operator-manual/github-actions/use-cases/release-pipelines/change-detection.md) | Skip unnecessary builds, cascade dependencies |
-| [Workflow Triggers](../../operator-manual/github-actions/use-cases/release-pipelines/workflow-triggers.md) | GITHUB_TOKEN limitations, alternative approaches |
-| [Protected Branches](../../operator-manual/github-actions/use-cases/release-pipelines/protected-branches.md) | Working with branch protection rules |
+| [Release-Please Setup](../../build/release-pipelines/release-please/index.md) | Configuration, changelog sections, monorepo patterns |
+| [Change Detection](../../build/release-pipelines/change-detection.md) | Skip unnecessary builds, cascade dependencies |
+| [Workflow Triggers](../../build/release-pipelines/workflow-triggers.md) | GITHUB_TOKEN limitations, alternative approaches |
+| [Protected Branches](../../build/release-pipelines/protected-branches.md) | Working with branch protection rules |
 
 ---
 

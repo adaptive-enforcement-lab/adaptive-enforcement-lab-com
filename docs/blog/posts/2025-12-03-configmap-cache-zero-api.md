@@ -146,7 +146,7 @@ func GetDeployments(image string, cachePath string, client kubernetes.Interface)
 }
 ```
 
-This pattern aligns with [Graceful Degradation](../../developer-guide/error-handling/graceful-degradation/index.md): optimize for the happy path (mount), but survive all failure modes.
+This pattern aligns with [Graceful Degradation](../../patterns/error-handling/graceful-degradation/index.md): optimize for the happy path (mount), but survive all failure modes.
 
 ---
 
@@ -277,8 +277,8 @@ The pattern lives in production. For implementation details:
 !!! info "Related Documentation"
 
     - **[Event-Driven Deployments with Argo](2025-12-14-event-driven-deployments-argo.md)**: Full architecture using this cache pattern
-    - **[Cache Considerations](../../developer-guide/efficiency-patterns/idempotency/caches.md)**: Cache resilience and idempotency
-    - **[Graceful Degradation](../../developer-guide/error-handling/graceful-degradation/index.md)**: Designing fallback strategies
+    - **[Cache Considerations](../../patterns/efficiency/idempotency/caches.md)**: Cache resilience and idempotency
+    - **[Graceful Degradation](../../patterns/error-handling/graceful-degradation/index.md)**: Designing fallback strategies
 
 ---
 

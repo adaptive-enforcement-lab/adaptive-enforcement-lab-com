@@ -262,4 +262,4 @@ The 30 seconds spent verifying saves 30 minutes debugging failed CI. More import
 - [The Art of Failing Gracefully](2025-12-05-the-art-of-failing-gracefully.md) - Handle failures elegantly when they happen
 - [CLI UX Patterns for AI Agents](2025-12-07-cli-ux-patterns-for-ai-agents.md) - Verify AI fixes with the same rigor
 - [Building GitHub Actions in Go](2025-12-09-building-github-actions-in-go.md) - Apply verification to action development
-- [Prerequisite Checks](../../developer-guide/error-handling/prerequisite-checks/index.md) - Fail fast when prerequisites aren't met
+- [Prerequisite Checks](../../patterns/error-handling/prerequisite-checks/index.md) - Fail fast when prerequisites aren't met

@@ -2,3 +2,4 @@ mkdocs-material
 pillow
 cairosvg
 mkdocs-rss-plugin
+mkdocs-redirects
