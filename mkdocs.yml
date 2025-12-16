@@ -349,6 +349,58 @@ nav:
       - Brand: about/brand.md
       - Connect: about/connect.md
   - Blog: blog/index.md
+  - Build:
+      - build/index.md
+      - Go CLI Architecture:
+          - build/go-cli-architecture/index.md
+          - Framework Selection:
+              - build/go-cli-architecture/framework-selection/index.md
+              - CLI Frameworks: build/go-cli-architecture/framework-selection/cli-frameworks.md
+              - Viper Configuration: build/go-cli-architecture/framework-selection/viper-configuration.md
+          - Kubernetes Integration:
+              - build/go-cli-architecture/kubernetes-integration/index.md
+              - Client Configuration: build/go-cli-architecture/kubernetes-integration/client-configuration.md
+              - RBAC Setup: build/go-cli-architecture/kubernetes-integration/rbac-setup.md
+              - Common Operations:
+                  - build/go-cli-architecture/kubernetes-integration/common-operations/index.md
+                  - List Resources: build/go-cli-architecture/kubernetes-integration/common-operations/list-resources.md
+                  - Rollout Restart: build/go-cli-architecture/kubernetes-integration/common-operations/rollout-restart.md
+                  - ConfigMap Operations: build/go-cli-architecture/kubernetes-integration/common-operations/configmap-operations.md
+                  - Watch Resources: build/go-cli-architecture/kubernetes-integration/common-operations/watch-resources.md
+          - Command Architecture:
+              - build/go-cli-architecture/command-architecture/index.md
+              - Orchestrator Pattern: build/go-cli-architecture/command-architecture/orchestrator-pattern.md
+              - Subcommand Design: build/go-cli-architecture/command-architecture/subcommand-design.md
+              - I/O Contracts: build/go-cli-architecture/command-architecture/io-contracts.md
+          - Packaging:
+              - build/go-cli-architecture/packaging/index.md
+              - Container Builds: build/go-cli-architecture/packaging/container-builds.md
+              - Helm Charts: build/go-cli-architecture/packaging/helm-charts.md
+              - Release Automation: build/go-cli-architecture/packaging/release-automation.md
+              - GitHub Actions: build/go-cli-architecture/packaging/github-actions.md
+              - Pre-commit Hooks: build/go-cli-architecture/packaging/pre-commit-hooks.md
+          - Testing:
+              - build/go-cli-architecture/testing/index.md
+              - Unit Testing: build/go-cli-architecture/testing/unit-testing.md
+              - Integration Testing: build/go-cli-architecture/testing/integration-testing.md
+              - E2E Testing: build/go-cli-architecture/testing/e2e-testing.md
+      - Coverage Patterns: build/coverage-patterns/coverage-patterns.md
+      - Release Pipelines:
+          - build/release-pipelines/index.md
+          - Release-Please:
+              - build/release-pipelines/release-please/index.md
+              - Release Types: build/release-pipelines/release-please/release-types.md
+              - Extra-Files: build/release-pipelines/release-please/extra-files.md
+              - Workflow Integration: build/release-pipelines/release-please/workflow-integration.md
+              - Troubleshooting: build/release-pipelines/release-please/troubleshooting.md
+          - Change Detection: build/release-pipelines/change-detection.md
+          - Workflow Triggers: build/release-pipelines/workflow-triggers.md
+          - Protected Branches: build/release-pipelines/protected-branches.md
+      - Versioned Docs:
+          - build/versioned-docs/index.md
+          - Mike Configuration: build/versioned-docs/mike-configuration.md
+          - Pipeline Integration: build/versioned-docs/pipeline-integration.md
+          - Version Strategies: build/versioned-docs/version-strategies.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
@@ -423,58 +475,6 @@ nav:
       - Implementation Roadmap:
           - enforce/implementation-roadmap/index.md
           - Execution Guide: enforce/implementation-roadmap/execution.md
-  - Build:
-      - build/index.md
-      - Go CLI Architecture:
-          - build/go-cli-architecture/index.md
-          - Framework Selection:
-              - build/go-cli-architecture/framework-selection/index.md
-              - CLI Frameworks: build/go-cli-architecture/framework-selection/cli-frameworks.md
-              - Viper Configuration: build/go-cli-architecture/framework-selection/viper-configuration.md
-          - Kubernetes Integration:
-              - build/go-cli-architecture/kubernetes-integration/index.md
-              - Client Configuration: build/go-cli-architecture/kubernetes-integration/client-configuration.md
-              - RBAC Setup: build/go-cli-architecture/kubernetes-integration/rbac-setup.md
-              - Common Operations:
-                  - build/go-cli-architecture/kubernetes-integration/common-operations/index.md
-                  - List Resources: build/go-cli-architecture/kubernetes-integration/common-operations/list-resources.md
-                  - Rollout Restart: build/go-cli-architecture/kubernetes-integration/common-operations/rollout-restart.md
-                  - ConfigMap Operations: build/go-cli-architecture/kubernetes-integration/common-operations/configmap-operations.md
-                  - Watch Resources: build/go-cli-architecture/kubernetes-integration/common-operations/watch-resources.md
-          - Command Architecture:
-              - build/go-cli-architecture/command-architecture/index.md
-              - Orchestrator Pattern: build/go-cli-architecture/command-architecture/orchestrator-pattern.md
-              - Subcommand Design: build/go-cli-architecture/command-architecture/subcommand-design.md
-              - I/O Contracts: build/go-cli-architecture/command-architecture/io-contracts.md
-          - Packaging:
-              - build/go-cli-architecture/packaging/index.md
-              - Container Builds: build/go-cli-architecture/packaging/container-builds.md
-              - Helm Charts: build/go-cli-architecture/packaging/helm-charts.md
-              - Release Automation: build/go-cli-architecture/packaging/release-automation.md
-              - GitHub Actions: build/go-cli-architecture/packaging/github-actions.md
-              - Pre-commit Hooks: build/go-cli-architecture/packaging/pre-commit-hooks.md
-          - Testing:
-              - build/go-cli-architecture/testing/index.md
-              - Unit Testing: build/go-cli-architecture/testing/unit-testing.md
-              - Integration Testing: build/go-cli-architecture/testing/integration-testing.md
-              - E2E Testing: build/go-cli-architecture/testing/e2e-testing.md
-      - Coverage Patterns: build/coverage-patterns/coverage-patterns.md
-      - Release Pipelines:
-          - build/release-pipelines/index.md
-          - Release-Please:
-              - build/release-pipelines/release-please/index.md
-              - Release Types: build/release-pipelines/release-please/release-types.md
-              - Extra-Files: build/release-pipelines/release-please/extra-files.md
-              - Workflow Integration: build/release-pipelines/release-please/workflow-integration.md
-              - Troubleshooting: build/release-pipelines/release-please/troubleshooting.md
-          - Change Detection: build/release-pipelines/change-detection.md
-          - Workflow Triggers: build/release-pipelines/workflow-triggers.md
-          - Protected Branches: build/release-pipelines/protected-branches.md
-      - Versioned Docs:
-          - build/versioned-docs/index.md
-          - Mike Configuration: build/versioned-docs/mike-configuration.md
-          - Pipeline Integration: build/versioned-docs/pipeline-integration.md
-          - Version Strategies: build/versioned-docs/version-strategies.md
   - Patterns:
       - patterns/index.md
       - Architecture:

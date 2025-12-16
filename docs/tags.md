@@ -4,4 +4,4 @@
 
     Browse content by tags across the Adaptive Enforcement Lab documentation.
 
-[TAGS]
+<!-- material/tags -->
