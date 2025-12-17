@@ -20,6 +20,12 @@ repos:
         language: script
         files: \.(md|yaml|yml|sh|tf|Dockerfile|Containerfile)$
         pass_filenames: true
+      - id: check-description
+        name: check description frontmatter
+        entry: scripts/check-description.sh
+        language: script
+        files: \.md$
+        pass_filenames: true
       - id: mkdocs-build
         name: mkdocs build
         entry: bash -c 'if [ -f .venv/bin/mkdocs ]; then .venv/bin/mkdocs build --strict; else mkdocs build --strict; fi'
