@@ -1,3 +1,8 @@
+---
+description: >-
+  Ensure release-please PRs trigger build pipelines using GitHub App tokens. Bypass GITHUB_TOKEN security limitations with proper workflow event configuration.
+---
+
 # Workflow Triggers
 
 Ensure release-please PRs trigger your build pipelines correctly.

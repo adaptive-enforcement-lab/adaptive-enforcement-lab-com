@@ -1,3 +1,8 @@
+---
+description: >-
+  Build unified release pipelines that deploy versioned docs conditionally. Integrate release-please, change detection, and GitHub Pages with work avoidance logic.
+---
+
 # Pipeline Integration
 
 Unified release pipeline that handles versioning, builds, and documentation deployment.

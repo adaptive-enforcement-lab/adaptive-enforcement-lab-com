@@ -1,3 +1,8 @@
+---
+description: >-
+  Configure workflows to work with branch protection rules. Run documentation generators and auto-commit tools on PR branches without triggering protection blocks.
+---
+
 # Protected Branches
 
 Configure workflows to work correctly with branch protection rules.
