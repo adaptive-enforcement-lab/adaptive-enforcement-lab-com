@@ -1,3 +1,9 @@
+---
+description: >-
+  Render Kyverno policies from multiple repos using Helm and yq. Master environment-specific
+  enforcement, semantic versioning, and conflict resolution strategies.
+---
+
 # Policy Management
 
 Rendering, versioning, and discovering policies from multiple sources.

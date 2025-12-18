@@ -1,3 +1,8 @@
+---
+description: >-
+  Safely roll out Kyverno policy changes using Audit-first workflows. Automate backups, tune performance for large clusters, and maintain operational excellence.
+---
+
 # Operational Workflows
 
 Policy update workflows, backup procedures, performance tuning, and operational best practices.

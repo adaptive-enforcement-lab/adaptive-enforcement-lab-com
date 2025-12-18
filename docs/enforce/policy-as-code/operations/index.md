@@ -1,3 +1,8 @@
+---
+description: >-
+  Manage Kyverno policy lifecycle from creation to enforcement. Add policies safely, monitor compliance, handle exceptions, and maintain GitOps-driven operations.
+---
+
 # Policy-as-Code Operations
 
 Day-to-day management, updates, and monitoring of policy enforcement.
