@@ -1,3 +1,8 @@
+---
+description: >-
+  Integrate Go CLIs with Kubernetes using client-go. Automatic config detection works on laptops, CI runners, and cluster pods with minimal RBAC setup.
+---
+
 # Kubernetes Integration
 
 Integrate your Go CLI with Kubernetes using client-go.

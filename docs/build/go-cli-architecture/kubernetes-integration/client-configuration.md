@@ -1,3 +1,8 @@
+---
+description: >-
+  Handle both in-cluster and out-of-cluster Kubernetes configurations automatically. Detect kubeconfig, KUBECONFIG env var, or service account tokens.
+---
+
 # Client Configuration
 
 Handle both in-cluster and out-of-cluster Kubernetes configurations.
