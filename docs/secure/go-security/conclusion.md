@@ -1,3 +1,9 @@
+---
+description: >-
+  Zero-cost Go security stack achieves OpenSSF certification. Install golangci-lint,
+  pre-commit hooks for production-grade security in one afternoon. No subscriptions.
+---
+
 # Conclusion
 
 The complete Go security toolkit costs nothing. Standard tools integrate seamlessly and run automatically.

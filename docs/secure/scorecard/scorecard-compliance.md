@@ -1,4 +1,7 @@
 ---
+description: >-
+  Clear OpenSSF Scorecard findings with job-level permissions, dependency pinning, source
+  archive signing. Practical workflow patterns for 10/10 Scorecard scores.
 tags:
   - scorecard
   - security

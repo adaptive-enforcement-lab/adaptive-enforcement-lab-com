@@ -1,3 +1,9 @@
+---
+description: >-
+  Map Go security tools to OpenSSF Best Practices and Go Report Card criteria. Document
+  compliance evidence for audits using standard automated tooling and verification.
+---
+
 # Compliance
 
 Go's standard toolkit satisfies multiple compliance frameworks. OpenSSF Best Practices and Go Report Card both validate these tools.

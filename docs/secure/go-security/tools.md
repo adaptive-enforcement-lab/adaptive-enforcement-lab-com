@@ -1,3 +1,9 @@
+---
+description: >-
+  Complete Go security toolkit reference: race detector, golangci-lint, Trivy, govulncheck,
+  syft, TruffleHog. Free tools that run on every commit automatically.
+---
+
 # The Standard Toolkit
 
 Go provides a complete security toolkit built into the standard toolchain. No separate installations or subscriptions required.
@@ -263,8 +269,8 @@ syft packages . -o cyclonedx-json > sbom.cdx.json
 **Installation**:
 
 ```bash
-# Via Docker (recommended)
-docker pull trufflesecurity/trufflehog:latest
+# Via OCI container (recommended)
+podman pull trufflesecurity/trufflehog:latest
 
 # Via binary
 wget https://github.com/trufflesecurity/trufflehog/releases/download/v3.68.0/trufflehog_3.68.0_linux_amd64.tar.gz
