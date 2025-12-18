@@ -1,3 +1,8 @@
+---
+description: >-
+  Automate multi-architecture builds with GoReleaser and GitHub Actions. One git tag push creates binaries, container images, and changelogs for all platforms.
+---
+
 # Release Automation
 
 Automate multi-architecture builds and releases with GitHub Actions and GoReleaser.
@@ -28,41 +33,52 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-user-static
 
       - name: Login to GHCR
-        uses: docker/login-action@v3
+        uses: redhat-actions/podman-login@v1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata
+      - name: Generate image metadata
         id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
+        run: |
+          IMAGE=ghcr.io/${{ github.repository }}
+          VERSION=${GITHUB_REF_NAME#v}
+          MAJOR=$(echo $VERSION | cut -d. -f1)
+          MINOR=$(echo $VERSION | cut -d. -f1-2)
+          SHA=${GITHUB_SHA::7}
 
-      - name: Build and push
-        uses: docker/build-push-action@v6
+          TAGS="${IMAGE}:${VERSION},${IMAGE}:${MAJOR}.${MINOR},${IMAGE}:${MAJOR},${IMAGE}:${SHA}"
+
+          echo "tags=${TAGS}" >> $GITHUB_OUTPUT
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+
+      - name: Build multi-arch image
+        id: build
+        uses: redhat-actions/buildah-build@v2
         with:
-          context: .
-          platforms: linux/amd64,linux/arm64
-          push: true
+          image: ghcr.io/${{ github.repository }}
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          platforms: linux/amd64,linux/arm64
+          containerfiles: ./Dockerfile
           build-args: |
             VERSION=${{ github.ref_name }}
+          labels: |
+            org.opencontainers.image.source=${{ github.event.repository.html_url }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.version=${{ steps.meta.outputs.version }}
+
+      - name: Push to GHCR
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: ${{ steps.build.outputs.image }}
+          tags: ${{ steps.build.outputs.tags }}
+          registry: ghcr.io
 ```
 
 ---
@@ -124,7 +140,7 @@ changelog:
 dockers:
   - image_templates:
       - "ghcr.io/myorg/myctl:{{ .Version }}-amd64"
-    use: buildx
+    use: podman
     build_flag_templates:
       - "--platform=linux/amd64"
       - "--label=org.opencontainers.image.title={{ .ProjectName }}"
@@ -133,13 +149,13 @@ dockers:
 
   - image_templates:
       - "ghcr.io/myorg/myctl:{{ .Version }}-arm64"
-    use: buildx
+    use: podman
     build_flag_templates:
       - "--platform=linux/arm64"
     goarch: arm64
     dockerfile: Dockerfile
 
-docker_manifests:
+podman_manifests:
   - name_template: "ghcr.io/myorg/myctl:{{ .Version }}"
     image_templates:
       - "ghcr.io/myorg/myctl:{{ .Version }}-amd64"
@@ -178,18 +194,21 @@ jobs:
         with:
           go-version: '1.23'
 
+      - name: Install Podman
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y podman
+
+      - name: Set up QEMU
+        run: |
+          sudo apt-get install -y qemu-user-static
+
       - name: Login to GHCR
-        uses: docker/login-action@v3
+        uses: redhat-actions/podman-login@v1
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v6
@@ -215,11 +234,11 @@ release:
 snapshot:
     goreleaser release --snapshot --clean
 
-docker-build:
-    docker build --build-arg VERSION=$(VERSION) -t myctl:$(VERSION) .
+image-build:
+    podman build --build-arg VERSION=$(VERSION) -t myctl:$(VERSION) .
 
-docker-push:
-    docker push ghcr.io/myorg/myctl:$(VERSION)
+image-push:
+    podman push ghcr.io/myorg/myctl:$(VERSION)
 ```
 
 ---

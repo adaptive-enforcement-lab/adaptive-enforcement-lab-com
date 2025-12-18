@@ -1,3 +1,8 @@
+---
+description: >-
+  Test full CLI workflows in real Kubernetes clusters with kind and GitHub Actions. Isolated namespaces, cleanup on exit, matrix testing across versions.
+---
+
 # E2E Testing
 
 Test full workflows in real clusters with CI/CD integration.
