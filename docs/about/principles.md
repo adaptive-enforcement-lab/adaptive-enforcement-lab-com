@@ -2,6 +2,7 @@
 title: Principles
 description: >-
   The core beliefs that guide Adaptive Enforcement Lab's approach to security.
+  Security as process, enforced policies, visibility, and incident preparedness.
 ---
 
 # Our Principles

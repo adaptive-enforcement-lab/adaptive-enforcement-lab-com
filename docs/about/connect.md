@@ -1,7 +1,8 @@
 ---
 title: Connect
 description: >-
-  Get involved with the Adaptive Enforcement Lab community.
+  Get involved with the Adaptive Enforcement Lab community. Contribute to repositories,
+  share enforcement patterns, provide feedback, or connect on LinkedIn.
 ---
 
 # Connect
