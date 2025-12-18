@@ -1,3 +1,8 @@
+---
+description: >-
+  Integrate Kyverno validation into pre-commit hooks and Make targets. Achieve local/CI parity with identical commands and container images for consistency.
+---
+
 # Workflow Integration
 
 Integrate policy validation into daily development workflows with pre-commit hooks, Make targets, and CI comparison.

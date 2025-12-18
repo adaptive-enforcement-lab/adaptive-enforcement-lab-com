@@ -1,3 +1,8 @@
+---
+description: >-
+  Build policy-platform containers that aggregate Kyverno policies from multiple OCI sources. Multi-stage Docker builds for local dev and CI validation.
+---
+
 # Policy Packaging
 
 Build the policy-platform container that aggregates all policy sources and tools.
