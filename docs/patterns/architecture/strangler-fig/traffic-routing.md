@@ -1,8 +1,7 @@
 ---
 title: Traffic Routing Strategies
 description: >-
-  Percentage-based, user-based, and canary deployment patterns for controlling
-  traffic flow during incremental migration.
+  Percentage-based, user-based hashing, and canary deployment patterns for controlling traffic distribution during incremental system migration with rollback.
 ---
 
 # Traffic Routing Strategies

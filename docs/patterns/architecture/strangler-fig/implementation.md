@@ -1,8 +1,7 @@
 ---
 title: Strangler Fig Implementation
 description: >-
-  Feature flags, parallel run validation, and database migration strategies
-  for incremental system replacement.
+  Feature flags for traffic control, parallel run validation, dual-write database migration, and shadow mode testing for incremental system replacement.
 ---
 
 # Strangler Fig Implementation

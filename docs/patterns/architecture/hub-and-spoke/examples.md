@@ -1,8 +1,7 @@
 ---
 title: Hub and Spoke Implementation Examples
 description: >-
-  GitHub Actions hub distributing changes, event-driven hubs with Argo Events,
-  and communication patterns between hub and spokes.
+  GitHub Actions file distribution, event-driven Argo workflows, and hub-spoke communication patterns for parallel execution across multiple repositories.
 ---
 
 # Hub and Spoke Implementation Examples

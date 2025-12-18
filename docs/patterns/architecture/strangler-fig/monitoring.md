@@ -1,8 +1,7 @@
 ---
 title: Monitoring and Rollback
 description: >-
-  Track both systems during migration. Compare error rates, latency, and throughput.
-  Instant rollback via feature flags when issues arise.
+  Track error rates, latency, throughput between legacy and new systems. Automated rollback via feature flags when metrics degrade during migration phases.
 ---
 
 # Monitoring and Rollback

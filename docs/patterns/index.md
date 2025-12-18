@@ -4,6 +4,8 @@ tags:
   - automation
   - developers
   - operators
+description: >-
+  Battle-tested automation patterns for GitHub Actions, Argo, and Kubernetes. Build resilient, idempotent workflows that scale with hub-and-spoke design.
 ---
 
 # Patterns

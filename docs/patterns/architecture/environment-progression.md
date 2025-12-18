@@ -1,8 +1,7 @@
 ---
 title: Environment Progression Testing
 description: >-
-  Progressive deployment strategy, smoke tests, namespace management, configuration patterns,
-  Argo CD rollouts, and monitoring across development, QA, staging, and production.
+  Progressive deployment validation with Kustomize overlays, Argo CD automation, load testing in staging, and rollback strategies for Kubernetes environments.
 ---
 
 # Environment Progression Testing
