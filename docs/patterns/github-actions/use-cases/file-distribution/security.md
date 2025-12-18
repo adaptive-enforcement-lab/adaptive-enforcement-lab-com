@@ -1,7 +1,7 @@
 ---
 title: Security
 description: >-
-  Token scope, branch protection, and audit trails.
+  Secure file distribution with scoped tokens, branch protection, and audit trails. Apply least privilege to automated PR creation and cross-repo operations.
 ---
 
 # Security Considerations

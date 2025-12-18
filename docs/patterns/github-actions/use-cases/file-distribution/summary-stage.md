@@ -1,7 +1,7 @@
 ---
 title: "Stage 3: Summary"
 description: >-
-  Aggregate results and display PR links.
+  Aggregate distribution results and display PR links with always-run job summaries. Extract workflow logs to provide visibility into multi-repo automation runs.
 ---
 
 # Stage 3: Result Summary

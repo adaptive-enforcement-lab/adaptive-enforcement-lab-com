@@ -1,8 +1,7 @@
 ---
 title: File Distribution
 description: >-
-  Automated file distribution across multiple repositories.
-  Three-stage workflow with discovery, parallel distribution, and summary.
+  Automated file distribution across multiple repositories with three-stage workflow. Discovery, parallel distribution, and summary reporting for consistent updates.
 tags:
   - github-actions
   - three-stage

@@ -1,7 +1,7 @@
 ---
 title: Monitoring
 description: >-
-  Workflow summaries and metrics collection.
+  Track file distribution with workflow summaries, status badges, and metrics collection. Transform automation black boxes into transparent, auditable processes.
 ---
 
 # Monitoring and Observability

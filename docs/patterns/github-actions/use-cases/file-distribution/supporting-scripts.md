@@ -1,7 +1,7 @@
 ---
 title: Supporting Scripts
 description: >-
-  Branch preparation and helper scripts for file distribution.
+  Extract branch management into reusable scripts. Implement idempotent branch preparation with force reset, remote state handling, and git credential automation.
 ---
 
 # Supporting Scripts

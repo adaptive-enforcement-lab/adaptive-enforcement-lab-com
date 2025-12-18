@@ -1,7 +1,7 @@
 ---
 title: Extension Patterns
 description: >-
-  Multi-file, conditional, and template-based distribution.
+  Extend file distribution with multi-file copies, conditional logic, template rendering, directory operations, and selective repository targeting with GraphQL.
 ---
 
 # Extension Patterns
