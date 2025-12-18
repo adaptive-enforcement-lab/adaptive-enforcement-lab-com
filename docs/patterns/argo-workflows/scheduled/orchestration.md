@@ -1,3 +1,8 @@
+---
+description: >-
+  Orchestrate multi-stage pipelines on schedules by spawning child workflows. Sequential and parallel execution with independent error handling per stage in Argo.
+---
+
 # Scheduled Orchestration
 
 CronWorkflows can orchestrate complex pipelines by spawning multiple child workflows. This pattern runs multi-stage automation on a schedule, with each stage as an independent, reusable workflow.

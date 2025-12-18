@@ -6,6 +6,8 @@ tags:
   - automation
   - ci-cd
   - operators
+description: >-
+  Production Argo Workflows patterns: reusable templates, error handling, concurrency control, composition, and scheduled automation for Kubernetes operators.
 ---
 
 # Argo Workflows Patterns

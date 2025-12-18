@@ -1,3 +1,8 @@
+---
+description: >-
+  Choose the right volume type for workflows: emptyDir scratch space, ConfigMap caches, Secrets for credentials, and PersistentVolumeClaims for durable storage.
+---
+
 # Volume Patterns
 
 Volumes connect workflows to persistent storage, configuration, and secrets. Understanding when to use each volume type prevents both data loss and security issues.

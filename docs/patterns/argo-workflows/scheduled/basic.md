@@ -1,3 +1,8 @@
+---
+description: >-
+  Run workflows on cron schedules with timezone handling, starting deadlines, and WorkflowTemplateRef. Reliable time-based automation without manual intervention.
+---
+
 # Basic CronWorkflow
 
 A CronWorkflow runs a workflow on a cron schedule. It's the Argo Workflows equivalent of a Kubernetes CronJob, but with full workflow capabilities: multi-step execution, sophisticated retry logic, and visual debugging.

@@ -1,3 +1,8 @@
+---
+description: >-
+  Control overlapping scheduled runs with Allow, Forbid, and Replace policies. Prevent conflicts, manage resource exhaustion, and handle slow workflow execution.
+---
+
 # Concurrency Policies
 
 When a scheduled run triggers while a previous run is still active, the `concurrencyPolicy` determines what happens. Choose the policy that matches your workflow's behavior: some workflows can overlap, others must not.
