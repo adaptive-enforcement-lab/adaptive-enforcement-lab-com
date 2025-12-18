@@ -1,3 +1,8 @@
+---
+description: >-
+  Capture failed events with dead letter queues. Route exhausted retries to DLQ handlers for analysis, alerting, and manual reprocessing in production.
+---
+
 # Dead Letter Queues
 
 When retries exhaust and events still can't be processed, they need somewhere to go. Dead letter queues (DLQs) capture failed events for later analysis, reprocessing, or alerting. This prevents silent data loss.

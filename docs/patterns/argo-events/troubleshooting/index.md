@@ -1,3 +1,8 @@
+---
+description: >-
+  Debug event flows systematically from EventSource to Workflow. Use diagnostic commands and logging levels to isolate failures in production event systems.
+---
+
 # Troubleshooting
 
 When events don't trigger workflows, debugging can be challenging. Events flow through multiple components, and failures can be silent. This section covers systematic approaches to identify and fix issues.

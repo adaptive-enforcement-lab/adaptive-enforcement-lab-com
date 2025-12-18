@@ -1,3 +1,8 @@
+---
+description: >-
+  Route events with complex decision logic using CEL expressions. Implement conditional triggers, multi-event coordination, and fallback patterns for event flows.
+---
+
 # Conditional Routing
 
 Complex event flows require sophisticated decision logic. Conditional routing enables routing decisions based on event content, combining multiple conditions, and implementing decision trees. For the complete reference, see the [official Trigger Conditions docs](https://argoproj.github.io/argo-events/sensors/trigger-conditions/).

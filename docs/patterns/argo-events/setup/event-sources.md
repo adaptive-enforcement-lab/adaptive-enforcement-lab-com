@@ -1,3 +1,8 @@
+---
+description: >-
+  Connect to external systems with EventSources. Configure Pub/Sub subscriptions, GitHub webhooks, and resource limits for reliable event ingestion.
+---
+
 # EventSource Configuration
 
 EventSources connect to external systems and normalize events for the EventBus.
