@@ -1,3 +1,8 @@
+---
+description: >-
+  Use artifact existence as work completion proxy. Cache key discipline, invalidation strategies, and validation patterns for builds, dependencies, and artifacts.
+---
+
 # Cache-Based Skip
 
 Use artifact existence as a proxy for "work already done."

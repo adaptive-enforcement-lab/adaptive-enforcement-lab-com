@@ -1,3 +1,8 @@
+---
+description: >-
+  Layer work avoidance checks from existence to content to semantic comparison. Each technique catches different skip scenarios for maximum automation efficiency.
+---
+
 # Work Avoidance Techniques
 
 Techniques for detecting when work can be safely skipped.
