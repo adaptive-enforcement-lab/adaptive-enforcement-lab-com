@@ -1,8 +1,7 @@
 ---
 title: Token Generation
 description: >-
-  Generate short-lived tokens from GitHub Core App credentials using
-  the official actions/create-github-app-token action.
+  Generate short-lived tokens from GitHub Core App credentials with actions/create-github-app-token. Org-scoped and repo-scoped patterns for automated workflows.
 ---
 
 # Token Generation Action

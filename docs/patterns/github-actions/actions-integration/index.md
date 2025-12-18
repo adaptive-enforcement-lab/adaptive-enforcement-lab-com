@@ -1,8 +1,7 @@
 ---
 title: Actions Integration
 description: >-
-  Integrate GitHub Core Apps with Actions workflows.
-  Token generation, org-scoped access, and cross-repository operations.
+  Integrate GitHub Core Apps with Actions workflows for org-scoped automation. Generate tokens, access APIs, and implement cross-repository operations patterns.
 tags:
   - patterns
   - automation

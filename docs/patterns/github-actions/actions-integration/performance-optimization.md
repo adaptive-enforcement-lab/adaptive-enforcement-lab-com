@@ -1,7 +1,7 @@
 ---
 title: Performance Optimization
 description: >-
-  Optimize Core App workflows with token reuse and parallel operations.
+  Optimize GitHub Actions workflows with token reuse, parallel operations, and matrix strategies. Generate once, use many times for maximum workflow efficiency.
 ---
 
 # Performance Optimization

@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting
 description: >-
-  Debug common issues with Core App token generation and organization access.
+  Debug GitHub Core App token generation failures, scope issues, and permission errors. Includes comprehensive debug workflow for rapid issue identification.
 ---
 
 # Troubleshooting

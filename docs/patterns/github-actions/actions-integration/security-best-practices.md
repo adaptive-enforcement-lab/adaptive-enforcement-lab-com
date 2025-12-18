@@ -1,8 +1,7 @@
 ---
 title: Security Best Practices
 description: >-
-  Keep Core App tokens secure with proper exposure prevention, minimal
-  lifetime, and audit logging.
+  Secure GitHub App tokens with exposure prevention, minimal lifetime scope, and audit logging. Never log tokens; use environment variables and late generation.
 ---
 
 # Security Best Practices
