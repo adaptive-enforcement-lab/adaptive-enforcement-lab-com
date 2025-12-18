@@ -1,3 +1,8 @@
+---
+description: >-
+  Skip workflows when relevant files haven't changed. Configure native GitHub path filters and paths-ignore triggers for targeted workflow execution patterns.
+---
+
 # Path Filtering
 
 Skip workflows when relevant files haven't changed.
