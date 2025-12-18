@@ -1,8 +1,7 @@
 ---
 title: Real-World Example
 description: >-
-  Idempotency in practice: file distribution across 40 repositories.
-  Branch, commit, PR, and push operations all made rerun-safe.
+  File distribution across 40 repositories using idempotency patterns. Branch reset, change detection, conditional commits, and force-with-lease push strategies.
 ---
 
 # Real-World Example: File Distribution

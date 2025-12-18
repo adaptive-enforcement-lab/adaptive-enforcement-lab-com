@@ -1,8 +1,7 @@
 ---
 title: Check-Before-Act
 description: >-
-  The most common idempotency pattern. Check if target state exists
-  before attempting to create it.
+  Verify state exists before creating it. The most common idempotency pattern for PRs, branches, and resources, with edge cases and race condition handling.
 ---
 
 # Check-Before-Act

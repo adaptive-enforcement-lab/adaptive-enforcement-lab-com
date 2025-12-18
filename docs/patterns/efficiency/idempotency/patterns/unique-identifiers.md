@@ -1,8 +1,7 @@
 ---
 title: Unique Identifiers
 description: >-
-  Generate deterministic IDs so duplicate operations naturally target
-  the same resource.
+  Generate deterministic IDs so duplicate operations naturally target the same resource. Content-addressable design prevents duplicates through hash-based naming.
 ---
 
 # Unique Identifiers

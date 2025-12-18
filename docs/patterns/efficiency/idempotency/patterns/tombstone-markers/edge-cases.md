@@ -1,3 +1,8 @@
+---
+description: >-
+  Gotchas and mitigations for tombstone markers: stale markers, partial completion gaps, distributed access races, and cleanup strategies for production systems.
+---
+
 # Edge Cases
 
 Gotchas, anti-patterns, and mitigations for tombstone markers.

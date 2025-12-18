@@ -1,8 +1,7 @@
 ---
 title: Pros and Cons
 description: >-
-  The tradeoffs of investing in idempotent automation.
-  Benefits, drawbacks, and what to watch out for.
+  Tradeoffs of idempotent automation: safe reruns and partial failure recovery versus implementation complexity, performance overhead, and hidden failure risks.
 ---
 
 # Pros and Cons

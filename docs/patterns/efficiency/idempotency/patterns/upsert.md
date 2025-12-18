@@ -1,8 +1,7 @@
 ---
 title: Create-or-Update (Upsert)
 description: >-
-  Atomic idempotency through APIs that handle both create and update
-  in a single operation.
+  Atomic idempotency through APIs that handle create and update in one operation. Eliminates race conditions with database ON CONFLICT and declarative tools.
 ---
 
 # Create-or-Update (Upsert)
