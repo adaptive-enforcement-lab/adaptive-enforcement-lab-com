@@ -1,8 +1,7 @@
 ---
 title: Separation of Concerns Usage Guide
 description: >-
-  When to apply separation of concerns, common mistakes to avoid,
-  and real-world examples of the pattern in production systems.
+  Apply separation of concerns to CLI tools, API handlers, and workflow orchestrators. Avoid over-separation and premature abstraction in production systems.
 ---
 
 # Separation of Concerns Usage Guide

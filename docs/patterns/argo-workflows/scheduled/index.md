@@ -1,3 +1,8 @@
+---
+description: >-
+  CronWorkflow patterns for scheduled automation: time-based execution, concurrency policies, orchestration pipelines, and GitHub Actions integration for DevSecOps.
+---
+
 # Scheduled Workflows
 
 CronWorkflows run automation on a schedule: hourly builds, nightly backups, weekly reports. They combine the reliability of Kubernetes cron jobs with the power of Argo Workflows, enabling complex scheduled automation that survives cluster restarts and handles failures gracefully.

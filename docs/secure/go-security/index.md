@@ -1,4 +1,7 @@
 ---
+description: >-
+  Standard Go security toolkit: race detector, golangci-lint, Trivy, govulncheck. Zero
+  cost, seamless integration, and OpenSSF-certified security workflow patterns.
 tags:
   - go
   - security

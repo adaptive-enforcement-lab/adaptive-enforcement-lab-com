@@ -1,3 +1,8 @@
+---
+description: >-
+  Deploy Kyverno admission control as final safety net before production. Install admission webhooks, policy reporters, and continuous compliance background scans.
+---
+
 # Runtime Deployment: Admission Control with Kyverno
 
 Deploy policy enforcement directly in Kubernetes clusters. Final safety net before production.

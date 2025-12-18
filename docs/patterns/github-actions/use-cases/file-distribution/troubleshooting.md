@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting
 description: >-
-  Common issues and solutions for file distribution workflows.
+  Debug file distribution workflows with systematic verification. Resolve common issues from empty repositories to permission errors with debug workflow patterns.
 ---
 
 # Troubleshooting

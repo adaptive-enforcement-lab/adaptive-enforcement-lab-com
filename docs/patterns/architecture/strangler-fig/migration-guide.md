@@ -1,8 +1,7 @@
 ---
 title: Migration Guide
 description: >-
-  Eight-phase migration checklist. Common pitfalls to avoid. Real-world timeline
-  from shadow mode to decommission.
+  Eight-phase checklist from shadow mode to decommission. Real-world timeline, common pitfalls, and pre-migration validation criteria for zero-risk migrations.
 ---
 
 # Migration Guide

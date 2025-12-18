@@ -1,3 +1,8 @@
+---
+description: >-
+  Implement idiomatic Kubernetes operations with label selectors, strategic merge patches, and proper error handling for production-grade CLI tooling.
+---
+
 # Common Operations
 
 Implement common Kubernetes operations in your CLI.

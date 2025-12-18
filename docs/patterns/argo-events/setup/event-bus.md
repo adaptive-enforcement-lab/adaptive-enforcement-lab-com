@@ -1,3 +1,8 @@
+---
+description: >-
+  Deploy reliable message delivery with NATS JetStream. Configure persistence, replicas, and resource limits for production EventBus high availability.
+---
+
 # EventBus Configuration
 
 The EventBus provides reliable message delivery between EventSource and Sensor.

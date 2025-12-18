@@ -1,7 +1,7 @@
 ---
 title: "Stage 2: Distribution"
 description: >-
-  Parallel distribution to target repositories using matrix strategy.
+  Parallel file distribution with matrix strategy, branch management, change detection, and PR automation. Set fail-fast false for resilient multi-repo updates.
 ---
 
 # Stage 2: Parallel Distribution

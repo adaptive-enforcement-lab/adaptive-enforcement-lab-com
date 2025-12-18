@@ -192,13 +192,13 @@ We moved from "we signed our releases" to "our builds are cryptographically prov
 The jump from 8 to 10 wasn't about doing more. It was about proving more.
 
 !!! tip "Implementation Guide"
-    See [SLSA Provenance Implementation](../../enforce/supply-chain/slsa-provenance.md) for workflow code, hash generation patterns, and verification commands.
+    See [SLSA Provenance Implementation](../../enforce/slsa-provenance/slsa-provenance.md) for workflow code, hash generation patterns, and verification commands.
 
 ---
 
 ## Related Patterns
 
-- **[OpenSSF Scorecard Practical Fixes](2025-12-20-openssf-scorecard-practical-fixes.md)** - How we cleared 16 Token-Permissions alerts
+<!--- **[OpenSSF Scorecard Practical Fixes](2025-12-20-openssf-scorecard-practical-fixes.md)** - How we cleared 16 Token-Permissions alerts (Coming soon) -->
 - **[OpenSSF Best Practices Badge](2025-12-17-openssf-badge-two-hours.md)** - The foundation that made SLSA implementation straightforward
 - **[SDLC Hardening](2025-12-12-harden-sdlc-before-audit.md)** - Supply chain defense in audit context
 

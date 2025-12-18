@@ -1,3 +1,8 @@
+---
+description: >-
+  Deploy event-driven automation with EventSource, EventBus, and Sensor configuration. Complete setup guide for production Argo Events on Kubernetes clusters.
+---
+
 # Argo Events Setup Guide
 
 This guide covers EventSource, EventBus, and Sensor configuration for event-driven automation.

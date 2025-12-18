@@ -1,4 +1,6 @@
 ---
+description: >-
+  Build Kubernetes-native CLIs in Go with type safety, testability, and complex orchestration logic for deployment tools and cluster automation.
 tags:
   - go
   - kubernetes

@@ -1,3 +1,8 @@
+---
+description: >-
+  Design CLI commands that work independently and compose well for automation. Orchestrator pattern coordinates, subcommands execute discrete tasks.
+---
+
 # Command Architecture
 
 Design command structures that are intuitive, composable, and maintainable.

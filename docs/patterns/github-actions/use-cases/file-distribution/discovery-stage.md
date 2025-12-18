@@ -1,7 +1,7 @@
 ---
 title: "Stage 1: Discovery"
 description: >-
-  Query organization for target repositories using GraphQL.
+  Query organization repositories with GraphQL for distribution targets. Implements pagination handling, fail-fast guards, and dynamic team repository discovery.
 ---
 
 # Stage 1: Repository Discovery

@@ -1,3 +1,8 @@
+---
+description: >-
+  Reduce pipeline time from sum of steps to longest step. Run independent child workflows simultaneously with fan-out patterns and resource-aware parallelism.
+---
+
 # Parallel Execution
 
 When child workflows don't depend on each other, run them in parallel. This reduces total pipeline time from the sum of all steps to the duration of the longest step.

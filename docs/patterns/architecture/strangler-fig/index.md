@@ -1,8 +1,7 @@
 ---
 title: Strangler Fig
 description: >-
-  Incremental migration from legacy systems. Run old and new in parallel.
-  Gradually shift traffic. Zero downtime, minimal risk.
+  Incremental migration from legacy systems. Run old and new in parallel, gradually shift traffic, rollback at any point. Zero downtime, production-validated.
 ---
 
 # Strangler Fig

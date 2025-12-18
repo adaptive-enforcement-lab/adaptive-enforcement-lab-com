@@ -1,3 +1,8 @@
+---
+description: >-
+  Master WorkflowTemplate anatomy: parameter flow, template types, resource limits, and validation. Build reusable, documented automation for Argo Workflows.
+---
+
 # Basic WorkflowTemplate Structure
 
 A WorkflowTemplate has the same structure as a Workflow, but lives independently and can be invoked multiple times with different parameters. This separation between definition and execution is what makes templates reusable. For the complete reference, see the [official WorkflowTemplate docs](https://argo-workflows.readthedocs.io/en/latest/workflow-templates/).

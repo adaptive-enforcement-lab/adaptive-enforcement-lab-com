@@ -1,3 +1,8 @@
+---
+description: >-
+  Control event flow from EventSources to triggers. Master filtering, transformation, and multi-action capabilities for sophisticated event-driven automation.
+---
+
 # Event Routing
 
 Event routing controls how events flow from EventSources through Sensors to Triggers. Argo Events provides powerful filtering, transformation, and multi-action capabilities. For the complete reference, see the [official Sensors documentation](https://argoproj.github.io/argo-events/sensors/intro/).

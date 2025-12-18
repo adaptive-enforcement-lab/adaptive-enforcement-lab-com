@@ -1,8 +1,7 @@
 ---
 title: Hub and Spoke Operations Guide
 description: >-
-  Scaling characteristics, failure handling, summary collection,
-  monitoring, and when to use hub and spoke pattern.
+  Scaling characteristics, failure isolation, result aggregation, and monitoring strategies for hub-and-spoke distributed workflow patterns in production.
 ---
 
 # Hub and Spoke Operations Guide

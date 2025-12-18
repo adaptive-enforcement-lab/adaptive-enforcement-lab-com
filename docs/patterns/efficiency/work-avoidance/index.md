@@ -1,4 +1,6 @@
 ---
+description: >-
+  Skip work when outcomes won't change. Detect unchanged content, existing resources, and cached outputs to prevent unnecessary PRs, builds, and processing cycles.
 tags:
   - work-avoidance
   - efficiency

@@ -1,3 +1,8 @@
+---
+description: >-
+  Integrate release-please with GitHub Actions using App tokens. Configure conditional builds, monorepo strategies, and output variables for automated releases.
+---
+
 # Workflow Integration
 
 GitHub Actions setup for release-please with proper token handling and output management.

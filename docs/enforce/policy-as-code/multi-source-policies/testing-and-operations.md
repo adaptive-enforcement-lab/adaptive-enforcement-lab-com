@@ -1,3 +1,8 @@
+---
+description: >-
+  Test multi-source Kyverno policy aggregation locally and in CI. Learn best practices for versioning policy repos and troubleshooting common integration issues.
+---
+
 # Testing and Operations
 
 Test multi-source policy aggregation and maintain policy repositories.

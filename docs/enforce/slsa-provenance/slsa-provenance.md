@@ -7,6 +7,8 @@ tags:
   - attestation
   - developers
   - operators
+description: >-
+  Generate SLSA Level 3 provenance with slsa-github-generator. Cryptographically prove build integrity from source commit to artifact for OpenSSF Scorecard 10/10.
 ---
 
 # SLSA Level 3 Provenance Implementation

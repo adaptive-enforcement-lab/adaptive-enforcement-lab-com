@@ -1,3 +1,8 @@
+---
+description: >-
+  Distribute Go CLIs as pre-commit hooks with binary releases. Eliminate 30-second cold start penalty for hooks developers keep enabled in workflows.
+---
+
 # Pre-commit Hook Distribution
 
 Distribute your Go CLI as a pre-commit hook with binary releases.

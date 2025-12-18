@@ -1,3 +1,8 @@
+---
+description: >-
+  Filter events with data, context, time, and expression filters. Reduce noise and prevent unnecessary workflow executions with targeted event matching.
+---
+
 # Simple Filtering
 
 Filters determine which events trigger actions. Well-designed filters reduce noise, prevent unnecessary workflow executions, and keep automation targeted. For the complete filter reference, see the [official Filters documentation](https://argoproj.github.io/argo-events/sensors/filters/intro/).

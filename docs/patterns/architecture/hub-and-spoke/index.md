@@ -1,8 +1,7 @@
 ---
 title: Hub and Spoke
 description: >-
-  Centralized orchestration with distributed execution. One coordinator, many workers.
-  Scale workflows without changing orchestration logic.
+  Centralized orchestration with distributed execution. One coordinator spawns many workers in parallel. Scale horizontally without changing hub logic.
 tags:
   - architecture
   - patterns

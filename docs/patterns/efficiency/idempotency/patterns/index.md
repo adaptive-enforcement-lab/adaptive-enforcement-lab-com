@@ -1,8 +1,7 @@
 ---
 title: Implementation Patterns
 description: >-
-  Five patterns for building idempotent automation.
-  Check-before-act, upsert, force overwrite, unique identifiers, and tombstones.
+  Five idempotency patterns for automation: check-before-act, upsert, force overwrite, unique identifiers, and tombstones. Choose based on constraints and APIs.
 ---
 
 # Implementation Patterns

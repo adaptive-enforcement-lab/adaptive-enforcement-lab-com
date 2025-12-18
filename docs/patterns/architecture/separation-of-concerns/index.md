@@ -1,8 +1,7 @@
 ---
 title: Separation of Concerns Pattern Overview
 description: >-
-  Single-responsibility components with clear boundaries. Orchestration separate from execution.
-  Build maintainable systems through isolation.
+  Single-responsibility components with clear boundaries. Orchestration separate from execution. Build maintainable systems through component isolation.
 tags:
   - architecture
   - patterns

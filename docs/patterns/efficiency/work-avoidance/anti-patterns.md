@@ -1,3 +1,8 @@
+---
+description: >-
+  Common work avoidance mistakes: over-aggressive skipping, ignoring errors, stripping too much, stale caches, silent failures, and race conditions with fixes.
+---
+
 # Work Avoidance Anti-Patterns
 
 !!! warning "Common Pitfalls"

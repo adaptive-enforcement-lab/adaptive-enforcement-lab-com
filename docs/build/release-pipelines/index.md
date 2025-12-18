@@ -1,3 +1,8 @@
+---
+description: >-
+  Automate version management and changelog generation with smart builds. Only build changed components using GitHub App tokens and release-please integration.
+---
+
 # Modular Release Pipelines
 
 Automated version management, changelog generation, and optimized builds for monorepos.

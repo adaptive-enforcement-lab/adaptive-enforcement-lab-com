@@ -6,6 +6,8 @@ tags:
   - automation
   - developers
   - operators
+description: >-
+  Block non-compliant manifests at merge time using policy-platform container in CI. Automate Kyverno validation across environments with zero configuration drift.
 ---
 
 # CI Integration: Automated Policy Enforcement

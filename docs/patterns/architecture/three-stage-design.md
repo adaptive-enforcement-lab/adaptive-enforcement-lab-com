@@ -1,8 +1,7 @@
 ---
 title: Three-Stage Design
 description: >-
-  Separate discovery, execution, and reporting into distinct workflow stages
-  for maintainability and observability.
+  Separate discovery, execution, and reporting into distinct workflow stages for GitHub Actions. Improve testability, debuggability, and parallel processing.
 tags:
   - patterns
   - github-actions

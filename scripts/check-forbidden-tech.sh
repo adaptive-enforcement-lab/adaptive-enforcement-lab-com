@@ -17,6 +17,9 @@ EXCEPTION_PATHS=(
     "docs/blog/posts/2025-12-04-pre-commit-security-gates.md"  # Examples of violations
     ".content-machine/"  # Internal content planning documents
     "docs/enforce/policy-as-code/"  # Policy enforcement examples showing what to block
+    "docs/enforce/pre-commit-hooks/pre-commit-hooks-patterns.md"  # Examples of hook violations
+    "docs/enforce/status-checks/index.md"  # CI/CD workflow examples showing what to validate
+    "docs/secure/sbom/sbom-generation.md"  # SBOM tooling examples (docker buildx has SBOM support)
 )
 
 # Forbidden patterns by category

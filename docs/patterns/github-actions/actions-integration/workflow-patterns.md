@@ -1,9 +1,7 @@
 ---
 title: Workflow Patterns
 description: >-
-  Common workflow patterns for GitHub Actions integration including team
-  repository queries, cross-repo file operations, PR creation, and matrix
-  strategies.
+  Production-ready workflow patterns: team repository queries, cross-repo file operations, PR automation, and dynamic matrix strategies for GitHub Actions.
 ---
 
 # Common Workflow Patterns

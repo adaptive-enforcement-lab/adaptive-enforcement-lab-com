@@ -1,4 +1,7 @@
 ---
+description: >-
+  Find and fix security issues before they become incidents. Vulnerability scanning,
+  SBOM generation, supply chain security, and secure authentication workflows.
 tags:
   - security
   - automation

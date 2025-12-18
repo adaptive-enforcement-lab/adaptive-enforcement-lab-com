@@ -1,3 +1,8 @@
+---
+description: >-
+  Prevent workflow conflicts with mutex synchronization, semaphores for limited parallelism, and TTL strategies for automatic cleanup of completed workflows.
+---
+
 # Concurrency Control
 
 When multiple workflows operate on shared resources, conflicts are inevitable. Two builds writing to the same output directory corrupt each other. Two deployments running simultaneously leave the system in an undefined state. Two cache rebuilds compete for the same ConfigMap.

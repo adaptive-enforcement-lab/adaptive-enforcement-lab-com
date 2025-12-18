@@ -1,4 +1,6 @@
 ---
+description: >-
+  Build event-driven Kubernetes automation with Argo Events. Connect external systems to reactive workflows using EventSources, EventBus, and Sensors.
 tags:
   - argo-events
   - kubernetes

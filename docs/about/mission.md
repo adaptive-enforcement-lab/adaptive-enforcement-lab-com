@@ -1,7 +1,8 @@
 ---
 title: Mission
 description: >-
-  Why Adaptive Enforcement Lab exists and what drives our work.
+  Why Adaptive Enforcement Lab exists. Turn secure development into an enforced
+  standard, not an afterthought, with embedded observable and executable controls.
 ---
 
 # Our Mission

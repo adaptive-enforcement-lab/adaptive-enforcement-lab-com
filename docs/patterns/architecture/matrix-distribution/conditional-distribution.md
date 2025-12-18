@@ -1,3 +1,8 @@
+---
+description: >-
+  Target type detection, include/exclude filtering, topic-based queries, and multi-file distribution patterns for selective GitHub Actions matrix processing.
+---
+
 # Conditional Distribution
 
 Target type detection and filtering for selective distribution.

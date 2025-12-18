@@ -1,3 +1,8 @@
+---
+description: >-
+  Troubleshoot EventSource connectivity and authentication failures. Diagnose webhook delivery, Pub/Sub parsing, subscription conflicts, and network issues.
+---
+
 # EventSource Troubleshooting
 
 EventSources connect to external systems. When they fail, events never enter the system. These issues are usually configuration, authentication, or network-related.

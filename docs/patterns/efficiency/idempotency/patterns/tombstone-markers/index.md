@@ -1,8 +1,8 @@
 ---
 title: Tombstone/Marker Files
 description: >-
-  Leave markers indicating operations completed. Track progress
-  across complex multi-step workflows.
+  Leave markers indicating operations completed. Track progress across complex
+  multi-step workflows. Perfect for resumable operations and distributed systems.
 ---
 
 # Tombstone/Marker Files

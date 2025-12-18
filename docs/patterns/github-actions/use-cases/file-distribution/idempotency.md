@@ -1,7 +1,7 @@
 ---
 title: Idempotency
 description: >-
-  Safe re-execution guarantees for file distribution workflows.
+  Safe re-execution patterns for file distribution: force overwrite branch management, check-before-act change detection, and upsert PR creation with git status.
 ---
 
 # Idempotency in File Distribution

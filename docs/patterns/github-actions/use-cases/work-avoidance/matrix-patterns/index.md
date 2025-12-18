@@ -1,8 +1,7 @@
 ---
 title: Matrix Filtering and Deduplication
 description: >-
-  Avoid redundant work in matrix builds. Filter by changed files, deduplicate configurations,
-  and generate matrices dynamically to run only what changed.
+  Reduce matrix builds from 47 jobs to 3 with path filtering, deduplication, and dynamic generation. Run only what changed and eliminate redundant combinations.
 ---
 
 # Matrix Filtering and Deduplication

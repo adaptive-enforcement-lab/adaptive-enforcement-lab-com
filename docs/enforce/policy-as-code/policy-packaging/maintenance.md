@@ -1,3 +1,8 @@
+---
+description: >-
+  Troubleshoot container builds, optimize image size, and maintain tool versions. Best practices for pinning dependencies and testing policy-platform images.
+---
+
 # Maintenance and Best Practices
 
 Troubleshooting container builds, best practices, and included tools reference.

@@ -1,7 +1,7 @@
 ---
 title: Architecture
 description: >-
-  Three-stage workflow architecture for file distribution.
+  Three-stage workflow architecture for file distribution: discovery via GraphQL, parallel matrix distribution, and summary reporting with separation of concerns.
 ---
 
 # Architecture

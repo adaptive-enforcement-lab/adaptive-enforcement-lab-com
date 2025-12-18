@@ -1,3 +1,8 @@
+---
+description: >-
+  Choose the right Go CLI framework for Kubernetes-native tools. Decision matrix compares Cobra, urfave/cli, and Kong for ecosystem alignment and features.
+---
+
 # Framework Selection
 
 Choose the right CLI framework and configuration approach for your Go CLI.

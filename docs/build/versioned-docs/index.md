@@ -1,3 +1,8 @@
+---
+description: >-
+  Deploy version-tagged documentation alongside releases using MkDocs Material, mike, and release-please for automated version alignment with software builds.
+---
+
 # Versioned Documentation
 
 Deploy documentation versions that align with software releases using MkDocs Material and mike.

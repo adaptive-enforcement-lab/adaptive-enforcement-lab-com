@@ -1,3 +1,8 @@
+---
+description: >-
+  Spawn independent child workflows with resource.action: create pattern. Achieve isolation, reusability, and visibility through parent-child workflow composition.
+---
+
 # Spawning Child Workflows
 
 The `resource.action: create` pattern spawns a child workflow and waits for its completion. This is the fundamental building block of composition. The parent creates a child, monitors its status, and proceeds or fails based on the result.

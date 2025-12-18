@@ -1,8 +1,7 @@
 ---
 title: Decision Matrix
 description: >-
-  When to invest in idempotency and when to skip it.
-  A scoring guide for calibrating your investment.
+  Calibrate idempotency investment with a scoring guide. Learn when to invest in bulletproof guards and when basic error handling suffices for workflows.
 ---
 
 # Decision Matrix

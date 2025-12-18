@@ -1,3 +1,8 @@
+---
+description: >-
+  Master when to fail fast vs degrade gracefully. Production-tested error handling strategies for GitHub Actions, CI/CD pipelines, and platform automation.
+---
+
 # Error Handling Patterns
 
 Patterns for detecting, reporting, and recovering from failures.

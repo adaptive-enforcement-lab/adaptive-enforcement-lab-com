@@ -1,8 +1,7 @@
 ---
 title: Caching and Artifact Patterns
 description: >-
-  Skip work already done. Track dependency changes, cache build outputs, and share
-  artifacts across jobs to avoid redundant computation.
+  Skip redundant work with dependency tracking, cache-based skips, and artifact reuse. Build once, test in parallel to reduce CI time from 30 to 6 minutes.
 ---
 
 # Caching and Artifact Patterns

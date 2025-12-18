@@ -1,3 +1,8 @@
+---
+description: >-
+  Deploy Kyverno policies using Helm with environment-specific enforcement modes. Configure background scanning and test admission control before production.
+---
+
 # Policy Enforcement
 
 Deploy policies across environments, configure enforcement modes, enable background scanning, and test in-cluster.

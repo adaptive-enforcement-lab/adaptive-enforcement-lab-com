@@ -1,7 +1,7 @@
 ---
 title: Token Validation
 description: >-
-  Verify token scope and permissions for organization and team access.
+  Verify GitHub App token scope and permissions before production deployment. Test organization access, team queries, and API permissions with validation patterns.
 ---
 
 # Token Scope Validation

@@ -1,3 +1,8 @@
+---
+description: >-
+  Transform event payloads before triggering workflows. Extract fields, restructure data, and normalize formats using JSONPath and Go template expressions.
+---
+
 # Event Transformation
 
 Transformations modify event payloads before they reach triggers. This enables data normalization, field extraction, and payload restructuring without changing EventSource or workflow code. For the complete reference, see the [official Trigger Parameterization docs](https://argoproj.github.io/argo-events/sensors/trigger-parameterization/).

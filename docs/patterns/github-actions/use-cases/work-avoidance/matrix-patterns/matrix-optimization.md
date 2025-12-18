@@ -1,8 +1,7 @@
 ---
 title: Matrix Optimization Patterns
 description: >-
-  Eliminate duplicate matrix combinations with include/exclude. Conditionally expand
-  matrices based on event type. Auto-discover services from repository structure.
+  Eliminate duplicate matrix combinations with include/exclude patterns. Conditionally expand based on event type and auto-discover services from repository structure.
 ---
 
 # Matrix Optimization Patterns

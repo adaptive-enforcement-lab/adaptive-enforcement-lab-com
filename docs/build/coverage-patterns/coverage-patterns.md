@@ -1,4 +1,6 @@
 ---
+description: >-
+  Achieve 95%+ test coverage through complexity management and refactoring for testability. Break coverage walls by simplifying code, not adding mocks.
 tags:
   - testing
   - coverage

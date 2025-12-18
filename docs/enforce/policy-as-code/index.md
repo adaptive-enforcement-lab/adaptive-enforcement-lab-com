@@ -7,6 +7,8 @@ tags:
   - automation
   - operators
   - security-teams
+description: >-
+  Enforce security and compliance policies across local dev, CI pipelines, and runtime admission. Three-layer Kyverno enforcement eliminates policy gaps entirely.
 ---
 
 # Policy-as-Code: End-to-End Enforcement

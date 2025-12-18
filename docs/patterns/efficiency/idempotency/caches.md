@@ -1,8 +1,7 @@
 ---
 title: Cache Considerations
 description: >-
-  The hidden challenge of idempotency: surviving cache misses.
-  True idempotency means reruns work regardless of cache state.
+  Survive cache misses with cache-resilient idempotency. True idempotent workflows work regardless of cache state, preventing mysterious rerun failures.
 ---
 
 # Cache Considerations

@@ -1,3 +1,8 @@
+---
+description: >-
+  Version, test, and distribute policy-platform containers. Semantic versioning, security scanning with Trivy, and registry authentication patterns.
+---
+
 # Distribution and Testing
 
 Versioning, testing, optimization, and distribution of the policy-platform container.

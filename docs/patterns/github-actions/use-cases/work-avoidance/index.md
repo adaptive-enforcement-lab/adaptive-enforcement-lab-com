@@ -1,4 +1,6 @@
 ---
+description: >-
+  Skip unnecessary CI/CD operations before execution. Detect unchanged content, cached builds, and irrelevant paths to reduce workflow costs and execution time.
 tags:
   - work-avoidance
   - github-actions

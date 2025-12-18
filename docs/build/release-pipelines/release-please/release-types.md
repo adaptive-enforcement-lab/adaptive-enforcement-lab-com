@@ -1,3 +1,8 @@
+---
+description: >-
+  Configure release types for Node, Helm, and generic packages. Control changelog sections, scope filtering, and commit visibility in automated release workflows.
+---
+
 # Release Types
 
 Release-please supports multiple package ecosystems with type-specific version management.

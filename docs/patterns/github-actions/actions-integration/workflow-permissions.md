@@ -1,8 +1,7 @@
 ---
 title: Workflow Permissions
 description: >-
-  Configure workflow-level and job-level permissions for Core App token
-  generation.
+  Configure workflow-level and job-level permissions for GitHub App token generation. Explicit id-token write and contents read for secure Actions automation.
 ---
 
 # Workflow Permissions

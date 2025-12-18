@@ -1,3 +1,8 @@
+---
+description: >-
+  Prevent unbounded workflow accumulation with TTL strategies. Automatic cleanup of completed workflows, distinct retention for successes vs failures, and etcd relief.
+---
+
 # TTL Strategy
 
 TTL (Time To Live) strategies automatically clean up completed workflows after a specified duration. Without TTL, completed workflows accumulate indefinitely, consuming cluster resources and making the Argo UI unusable.

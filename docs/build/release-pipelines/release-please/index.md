@@ -1,4 +1,6 @@
 ---
+description: >-
+  Configure automated versioning with release-please. Set up semantic versioning, changelog generation, and monorepo support using GitHub App token authentication.
 tags:
   - release-please
   - semantic-versioning

@@ -1,8 +1,7 @@
 ---
 title: Testing Idempotency
 description: >-
-  How to verify your automation is actually idempotent.
-  The ultimate test and what to check for.
+  Verify idempotency by running workflows twice. Test for duplicates, same end state, performance, and partial failure recovery to ensure rerun-safe automation.
 ---
 
 # Testing Idempotency

@@ -1,7 +1,7 @@
 ---
 title: Workflow Configuration
 description: >-
-  Trigger configuration and required permissions.
+  Configure distribution triggers, permissions, and scheduled coverage runs. Catch new repositories and failed runs with weekend schedules and idempotent patterns.
 ---
 
 # Workflow Configuration
