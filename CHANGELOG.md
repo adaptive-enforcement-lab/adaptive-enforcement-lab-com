@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.0.0...1.1.0) (2025-12-18)
+
+
+### New Content
+
+* add SEO description frontmatter validation and complete site coverage ([#182](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/182)) ([63b0287](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/63b02872bcbad559c3340423194bbf1e2fe41cfb))
+
 ## [1.0.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/0.9.1...1.0.0) (2025-12-16)
 
 
