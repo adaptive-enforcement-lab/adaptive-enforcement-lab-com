@@ -1,3 +1,8 @@
+---
+description: >-
+  Design CLI output for both humans and scripts. Table format for eyes, JSON/names format for pipes. Support quiet mode for automation workflows.
+---
+
 # Input/Output Contracts
 
 Design commands to work in pipelines and automation.
