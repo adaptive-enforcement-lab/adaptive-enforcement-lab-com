@@ -1,8 +1,7 @@
 ---
 title: Advanced Matrix Patterns
 description: >-
-  Fast-fail strategies for critical vs optional checks. Combine path filters with
-  dynamic matrices for maximum work avoidance.
+  Combine fail-fast strategies with dynamic matrices. Segregate critical checks from optional validations and merge multiple filtering techniques for maximum efficiency.
 ---
 
 # Advanced Matrix Patterns

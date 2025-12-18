@@ -1,8 +1,7 @@
 ---
 title: Path-Based Filtering Patterns
 description: >-
-  Run jobs only when specific files change. Static path filters, dynamic matrices,
-  and Dorny paths-filter for shared dependencies.
+  Run jobs only when specific files change. Compare static path triggers, dynamic matrix generation, and declarative filters for monorepos with shared dependencies.
 ---
 
 # Path-Based Filtering Patterns
