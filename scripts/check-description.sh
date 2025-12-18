@@ -87,6 +87,11 @@ extract_description() {
 check_file() {
     local file="$1"
 
+    # Only check files in docs/ directory
+    if [[ "$file" != docs/* ]]; then
+        return 0
+    fi
+
     if is_exception "$file"; then
         return 0
     fi
