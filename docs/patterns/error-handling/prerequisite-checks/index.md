@@ -1,3 +1,8 @@
+---
+description: >-
+  Consolidate all precondition validation into a dedicated gate phase. Check tools, permissions, state, and resources before executing deployment or automation tasks.
+---
+
 # Prerequisite Checks
 
 Validate all preconditions before executing expensive or irreversible operations.

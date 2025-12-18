@@ -1,8 +1,7 @@
 ---
 title: Idempotency
 description: >-
-  Build automation that survives reruns. Idempotent operations let you
-  rerun workflows without fear of duplicates, corruption, or cascading failures.
+  Build automation that survives reruns. Idempotent operations let you rerun workflows without fear of duplicates, corruption, or cascading failures in CI/CD.
 tags:
   - patterns
   - automation
