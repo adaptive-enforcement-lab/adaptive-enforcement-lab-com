@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://readability.adaptive-enforcement-lab.com/latest/schemas/config.json
 # Content Analyzer Configuration
 # Readability thresholds based on US grade levels:
 #   8-10  = MIL-STD-38784 (military technical manuals)
