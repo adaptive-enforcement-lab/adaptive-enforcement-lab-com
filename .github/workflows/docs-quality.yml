@@ -24,3 +24,4 @@ jobs:
         with:
           path: docs/
           check: ${{ inputs.fail_on_threshold }}
+          version: v1.11.0
