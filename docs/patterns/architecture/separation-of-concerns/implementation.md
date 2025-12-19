@@ -183,6 +183,9 @@ func main() {
 
 - **[Pattern Overview](index.md)**: Core concepts and CLI orchestrator pattern
 - **[Usage Guide](guide.md)**: When to apply, common mistakes, real-world examples
+- **[Workflow Orchestration Examples](workflow-examples.md)**: Argo Workflows and GitHub Actions separation
+- **[Go CLI Architecture](../../../build/go-cli-architecture/index.md)**: Complete CLI implementation
+- **[Orchestrator Pattern](../../../build/go-cli-architecture/command-architecture/orchestrator-pattern.md)**: Detailed orchestration
 - **[Fail Fast](../../error-handling/fail-fast/index.md)**: Error handling at boundaries
 - **[Prerequisite Checks](../../error-handling/prerequisite-checks/index.md)**: Validation separation
 

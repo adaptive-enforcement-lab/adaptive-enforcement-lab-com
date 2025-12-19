@@ -185,7 +185,7 @@ myctl/
 
 | Principle | Description |
 | ----------- | ------------- |
-| **Separation of concerns** | Commands handle CLI logic; `pkg/` handles business logic |
+| **[Separation of concerns](../../patterns/architecture/separation-of-concerns/index.md)** | Commands handle CLI logic; `pkg/` handles business logic |
 | **[Testable by default](testing/index.md)** | Interfaces for external dependencies enable fake clients |
 | **[Fail fast](../../patterns/error-handling/fail-fast/index.md)** | Validate configuration and connectivity before operations |
 | **[Structured output](command-architecture/io-contracts.md)** | JSON output for machine consumption, human-friendly by default |
