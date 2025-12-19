@@ -207,7 +207,7 @@ The wall wasn't about test quantity. It was about code quality.
 Coverage reached 99% when code became simple enough to test.
 
 !!! tip "Implementation Patterns"
-    See [Test Coverage Patterns](../../enforce/testing/coverage-patterns.md) for refactoring techniques, Codecov configuration, and single-source-of-truth threshold management.
+    See [Test Coverage Patterns](../../enforce/testing-enforcement/coverage-patterns.md) for refactoring techniques, Codecov configuration, and single-source-of-truth threshold management.
 
 ---
 
