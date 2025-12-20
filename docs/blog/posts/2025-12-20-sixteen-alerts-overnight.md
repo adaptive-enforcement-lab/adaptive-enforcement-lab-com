@@ -197,7 +197,7 @@ The principle of least privilege applies at job level, not workflow level.
 16 alerts disappeared when we applied permissions where they mattered: at the narrowest scope.
 
 !!! tip "Implementation Guide"
-    See [OpenSSF Scorecard Compliance](../../enforce/supply-chain/scorecard-compliance.md) for job-level permission patterns, source archive signing, and exception documentation.
+    See [OpenSSF Scorecard Compliance](../../secure/scorecard/scorecard-compliance.md) for job-level permission patterns, source archive signing, and exception documentation.
 
 ---
 

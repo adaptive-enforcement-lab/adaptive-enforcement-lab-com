@@ -483,6 +483,7 @@ nav:
               - patterns/architecture/separation-of-concerns/index.md
               - Implementation: patterns/architecture/separation-of-concerns/implementation.md
               - Usage Guide: patterns/architecture/separation-of-concerns/guide.md
+              - Workflow Examples: patterns/architecture/separation-of-concerns/workflow-examples.md
           - Hub and Spoke:
               - patterns/architecture/hub-and-spoke/index.md
               - Implementation Examples: patterns/architecture/hub-and-spoke/examples.md
