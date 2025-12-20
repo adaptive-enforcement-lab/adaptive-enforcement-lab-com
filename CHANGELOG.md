@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.1.0...1.2.0) (2025-12-20)
+
+
+### New Content
+
+* complete separation of concerns pattern documentation ([#184](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/184)) ([286b35c](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/286b35c98ca9dc3269ec97bed9a1e16cf5d3bbd4)), closes [#111](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/111)
+
+
+### Content Fixes
+
+* **ci:** upgrade readability to v1.14.2 with path override fix ([#186](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/186)) ([50a6f85](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/50a6f85e96d266ad56f95189926dda18003e230d))
+
 ## [1.1.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.0.0...1.1.0) (2025-12-18)
 
 
