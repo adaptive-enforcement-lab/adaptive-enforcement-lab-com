@@ -13,6 +13,11 @@ __pycache__/
 *.swp
 *.swo
 
+# Claude Code
+.auto-claude/
+.claude_settings.json
+.worktrees/
+
 # OS
 .DS_Store
 Thumbs.db
