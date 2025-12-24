@@ -385,6 +385,17 @@ nav:
               - Integration Testing: build/go-cli-architecture/testing/integration-testing.md
               - E2E Testing: build/go-cli-architecture/testing/e2e-testing.md
       - Coverage Patterns: build/coverage-patterns/coverage-patterns.md
+      - Efficiency Patterns:
+          - ConfigMap Cache:
+              - build/efficiency-patterns/configmap-cache.md
+              - Implementation: build/efficiency-patterns/implementation.md
+              - Refresh Strategies: build/efficiency-patterns/refresh-strategies.md
+              - Use Cases: build/efficiency-patterns/use-cases.md
+      - Open Source Templates:
+          - build/open-source-templates/index.md
+          - CONTRIBUTING Template: build/open-source-templates/contributing-template.md
+          - SECURITY Template: build/open-source-templates/security-template.md
+          - Issue Templates: build/open-source-templates/issue-templates.md
       - Release Pipelines:
           - build/release-pipelines/index.md
           - Release-Please:
@@ -471,7 +482,12 @@ nav:
       - Testing Enforcement:
           - Coverage Patterns: enforce/testing-enforcement/coverage-patterns.md
           - Coverage Enforcement: enforce/testing-enforcement/coverage-enforcement.md
-      - Audit & Compliance: enforce/audit-compliance/audit-evidence.md
+      - Audit & Compliance:
+          - enforce/audit-compliance/audit-evidence.md
+          - Evidence Types: enforce/audit-compliance/evidence-types.md
+          - Collection Strategies: enforce/audit-compliance/collection-strategies.md
+          - Compliance Reporting: enforce/audit-compliance/compliance-reporting.md
+          - Implementation: enforce/audit-compliance/implementation.md
       - Implementation Roadmap:
           - enforce/implementation-roadmap/index.md
           - Execution Guide: enforce/implementation-roadmap/execution.md

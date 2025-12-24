@@ -226,7 +226,7 @@ Security isn't about dogmatic rule-following. Understand trade-offs. Document ex
 The file wouldn't verify. We followed best practices. We didn't understand the tool's constraints.
 
 !!! tip "Implementation Guide"
-    See [SLSA Provenance Implementation](../../enforce/supply-chain/slsa-provenance.md) for complete workflow code, version tag requirements, and Renovate exception documentation.
+    See [SLSA Provenance Implementation](../../enforce/slsa-provenance/slsa-provenance.md) for complete workflow code, version tag requirements, and Renovate exception documentation.
 
 ---
 
