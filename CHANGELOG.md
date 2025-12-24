@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.2.0...1.3.0) (2025-12-24)
+
+
+### New Content
+
+* Add Priority 1 content with proper file splitting ([#189](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/189)) ([183f88a](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/183f88ae85463b300827f1987c2d87e9440befa4))
+
+
+### Maintenance
+
+* add Claude Code files to gitignore ([#187](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/187)) ([4e83b83](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4e83b8391917917d99bf8794a27d41fe3c389505))
+
 ## [1.2.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.1.0...1.2.0) (2025-12-20)
 
 
