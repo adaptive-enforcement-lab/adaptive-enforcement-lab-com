@@ -80,6 +80,145 @@ Hub aggregates spoke results:
 
 ---
 
+## Rate Limiting and Throttling
+
+Prevent overwhelming downstream systems. Control spoke execution rate.
+
+### Max Parallel Constraint
+
+Limit concurrent spokes:
+
+```yaml
+# Argo Workflows: limit parallelism
+- name: spawn-spoke
+  inputs:
+    parameters:
+      - name: repo
+  withParam: "{{workflow.parameters.repositories}}"
+  parallelism: 10  # Maximum 10 spokes running concurrently
+  resource:
+    action: create
+    manifest: |
+      spec:
+        workflowTemplateRef:
+          name: spoke-worker
+```
+
+GitHub Actions matrix with concurrency:
+
+```yaml
+jobs:
+  distribute:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5  # Only 5 repos processed at once
+      matrix:
+        repo: ${{ fromJson(needs.discover.outputs.repositories) }}
+    steps:
+      - run: ./process-repo.sh ${{ matrix.repo }}
+```
+
+### Batch Processing with Waves
+
+Split work into waves:
+
+```yaml
+# Hub splits 100 repos into 10 waves of 10
+- name: process-wave
+  inputs:
+    parameters:
+      - name: wave-number
+      - name: repositories
+  steps:
+    - - name: spawn-batch
+        template: spawn-spoke
+        arguments:
+          parameters:
+            - name: repo
+              value: "{{item}}"
+        withParam: "{{inputs.parameters.repositories}}"
+        parallelism: 10
+
+    # Wait between waves
+    - - name: wait
+        template: sleep
+        arguments:
+          parameters:
+            - name: duration
+              value: "30s"
+```
+
+Wave execution prevents API rate limit hits.
+
+### Exponential Backoff for Rate Limits
+
+Spoke detects rate limit, backs off:
+
+```go
+func executeWithBackoff(ctx context.Context, repo string) error {
+    maxRetries := 5
+    baseDelay := 1 * time.Second
+
+    for attempt := 0; attempt < maxRetries; attempt++ {
+        err := processRepository(ctx, repo)
+        if err == nil {
+            return nil
+        }
+
+        // Check if rate limited
+        if isRateLimitError(err) {
+            delay := baseDelay * time.Duration(1<<attempt) // 1s, 2s, 4s, 8s, 16s
+            log.Printf("Rate limited, backing off for %v", delay)
+            time.Sleep(delay)
+            continue
+        }
+
+        // Non-rate-limit error, fail
+        return err
+    }
+
+    return fmt.Errorf("max retries exceeded for %s", repo)
+}
+
+func isRateLimitError(err error) bool {
+    // GitHub API returns 403 with rate limit headers
+    if httpErr, ok := err.(*github.RateLimitError); ok {
+        return true
+    }
+    return false
+}
+```
+
+### Rate Limit Detection and Handling
+
+Check rate limits before spawning spokes:
+
+```yaml
+- name: check-rate-limit
+  script:
+    image: ghcr.io/cli/cli:latest
+    command: [bash]
+    source: |
+      #!/bin/bash
+      set -euo pipefail
+
+      # Get GitHub API rate limit
+      LIMIT=$(gh api rate_limit --jq '.rate.remaining')
+      RESET=$(gh api rate_limit --jq '.rate.reset')
+
+      if [ "$LIMIT" -lt 100 ]; then
+        WAIT=$((RESET - $(date +%s)))
+        echo "Rate limit low ($LIMIT remaining). Waiting ${WAIT}s"
+        sleep "$WAIT"
+      fi
+
+      echo "Rate limit OK: $LIMIT requests remaining"
+```
+
+Hub respects rate limits before distributing work.
+
+---
+
 ## When to Use This Pattern
 
 **Use when:**
