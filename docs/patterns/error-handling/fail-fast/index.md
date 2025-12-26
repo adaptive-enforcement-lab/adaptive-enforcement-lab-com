@@ -119,71 +119,6 @@ func ProcessOrder(order *Order) error {
 }
 ```
 
-### Shell Script with Guard Clauses
-
-```bash
-#!/bin/bash
-set -euo pipefail
-
-deploy_application() {
-    local environment="$1"
-    local version="$2"
-
-    # Fail fast: validate inputs
-    [[ -n "$environment" ]] || { echo "Environment required"; return 1; }
-    [[ -n "$version" ]] || { echo "Version required"; return 1; }
-    [[ "$environment" =~ ^(dev|staging|prod)$ ]] || { echo "Invalid environment"; return 1; }
-
-    # Fail fast: validate state
-    [[ -f "releases/${version}.tar.gz" ]] || { echo "Release artifact not found"; return 1; }
-
-    # Fail fast: validate access
-    kubectl auth can-i create deployments -n "$environment" || { echo "No deploy permission"; return 1; }
-
-    # All checks passed, proceed with deployment
-    echo "Deploying $version to $environment"
-    kubectl apply -f "releases/${version}/" -n "$environment"
-}
-```
-
-### API Request Validation
-
-```go
-func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request) {
-    var req CreateUserRequest
-    if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
-        http.Error(w, "invalid JSON", http.StatusBadRequest)
-        return
-    }
-
-    // Fail fast: validate request
-    if err := req.Validate(); err != nil {
-        http.Error(w, err.Error(), http.StatusBadRequest)
-        return
-    }
-
-    // Fail fast: check uniqueness before expensive operations
-    exists, err := h.db.UserExists(req.Email)
-    if err != nil {
-        http.Error(w, "database error", http.StatusInternalServerError)
-        return
-    }
-    if exists {
-        http.Error(w, "email already registered", http.StatusConflict)
-        return
-    }
-
-    // All preconditions met, create user
-    user, err := h.db.CreateUser(req)
-    if err != nil {
-        http.Error(w, "failed to create user", http.StatusInternalServerError)
-        return
-    }
-
-    json.NewEncoder(w).Encode(user)
-}
-```
-
 ---
 
 ## Fail Fast vs Graceful Degradation
@@ -216,6 +151,56 @@ flowchart TD
 | API unavailable | Graceful Degradation | Use backup endpoint |
 | Insufficient permissions | Fail Fast | Don't attempt forbidden operation |
 | Rate limited | Graceful Degradation | Exponential backoff |
+
+---
+
+## Fail Fast Techniques
+
+Comprehensive techniques for implementing fail fast patterns:
+
+### [Early Termination](techniques/early-termination.md)
+
+Stop execution immediately when errors occur:
+
+- Shell strict mode (`set -euo pipefail`)
+- GitHub Actions matrix fail-fast
+- Go error propagation
+- Circuit breakers
+
+### [Strict Mode Execution](techniques/strict-mode.md)
+
+Enable strictest validation and error detection:
+
+- Shell/TypeScript/Go strict modes
+- Linter enforcement
+- Schema validation
+
+### [Assertion Patterns](techniques/assertions.md)
+
+Validate assumptions and fail if they're wrong:
+
+- Runtime assertions
+- Contract validation (pre/post conditions)
+- Invariant checks
+- Type guards
+
+### [Error Escalation](techniques/error-escalation.md)
+
+Determine when to throw vs return, panic vs recover:
+
+- Throw vs return error
+- Error aggregation vs first-error-wins
+- Panic vs recoverable errors
+- Exit codes
+
+### [Timeout Enforcement](techniques/timeouts.md)
+
+Prevent operations from running indefinitely:
+
+- Operation timeouts
+- Job timeouts
+- Circuit breaker timeouts
+- Deadlock detection
 
 ---
 
@@ -345,11 +330,11 @@ Before implementing fail fast:
 | [Graceful Degradation](../graceful-degradation/index.md) | Complementary: fail fast on preconditions, degrade on runtime |
 | [Prerequisite Checks](../prerequisite-checks/index.md) | Specialized form of fail fast for complex preconditions |
 | [Idempotency](../../efficiency/idempotency/index.md) | Fail fast prevents partial state that breaks idempotency |
-| [Error Handling](../../../patterns/github-actions/actions-integration/error-handling.md) | Fail fast is the "reject early" error handling strategy |
 
 ---
 
 ## Further Reading
 
+- [Techniques Overview](techniques/early-termination.md) - Comprehensive fail fast techniques
 - [Graceful Degradation](../graceful-degradation/index.md) - The complementary pattern for runtime failures
 - [Prerequisite Checks](../prerequisite-checks/index.md) - Structured approach to precondition validation
