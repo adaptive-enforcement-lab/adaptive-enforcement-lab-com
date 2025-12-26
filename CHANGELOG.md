@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.3.0...1.4.0) (2025-12-26)
+
+
+### New Content
+
+* add Go CLI blog post 'The CLI That Replaced 47 Shell Scripts' ([#190](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/190)) ([8430ea2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8430ea2b8fe246e5a489a8f3f9bdf182a0dc0f89))
+
 ## [1.3.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.2.0...1.3.0) (2025-12-24)
 
 
