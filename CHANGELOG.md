@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.1...1.4.2) (2025-12-26)
+
+
+### Documentation Updates
+
+* Complete Hub and Spoke pattern documentation ([#40](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/40)) ([#196](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/196)) ([5748404](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/5748404ba2ab1c716c3206188baa9d5e5c7daf66))
+
 ## [1.4.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.0...1.4.1) (2025-12-26)
 
 
