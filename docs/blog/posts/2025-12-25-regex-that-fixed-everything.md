@@ -276,7 +276,7 @@ The configuration was "right" for GitHub Actions. It was wrong for Codecov.
 One syntax change fixed everything.
 
 !!! tip "Implementation Guide"
-    See [Coverage Enforcement](../../enforce/testing/coverage-enforcement.md) for complete Codecov configuration including component-based reporting and CI integration.
+    See [Coverage Enforcement](../../enforce/testing-enforcement/coverage-enforcement.md) for complete Codecov configuration including component-based reporting and CI integration.
 
 ---
 

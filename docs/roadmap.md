@@ -18,6 +18,8 @@ Adaptive Enforcement Lab is actively building. Here's what's coming.
 
     We're building a content pipeline for actionable security guidance. Recent posts:
 
+    - ✅ **[The CLI That Replaced 47 Shell Scripts](blog/posts/2025-12-27-cli-replaced-47-shell-scripts.md)** - Kubernetes-native CLI architecture journey
+    - ✅ **[The Queue That Deleted Itself](blog/posts/2025-12-26-queue-deleted-itself-argo-workflows.md)** - Pre-execution cleanup pattern
     - ✅ **[The Regex That Fixed Everything](blog/posts/2025-12-25-regex-that-fixed-everything.md)** - Codecov component paths
     - ✅ **[One Line: secrets: inherit](blog/posts/2025-12-24-one-line-secrets-inherit.md)** - Reusable workflow secrets
     - ✅ **[The File That Wouldn't Verify](blog/posts/2025-12-23-file-wouldnt-verify.md)** - SLSA version tag requirement
@@ -29,12 +31,6 @@ Adaptive Enforcement Lab is actively building. Here's what's coming.
     - ✅ **[OpenSSF Best Practices Badge in 2 Hours](blog/posts/2025-12-17-openssf-badge-two-hours.md)**
     - ✅ **[Policy-as-Code with Kyverno](blog/posts/2025-12-13-policy-as-code-kyverno.md)**
     - ✅ **[How to Harden Your SDLC Before the Audit Comes](blog/posts/2025-12-12-harden-sdlc-before-audit.md)**
-
-    Coming next:
-
-    - Zero-vulnerability container pipelines (enhanced with SLSA + SBOM integration)
-    - Environment progression testing
-    - Event-driven deployments with Argo
 
 !!! info "Community Hub"
 
