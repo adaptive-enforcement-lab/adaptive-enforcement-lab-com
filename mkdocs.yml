@@ -550,12 +550,23 @@ nav:
               - Anti-Patterns: patterns/efficiency/work-avoidance/anti-patterns.md
       - Error Handling:
           - patterns/error-handling/index.md
-          - Fail Fast: patterns/error-handling/fail-fast/index.md
+          - Fail Fast:
+              - patterns/error-handling/fail-fast/index.md
+              - Techniques:
+                  - Early Termination: patterns/error-handling/fail-fast/techniques/early-termination.md
+                  - Strict Mode: patterns/error-handling/fail-fast/techniques/strict-mode.md
+                  - Assertions: patterns/error-handling/fail-fast/techniques/assertions.md
+                  - Error Escalation: patterns/error-handling/fail-fast/techniques/error-escalation.md
+                  - Timeouts: patterns/error-handling/fail-fast/techniques/timeouts.md
           - Prerequisite Checks:
               - patterns/error-handling/prerequisite-checks/index.md
-              - Check Ordering: patterns/error-handling/prerequisite-checks/ordering.md
-              - Anti-Patterns: patterns/error-handling/prerequisite-checks/anti-patterns.md
-              - Examples: patterns/error-handling/prerequisite-checks/examples.md
+              - Check Types:
+                  - Environment: patterns/error-handling/prerequisite-checks/checks/environment.md
+                  - Permissions: patterns/error-handling/prerequisite-checks/checks/permissions.md
+                  - State: patterns/error-handling/prerequisite-checks/checks/state.md
+                  - Input: patterns/error-handling/prerequisite-checks/checks/input.md
+                  - Dependencies: patterns/error-handling/prerequisite-checks/checks/dependencies.md
+              - Implementation: patterns/error-handling/prerequisite-checks/implementation.md
           - Graceful Degradation: patterns/error-handling/graceful-degradation/index.md
       - GitHub Actions:
           - Actions Integration:
