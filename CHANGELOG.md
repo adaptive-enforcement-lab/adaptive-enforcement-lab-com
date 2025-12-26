@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.0...1.4.1) (2025-12-26)
+
+
+### Documentation Updates
+
+* expand error handling patterns (issues [#35](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/35), [#36](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/36)) ([#192](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/192)) ([b2fdafb](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b2fdafb81543ccbab3615cc44eedd23ad65c668f))
+
 ## [1.4.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.3.0...1.4.0) (2025-12-26)
 
 
