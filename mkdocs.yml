@@ -503,6 +503,8 @@ nav:
           - Hub and Spoke:
               - patterns/architecture/hub-and-spoke/index.md
               - Implementation Examples: patterns/architecture/hub-and-spoke/examples.md
+              - Communication Models: patterns/architecture/hub-and-spoke/push-pull-patterns.md
+              - Pattern Comparison: patterns/architecture/hub-and-spoke/pattern-comparison.md
               - Operations Guide: patterns/architecture/hub-and-spoke/operations.md
           - Strangler Fig:
               - patterns/architecture/strangler-fig/index.md
