@@ -247,7 +247,7 @@ Queue cleanup is unique because it operates on the **workflow queue itself**, no
 | Average wait time | 16 min | 0-2 min | 87% reduction |
 | Wasteful builds | 70% | 0% | 100% elimination |
 
-See [The Queue That Deleted Itself](../../../../blog/posts/2025-12-26-queue-deleted-itself-argo-workflows.md) for the full implementation story.
+See [The Queue That Deleted Itself](../../../../blog/posts/2025-12-27-queue-deleted-itself-argo-workflows.md) for the full implementation story.
 
 ---
 
@@ -298,4 +298,4 @@ Usage:
 - [Work Avoidance Overview](../index.md): Core concepts and other techniques
 - [Argo Workflows Mutex](../../../argo-workflows/concurrency/mutex.md): Mutex locking patterns
 - [Idempotency Patterns](../../idempotency/index.md): Making operations safe to repeat
-- [The Queue That Deleted Itself](../../../../blog/posts/2025-12-26-queue-deleted-itself-argo-workflows.md): Production implementation story
+- [The Queue That Deleted Itself](../../../../blog/posts/2025-12-27-queue-deleted-itself-argo-workflows.md): Production implementation story

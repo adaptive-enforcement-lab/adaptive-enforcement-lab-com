@@ -163,11 +163,16 @@ plugins:
         'developer-guide/architecture-patterns/matrix-distribution/template-rendering.md': 'patterns/architecture/matrix-distribution/template-rendering.md'
         'developer-guide/architecture-patterns/separation-of-concerns/guide.md': 'patterns/architecture/separation-of-concerns/guide.md'
         'developer-guide/architecture-patterns/separation-of-concerns/implementation.md': 'patterns/architecture/separation-of-concerns/implementation.md'
+        'developer-guide/architecture-patterns/strangler-fig/compatibility-layers.md': 'patterns/architecture/strangler-fig/compatibility-layers.md'
+        'developer-guide/architecture-patterns/strangler-fig/edge-cases-comparison.md': 'patterns/architecture/strangler-fig/edge-cases-comparison.md'
         'developer-guide/architecture-patterns/strangler-fig/implementation.md': 'patterns/architecture/strangler-fig/implementation.md'
         'developer-guide/architecture-patterns/strangler-fig/index.md': 'patterns/architecture/strangler-fig/index.md'
         'developer-guide/architecture-patterns/strangler-fig/migration-guide.md': 'patterns/architecture/strangler-fig/migration-guide.md'
         'developer-guide/architecture-patterns/strangler-fig/monitoring.md': 'patterns/architecture/strangler-fig/monitoring.md'
+        'developer-guide/architecture-patterns/strangler-fig/platform-component-examples.md': 'patterns/architecture/strangler-fig/platform-component-examples.md'
+        'developer-guide/architecture-patterns/strangler-fig/platform-component-replacement.md': 'patterns/architecture/strangler-fig/platform-component-replacement.md'
         'developer-guide/architecture-patterns/strangler-fig/traffic-routing.md': 'patterns/architecture/strangler-fig/traffic-routing.md'
+        'developer-guide/architecture-patterns/strangler-fig/validation-rollback.md': 'patterns/architecture/strangler-fig/validation-rollback.md'
         'developer-guide/architecture-patterns/three-stage-design.md': 'patterns/architecture/three-stage-design.md'
         'developer-guide/argo-events/index.md': 'patterns/argo-events/index.md'
         'developer-guide/argo-events/reliability/backpressure.md': 'patterns/argo-events/reliability/backpressure.md'
@@ -510,6 +515,12 @@ nav:
               - patterns/architecture/strangler-fig/index.md
               - Implementation: patterns/architecture/strangler-fig/implementation.md
               - Traffic Routing: patterns/architecture/strangler-fig/traffic-routing.md
+              - Platform Component Replacement:
+                  - patterns/architecture/strangler-fig/platform-component-replacement.md
+                  - Examples: patterns/architecture/strangler-fig/platform-component-examples.md
+                  - Compatibility Layers: patterns/architecture/strangler-fig/compatibility-layers.md
+                  - Validation & Rollback: patterns/architecture/strangler-fig/validation-rollback.md
+                  - Edge Cases: patterns/architecture/strangler-fig/edge-cases-comparison.md
               - Monitoring: patterns/architecture/strangler-fig/monitoring.md
               - Migration Guide: patterns/architecture/strangler-fig/migration-guide.md
           - Environment Progression:

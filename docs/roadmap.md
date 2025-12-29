@@ -18,10 +18,10 @@ Adaptive Enforcement Lab is actively building. Here's what's coming.
 
     We're building a content pipeline for actionable security guidance. Recent posts:
 
-    - ✅ **[The CLI That Replaced 47 Shell Scripts](blog/posts/2025-12-27-cli-replaced-47-shell-scripts.md)** - Kubernetes-native CLI architecture journey
-    - ✅ **[The Queue That Deleted Itself](blog/posts/2025-12-26-queue-deleted-itself-argo-workflows.md)** - Pre-execution cleanup pattern
-    - ✅ **[The Regex That Fixed Everything](blog/posts/2025-12-25-regex-that-fixed-everything.md)** - Codecov component paths
-    - ✅ **[One Line: secrets: inherit](blog/posts/2025-12-24-one-line-secrets-inherit.md)** - Reusable workflow secrets
+    - ✅ **[The CLI That Replaced 47 Shell Scripts](blog/posts/2025-12-28-cli-replaced-47-shell-scripts.md)** - Kubernetes-native CLI architecture journey
+    - ✅ **[The Queue That Deleted Itself](blog/posts/2025-12-27-queue-deleted-itself-argo-workflows.md)** - Pre-execution cleanup pattern
+    - ✅ **[The Regex That Fixed Everything](blog/posts/2025-12-26-regex-that-fixed-everything.md)** - Codecov component paths
+    - ✅ **[One Line: secrets: inherit](blog/posts/2025-12-25-one-line-secrets-inherit.md)** - Reusable workflow secrets
     - ✅ **[The File That Wouldn't Verify](blog/posts/2025-12-23-file-wouldnt-verify.md)** - SLSA version tag requirement
     - ✅ **[Go's Boring Security Tooling](blog/posts/2025-12-22-go-boring-security-tooling.md)** - Standard toolkit over SaaS
     - ✅ **[Test Coverage as Security Signal](blog/posts/2025-12-21-coverage-as-security-signal.md)** - 0% to 99% for OpenSSF compliance
