@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.2...1.4.3) (2025-12-29)
+
+
+### Documentation Updates
+
+* add platform component replacement to Strangler Fig pattern ([#199](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/199)) ([8f3cb2d](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8f3cb2d3cafcd2a18c517ce41c4a33df1464e614))
+
 ## [1.4.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.1...1.4.2) (2025-12-26)
 
 
