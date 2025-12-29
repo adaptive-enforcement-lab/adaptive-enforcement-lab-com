@@ -1,5 +1,5 @@
 ---
-date: 2025-12-28
+date: 2025-12-29
 authors:
   - mark
 categories:
@@ -62,7 +62,7 @@ NEVER remove content to meet arbitrary limits.
 
 And the feedback came fast:
 
-> "NO!!!!!!! FUCKING GODSDAMNIT NO!!!!! THE GUIDANCE CLEARLY AND BRIGHT AS DAY STATES NOT NOT NOT NOT NOT NOT NOT NOT NOT TO SHORTEN IT"
+> "NO!!!!!!! THE GUIDANCE CLEARLY AND BRIGHT AS DAY STATES NOT TO SHORTEN THE CONTENT"
 
 Right. Split, don't shorten.
 
