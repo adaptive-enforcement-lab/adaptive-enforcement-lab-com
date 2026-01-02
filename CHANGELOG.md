@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.3...1.5.0) (2026-01-02)
+
+
+### New Content
+
+* Add comprehensive roadmap content ([#201](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/201)) ([51f28bd](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/51f28bd118fdd65430588ea2c71c0e4c2da35698))
+
 ## [1.4.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.2...1.4.3) (2025-12-29)
 
 
