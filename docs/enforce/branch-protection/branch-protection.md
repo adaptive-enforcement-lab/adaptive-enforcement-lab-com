@@ -13,9 +13,12 @@ tags:
   - policy-enforcement
 ---
 
-# Branch Protection Enforcement
+# Branch Protection Rules Reference
 
-Branch protection turns security policies from suggestions into hard requirements.
+Detailed configuration reference for GitHub branch protection rules.
+
+!!! info "Part of Branch Protection Enforcement Patterns"
+    This page provides the detailed rules reference. For overview and architecture, see **[Branch Protection Enforcement Patterns](index.md)**. For pre-configured templates, see **[Security Tiers](security-tiers.md)**.
 
 !!! warning "Security Foundation"
     These controls form the baseline security posture. All controls must be implemented for audit compliance.
@@ -35,6 +38,9 @@ Provable? No. A developer could merge their own PR. The policy says they shouldn
 GitHub branch protection makes it impossible to merge without approval.
 
 ## Basic Configuration
+
+!!! tip "Pre-Configured Templates Available"
+    Instead of manual configuration, use tier templates: **[Security Tiers](security-tiers.md)** provides Standard, Enhanced, and Maximum tier configurations.
 
 ```yaml
 # Enforced via GitHub branch protection rules
@@ -152,6 +158,9 @@ Prevents accidental or malicious branch deletion.
 
 ## Configuration via API
 
+!!! tip "Infrastructure as Code"
+    For production deployments, use **[Terraform Modules](terraform-modules.md)** or **[OpenTofu Modules](opentofu-modules.md)** instead of manual API calls.
+
 Terraform and manual UI configuration don't scale. Use GitHub API:
 
 ```bash
@@ -210,6 +219,9 @@ Auditors can verify controls were active during any historical period.
 
 ## Exception Handling
 
+!!! info "Formalized Bypass Controls"
+    For production systems, implement formal bypass procedures: **[Bypass Controls](bypass-controls.md)** and **[Emergency Access](emergency-access.md)** provide approval workflows and audit patterns.
+
 ### Emergency Bypass
 
 Sometimes you need to bypass protection (production outage, security hotfix).
@@ -239,6 +251,9 @@ gh api --method PUT repos/org/repo/branches/main/protection \
 Auditors accept documented exceptions. They don't accept casual bypasses.
 
 ## Multi-Repository Enforcement
+
+!!! tip "Advanced Patterns Available"
+    For comprehensive organization-wide enforcement, see **[Multi-Repo Management](multi-repo-management.md)** and **[GitHub App Enforcement](github-app-enforcement.md)**.
 
 Applying protection to 100+ repositories manually doesn't scale.
 
@@ -273,6 +288,9 @@ jobs:
 Weekly enforcement ensures new repositories inherit protection.
 
 ## Verification Script
+
+!!! info "Enhanced Verification"
+    For comprehensive audit preparation and continuous monitoring, see **[Verification Scripts](verification-scripts.md)**.
 
 Audit preparation: Verify protection across all repositories.
 
@@ -328,7 +346,18 @@ See [Required Status Checks](../status-checks/index.md) for full CI/CD integrati
 
 ## Related Patterns
 
-- **[Commit Signing](../commit-signing/commit-signing.md)** - Cryptographic proof of authorship
-- **[Required Status Checks](../status-checks/index.md)** - CI/CD as merge gates
-- **[Audit Evidence Collection](../audit-compliance/audit-evidence.md)** - Historical proof of enforcement
+**Branch Protection**: [Overview](index.md) · [Security Tiers](security-tiers.md) · [Multi-Repo](multi-repo-management.md) · [GitHub App Enforcement](github-app-enforcement.md) · [Drift Detection](drift-detection.md) · [Bypass Controls](bypass-controls.md) · [Emergency Access](emergency-access.md) ·
+[Verification Scripts](verification-scripts.md)
+
+**Infrastructure as Code**: [Terraform Modules](terraform-modules.md) ·
+[OpenTofu Modules](opentofu-modules.md)
+
+**Audit & Compliance**: [Audit Evidence](audit-evidence.md) ·
+[Compliance Reporting](compliance-reporting.md)
+
+**Related Controls**: [Commit Signing](../commit-signing/commit-signing.md) ·
+[Required Status Checks](../status-checks/index.md) · [GitHub Apps](../../secure/github-apps/index.md)
+
+---
+
 *Policies became impossible to bypass. Auditors queried the API. Evidence was irrefutable. Controls passed.*

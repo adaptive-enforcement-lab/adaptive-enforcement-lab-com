@@ -312,7 +312,6 @@ plugins:
       post_date_format: yyyy-MM-dd
       archive_date_format: yyyy-MM
       draft_if_future_date: true
-      post_readtime: true
 markdown_extensions:
   - admonition
   - attr_list
@@ -501,7 +500,27 @@ nav:
               - Remediation Cost: secure/risk-management/engineer-framework/remediation-cost.md
   - Enforce:
       - enforce/index.md
-      - Branch Protection: enforce/branch-protection/branch-protection.md
+      - Branch Protection:
+          - enforce/branch-protection/index.md
+          - Security Tiers: enforce/branch-protection/security-tiers.md
+          - Rules Reference: enforce/branch-protection/branch-protection.md
+          - Infrastructure as Code:
+              - Terraform Modules: enforce/branch-protection/terraform-modules.md
+              - OpenTofu Modules: enforce/branch-protection/opentofu-modules.md
+              - Multi-Repo Management: enforce/branch-protection/multi-repo-management.md
+          - GitHub App Enforcement:
+              - Overview: enforce/branch-protection/github-app-enforcement.md
+              - Enforcement Workflows: enforce/branch-protection/enforcement-workflows.md
+              - Drift Detection: enforce/branch-protection/drift-detection.md
+          - Audit & Compliance:
+              - Audit Evidence: enforce/branch-protection/audit-evidence.md
+              - Compliance Reporting: enforce/branch-protection/compliance-reporting.md
+              - Verification Scripts: enforce/branch-protection/verification-scripts.md
+          - Bypass Controls:
+              - Bypass Controls: enforce/branch-protection/bypass-controls.md
+              - Emergency Access: enforce/branch-protection/emergency-access.md
+              - Exception Management: enforce/branch-protection/exception-management.md
+          - Troubleshooting: enforce/branch-protection/troubleshooting.md
       - Commit Signing: enforce/commit-signing/commit-signing.md
       - Pre-commit Hooks:
           - enforce/pre-commit-hooks/pre-commit-hooks.md

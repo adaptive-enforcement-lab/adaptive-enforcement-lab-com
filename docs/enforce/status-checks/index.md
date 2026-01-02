@@ -225,8 +225,17 @@ All matrix combinations must pass.
 
 - **[Configuration Patterns](configuration.md)** - Required vs optional checks, flaky tests, timing strategies
 - **[Operations Guide](operations.md)** - Debugging, audit evidence, cost optimization
-- **[Branch Protection](../branch-protection/branch-protection.md)** - Enforcement framework
+
+**Branch Protection Integration**:
+
+- **[Branch Protection Rules](../branch-protection/branch-protection.md)** - Enforcement framework
+- **[Security Tiers](../branch-protection/security-tiers.md)** - Required checks by tier
+- **[Enforcement Workflows](../branch-protection/enforcement-workflows.md)** - Automated enforcement
+
+**Related Controls**:
+
 - **[Pre-commit Hooks](../pre-commit-hooks/pre-commit-hooks.md)** - Earlier validation
+- **[Commit Signing](../commit-signing/commit-signing.md)** - Cryptographic proof of authorship
 
 ---
 

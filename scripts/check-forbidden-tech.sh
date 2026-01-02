@@ -22,6 +22,10 @@ EXCEPTION_PATHS=(
     "docs/secure/sbom/sbom-generation.md"  # SBOM tooling examples (docker buildx has SBOM support)
     "docs/secure/cloud-native/gke-hardening/"  # Infrastructure code examples for GKE
     "docs/enforce/implementation-roadmap/hardening-checklist/"  # SDLC hardening patterns showing what to validate
+    "docs/enforce/branch-protection/terraform-modules.md"  # Terraform IaC examples for branch protection
+    "docs/enforce/branch-protection/opentofu-modules.md"  # OpenTofu IaC examples for branch protection
+    "docs/enforce/branch-protection/multi-repo-management.md"  # Multi-repo Terraform patterns
+    "docs/enforce/branch-protection/troubleshooting.md"  # Troubleshooting Terraform and IaC issues
 )
 
 # Forbidden patterns by category
