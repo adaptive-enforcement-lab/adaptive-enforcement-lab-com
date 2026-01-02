@@ -93,10 +93,18 @@ The [Implementation guide](implementation.md) provides:
 
 ## Related Patterns
 
+**Audit & Compliance**:
+
 - Blog: [Harden Your SDLC Before the Audit Comes](../../blog/posts/2025-12-12-harden-sdlc-before-audit.md) - Initial patterns and audit context
 - [SLSA Provenance Implementation](../slsa-provenance/slsa-provenance.md) - Build attestations for audit trail
 - [SBOM Generation](../../secure/sbom/sbom-generation.md) - Dependency evidence
-- [Branch Protection](../branch-protection/branch-protection.md) - Access control evidence
+
+**Branch Protection Evidence**:
+
+- **[Branch Protection](../branch-protection/branch-protection.md)** - Access control evidence
+- **[Branch Protection Audit Evidence](../branch-protection/audit-evidence.md)** - Specialized branch protection evidence collection
+- **[Branch Protection Compliance Reporting](../branch-protection/compliance-reporting.md)** - Framework-specific branch protection reports
+- **[Verification Scripts](../branch-protection/verification-scripts.md)** - Continuous compliance monitoring
 
 ---
 

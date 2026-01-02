@@ -154,10 +154,18 @@ sha256sum -c evidence-v1.7.0.tar.gz.sha256
 
 ## Related Patterns
 
+**Audit Evidence**:
+
 - [Audit Evidence Collection](audit-evidence.md) - Main overview
 - [Evidence Types](evidence-types.md) - What to collect
 - [Collection Strategies](collection-strategies.md) - How to capture evidence
 - [Implementation](implementation.md) - Complete workflow examples
+
+**Branch Protection Compliance**:
+
+- **[Branch Protection Audit Evidence](../branch-protection/audit-evidence.md)** - Branch protection evidence collection
+- **[Branch Protection Compliance Reporting](../branch-protection/compliance-reporting.md)** - Framework-specific branch protection reports
+- **[Verification Scripts](../branch-protection/verification-scripts.md)** - Automated compliance verification
 
 ---
 

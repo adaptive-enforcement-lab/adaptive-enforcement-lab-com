@@ -260,7 +260,17 @@ Target: 100% signed commits on production branches.
 
 ## Related Patterns
 
-- **[Branch Protection](../branch-protection/branch-protection.md)** - Enforce signature requirement
+**Branch Protection**:
+
+- **[Branch Protection Rules](../branch-protection/branch-protection.md)** - Enforce signature requirement
+- **[Security Tiers](../branch-protection/security-tiers.md)** - Signature required for Maximum tier
+- **[Multi-Repo Management](../branch-protection/multi-repo-management.md)** - Enforce signatures at scale
+- **[Enforcement Workflows](../branch-protection/enforcement-workflows.md)** - Automated signature enforcement
+
+**Audit & Compliance**:
+
 - **[Audit Evidence](../audit-compliance/audit-evidence.md)** - Historical verification
+- **[Branch Protection Audit Evidence](../branch-protection/audit-evidence.md)** - Evidence collection patterns
+- **[Compliance Reporting](../branch-protection/compliance-reporting.md)** - Framework-specific reporting
 
 *Commits were signed with private keys. GitHub verified the signatures. Authorship was cryptographically proven. Non-repudiation achieved.*
