@@ -1,5 +1,5 @@
 ---
-date: 2026-01-07
+date: 2025-12-31
 authors:
   - mark
 categories:

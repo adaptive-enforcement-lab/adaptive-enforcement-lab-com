@@ -1,5 +1,5 @@
 ---
-date: 2026-01-06
+date: 2025-12-30
 authors:
   - mark
 categories:
@@ -254,9 +254,9 @@ The structure scales because enforcement scales. Add a new requirement. Add enfo
 
 The checklist is part of a larger SDLC hardening strategy:
 
-- **[SDLC Hardening Checklist](../../enforce/implementation-roadmap/hardening-checklist.md)** - The full checklist with enforcement details and audit trails
+- **[SDLC Hardening Checklist](../../enforce/implementation-roadmap/hardening-checklist/index.md)** - The full checklist with enforcement details and audit trails
 - **[Security by Default](../../enforce/index.md)** - Building enforcement into pipelines
-- **[Branch Protection Strategies](../../enforce/github-branch-protection/index.md)** - Code review enforcement patterns
+- **[Branch Protection Strategies](../../enforce/branch-protection/branch-protection.md)** - Code review enforcement patterns
 - **[Pre-commit Hooks](../../enforce/pre-commit-hooks/pre-commit-hooks-patterns.md)** - Secrets and policy enforcement at commit time
 
 ---

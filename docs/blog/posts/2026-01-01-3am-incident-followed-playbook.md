@@ -1,5 +1,5 @@
 ---
-date: 2026-01-08
+date: 2026-01-01
 authors:
   - mark
 categories:
@@ -148,9 +148,9 @@ No branching on "but what if." Just "if condition matches, do this."
 
 Link to fix playbooks:
 
-- **Pod restart storms** → [Kubernetes Node Recovery](../../runbooks/kubernetes/node-recovery.md)
-- **API latency spike** → [Goroutine Leak Investigation](../../runbooks/go/goroutine-leak.md)
-- **Database exhaustion** → [Connection Pool Relief](../../runbooks/postgres/connection-pool-relief.md)
+- **Pod restart storms** → [Incident Readiness Playbooks](../../enforce/incident-readiness/playbook-library/index.md)
+- **API latency spike** → [Incident Readiness Playbooks](../../enforce/incident-readiness/playbook-library/index.md)
+- **Database exhaustion** → [Incident Readiness Playbooks](../../enforce/incident-readiness/playbook-library/index.md)
 
 ### 5. Escalation Thresholds
 
@@ -316,8 +316,8 @@ Twenty-three minutes. Playbook followed. Incident resolved. Back to sleep.
 Full incident response patterns and templates:
 
 - [Incident Readiness Playbooks](../../enforce/incident-readiness/playbook-library/index.md) - Complete playbook structure and examples
-- [Postmortem Mechanics](../../enforce/incident-readiness/postmortems/index.md) - Running blameless postmortems
-- [On-Call Discipline](../../enforce/incident-readiness/on-call-discipline/index.md) - Respecting the on-call rotation
+- [Postmortem Mechanics](../../enforce/incident-readiness/playbook-library/index.md) - Running blameless postmortems
+- [On-Call Discipline](../../enforce/incident-readiness/playbook-library/index.md) - Respecting the on-call rotation
 
 ---
 

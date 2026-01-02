@@ -1,5 +1,5 @@
 ---
-date: 2026-01-09
+date: 2026-01-02
 authors:
   - mark
 categories:
@@ -259,6 +259,6 @@ That's the goal: a cluster so thoroughly hardened that finding vulnerabilities r
 ## Related
 
 - [GKE Security Hardening](../../secure/cloud-native/gke-hardening/index.md) - Detailed hardening guide with configurations
-- [Network Policy Patterns](../../patterns/kubernetes/network-policies/index.md) - Deny-by-default network control
-- [Pod Security Standards](../../patterns/kubernetes/pod-security/index.md) - Container privilege restrictions
-- [Workload Identity](../../patterns/kubernetes/workload-identity/index.md) - Ephemeral credentials without keys
+- [Network Policy Patterns](../../secure/cloud-native/gke-hardening/network-security/index.md) - Deny-by-default network control
+- [Pod Security Standards](../../secure/cloud-native/gke-hardening/runtime-security/index.md) - Container privilege restrictions
+- [Workload Identity](../../secure/cloud-native/workload-identity/index.md) - Ephemeral credentials without keys
