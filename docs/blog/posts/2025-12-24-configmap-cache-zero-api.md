@@ -225,8 +225,8 @@ The pattern that fixed everything: stop treating configuration as an API problem
 
 ## Related Patterns
 
-- [Go CLI Architecture: Kubernetes Integration](../../build/go-cli-architecture/kubernetes-integration/) for client-go patterns vs volume mounts
-- [Argo Workflows](../../enforce/policy-as-code/runtime-deployment/) for workflow orchestration patterns
+- [Go CLI Architecture: Kubernetes Integration](../../build/go-cli-architecture/kubernetes-integration/index.md) for client-go patterns vs volume mounts
+- [Argo Workflows](../../enforce/policy-as-code/runtime-deployment/index.md) for workflow orchestration patterns
 
 ---
 

@@ -299,9 +299,4 @@ See [Implementation Roadmap](implementation-roadmap/index.md) for phased rollout
 
 ## Tags
 
-Browse all content tagged with:
-
-- [policy-enforcement](/tags/#policy-enforcement) - All enforcement content
-- [automation](/tags/#automation) - Automated enforcement workflows
-- [compliance](/tags/#compliance) - Compliance and audit
-- [security](/tags/#security) - Security enforcement
+Browse all content tagged with policy-enforcement, automation, compliance, and security on the [Tags](../tags.md) page.

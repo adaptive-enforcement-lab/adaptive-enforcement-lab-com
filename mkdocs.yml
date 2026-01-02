@@ -440,6 +440,64 @@ nav:
       - Scorecard:
           - Scorecard Compliance: secure/scorecard/scorecard-compliance.md
           - Workflow Examples: secure/scorecard/scorecard-workflow-examples.md
+      - Cloud Native:
+          - GKE Hardening:
+              - secure/cloud-native/gke-hardening/index.md
+              - Cluster Configuration:
+                  - secure/cloud-native/gke-hardening/cluster-configuration/index.md
+                  - Private Cluster Overview: secure/cloud-native/gke-hardening/cluster-configuration/private-cluster.md
+                  - Private Cluster Setup: secure/cloud-native/gke-hardening/cluster-configuration/private-cluster-setup.md
+                  - Advanced Configuration: secure/cloud-native/gke-hardening/cluster-configuration/private-cluster-advanced.md
+                  - Workload Identity: secure/cloud-native/gke-hardening/cluster-configuration/workload-identity.md
+                  - Binary Authorization: secure/cloud-native/gke-hardening/cluster-configuration/binary-authorization.md
+              - IAM Configuration:
+                  - secure/cloud-native/gke-hardening/iam-configuration/index.md
+                  - Least-Privilege Roles: secure/cloud-native/gke-hardening/iam-configuration/least-privilege-roles.md
+                  - Workload Identity Federation: secure/cloud-native/gke-hardening/iam-configuration/workload-identity-federation.md
+                  - Audit Logging: secure/cloud-native/gke-hardening/iam-configuration/audit-logging.md
+              - Network Security:
+                  - secure/cloud-native/gke-hardening/network-security/index.md
+                  - VPC-Native Networking: secure/cloud-native/gke-hardening/network-security/vpc-native.md
+                  - Network Policies: secure/cloud-native/gke-hardening/network-security/network-policies.md
+                  - Private Service Connect: secure/cloud-native/gke-hardening/network-security/private-service-connect.md
+                  - Cloud Armor: secure/cloud-native/gke-hardening/network-security/cloud-armor.md
+              - Runtime Security:
+                  - secure/cloud-native/gke-hardening/runtime-security/index.md
+                  - Pod Security Standards: secure/cloud-native/gke-hardening/runtime-security/pod-security-standards.md
+                  - Admission Controllers: secure/cloud-native/gke-hardening/runtime-security/admission-controllers.md
+                  - Runtime Monitoring: secure/cloud-native/gke-hardening/runtime-security/runtime-monitoring.md
+          - Workload Identity:
+              - secure/cloud-native/workload-identity/index.md
+              - Cluster Configuration: secure/cloud-native/workload-identity/cluster-configuration.md
+              - Service Account Binding: secure/cloud-native/workload-identity/service-account-binding.md
+              - Pod Configuration: secure/cloud-native/workload-identity/pod-configuration.md
+              - Migration Guide: secure/cloud-native/workload-identity/migration-guide.md
+              - Troubleshooting: secure/cloud-native/workload-identity/troubleshooting.md
+      - Culture:
+          - Tactical Playbook:
+              - secure/culture/tactical-playbook/index.md
+              - Shift Left:
+                  - Pre-commit & IDE: secure/culture/tactical-playbook/pre-commit-ide.md
+                  - Automated Reviews: secure/culture/tactical-playbook/automated-reviews.md
+              - Make Visible:
+                  - Scorecards & Dashboards: secure/culture/tactical-playbook/scorecards-dashboards.md
+                  - Notifications & Badges: secure/culture/tactical-playbook/notifications-badges.md
+              - Reduce Toil:
+                  - Automation Tools: secure/culture/tactical-playbook/automation-tools.md
+              - Build Champions:
+                  - Champions Program: secure/culture/tactical-playbook/champions-program.md
+                  - Recognition & Rewards: secure/culture/tactical-playbook/recognition-rewards.md
+                  - Career Growth: secure/culture/tactical-playbook/career-growth.md
+      - Risk Management:
+          - Engineer Framework:
+              - secure/risk-management/engineer-framework/index.md
+              - Risk Assessment: secure/risk-management/engineer-framework/risk-assessment.md
+              - CVSS Interpretation: secure/risk-management/engineer-framework/cvss-interpretation.md
+              - Exploitability Analysis: secure/risk-management/engineer-framework/exploitability-analysis.md
+              - Blast Radius: secure/risk-management/engineer-framework/blast-radius.md
+              - Decision Trees: secure/risk-management/engineer-framework/decision-trees.md
+              - Real-World Scenarios: secure/risk-management/engineer-framework/real-world-scenarios.md
+              - Remediation Cost: secure/risk-management/engineer-framework/remediation-cost.md
   - Enforce:
       - enforce/index.md
       - Branch Protection: enforce/branch-protection/branch-protection.md
@@ -496,6 +554,39 @@ nav:
       - Implementation Roadmap:
           - enforce/implementation-roadmap/index.md
           - Execution Guide: enforce/implementation-roadmap/execution.md
+          - Hardening Checklist:
+              - enforce/implementation-roadmap/hardening-checklist/index.md
+              - "Phase 1: Foundation":
+                  - enforce/implementation-roadmap/hardening-checklist/phase-1/index.md
+                  - Pre-commit Hooks: enforce/implementation-roadmap/hardening-checklist/phase-1/pre-commit-hooks.md
+                  - Branch Protection: enforce/implementation-roadmap/hardening-checklist/phase-1/branch-protection.md
+              - "Phase 2: Automation":
+                  - enforce/implementation-roadmap/hardening-checklist/phase-2/index.md
+                  - CI Gates: enforce/implementation-roadmap/hardening-checklist/phase-2/ci-gates.md
+                  - Evidence Collection: enforce/implementation-roadmap/hardening-checklist/phase-2/evidence-collection.md
+              - "Phase 3: Runtime":
+                  - enforce/implementation-roadmap/hardening-checklist/phase-3/index.md
+                  - Policy Enforcement: enforce/implementation-roadmap/hardening-checklist/phase-3/policy-enforcement.md
+                  - Advanced Policies: enforce/implementation-roadmap/hardening-checklist/phase-3/advanced-policies.md
+                  - Rollout Strategy: enforce/implementation-roadmap/hardening-checklist/phase-3/rollout.md
+              - "Phase 4: Advanced":
+                  - enforce/implementation-roadmap/hardening-checklist/phase-4/index.md
+                  - Audit Evidence: enforce/implementation-roadmap/hardening-checklist/phase-4/audit-evidence.md
+                  - Compliance: enforce/implementation-roadmap/hardening-checklist/phase-4/compliance.md
+                  - Audit Simulation: enforce/implementation-roadmap/hardening-checklist/phase-4/audit-simulation.md
+      - Policy Template Library:
+          - enforce/policy-as-code/template-library/index.md
+          - Kyverno Templates:
+              - enforce/policy-as-code/template-library/kyverno-templates.md
+              - Pod Security: enforce/policy-as-code/template-library/kyverno-pod-security.md
+              - Image Validation: enforce/policy-as-code/template-library/kyverno-image-validation.md
+              - Resource Limits: enforce/policy-as-code/template-library/kyverno-resource-limits.md
+              - Mandatory Labels: enforce/policy-as-code/template-library/kyverno-labels.md
+          - OPA Templates: enforce/policy-as-code/template-library/opa-templates.md
+          - CI/CD Integration: enforce/policy-as-code/template-library/ci-cd-integration.md
+          - Usage Guide: enforce/policy-as-code/template-library/usage-guide.md
+      - Incident Readiness:
+          - Playbook Library: enforce/incident-readiness/playbook-library/index.md
   - Patterns:
       - patterns/index.md
       - Architecture:
@@ -580,6 +671,9 @@ nav:
                   - Input: patterns/error-handling/prerequisite-checks/checks/input.md
                   - Dependencies: patterns/error-handling/prerequisite-checks/checks/dependencies.md
               - Implementation: patterns/error-handling/prerequisite-checks/implementation.md
+              - Check Ordering: patterns/error-handling/prerequisite-checks/ordering.md
+              - Examples: patterns/error-handling/prerequisite-checks/examples.md
+              - Anti-Patterns: patterns/error-handling/prerequisite-checks/anti-patterns.md
           - Graceful Degradation: patterns/error-handling/graceful-degradation/index.md
       - GitHub Actions:
           - Actions Integration:
@@ -670,5 +764,34 @@ nav:
               - Concurrency Policies: patterns/argo-workflows/scheduled/concurrency-policy.md
               - Orchestration: patterns/argo-workflows/scheduled/orchestration.md
               - GitHub Integration: patterns/argo-workflows/scheduled/github-integration.md
+      - Reliability:
+          - Chaos Engineering:
+              - patterns/reliability/chaos-engineering/index.md
+              - Tools Comparison: patterns/reliability/chaos-engineering/tools-comparison.md
+              - Blast Radius Control: patterns/reliability/chaos-engineering/blast-radius.md
+              - Validation Patterns: patterns/reliability/chaos-engineering/validation.md
+              - Experiment Catalog:
+                  - patterns/reliability/chaos-engineering/experiments.md
+                  - Pod Experiments: patterns/reliability/chaos-engineering/pod-experiments.md
+                  - Network Experiments: patterns/reliability/chaos-engineering/network-experiments.md
+                  - Resource Experiments: patterns/reliability/chaos-engineering/resource-experiments.md
+                  - Dependency Experiments: patterns/reliability/chaos-engineering/dependency-experiments.md
+              - Running Experiments: patterns/reliability/chaos-engineering/operations.md
+              - Observability: patterns/reliability/chaos-engineering/observability.md
+              - Experiment Design:
+                  - patterns/reliability/chaos-engineering/experiment-design/index.md
+                  - Hypothesis Formation: patterns/reliability/chaos-engineering/experiment-design/hypothesis.md
+                  - Success Criteria: patterns/reliability/chaos-engineering/experiment-design/success-criteria.md
+                  - Blast Radius: patterns/reliability/chaos-engineering/experiment-design/blast-radius.md
+                  - SLI Monitoring: patterns/reliability/chaos-engineering/experiment-design/sli-monitoring.md
+                  - Validation: patterns/reliability/chaos-engineering/experiment-design/validation.md
+      - Security:
+          - Secure-by-Design:
+              - patterns/security/secure-by-design/index.md
+              - Zero Trust: patterns/security/secure-by-design/zero-trust.md
+              - Defense in Depth: patterns/security/secure-by-design/defense-in-depth.md
+              - Least Privilege: patterns/security/secure-by-design/least-privilege.md
+              - Fail Secure: patterns/security/secure-by-design/fail-secure.md
+              - End-to-End Integration: patterns/security/secure-by-design/integration.md
   - Roadmap: roadmap.md
   - Tags: tags.md

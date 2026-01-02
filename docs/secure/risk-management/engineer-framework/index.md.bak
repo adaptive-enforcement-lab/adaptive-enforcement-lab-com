@@ -1,0 +1,769 @@
+---
+tags:
+  - risk-management
+  - security
+  - cve
+  - decision-framework
+  - vulnerability-management
+description: >-
+  Risk prioritization framework for engineers. CVSS interpretation, exploitability analysis, blast radius calculation, and decision trees for patch management and vulnerability remediation.
+---
+
+# Risk Prioritization Framework for Engineers
+
+Making fast, defensible decisions about vulnerability remediation under pressure. This framework translates security metrics into actionable engineering decisions.
+
+!!! abstract "Key Insight"
+    Risk = (Impact × Likelihood × Exploitability) - (Remediation Cost). Prioritize ruthlessly based on exposure, not noise.
+
+---
+
+## Overview
+
+Most teams have an unlimited list of vulnerabilities but finite resources. The difference between effective security and security theater is how you make triage decisions.
+
+This framework gives you:
+
+1. **Objective metrics** to compare disparate vulnerabilities
+2. **Decision trees** for patch-now vs patch-later choices
+3. **Cost-benefit analysis** for remediation tradeoffs
+4. **Real-world examples** with concrete decisions
+
+The goal: **Spend your security budget where exposure is highest**.
+
+---
+
+## Risk Assessment Matrix
+
+Start by establishing baseline risk across three dimensions:
+
+```mermaid
+graph TB
+    subgraph impact["Impact"]
+        I1["Critical: Complete compromise<br/>of core functionality or data"]
+        I2["High: Major degradation<br/>or data exposure"]
+        I3["Medium: Reduced functionality<br/>or limited exposure"]
+        I4["Low: Cosmetic or<br/>edge-case impact"]
+    end
+
+    subgraph likelihood["Likelihood"]
+        L1["High: In active exploitation<br/>or easy to weaponize"]
+        L2["Medium: Known attack path<br/>requires some effort"]
+        L3["Low: Theoretical or requires<br/>specific conditions"]
+        L4["Minimal: Requires multiple<br/>preconditions or user error"]
+    end
+
+    subgraph exploitability["Exploitability"]
+        E1["Trivial: No authentication,<br/>network-adjacent"]
+        E2["Low: Requires basic tools<br/>or public PoC"]
+        E3["Medium: Requires custom work<br/>or insider knowledge"]
+        E4["High: Requires zero-day or<br/>sophisticated attack"]
+    end
+
+    style I1 fill:#f92572,color:#1b1d1e
+    style I2 fill:#fd971e,color:#1b1d1e
+    style I3 fill:#a6e22e,color:#1b1d1e
+    style I4 fill:#66d9ef,color:#1b1d1e
+
+    style L1 fill:#f92572,color:#1b1d1e
+    style L2 fill:#fd971e,color:#1b1d1e
+    style L3 fill:#a6e22e,color:#1b1d1e
+    style L4 fill:#66d9ef,color:#1b1d1e
+
+    style E1 fill:#f92572,color:#1b1d1e
+    style E2 fill:#fd971e,color:#1b1d1e
+    style E3 fill:#a6e22e,color:#1b1d1e
+    style E4 fill:#66d9ef,color:#1b1d1e
+```
+
+### Scoring Table
+
+| Factor | 4 (Critical) | 3 (High) | 2 (Medium) | 1 (Low) |
+|--------|-----------|----------|-----------|---------|
+| **Impact** | Complete system failure, auth bypass, data loss | Major service degradation, sensitive data exposure | Partial functionality loss, limited exposure | Denial of service on rare path, information disclosure |
+| **Likelihood** | Active exploits in wild, trivial to execute | Known exploitation path, tool availability | Proof of concept exists, requires effort | Theoretical only, multiple preconditions |
+| **Exploitability** | No auth, network-adjacent, <5 minute PoC | Public PoC, basic tools needed | Custom work required, insider knowledge | Zero-day equivalent, extreme complexity |
+
+### Risk Score Calculation
+
+```text
+Risk Score = (Impact × Likelihood × Exploitability) / 27 × Blast Radius
+```
+
+Where:
+
+- Each factor: 1–4 points
+- Result: 1–64 before blast radius adjustment
+- **Blast Radius**: multiplier 0.2 to 5.0 based on affected systems
+
+#### Risk Score Interpretation
+
+| Score | Label | Action |
+|-------|-------|--------|
+| 45+ | **CRITICAL** | Patch immediately, within 24 hours |
+| 30-44 | **HIGH** | Patch this sprint, within 1 week |
+| 15-29 | **MEDIUM** | Schedule for next planning cycle, within 30 days |
+| 5-14 | **LOW** | Plan for regular maintenance, no urgency |
+| <5 | **MINIMAL** | Track, monitor, address opportunistically |
+
+---
+
+## CVSS Score Interpretation for Engineers
+
+CVSS (Common Vulnerability Scoring System) is useful but incomplete. Translate base scores to engineering decisions:
+
+### CVSS 3.1 Score Ranges
+
+| CVSS Score | Severity | Engineering Meaning | Our Threshold |
+|-----------|----------|---------------------|----------------|
+| 9.0–10.0 | **Critical** | Network RCE, no auth, trivial exploit | Patch in 24h |
+| 7.0–8.9 | **High** | Network-accessible, requires some conditions | Patch in 1 week |
+| 4.0–6.9 | **Medium** | Local or complex network attack | Patch in 30 days |
+| 0.1–3.9 | **Low** | Restricted scope, limited impact | Opportunistic |
+
+### Key CVSS Components Engineers Should Know
+
+### Attack Vector (AV)
+
+- `NETWORK (N)`: Most dangerous. Remotely exploitable.
+- `ADJACENT (A)`: Same network segment (WiFi, VPN).
+- `LOCAL (L)`: Local access required (privilege escalation risk).
+- `PHYSICAL (P)`: Least dangerous. Physical access needed.
+
+### Attack Complexity (AC)
+
+- `LOW (L)`: Trivial to exploit, doesn't vary by target.
+- `HIGH (H)`: Requires specific conditions, target-dependent.
+
+### Privileges Required (PR)
+
+- `NONE (N)`: Unauthenticated attack. Most dangerous.
+- `LOW (L)`: User account required.
+- `HIGH (H)`: Admin access required.
+
+### User Interaction (UI)
+
+- `NONE (N)`: No user action needed.
+- `REQUIRED (R)`: Requires clicking link, opening email, etc.
+
+**Decision Rule**: A CVSS 7.0 with `NETWORK/NONE` is more urgent than a CVSS 8.0 with `LOCAL/HIGH/REQUIRED`.
+
+### Example: Interpreting CVSS Vectors
+
+### Scenario 1: OpenSSL CVE
+
+```text
+CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H → 9.8 CRITICAL
+```
+
+- Network-exploitable, no auth, trivial
+- **Decision**: Patch within 24 hours
+
+### Scenario 2: Privilege Escalation in Sudo
+
+```text
+CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H → 7.8 HIGH
+```
+
+- Local access required, low-privilege user
+- **Decision**: Patch within 1 week
+
+### Scenario 3: Deserialization in Old Library
+
+```text
+CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H → 6.9 MEDIUM
+```
+
+- Network, but requires user interaction (deserialize untrusted data)
+- **Decision**: Patch within 30 days
+
+---
+
+## Exploitability Analysis
+
+CVSS alone doesn't tell you if the vulnerability is actually weaponized. Use public exploit databases to refine urgency:
+
+### Exploit Maturity Spectrum
+
+```mermaid
+flowchart LR
+    A["Proof of Concept<br/>(Research)"] -->|"Days-weeks"| B["Public Exploit Available<br/>(Published)"]
+    B -->|"Days-weeks"| C["Tools Updated<br/>(Automated)"]
+    C -->|"Days"| D["In-the-Wild Exploitation<br/>(Active)"]
+
+    style A fill:#66d9ef,color:#1b1d1e
+    style B fill:#a6e22e,color:#1b1d1e
+    style C fill:#fd971e,color:#1b1d1e
+    style D fill:#f92572,color:#1b1d1e
+```
+
+**Action Mapping**:
+
+| Maturity | Timeline | Response |
+|----------|----------|----------|
+| Research only | Alert issued today | 30-day window |
+| Public PoC available | 2-7 days to tooling | 1-week window |
+| Tools actively updated | 1-3 weeks | 3-day window |
+| In-the-wild exploitation | Starting now | 24-hour window |
+
+### Checking Exploit Status
+
+**Tools to Check**:
+
+- [Exploit-DB](https://www.exploit-db.com/)
+- [NVD - CVE Details](https://nvd.nist.gov/)
+- [GitHub Issues in vulnerable repos](https://github.com/search)
+- [Security mailing lists](https://seclists.org/)
+- [X/Twitter security researchers](https://x.com/search) (if monitoring alerts)
+
+**Query Pattern**:
+
+```bash
+# Check for public exploits
+curl -s https://api.github.com/search/code?q=CVE-2024-XXXXX | jq '.total_count'
+
+# Count PoC repositories
+gh search repos "CVE-2024-XXXXX" --language go --language python
+```
+
+---
+
+## Blast Radius Calculation
+
+Impact isn't uniform across your infrastructure. A vulnerability that affects 1% of servers is lower risk than one affecting 80%.
+
+### Blast Radius Matrix
+
+Calculate what percentage of your systems/users are exposed:
+
+```mermaid
+graph TD
+    A["Identify Vulnerable Component"] --> B["Map Dependencies"]
+    B --> C["Count Direct Deployments"]
+    C --> D["Count Transitive Dependencies"]
+    D --> E["Calculate User/Data Exposure"]
+    E --> F["Risk Score"]
+
+    style A fill:#66d9ef,color:#1b1d1e
+    style B fill:#65d9ef,color:#1b1d1e
+    style C fill:#fd971e,color:#1b1d1e
+    style D fill:#a6e22e,color:#1b1d1e
+    style E fill:#f92572,color:#1b1d1e
+    style F fill:#f92572,color:#1b1d1e
+```
+
+### Blast Radius Multipliers
+
+| Coverage | Multiplier | Example |
+|----------|-----------|---------|
+| **One-off system** | 0.2 | Internal-only tooling used by 3 people |
+| **Team system** | 0.5 | Shared service for internal team |
+| **Business-critical** | 2.0 | Customer-facing API, payment processing |
+| **Infrastructure layer** | 3.0 | Kubernetes, load balancer, TLS library |
+| **Universal dependency** | 5.0 | Log4j-style transitive dependency in everything |
+
+### Real Example: OpenSSL CVE
+
+1. **Component**: OpenSSL in production systems
+2. **Direct**: 12 services using OpenSSL
+3. **Transitive**: 47 services via language standard library
+4. **Users affected**: 50,000 active users
+5. **Data exposure**: Customer PII + payment tokens
+6. **Multiplier**: 5.0 (infrastructure layer)
+7. **Base Risk**: 8 (CVSS) × 5.0 = **40 (HIGH)**
+
+---
+
+## Blast Radius Examples
+
+### Example 1: Python Library in Microservice
+
+**Vulnerable Package**: `pillow` (image processing)
+
+```text
+Direct systems: Payment service, content server
+Transitive: 8 services via shared dependencies
+Users affected: 80% of customer base
+Data exposure: Profile images, invoice PDFs
+Blast radius multiplier: 2.0 (business-critical)
+
+Risk calculation:
+- Base CVSS: 7.2
+- Exploitability: 2 (requires upload + processing)
+- Impact: 3 (DoS on image processing)
+- Likelihood: 2 (needs specific image file)
+- Score: (3 × 2 × 2) = 12 × 2.0 = 24 (MEDIUM)
+- Timeline: 30 days acceptable
+```
+
+### Example 2: Internal Go Tool
+
+**Vulnerable Package**: `gopkg.in/yaml.v2` (YAML parsing)
+
+```text
+Direct systems: DevOps tools, 3 engineers use it
+Transitive: 0 (pure internal)
+Users affected: Team only
+Data exposure: None (CI/CD configs only)
+Blast radius multiplier: 0.2 (one-off system)
+
+Risk calculation:
+- Base CVSS: 8.1
+- Exploitability: 1 (requires crafted YAML + local access)
+- Impact: 4 (RCE if triggered)
+- Likelihood: 1 (engineer would have to intentionally run malicious config)
+- Score: (4 × 1 × 1) = 4 × 0.2 = 0.8 (MINIMAL)
+- Timeline: 90 days acceptable, lower priority
+```
+
+### Example 3: Kubernetes Container Runtime
+
+**Vulnerable Package**: `containerd` (runtime)
+
+```text
+Direct systems: Every container in production runs on this
+Transitive: All services depend on it
+Users affected: 100% of customers
+Data exposure: All workloads (compute, storage, network)
+Blast radius multiplier: 5.0 (universal infrastructure)
+
+Risk calculation:
+- Base CVSS: 9.1
+- Exploitability: 3 (requires container access first)
+- Impact: 4 (escape to host)
+- Likelihood: 3 (active research, may be weaponized)
+- Score: (4 × 3 × 3) = 36 × 5.0 = 180 (CRITICAL - IMMEDIATE)
+- Timeline: 4-hour response target
+```
+
+---
+
+## Decision Trees
+
+### Decision Tree 1: Patch Now vs. Later
+
+```mermaid
+flowchart TD
+    A["Vulnerability Discovered"] --> B{"Exploit<br/>In The Wild?"}
+
+    B -->|Yes| C["PATCH IMMEDIATELY<br/>Target: 4-24 hours"]
+    B -->|No| D{"CVSS Score<br/>≥ 8.0?"}
+
+    D -->|Yes| E{"Blast Radius<br/>≥ 50% Systems?"}
+    E -->|Yes| F["URGENT<br/>Target: 24-72 hours"]
+    E -->|No| G["HIGH<br/>Target: 1 week"]
+
+    D -->|No| H{"Affects<br/>Production?"}
+    H -->|Yes| I["MEDIUM<br/>Target: 30 days"]
+    H -->|No| J["LOW<br/>Next maintenance window"]
+
+    style A fill:#66d9ef,color:#1b1d1e
+    style B fill:#fd971e,color:#1b1d1e
+    style C fill:#f92572,color:#1b1d1e
+    style D fill:#fd971e,color:#1b1d1e
+    style E fill:#fd971e,color:#1b1d1e
+    style F fill:#f92572,color:#1b1d1e
+    style G fill:#fd971e,color:#1b1d1e
+    style H fill:#fd971e,color:#1b1d1e
+    style I fill:#a6e22e,color:#1b1d1e
+    style J fill:#66d9ef,color:#1b1d1e
+```
+
+**Implementation Checklist for IMMEDIATE**:
+
+- [ ] Alert all on-call engineers
+- [ ] Start remediation in parallel environments
+- [ ] Identify rollback plan
+- [ ] Do NOT wait for change request approval (this is the exception)
+- [ ] Notify leadership once mitigation is in progress
+- [ ] Write incident report post-patch
+
+### Decision Tree 2: Mitigate vs. Accept vs. Transfer
+
+```mermaid
+flowchart TD
+    A["Risk Identified"] --> B{"Can be<br/>Patched?"}
+
+    B -->|Yes| C{"Patch Cost<br/>Acceptable?"}
+    C -->|Yes| D["PATCH<br/>Follow patch timeline"]
+    C -->|No| E{"Can Compensate<br/>Controls Exist?"}
+
+    B -->|No| F{"Can Compensate<br/>Controls Exist?"}
+    F -->|Yes| G["MITIGATE<br/>WAF rule, network isolation, etc."]
+    F -->|No| H{"Can Transfer<br/>Insurance/SLA?"}
+
+    E -->|Yes| G
+    E -->|No| H
+
+    H -->|Yes| I["TRANSFER<br/>Update contracts, document risk"]
+    H -->|No| J["ACCEPT<br/>Document risk, set review date"]
+
+    style A fill:#66d9ef,color:#1b1d1e
+    style B fill:#fd971e,color:#1b1d1e
+    style C fill:#fd971e,color:#1b1d1e
+    style D fill:#a6e22e,color:#1b1d1e
+    style E fill:#fd971e,color:#1b1d1e
+    style F fill:#fd971e,color:#1b1d1e
+    style G fill:#fd971e,color:#1b1d1e
+    style H fill:#fd971e,color:#1b1d1e
+    style I fill:#a6e22e,color:#1b1d1e
+    style J fill:#fd971e,color:#1b1d1e
+```
+
+### Decision Tree 3: Emergency vs. Standard Patching
+
+```mermaid
+flowchart TD
+    A["Patch Ready"] --> B{"Risk Score<br/>≥ 40?"}
+
+    B -->|Yes| C["EMERGENCY PATH"]
+    C --> D["1. Test in staging only<br/>30 minutes max"]
+    D --> E["2. Deploy with canary<br/>5% → 25% → 100%"]
+    E --> F["3. Monitor metrics closely<br/>Error rate, latency"]
+    F --> G["4. Rollback plan ready<br/>One-click revert"]
+
+    B -->|No| H["STANDARD PATH"]
+    H --> I["1. Full test suite pass<br/>Unit + integration"]
+    I --> J["2. Staging validation<br/>24 hours minimum"]
+    J --> K["3. Change request approval"]
+    K --> L["4. Deploy in standard window<br/>Next deployment slot"]
+
+    style A fill:#66d9ef,color:#1b1d1e
+    style B fill:#fd971e,color:#1b1d1e
+    style C fill:#f92572,color:#1b1d1e
+    style D fill:#f92572,color:#1b1d1e
+    style E fill:#f92572,color:#1b1d1e
+    style F fill:#f92572,color:#1b1d1e
+    style G fill:#f92572,color:#1b1d1e
+    style H fill:#a6e22e,color:#1b1d1e
+    style I fill:#a6e22e,color:#1b1d1e
+    style J fill:#a6e22e,color:#1b1d1e
+    style K fill:#a6e22e,color:#1b1d1e
+    style L fill:#a6e22e,color:#1b1d1e
+```
+
+---
+
+## Real-World Vulnerability Scenarios
+
+### Scenario 1: Log4Shell (CVE-2021-44228)
+
+**The Facts**:
+
+- CVSS: 10.0 CRITICAL
+- Attack Vector: Network
+- Prerequisites: None (unauthenticated RCE)
+- Exploitation: Trivial (public PoC within hours)
+- Status: In-the-wild within 24 hours of disclosure
+
+**Risk Assessment**:
+
+| Factor | Score | Reasoning |
+|--------|-------|-----------|
+| Impact | 4 | Complete system compromise, RCE |
+| Likelihood | 4 | Active exploitation, trivial to weaponize |
+| Exploitability | 4 | No auth, network-adjacent, <5 min PoC |
+| Blast Radius Multiplier | 5.0 | Transitive dependency in 90% of Java services |
+| **Total Risk** | **320 (CRITICAL)** | |
+
+**Decision**: **Patch within 4 hours**
+
+**Execution**:
+
+1. Identify all Log4j-dependent services (automated scan)
+2. Stage updates in parallel (don't serialize)
+3. Canary deploy 5% → 25% → 100% within 2 hours
+4. Monitor error rates and exceptions
+5. Rollback plan: Previous version tagged in git, ready to deploy
+
+**Why This Speed**:
+
+- Active exploitation started immediately upon disclosure
+- No complex prerequisites; unauthenticated RCE
+- Affects backbone of infrastructure (90% coverage)
+- Cost of patch: ~30 minutes per service
+- Cost of breach: Complete infrastructure compromise
+
+---
+
+### Scenario 2: CVE-2024-1234 (Hypothetical Node.js Package)
+
+**The Facts**:
+
+- Package: `express-session` (web session middleware)
+- CVSS: 7.5
+- Vulnerability: Session fixation in specific configuration
+- Requirements: User must be using non-default session store settings
+- Exploitation: No public PoC yet
+
+**Risk Assessment**:
+
+| Factor | Score | Reasoning |
+|--------|-------|-----------|
+| Impact | 3 | Session hijacking possible, user auth bypass |
+| Likelihood | 2 | Known attack path, but requires specific config |
+| Exploitability | 2 | Public PoC not available yet, requires setup |
+| Your Blast Radius | 1.5 | Only 3 services use this package; standard config |
+| **Total Risk** | **13.5 (LOW-MEDIUM)** | |
+
+**Decision**: **Schedule for next sprint (7-14 days)**
+
+**Execution**:
+
+1. Audit which services use this package and which use vulnerable config
+2. Add to sprint planning, estimate ~2 hours per service
+3. Create test case for the specific configuration
+4. Deploy in standard change request window
+5. Monitor session metrics post-deploy
+
+**Why This Timeline**:
+
+- No public exploits exist (lowers likelihood)
+- Requires specific non-standard configuration (limits blast radius)
+- Affects only 3 services, not infrastructure backbone
+- One-week delay acceptable; risk is low
+
+---
+
+### Scenario 3: CVE-2024-5678 (Kubernetes Privilege Escalation)
+
+**The Facts**:
+
+- Vulnerability: Privilege escalation in Kubernetes kubelet
+- CVSS: 8.4
+- Requirements: Pod with specific Linux capability
+- Exploitation: Requires knowledge of Kubernetes internals
+- Status: PoC released; not yet in standard pentesting tools
+
+**Risk Assessment**:
+
+| Factor | Score | Reasoning |
+|--------|-------|-----------|
+| Impact | 4 | Node compromise, lateral movement to host |
+| Likelihood | 2 | Known path, but requires specific pod setup |
+| Exploitability | 2 | PoC exists, but not automated; requires K8s knowledge |
+| Your Blast Radius | 4.0 | ALL pods affected IF they have the capability |
+| **Total Risk** | **64 (CRITICAL)** | |
+
+**Decision**: **Patch within 48 hours** (Emergency path)
+
+**Execution**:
+
+1. **Immediate (Hour 0-2)**:
+   - Disable the vulnerable Linux capability cluster-wide (temporary mitigation)
+   - This prevents exploitation immediately
+   - Some workloads may need reconfiguration
+
+2. **Short-term (Hour 2-24)**:
+   - Update kubelet to patched version
+   - Test in staging environment
+   - Prepare canary deployment plan
+
+3. **Deployment (Hour 24-48)**:
+   - Use managed Kubernetes auto-updates if available
+   - Manual node drain and update if necessary
+   - Monitor kubelet logs for anomalies
+
+**Why This Approach**:
+
+- Blast radius is ALL nodes (infrastructure layer)
+- Can't accept this risk even with workaround
+- But can reduce urgency from 4 hours to 48 hours via compensating control (disable capability)
+- Buying time to test properly without exposing infrastructure
+
+---
+
+### Scenario 4: CVE-2024-9999 (Transitive Dependency)
+
+**The Facts**:
+
+- Vulnerable package: `old-crypto-lib@1.2.3`
+- Used by: `payment-sdk@3.0` (your payment library)
+- Used by: Your backend service
+- CVSS: 6.2
+- Attack: Memory corruption in specific crypto operation
+- Status: Research PoC only
+
+**Risk Assessment**:
+
+| Factor | Score | Reasoning |
+|--------|-------|-----------|
+| Impact | 3 | Potential payment data exposure |
+| Likelihood | 1 | No public exploit, requires specific crypto operation |
+| Exploitability | 2 | Attack requires custom implementation |
+| Your Blast Radius | 2.5 | Affects payment processing only |
+| **Total Risk** | **7.5 (LOW)** | |
+
+**BUT**: This is a transitive dependency. The challenge:
+
+```text
+your-service → payment-sdk (3.0) → old-crypto-lib (1.2.3)
+                   ↓
+            Check: Does payment-sdk 3.1+ exist?
+            YES: Upgrade payment-sdk only
+            NO: Can we use payment-sdk from source? Patch ourselves?
+```
+
+**Decision**: **Upgrade payment-sdk in next release (30 days)**
+
+**BUT If payment-sdk hasn't updated yet**:
+
+```text
+Option 1: Wait for payment-sdk maintainer (risky if long delay)
+Option 2: Fork and patch ourselves (maintenance burden)
+Option 3: Implement compensating control (don't use vulnerable crypto path)
+Option 4: Review if we actually use the vulnerable function
+```
+
+**Execution**:
+
+1. Check `payment-sdk` GitHub issues (already reported?)
+2. Contact maintainer; offer help if needed
+3. If no movement in 2 weeks, fork and patch
+4. Add test case for the vulnerable crypto operation
+5. Monitor for payment-sdk update
+
+---
+
+## Remediation Cost vs. Risk Analysis
+
+Not all patches are equal. Sometimes the "fix" introduces more risk than the vulnerability.
+
+### Cost Calculation Framework
+
+```text
+Remediation Cost = (Testing Time + Deployment Time + Monitoring Time + Rollback Risk)
+Risk Reduction = (Current Risk Score) - (Residual Risk After Patch)
+
+Priority = Risk Reduction / Remediation Cost
+```
+
+**Examples**:
+
+#### High Priority (Simple Patch)
+
+```text
+Vulnerability: Minor DoS in deprecated endpoint
+Risk Score: 8
+Residual Risk: 2 (disable endpoint, 1 hour work)
+Remediation Cost: 2 hours (simple delete)
+Priority: 6 / 2 = 3.0
+
+Decision: Patch immediately
+```
+
+#### Medium Priority (Moderate Patch)
+
+```text
+Vulnerability: Privilege escalation in sudo
+Risk Score: 25
+Residual Risk: 8 (configure sudo sudoers, 4 hours)
+Remediation Cost: 8 hours (update, test, stage, deploy)
+Priority: 17 / 8 = 2.1
+
+Decision: Plan for next sprint
+```
+
+#### Low Priority (Complex Patch)
+
+```text
+Vulnerability: Deprecated library with workaround
+Risk Score: 12
+Residual Risk: 2 (compensating control works, no patch needed)
+Remediation Cost: 40 hours (upgrade, retest, refactor code)
+Priority: 10 / 40 = 0.25
+
+Decision: Accept risk, use compensating control
+```
+
+---
+
+## Implementation Checklist
+
+### For Every Vulnerability
+
+- [ ] **Score it**: Calculate risk using Impact × Likelihood × Exploitability matrix
+- [ ] **Blast it**: Determine what % of systems are affected
+- [ ] **Exploit check**: Is there public PoC? In-the-wild exploitation?
+- [ ] **Decide path**: Use decision tree for patch-now vs. later
+- [ ] **Plan work**: Estimate testing + deployment + rollback time
+- [ ] **Get approval**: Document decision and risk acceptance
+- [ ] **Execute**: Follow emergency or standard path
+- [ ] **Monitor**: Watch error rates, security logs, metrics
+- [ ] **Verify**: Confirm patch was applied and vulnerability is fixed
+- [ ] **Document**: Record decision, timeline, lessons learned
+
+### For Patch Emergencies (Risk > 40)
+
+- [ ] Alert on-call team immediately
+- [ ] Start remediation WITHOUT waiting for approvals
+- [ ] Inform leadership (after starting mitigation, not before)
+- [ ] Have rollback plan ready before deploying
+- [ ] Use canary deployment (don't go all-in on untested patch)
+- [ ] Monitor continuously for 6 hours post-deploy
+- [ ] Write incident report immediately after stabilization
+- [ ] Schedule blameless postmortem within 24 hours
+
+---
+
+## Metrics to Track
+
+### Speed Metrics
+
+- **Mean Time to Detect (MTTD)**: When did you learn about the vulnerability?
+- **Mean Time to Patch (MTBP)**: How long from disclosure to applied patch?
+- **Critical Patch Speed**: What's your fastest emergency patch time?
+
+**Targets**:
+
+- MTTD: < 24 hours (automated CVE alerts)
+- MTBP (Critical): < 4 hours
+- MTBP (High): < 72 hours
+- MTBP (Medium): < 30 days
+
+### Quality Metrics
+
+- **Rollback Rate**: How often do patches require reverting?
+- **Security Regression Rate**: Do patches introduce new vulnerabilities?
+- **Test Coverage**: Are vulnerable code paths covered by tests?
+
+**Targets**:
+
+- Rollback rate: < 2%
+- Security regressions: 0
+- Test coverage: 80%+ on critical paths
+
+### Risk Metrics
+
+- **Average Risk Score of Unpatched Vulnerabilities**: How much risk are you carrying?
+- **Distribution by Severity**: Are most vulnerabilities low/medium or high/critical?
+- **Time-to-Patch by Risk Level**: Do you actually patch critical things faster?
+
+---
+
+## Glossary
+
+**Blast Radius**: The percentage of your systems, users, or data exposed if the vulnerability is exploited.
+
+**CVSS**: Common Vulnerability Scoring System. A standardized 0–10 scale for vulnerability severity.
+
+**Exploitability**: How easy is it to actually exploit the vulnerability? CVSS component; engineering interpretation matters more than the score.
+
+**Likelihood**: Probability that the vulnerability will be exploited in your environment. Depends on threat landscape, not just the vulnerability itself.
+
+**MTTD**: Mean Time to Detect. How long before you know about a vulnerability?
+
+**MTBP**: Mean Time to Patch. How long from disclosure to deployed fix in production.
+
+**Risk Score**: Composite metric combining impact, likelihood, exploitability, and blast radius.
+
+**Transitive Dependency**: A library that your library depends on (not directly included by you, but still your responsibility to manage).
+
+---
+
+## Further Reading
+
+- [CVSS Specification](https://www.first.org/cvss/v3.1/specification-document) - Official CVSS 3.1 docs
+- [NVD CVE Database](https://nvd.nist.gov/vuln) - National Vulnerability Database
+- [OWASP Risk Rating](https://owasp.org/www-project-risk-rating-manager/) - Methodology for rating vulnerabilities
+- [Security Operations Decision Making](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5) - NIST security controls framework

@@ -303,10 +303,4 @@ See CONTRIBUTING.md in the project root for guidelines on documenting new patter
 
 ## Tags
 
-Browse all content tagged with:
-
-- [patterns](/tags/#patterns) - All pattern content
-- [automation](/tags/#automation) - Automation patterns
-- [idempotency](/tags/#idempotency) - Idempotent operations
-- [three-stage](/tags/#three-stage) - Three-stage design
-- [hub-and-spoke](/tags/#hub-and-spoke) - Hub-and-spoke architecture
+Browse all content tagged with patterns, automation, idempotency, three-stage, and hub-and-spoke on the [Tags](../tags.md) page.
