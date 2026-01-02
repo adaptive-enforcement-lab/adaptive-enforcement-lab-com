@@ -312,6 +312,7 @@ plugins:
       post_date_format: yyyy-MM-dd
       archive_date_format: yyyy-MM
       draft_if_future_date: true
+      post_readtime: true
 markdown_extensions:
   - admonition
   - attr_list
