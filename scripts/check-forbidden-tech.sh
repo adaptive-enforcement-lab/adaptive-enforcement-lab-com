@@ -20,6 +20,8 @@ EXCEPTION_PATHS=(
     "docs/enforce/pre-commit-hooks/pre-commit-hooks-patterns.md"  # Examples of hook violations
     "docs/enforce/status-checks/index.md"  # CI/CD workflow examples showing what to validate
     "docs/secure/sbom/sbom-generation.md"  # SBOM tooling examples (docker buildx has SBOM support)
+    "docs/secure/cloud-native/gke-hardening/"  # Infrastructure code examples for GKE
+    "docs/enforce/implementation-roadmap/hardening-checklist/"  # SDLC hardening patterns showing what to validate
 )
 
 # Forbidden patterns by category

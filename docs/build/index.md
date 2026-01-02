@@ -287,9 +287,4 @@ Before every release:
 
 ## Tags
 
-Browse all content tagged with:
-
-- [ci-cd](/tags/#ci-cd) - All CI/CD content
-- [automation](/tags/#automation) - Automated build workflows
-- [testing](/tags/#testing) - Testing strategies
-- [go](/tags/#go) - Go development
+Browse all content tagged with ci-cd, automation, testing, and go on the [Tags](../tags.md) page.

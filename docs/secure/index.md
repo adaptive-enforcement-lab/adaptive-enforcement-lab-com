@@ -184,9 +184,4 @@ See [Enforce](../enforce/index.md) for enforcement mechanisms.
 
 ## Tags
 
-Browse all content tagged with:
-
-- [security](/tags/#security) - All security-related content
-- [automation](/tags/#automation) - Automated security workflows
-- [supply-chain](/tags/#supply-chain) - Supply chain security
-- [compliance](/tags/#compliance) - Compliance and audit
+Browse all content tagged with security, automation, supply-chain, and compliance on the [Tags](../tags.md) page.
