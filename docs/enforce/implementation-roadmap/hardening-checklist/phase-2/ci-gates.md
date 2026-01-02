@@ -288,9 +288,9 @@ permissions:
 
 ## Related Patterns
 
-- **[Evidence Collection](phase-2-evidence-collection.md)** - Automated archival details
-- **[Phase 2 Overview →](phase-2-automation.md)** - Automation phase summary
-- **[Phase 3: Runtime →](phase-3-runtime.md)** - Production policy enforcement
+- **[Evidence Collection](evidence-collection.md)** - Automated archival details
+- **[Phase 2 Overview →](index.md)** - Automation phase summary
+- **[Phase 3: Runtime →](../phase-3/index.md)** - Production policy enforcement
 
 ---
 

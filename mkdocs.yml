@@ -557,23 +557,23 @@ nav:
           - Hardening Checklist:
               - enforce/implementation-roadmap/hardening-checklist/index.md
               - "Phase 1: Foundation":
-                  - enforce/implementation-roadmap/hardening-checklist/phase-1-foundation.md
-                  - Pre-commit Hooks: enforce/implementation-roadmap/hardening-checklist/phase-1-pre-commit-hooks.md
-                  - Branch Protection: enforce/implementation-roadmap/hardening-checklist/phase-1-branch-protection.md
+                  - enforce/implementation-roadmap/hardening-checklist/phase-1/index.md
+                  - Pre-commit Hooks: enforce/implementation-roadmap/hardening-checklist/phase-1/pre-commit-hooks.md
+                  - Branch Protection: enforce/implementation-roadmap/hardening-checklist/phase-1/branch-protection.md
               - "Phase 2: Automation":
-                  - enforce/implementation-roadmap/hardening-checklist/phase-2-automation.md
-                  - CI Gates: enforce/implementation-roadmap/hardening-checklist/phase-2-ci-gates.md
-                  - Evidence Collection: enforce/implementation-roadmap/hardening-checklist/phase-2-evidence-collection.md
+                  - enforce/implementation-roadmap/hardening-checklist/phase-2/index.md
+                  - CI Gates: enforce/implementation-roadmap/hardening-checklist/phase-2/ci-gates.md
+                  - Evidence Collection: enforce/implementation-roadmap/hardening-checklist/phase-2/evidence-collection.md
               - "Phase 3: Runtime":
-                  - enforce/implementation-roadmap/hardening-checklist/phase-3-runtime.md
-                  - Policy Enforcement: enforce/implementation-roadmap/hardening-checklist/phase-3-policy-enforcement.md
-                  - Advanced Policies: enforce/implementation-roadmap/hardening-checklist/phase-3-advanced-policies.md
-                  - Rollout Strategy: enforce/implementation-roadmap/hardening-checklist/phase-3-rollout.md
+                  - enforce/implementation-roadmap/hardening-checklist/phase-3/index.md
+                  - Policy Enforcement: enforce/implementation-roadmap/hardening-checklist/phase-3/policy-enforcement.md
+                  - Advanced Policies: enforce/implementation-roadmap/hardening-checklist/phase-3/advanced-policies.md
+                  - Rollout Strategy: enforce/implementation-roadmap/hardening-checklist/phase-3/rollout.md
               - "Phase 4: Advanced":
-                  - enforce/implementation-roadmap/hardening-checklist/phase-4-advanced.md
-                  - Audit Evidence: enforce/implementation-roadmap/hardening-checklist/phase-4-audit-evidence.md
-                  - Compliance: enforce/implementation-roadmap/hardening-checklist/phase-4-compliance.md
-                  - Audit Simulation: enforce/implementation-roadmap/hardening-checklist/phase-4-audit-simulation.md
+                  - enforce/implementation-roadmap/hardening-checklist/phase-4/index.md
+                  - Audit Evidence: enforce/implementation-roadmap/hardening-checklist/phase-4/audit-evidence.md
+                  - Compliance: enforce/implementation-roadmap/hardening-checklist/phase-4/compliance.md
+                  - Audit Simulation: enforce/implementation-roadmap/hardening-checklist/phase-4/audit-simulation.md
       - Policy Template Library:
           - enforce/policy-as-code/template-library/index.md
           - Kyverno Templates:

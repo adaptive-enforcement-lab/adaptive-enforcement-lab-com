@@ -22,9 +22,9 @@ Prove compliance through continuous evidence collection and validation. Auditors
 
 Phase 4 completes the implementation with three critical areas:
 
-1. **[Audit Evidence Collection](phase-4-audit-evidence.md)** - Automated archival of branch protection, PR reviews, signatures, SBOMs
-2. **[Compliance Validation](phase-4-compliance.md)** - OpenSSF Scorecard, Best Practices Badge, SLSA verification, license checks
-3. **[Audit Simulation](phase-4-audit-simulation.md)** - Mock audit timeline, gap analysis, remediation
+1. **[Audit Evidence Collection](audit-evidence.md)** - Automated archival of branch protection, PR reviews, signatures, SBOMs
+2. **[Compliance Validation](compliance.md)** - OpenSSF Scorecard, Best Practices Badge, SLSA verification, license checks
+3. **[Audit Simulation](audit-simulation.md)** - Mock audit timeline, gap analysis, remediation
 
 These controls provide continuous proof of compliance.
 
@@ -44,7 +44,7 @@ Automated archival that ensures historical evidence exists when auditors ask.
 - Workflow run logs
 - SBOM and security scan results
 
-**[View Audit Evidence Details →](phase-4-audit-evidence.md)**
+**[View Audit Evidence Details →](audit-evidence.md)**
 
 ---
 
@@ -60,7 +60,7 @@ Third-party verification and automated compliance reporting.
 - Dependency license compliance
 - Monthly compliance report generation
 
-**[View Compliance Validation Details →](phase-4-compliance.md)**
+**[View Compliance Validation Details →](compliance.md)**
 
 ---
 
@@ -75,7 +75,7 @@ Mock audit process to identify and fix gaps before real auditors arrive.
 - Gap analysis (Week 3)
 - Remediation and verification (Week 4)
 
-**[View Audit Simulation Details →](phase-4-audit-simulation.md)**
+**[View Audit Simulation Details →](audit-simulation.md)**
 
 ---
 
@@ -140,11 +140,11 @@ With Phase 4 complete, you have:
 
 ## Related Patterns
 
-- **[Audit Evidence Collection](../../audit-compliance/audit-evidence.md)** - Evidence storage details
-- **[OpenSSF Scorecard](../../../secure/scorecard/scorecard-compliance.md)** - Scorecard configuration
-- **[SLSA Provenance](../../slsa-provenance/slsa-provenance.md)** - Build attestation
+- **[Audit Evidence Collection](../../../audit-compliance/audit-evidence.md)** - Evidence storage details
+- **[OpenSSF Scorecard](../../../../secure/scorecard/scorecard-compliance.md)** - Scorecard configuration
+- **[SLSA Provenance](../../../slsa-provenance/slsa-provenance.md)** - Build attestation
 - **[Implementation Roadmap Overview](index.md)** - Complete roadmap
-- **[Phase 3: Runtime](phase-3-runtime.md)** - Runtime enforcement
+- **[Phase 3: Runtime](../phase-3/index.md)** - Runtime enforcement
 
 ---
 

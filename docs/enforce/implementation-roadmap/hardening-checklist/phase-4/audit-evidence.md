@@ -228,9 +228,9 @@ done
 
 ## Related Patterns
 
-- **[Compliance Validation](phase-4-compliance.md)** - OpenSSF Scorecard, SLSA verification
-- **[Audit Simulation](phase-4-audit-simulation.md)** - Mock audit timeline
-- **[Phase 4 Overview →](phase-4-advanced.md)** - Advanced phase summary
+- **[Compliance Validation](compliance.md)** - OpenSSF Scorecard, SLSA verification
+- **[Audit Simulation](audit-simulation.md)** - Mock audit timeline
+- **[Phase 4 Overview →](index.md)** - Advanced phase summary
 
 ---
 

@@ -106,9 +106,9 @@ kubectl get policyreport -A -o json | \
 
 ## Related Patterns
 
-- **[Policy Enforcement](phase-3-policy-enforcement.md)** - Core runtime policies
-- **[Advanced Policies](phase-3-advanced-policies.md)** - Extended controls
-- **[Phase 3 Overview →](phase-3-runtime.md)** - Runtime phase summary
+- **[Policy Enforcement](policy-enforcement.md)** - Core runtime policies
+- **[Advanced Policies](advanced-policies.md)** - Extended controls
+- **[Phase 3 Overview →](index.md)** - Runtime phase summary
 
 ---
 

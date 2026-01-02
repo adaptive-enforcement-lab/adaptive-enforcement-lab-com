@@ -224,8 +224,8 @@ Run manually before first commit: pre-commit run --all-files
 
 ## Related Patterns
 
-- **[Branch Protection →](phase-1-branch-protection.md)** - GitHub repository protection
-- **[Phase 1 Overview →](phase-1-foundation.md)** - Foundation phase summary
+- **[Branch Protection →](branch-protection.md)** - GitHub repository protection
+- **[Phase 1 Overview →](index.md)** - Foundation phase summary
 - **[Implementation Roadmap](index.md)** - Complete roadmap
 
 ---

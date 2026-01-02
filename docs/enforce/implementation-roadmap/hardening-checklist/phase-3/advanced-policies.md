@@ -135,9 +135,9 @@ spec:
 
 ## Related Patterns
 
-- **[Policy Enforcement](phase-3-policy-enforcement.md)** - Core runtime policies
-- **[Policy Rollout Strategy](phase-3-rollout.md)** - Deployment approach
-- **[Phase 3 Overview →](phase-3-runtime.md)** - Runtime phase summary
+- **[Policy Enforcement](policy-enforcement.md)** - Core runtime policies
+- **[Policy Rollout Strategy](rollout.md)** - Deployment approach
+- **[Phase 3 Overview →](index.md)** - Runtime phase summary
 
 ---
 

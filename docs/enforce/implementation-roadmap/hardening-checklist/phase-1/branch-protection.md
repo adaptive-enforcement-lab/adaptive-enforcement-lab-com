@@ -227,9 +227,9 @@ Make it impossible to merge without meeting security criteria.
 
 ## Related Patterns
 
-- **[Pre-commit Hooks](phase-1-pre-commit-hooks.md)** - Local enforcement
-- **[Phase 1 Overview →](phase-1-foundation.md)** - Foundation phase summary
-- **[Phase 2: Automation →](phase-2-automation.md)** - CI/CD gates
+- **[Pre-commit Hooks](pre-commit-hooks.md)** - Local enforcement
+- **[Phase 1 Overview →](index.md)** - Foundation phase summary
+- **[Phase 2: Automation →](../phase-2/index.md)** - CI/CD gates
 
 ---
 

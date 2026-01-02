@@ -22,9 +22,9 @@ Control what runs in production, not just what gets committed. Policy is enforce
 
 Phase 3 extends enforcement to runtime through three critical areas:
 
-1. **[Policy Enforcement](phase-3-policy-enforcement.md)** - Core Kyverno policies for resource limits, image verification, security context
-2. **[Advanced Policies](phase-3-advanced-policies.md)** - Namespace quotas, pod security standards, network policies
-3. **[Rollout Strategy](phase-3-rollout.md)** - Audit-first deployment approach and metrics
+1. **[Policy Enforcement](policy-enforcement.md)** - Core Kyverno policies for resource limits, image verification, security context
+2. **[Advanced Policies](advanced-policies.md)** - Namespace quotas, pod security standards, network policies
+3. **[Rollout Strategy](rollout.md)** - Audit-first deployment approach and metrics
 
 These controls ensure only compliant workloads run in production.
 
@@ -44,7 +44,7 @@ Core admission control policies that block non-compliant pods.
 - Security context requirements (non-root, read-only)
 - Policy Reporter dashboard
 
-**[View Policy Enforcement Details →](phase-3-policy-enforcement.md)**
+**[View Policy Enforcement Details →](policy-enforcement.md)**
 
 ---
 
@@ -59,7 +59,7 @@ Extended runtime controls for comprehensive security.
 - Network policy requirements
 - System namespace exclusions
 
-**[View Advanced Policies Details →](phase-3-advanced-policies.md)**
+**[View Advanced Policies Details →](advanced-policies.md)**
 
 ---
 
@@ -74,7 +74,7 @@ Safe deployment approach with audit-first methodology.
 - Enforce mode activation (Week 3)
 - Metrics tracking and tuning (Week 4)
 
-**[View Rollout Strategy Details →](phase-3-rollout.md)**
+**[View Rollout Strategy Details →](rollout.md)**
 
 ---
 
@@ -143,7 +143,7 @@ With Phase 3 complete, you have:
 - Security context enforcement
 - Policy observability dashboard
 
-**[Proceed to Phase 4: Advanced →](phase-4-advanced.md)**
+**[Proceed to Phase 4: Advanced →](../phase-4/index.md)**
 
 Phase 4 completes the implementation with audit evidence collection, compliance validation, and OpenSSF Scorecard monitoring.
 
@@ -151,12 +151,12 @@ Phase 4 completes the implementation with audit evidence collection, compliance 
 
 ## Related Patterns
 
-- **[Policy-as-Code with Kyverno](../../policy-as-code/kyverno/index.md)** - Detailed policy configuration
-- **[Pod Security Standards](../../../secure/cloud-native/gke-hardening/runtime-security/pod-security-standards.md)** - Security context requirements
-- **[Runtime Security](../../../secure/cloud-native/gke-hardening/runtime-security/index.md)** - Resource limits and runtime controls
+- **[Policy-as-Code with Kyverno](../../../policy-as-code/kyverno/index.md)** - Detailed policy configuration
+- **[Pod Security Standards](../../../../secure/cloud-native/gke-hardening/runtime-security/pod-security-standards.md)** - Security context requirements
+- **[Runtime Security](../../../../secure/cloud-native/gke-hardening/runtime-security/index.md)** - Resource limits and runtime controls
 - **[Implementation Roadmap Overview](index.md)** - Complete roadmap
-- **[Phase 2: Automation](phase-2-automation.md)** - CI/CD gates
-- **[Phase 4: Advanced →](phase-4-advanced.md)** - Audit evidence and compliance
+- **[Phase 2: Automation](../phase-2/index.md)** - CI/CD gates
+- **[Phase 4: Advanced →](../phase-4/index.md)** - Audit evidence and compliance
 
 ---
 

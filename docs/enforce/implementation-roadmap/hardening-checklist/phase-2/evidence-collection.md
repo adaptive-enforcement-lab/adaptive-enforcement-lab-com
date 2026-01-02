@@ -143,9 +143,9 @@ gh api repos/org/repo/branches/main/protection | \
 
 ## Related Patterns
 
-- **[CI/CD Gates](phase-2-ci-gates.md)** - Pipeline enforcement
-- **[Phase 2 Overview →](phase-2-automation.md)** - Automation phase summary
-- **[Phase 4: Advanced →](phase-4-advanced.md)** - Advanced evidence collection
+- **[CI/CD Gates](ci-gates.md)** - Pipeline enforcement
+- **[Phase 2 Overview →](index.md)** - Automation phase summary
+- **[Phase 4: Advanced →](../phase-4/index.md)** - Advanced evidence collection
 
 ---
 

@@ -22,8 +22,8 @@ Establish local development controls and repository protection. These controls p
 
 Phase 1 establishes the foundation of SDLC security through two critical control layers:
 
-1. **[Pre-commit Hooks](phase-1-pre-commit-hooks.md)** - Block bad code locally before git commit
-2. **[Branch Protection](phase-1-branch-protection.md)** - Prevent unauthorized merges at repository level
+1. **[Pre-commit Hooks](pre-commit-hooks.md)** - Block bad code locally before git commit
+2. **[Branch Protection](branch-protection.md)** - Prevent unauthorized merges at repository level
 
 These controls work together to create defense-in-depth at the source code level.
 
@@ -43,7 +43,7 @@ Local enforcement that prevents secrets, policy violations, and code quality iss
 - Custom policy enforcement hooks
 - Organization-wide distribution
 
-**[View Pre-commit Hooks Details →](phase-1-pre-commit-hooks.md)**
+**[View Pre-commit Hooks Details →](pre-commit-hooks.md)**
 
 ---
 
@@ -60,7 +60,7 @@ Repository-level enforcement that makes it impossible to merge without meeting s
 - Commit signature requirements
 - Force push and deletion prevention
 
-**[View Branch Protection Details →](phase-1-branch-protection.md)**
+**[View Branch Protection Details →](branch-protection.md)**
 
 ---
 
@@ -114,7 +114,7 @@ With Phase 1 complete, you have:
 - Required reviews and signatures on all commits
 - Automated distribution ensuring organization-wide coverage
 
-**[Proceed to Phase 2: Automation →](phase-2-automation.md)**
+**[Proceed to Phase 2: Automation →](../phase-2/index.md)**
 
 Phase 2 builds on this foundation by adding CI/CD gates, SBOM generation, vulnerability scanning, and automated evidence collection.
 
@@ -122,10 +122,10 @@ Phase 2 builds on this foundation by adding CI/CD gates, SBOM generation, vulner
 
 ## Related Patterns
 
-- **[Pre-commit Security Gates](../../pre-commit-hooks/pre-commit-hooks.md)** - Detailed hook configuration
-- **[Branch Protection Enforcement](../../branch-protection/branch-protection.md)** - GitHub API automation
+- **[Pre-commit Security Gates](../../../pre-commit-hooks/pre-commit-hooks.md)** - Detailed hook configuration
+- **[Branch Protection Enforcement](../../../branch-protection/branch-protection.md)** - GitHub API automation
 - **[Implementation Roadmap Overview](index.md)** - Complete roadmap
-- **[Phase 2: Automation →](phase-2-automation.md)** - CI/CD gates
+- **[Phase 2: Automation →](../phase-2/index.md)** - CI/CD gates
 
 ---
 

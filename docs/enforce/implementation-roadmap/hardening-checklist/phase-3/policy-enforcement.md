@@ -281,9 +281,9 @@ pattern:
 
 ## Related Patterns
 
-- **[Advanced Runtime Policies](phase-3-advanced-policies.md)** - Pod security standards, network policies, quotas
-- **[Policy Rollout Strategy](phase-3-rollout.md)** - Audit-first deployment approach
-- **[Phase 3 Overview →](phase-3-runtime.md)** - Runtime phase summary
+- **[Advanced Runtime Policies](advanced-policies.md)** - Pod security standards, network policies, quotas
+- **[Policy Rollout Strategy](rollout.md)** - Audit-first deployment approach
+- **[Phase 3 Overview →](index.md)** - Runtime phase summary
 
 ---
 

@@ -22,8 +22,8 @@ Automate security, quality, and compliance checks in the pipeline. Tests that fa
 
 Phase 2 extends enforcement into the CI/CD pipeline through two critical areas:
 
-1. **[CI/CD Gates](phase-2-ci-gates.md)** - Required checks, SBOM generation, vulnerability scanning, SLSA provenance
-2. **[Evidence Collection](phase-2-evidence-collection.md)** - Automated archival and metrics tracking
+1. **[CI/CD Gates](ci-gates.md)** - Required checks, SBOM generation, vulnerability scanning, SLSA provenance
+2. **[Evidence Collection](evidence-collection.md)** - Automated archival and metrics tracking
 
 These controls ensure failing builds never reach production and provide audit evidence.
 
@@ -43,7 +43,7 @@ Pipeline enforcement that blocks merges with failing tests, vulnerabilities, or 
 - SLSA provenance for releases
 - Evidence storage integration
 
-**[View CI/CD Gates Details →](phase-2-ci-gates.md)**
+**[View CI/CD Gates Details →](ci-gates.md)**
 
 ---
 
@@ -59,7 +59,7 @@ Automated archival of branch protection configs, PR reviews, and build artifacts
 - Integration with branch protection
 - Metrics tracking
 
-**[View Evidence Collection Details →](phase-2-evidence-collection.md)**
+**[View Evidence Collection Details →](evidence-collection.md)**
 
 ---
 
@@ -116,7 +116,7 @@ With Phase 2 complete, you have:
 - SLSA provenance for all releases
 - Automated evidence collection
 
-**[Proceed to Phase 3: Runtime →](phase-3-runtime.md)**
+**[Proceed to Phase 3: Runtime →](../phase-3/index.md)**
 
 Phase 3 extends enforcement to runtime by controlling what can actually deploy to production.
 
@@ -124,12 +124,12 @@ Phase 3 extends enforcement to runtime by controlling what can actually deploy t
 
 ## Related Patterns
 
-- **[SLSA Provenance](../../slsa-provenance/slsa-provenance.md)** - Build attestation details
-- **[SBOM Generation](../../../secure/sbom/sbom-generation.md)** - Software Bill of Materials
-- **[Vulnerability Scanning](../../../secure/vulnerability-scanning/vulnerability-scanning.md)** - Container image scanning
+- **[SLSA Provenance](../../../slsa-provenance/slsa-provenance.md)** - Build attestation details
+- **[SBOM Generation](../../../../secure/sbom/sbom-generation.md)** - Software Bill of Materials
+- **[Vulnerability Scanning](../../../../secure/vulnerability-scanning/vulnerability-scanning.md)** - Container image scanning
 - **[Implementation Roadmap Overview](index.md)** - Complete roadmap
-- **[Phase 1: Foundation](phase-1-foundation.md)** - Pre-commit and branch protection
-- **[Phase 3: Runtime →](phase-3-runtime.md)** - Production policy enforcement
+- **[Phase 1: Foundation](../phase-1/index.md)** - Pre-commit and branch protection
+- **[Phase 3: Runtime →](../phase-3/index.md)** - Production policy enforcement
 
 ---
 

@@ -152,9 +152,9 @@ Fix all gaps before real audit.
 
 ## Related Patterns
 
-- **[Audit Evidence](phase-4-audit-evidence.md)** - Evidence collection
-- **[Compliance Validation](phase-4-compliance.md)** - Scorecard and verification
-- **[Phase 4 Overview →](phase-4-advanced.md)** - Advanced phase summary
+- **[Audit Evidence](audit-evidence.md)** - Evidence collection
+- **[Compliance Validation](compliance.md)** - Scorecard and verification
+- **[Phase 4 Overview →](index.md)** - Advanced phase summary
 
 ---
 

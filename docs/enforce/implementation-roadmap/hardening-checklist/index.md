@@ -22,10 +22,10 @@ Every control in this roadmap is actionable and verifiable. No vague policies. N
 
 This implementation roadmap provides a structured approach to hardening your Software Development Lifecycle (SDLC) across four critical phases:
 
-1. **[Phase 1: Foundation](phase-1-foundation.md)** - Local enforcement and branch protection
-2. **[Phase 2: Automation](phase-2-automation.md)** - CI/CD gates and policy automation
-3. **[Phase 3: Runtime](phase-3-runtime.md)** - Production policy enforcement
-4. **[Phase 4: Advanced](phase-4-advanced.md)** - Audit evidence and compliance validation
+1. **[Phase 1: Foundation](phase-1/index.md)** - Local enforcement and branch protection
+2. **[Phase 2: Automation](phase-2/index.md)** - CI/CD gates and policy automation
+3. **[Phase 3: Runtime](phase-3/index.md)** - Production policy enforcement
+4. **[Phase 4: Advanced](phase-4/index.md)** - Audit evidence and compliance validation
 
 Each phase builds on the previous one, creating defense-in-depth through multiple enforcement layers.
 
@@ -39,12 +39,12 @@ Establish local development controls and repository protection.
 
 **Phase Components**:
 
-- **[Pre-commit Hooks](phase-1-pre-commit-hooks.md)** - Secrets detection, linting, policy enforcement
-- **[Branch Protection](phase-1-branch-protection.md)** - Required reviews, status checks, admin enforcement
+- **[Pre-commit Hooks](phase-1/pre-commit-hooks.md)** - Secrets detection, linting, policy enforcement
+- **[Branch Protection](phase-1/branch-protection.md)** - Required reviews, status checks, admin enforcement
 
 **Why This Phase Matters**: If secrets enter git history, rotation doesn't help. If admins can bypass reviews, the policy is worthless. Foundation controls prevent bad code from ever entering the system.
 
-**[View Phase 1 Overview →](phase-1-foundation.md)**
+**[View Phase 1 Overview →](phase-1/index.md)**
 
 ---
 
@@ -54,12 +54,12 @@ Automate security and quality checks in CI/CD pipelines.
 
 **Phase Components**:
 
-- **[CI/CD Gates](phase-2-ci-gates.md)** - Required checks, SBOM generation, vulnerability scanning, SLSA provenance
-- **[Evidence Collection](phase-2-evidence-collection.md)** - Automated archival and metrics tracking
+- **[CI/CD Gates](phase-2/ci-gates.md)** - Required checks, SBOM generation, vulnerability scanning, SLSA provenance
+- **[Evidence Collection](phase-2/evidence-collection.md)** - Automated archival and metrics tracking
 
 **Why This Phase Matters**: Tests that fail, code with vulnerabilities, and builds without SBOMs never merge. CI becomes a gate, not a log. Supply chain security becomes automatic.
 
-**[View Phase 2 Overview →](phase-2-automation.md)**
+**[View Phase 2 Overview →](phase-2/index.md)**
 
 ---
 
@@ -69,13 +69,13 @@ Control what runs in production, not just what gets committed.
 
 **Phase Components**:
 
-- **[Policy Enforcement](phase-3-policy-enforcement.md)** - Core Kyverno policies, resource limits, image verification
-- **[Advanced Policies](phase-3-advanced-policies.md)** - Namespace quotas, pod security, network policies
-- **[Rollout Strategy](phase-3-rollout.md)** - Audit-first deployment and metrics
+- **[Policy Enforcement](phase-3/policy-enforcement.md)** - Core Kyverno policies, resource limits, image verification
+- **[Advanced Policies](phase-3/advanced-policies.md)** - Namespace quotas, pod security, network policies
+- **[Rollout Strategy](phase-3/rollout.md)** - Audit-first deployment and metrics
 
 **Why This Phase Matters**: Pods without resource limits, images from untrusted registries, or missing security context cannot run. Policy is enforced before deployment, not after incidents.
 
-**[View Phase 3 Overview →](phase-3-runtime.md)**
+**[View Phase 3 Overview →](phase-3/index.md)**
 
 ---
 
@@ -85,13 +85,13 @@ Prove compliance through continuous evidence collection and validation.
 
 **Phase Components**:
 
-- **[Audit Evidence](phase-4-audit-evidence.md)** - Branch protection, PR reviews, signatures, SBOMs
-- **[Compliance Validation](phase-4-compliance.md)** - OpenSSF Scorecard, SLSA verification, license checks
-- **[Audit Simulation](phase-4-audit-simulation.md)** - Mock audit, gap analysis, remediation
+- **[Audit Evidence](phase-4/audit-evidence.md)** - Branch protection, PR reviews, signatures, SBOMs
+- **[Compliance Validation](phase-4/compliance.md)** - OpenSSF Scorecard, SLSA verification, license checks
+- **[Audit Simulation](phase-4/audit-simulation.md)** - Mock audit, gap analysis, remediation
 
 **Why This Phase Matters**: Auditors will ask "prove branch protection was enabled on 2025-01-01". Archived config proves it. Evidence collection must be automatic and tamper-proof.
 
-**[View Phase 4 Overview →](phase-4-advanced.md)**
+**[View Phase 4 Overview →](phase-4/index.md)**
 
 ---
 
@@ -219,7 +219,7 @@ Your score can regress if controls are disabled or practices slip.
 
 ## Next Steps
 
-1. **Review** [Phase 1: Foundation](phase-1-foundation.md) and identify repositories for pilot deployment
+1. **Review** [Phase 1: Foundation](phase-1/index.md) and identify repositories for pilot deployment
 2. **Prepare** cloud storage bucket for evidence collection
 3. **Document** current state (how many repos have branch protection? How many require reviews?)
 4. **Schedule** implementation kickoff with engineering teams
