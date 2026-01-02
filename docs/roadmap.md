@@ -20,84 +20,84 @@ Adaptive Enforcement Lab is actively building. Here's what's shipped and what's 
 
     ### Enforce Section
 
-    **4-Phase SDLC Hardening Checklist** - Complete implementation roadmap
+    **[4-Phase SDLC Hardening Checklist](enforce/implementation-roadmap/hardening-checklist/index.md)** - Complete implementation roadmap
 
-    - ✅ **Phase 1: Foundation** - Pre-commit hooks, branch protection
-    - ✅ **Phase 2: Automation** - CI gates, SBOM, vulnerability scanning, evidence collection
-    - ✅ **Phase 3: Runtime** - Kyverno policies, pod security standards, advanced policies
-    - ✅ **Phase 4: Advanced** - Audit evidence, compliance frameworks, simulation
+    - ✅ **[Phase 1: Foundation](enforce/implementation-roadmap/hardening-checklist/phase-1/index.md)** - Pre-commit hooks, branch protection
+    - ✅ **[Phase 2: Automation](enforce/implementation-roadmap/hardening-checklist/phase-2/index.md)** - CI gates, SBOM, vulnerability scanning, evidence collection
+    - ✅ **[Phase 3: Runtime](enforce/implementation-roadmap/hardening-checklist/phase-3/index.md)** - Kyverno policies, pod security standards, advanced policies
+    - ✅ **[Phase 4: Advanced](enforce/implementation-roadmap/hardening-checklist/phase-4/index.md)** - Audit evidence, compliance frameworks, simulation
 
-    **Policy Template Library** - Production-ready templates
+    **[Policy Template Library](enforce/policy-as-code/template-library/index.md)** - Production-ready templates
 
-    - ✅ **Kyverno Templates** - Pod security, image validation, resource limits, mandatory labels
-    - ✅ **OPA Templates** - Admission control patterns
-    - ✅ **CI/CD Integration** - GitHub Actions integration guide
-    - ✅ **Usage Guide** - Implementation and customization guide
+    - ✅ **[Kyverno Templates](enforce/policy-as-code/template-library/kyverno-templates.md)** - Pod security, image validation, resource limits, mandatory labels
+    - ✅ **[OPA Templates](enforce/policy-as-code/template-library/opa-templates.md)** - Admission control patterns
+    - ✅ **[CI/CD Integration](enforce/policy-as-code/template-library/ci-cd-integration.md)** - GitHub Actions integration guide
+    - ✅ **[Usage Guide](enforce/policy-as-code/template-library/usage-guide.md)** - Implementation and customization guide
 
     **Incident Readiness** - Playbook foundation
 
-    - ✅ **Playbook Library** - Decision trees, severity levels, response patterns
+    - ✅ **[Playbook Library](enforce/incident-readiness/playbook-library/index.md)** - Decision trees, severity levels, response patterns
 
     ### Secure Section
 
     **Cloud Native Security** - GKE hardening and Workload Identity
 
-    - ✅ **GKE Hardening** (17 guides)
-        - Cluster Configuration: Private clusters, Workload Identity, Binary Authorization
-        - IAM Configuration: Least-privilege roles, federation, audit logging
-        - Network Security: VPC-native, network policies, Private Service Connect, Cloud Armor
-        - Runtime Security: Pod Security Standards, admission controllers, monitoring
-    - ✅ **Workload Identity** (6 guides) - Setup, migration, troubleshooting
+    - ✅ **[GKE Hardening](secure/cloud-native/gke-hardening/index.md)** (17 guides)
+        - [Cluster Configuration](secure/cloud-native/gke-hardening/cluster-configuration/index.md): Private clusters, Workload Identity, Binary Authorization
+        - [IAM Configuration](secure/cloud-native/gke-hardening/iam-configuration/index.md): Least-privilege roles, federation, audit logging
+        - [Network Security](secure/cloud-native/gke-hardening/network-security/index.md): VPC-native, network policies, Private Service Connect, Cloud Armor
+        - [Runtime Security](secure/cloud-native/gke-hardening/runtime-security/index.md): Pod Security Standards, admission controllers, monitoring
+    - ✅ **[Workload Identity](secure/cloud-native/workload-identity/index.md)** (6 guides) - Setup, migration, troubleshooting
 
     **Security Culture Transformation**
 
-    - ✅ **Tactical Playbook** (9 guides)
-        - Shift Left: Pre-commit hooks, automated reviews
-        - Make Visible: Scorecards, dashboards, notifications
-        - Reduce Toil: Automation tools
-        - Build Champions: Program design, recognition, career growth
+    - ✅ **[Tactical Playbook](secure/culture/tactical-playbook/index.md)** (9 guides)
+        - Shift Left: [Pre-commit & IDE](secure/culture/tactical-playbook/pre-commit-ide.md), [Automated reviews](secure/culture/tactical-playbook/automated-reviews.md)
+        - Make Visible: [Scorecards & Dashboards](secure/culture/tactical-playbook/scorecards-dashboards.md), [Notifications & Badges](secure/culture/tactical-playbook/notifications-badges.md)
+        - Reduce Toil: [Automation tools](secure/culture/tactical-playbook/automation-tools.md)
+        - Build Champions: [Champions Program](secure/culture/tactical-playbook/champions-program.md), [Recognition & Rewards](secure/culture/tactical-playbook/recognition-rewards.md), [Career Growth](secure/culture/tactical-playbook/career-growth.md)
 
     **Risk Management for Engineers**
 
-    - ✅ **Engineer Framework** (8 guides) - Risk assessment, CVSS interpretation, exploitability analysis, blast radius, decision trees, real-world scenarios
+    - ✅ **[Engineer Framework](secure/risk-management/engineer-framework/index.md)** (8 guides) - Risk assessment, CVSS interpretation, exploitability analysis, blast radius, decision trees, real-world scenarios
 
     ### Patterns Section
 
     **Reliability Patterns**
 
-    - ✅ **Chaos Engineering** (12 guides)
-        - Tools comparison, blast radius control, validation patterns
-        - Experiment design: hypothesis, success criteria, SLI monitoring
-        - Pod, network, resource, dependency experiments
-        - Operations and observability
+    - ✅ **[Chaos Engineering](patterns/reliability/chaos-engineering/index.md)** (12 guides)
+        - [Tools comparison](patterns/reliability/chaos-engineering/tools-comparison.md), [blast radius control](patterns/reliability/chaos-engineering/blast-radius.md), [validation patterns](patterns/reliability/chaos-engineering/validation.md)
+        - [Experiment design](patterns/reliability/chaos-engineering/experiment-design/index.md): [hypothesis](patterns/reliability/chaos-engineering/experiment-design/hypothesis.md), [success criteria](patterns/reliability/chaos-engineering/experiment-design/success-criteria.md), [SLI monitoring](patterns/reliability/chaos-engineering/experiment-design/sli-monitoring.md)
+        - [Pod](patterns/reliability/chaos-engineering/pod-experiments.md), [network](patterns/reliability/chaos-engineering/network-experiments.md), [resource](patterns/reliability/chaos-engineering/resource-experiments.md), [dependency experiments](patterns/reliability/chaos-engineering/dependency-experiments.md)
+        - [Operations](patterns/reliability/chaos-engineering/operations.md) and [observability](patterns/reliability/chaos-engineering/observability.md)
 
     **Security Patterns**
 
-    - ✅ **Secure-by-Design** (6 guides)
-        - Zero trust, defense in depth, least privilege, fail secure
-        - End-to-end integration example with security audit checklist
+    - ✅ **[Secure-by-Design](patterns/security/secure-by-design/index.md)** (6 guides)
+        - [Zero trust](patterns/security/secure-by-design/zero-trust.md), [defense in depth](patterns/security/secure-by-design/defense-in-depth.md), [least privilege](patterns/security/secure-by-design/least-privilege.md), [fail secure](patterns/security/secure-by-design/fail-secure.md)
+        - [End-to-end integration](patterns/security/secure-by-design/integration.md) example with security audit checklist
 
     **Architecture Patterns**
 
-    - ✅ **Strangler Fig Pattern** - Platform component replacement, compatibility layers, validation/rollback
+    - ✅ **[Strangler Fig Pattern](patterns/architecture/strangler-fig/index.md)** - [Platform component replacement](patterns/architecture/strangler-fig/platform-component-replacement.md), [compatibility layers](patterns/architecture/strangler-fig/compatibility-layers.md), [validation/rollback](patterns/architecture/strangler-fig/validation-rollback.md)
 
     **Error Handling**
 
-    - ✅ **Prerequisite Checks** - Ordering patterns, implementation, anti-patterns
+    - ✅ **[Prerequisite Checks](patterns/error-handling/prerequisite-checks/index.md)** - [Ordering patterns](patterns/error-handling/prerequisite-checks/ordering.md), [implementation](patterns/error-handling/prerequisite-checks/implementation.md), [anti-patterns](patterns/error-handling/prerequisite-checks/anti-patterns.md)
 
     ### Tactical Blog Posts
 
     **Real-World Implementation Stories** (9 new posts)
 
-    - ✅ **The Checklist That Passed the Audit** - SDLC hardening journey
-    - ✅ **The Policy That Wrote Itself** - Policy-as-code evolution
-    - ✅ **The 3AM Incident That Followed the Playbook** - Incident response validation
-    - ✅ **The GKE Cluster Nobody Could Break** - GKE hardening results
-    - ✅ **The CVE That Didn't Matter** - Risk-informed decision making
-    - ✅ **The Architecture That Couldn't Be Breached** - Secure-by-design implementation
-    - ✅ **The Last Service Account Key** - Workload Identity migration
-    - ✅ **The Chaos That Proved We Were Ready** - Chaos engineering validation
-    - ✅ **The Security Team That Became Invisible** - Culture transformation success
+    - ✅ **[The Checklist That Passed the Audit](blog/posts/checklist-passed-audit/)** - SDLC hardening journey
+    - ✅ **[The Policy That Wrote Itself](blog/posts/policy-wrote-itself/)** - Policy-as-code evolution
+    - ✅ **[The 3AM Incident That Followed the Playbook](blog/posts/3am-incident-followed-playbook/)** - Incident response validation
+    - ✅ **[The GKE Cluster Nobody Could Break](blog/posts/gke-cluster-nobody-could-break/)** - GKE hardening results
+    - ✅ **[The CVE That Didn't Matter](blog/posts/cve-that-didnt-matter/)** - Risk-informed decision making
+    - ✅ **[The Architecture That Couldn't Be Breached](blog/posts/architecture-couldnt-be-breached/)** - Secure-by-design implementation
+    - ✅ **[The Last Service Account Key](blog/posts/last-service-account-key/)** - Workload Identity migration
+    - ✅ **[The Chaos That Proved We Were Ready](blog/posts/chaos-proved-we-were-ready/)** - Chaos engineering validation
+    - ✅ **[The Security Team That Became Invisible](blog/posts/security-team-became-invisible/)** - Culture transformation success
 
 ---
 
