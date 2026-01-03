@@ -1,0 +1,55 @@
+name: Detect Changes
+
+on:
+  workflow_call:
+    inputs:
+      include_workflows:
+        description: 'Include workflow changes detection'
+        type: boolean
+        default: false
+    outputs:
+      docs_changed:
+        description: 'Documentation files changed'
+        value: ${{ jobs.detect.outputs.docs_changed }}
+      workflows_changed:
+        description: 'Workflow files changed'
+        value: ${{ jobs.detect.outputs.workflows_changed }}
+
+permissions:
+  contents: read
+
+jobs:
+  detect:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    outputs:
+      docs_changed: ${{ steps.changes.outputs.docs_any_changed }}
+      workflows_changed: ${{ steps.changes.outputs.workflows_any_changed }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed paths
+        id: changes
+        uses: tj-actions/changed-files@v47
+        with:
+          files_yaml: |
+            docs:
+              - docs/**
+              - mkdocs.yml
+              - overrides/**
+            workflows:
+              - .github/workflows/**
+
+      - name: Output change detection results
+        run: |
+          echo "## Change Detection" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Component | Changed |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-----------|---------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Docs | ${{ steps.changes.outputs.docs_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          if [[ "${{ inputs.include_workflows }}" == "true" ]]; then
+            echo "| Workflows | ${{ steps.changes.outputs.workflows_any_changed }} |" >> "$GITHUB_STEP_SUMMARY"
+          fi
