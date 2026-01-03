@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.9.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.8.1...1.9.0) (2026-01-03)
+
+
+### New Content
+
+* enable site-wide comments with opt-out capability ([#221](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/221)) ([b935095](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b935095370143cd968866d3d37069ffdb08cb681))
+
+
+### Content Refactoring
+
+* extract reusable change detection workflow ([#224](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/224)) ([8fe6ad0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8fe6ad01814fe76503450313a4c74c888cc5001c))
+
+
+### Maintenance
+
+* **deps:** update adaptive-enforcement-lab/readability action to v1.14.3 ([#220](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/220)) ([87b1b4c](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/87b1b4c0def0eef9d34a4addd7e96dbfd9a5881e))
+
 ## [1.8.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.8.0...1.8.1) (2026-01-03)
 
 
