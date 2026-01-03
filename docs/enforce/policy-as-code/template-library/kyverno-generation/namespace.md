@@ -364,8 +364,8 @@ done
 
 ## Related Resources
 
-- **[Kyverno Network Security →](kyverno-network-security.md)** - NetworkPolicy validation
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - Resource quota validation
-- **[Kyverno Mutation - Labels →](kyverno-mutation-labels.md)** - Auto-label resources
-- **[Kyverno Generation - Workload Resources →](kyverno-generation-workload.md)** - PodDisruptionBudget generation
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Kyverno Network Security →](../kyverno-network/security.md)** - NetworkPolicy validation
+- **[Kyverno Resource Limits →](../kyverno-resource/limits.md)** - Resource quota validation
+- **[Kyverno Mutation - Labels →](../kyverno-mutation/labels.md)** - Auto-label resources
+- **[Kyverno Generation - Workload Resources →](workload.md)** - PodDisruptionBudget generation
+- **[Template Library Overview →](../index.md)** - Back to main page

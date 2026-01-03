@@ -142,6 +142,5 @@ done
 
 ## Related Resources
 
-- **[Kyverno Validation Templates](../kyverno-validation/)** - Validate resource configurations before admission
-- **[Kyverno Mutation Templates](../kyverno-mutation/)** - Modify resources to enforce standards
+- **[Kyverno Templates Overview](../kyverno-templates.md)** - Back to Kyverno templates
 - **[Template Library Overview](../index.md)** - Back to main template library
