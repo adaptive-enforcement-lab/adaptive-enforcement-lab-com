@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.8.0...1.8.1) (2026-01-03)
+
+
+### Content Fixes
+
+* resolve mkdocs build warnings and navigation issues ([#218](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/218)) ([bab4e27](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/bab4e27117ef8c3ab8dbfe28060bfa7a4f55f9b1))
+
 ## [1.8.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.7.0...1.8.0) (2026-01-03)
 
 
