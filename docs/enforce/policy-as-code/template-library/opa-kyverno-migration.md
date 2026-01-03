@@ -120,7 +120,7 @@ violation[{"msg": msg}] {
 ```
 
 !!! tip "Full Examples"
-    See [Kyverno Templates](kyverno-templates.md) and [OPA Templates](opa-templates.md) for complete policy definitions.
+    See [Kyverno Templates](kyverno/index.md) and [OPA Templates](opa/index.md) for complete policy definitions.
 
 ---
 
@@ -292,8 +292,8 @@ Post-migration:
 
 - **[Decision Guide →](decision-guide.md)** - Framework for choosing between OPA and Kyverno
 - **[Detailed Comparison →](opa-kyverno-comparison.md)** - Capability and ecosystem comparison
-- **[Kyverno Templates →](kyverno-templates.md)** - Ready-to-use Kyverno policies
-- **[OPA Templates →](opa-templates.md)** - OPA constraint templates
+- **[Kyverno Templates →](kyverno/index.md)** - Ready-to-use Kyverno policies
+- **[OPA Templates →](opa/index.md)** - OPA constraint templates
 - **[Usage Guide →](usage-guide.md)** - Customization workflow
 - **[Template Library Overview →](index.md)** - Back to main page
 

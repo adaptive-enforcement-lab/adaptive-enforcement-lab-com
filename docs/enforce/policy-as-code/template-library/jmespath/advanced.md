@@ -332,7 +332,7 @@ conditions:
 - **[JMESPath Testing →](testing.md)** - Testing and debugging techniques
 - **[JMESPath Reference →](reference.md)** - Complete function reference
 - **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns and basics
-- **[Kyverno Templates Overview →](../kyverno-templates.md)** - Complete template library
+- **[Kyverno Templates Overview →](../kyverno/index.md)** - Complete template library
 - **[Template Library Overview →](index.md)** - Back to main page
 
 ---

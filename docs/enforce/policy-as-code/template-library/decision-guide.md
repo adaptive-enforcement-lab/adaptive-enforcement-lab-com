@@ -168,8 +168,8 @@ Run both. Kyverno for Kubernetes-native policies, OPA for cross-platform governa
 ## Next Steps
 
 - **[Detailed Comparison →](opa-kyverno-comparison.md)** - Deep dive into capabilities, language, ecosystem
-- **[Kyverno Templates →](kyverno-templates.md)** - Ready-to-use Kyverno policies
-- **[OPA Templates →](opa-templates.md)** - OPA constraint templates
+- **[Kyverno Templates →](kyverno/index.md)** - Ready-to-use Kyverno policies
+- **[OPA Templates →](opa/index.md)** - OPA constraint templates
 - **[Usage Guide →](usage-guide.md)** - Customization workflow
 - **[Template Library Overview →](index.md)** - Back to main page
 

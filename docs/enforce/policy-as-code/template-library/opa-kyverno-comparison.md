@@ -312,8 +312,8 @@ Team already uses OPA for service mesh, Terraform. Policy specialists on staff.
 
 - **[Decision Guide →](decision-guide.md)** - Quick framework to choose between OPA and Kyverno
 - **[Migration Strategies →](opa-kyverno-migration.md)** - Migration paths and hybrid deployments
-- **[Kyverno Templates →](kyverno-templates.md)** - Ready-to-use Kyverno policies
-- **[OPA Templates →](opa-templates.md)** - OPA constraint templates
+- **[Kyverno Templates →](kyverno/index.md)** - Ready-to-use Kyverno policies
+- **[OPA Templates →](opa/index.md)** - OPA constraint templates
 - **[Usage Guide →](usage-guide.md)** - Customization workflow
 - **[Template Library Overview →](index.md)** - Back to main page
 

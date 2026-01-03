@@ -170,7 +170,7 @@ pre-commit run --all-files
 
 ## Related Resources
 
-- **[Kyverno Templates →](kyverno-templates.md)** - Policy templates
-- **[OPA Templates →](opa-templates.md)** - Constraint templates
+- **[Kyverno Templates →](kyverno/index.md)** - Policy templates
+- **[OPA Templates →](opa/index.md)** - Constraint templates
 - **[Usage Guide →](usage-guide.md)** - Customization workflow
 - **[Template Library Overview →](index.md)** - Back to main page

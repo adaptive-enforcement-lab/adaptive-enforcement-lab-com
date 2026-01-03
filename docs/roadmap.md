@@ -29,8 +29,8 @@ Adaptive Enforcement Lab is actively building. Here's what's shipped and what's 
 
     **[Policy Template Library](enforce/policy-as-code/template-library/index.md)** - Production-ready templates
 
-    - ✅ **[Kyverno Templates](enforce/policy-as-code/template-library/kyverno-templates.md)** - Pod security, image validation, resource limits, mandatory labels
-    - ✅ **[OPA Templates](enforce/policy-as-code/template-library/opa-templates.md)** - Admission control patterns
+    - ✅ **[Kyverno Templates](enforce/policy-as-code/template-library/kyverno/index.md)** - Pod security, image validation, resource limits, mandatory labels
+    - ✅ **[OPA Templates](enforce/policy-as-code/template-library/opa/index.md)** - Admission control patterns
     - ✅ **[CI/CD Integration](enforce/policy-as-code/template-library/ci-cd-integration.md)** - GitHub Actions integration guide
     - ✅ **[Usage Guide](enforce/policy-as-code/template-library/usage-guide.md)** - Implementation and customization guide
 

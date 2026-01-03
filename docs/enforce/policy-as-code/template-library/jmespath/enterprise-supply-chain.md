@@ -162,7 +162,7 @@ spec:
 - **[JMESPath Reference →](reference.md)** - Complete function reference
 - **[JMESPath Advanced →](advanced.md)** - Advanced patterns
 - **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns
-- **[Kyverno Templates Overview →](../kyverno-templates.md)** - Complete template library
+- **[Kyverno Templates Overview →](../kyverno/index.md)** - Complete template library
 - **[Template Library Overview →](index.md)** - Back to main page
 
 ---
