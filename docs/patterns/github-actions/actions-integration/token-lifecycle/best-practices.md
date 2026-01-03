@@ -4,6 +4,10 @@ description: >-
   Best practices, patterns, and troubleshooting for token lifecycle management in GitHub Actions workflows.
 ---
 
+!!! warning "Token Expiration"
+
+    Installation tokens expire after 1 hour. For workflows longer than 50 minutes, regenerate tokens proactively to avoid mid-operation failures.
+
 ## Best Practices
 
 ### 1. Proactive Refresh
@@ -162,11 +166,11 @@ Error: API rate limit exceeded (403)
 ## Related Documentation
 
 - [Authentication Decision Guide](../../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
-- [Token Generation](token-generation.md) - Generate installation tokens
-- [JWT Authentication](jwt-authentication.md) - App-level authentication
-- [OAuth Authentication](oauth-authentication.md) - User-context authentication
-- [Error Handling](error-handling/index.md) - Token-specific error patterns
-- [Security Best Practices](security-best-practices.md) - Secure token handling
+- [Token Generation](../token-generation/index.md) - Generate installation tokens
+- [JWT Authentication](../jwt-authentication/index.md) - App-level authentication
+- [OAuth Authentication](../oauth-authentication/index.md) - User-context authentication
+- [Error Handling](../error-handling/index.md) - Token-specific error patterns
+- [Security Best Practices](../../../../secure/github-apps/security-best-practices.md) - Secure token handling
 
 ## References
 

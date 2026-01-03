@@ -23,7 +23,7 @@ workflows for organization-level automation.
 
 Before integrating, ensure you have:
 
-1. **Core App created and installed** - See [GitHub App Setup](../../../../secure/github-apps/index.md)
+1. **Core App created and installed** - See [GitHub App Setup](../../../secure/github-apps/index.md)
 2. **Secrets configured** - `CORE_APP_ID` and `CORE_APP_PRIVATE_KEY` stored in GitHub
 3. **Required permissions** - App has permissions for your automation tasks
 
@@ -43,7 +43,7 @@ GitHub Apps support three authentication methods, each serving different use cas
     - **App management** → JWT (list installations, app configuration)
     - **User operations** → OAuth (actions on behalf of a user)
 
-    See the [Authentication Decision Guide](../../../../secure/github-apps/authentication-decision-guide.md) for detailed selection criteria.
+    See the [Authentication Decision Guide](../../../secure/github-apps/authentication-decision-guide.md) for detailed selection criteria.
 
 ## What's Covered
 
@@ -76,4 +76,4 @@ This section walks through the complete integration lifecycle:
 - [GitHub Actions Permissions](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)
 - [GitHub CLI Manual](https://cli.github.com/manual/)
 - [GitHub GraphQL API](https://docs.github.com/en/graphql)
-- [GitHub Core App Setup](../../../../secure/github-apps/index.md)
+- [GitHub Core App Setup](../../../secure/github-apps/index.md)

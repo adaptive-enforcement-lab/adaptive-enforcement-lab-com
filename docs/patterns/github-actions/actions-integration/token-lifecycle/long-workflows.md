@@ -4,6 +4,10 @@ description: >-
   Error handling and patterns for long-running workflows with token expiration and refresh management.
 ---
 
+!!! note "Job Dependency Strategy"
+
+    Break long workflows into separate jobs with dependencies. Each job can regenerate a fresh token, ensuring operations never fail due to expiration.
+
 ## Long-Running Workflow Patterns
 
 ### Pattern 1: Multi-Phase Workflow with Token Refresh

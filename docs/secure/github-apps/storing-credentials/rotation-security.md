@@ -289,8 +289,8 @@ Track which workflows access secrets:
 
 ## Related Documentation
 
-- [Authentication Decision Guide](authentication-decision-guide.md) - Choose the right authentication method
-- [Security Best Practices](security-best-practices.md) - Comprehensive security guidelines
-- [JWT Authentication](../../patterns/github-actions/actions-integration/jwt-authentication.md) - JWT token generation patterns
-- [Token Lifecycle Management](../../patterns/github-actions/actions-integration/token-lifecycle.md) - Token refresh and expiration handling
-- [Error Handling](../../patterns/github-actions/actions-integration/error-handling/index.md) - Error handling for token operations
+- [Authentication Decision Guide](../authentication-decision-guide.md) - Choose the right authentication method
+- [Security Best Practices](../security-best-practices.md) - Comprehensive security guidelines
+- [JWT Authentication](../../../patterns/github-actions/actions-integration/jwt-authentication/index.md) - JWT token generation patterns
+- [Token Lifecycle Management](../../../patterns/github-actions/actions-integration/token-lifecycle/index.md) - Token refresh and expiration handling
+- [Error Handling](../../../patterns/github-actions/actions-integration/error-handling/index.md) - Error handling for token operations

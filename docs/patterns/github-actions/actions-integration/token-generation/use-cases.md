@@ -6,6 +6,10 @@ description: >-
 
 # Real-World Use Cases
 
+!!! tip "When to Use Installation Tokens"
+
+    Installation tokens are ideal for org-wide automation where you need to operate across multiple repositories with consistent permissions and audit trails.
+
 ## Use Case 1: Centralized Dependency Updates
 
 Update dependencies across all repositories from a central workflow.

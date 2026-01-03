@@ -347,16 +347,16 @@ Use this checklist to determine the right authentication method:
 
 ### Learn More About Each Method
 
-- **JWT Authentication** - [JWT Authentication Guide](../../patterns/github-actions/actions-integration/jwt-authentication.md)
+- **JWT Authentication** - [JWT Authentication Guide](../../patterns/github-actions/actions-integration/jwt-authentication/index.md)
 - **Installation Tokens** - [Token Generation Guide](../../patterns/github-actions/actions-integration/token-generation.md)
-- **OAuth Authentication** - [OAuth Authentication Guide](../../patterns/github-actions/actions-integration/oauth-authentication.md)
+- **OAuth Authentication** - [OAuth Authentication Guide](../../patterns/github-actions/actions-integration/oauth-authentication/index.md)
 
 ### Additional Resources
 
 - [GitHub App Setup](index.md) - Create your GitHub App
 - [Storing Credentials](storing-credentials.md) - Secure credential management
 - [Security Best Practices](security-best-practices.md) - App security guidelines
-- [Token Lifecycle Management](../../patterns/github-actions/actions-integration/token-lifecycle.md) - Token expiration, refresh strategies, and caching patterns
+- [Token Lifecycle Management](../../patterns/github-actions/actions-integration/token-lifecycle/index.md) - Token expiration, refresh strategies, and caching patterns
 
 ### Common Workflows
 

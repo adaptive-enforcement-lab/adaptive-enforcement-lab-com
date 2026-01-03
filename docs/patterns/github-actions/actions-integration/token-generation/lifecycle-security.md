@@ -6,6 +6,10 @@ description: >-
 
 # Security and Troubleshooting
 
+!!! warning "Token Exposure Risk"
+
+    Tokens are automatically masked in GitHub Actions logs, but manual echo/print statements can bypass masking. Never output tokens for debugging purposes.
+
 ## Security Best Practices
 
 ### 1. Token Masking
