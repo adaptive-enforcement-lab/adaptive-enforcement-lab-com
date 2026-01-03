@@ -228,7 +228,7 @@ Organization Settings → Authentication security → Require two-factor authent
 **Passing badge**: Not required
 **Silver badge**: Required
 
-**Solution**: See [Supply Chain Checks](./supply-chain.md) for Signed-Releases implementation.
+**Solution**: See [Supply Chain Checks](../supply-chain.md) for Signed-Releases implementation.
 
 #### "Static analysis shows too many warnings"
 

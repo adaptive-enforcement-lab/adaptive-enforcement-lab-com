@@ -1,3 +1,8 @@
+---
+description: >-
+  Verify repository maintenance through commit activity, issue resolution, and contributor engagement metrics to assess project health and security.
+---
+
 # Repository Maintenance
 
 !!! tip "Key Insight"
@@ -258,14 +263,10 @@ Active maintenance correlates with faster vulnerability remediation.
 
 **Existing guides**:
 
-- [Scorecard Index](../index.md): Overview of all 18 checks
-- [Branch Protection Checks](./branch-protection.md): Detailed branch protection configuration
-- [Supply Chain Checks](./supply-chain.md): Pinned-Dependencies and Token-Permissions
-- [Tier 1 Progression](../score-progression/tier-1.md): Quick wins including branch protection
-
-**Related patterns**:
-
-- [GitHub Apps](../../github-apps/index.md): Bot accounts for automation without admin access
+- [Scorecard Index](../../index.md): Overview of all 18 checks
+- [Branch Protection Checks](../branch-protection.md): Detailed branch protection configuration
+- [Supply Chain Checks](../supply-chain.md): Pinned-Dependencies and Token-Permissions
+- [Tier 1 Progression](../../score-progression/tier-1.md): Quick wins including branch protection
 
 ---
 

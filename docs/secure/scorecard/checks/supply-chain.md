@@ -1,3 +1,8 @@
+---
+description: >-
+  Prevent supply chain attacks through dependency pinning, workflow security, binary artifact detection, and SAST integration in your CI pipelines.
+---
+
 # Supply Chain
 
 !!! tip "Key Insight"

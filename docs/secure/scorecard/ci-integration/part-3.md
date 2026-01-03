@@ -1,3 +1,8 @@
+---
+description: >-
+  Enforce minimum Scorecard thresholds in CI pipelines to prevent security regressions and maintain continuous compliance with GitHub Actions.
+---
+
 # Enforcement Patterns
 
 !!! tip "Key Insight"
@@ -273,10 +278,10 @@ Most Problematic: Fuzzing (stuck at 0)
 
 ## Related Patterns
 
-- [Scorecard Workflow Examples](scorecard-workflow-examples.md) - Basic workflow implementation
-- [Score Progression](score-progression.md) - Achieving higher scores systematically
-- [False Positives Guide](false-positives.md) - Handling false positive alerts
-- [Decision Framework](decision-framework.md) - When to deviate from recommendations
+- [Scorecard Workflow Examples](../scorecard-workflow-examples.md) - Basic workflow implementation
+- [Score Progression](../score-progression.md) - Achieving higher scores systematically
+- [False Positives Guide](../false-positives.md) - Handling false positive alerts
+- [Decision Framework](../decision-framework.md) - When to deviate from recommendations
 
 ---
 

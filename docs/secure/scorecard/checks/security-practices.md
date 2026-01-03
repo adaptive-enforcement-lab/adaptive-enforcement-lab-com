@@ -143,9 +143,9 @@ Three complementary security layers:
 
 **Other check categories**:
 
-- [Supply Chain Checks](./supply-chain.md) - Pinned-Dependencies, Dangerous-Workflow, Binary-Artifacts, SAST
-- [Code Review Checks](./code-review.md) - Code-Review, Contributors, Maintained
-- [Branch Protection Checks](./branch-protection.md) - Branch-Protection
+- [Supply Chain Checks](supply-chain.md) - Pinned-Dependencies, Dangerous-Workflow, Binary-Artifacts, SAST
+- [Code Review Checks](code-review.md) - Code-Review, Contributors, Maintained
+- [Branch Protection Checks](branch-protection.md) - Branch-Protection
 - [Release Security Checks](./release-security.md) - Signed-Releases, Packaging
 
 **Guides**:

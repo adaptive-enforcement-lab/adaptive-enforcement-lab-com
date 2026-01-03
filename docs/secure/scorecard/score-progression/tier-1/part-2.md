@@ -1,3 +1,8 @@
+---
+description: >-
+  Troubleshoot common OpenSSF Scorecard implementation challenges including permission errors, workflow configuration, and branch protection conflicts.
+---
+
 # Tier 1 Troubleshooting
 
 !!! tip "Key Insight"
@@ -50,10 +55,10 @@ jobs:
 
 ## Related Content
 
-- **[Score Progression Overview](../score-progression.md)** - Full roadmap from 7 to 10
-- **[Tier 2 Guide](tier-2.md)** - Next steps: SLSA provenance and dependency pinning
-- **[Scorecard Compliance](../scorecard-compliance.md)** - Detailed compliance patterns
-- **[16 Alerts Overnight](../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md)** - Real-world Token-Permissions fix
+- **[Score Progression Overview](../../score-progression.md)** - Full roadmap from 7 to 10
+- **[Tier 2 Guide](../tier-2.md)** - Next steps: SLSA provenance and dependency pinning
+- **[Scorecard Compliance](../../scorecard-compliance.md)** - Detailed compliance patterns
+- **[16 Alerts Overnight](../../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md)** - Real-world Token-Permissions fix
 
 ---
 
@@ -61,7 +66,7 @@ jobs:
 
 **After reaching 8/10**:
 
-Ready for [Tier 2: Score 8 to 9](tier-2.md) with SLSA provenance and comprehensive dependency pinning.
+Ready for [Tier 2: Score 8 to 9](../tier-2.md) with SLSA provenance and comprehensive dependency pinning.
 
 **Not ready for Tier 2 yet?**
 

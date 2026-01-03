@@ -45,10 +45,6 @@ Choose your package registry:
 
 ## Detailed Guides
 
-- [Best Practices](./packaging/best-practices.md): Versioning, provenance, automation
-- [Troubleshooting](./packaging/troubleshooting.md): Common publishing issues
-- [Remediation Steps](./packaging/remediation.md): Step-by-step implementation
-
 ## Related Content
 
 - [Signed-Releases](./signed-releases.md): Sign published packages

@@ -1,3 +1,8 @@
+---
+description: >-
+  Achieve 8.0+ Scorecard rating through SLSA provenance, automated dependency updates, and SAST integration for continuous security improvements.
+---
+
 # Tier 2
 
 !!! tip "Key Insight"

@@ -147,7 +147,7 @@ Fixes in this tier:
 
 **Fix**: Move to job level. Set workflow level to `permissions: {}`
 
-**Details**: [16 Alerts Overnight](../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) | [Tier 1 Guide](score-progression/tier-1/part-1.md#priority-1-token-permissions-0-to-2-hours)
+**Details**: [16 Alerts Overnight](../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) | [Tier 1 Guide](score-progression/tier-1/part-1.md)
 
 ### "Signed-Releases stuck at 8/10"
 
@@ -155,7 +155,7 @@ Fixes in this tier:
 
 **Fix**: Ensure `upload-assets: true` in SLSA workflow
 
-**Details**: [Stuck at 8: The Journey to 10/10](../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md) | [Tier 2 Guide](score-progression/tier-2/part-1.md#priority-1-signed-releases-with-slsa-provenance-4-to-6-hours)
+**Details**: [Stuck at 8: The Journey to 10/10](../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md) | [Tier 2 Guide](score-progression/tier-2/part-1.md)
 
 ### "Pinned-Dependencies flagging required version tags"
 
@@ -166,7 +166,7 @@ Fixes in this tier:
 
 **Action**: Document in Renovate config with clear reasoning
 
-**Details**: [Tier 2 Guide](score-progression/tier-2/part-1.md#priority-3-pinned-dependencies-2-to-4-hours)
+**Details**: [Tier 2 Guide](score-progression/tier-2/part-1.md)
 
 ### "CII Best Practices taking too long"
 
@@ -174,7 +174,7 @@ Fixes in this tier:
 
 Most projects with good CI/CD already pass. The badge is documentation, not implementation.
 
-**Fast-track**: [Badge in 2 Hours](../../blog/posts/2025-12-17-openssf-badge-two-hours.md) | [Tier 3 Guide](score-progression/tier-3/part-1.md#priority-1-cii-best-practices-badge-2-to-4-hours)
+**Fast-track**: [Badge in 2 Hours](../../blog/posts/2025-12-17-openssf-badge-two-hours.md) | [Tier 3 Guide](score-progression/tier-3/part-1.md)
 
 ### "Fuzzing seems like overkill"
 
@@ -185,7 +185,7 @@ Most projects with good CI/CD already pass. The badge is documentation, not impl
 
 **Remember**: Scorecard measures best practices. Not all practices fit all contexts.
 
-**Details**: [Tier 3 Guide](score-progression/tier-3/part-1.md#priority-2-fuzzing-8-hours)
+**Details**: [Tier 3 Guide](score-progression/tier-3/part-1.md)
 
 ---
 

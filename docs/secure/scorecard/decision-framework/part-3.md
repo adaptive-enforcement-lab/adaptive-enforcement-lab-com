@@ -1,3 +1,8 @@
+---
+description: >-
+  Assess security risks and compliance implications of branch protection bypasses before implementing emergency workflows or admin overrides.
+---
+
 # Branch Protection Bypasses
 
 !!! tip "Key Insight"
@@ -114,10 +119,10 @@ We implement equivalent practices without the badge:
 
 **Related guides**:
 
-- [False Positives Guide](false-positives.md) - Identify tool limitations vs. real issues
-- [Supply Chain Checks](checks/supply-chain.md) - Detailed Pinned-Dependencies guidance
-- [Security Practices Checks](checks/security-practices.md) - CII badge fast-track
-- [Score Progression](score-progression.md) - Prioritized remediation roadmap
+- [False Positives Guide](../false-positives.md) - Identify tool limitations vs. real issues
+- [Supply Chain Checks](../checks/supply-chain.md) - Detailed Pinned-Dependencies guidance
+- [Security Practices Checks](../checks/security-practices.md) - CII badge fast-track
+- [Score Progression](../score-progression.md) - Prioritized remediation roadmap
 
 **External resources**:
 

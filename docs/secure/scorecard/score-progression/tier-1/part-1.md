@@ -127,7 +127,7 @@ permissions:
 
 **Impact**: This single change can clear 16+ alerts overnight. Least privilege applied at narrowest scope.
 
-**Details**: [Token-Permissions patterns](../scorecard-compliance.md#token-permissions-job-level-scoping) | [16 Alerts Overnight blog](../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md)
+**Details**: [Token-Permissions patterns](../../scorecard-compliance.md) | [16 Alerts Overnight blog](../../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md)
 
 ---
 
@@ -346,13 +346,11 @@ Add to `.gitignore`:
 Thumbs.db
 ```
 
-**Impact**: Removes potential hiding places for malware in version control.
+**Impact**: Removes potential hiding places for malware in version control
 
 ---
 
 ## Checkpoint: Score 7 → 8
-
-After implementing all Priority 1-5 fixes:
 
 - ✅ Token-Permissions cleared (job-level scoping)
 - ✅ Security-Policy documented (SECURITY.md added)
@@ -360,7 +358,7 @@ After implementing all Priority 1-5 fixes:
 - ✅ Basic branch protection enabled (PR required, 1 approval)
 - ✅ Binaries removed from git (releases or package managers)
 
-**Expected Scorecard improvements**:
+Expected Scorecard improvements:
 
 | Check | Before | After |
 | ----- | ------ | ----- |
@@ -370,6 +368,6 @@ After implementing all Priority 1-5 fixes:
 | Branch-Protection | 0 to 5/10 | 7/10 |
 | Binary-Artifacts | 0 to 5/10 | 10/10 |
 
-**Result**: Strong security hygiene. Ready for advanced supply chain protections in Tier 2.
+**Result**: Strong security hygiene. Ready for advanced supply chain protections in Tier 2
 
 ---

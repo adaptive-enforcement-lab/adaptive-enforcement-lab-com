@@ -1,3 +1,8 @@
+---
+description: >-
+  Reach 9.0+ Scorecard rating through CII Best Practices certification, comprehensive fuzzing, and advanced vulnerability automation practices.
+---
+
 # Tier 3
 
 !!! tip "Key Insight"

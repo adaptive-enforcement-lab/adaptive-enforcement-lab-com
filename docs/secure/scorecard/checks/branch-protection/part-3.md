@@ -1,3 +1,8 @@
+---
+description: >-
+  Prioritize Branch-Protection fixes with dependency updates and protection rules. Quick wins achieve passing scores in 1.5-2.5 hours total effort.
+---
+
 # Remediation Priority
 
 !!! tip "Key Insight"
@@ -47,19 +52,19 @@ Active branch protection signals ongoing maintenance. Abandoned projects often h
 
 **Existing guides**:
 
-- [Scorecard Index](../index.md) - Overview of all 18 checks
-- [Code Review Checks](./code-review.md) - Code-Review check details with branch protection patterns
-- [Supply Chain Checks](./supply-chain.md) - Pinned-Dependencies automated management with Renovate
-- [Security Practices Checks](./security-practices.md) - Vulnerabilities check and dependency scanning
-- [Tier 1 Progression](../score-progression/tier-1.md) - Quick wins including basic branch protection
-- [Tier 2 Progression](../score-progression/tier-2.md) - Advanced branch protection with up-to-date branches
+- [Scorecard Index](../../index.md) - Overview of all 18 checks
+- [Code Review Checks](../code-review.md) - Code-Review check details with branch protection patterns
+- [Supply Chain Checks](../supply-chain.md) - Pinned-Dependencies automated management with Renovate
+- [Security Practices Checks](../security-practices.md) - Vulnerabilities check and dependency scanning
+- [Tier 1 Progression](../../score-progression/tier-1.md) - Quick wins including basic branch protection
+- [Tier 2 Progression](../../score-progression/tier-2.md) - Advanced branch protection with up-to-date branches
 
 **Blog posts**:
 
-- [Stuck at 8: The Journey to 10/10](../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md) - Branch protection "up to date" requirement
-- [16 Alerts Cleared Overnight](../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) - Mass remediation patterns
+- [Stuck at 8: The Journey to 10/10](../../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md) - Branch protection "up to date" requirement
+- [16 Alerts Cleared Overnight](../../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) - Mass remediation patterns
 
 **Related patterns**:
 
-- [Scorecard Workflow Examples](../scorecard-workflow-examples.md) - Complete workflows with status checks referenced in branch protection
-- [Scorecard Compliance](../scorecard-compliance.md) - Core patterns for achieving 10/10 scores
+- [Scorecard Workflow Examples](../../scorecard-workflow-examples.md) - Complete workflows with status checks referenced in branch protection
+- [Scorecard Compliance](../../scorecard-compliance.md) - Core patterns for achieving 10/10 scores

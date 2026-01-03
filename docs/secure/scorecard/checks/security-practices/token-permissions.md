@@ -26,9 +26,9 @@ tags:
 
 Token-Permissions is **extensively covered** in existing documentation:
 
-- **[Scorecard Compliance](../scorecard-compliance.md#token-permissions-job-level-scoping)** - Complete patterns with before/after examples
-- **[Scorecard Workflow Examples](../scorecard-workflow-examples.md)** - Production workflows demonstrating job-level permissions
-- **[Tier 1 Progression](../score-progression/tier-1.md)** - Quick wins including Token-Permissions fix
+- **[Scorecard Compliance](../../scorecard-compliance.md)** - Complete patterns with before/after examples
+- **[Scorecard Workflow Examples](../../scorecard-workflow-examples.md)** - Production workflows demonstrating job-level permissions
+- **[Tier 1 Progression](../../score-progression/tier-1.md)** - Quick wins including Token-Permissions fix
 
 **Core principle**: Empty permissions at workflow level, grant minimal permissions per job.
 
@@ -87,7 +87,7 @@ jobs:
 
 For complete implementation details, see:
 
-**[Scorecard Compliance → Token-Permissions](../scorecard-compliance.md#token-permissions-job-level-scoping)**
+**[Scorecard Compliance → Token-Permissions](../../scorecard-compliance.md)**
 
 Covers:
 
@@ -96,7 +96,7 @@ Covers:
 - Troubleshooting permission errors
 - Bulk migration strategies
 
-**[Scorecard Workflow Examples](../scorecard-workflow-examples.md)**
+**[Scorecard Workflow Examples](../../scorecard-workflow-examples.md)**
 
 Production workflows demonstrating:
 
@@ -116,7 +116,7 @@ grep -r "^permissions:" .github/workflows/
 # Job-level permissions are indented under jobs
 
 ```bash
-**Blog post**: [16 Alerts Cleared Overnight](../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) - Real-world Token-Permissions mass fix
+**Blog post**: [16 Alerts Cleared Overnight](../../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) - Real-world Token-Permissions mass fix
 
 ---
 
@@ -133,7 +133,7 @@ grep -r "^permissions:" .github/workflows/
 
 **Detailed guides**:
 
-- [Scorecard Compliance → Token-Permissions](../../scorecard-compliance.md#token-permissions-job-level-scoping)
+- [Scorecard Compliance → Token-Permissions](../../scorecard-compliance.md)
 - [Scorecard Workflow Examples](../../scorecard-workflow-examples.md)
 - [Tier 1 Progression](../../score-progression/tier-1.md)
 

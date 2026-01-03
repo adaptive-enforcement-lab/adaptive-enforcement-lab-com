@@ -1,3 +1,8 @@
+---
+description: >-
+  Configure Renovate for automated dependency updates with customizable grouping, auto-merge policies, and monorepo support across ecosystems.
+---
+
 # Dependency Update Tools
 
 !!! tip "Key Insight"

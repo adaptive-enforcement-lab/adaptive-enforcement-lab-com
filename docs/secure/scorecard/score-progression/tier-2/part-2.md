@@ -1,3 +1,8 @@
+---
+description: >-
+  Implement SAST scanning and security policies to formalize vulnerability detection and responsible disclosure practices in your repositories.
+---
+
 # Tier 2 Additional Priorities
 
 !!! tip "Key Insight"
@@ -186,11 +191,11 @@ sha256sum files* | base64 -w0
 
 ## Related Content
 
-- **[Score Progression Overview](../score-progression.md)** - Full roadmap from 7 to 10
-- **[Tier 1 Guide](tier-1.md)** - Prerequisites: Token-Permissions, Security-Policy, etc.
-- **[Tier 3 Guide](tier-3.md)** - Next steps: CII badge, fuzzing, perfect branch protection
-- **[SLSA Provenance](../../../enforce/slsa-provenance/slsa-provenance.md)** - Complete implementation guide
-- **[Stuck at 8 Blog](../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md)** - Real-world SLSA breakthrough
+- **[Score Progression Overview](../../score-progression.md)** - Full roadmap from 7 to 10
+- **[Tier 1 Guide](../tier-1.md)** - Prerequisites: Token-Permissions, Security-Policy, etc.
+- **[Tier 3 Guide](../tier-3.md)** - Next steps: CII badge, fuzzing, perfect branch protection
+- **[SLSA Provenance](../../../../enforce/slsa-provenance/slsa-provenance.md)** - Complete implementation guide
+- **[Stuck at 8 Blog](../../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md)** - Real-world SLSA breakthrough
 
 ---
 
@@ -198,7 +203,7 @@ sha256sum files* | base64 -w0
 
 **After reaching 9/10**:
 
-Ready for [Tier 3: Score 9 to 10](tier-3.md) with CII badge, selective fuzzing, and ongoing maintenance.
+Ready for [Tier 3: Score 9 to 10](../tier-3.md) with CII badge, selective fuzzing, and ongoing maintenance.
 
 **Not ready for Tier 3 yet?**
 

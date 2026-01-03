@@ -154,9 +154,9 @@ PASSED: SLSA verification passed
 
 **Impact**: This single fix typically moves Signed-Releases from 8/10 to 10/10.
 
-**Real-world example**: [Stuck at 8: The Journey to 10/10](../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md)
+**Real-world example**: [Stuck at 8: The Journey to 10/10](../../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md)
 
-**Full implementation**: [SLSA Provenance Guide](../../../enforce/slsa-provenance/slsa-provenance.md)
+**Full implementation**: [SLSA Provenance Guide](../../../../enforce/slsa-provenance/slsa-provenance.md)
 
 ---
 
@@ -230,7 +230,7 @@ gh release upload "$TAG" \
 
 **Impact**: Every asset in release is now signed. Scorecard checks pass.
 
-**Details**: [Source Archive Signing](../scorecard-compliance.md#signed-releases-source-archive-gap)
+**Details**: [Source Archive Signing](../../scorecard-compliance.md)
 
 ---
 
@@ -319,6 +319,6 @@ uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_s
 
 **Impact**: Prevents unexpected behavior from dependency updates. Scorecard will still flag exceptions, but they're documented and justified.
 
-**Details**: [Pinned-Dependencies patterns](../scorecard-compliance.md#pinned-dependencies-version-tag-exceptions)
+**Details**: [Pinned-Dependencies patterns](../../scorecard-compliance.md)
 
 ---

@@ -1,3 +1,8 @@
+---
+description: >-
+  Integrate CodeQL or Semgrep for automated vulnerability scanning. SAST tools detect security flaws before code review with zero manual configuration.
+---
+
 # SAST Check
 
 !!! tip "Key Insight"
@@ -319,19 +324,18 @@ Removing binaries from git forces use of GitHub Releases, which enables cryptogr
 
 **Existing guides**:
 
-- [Scorecard Compliance](../scorecard-compliance.md) - Core patterns including Token-Permissions and Pinned-Dependencies
-- [Scorecard Workflow Examples](../scorecard-workflow-examples.md) - Production workflows combining these patterns
-- [Tier 1 Progression](../score-progression/tier-1.md) - Quick wins including Binary-Artifacts removal
+- [Scorecard Compliance](../../scorecard-compliance.md) - Core patterns including Token-Permissions and Pinned-Dependencies
+- [Scorecard Workflow Examples](../../scorecard-workflow-examples.md) - Production workflows combining these patterns
+- [Tier 1 Progression](../../score-progression/tier-1.md) - Quick wins including Binary-Artifacts removal
 
 **Blog posts**:
 
-- [16 Alerts Cleared Overnight](../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) - Token-Permissions mass fix
-- [Stuck at 8: Journey to 10/10](../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md) - SLSA and Signed-Releases breakthrough
+- [16 Alerts Cleared Overnight](../../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) - Token-Permissions mass fix
+- [Stuck at 8: Journey to 10/10](../../../../blog/posts/2025-12-18-scorecard-stuck-at-eight.md) - SLSA and Signed-Releases breakthrough
 
 **Related patterns**:
 
-- [SLSA Provenance](../../../enforce/slsa-provenance/slsa-provenance.md) - Signed-Releases implementation
-- [GitHub Apps](../../github-apps/index.md) - Secure authentication for workflows
+- [SLSA Provenance](../../../../enforce/slsa-provenance/slsa-provenance.md) - Signed-Releases implementation
 
 ---
 

@@ -1,3 +1,8 @@
+---
+description: >-
+  Resolve CII Best Practices badge false positives by completing missing profile sections and documenting security practices in your repository.
+---
+
 # OpenSSF Best Practices
 
 !!! tip "Key Insight"

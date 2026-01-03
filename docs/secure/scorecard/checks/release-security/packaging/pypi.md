@@ -1,3 +1,8 @@
+---
+description: >-
+  Implement PyPI Trusted Publishing with OIDC authentication to eliminate long-lived API tokens and generate verifiable package provenance attestations.
+---
+
 # Python (PyPI) Publishing
 
 !!! tip "Key Insight"

@@ -1,3 +1,8 @@
+---
+description: >-
+  Enable npm provenance attestations with OIDC authentication to provide cryptographic proof of package integrity and build origin for consumers.
+---
+
 # npm Publishing
 
 !!! tip "Key Insight"

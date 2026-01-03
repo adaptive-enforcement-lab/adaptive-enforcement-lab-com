@@ -1,3 +1,8 @@
+---
+description: >-
+  Choose optimal resolution strategies for Scorecard false positives by balancing documentation effort, upstream fixes, and legitimate exceptions.
+---
+
 # Resolution Approaches
 
 !!! tip "Key Insight"
@@ -115,10 +120,10 @@ Last reviewed: 2026-01-02
 
 **Related guides**:
 
-- [Scorecard Index](index.md) - Overview of all 18 checks
-- [Supply Chain Checks](checks/supply-chain.md) - Detailed Pinned-Dependencies exceptions
-- [Decision Framework](decision-framework.md) - When to follow vs. deviate from recommendations
-- [Score Progression](score-progression.md) - Prioritized remediation roadmap
+- [Scorecard Index](../index.md) - Overview of all 18 checks
+- [Supply Chain Checks](../checks/supply-chain.md) - Detailed Pinned-Dependencies exceptions
+- [Decision Framework](../decision-framework.md) - When to follow vs. deviate from recommendations
+- [Score Progression](../score-progression.md) - Prioritized remediation roadmap
 
 **External resources**:
 

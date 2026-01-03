@@ -88,7 +88,7 @@ If you've completed Tier 1 and 2, **you already have the practices**. The badge 
 
 **Time investment**: 2 to 4 hours of form-filling.
 
-**Real-world guide**: [OpenSSF Best Practices Badge in 2 Hours](../../../blog/posts/2025-12-17-openssf-badge-two-hours.md)
+**Real-world guide**: [OpenSSF Best Practices Badge in 2 Hours](../../../../blog/posts/2025-12-17-openssf-badge-two-hours.md)
 
 **Impact**: Community certification of security practices. Shows commitment to security best practices.
 

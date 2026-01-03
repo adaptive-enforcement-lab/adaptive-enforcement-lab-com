@@ -18,11 +18,11 @@ tags:
 
 **Priority**: High (required for SLSA compliance)
 
-**Advanced**: [Signed-Releases Advanced Guide](./release-security/signed-releases-advanced.md)
+**Advanced**: [Signed-Releases Advanced Guide](./signed-releases-advanced.md)
 
 ---
 
-## [Packaging](./release-security/packaging.md)
+## [Packaging](./packaging.md)
 
 **Target**: 10/10 by publishing to package registries
 
@@ -36,7 +36,7 @@ tags:
 
 ---
 
-### [License](./release-security/license.md)
+### [License](./license.md)
 
 **Target**: 10/10 with OSI-approved license
 
@@ -54,9 +54,9 @@ tags:
 
 | Check | Target | Effort | Priority | Weight |
 | ----- | ------ | ------ | -------- | ------ |
-| [License](./release-security/license.md) | 10/10 | 5 min | High | Low |
-| [Packaging](./release-security/packaging.md) | 10/10 | 1-2 hrs | Medium | Low |
-| [Signed-Releases](./release-security/signed-releases.md) | 10/10 | 2-4 hrs | High | High |
+| [License](./license.md) | 10/10 | 5 min | High | Low |
+| [Packaging](./packaging.md) | 10/10 | 1-2 hrs | Medium | Low |
+| [Signed-Releases](./signed-releases.md) | 10/10 | 2-4 hrs | High | High |
 
 ## Remediation Priority Order
 
@@ -86,15 +86,15 @@ OSI-approved license is required for OpenSSF Best Practices Badge.
 
 **Other check categories**:
 
-- [Supply Chain Checks](./supply-chain.md) - Pinned-Dependencies, Dangerous-Workflow, Binary-Artifacts, SAST
-- [Security Practices Checks](./security-practices.md) - Security-Policy, Vulnerabilities, Fuzzing
-- [Code Review Checks](./code-review.md) - Code-Review, Contributors, Maintained
+- [Supply Chain Checks](../supply-chain.md) - Pinned-Dependencies, Dangerous-Workflow, Binary-Artifacts, SAST
+- [Security Practices Checks](../security-practices.md) - Security-Policy, Vulnerabilities, Fuzzing
+- [Code Review Checks](../code-review.md) - Code-Review, Contributors, Maintained
 
 **Guides**:
 
-- [Scorecard Index](../index.md) - Overview of all 18 checks
-- [Tier 2 Progression](../score-progression/tier-2.md) - Medium complexity improvements
-- [SLSA Provenance](../../../enforce/slsa-provenance/slsa-provenance.md) - Complete SLSA guide
+- [Scorecard Index](../../index.md) - Overview of all 18 checks
+- [Tier 2 Progression](../../score-progression/tier-2.md) - Medium complexity improvements
+- [SLSA Provenance](../../../../enforce/slsa-provenance/slsa-provenance.md) - Complete SLSA guide
 
 ## Next Steps
 

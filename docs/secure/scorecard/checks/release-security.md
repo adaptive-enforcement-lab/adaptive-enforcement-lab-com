@@ -97,9 +97,9 @@ OSI-approved license is required for OpenSSF Best Practices Badge.
 
 **Other check categories**:
 
-- [Supply Chain Checks](./supply-chain.md) - Pinned-Dependencies, Dangerous-Workflow, Binary-Artifacts, SAST
-- [Security Practices Checks](./security-practices.md) - Security-Policy, Vulnerabilities, Fuzzing
-- [Code Review Checks](./code-review.md) - Code-Review, Contributors, Maintained
+- [Supply Chain Checks](supply-chain.md) - Pinned-Dependencies, Dangerous-Workflow, Binary-Artifacts, SAST
+- [Security Practices Checks](security-practices.md) - Security-Policy, Vulnerabilities, Fuzzing
+- [Code Review Checks](code-review.md) - Code-Review, Contributors, Maintained
 
 **Guides**:
 

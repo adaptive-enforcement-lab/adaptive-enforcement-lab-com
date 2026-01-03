@@ -1,3 +1,8 @@
+---
+description: >-
+  Achieve perfect 10.0 Scorecard rating through automated vulnerability remediation, active contributor diversity, and comprehensive fuzzing coverage.
+---
+
 # Tier 3 Additional Priorities
 
 !!! tip "Key Insight"
@@ -233,7 +238,7 @@ jobs:
 
 **Impact**: Continuous monitoring. Catches regressions before they compound. Maintains 10/10 score.
 
-**Details**: [CI/CD Integration guide](../ci-integration.md) *(Coming soon)*
+**Details**: [CI/CD Integration guide](../../ci-integration.md) *(Coming soon)*
 
 ---
 
@@ -267,7 +272,7 @@ After selective improvements:
 
 **Tip**: You likely already meet most criteria. Link to existing proof (CI, SECURITY.md, etc.).
 
-**Fast-track**: [Badge in 2 Hours](../../../blog/posts/2025-12-17-openssf-badge-two-hours.md)
+**Fast-track**: [Badge in 2 Hours](../../../../blog/posts/2025-12-17-openssf-badge-two-hours.md)
 
 ### "Fuzzing finds too many issues"
 
@@ -295,11 +300,11 @@ After selective improvements:
 
 ## Related Content
 
-- **[Score Progression Overview](../score-progression.md)** - Full roadmap from 7 to 10
-- **[Tier 1 Guide](tier-1.md)** - Quick wins: Token-Permissions, Security-Policy, etc.
-- **[Tier 2 Guide](tier-2.md)** - Advanced security: SLSA provenance, SHA pinning
-- **[OpenSSF Badge in 2 Hours](../../../blog/posts/2025-12-17-openssf-badge-two-hours.md)** - Fast-track CII certification
-- **[Scorecard Compliance](../scorecard-compliance.md)** - Detailed compliance patterns
+- **[Score Progression Overview](../../score-progression.md)** - Full roadmap from 7 to 10
+- **[Tier 1 Guide](../tier-1.md)** - Quick wins: Token-Permissions, Security-Policy, etc.
+- **[Tier 2 Guide](../tier-2.md)** - Advanced security: SLSA provenance, SHA pinning
+- **[OpenSSF Badge in 2 Hours](../../../../blog/posts/2025-12-17-openssf-badge-two-hours.md)** - Fast-track CII certification
+- **[Scorecard Compliance](../../scorecard-compliance.md)** - Detailed compliance patterns
 
 ---
 

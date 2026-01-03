@@ -1,3 +1,8 @@
+---
+description: >-
+  Document binary test fixtures with inline comments to prevent false positive detections while maintaining realistic test data in your repository.
+---
+
 # Common False Positives
 
 !!! tip "Key Insight"

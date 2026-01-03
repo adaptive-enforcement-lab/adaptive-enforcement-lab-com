@@ -1,3 +1,8 @@
+---
+description: >-
+  Prevent dangerous workflow patterns that leak secrets or enable code injection attacks through untrusted input in GitHub Actions event payloads.
+---
+
 # Dangerous-Workflow Check
 
 !!! tip "Key Insight"

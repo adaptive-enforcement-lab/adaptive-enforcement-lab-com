@@ -1,3 +1,8 @@
+---
+description: >-
+  Prioritize OpenSSF Scorecard improvements using ROI analysis, risk assessment, and team capacity to maximize security impact per hour invested.
+---
+
 # Decision Framework
 
 !!! tip "Key Insight"

@@ -1,3 +1,8 @@
+---
+description: >-
+  Evaluate fuzzing investment ROI based on codebase complexity, user input handling, and security risk tolerance for your organization.
+---
+
 # Fuzzing Assessment
 
 !!! tip "Key Insight"
@@ -92,7 +97,7 @@ jobs:
 
 ### Fast-Track: Earning the Badge Efficiently
 
-If you decide to pursue the badge, see our [fast-track guide](checks/security-practices.md#fast-track-to-passing-badge).
+If you decide to pursue the badge, see our [fast-track guide](../checks/security-practices.md).
 
 **Time estimates**:
 
