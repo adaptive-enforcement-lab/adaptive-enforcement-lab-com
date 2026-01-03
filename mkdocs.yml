@@ -434,6 +434,42 @@ nav:
           - Common Permissions: secure/github-apps/common-permissions.md
           - Troubleshooting: secure/github-apps/troubleshooting.md
           - Maintenance: secure/github-apps/maintenance.md
+      - GitHub Actions Security:
+          - secure/github-actions-security/index.md
+          - Action Pinning:
+              - secure/github-actions-security/action-pinning/index.md
+              - SHA Pinning Patterns: secure/github-actions-security/action-pinning/sha-pinning.md
+              - Automation Scripts: secure/github-actions-security/action-pinning/automation.md
+              - Dependabot Config: secure/github-actions-security/action-pinning/dependabot.md
+          - Token Permissions:
+              - secure/github-actions-security/token-permissions/index.md
+              - Workflow Templates: secure/github-actions-security/token-permissions/templates.md
+              - Job-Level Scoping: secure/github-actions-security/token-permissions/job-scoping.md
+          - Third-Party Actions:
+              - secure/github-actions-security/third-party-actions/index.md
+              - Evaluation Criteria: secure/github-actions-security/third-party-actions/evaluation.md
+              - Common Actions Review: secure/github-actions-security/third-party-actions/common-actions.md
+              - Action Allowlisting: secure/github-actions-security/third-party-actions/allowlisting.md
+          - Secret Management:
+              - secure/github-actions-security/secrets/index.md
+              - OIDC Federation: secure/github-actions-security/secrets/oidc.md
+              - Secret Rotation: secure/github-actions-security/secrets/rotation.md
+              - Secret Scanning: secure/github-actions-security/secrets/scanning.md
+          - Runner Security:
+              - secure/github-actions-security/runners/index.md
+              - Hardening Checklist: secure/github-actions-security/runners/hardening.md
+              - Ephemeral Runners: secure/github-actions-security/runners/ephemeral.md
+              - Runner Groups: secure/github-actions-security/runners/groups.md
+          - Workflow Patterns:
+              - Secure Triggers: secure/github-actions-security/workflows/triggers.md
+              - Environment Protection: secure/github-actions-security/workflows/environments.md
+              - Reusable Workflows: secure/github-actions-security/workflows/reusable.md
+          - Complete Examples:
+              - Secure CI Workflow: secure/github-actions-security/examples/ci-workflow.md
+              - Release Workflow: secure/github-actions-security/examples/release-workflow.md
+              - Deployment Workflow: secure/github-actions-security/examples/deployment-workflow.md
+              - Security Scanning: secure/github-actions-security/examples/security-scanning.md
+          - Quick Reference: secure/github-actions-security/cheat-sheet.md
       - Vulnerability Scanning: secure/vulnerability-scanning/vulnerability-scanning.md
       - SBOM: secure/sbom/sbom-generation.md
       - Go Security:
