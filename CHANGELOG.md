@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.6.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.5.0...1.6.0) (2026-01-03)
+
+
+### New Content
+
+* add comprehensive branch protection enforcement patterns ([#206](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/206)) ([69c29b2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/69c29b232df679a04d891298eee703b9e1dd5531))
+* add comprehensive SLSA implementation playbook ([#207](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/207)) ([0b9cffd](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/0b9cffd23877b7d967328efe87bdca7760806c9c))
+
+
+### Documentation Updates
+
+* align blog index categories with actual content ([#205](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/205)) ([e42649a](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e42649aaa0346c9858836bcfc7912cbc57596c3c))
+* update roadmap with shipped content and planned features ([#203](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/203)) ([c54a4f1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c54a4f1deaf57d052c389e1fa2bba7c9a47a3e35))
+
 ## [1.5.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.4.3...1.5.0) (2026-01-02)
 
 
