@@ -85,8 +85,9 @@ A GitHub Core App enables:
 
 ## Guide Sections
 
+- [Authentication Decision Guide](authentication-decision-guide.md) - Choose between JWT, installation tokens, and OAuth
 - [Creating the Core App](creating-the-app.md) - Step-by-step app creation and configuration
-- [Storing Credentials](storing-credentials.md) - Managing secrets in GitHub
+- [Storing Credentials](storing-credentials/index.md) - Managing secrets in GitHub
 - [Permission Patterns](permission-patterns.md) - Common permission configurations
 - [Security Best Practices](security-best-practices.md) - Securing your Core App
 - [Installation Scopes](installation-scopes.md) - Choosing the right installation scope
