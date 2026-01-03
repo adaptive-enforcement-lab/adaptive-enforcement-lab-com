@@ -601,13 +601,66 @@ nav:
                   - Audit Simulation: enforce/implementation-roadmap/hardening-checklist/phase-4/audit-simulation.md
       - Policy Template Library:
           - enforce/policy-as-code/template-library/index.md
+          - Decision Guide:
+              - enforce/policy-as-code/template-library/decision-guide.md
+              - OPA vs Kyverno Comparison: enforce/policy-as-code/template-library/opa-kyverno-comparison.md
+              - Migration Guide: enforce/policy-as-code/template-library/opa-kyverno-migration.md
+          - JMESPath Patterns:
+              - enforce/policy-as-code/template-library/jmespath/index.md
+              - Advanced Patterns: enforce/policy-as-code/template-library/jmespath/advanced.md
+              - Enterprise Examples: enforce/policy-as-code/template-library/jmespath/enterprise.md
+              - Supply Chain Patterns: enforce/policy-as-code/template-library/jmespath/enterprise-supply-chain.md
+              - Testing Techniques: enforce/policy-as-code/template-library/jmespath/testing.md
+              - Function Reference: enforce/policy-as-code/template-library/jmespath/reference.md
           - Kyverno Templates:
-              - enforce/policy-as-code/template-library/kyverno-templates.md
-              - Pod Security: enforce/policy-as-code/template-library/kyverno-pod-security.md
-              - Image Validation: enforce/policy-as-code/template-library/kyverno-image-validation.md
-              - Resource Limits: enforce/policy-as-code/template-library/kyverno-resource-limits.md
-              - Mandatory Labels: enforce/policy-as-code/template-library/kyverno-labels.md
-          - OPA Templates: enforce/policy-as-code/template-library/opa-templates.md
+              - enforce/policy-as-code/template-library/kyverno/index.md
+              - Pod Security:
+                  - enforce/policy-as-code/template-library/kyverno/pod-security/index.md
+                  - Privilege Escalation: enforce/policy-as-code/template-library/kyverno/pod-security/privileges.md
+                  - Security Profiles: enforce/policy-as-code/template-library/kyverno/pod-security/profiles.md
+              - Image Validation:
+                  - enforce/policy-as-code/template-library/kyverno/image/index.md
+                  - Registry Allowlists: enforce/policy-as-code/template-library/kyverno/image/validation.md
+                  - Image Signing: enforce/policy-as-code/template-library/kyverno/image/signing.md
+                  - Base Images: enforce/policy-as-code/template-library/kyverno/image/security.md
+                  - CVE Scanning: enforce/policy-as-code/template-library/kyverno/image/cve-scanning.md
+              - Resource Management:
+                  - enforce/policy-as-code/template-library/kyverno/resource/index.md
+                  - Storage Limits: enforce/policy-as-code/template-library/kyverno/resource/storage.md
+                  - HPA Requirements: enforce/policy-as-code/template-library/kyverno/resource/hpa.md
+              - Network Security:
+                  - enforce/policy-as-code/template-library/kyverno/network/index.md
+                  - Ingress Class: enforce/policy-as-code/template-library/kyverno/network/ingress-class.md
+                  - Ingress TLS: enforce/policy-as-code/template-library/kyverno/network/ingress-tls.md
+                  - Service Types: enforce/policy-as-code/template-library/kyverno/network/services.md
+              - Labels & Metadata:
+                  - enforce/policy-as-code/template-library/kyverno/labels.md
+                  - Label Mutation: enforce/policy-as-code/template-library/kyverno/mutation/labels.md
+              - Mutation & Generation:
+                  - enforce/policy-as-code/template-library/kyverno/mutation/sidecar.md
+                  - Namespace Resources: enforce/policy-as-code/template-library/kyverno/generation/namespace.md
+                  - Workload Resources: enforce/policy-as-code/template-library/kyverno/generation/workload.md
+          - OPA Templates:
+              - enforce/policy-as-code/template-library/opa/index.md
+              - Pod Security:
+                  - enforce/policy-as-code/template-library/opa/pod-security/index.md
+                  - Capabilities: enforce/policy-as-code/template-library/opa/pod-security/capabilities.md
+                  - Security Contexts: enforce/policy-as-code/template-library/opa/pod-security/contexts.md
+                  - Privilege Escalation: enforce/policy-as-code/template-library/opa/pod-security/escalation.md
+              - Image Security:
+                  - enforce/policy-as-code/template-library/opa/image/index.md
+                  - Digest Enforcement: enforce/policy-as-code/template-library/opa/image/digest.md
+                  - Signature Verification: enforce/policy-as-code/template-library/opa/image/verification.md
+                  - Base Image Enforcement: enforce/policy-as-code/template-library/opa/image/base.md
+              - RBAC:
+                  - enforce/policy-as-code/template-library/opa/rbac/index.md
+                  - Cluster-Admin Prevention: enforce/policy-as-code/template-library/opa/rbac/cluster-admin.md
+                  - Privileged Verbs: enforce/policy-as-code/template-library/opa/rbac/privileged-verbs.md
+                  - Wildcard Prevention: enforce/policy-as-code/template-library/opa/rbac/wildcards.md
+              - Resource Governance:
+                  - enforce/policy-as-code/template-library/opa/resource/index.md
+                  - LimitRange & Ephemeral Storage: enforce/policy-as-code/template-library/opa/resource/limitrange.md
+                  - Storage Class & PVC Limits: enforce/policy-as-code/template-library/opa/resource/storage.md
           - CI/CD Integration: enforce/policy-as-code/template-library/ci-cd-integration.md
           - Usage Guide: enforce/policy-as-code/template-library/usage-guide.md
       - Incident Readiness:

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Production-ready Kyverno and OPA policy templates. Pod security, image validation, resource limits, namespace isolation, and CI/CD integration patterns for policy-as-code enforcement.
+  Production-ready policy template library: 48 battle-tested policies (28 Kyverno + 20 OPA). Pod security, image validation, RBAC, resource governance, network security, and CI/CD integration.
 tags:
   - policy-as-code
   - kyverno
@@ -9,47 +9,141 @@ tags:
   - templates
 ---
 
-# Production-Ready Policy Templates
+# Policy-as-Code Template Library
 
-Complete, battle-tested policy templates for Kyverno and OPA/Gatekeeper. Copy, customize, deploy.
+**48 production-ready policies** for Kubernetes security and governance. Reduce the Rego learning curve. Copy, customize, deploy.
 
 <!-- more -->
 
 !!! abstract "Template Library Overview"
-    This library contains production-grade policies covering pod security, image validation, resource management, namespace isolation, and CI/CD integration. Each template includes full YAML, customization variables, validation commands, and real-world use cases.
+    This library contains **28 Kyverno policies** and **20 OPA/Gatekeeper constraint templates** covering pod security, image validation, RBAC, resource governance, network security, mutation, and generation.
+    Each template includes complete YAML/Rego, customization variables, validation commands, and real-world use cases.
 
-## Overview
+---
 
-This library contains production-grade policies covering:
+## What You Get
 
-- **Pod Security**: Privilege escalation prevention, capability restrictions, read-only filesystems
-- **Image Validation**: Registry allowlists, signature verification, base image requirements
-- **Resource Management**: CPU/memory limits, requests, quota enforcement
-- **Namespace Isolation**: Network policies, RBAC constraints, resource quotas
-- **CI/CD Integration**: Pre-commit validation, GitHub Actions automation, ArgoCD gating
+This library provides ready-to-use policies for common security scenarios:
 
-Each template includes full YAML, customization variables, validation commands, and real-world use cases.
+- **48 Total Policies**: 28 Kyverno + 20 OPA/Gatekeeper
+- **Complete Implementation**: Full YAML/Rego with production-ready configuration
+- **Customization Tables**: Variables, defaults, and purpose for each parameter
+- **Validation Commands**: Test policies before enforcement
+- **Real-World Use Cases**: 4-6 production scenarios per policy
+- **Testing Guidance**: Audit mode, policy reports, troubleshooting
 
 ---
 
 ## Template Categories
 
-### [Kyverno Templates →](kyverno-templates.md)
+### [Decision Guide →](decision-guide.md)
 
-Production-ready Kyverno policies for Kubernetes admission control:
+**Choose between OPA and Kyverno** based on team expertise, policy complexity, and operational requirements.
 
-- Pod security standards enforcement
-- Image validation and registry allowlists
-- Resource limits and requests enforcement
-- Mandatory labels and annotations
+- Quick decision matrix (expertise, scope, complexity)
+- Recommended starter paths
+- [Detailed comparison →](opa-kyverno-comparison.md)
+- [Migration strategies →](opa-kyverno-migration.md)
 
-### [OPA/Gatekeeper Templates →](opa-templates.md)
+---
 
-OPA Gatekeeper constraint templates for policy-driven infrastructure:
+### [Kyverno Templates →](kyverno/index.md)
 
-- Namespace isolation and network policy enforcement
-- Cross-namespace access controls
-- Custom resource validation
+**28 production-ready Kyverno policies** for Kubernetes admission control, mutation, and resource generation.
+
+#### [Pod Security →](kyverno/pod-security/index.md) (5 Policies)
+
+- Pod Security Standards Enforcement
+- Host Namespace Restrictions
+- Privilege Escalation Prevention
+- Seccomp Profile Enforcement
+- AppArmor Profile Requirements
+
+#### [Image Validation →](kyverno/image/index.md) (5 Policies)
+
+- Image Digest Requirements
+- Registry Allowlist and Tag Validation
+- Cosign Image Signature Verification
+- Base Image Enforcement
+- CVE Scanning Gates
+
+#### [Resource Management →](kyverno/resource/index.md) (5 Policies)
+
+- Resource Limits and Requests Enforcement
+- CPU and Memory Ratio Enforcement
+- Ephemeral Storage Limits
+- PVC Size Constraints
+- HPA Configuration Requirements
+
+#### [Network Security →](kyverno/network/index.md) (5 Policies)
+
+- Require Network Policies
+- Egress Restrictions
+- Ingress Class Requirements
+- Ingress TLS Requirements
+- Service Type Restrictions
+
+#### Mutation & Generation (7 Policies)
+
+- [Mutation Policies →](kyverno/mutation/index.md) - Default Label Injection, Namespace Label Propagation, Logging Sidecar Injection, Monitoring Sidecar Injection
+- [Generation Policies →](kyverno/generation/index.md) - Automatic ResourceQuota Generation, Default-Deny NetworkPolicy Generation, Automatic PodDisruptionBudget Generation
+
+#### [Labels & Metadata →](kyverno/labels.md) (1 Policy)
+
+- Mandatory Labels and Annotations
+
+---
+
+### [OPA/Gatekeeper Templates →](opa/index.md)
+
+**20 production-ready OPA constraint templates** with complete Rego implementation for advanced policy enforcement.
+
+#### [Pod Security →](opa/pod-security/index.md) (5 Policies)
+
+- Privileged Container Prevention
+- Host Namespace Restrictions
+- Required Capabilities Drop
+- Security Context Requirements
+- Privilege Escalation Prevention
+
+#### [Image Security →](opa/image/index.md) (5 Policies)
+
+- Registry Allowlist
+- Tag Requirements
+- Digest Enforcement
+- Image Signature Verification Annotations
+- Base Image Enforcement
+
+#### [RBAC →](opa/rbac/index.md) (5 Policies)
+
+- Service Account Restrictions
+- Role Binding Namespace Enforcement
+- Cluster-Admin Prevention
+- Privileged Verbs Restrictions
+- Wildcard Resource Prevention
+
+#### [Resource Governance →](opa/resource/index.md) (5 Policies)
+
+- Resource Limits and Requests Enforcement
+- Resource Quota Requirements
+- LimitRange Requirements
+- Ephemeral Storage Limits
+- Storage Class Restrictions
+
+---
+
+### [JMESPath Patterns →](jmespath/index.md)
+
+**Advanced Kyverno pattern library** for complex validation logic using JMESPath.
+
+- Pattern fundamentals (projection, filtering, multi-select)
+- Cross-field validation (requests vs limits, label dependencies)
+- Complex conditions (nested logic, transformations)
+- [Advanced patterns →](jmespath/advanced.md) (aggregation, arithmetic, string manipulation)
+- [Enterprise examples →](jmespath/enterprise.md) (registry policies, cost controls, HA requirements)
+- [Testing guide →](jmespath/testing.md) (kyverno jp CLI, debugging, validation)
+
+---
 
 ### [CI/CD Integration →](ci-cd-integration.md)
 
@@ -58,6 +152,8 @@ Automated policy validation in development pipelines:
 - GitHub Actions pre-flight validation
 - ArgoCD policy gating
 - Pre-commit hooks
+
+---
 
 ### [Usage Guide →](usage-guide.md)
 
@@ -70,44 +166,76 @@ Template customization workflow, validation best practices, and quick start guid
 
 ---
 
+## Policy Engine Comparison
+
+Choose the right policy engine for your team:
+
+| Feature | Kyverno | OPA/Gatekeeper |
+|---------|---------|----------------|
+| **Policies** | 28 (validation, mutation, generation) | 20 (validation only) |
+| **Language** | YAML + JMESPath | Rego (Go-like DSL) |
+| **Learning Curve** | < 1 hour | 4-8 hours |
+| **Best For** | Kubernetes-native teams, fast adoption | Multi-platform policies, complex logic |
+| **Mutation** | ✅ Native support | ❌ Validation only |
+| **Generation** | ✅ Auto-create resources | ❌ Validation only |
+
+**See [Decision Guide →](decision-guide.md)** for detailed comparison and recommended starter paths.
+
+---
+
 ## Quick Start
 
-### Minimal Setup (5 minutes)
+!!! warning "Deploy in Audit Mode First"
+    Always start with `audit` (Kyverno) or `dryrun` (OPA) mode. Monitor violations for 48 hours before switching to enforcement. Existing workloads may violate policies.
+
+### Kyverno Quick Start (5 minutes)
 
 ```bash
 # 1. Install Kyverno
 helm repo add kyverno https://kyverno.github.io/kyverno/
 helm install kyverno kyverno/kyverno --namespace kyverno --create-namespace
 
-# 2. Apply pod-security policy
-kubectl apply -f kyverno-templates.md
+# 2. Apply a policy (starts in audit mode)
+kubectl apply -f https://raw.githubusercontent.com/adaptive-enforcement-lab/docs/main/kyverno-pod-security.yaml
 
-# 3. Test it works
-kubectl run test --image=nginx  # Should fail: no resource limits
-kubectl run test --image=nginx --requests=cpu=100m,memory=128Mi --limits=cpu=500m,memory=512Mi  # Should pass
+# 3. Monitor violations
+kubectl get polr -A  # PolicyReports
+kubectl get cpolr    # ClusterPolicyReports
+
+# 4. Switch to enforcement after validation
+kubectl patch clusterpolicy require-pod-security \
+  --type merge \
+  -p '{"spec":{"validationFailureAction":"enforce"}}'
 ```
 
-### Production Deployment (Infrastructure as Code)
+### OPA/Gatekeeper Quick Start (10 minutes)
 
 ```bash
-# 1. Create policy namespace
-kubectl create namespace policy-enforcement
+# 1. Install Gatekeeper
+kubectl apply -f https://raw.githubusercontent.com/open-policy-agent/gatekeeper/master/deploy/gatekeeper.yaml
 
-# 2. Apply all policies
-kubectl apply -f policies/ -n policy-enforcement
+# 2. Deploy constraint template (policy logic)
+kubectl apply -f https://raw.githubusercontent.com/adaptive-enforcement-lab/docs/main/opa-pod-security.yaml
 
-# 3. Configure cluster-wide enforcement
-kubectl patch clusterpolicy restrict-privileged-containers -p '{"spec":{"validationFailureAction":"enforce"}}'
+# 3. Deploy constraint (starts in dryrun mode)
+kubectl apply -f constraint.yaml
 
 # 4. Monitor violations
-kubectl logs -n policy-enforcement -f deployment/kyverno
+kubectl get constraints
+kubectl get k8sblockprivileged -o yaml
+
+# 5. Switch to enforcement after validation
+kubectl patch k8sblockprivileged block-privileged \
+  --type merge \
+  -p '{"spec":{"enforcementAction":"deny"}}'
 ```
 
 ---
 
-## Next Steps
+## Related Resources
 
-- Review [Kyverno Best Practices](https://kyverno.io/docs/writing-policies/best-practices/)
-- Explore [OPA/Gatekeeper Documentation](https://open-policy-agent.org/docs/latest/kubernetes-admission-control/)
-- Join [Kyverno Community](https://kyverno.io/community/)
-- Set up [Policy Testing Pipeline](https://kyverno.io/docs/testing-policies/)
+- **[Kyverno Official Documentation](https://kyverno.io/docs/)** - Kyverno guides and API reference
+- **[OPA/Gatekeeper Documentation](https://open-policy-agent.org/docs/latest/kubernetes-admission-control/)** - Gatekeeper deployment and Rego reference
+- **[Kubernetes Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/)** - Baseline and Restricted profiles
+- **[NIST SP 800-190](https://csrc.nist.gov/publications/detail/sp/800-190/final)** - Application Container Security Guide
+- **[CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes)** - Security configuration standards

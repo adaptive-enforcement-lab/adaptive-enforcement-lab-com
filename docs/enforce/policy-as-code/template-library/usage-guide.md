@@ -168,8 +168,8 @@ rules:
 
 ## Related Resources
 
-- **[Kyverno Templates →](kyverno-templates.md)** - Pod security, images, resources
-- **[OPA Templates →](opa-templates.md)** - Network policies, constraints
+- **[Kyverno Templates →](kyverno/index.md)** - Pod security, images, resources
+- **[OPA Templates →](opa/index.md)** - Network policies, constraints
 - **[CI/CD Integration →](ci-cd-integration.md)** - Automated validation
 - **[Template Library Overview →](index.md)** - Back to main page
 
