@@ -230,8 +230,8 @@ done
 
 ## Related Resources
 
-- **[Kyverno Resource Limits →](../kyverno-resource/limits.md)** - Resource requests and limits
-- **[Kyverno Resource HPA →](../kyverno-resource/hpa.md)** - HorizontalPodAutoscaler requirements
+- **[Kyverno Resource Limits →](../kyverno-resource-limits.md)** - Resource requests and limits
+- **[Kyverno Resource HPA →](../kyverno-resource-hpa.md)** - HorizontalPodAutoscaler requirements
 - **[Kyverno Generation - Namespaces →](namespace.md)** - ResourceQuota and NetworkPolicy generation
-- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Pod Security →](../kyverno-pod-security.md)** - Security contexts and capabilities
 - **[Template Library Overview →](../index.md)** - Back to main page
