@@ -17,9 +17,122 @@ Controls which container images can be deployed. Enforces registry allowlists, p
 
 ---
 
-## Template 2: Image Validation and Registry Allowlist
+## Template 1: Image Digest Requirements
 
-Controls which container images can be deployed. Enforces registry allowlists, prohibits `latest` tags, and optionally requires image signatures.
+Enforces SHA256 digest references instead of mutable tags. Digest-based references ensure immutable deployments and prevent tag-based image substitution attacks.
+
+### Complete Policy
+
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-image-digest
+  namespace: kyverno
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: check-image-digest
+      match:
+        resources:
+          kinds:
+            - Pod
+            - Deployment
+            - StatefulSet
+            - DaemonSet
+            - Job
+            - CronJob
+      validate:
+        message: "Container images must use digest references (SHA256), not tags"
+        pattern:
+          spec:
+            (template)?:
+              spec:
+                containers:
+                  - image: "*@sha256:*"
+                initContainers?:
+                  - image: "*@sha256:*"
+                ephemeralContainers?:
+                  - image: "*@sha256:*"
+    - name: deny-tag-only-references
+      match:
+        resources:
+          kinds:
+            - Pod
+            - Deployment
+            - StatefulSet
+            - DaemonSet
+            - Job
+            - CronJob
+      validate:
+        message: "Tag-only image references are not allowed. Use digest format: image@sha256:..."
+        deny:
+          conditions:
+            any:
+              - key: "{{ request.object.spec.template.spec.containers[].image || request.object.spec.containers[].image }}"
+                operator: AnyNotIn
+                value: ["*@sha256:*"]
+```
+
+### Customization Variables
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `validationFailureAction` | `enforce` | Use `audit` for gradual rollout |
+| `digest-algorithm` | `sha256` | Cryptographic hash algorithm |
+| `exclude-namespaces` | None | Exempt development namespaces |
+| `allow-tag-with-digest` | `false` | Allow `image:tag@sha256:...` format |
+
+### Validation Commands
+
+```bash
+# Apply policy
+kubectl apply -f digest-requirements-policy.yaml
+
+# Test with tag only (should fail)
+kubectl run test --image=nginx:1.21 -n default --dry-run=client -o yaml | kubectl apply -f -
+
+# Test with digest (should pass)
+kubectl run test --image=nginx@sha256:9522864dd661dcadfd9958f9e0de192a1fdda2c162a35668ab6ac42b465f0603 -n default --dry-run=client -o yaml | kubectl apply -f -
+
+# Get digest for an image
+docker pull nginx:1.21
+docker inspect nginx:1.21 --format='{{.RepoDigests}}'
+
+# Convert tag to digest in deployment
+kubectl get deployment web -o yaml | sed 's/:latest/@sha256:abc123.../' | kubectl apply -f -
+```
+
+### Use Cases
+
+1. **Immutable Deployments**: Prevent silent image updates when tags are overwritten
+2. **Supply Chain Security**: Ensure exact image version deployed matches security scans
+3. **Compliance Auditing**: Track precise image versions for regulatory requirements
+4. **Rollback Safety**: Reference exact image versions for reliable rollbacks
+5. **Image Signing**: Required for verifying cryptographic signatures (cosign, notary)
+
+### Converting Tags to Digests
+
+Generate digest references from tags:
+
+```bash
+# Get digest for a tagged image
+skopeo inspect docker://nginx:1.21 | jq -r '.Digest'
+
+# Update deployment with digest
+IMAGE_DIGEST=$(skopeo inspect docker://nginx:1.21 | jq -r '.Digest')
+kubectl set image deployment/web nginx=nginx@${IMAGE_DIGEST}
+
+# Validate all images in namespace use digests
+kubectl get pods -n production -o jsonpath='{range .items[*]}{.metadata.name}{"\t"}{.spec.containers[*].image}{"\n"}{end}' | grep -v "@sha256:"
+```
+
+---
+
+## Template 2: Registry Allowlist and Tag Validation
+
+Controls which container images can be deployed. Enforces registry allowlists, prohibits `latest` tags, and validates image sources.
 
 ### Complete Policy
 
@@ -155,6 +268,8 @@ kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"\t"}{.s
 
 ## Related Resources
 
+- **[Kyverno Image Signing →](kyverno-image-signing.md)** - Cosign signature verification
+- **[Kyverno Image Security →](kyverno-image-security.md)** - Base image enforcement and CVE gates
 - **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
 - **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - CPU and memory enforcement
 - **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata

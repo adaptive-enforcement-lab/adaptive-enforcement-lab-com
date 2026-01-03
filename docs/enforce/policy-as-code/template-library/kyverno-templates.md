@@ -1,6 +1,6 @@
 ---
 description: >-
-  Kyverno policy templates overview. Production-ready policies for pod security, image validation, resource limits, and mandatory labels.
+  Kyverno policy templates overview. 28 production-ready policies for pod security, image validation, resource limits, network security, mutation, and generation.
 tags:
   - kyverno
   - kubernetes
@@ -11,71 +11,154 @@ tags:
 # Kyverno Policy Templates
 
 !!! warning "Start with Audit Mode"
-    Deploy in `audit` mode first. Existing workloads may violate these policies. Monitor violations for 48 hours, fix non-compliant pods, then switch to `enforce`.
+    Deploy in `audit` mode first. Existing workloads may violate these policies. Monitor violations for 48 hours, fix non-compliant resources, then switch to `enforce`.
 
-Production-ready Kyverno policies for Kubernetes admission control. Each template includes complete configuration, customization options, validation commands, and real-world use cases.
+Production-ready Kyverno policies for Kubernetes admission control. **28 policies** covering validation, mutation, and generation patterns. Each template includes complete configuration, customization options, validation commands, and real-world use cases.
 
 ---
 
 ## Available Templates
 
-### Pod Security
+### Pod Security (5 Policies)
 
-Enforce pod security standards, prevent privileged containers, require read-only root filesystems, and drop dangerous capabilities.
+Enforce pod security standards, prevent privileged containers, control host namespaces, and enforce security profiles.
 
-**[View Pod Security Templates →](kyverno-pod-security.md)**
+**Files:**
 
-Key features:
+- **[Pod Security Standards →](kyverno-pod-security.md)** (2 policies)
+- **[Privilege Escalation Prevention →](kyverno-pod-security-privileges.md)** (1 policy)
+- **[Security Profiles →](kyverno-pod-security-profiles.md)** (2 policies)
 
-- Restrict privileged containers
-- Drop all capabilities
-- Enforce read-only root filesystems
-- Require non-root users
+Key policies:
 
----
-
-### Image Validation
-
-Control which container images can be deployed with registry allowlists, tag validation, and signature verification.
-
-**[View Image Validation Templates →](kyverno-image-validation.md)**
-
-Key features:
-
-- Registry allowlists
-- Prohibit `latest` tags
-- Block untrusted registries
-- Support image signature verification
+- Pod Security Standards Enforcement (Baseline/Restricted)
+- Host Namespace Restrictions (hostNetwork, hostPID, hostIPC, hostPort)
+- Privilege Escalation Prevention (allowPrivilegeEscalation, privileged containers)
+- Seccomp Profile Enforcement (RuntimeDefault, Localhost, unconfined blocking)
+- AppArmor Profile Requirements (runtime/default, custom profiles)
 
 ---
 
-### Resource Limits
+### Image Validation (5 Policies)
 
-Ensure all workloads define CPU and memory requests and limits to prevent resource exhaustion.
+Control container images with digest requirements, registry allowlists, signature verification, base image enforcement, and CVE scanning gates.
 
-**[View Resource Limits Templates →](kyverno-resource-limits.md)**
+**Files:**
 
-Key features:
+- **[Image Digest & Registry Validation →](kyverno-image-validation.md)** (2 policies)
+- **[Image Signing Verification →](kyverno-image-signing.md)** (1 policy)
+- **[Base Image Enforcement →](kyverno-image-security.md)** (1 policy)
+- **[CVE Scanning Gates →](kyverno-image-cve-scanning.md)** (1 policy)
 
-- Require resource requests and limits
-- Enforce resource ranges
-- Validate init containers
-- Prevent resource starvation
+Key policies:
+
+- Image Digest Requirements (SHA256 enforcement)
+- Registry Allowlist and Tag Validation (block `latest`, untrusted registries)
+- Cosign Image Signature Verification (keyless and key-based)
+- Base Image Enforcement (approved base images, deprecated blocklist)
+- CVE Scanning Gates (Trivy attestations, severity thresholds)
 
 ---
 
-### Mandatory Labels
+### Resource Management (5 Policies)
+
+Ensure resource requests and limits, enforce CPU/memory ratios, control ephemeral storage, constrain PVC sizes, and require HPA configuration.
+
+**Files:**
+
+- **[Resource Limits & Ratios →](kyverno-resource-limits.md)** (2 policies)
+- **[Storage Limits →](kyverno-resource-storage.md)** (2 policies)
+- **[HPA Requirements →](kyverno-resource-hpa.md)** (1 policy)
+
+Key policies:
+
+- Resource Limits and Requests Enforcement (CPU, memory, QoS classes)
+- CPU and Memory Ratio Enforcement (prevent over-provisioning)
+- Ephemeral Storage Limits (ephemeral storage, emptyDir controls)
+- PVC Size Constraints (min/max sizes, storage class governance)
+- HPA Configuration Requirements (replica bounds, metrics validation)
+
+---
+
+### Network Security (5 Policies)
+
+Enforce network policies, restrict egress traffic, require ingress class validation, mandate TLS encryption, and control service types.
+
+**Files:**
+
+- **[Network Policies & Egress →](kyverno-network-security.md)** (2 policies)
+- **[Ingress Class Requirements →](kyverno-network-ingress-class.md)** (1 policy)
+- **[Ingress TLS Requirements →](kyverno-network-ingress-tls.md)** (1 policy)
+- **[Service Type Restrictions →](kyverno-network-services.md)** (1 policy)
+
+Key policies:
+
+- Require Network Policies (namespace coverage, default-deny enforcement)
+- Egress Restrictions (destination controls, external IP blocking)
+- Ingress Class Requirements (approved controllers, deprecated annotation blocking)
+- Ingress TLS Requirements (encryption enforcement, cert-manager integration)
+- Service Type Restrictions (LoadBalancer approval, NodePort controls)
+
+---
+
+### Mutation & Generation (7 Policies)
+
+Automatically inject labels, add sidecars, generate resource quotas, create network policies, and ensure pod disruption budgets.
+
+**Files:**
+
+- **[Label Mutation →](kyverno-mutation-labels.md)** (2 policies)
+- **[Sidecar Injection →](kyverno-mutation-sidecar.md)** (2 policies)
+- **[Namespace Resource Generation →](kyverno-generation-namespace.md)** (2 policies)
+- **[Workload Resource Generation →](kyverno-generation-workload.md)** (1 policy)
+
+Key policies:
+
+- Default Label Injection (team, environment, version, cost-center)
+- Namespace Label Propagation (inherit team, compliance, SLA labels)
+- Logging Sidecar Injection (Fluent Bit with Elasticsearch/Loki)
+- Monitoring Sidecar Injection (Nginx exporter, JMX exporter, Prometheus)
+- Automatic ResourceQuota Generation (default quotas, production quotas)
+- Default-Deny NetworkPolicy Generation (default-deny ingress, strict egress)
+- Automatic PodDisruptionBudget Generation (2+ replicas, critical workloads)
+
+---
+
+### Mandatory Labels (1 Policy)
 
 Enforce required metadata for observability, cost tracking, and compliance auditing.
 
-**[View Mandatory Labels Templates →](kyverno-labels.md)**
+**Files:**
 
-Key features:
+- **[Mandatory Labels →](kyverno-labels.md)** (1 policy)
 
-- Require app, team, version labels
-- Enforce environment labels
-- Validate label formats
-- Require observability annotations
+Key policy:
+
+- Mandatory Labels and Annotations (require app, team, version, environment labels)
+
+---
+
+## Policy Types
+
+Kyverno supports three policy types:
+
+### Validation Policies
+
+**Block** resources that violate security rules.
+
+Examples: Pod security restrictions, image allowlists, resource limits, network security
+
+### Mutation Policies
+
+**Modify** resources before admission to enforce standards.
+
+Examples: Add labels, inject sidecars, set default resource limits
+
+### Generation Policies
+
+**Create** new resources when triggers match.
+
+Examples: Generate ResourceQuotas for new namespaces, create default-deny NetworkPolicies
 
 ---
 
@@ -90,15 +173,29 @@ kubectl apply -f policy.yaml
 # Monitor policy violations
 kubectl logs -f -n kyverno deployment/kyverno
 
+# Check policy reports
+kubectl get polr -A  # PolicyReports
+kubectl get cpolr    # ClusterPolicyReports
+
 # Switch to enforce mode after validation
 kubectl patch clusterpolicy <policy-name> \
   --type merge \
   -p '{"spec":{"validationFailureAction":"enforce"}}'
 ```
 
+## Policy Customization
+
+Every template includes a customization table:
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `validationFailureAction` | `audit` | Use `audit` for testing, `enforce` for production |
+| `background` | `true` | Scan existing resources (not just new admission requests) |
+| Resource selectors | Varies | Target specific namespaces, kinds, or labels |
+
 ## Related Resources
 
+- **[JMESPath Patterns →](jmespath-patterns.md)** - Advanced Kyverno pattern examples
 - **[OPA Templates →](opa-templates.md)** - Gatekeeper constraint templates
-- **[CI/CD Integration →](ci-cd-integration.md)** - Automated policy validation
-- **[Usage Guide →](usage-guide.md)** - Customization and troubleshooting
+- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection guide
 - **[Template Library Overview →](index.md)** - Back to main page
