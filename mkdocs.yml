@@ -244,15 +244,15 @@ plugins:
         'developer-guide/error-handling/prerequisite-checks/examples.md': 'patterns/error-handling/prerequisite-checks/examples.md'
         'developer-guide/error-handling/prerequisite-checks/index.md': 'patterns/error-handling/prerequisite-checks/index.md'
         'developer-guide/error-handling/prerequisite-checks/ordering.md': 'patterns/error-handling/prerequisite-checks/ordering.md'
-        'operator-manual/github-actions/actions-integration/error-handling.md': 'patterns/github-actions/actions-integration/error-handling.md'
+        'operator-manual/github-actions/actions-integration/error-handling.md': 'patterns/github-actions/actions-integration/error-handling/index.md'
         'operator-manual/github-actions/actions-integration/index.md': 'patterns/github-actions/actions-integration/index.md'
         'operator-manual/github-actions/actions-integration/performance-optimization.md': 'patterns/github-actions/actions-integration/performance-optimization.md'
         'operator-manual/github-actions/actions-integration/security-best-practices.md': 'patterns/github-actions/actions-integration/security-best-practices.md'
-        'operator-manual/github-actions/actions-integration/token-generation.md': 'patterns/github-actions/actions-integration/token-generation.md'
+        'operator-manual/github-actions/actions-integration/token-generation.md': 'patterns/github-actions/actions-integration/token-generation/index.md'
         'operator-manual/github-actions/actions-integration/token-validation.md': 'patterns/github-actions/actions-integration/token-validation.md'
         'operator-manual/github-actions/actions-integration/troubleshooting.md': 'patterns/github-actions/actions-integration/troubleshooting.md'
         'operator-manual/github-actions/actions-integration/using-tokens.md': 'patterns/github-actions/actions-integration/using-tokens.md'
-        'operator-manual/github-actions/actions-integration/workflow-patterns.md': 'patterns/github-actions/actions-integration/workflow-patterns.md'
+        'operator-manual/github-actions/actions-integration/workflow-patterns.md': 'patterns/github-actions/actions-integration/token-generation/workflow-patterns.md'
         'operator-manual/github-actions/actions-integration/workflow-permissions.md': 'patterns/github-actions/actions-integration/workflow-permissions.md'
         'operator-manual/github-actions/use-cases/file-distribution/architecture.md': 'patterns/github-actions/use-cases/file-distribution/architecture.md'
         'operator-manual/github-actions/use-cases/file-distribution/discovery-stage.md': 'patterns/github-actions/use-cases/file-distribution/discovery-stage.md'
@@ -284,7 +284,7 @@ plugins:
         'operator-manual/github-actions/github-app-setup/maintenance.md': 'secure/github-apps/maintenance.md'
         'operator-manual/github-actions/github-app-setup/permission-patterns.md': 'secure/github-apps/permission-patterns.md'
         'operator-manual/github-actions/github-app-setup/security-best-practices.md': 'secure/github-apps/security-best-practices.md'
-        'operator-manual/github-actions/github-app-setup/storing-credentials.md': 'secure/github-apps/storing-credentials.md'
+        'operator-manual/github-actions/github-app-setup/storing-credentials.md': 'secure/github-apps/storing-credentials/index.md'
         'operator-manual/github-actions/github-app-setup/troubleshooting.md': 'secure/github-apps/troubleshooting.md'
         'developer-guide/sdlc-hardening/go-security/compliance.md': 'secure/go-security/compliance.md'
         'developer-guide/sdlc-hardening/go-security/conclusion.md': 'secure/go-security/conclusion.md'
@@ -658,7 +658,23 @@ nav:
               - Remediation Cost: secure/risk-management/engineer-framework/remediation-cost.md
   - Enforce:
       - enforce/index.md
-      - Branch Protection: enforce/branch-protection/branch-protection.md
+      - Branch Protection:
+          - enforce/branch-protection/index.md
+          - Implementation: enforce/branch-protection/branch-protection.md
+          - Security Tiers: enforce/branch-protection/security-tiers.md
+          - GitHub App Enforcement: enforce/branch-protection/github-app-enforcement.md
+          - Terraform Modules: enforce/branch-protection/terraform-modules.md
+          - OpenTofu Modules: enforce/branch-protection/opentofu-modules.md
+          - Multi-Repo Management: enforce/branch-protection/multi-repo-management.md
+          - Enforcement Workflows: enforce/branch-protection/enforcement-workflows.md
+          - Drift Detection: enforce/branch-protection/drift-detection.md
+          - Exception Management: enforce/branch-protection/exception-management.md
+          - Bypass Controls: enforce/branch-protection/bypass-controls.md
+          - Emergency Access: enforce/branch-protection/emergency-access.md
+          - Verification Scripts: enforce/branch-protection/verification-scripts.md
+          - Audit Evidence: enforce/branch-protection/audit-evidence.md
+          - Compliance Reporting: enforce/branch-protection/compliance-reporting.md
+          - Troubleshooting: enforce/branch-protection/troubleshooting.md
       - Commit Signing: enforce/commit-signing/commit-signing.md
       - Pre-commit Hooks:
           - enforce/pre-commit-hooks/pre-commit-hooks.md
@@ -765,6 +781,7 @@ nav:
               - Migration Guide: enforce/policy-as-code/template-library/opa-kyverno-migration.md
           - JMESPath Patterns:
               - enforce/policy-as-code/template-library/jmespath/index.md
+              - Common Patterns: enforce/policy-as-code/template-library/jmespath/patterns.md
               - Advanced Patterns: enforce/policy-as-code/template-library/jmespath/advanced.md
               - Enterprise Examples: enforce/policy-as-code/template-library/jmespath/enterprise.md
               - Supply Chain Patterns: enforce/policy-as-code/template-library/jmespath/enterprise-supply-chain.md
@@ -774,6 +791,7 @@ nav:
               - enforce/policy-as-code/template-library/kyverno/index.md
               - Pod Security:
                   - enforce/policy-as-code/template-library/kyverno/pod-security/index.md
+                  - Pod Security Standards: enforce/policy-as-code/template-library/kyverno/pod-security/standards.md
                   - Privilege Escalation: enforce/policy-as-code/template-library/kyverno/pod-security/privileges.md
                   - Security Profiles: enforce/policy-as-code/template-library/kyverno/pod-security/profiles.md
               - Image Validation:
@@ -784,39 +802,49 @@ nav:
                   - CVE Scanning: enforce/policy-as-code/template-library/kyverno/image/cve-scanning.md
               - Resource Management:
                   - enforce/policy-as-code/template-library/kyverno/resource/index.md
+                  - Resource Limits: enforce/policy-as-code/template-library/kyverno/resource/limits.md
                   - Storage Limits: enforce/policy-as-code/template-library/kyverno/resource/storage.md
                   - HPA Requirements: enforce/policy-as-code/template-library/kyverno/resource/hpa.md
               - Network Security:
                   - enforce/policy-as-code/template-library/kyverno/network/index.md
+                  - Network Security: enforce/policy-as-code/template-library/kyverno/network/security.md
                   - Ingress Class: enforce/policy-as-code/template-library/kyverno/network/ingress-class.md
                   - Ingress TLS: enforce/policy-as-code/template-library/kyverno/network/ingress-tls.md
                   - Service Types: enforce/policy-as-code/template-library/kyverno/network/services.md
               - Labels & Metadata:
                   - enforce/policy-as-code/template-library/kyverno/labels.md
                   - Label Mutation: enforce/policy-as-code/template-library/kyverno/mutation/labels.md
-              - Mutation & Generation:
-                  - enforce/policy-as-code/template-library/kyverno/mutation/sidecar.md
+              - Mutation:
+                  - enforce/policy-as-code/template-library/kyverno/mutation/index.md
+                  - Label Mutation: enforce/policy-as-code/template-library/kyverno/mutation/labels.md
+                  - Sidecar Injection: enforce/policy-as-code/template-library/kyverno/mutation/sidecar.md
+              - Generation:
+                  - enforce/policy-as-code/template-library/kyverno/generation/index.md
                   - Namespace Resources: enforce/policy-as-code/template-library/kyverno/generation/namespace.md
                   - Workload Resources: enforce/policy-as-code/template-library/kyverno/generation/workload.md
           - OPA Templates:
               - enforce/policy-as-code/template-library/opa/index.md
               - Pod Security:
                   - enforce/policy-as-code/template-library/opa/pod-security/index.md
+                  - Overview: enforce/policy-as-code/template-library/opa/pod-security/overview.md
                   - Capabilities: enforce/policy-as-code/template-library/opa/pod-security/capabilities.md
                   - Security Contexts: enforce/policy-as-code/template-library/opa/pod-security/contexts.md
                   - Privilege Escalation: enforce/policy-as-code/template-library/opa/pod-security/escalation.md
               - Image Security:
                   - enforce/policy-as-code/template-library/opa/image/index.md
+                  - Image Security Overview: enforce/policy-as-code/template-library/opa/image/security.md
                   - Digest Enforcement: enforce/policy-as-code/template-library/opa/image/digest.md
                   - Signature Verification: enforce/policy-as-code/template-library/opa/image/verification.md
                   - Base Image Enforcement: enforce/policy-as-code/template-library/opa/image/base.md
               - RBAC:
                   - enforce/policy-as-code/template-library/opa/rbac/index.md
+                  - RBAC Overview: enforce/policy-as-code/template-library/opa/rbac/overview.md
                   - Cluster-Admin Prevention: enforce/policy-as-code/template-library/opa/rbac/cluster-admin.md
                   - Privileged Verbs: enforce/policy-as-code/template-library/opa/rbac/privileged-verbs.md
                   - Wildcard Prevention: enforce/policy-as-code/template-library/opa/rbac/wildcards.md
               - Resource Governance:
                   - enforce/policy-as-code/template-library/opa/resource/index.md
+                  - Governance Overview: enforce/policy-as-code/template-library/opa/resource/governance.md
                   - LimitRange & Ephemeral Storage: enforce/policy-as-code/template-library/opa/resource/limitrange.md
                   - Storage Class & PVC Limits: enforce/policy-as-code/template-library/opa/resource/storage.md
           - CI/CD Integration: enforce/policy-as-code/template-library/ci-cd-integration.md

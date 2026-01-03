@@ -284,7 +284,7 @@ Before implementing graceful degradation:
 | [Work Avoidance](../../efficiency/work-avoidance/index.md) | When detection fails, do the work anyway |
 | [Idempotency](../../efficiency/idempotency/index.md) | Safe retries as fallback mechanism |
 | [Fail Fast](../fail-fast/index.md) | Complementary: fail fast on preconditions, degrade on runtime |
-| [Error Handling](../../../patterns/github-actions/actions-integration/error-handling.md) | Recovery strategy selection |
+| [Error Handling](../../../patterns/github-actions/actions-integration/error-handling/index.md) | Recovery strategy selection |
 
 ---
 

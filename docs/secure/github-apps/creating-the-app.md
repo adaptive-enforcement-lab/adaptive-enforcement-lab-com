@@ -136,6 +136,6 @@ MIIEpAIBAAKCAQEA...
 
 Once you've created the app and generated credentials:
 
-- [Store the credentials securely](storing-credentials.md)
+- [Store the credentials securely](storing-credentials/index.md)
 - [Review permission patterns](permission-patterns.md)
 - [Understand security best practices](security-best-practices.md)

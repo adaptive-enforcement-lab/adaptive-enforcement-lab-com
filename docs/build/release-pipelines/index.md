@@ -87,7 +87,7 @@ A modular pipeline architecture that:
 Before implementing release pipelines, set up a GitHub App for your organization:
 
 - [GitHub App Setup](../../secure/github-apps/index.md) - Create and configure the App
-- [Token Generation](../../patterns/github-actions/actions-integration/token-generation.md) - Generate tokens in workflows
+- [Token Generation](../../patterns/github-actions/actions-integration/token-generation/index.md) - Generate tokens in workflows
 
 ---
 

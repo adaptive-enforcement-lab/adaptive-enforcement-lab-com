@@ -59,7 +59,7 @@ This section walks through the complete integration lifecycle:
 **Integration Patterns:**
 
 - [Using Tokens](using-tokens.md) - Integrate tokens with GitHub CLI, Git, and APIs
-- [Workflow Patterns](workflow-patterns.md) - Common automation patterns
+- [Workflow Patterns](token-generation/workflow-patterns.md) - Common automation patterns
 - [Token Validation](token-validation.md) - Verify token scope and permissions
 - [Workflow Permissions](workflow-permissions.md) - Configure workflow-level permissions
 
