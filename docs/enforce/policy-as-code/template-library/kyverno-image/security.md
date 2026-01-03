@@ -226,8 +226,8 @@ jobs:
 
 ## Related Resources
 
-- **[Kyverno CVE Scanning Gates →](kyverno-image-cve-scanning.md)** - Vulnerability scan attestations
-- **[Kyverno Image Signing →](kyverno-image-signing.md)** - Cosign signature verification
-- **[Kyverno Image Validation →](kyverno-image-validation.md)** - Digest requirements and registry allowlists
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Kyverno CVE Scanning Gates →](cve-scanning.md)** - Vulnerability scan attestations
+- **[Kyverno Image Signing →](signing.md)** - Cosign signature verification
+- **[Kyverno Image Validation →](validation.md)** - Digest requirements and registry allowlists
+- **[Kyverno Pod Security →](../kyverno-pod-security.md)** - Security contexts and capabilities
+- **[Template Library Overview →](../index.md)** - Back to main page

@@ -619,10 +619,11 @@ nav:
                   - Privilege Escalation: enforce/policy-as-code/template-library/kyverno-pod-security-privileges.md
                   - Security Profiles: enforce/policy-as-code/template-library/kyverno-pod-security-profiles.md
               - Image Validation:
-                  - enforce/policy-as-code/template-library/kyverno-image-validation.md
-                  - Image Signing: enforce/policy-as-code/template-library/kyverno-image-signing.md
-                  - Base Images: enforce/policy-as-code/template-library/kyverno-image-security.md
-                  - CVE Scanning: enforce/policy-as-code/template-library/kyverno-image-cve-scanning.md
+                  - enforce/policy-as-code/template-library/kyverno-image/index.md
+                  - Registry Allowlists: enforce/policy-as-code/template-library/kyverno-image/validation.md
+                  - Image Signing: enforce/policy-as-code/template-library/kyverno-image/signing.md
+                  - Base Images: enforce/policy-as-code/template-library/kyverno-image/security.md
+                  - CVE Scanning: enforce/policy-as-code/template-library/kyverno-image/cve-scanning.md
               - Resource Management:
                   - enforce/policy-as-code/template-library/kyverno-resource-limits.md
                   - Storage Limits: enforce/policy-as-code/template-library/kyverno-resource-storage.md
