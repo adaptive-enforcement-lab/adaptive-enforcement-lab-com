@@ -438,8 +438,75 @@ nav:
           - Compliance: secure/go-security/compliance.md
           - Conclusion: secure/go-security/conclusion.md
       - Scorecard:
-          - Scorecard Compliance: secure/scorecard/scorecard-compliance.md
-          - Workflow Examples: secure/scorecard/scorecard-workflow-examples.md
+          - secure/scorecard/index.md
+          - Getting Started:
+              - Scorecard Compliance: secure/scorecard/scorecard-compliance.md
+              - Workflow Examples: secure/scorecard/scorecard-workflow-examples.md
+          - Score Progression:
+              - secure/scorecard/score-progression.md
+              - "Tier 1 (7→8)":
+                  - secure/scorecard/score-progression/tier-1.md
+                  - Part 1: secure/scorecard/score-progression/tier-1/part-1.md
+                  - Part 2: secure/scorecard/score-progression/tier-1/part-2.md
+              - "Tier 2 (8→9)":
+                  - secure/scorecard/score-progression/tier-2.md
+                  - Part 1: secure/scorecard/score-progression/tier-2/part-1.md
+                  - Part 2: secure/scorecard/score-progression/tier-2/part-2.md
+              - "Tier 3 (9→10)":
+                  - secure/scorecard/score-progression/tier-3.md
+                  - Part 1: secure/scorecard/score-progression/tier-3/part-1.md
+                  - Part 2: secure/scorecard/score-progression/tier-3/part-2.md
+          - Check Playbooks:
+              - Supply Chain:
+                  - secure/scorecard/checks/supply-chain.md
+                  - Part 1: secure/scorecard/checks/supply-chain/part-1.md
+                  - Part 2: secure/scorecard/checks/supply-chain/part-2.md
+                  - Part 3: secure/scorecard/checks/supply-chain/part-3.md
+                  - Part 4: secure/scorecard/checks/supply-chain/part-4.md
+              - Code Review:
+                  - secure/scorecard/checks/code-review.md
+                  - Part 1: secure/scorecard/checks/code-review/part-1.md
+                  - Part 2: secure/scorecard/checks/code-review/part-2.md
+                  - Part 3: secure/scorecard/checks/code-review/part-3.md
+              - Security Practices:
+                  - secure/scorecard/checks/security-practices.md
+                  - Security-Policy: secure/scorecard/checks/security-practices/security-policy.md
+                  - CII-Best-Practices: secure/scorecard/checks/security-practices/cii-best-practices.md
+                  - Vulnerabilities: secure/scorecard/checks/security-practices/vulnerabilities.md
+                  - Vulnerabilities Advanced: secure/scorecard/checks/security-practices/vulnerabilities-advanced.md
+                  - Fuzzing: secure/scorecard/checks/security-practices/fuzzing.md
+                  - Fuzzing Advanced: secure/scorecard/checks/security-practices/fuzzing-advanced.md
+                  - Token-Permissions: secure/scorecard/checks/security-practices/token-permissions.md
+              - Release Security:
+                  - secure/scorecard/checks/release-security.md
+                  - Signed-Releases: secure/scorecard/checks/release-security/signed-releases.md
+                  - Signed-Releases Advanced: secure/scorecard/checks/release-security/signed-releases-advanced.md
+                  - Packaging: secure/scorecard/checks/release-security/packaging.md
+                  - License: secure/scorecard/checks/release-security/license.md
+              - Branch Protection:
+                  - secure/scorecard/checks/branch-protection.md
+                  - Part 1a: secure/scorecard/checks/branch-protection/part-1a.md
+                  - Part 1b: secure/scorecard/checks/branch-protection/part-1b.md
+                  - Part 2a: secure/scorecard/checks/branch-protection/part-2a.md
+                  - Part 2b: secure/scorecard/checks/branch-protection/part-2b.md
+                  - Part 3: secure/scorecard/checks/branch-protection/part-3.md
+          - Advanced Topics:
+              - False Positives:
+                  - secure/scorecard/false-positives.md
+                  - Part 1: secure/scorecard/false-positives/part-1.md
+                  - Part 2: secure/scorecard/false-positives/part-2.md
+                  - Part 3: secure/scorecard/false-positives/part-3.md
+                  - Part 4: secure/scorecard/false-positives/part-4.md
+              - Decision Framework:
+                  - secure/scorecard/decision-framework.md
+                  - Part 1: secure/scorecard/decision-framework/part-1.md
+                  - Part 2: secure/scorecard/decision-framework/part-2.md
+                  - Part 3: secure/scorecard/decision-framework/part-3.md
+              - CI/CD Integration:
+                  - secure/scorecard/ci-integration.md
+                  - Part 1: secure/scorecard/ci-integration/part-1.md
+                  - Part 2: secure/scorecard/ci-integration/part-2.md
+                  - Part 3: secure/scorecard/ci-integration/part-3.md
       - Cloud Native:
           - GKE Hardening:
               - secure/cloud-native/gke-hardening/index.md

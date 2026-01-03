@@ -1,0 +1,7 @@
+# Ci Integration
+
+This content has been split into multiple parts:
+
+- [Part 1](./ci-integration/part-1.md) (362 lines)
+- [Part 2](./ci-integration/part-2.md) (294 lines)
+- [Part 3](./ci-integration/part-3.md) (278 lines)
