@@ -87,17 +87,13 @@ Adaptive Enforcement Lab is actively building. Here's what's shipped and what's 
 
     ### Tactical Blog Posts
 
-    **Real-World Implementation Stories** (9 new posts)
+    **Real-World Implementation Stories** (5 new posts)
 
-    - ✅ **[The Checklist That Passed the Audit](/blog/2025/12/30/checklist-passed-audit/)** - SDLC hardening journey
-    - ✅ **[The Policy That Wrote Itself](/blog/2025/12/31/policy-wrote-itself/)** - Policy-as-code evolution
-    - ✅ **[The 3AM Incident That Followed the Playbook](/blog/2026/01/01/3am-incident-followed-playbook/)** - Incident response validation
-    - ✅ **[The GKE Cluster Nobody Could Break](/blog/2026/01/02/gke-cluster-nobody-could-break/)** - GKE hardening results
-    - ✅ **[The CVE That Didn't Matter](/blog/2026/01/03/cve-that-didnt-matter/)** - Risk-informed decision making
-    - ✅ **[The Architecture That Couldn't Be Breached](/blog/2026/01/04/architecture-couldnt-be-breached/)** - Secure-by-design implementation
-    - ✅ **[The Last Service Account Key](/blog/2026/01/05/last-service-account-key/)** - Workload Identity migration
-    - ✅ **[The Chaos That Proved We Were Ready](/blog/2026/01/06/chaos-proved-we-were-ready/)** - Chaos engineering validation
-    - ✅ **[The Security Team That Became Invisible](/blog/2026/01/07/security-team-became-invisible/)** - Culture transformation success
+    - ✅ **[The Checklist That Passed the Audit](blog/posts/2025-12-30-checklist-passed-audit.md)** - SDLC hardening journey
+    - ✅ **[The Policy That Wrote Itself](blog/posts/2025-12-31-policy-wrote-itself.md)** - Policy-as-code evolution
+    - ✅ **[The 3AM Incident That Followed the Playbook](blog/posts/2026-01-01-3am-incident-followed-playbook.md)** - Incident response validation
+    - ✅ **[The GKE Cluster Nobody Could Break](blog/posts/2026-01-02-gke-cluster-nobody-could-break.md)** - GKE hardening results
+    - ✅ **[The CVE That Didn't Matter](blog/posts/2026-01-03-cve-that-didnt-matter.md)** - Risk-informed decision making
 
 ---
 
