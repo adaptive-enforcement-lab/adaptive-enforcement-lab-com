@@ -1,6 +1,6 @@
 ---
 description: >-
-  Kyverno image validation policies: registry allowlists, digest requirements, signature verification, and CVE scanning gates for Kubernetes supply chain security.
+  Kyverno image validation: registry allowlists, digests, signatures, and CVE scanning gates for K8s supply chain security.
 tags:
   - kyverno
   - image-validation
@@ -91,7 +91,8 @@ Use this for:
 Block untrusted registries before enforcing signatures or scans.
 
 ```bash
-kubectl apply -f validation.md  # Registry controls first
+kubectl apply -f registry-allowlist-policy.yaml  # Registry controls first
+kubectl get clusterpolicy -w   # Watch for Ready status
 ```
 
 ### 2. Add Digest Requirements
@@ -99,7 +100,8 @@ kubectl apply -f validation.md  # Registry controls first
 Enforce immutable image references.
 
 ```bash
-kubectl apply -f validation.md  # Digest enforcement
+kubectl apply -f digest-enforcement-policy.yaml  # Digest enforcement
+kubectl get clusterpolicy -w
 ```
 
 ### 3. Implement Image Signing
@@ -107,7 +109,8 @@ kubectl apply -f validation.md  # Digest enforcement
 Verify images come from trusted sources.
 
 ```bash
-kubectl apply -f signing.md  # Signature verification
+kubectl apply -f signature-verification-policy.yaml  # Signature verification
+kubectl get clusterpolicy -w
 ```
 
 ### 4. Enforce CVE Scanning
@@ -115,7 +118,8 @@ kubectl apply -f signing.md  # Signature verification
 Block vulnerable images based on scan attestations.
 
 ```bash
-kubectl apply -f cve-scanning.md  # Vulnerability gates
+kubectl apply -f cve-scanning-policy.yaml  # CVE gates
+kubectl get clusterpolicy -w
 ```
 
 ### 5. Centralize Base Images
@@ -123,7 +127,8 @@ kubectl apply -f cve-scanning.md  # Vulnerability gates
 Standardize on approved, maintained base images.
 
 ```bash
-kubectl apply -f security.md  # Base image enforcement
+kubectl apply -f base-image-policy.yaml  # Base image enforcement
+kubectl get clusterpolicy -w
 ```
 
 ---
