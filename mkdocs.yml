@@ -421,8 +421,13 @@ nav:
       - secure/index.md
       - GitHub Apps:
           - secure/github-apps/index.md
+          - Authentication Decision Guide: secure/github-apps/authentication-decision-guide.md
           - Creating the App: secure/github-apps/creating-the-app.md
-          - Storing Credentials: secure/github-apps/storing-credentials.md
+          - Storing Credentials:
+              - secure/github-apps/storing-credentials/index.md
+              - External CI: secure/github-apps/storing-credentials/external-ci.md
+              - Kubernetes: secure/github-apps/storing-credentials/kubernetes.md
+              - Rotation & Security: secure/github-apps/storing-credentials/rotation-security.md
           - Permission Patterns: secure/github-apps/permission-patterns.md
           - Security Best Practices: secure/github-apps/security-best-practices.md
           - Installation Scopes: secure/github-apps/installation-scopes.md
@@ -828,12 +833,31 @@ nav:
       - GitHub Actions:
           - Actions Integration:
               - patterns/github-actions/actions-integration/index.md
-              - Token Generation: patterns/github-actions/actions-integration/token-generation.md
+              - JWT Authentication:
+                  - patterns/github-actions/actions-integration/jwt-authentication/index.md
+                  - Security & Troubleshooting: patterns/github-actions/actions-integration/jwt-authentication/security-troubleshooting.md
+              - OAuth Authentication:
+                  - patterns/github-actions/actions-integration/oauth-authentication/index.md
+                  - Device Flow: patterns/github-actions/actions-integration/oauth-authentication/device-flow.md
+                  - Security & Troubleshooting: patterns/github-actions/actions-integration/oauth-authentication/security-troubleshooting.md
+              - Token Generation:
+                  - patterns/github-actions/actions-integration/token-generation/index.md
+                  - Use Cases: patterns/github-actions/actions-integration/token-generation/use-cases.md
+                  - Workflow Patterns: patterns/github-actions/actions-integration/token-generation/workflow-patterns.md
+                  - Security & Troubleshooting: patterns/github-actions/actions-integration/token-generation/lifecycle-security.md
+              - Token Lifecycle:
+                  - patterns/github-actions/actions-integration/token-lifecycle/index.md
+                  - Refresh Patterns: patterns/github-actions/actions-integration/token-lifecycle/refresh-patterns.md
+                  - Long Workflows: patterns/github-actions/actions-integration/token-lifecycle/long-workflows.md
+                  - Caching & Rate Limits: patterns/github-actions/actions-integration/token-lifecycle/caching-rate-limits.md
+                  - Best Practices: patterns/github-actions/actions-integration/token-lifecycle/best-practices.md
               - Using Tokens: patterns/github-actions/actions-integration/using-tokens.md
-              - Workflow Patterns: patterns/github-actions/actions-integration/workflow-patterns.md
               - Token Validation: patterns/github-actions/actions-integration/token-validation.md
               - Workflow Permissions: patterns/github-actions/actions-integration/workflow-permissions.md
-              - Error Handling: patterns/github-actions/actions-integration/error-handling.md
+              - Error Handling:
+                  - patterns/github-actions/actions-integration/error-handling/index.md
+                  - Best Practices: patterns/github-actions/actions-integration/error-handling/best-practices.md
+                  - Rate Limiting: patterns/github-actions/actions-integration/error-handling/rate-limiting.md
               - Security Best Practices: patterns/github-actions/actions-integration/security-best-practices.md
               - Troubleshooting: patterns/github-actions/actions-integration/troubleshooting.md
               - Performance Optimization: patterns/github-actions/actions-integration/performance-optimization.md

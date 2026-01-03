@@ -1,0 +1,331 @@
+---
+title: Error Handling Best Practices
+description: >-
+  Error handling examples, best practices, patterns, and troubleshooting for GitHub Actions workflows.
+---
+
+## Complete Error Handling Example
+
+```yaml
+name: Robust API Operations
+
+on:
+  workflow_dispatch:
+
+jobs:
+  robust-operations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: app_token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.CORE_APP_ID }}
+          private-key: ${{ secrets.CORE_APP_PRIVATE_KEY }}
+          owner: adaptive-enforcement-lab
+        continue-on-error: true
+
+      - name: Validate token generation
+        if: steps.app_token.outcome == 'failure'
+        run: |
+          echo "::error::Token generation failed"
+          echo "::error::Verify App ID, Private Key, and installation"
+          exit 1
+
+      - name: Robust API operations
+        env:
+          GH_TOKEN: ${{ steps.app_token.outputs.token }}
+          APP_ID: ${{ secrets.CORE_APP_ID }}
+          PRIVATE_KEY: ${{ secrets.CORE_APP_PRIVATE_KEY }}
+        run: |
+          # --- TOKEN REFRESH ---
+          generate_token() {
+            gh api /app/installations --jq '.[0].id' | xargs -I {} \
+              gh api /app/installations/{}/access_tokens -X POST --jq .token
+          }
+
+          # --- COMPREHENSIVE ERROR HANDLING ---
+          api_call() {
+            local endpoint="$1"
+            local method="${2:-GET}"
+            local max_retries=3
+            local retry=0
+            local base_delay=2
+
+            while [ $retry -le $max_retries ]; do
+              # Attempt API call with headers
+              response=$(gh api "$endpoint" -X "$method" -i 2>&1)
+              http_code=$(echo "$response" | head -1 | awk '{print $2}')
+
+              # Success
+              if [[ "$http_code" =~ ^2[0-9][0-9]$ ]]; then
+                echo "$response" | sed -n '/^$/,$p' | tail -n +2
+                return 0
+              fi
+
+              # Handle specific errors
+              case "$http_code" in
+                401)
+                  echo "::warning::Token expired, refreshing"
+                  export GH_TOKEN=$(generate_token)
+                  ;;
+                403)
+                  echo "::error::Permission denied for: $endpoint"
+                  echo "::error::Verify app permissions and installation scope"
+                  return 1
+                  ;;
+                404)
+                  echo "::error::Resource not found: $endpoint"
+                  return 1
+                  ;;
+                422)
+                  echo "::error::Validation failed"
+                  echo "::error::Response: $response"
+                  return 1
+                  ;;
+                429)
+                  reset=$(echo "$response" | grep -i "x-ratelimit-reset:" | awk '{print $2}' | tr -d '\r')
+                  now=$(date +%s)
+                  wait_time=$((reset - now + 1))
+
+                  if [ $wait_time -gt 0 ] && [ $wait_time -lt 300 ]; then
+                    echo "::warning::Rate limited, waiting ${wait_time}s"
+                    sleep "$wait_time"
+                  else
+                    delay=$((base_delay * (2 ** retry)))
+                    echo "::warning::Rate limited, exponential backoff: ${delay}s"
+                    sleep "$delay"
+                  fi
+                  ;;
+                5*)
+                  delay=$((base_delay * (2 ** retry)))
+                  echo "::warning::Server error $http_code, retrying in ${delay}s"
+                  sleep "$delay"
+                  ;;
+                *)
+                  echo "::error::Unexpected error $http_code: $response"
+                  return 1
+                  ;;
+              esac
+
+              ((retry++))
+
+              if [ $retry -gt $max_retries ]; then
+                echo "::error::Failed after $max_retries retries"
+                return 1
+              fi
+            done
+          }
+
+          # --- USAGE EXAMPLES ---
+
+          # Get user info
+          echo "::group::User Information"
+          api_call "user"
+          echo "::endgroup::"
+
+          # List organization repositories
+          echo "::group::Organization Repositories"
+          api_call "orgs/adaptive-enforcement-lab/repos"
+          echo "::endgroup::"
+
+          # Create issue (with validation error handling)
+          echo "::group::Create Issue"
+          payload='{"title":"Test Issue","body":"Automated issue creation"}'
+          echo "$payload" | api_call "repos/adaptive-enforcement-lab/example-repo/issues" "POST"
+          echo "::endgroup::"
+```
+
+## Error Handling Best Practices
+
+### 1. Classify Errors Correctly
+
+```yaml
+# ✅ GOOD: Retry transient errors only
+if [[ "$http_code" =~ ^5[0-9][0-9]$ ]] || [ "$http_code" = "429" ]; then
+  # Retry with backoff
+fi
+
+# ❌ BAD: Retry all errors
+if [ $? -ne 0 ]; then
+  # Retrying 403 or 404 wastes time
+fi
+```
+
+### 2. Use Structured Error Messages
+
+```yaml
+# ✅ GOOD: Actionable error with context
+echo "::error::Permission denied for endpoint: $endpoint"
+echo "::error::Required permission: 'contents: write'"
+echo "::error::Configure at: https://github.com/settings/apps/your-app"
+
+# ❌ BAD: Vague error
+echo "API call failed"
+```
+
+### 3. Implement Circuit Breaker
+
+```yaml
+- name: Circuit breaker pattern
+  run: |
+    consecutive_failures=0
+    max_consecutive_failures=5
+
+    for repo in repo1 repo2 repo3; do
+      if api_call "repos/org/$repo"; then
+        consecutive_failures=0
+      else
+        ((consecutive_failures++))
+
+        if [ $consecutive_failures -ge $max_consecutive_failures ]; then
+          echo "::error::Circuit breaker triggered after $consecutive_failures failures"
+          echo "::error::Stopping to prevent cascading failures"
+          exit 1
+        fi
+      fi
+    done
+```
+
+### 4. Monitor Rate Limits Proactively
+
+```yaml
+# ✅ GOOD: Check rate limit before expensive operations
+remaining=$(gh api rate_limit --jq '.rate.remaining')
+if [ "$remaining" -lt 100 ]; then
+  echo "::warning::Low rate limit: $remaining"
+  # Implement throttling or delay
+fi
+
+# ❌ BAD: Only react to 429 errors
+```
+
+### 5. Mask Sensitive Data in Errors
+
+```yaml
+# ✅ GOOD: Mask tokens in error messages
+echo "::add-mask::$GH_TOKEN"
+echo "::error::API call failed with token: ${GH_TOKEN:0:10}..."
+
+# ❌ BAD: Expose full token
+echo "::error::API call failed with token: $GH_TOKEN"
+```
+
+## HTTP Status Code Reference
+
+| Code | Meaning | Retryable | Action |
+|------|---------|-----------|--------|
+| 200 | OK | - | Success |
+| 201 | Created | - | Resource created |
+| 401 | Unauthorized | ✅ | Refresh token |
+| 403 | Forbidden | ❌ | Check permissions |
+| 404 | Not Found | ❌ | Verify resource exists |
+| 422 | Unprocessable Entity | ❌ | Fix request payload |
+| 429 | Too Many Requests | ✅ | Wait for rate limit reset |
+| 500 | Internal Server Error | ✅ | Retry with backoff |
+| 502 | Bad Gateway | ✅ | Retry with backoff |
+| 503 | Service Unavailable | ✅ | Retry with backoff |
+
+## Troubleshooting
+
+### "Bad credentials" Error
+
+**Symptoms**: `401 Unauthorized` with "Bad credentials" message
+
+**Causes**:
+
+1. Token expired (exceeded 1-hour lifetime)
+2. Token revoked or installation suspended
+3. Malformed token (encoding issues)
+
+**Solutions**:
+
+```yaml
+# Verify token is fresh
+- run: |
+    # Generate new token
+    export GH_TOKEN=$(generate_token)
+
+    # Verify immediately
+    gh api user --jq .login
+```
+
+### "Resource not accessible by integration"
+
+**Symptoms**: `403 Forbidden` with resource access message
+
+**Causes**:
+
+1. App missing required permissions
+2. Repository not in installation scope
+3. Organization-level permission required but not granted
+
+**Solutions**:
+
+```yaml
+# Check installation scope
+- run: |
+    gh api /app/installations --jq '.[] | {
+      account: .account.login,
+      repos: .repository_selection,
+      permissions: .permissions
+    }'
+```
+
+### Rate Limit Exceeded Without 429
+
+**Symptoms**: Slow responses or timeouts without explicit rate limit error
+
+**Causes**:
+
+1. Secondary rate limits (concurrent requests)
+2. GraphQL query complexity limits
+3. Search API rate limits (30 requests/minute)
+
+**Solutions**:
+
+```yaml
+# Add delays between requests
+- run: |
+    for repo in "${repos[@]}"; do
+      gh api "repos/org/$repo"
+      sleep 2  # Avoid secondary rate limits
+    done
+```
+
+### Intermittent Failures
+
+**Symptoms**: Random failures that succeed on retry
+
+**Causes**:
+
+1. Network connectivity issues
+2. GitHub API temporary degradation
+3. DNS resolution problems
+
+**Solutions**:
+
+```yaml
+# Implement retry with exponential backoff
+# Use circuit breaker pattern
+# Add request timeouts
+```
+
+## Related Documentation
+
+- **[Token Lifecycle Management](../token-lifecycle/index.md)** - Token expiration and refresh strategies
+- **[JWT Authentication](../jwt-authentication/index.md)** - JWT generation and app-level operations
+- **[OAuth Authentication](../oauth-authentication/index.md)** - OAuth flow error handling
+- **[Authentication Decision Guide](../../../secure/github-apps/authentication-decision-guide.md)** - Choose authentication method
+- **[Security Best Practices](../../../secure/github-apps/security-best-practices.md)** - Secure error handling patterns
+
+---
+
+!!! tip "Production Recommendations"
+
+    1. **Always implement retry logic** for 401, 429, and 5xx errors
+    2. **Use exponential backoff** to prevent thundering herd
+    3. **Monitor rate limits proactively** with header checks
+    4. **Provide actionable error messages** with configuration URLs
+    5. **Implement circuit breakers** for cascading failures
+    6. **Mask sensitive data** in logs and error messages
