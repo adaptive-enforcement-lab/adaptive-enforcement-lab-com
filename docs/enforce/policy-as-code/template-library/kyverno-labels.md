@@ -200,7 +200,7 @@ kubectl get pods -A -o jsonpath='{range .items[?(@.metadata.annotations.owner ==
 
 ## Related Resources
 
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Image Validation →](kyverno-image-validation.md)** - Registry allowlists and tag validation
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - CPU and memory enforcement
+- **[Kyverno Pod Security →](kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Image Validation →](kyverno-image/validation.md)** - Registry allowlists and tag validation
+- **[Kyverno Resource Limits →](kyverno-resource/limits.md)** - CPU and memory enforcement
 - **[Template Library Overview →](index.md)** - Back to main page

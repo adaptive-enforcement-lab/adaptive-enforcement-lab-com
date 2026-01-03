@@ -25,9 +25,9 @@ Enforce pod security standards, prevent privileged containers, control host name
 
 **Files:**
 
-- **[Pod Security Standards →](kyverno-pod-security.md)** (2 policies)
-- **[Privilege Escalation Prevention →](kyverno-pod-security-privileges.md)** (1 policy)
-- **[Security Profiles →](kyverno-pod-security-profiles.md)** (2 policies)
+- **[Pod Security Standards →](kyverno-pod-security/standards.md)** (2 policies)
+- **[Privilege Escalation Prevention →](kyverno-pod-security/privileges.md)** (1 policy)
+- **[Security Profiles →](kyverno-pod-security/profiles.md)** (2 policies)
 
 Key policies:
 
@@ -45,10 +45,10 @@ Control container images with digest requirements, registry allowlists, signatur
 
 **Files:**
 
-- **[Image Digest & Registry Validation →](kyverno-image-validation.md)** (2 policies)
-- **[Image Signing Verification →](kyverno-image-signing.md)** (1 policy)
-- **[Base Image Enforcement →](kyverno-image-security.md)** (1 policy)
-- **[CVE Scanning Gates →](kyverno-image-cve-scanning.md)** (1 policy)
+- **[Image Digest & Registry Validation →](kyverno-image/validation.md)** (2 policies)
+- **[Image Signing Verification →](kyverno-image/signing.md)** (1 policy)
+- **[Base Image Enforcement →](kyverno-image/security.md)** (1 policy)
+- **[CVE Scanning Gates →](kyverno-image/cve-scanning.md)** (1 policy)
 
 Key policies:
 
@@ -66,9 +66,9 @@ Ensure resource requests and limits, enforce CPU/memory ratios, control ephemera
 
 **Files:**
 
-- **[Resource Limits & Ratios →](kyverno-resource-limits.md)** (2 policies)
-- **[Storage Limits →](kyverno-resource-storage.md)** (2 policies)
-- **[HPA Requirements →](kyverno-resource-hpa.md)** (1 policy)
+- **[Resource Limits & Ratios →](kyverno-resource/limits.md)** (2 policies)
+- **[Storage Limits →](kyverno-resource/storage.md)** (2 policies)
+- **[HPA Requirements →](kyverno-resource/hpa.md)** (1 policy)
 
 Key policies:
 
@@ -86,10 +86,10 @@ Enforce network policies, restrict egress traffic, require ingress class validat
 
 **Files:**
 
-- **[Network Policies & Egress →](kyverno-network-security.md)** (2 policies)
-- **[Ingress Class Requirements →](kyverno-network-ingress-class.md)** (1 policy)
-- **[Ingress TLS Requirements →](kyverno-network-ingress-tls.md)** (1 policy)
-- **[Service Type Restrictions →](kyverno-network-services.md)** (1 policy)
+- **[Network Policies & Egress →](kyverno-network/security.md)** (2 policies)
+- **[Ingress Class Requirements →](kyverno-network/ingress-class.md)** (1 policy)
+- **[Ingress TLS Requirements →](kyverno-network/ingress-tls.md)** (1 policy)
+- **[Service Type Restrictions →](kyverno-network/services.md)** (1 policy)
 
 Key policies:
 
@@ -107,10 +107,10 @@ Automatically inject labels, add sidecars, generate resource quotas, create netw
 
 **Files:**
 
-- **[Label Mutation →](kyverno-mutation-labels.md)** (2 policies)
-- **[Sidecar Injection →](kyverno-mutation-sidecar.md)** (2 policies)
-- **[Namespace Resource Generation →](kyverno-generation-namespace.md)** (2 policies)
-- **[Workload Resource Generation →](kyverno-generation-workload.md)** (1 policy)
+- **[Label Mutation →](kyverno-mutation/labels.md)** (2 policies)
+- **[Sidecar Injection →](kyverno-mutation/sidecar.md)** (2 policies)
+- **[Namespace Resource Generation →](kyverno-generation/namespace.md)** (2 policies)
+- **[Workload Resource Generation →](kyverno-generation/workload.md)** (1 policy)
 
 Key policies:
 
@@ -195,7 +195,7 @@ Every template includes a customization table:
 
 ## Related Resources
 
-- **[JMESPath Patterns →](jmespath-patterns.md)** - Advanced Kyverno pattern examples
+- **[JMESPath Patterns →](jmespath/patterns.md)** - Advanced Kyverno pattern examples
 - **[OPA Templates →](opa-templates.md)** - Gatekeeper constraint templates
 - **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection guide
 - **[Template Library Overview →](index.md)** - Back to main page

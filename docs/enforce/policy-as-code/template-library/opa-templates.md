@@ -28,10 +28,10 @@ Prevent privileged containers, block host namespace access, enforce capability d
 
 **Files:**
 
-- **[Privileged & Host Namespaces →](opa-pod-security.md)** (2 policies)
-- **[Capabilities Drop →](opa-pod-security-capabilities.md)** (1 policy)
-- **[Security Contexts →](opa-pod-security-contexts.md)** (1 policy)
-- **[Privilege Escalation Prevention →](opa-pod-security-escalation.md)** (1 policy)
+- **[Privileged & Host Namespaces →](opa-pod-security/overview.md)** (2 policies)
+- **[Capabilities Drop →](opa-pod-security/capabilities.md)** (1 policy)
+- **[Security Contexts →](opa-pod-security/contexts.md)** (1 policy)
+- **[Privilege Escalation Prevention →](opa-pod-security/escalation.md)** (1 policy)
 
 Key policies:
 
@@ -49,10 +49,10 @@ Control container images with registry allowlists, tag requirements, digest enfo
 
 **Files:**
 
-- **[Registry & Tag Validation →](opa-image-security.md)** (2 policies)
-- **[Digest Enforcement →](opa-image-digest.md)** (1 policy)
-- **[Signature Verification →](opa-image-verification.md)** (1 policy)
-- **[Base Image Enforcement →](opa-image-base.md)** (1 policy)
+- **[Registry & Tag Validation →](opa-image/security.md)** (2 policies)
+- **[Digest Enforcement →](opa-image/digest.md)** (1 policy)
+- **[Signature Verification →](opa-image/verification.md)** (1 policy)
+- **[Base Image Enforcement →](opa-image/base.md)** (1 policy)
 
 Key policies:
 
@@ -70,10 +70,10 @@ Restrict service accounts, prevent cross-namespace role bindings, block cluster-
 
 **Files:**
 
-- **[Service Accounts & Role Bindings →](opa-rbac.md)** (2 policies)
-- **[Cluster-Admin Prevention →](opa-rbac-cluster-admin.md)** (1 policy)
-- **[Privileged Verbs Restrictions →](opa-rbac-privileged-verbs.md)** (1 policy)
-- **[Wildcard Prevention →](opa-rbac-wildcards.md)** (1 policy)
+- **[Service Accounts & Role Bindings →](opa-rbac/overview.md)** (2 policies)
+- **[Cluster-Admin Prevention →](opa-rbac/cluster-admin.md)** (1 policy)
+- **[Privileged Verbs Restrictions →](opa-rbac/privileged-verbs.md)** (1 policy)
+- **[Wildcard Prevention →](opa-rbac/wildcards.md)** (1 policy)
 
 Key policies:
 
@@ -91,9 +91,9 @@ Enforce resource limits and requests, require namespace quotas, mandate LimitRan
 
 **Files:**
 
-- **[Resource Limits & Quotas →](opa-resource-governance.md)** (2 policies)
-- **[LimitRange & Ephemeral Storage →](opa-resource-limitrange.md)** (2 policies)
-- **[Storage Class & PVC Constraints →](opa-resource-storage.md)** (2 policies)
+- **[Resource Limits & Quotas →](opa-resource/governance.md)** (2 policies)
+- **[LimitRange & Ephemeral Storage →](opa-resource/limitrange.md)** (2 policies)
+- **[Storage Class & PVC Constraints →](opa-resource/storage.md)** (2 policies)
 
 Key policies:
 
@@ -278,7 +278,7 @@ test_privileged_container_blocked {
 }
 ```
 
-See **[Privilege Escalation Prevention →](opa-pod-security-escalation.md#rego_unit_testing)** for complete testing guide.
+See **[Privilege Escalation Prevention →](opa-pod-security/escalation.md#rego_unit_testing)** for complete testing guide.
 
 ---
 

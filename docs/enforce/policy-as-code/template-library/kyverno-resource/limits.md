@@ -305,9 +305,9 @@ kubectl get pods -A -o custom-columns=NAMESPACE:.metadata.namespace,NAME:.metada
 
 ## Related Resources
 
-- **[Kyverno Resource Storage →](kyverno-resource-storage.md)** - Ephemeral storage and PVC limits
-- **[Kyverno HPA Requirements →](kyverno-resource-hpa.md)** - Horizontal Pod Autoscaler enforcement
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Image Validation →](kyverno-image-validation.md)** - Registry allowlists and tag validation
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Resource Storage →](storage.md)** - Ephemeral storage and PVC limits
+- **[Kyverno HPA Requirements →](hpa.md)** - Horizontal Pod Autoscaler enforcement
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Image Validation →](../kyverno-image/validation.md)** - Registry allowlists and tag validation
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](index.md)** - Back to main page

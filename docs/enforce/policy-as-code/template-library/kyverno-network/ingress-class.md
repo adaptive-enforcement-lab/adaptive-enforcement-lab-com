@@ -201,8 +201,8 @@ kubectl get ingress -A -o json | jq -r '.items | group_by(.spec.ingressClassName
 
 ## Related Resources
 
-- **[Kyverno Ingress TLS →](kyverno-network-ingress-tls.md)** - TLS encryption requirements
-- **[Kyverno Network Security →](kyverno-network-security.md)** - NetworkPolicy and egress requirements
-- **[Kyverno Network Services →](kyverno-network-services.md)** - Service type restrictions
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Ingress TLS →](ingress-tls.md)** - TLS encryption requirements
+- **[Kyverno Network Security →](security.md)** - NetworkPolicy and egress requirements
+- **[Kyverno Network Services →](services.md)** - Service type restrictions
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](index.md)** - Back to main page

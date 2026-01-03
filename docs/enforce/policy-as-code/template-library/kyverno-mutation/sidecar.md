@@ -343,8 +343,8 @@ kubectl get pods -A -o json | jq -r '.items[] | select(.metadata.annotations."pr
 
 ## Related Resources
 
-- **[Kyverno Mutation - Labels →](kyverno-mutation-labels.md)** - Auto-label resources
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - Resource requests and limits
-- **[Kyverno Image Validation →](kyverno-image-validation.md)** - Image security
+- **[Kyverno Mutation - Labels →](labels.md)** - Auto-label resources
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Resource Limits →](../kyverno-resource/limits.md)** - Resource requests and limits
+- **[Kyverno Image Validation →](../kyverno-image/validation.md)** - Image security
 - **[Template Library Overview →](index.md)** - Back to main page

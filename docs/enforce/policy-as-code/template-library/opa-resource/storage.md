@@ -359,9 +359,9 @@ kubectl patch k8sallowedstorageclass allowed-storage-classes --type='json' -p='[
 
 ## Related Resources
 
-- **[OPA Resource Governance Templates →](opa-resource-governance.md)** - Resource limits and quota enforcement
-- **[OPA LimitRange Templates →](opa-resource-limitrange.md)** - Default resource limits and ephemeral storage
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[Kyverno Storage Templates →](kyverno-resource-storage.md)** - Kubernetes-native alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Resource Governance Templates →](governance.md)** - Resource limits and quota enforcement
+- **[OPA LimitRange Templates →](limitrange.md)** - Default resource limits and ephemeral storage
+- **[OPA Pod Security Templates →](../opa-pod-security/overview.md)** - Privileged containers and host namespaces
+- **[Kyverno Storage Templates →](../kyverno-resource/storage.md)** - Kubernetes-native alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

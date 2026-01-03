@@ -338,10 +338,10 @@ spec:
 
 ## Next Steps
 
-- **[Advanced JMESPath Patterns →](jmespath-advanced.md)** - Advanced patterns, testing, and debugging
-- **[Kyverno Templates Overview →](kyverno-templates.md)** - Complete template library
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Pod security policies
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno
+- **[Advanced JMESPath Patterns →](advanced.md)** - Advanced patterns, testing, and debugging
+- **[Kyverno Templates Overview →](../kyverno-templates.md)** - Complete template library
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Pod security policies
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno
 - **[Template Library Overview →](index.md)** - Back to main page
 
 ---

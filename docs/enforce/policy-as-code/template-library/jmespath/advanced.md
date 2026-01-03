@@ -328,11 +328,11 @@ conditions:
 
 ## Next Steps
 
-- **[Enterprise JMESPath Examples →](jmespath-enterprise.md)** - Real-world enterprise policies
-- **[JMESPath Testing →](jmespath-testing.md)** - Testing and debugging techniques
-- **[JMESPath Reference →](jmespath-reference.md)** - Complete function reference
-- **[JMESPath Patterns (Core) →](jmespath-patterns.md)** - Core patterns and basics
-- **[Kyverno Templates Overview →](kyverno-templates.md)** - Complete template library
+- **[Enterprise JMESPath Examples →](enterprise.md)** - Real-world enterprise policies
+- **[JMESPath Testing →](testing.md)** - Testing and debugging techniques
+- **[JMESPath Reference →](reference.md)** - Complete function reference
+- **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns and basics
+- **[Kyverno Templates Overview →](../kyverno-templates.md)** - Complete template library
 - **[Template Library Overview →](index.md)** - Back to main page
 
 ---

@@ -230,8 +230,8 @@ kubectl get secrets -A -o json | jq -r '.items[] | select(.type == "kubernetes.i
 
 ## Related Resources
 
-- **[Kyverno Ingress Class →](kyverno-network-ingress-class.md)** - IngressClass requirements
-- **[Kyverno Network Security →](kyverno-network-security.md)** - NetworkPolicy and egress requirements
-- **[Kyverno Network Services →](kyverno-network-services.md)** - Service type restrictions
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Ingress Class →](ingress-class.md)** - IngressClass requirements
+- **[Kyverno Network Security →](security.md)** - NetworkPolicy and egress requirements
+- **[Kyverno Network Services →](services.md)** - Service type restrictions
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](index.md)** - Back to main page

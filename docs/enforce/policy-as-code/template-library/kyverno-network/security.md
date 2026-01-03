@@ -354,9 +354,9 @@ kubectl logs -n kube-system -l k8s-app=calico-node | grep EGRESS
 
 ## Related Resources
 
-- **[Kyverno Ingress Class →](kyverno-network-ingress-class.md)** - IngressClass requirements
-- **[Kyverno Ingress TLS →](kyverno-network-ingress-tls.md)** - TLS encryption requirements
-- **[Kyverno Network Services →](kyverno-network-services.md)** - Service type restrictions
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Ingress Class →](ingress-class.md)** - IngressClass requirements
+- **[Kyverno Ingress TLS →](ingress-tls.md)** - TLS encryption requirements
+- **[Kyverno Network Services →](services.md)** - Service type restrictions
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](index.md)** - Back to main page

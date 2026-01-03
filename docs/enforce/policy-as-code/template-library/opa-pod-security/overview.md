@@ -287,10 +287,10 @@ kubectl get pods -A -o json | jq -r '.items[] | select(.spec.hostNetwork == true
 
 ## Related Resources
 
-- **[OPA Capabilities Templates →](opa-pod-security-capabilities.md)** - Linux capabilities enforcement
-- **[OPA Security Context Templates →](opa-pod-security-contexts.md)** - Security context and privilege escalation
-- **[OPA Image Security Templates →](opa-image-security.md)** - Registry allowlists and signing
-- **[OPA RBAC Templates →](opa-rbac.md)** - Service account and role restrictions
-- **[Kyverno Pod Security Templates →](kyverno-pod-security.md)** - Kubernetes-native alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Capabilities Templates →](capabilities.md)** - Linux capabilities enforcement
+- **[OPA Security Context Templates →](contexts.md)** - Security context and privilege escalation
+- **[OPA Image Security Templates →](../opa-image/security.md)** - Registry allowlists and signing
+- **[OPA RBAC Templates →](../opa-rbac/overview.md)** - Service account and role restrictions
+- **[Kyverno Pod Security Templates →](../kyverno-pod-security/standards.md)** - Kubernetes-native alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

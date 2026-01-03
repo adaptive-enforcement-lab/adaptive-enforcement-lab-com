@@ -195,10 +195,10 @@ kubectl run test --image=nginx --overrides='
 
 ## Related Resources
 
-- **[OPA Privilege Escalation Prevention →](opa-pod-security-escalation.md)** - Block allowPrivilegeEscalation
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[OPA Capabilities Templates →](opa-pod-security-capabilities.md)** - Linux capabilities enforcement
-- **[OPA Image Security Templates →](opa-image-security.md)** - Registry allowlists and signing
-- **[Kyverno Pod Security Templates →](kyverno-pod-security.md)** - Kubernetes-native alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Privilege Escalation Prevention →](escalation.md)** - Block allowPrivilegeEscalation
+- **[OPA Pod Security Templates →](overview.md)** - Privileged containers and host namespaces
+- **[OPA Capabilities Templates →](capabilities.md)** - Linux capabilities enforcement
+- **[OPA Image Security Templates →](../opa-image/security.md)** - Registry allowlists and signing
+- **[Kyverno Pod Security Templates →](../kyverno-pod-security/standards.md)** - Kubernetes-native alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

@@ -157,12 +157,12 @@ spec:
 
 ## Related Resources
 
-- **[JMESPath Enterprise Examples →](jmespath-enterprise.md)** - Registry validation, cost allocation, HA requirements
-- **[JMESPath Testing →](jmespath-testing.md)** - Test these policies before deployment
-- **[JMESPath Reference →](jmespath-reference.md)** - Complete function reference
-- **[JMESPath Advanced →](jmespath-advanced.md)** - Advanced patterns
-- **[JMESPath Patterns (Core) →](jmespath-patterns.md)** - Core patterns
-- **[Kyverno Templates Overview →](kyverno-templates.md)** - Complete template library
+- **[JMESPath Enterprise Examples →](enterprise.md)** - Registry validation, cost allocation, HA requirements
+- **[JMESPath Testing →](testing.md)** - Test these policies before deployment
+- **[JMESPath Reference →](reference.md)** - Complete function reference
+- **[JMESPath Advanced →](advanced.md)** - Advanced patterns
+- **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns
+- **[Kyverno Templates Overview →](../kyverno-templates.md)** - Complete template library
 - **[Template Library Overview →](index.md)** - Back to main page
 
 ---

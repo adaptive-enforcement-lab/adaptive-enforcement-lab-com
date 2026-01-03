@@ -284,9 +284,9 @@ kubectl describe clusterpolicy restrict-host-namespaces
 
 ## Related Resources
 
-- **[Kyverno Privilege Escalation Prevention →](kyverno-pod-security-privileges.md)** - Block privilege escalation
-- **[Kyverno Pod Security Profiles →](kyverno-pod-security-profiles.md)** - Seccomp and AppArmor enforcement
-- **[Kyverno Image Validation →](kyverno-image-validation.md)** - Registry allowlists and tag validation
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - CPU and memory enforcement
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Privilege Escalation Prevention →](privileges.md)** - Block privilege escalation
+- **[Kyverno Pod Security Profiles →](profiles.md)** - Seccomp and AppArmor enforcement
+- **[Kyverno Image Validation →](../kyverno-image/validation.md)** - Registry allowlists and tag validation
+- **[Kyverno Resource Limits →](../kyverno-resource/limits.md)** - CPU and memory enforcement
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](index.md)** - Back to main page

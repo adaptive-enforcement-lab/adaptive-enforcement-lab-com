@@ -322,7 +322,7 @@ kubectl set image deployment/web app=registry.example.com/app@${IMAGE_DIGEST}
 
 - **[Kyverno Image Validation →](validation.md)** - Digest requirements and registry allowlists
 - **[Kyverno Image Security →](security.md)** - Base image enforcement and CVE gates
-- **[Kyverno Pod Security →](../kyverno-pod-security.md)** - Security contexts and capabilities
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
 - **[Template Library Overview →](../index.md)** - Back to main page
 
 ---

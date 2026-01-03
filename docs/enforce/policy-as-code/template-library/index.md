@@ -51,7 +51,7 @@ This library provides ready-to-use policies for common security scenarios:
 
 **28 production-ready Kyverno policies** for Kubernetes admission control, mutation, and resource generation.
 
-#### Pod Security (5 Policies)
+#### [Pod Security →](kyverno-pod-security/index.md) (5 Policies)
 
 - Pod Security Standards Enforcement
 - Host Namespace Restrictions
@@ -59,7 +59,7 @@ This library provides ready-to-use policies for common security scenarios:
 - Seccomp Profile Enforcement
 - AppArmor Profile Requirements
 
-#### Image Validation (5 Policies)
+#### [Image Validation →](kyverno-image/index.md) (5 Policies)
 
 - Image Digest Requirements
 - Registry Allowlist and Tag Validation
@@ -67,7 +67,7 @@ This library provides ready-to-use policies for common security scenarios:
 - Base Image Enforcement
 - CVE Scanning Gates
 
-#### Resource Management (5 Policies)
+#### [Resource Management →](kyverno-resource/index.md) (5 Policies)
 
 - Resource Limits and Requests Enforcement
 - CPU and Memory Ratio Enforcement
@@ -75,7 +75,7 @@ This library provides ready-to-use policies for common security scenarios:
 - PVC Size Constraints
 - HPA Configuration Requirements
 
-#### Network Security (5 Policies)
+#### [Network Security →](kyverno-network/index.md) (5 Policies)
 
 - Require Network Policies
 - Egress Restrictions
@@ -85,15 +85,10 @@ This library provides ready-to-use policies for common security scenarios:
 
 #### Mutation & Generation (7 Policies)
 
-- Default Label Injection
-- Namespace Label Propagation
-- Logging Sidecar Injection
-- Monitoring Sidecar Injection
-- Automatic ResourceQuota Generation
-- Default-Deny NetworkPolicy Generation
-- Automatic PodDisruptionBudget Generation
+- [Mutation Policies →](kyverno-mutation/index.md) - Default Label Injection, Namespace Label Propagation, Logging Sidecar Injection, Monitoring Sidecar Injection
+- [Generation Policies →](kyverno-generation/index.md) - Automatic ResourceQuota Generation, Default-Deny NetworkPolicy Generation, Automatic PodDisruptionBudget Generation
 
-#### Labels & Metadata (1 Policy)
+#### [Labels & Metadata →](kyverno-labels.md) (1 Policy)
 
 - Mandatory Labels and Annotations
 
@@ -103,7 +98,7 @@ This library provides ready-to-use policies for common security scenarios:
 
 **20 production-ready OPA constraint templates** with complete Rego implementation for advanced policy enforcement.
 
-#### Pod Security (5 Policies)
+#### [Pod Security →](opa-pod-security/index.md) (5 Policies)
 
 - Privileged Container Prevention
 - Host Namespace Restrictions
@@ -111,7 +106,7 @@ This library provides ready-to-use policies for common security scenarios:
 - Security Context Requirements
 - Privilege Escalation Prevention
 
-#### Image Security (5 Policies)
+#### [Image Security →](opa-image/index.md) (5 Policies)
 
 - Registry Allowlist
 - Tag Requirements
@@ -119,7 +114,7 @@ This library provides ready-to-use policies for common security scenarios:
 - Image Signature Verification Annotations
 - Base Image Enforcement
 
-#### RBAC (5 Policies)
+#### [RBAC →](opa-rbac/index.md) (5 Policies)
 
 - Service Account Restrictions
 - Role Binding Namespace Enforcement
@@ -127,7 +122,7 @@ This library provides ready-to-use policies for common security scenarios:
 - Privileged Verbs Restrictions
 - Wildcard Resource Prevention
 
-#### Resource Governance (5 Policies)
+#### [Resource Governance →](opa-resource/index.md) (5 Policies)
 
 - Resource Limits and Requests Enforcement
 - Resource Quota Requirements
@@ -137,16 +132,16 @@ This library provides ready-to-use policies for common security scenarios:
 
 ---
 
-### [JMESPath Patterns →](jmespath-patterns.md)
+### [JMESPath Patterns →](jmespath/index.md)
 
 **Advanced Kyverno pattern library** for complex validation logic using JMESPath.
 
 - Pattern fundamentals (projection, filtering, multi-select)
 - Cross-field validation (requests vs limits, label dependencies)
 - Complex conditions (nested logic, transformations)
-- [Advanced patterns →](jmespath-advanced.md) (aggregation, arithmetic, string manipulation)
-- [Enterprise examples →](jmespath-enterprise.md) (registry policies, cost controls, HA requirements)
-- [Testing guide →](jmespath-testing.md) (kyverno jp CLI, debugging, validation)
+- [Advanced patterns →](jmespath/advanced.md) (aggregation, arithmetic, string manipulation)
+- [Enterprise examples →](jmespath/enterprise.md) (registry policies, cost controls, HA requirements)
+- [Testing guide →](jmespath/testing.md) (kyverno jp CLI, debugging, validation)
 
 ---
 

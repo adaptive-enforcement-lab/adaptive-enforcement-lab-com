@@ -277,11 +277,11 @@ kubectl get rolebindings -A -o json | jq -r '
 
 ## Related Resources
 
-- **[OPA Cluster-Admin Templates →](opa-rbac-cluster-admin.md)** - Prevent cluster-admin role assignments
-- **[OPA Privileged Verbs Templates →](opa-rbac-privileged-verbs.md)** - Block dangerous RBAC verbs
-- **[OPA Wildcard Templates →](opa-rbac-wildcards.md)** - Prevent wildcard resource permissions
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[OPA Image Security Templates →](opa-image-security.md)** - Registry allowlists and signing
-- **[Kyverno Pod Security Templates →](kyverno-pod-security.md)** - Kubernetes-native alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Cluster-Admin Templates →](cluster-admin.md)** - Prevent cluster-admin role assignments
+- **[OPA Privileged Verbs Templates →](privileged-verbs.md)** - Block dangerous RBAC verbs
+- **[OPA Wildcard Templates →](wildcards.md)** - Prevent wildcard resource permissions
+- **[OPA Pod Security Templates →](../opa-pod-security/overview.md)** - Privileged containers and host namespaces
+- **[OPA Image Security Templates →](../opa-image/security.md)** - Registry allowlists and signing
+- **[Kyverno Pod Security Templates →](../kyverno-pod-security/standards.md)** - Kubernetes-native alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

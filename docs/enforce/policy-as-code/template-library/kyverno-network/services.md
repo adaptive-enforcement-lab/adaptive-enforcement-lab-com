@@ -289,9 +289,9 @@ kubectl get services -A -o json | jq -r '[.items[] | select(.spec.type == "LoadB
 
 ## Related Resources
 
-- **[Kyverno Network Security →](kyverno-network-security.md)** - NetworkPolicy and egress requirements
-- **[Kyverno Ingress Class →](kyverno-network-ingress-class.md)** - IngressClass requirements
-- **[Kyverno Ingress TLS →](kyverno-network-ingress-tls.md)** - TLS encryption requirements
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - CPU and memory enforcement
+- **[Kyverno Network Security →](security.md)** - NetworkPolicy and egress requirements
+- **[Kyverno Ingress Class →](ingress-class.md)** - IngressClass requirements
+- **[Kyverno Ingress TLS →](ingress-tls.md)** - TLS encryption requirements
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Resource Limits →](../kyverno-resource/limits.md)** - CPU and memory enforcement
 - **[Template Library Overview →](index.md)** - Back to main page

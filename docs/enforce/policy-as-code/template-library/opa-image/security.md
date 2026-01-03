@@ -287,11 +287,11 @@ kubectl get pods -A -o json | jq -r '
 
 ## Related Resources
 
-- **[OPA Image Digest Templates →](opa-image-digest.md)** - SHA256 digest enforcement
-- **[OPA Image Verification Templates →](opa-image-verification.md)** - Signature verification annotations
-- **[OPA Base Image Templates →](opa-image-base.md)** - Approved base image enforcement
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[OPA RBAC Templates →](opa-rbac.md)** - Service account and role restrictions
-- **[Kyverno Image Validation Templates →](kyverno-image-validation.md)** - Kubernetes-native alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Image Digest Templates →](digest.md)** - SHA256 digest enforcement
+- **[OPA Image Verification Templates →](verification.md)** - Signature verification annotations
+- **[OPA Base Image Templates →](base.md)** - Approved base image enforcement
+- **[OPA Pod Security Templates →](../opa-pod-security/overview.md)** - Privileged containers and host namespaces
+- **[OPA RBAC Templates →](../opa-rbac/overview.md)** - Service account and role restrictions
+- **[Kyverno Image Validation Templates →](../kyverno-image/validation.md)** - Kubernetes-native alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

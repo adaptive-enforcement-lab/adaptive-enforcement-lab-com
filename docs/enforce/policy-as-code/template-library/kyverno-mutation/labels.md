@@ -343,8 +343,8 @@ kubectl get deployments -A -o json | jq -r '.items[] | select(.metadata.labels."
 
 ## Related Resources
 
-- **[Kyverno Network Security →](kyverno-network-security.md)** - NetworkPolicy requirements (needs app labels)
-- **[Kyverno Generation - Namespaces →](kyverno-generation-namespace.md)** - ResourceQuota and NetworkPolicy generation
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Labels →](kyverno-labels.md)** - Label validation policies
+- **[Kyverno Network Security →](../kyverno-network/security.md)** - NetworkPolicy requirements (needs app labels)
+- **[Kyverno Generation - Namespaces →](../kyverno-generation/namespace.md)** - ResourceQuota and NetworkPolicy generation
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Labels →](../kyverno-labels.md)** - Label validation policies
 - **[Template Library Overview →](index.md)** - Back to main page

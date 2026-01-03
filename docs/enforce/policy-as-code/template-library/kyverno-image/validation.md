@@ -270,7 +270,7 @@ kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"\t"}{.s
 
 - **[Kyverno Image Signing →](signing.md)** - Cosign signature verification
 - **[Kyverno Image Security →](security.md)** - Base image enforcement and CVE gates
-- **[Kyverno Pod Security →](../kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Resource Limits →](../kyverno-resource-limits.md)** - CPU and memory enforcement
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Resource Limits →](../kyverno-resource/limits.md)** - CPU and memory enforcement
 - **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](../index.md)** - Back to main page

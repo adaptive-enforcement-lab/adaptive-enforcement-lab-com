@@ -343,9 +343,9 @@ kubectl get clusterrolebindings,rolebindings -A -o json | jq -r '
 
 ## Related Resources
 
-- **[OPA RBAC Templates →](opa-rbac.md)** - Service account and namespace restrictions
-- **[OPA Cluster-Admin Templates →](opa-rbac-cluster-admin.md)** - Prevent cluster-admin assignments
-- **[OPA Wildcard Templates →](opa-rbac-wildcards.md)** - Prevent wildcard resource permissions
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA RBAC Templates →](overview.md)** - Service account and namespace restrictions
+- **[OPA Cluster-Admin Templates →](cluster-admin.md)** - Prevent cluster-admin assignments
+- **[OPA Wildcard Templates →](wildcards.md)** - Prevent wildcard resource permissions
+- **[OPA Pod Security Templates →](../opa-pod-security/overview.md)** - Privileged containers and host namespaces
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

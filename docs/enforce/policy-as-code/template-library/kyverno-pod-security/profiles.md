@@ -336,7 +336,7 @@ spec:
 
 ## Related Resources
 
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Core pod security policies
-- **[Kyverno Image Validation →](kyverno-image-validation.md)** - Registry allowlists and tag validation
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - CPU and memory enforcement
+- **[Kyverno Pod Security →](standards.md)** - Core pod security policies
+- **[Kyverno Image Validation →](../kyverno-image/validation.md)** - Registry allowlists and tag validation
+- **[Kyverno Resource Limits →](../kyverno-resource/limits.md)** - CPU and memory enforcement
 - **[Template Library Overview →](index.md)** - Back to main page

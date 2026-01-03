@@ -324,12 +324,12 @@ spec:
 
 ## Related Resources
 
-- **[Enterprise Supply Chain & Multi-Tenancy →](jmespath-enterprise-supply-chain.md)** - Image signing, vulnerability scanning, tenant isolation
-- **[JMESPath Testing →](jmespath-testing.md)** - Test these policies before deployment
-- **[JMESPath Reference →](jmespath-reference.md)** - Complete function reference
-- **[JMESPath Advanced →](jmespath-advanced.md)** - Advanced patterns
-- **[JMESPath Patterns (Core) →](jmespath-patterns.md)** - Core patterns
-- **[Kyverno Templates Overview →](kyverno-templates.md)** - Complete template library
+- **[Enterprise Supply Chain & Multi-Tenancy →](enterprise-supply-chain.md)** - Image signing, vulnerability scanning, tenant isolation
+- **[JMESPath Testing →](testing.md)** - Test these policies before deployment
+- **[JMESPath Reference →](reference.md)** - Complete function reference
+- **[JMESPath Advanced →](advanced.md)** - Advanced patterns
+- **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns
+- **[Kyverno Templates Overview →](../kyverno-templates.md)** - Complete template library
 - **[Template Library Overview →](index.md)** - Back to main page
 
 ---

@@ -345,8 +345,8 @@ kubectl get pvc -A -o json | jq -r '.items[] | select(.spec.storageClassName == 
 
 ## Related Resources
 
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - CPU and memory enforcement
-- **[Kyverno HPA Requirements →](kyverno-resource-hpa.md)** - Horizontal Pod Autoscaler enforcement
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Resource Limits →](limits.md)** - CPU and memory enforcement
+- **[Kyverno HPA Requirements →](hpa.md)** - Horizontal Pod Autoscaler enforcement
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](index.md)** - Back to main page

@@ -361,9 +361,9 @@ crane digest new-registry.com/app@sha256:abc123
 
 ## Related Resources
 
-- **[OPA Image Security Templates →](opa-image-security.md)** - Registry allowlists and tag validation
-- **[OPA Image Verification Templates →](opa-image-verification.md)** - Signature verification annotations
-- **[OPA Base Image Templates →](opa-image-base.md)** - Approved base image enforcement
-- **[Kyverno Image Validation Templates →](kyverno-image-validation.md)** - Kubernetes-native alternative with automatic conversion
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Image Security Templates →](security.md)** - Registry allowlists and tag validation
+- **[OPA Image Verification Templates →](verification.md)** - Signature verification annotations
+- **[OPA Base Image Templates →](base.md)** - Approved base image enforcement
+- **[Kyverno Image Validation Templates →](../kyverno-image/validation.md)** - Kubernetes-native alternative with automatic conversion
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

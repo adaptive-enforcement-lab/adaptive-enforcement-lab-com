@@ -294,11 +294,11 @@ done
 
 ## Related Resources
 
-- **[OPA Image Security Templates →](opa-image-security.md)** - Registry allowlists and tag validation
-- **[OPA Image Digest Templates →](opa-image-digest.md)** - SHA256 digest enforcement
-- **[OPA Base Image Templates →](opa-image-base.md)** - Approved base image enforcement
-- **[Kyverno Image Signing Templates →](kyverno-image-signing.md)** - Native cosign verification alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Image Security Templates →](security.md)** - Registry allowlists and tag validation
+- **[OPA Image Digest Templates →](digest.md)** - SHA256 digest enforcement
+- **[OPA Base Image Templates →](base.md)** - Approved base image enforcement
+- **[Kyverno Image Signing Templates →](../kyverno-image/signing.md)** - Native cosign verification alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page
 
 ---

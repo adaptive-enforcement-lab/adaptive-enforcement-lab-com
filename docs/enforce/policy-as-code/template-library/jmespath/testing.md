@@ -359,9 +359,9 @@ kubectl get policyreport -o json | \
 
 ## Next Steps
 
-- **[JMESPath Reference →](jmespath-reference.md)** - Complete function reference
-- **[Enterprise JMESPath Examples →](jmespath-enterprise.md)** - Real-world policies
-- **[JMESPath Advanced →](jmespath-advanced.md)** - Advanced patterns
-- **[JMESPath Patterns (Core) →](jmespath-patterns.md)** - Core patterns
-- **[Kyverno Templates Overview →](kyverno-templates.md)** - Complete template library
+- **[JMESPath Reference →](reference.md)** - Complete function reference
+- **[Enterprise JMESPath Examples →](enterprise.md)** - Real-world policies
+- **[JMESPath Advanced →](advanced.md)** - Advanced patterns
+- **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns
+- **[Kyverno Templates Overview →](../kyverno-templates.md)** - Complete template library
 - **[Template Library Overview →](index.md)** - Back to main page

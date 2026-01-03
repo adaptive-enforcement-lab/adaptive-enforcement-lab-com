@@ -294,9 +294,9 @@ spec:
 
 ## Related Resources
 
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[OPA Security Context Templates →](opa-pod-security-contexts.md)** - Security context and privilege escalation
-- **[OPA Image Security Templates →](opa-image-security.md)** - Registry allowlists and signing
-- **[Kyverno Pod Security Templates →](kyverno-pod-security.md)** - Kubernetes-native alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA Pod Security Templates →](overview.md)** - Privileged containers and host namespaces
+- **[OPA Security Context Templates →](contexts.md)** - Security context and privilege escalation
+- **[OPA Image Security Templates →](../opa-image/security.md)** - Registry allowlists and signing
+- **[Kyverno Pod Security Templates →](../kyverno-pod-security/standards.md)** - Kubernetes-native alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

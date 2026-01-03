@@ -283,8 +283,8 @@ kubectl patch hpa <name> -p '{"metadata":{"annotations":{"autoscaling.alpha.kube
 
 ## Related Resources
 
-- **[Kyverno Resource Limits →](kyverno-resource-limits.md)** - CPU and memory enforcement (required for HPA)
-- **[Kyverno Resource Storage →](kyverno-resource-storage.md)** - Ephemeral storage and PVC limits
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Security contexts and capabilities
-- **[Kyverno Labels →](kyverno-labels.md)** - Mandatory metadata
+- **[Kyverno Resource Limits →](limits.md)** - CPU and memory enforcement (required for HPA)
+- **[Kyverno Resource Storage →](storage.md)** - Ephemeral storage and PVC limits
+- **[Kyverno Pod Security →](../kyverno-pod-security/standards.md)** - Security contexts and capabilities
+- **[Kyverno Labels →](../kyverno-labels.md)** - Mandatory metadata
 - **[Template Library Overview →](index.md)** - Back to main page

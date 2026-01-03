@@ -357,9 +357,9 @@ spec:
 
 ## Related Resources
 
-- **[OPA RBAC Templates →](opa-rbac.md)** - Service account and namespace restrictions
-- **[OPA Privileged Verbs Templates →](opa-rbac-privileged-verbs.md)** - Block dangerous RBAC verbs
-- **[OPA Wildcard Templates →](opa-rbac-wildcards.md)** - Prevent wildcard resource permissions
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA RBAC Templates →](overview.md)** - Service account and namespace restrictions
+- **[OPA Privileged Verbs Templates →](privileged-verbs.md)** - Block dangerous RBAC verbs
+- **[OPA Wildcard Templates →](wildcards.md)** - Prevent wildcard resource permissions
+- **[OPA Pod Security Templates →](../opa-pod-security/overview.md)** - Privileged containers and host namespaces
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page

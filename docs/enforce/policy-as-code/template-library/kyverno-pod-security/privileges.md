@@ -240,7 +240,7 @@ spec:
 
 ## Related Resources
 
-- **[Kyverno Pod Security →](kyverno-pod-security.md)** - Core pod security policies
-- **[Kyverno Pod Security Profiles →](kyverno-pod-security-profiles.md)** - Seccomp and AppArmor enforcement
-- **[Kyverno Image Validation →](kyverno-image-validation.md)** - Registry allowlists and tag validation
+- **[Kyverno Pod Security →](standards.md)** - Core pod security policies
+- **[Kyverno Pod Security Profiles →](profiles.md)** - Seccomp and AppArmor enforcement
+- **[Kyverno Image Validation →](../kyverno-image/validation.md)** - Registry allowlists and tag validation
 - **[Template Library Overview →](index.md)** - Back to main page

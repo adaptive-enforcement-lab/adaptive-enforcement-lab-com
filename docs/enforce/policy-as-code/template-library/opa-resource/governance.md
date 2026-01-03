@@ -341,10 +341,10 @@ done
 
 ## Related Resources
 
-- **[OPA LimitRange Templates →](opa-resource-limitrange.md)** - Default resource limits per namespace
-- **[OPA Storage Class Templates →](opa-resource-storage.md)** - Storage class restrictions and PVC limits
-- **[OPA Pod Security Templates →](opa-pod-security.md)** - Privileged containers and host namespaces
-- **[OPA RBAC Templates →](opa-rbac.md)** - Service account and role restrictions
-- **[Kyverno Resource Templates →](kyverno-resource-limits.md)** - Kubernetes-native alternative
-- **[Decision Guide →](decision-guide.md)** - OPA vs Kyverno selection
+- **[OPA LimitRange Templates →](limitrange.md)** - Default resource limits per namespace
+- **[OPA Storage Class Templates →](storage.md)** - Storage class restrictions and PVC limits
+- **[OPA Pod Security Templates →](../opa-pod-security/overview.md)** - Privileged containers and host namespaces
+- **[OPA RBAC Templates →](../opa-rbac/overview.md)** - Service account and role restrictions
+- **[Kyverno Resource Templates →](../kyverno-resource/limits.md)** - Kubernetes-native alternative
+- **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection
 - **[Template Library Overview →](index.md)** - Back to main page
