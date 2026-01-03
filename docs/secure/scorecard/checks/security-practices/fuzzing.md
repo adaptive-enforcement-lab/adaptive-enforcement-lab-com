@@ -3,9 +3,11 @@ description: >-
   Complete remediation guide for OpenSSF Scorecard Fuzzing check.
   Integrate continuous fuzz testing with OSS-Fuzz or ClusterFuzzLite.
 tags:
+
   - scorecard
   - fuzzing
   - security-testing
+
 ---
 
 # Fuzzing Check
@@ -105,6 +107,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
+
     - cron: '0 0 * * *'  # Daily fuzzing
 
 permissions:
@@ -119,10 +122,13 @@ jobs:
       matrix:
         sanitizer: [address, undefined, memory]
     steps:
+
       - name: Checkout
+
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
 
       - name: Build Fuzz Targets
+
         id: build
         uses: google/clusterfuzzlite/actions/build_fuzzers@v1
         with:
@@ -130,6 +136,7 @@ jobs:
           sanitizer: ${{ matrix.sanitizer }}
 
       - name: Run Fuzz Targets
+
         id: run
         uses: google/clusterfuzzlite/actions/run_fuzzers@v1
         with:
@@ -137,8 +144,8 @@ jobs:
           fuzz-seconds: 300  # 5 minutes per run
           mode: 'code-change'  # or 'batch' for scheduled runs
           sanitizer: ${{ matrix.sanitizer }}
-```
 
+```bash
 **Result**: Fuzzing runs on every PR and daily schedule.
 
 ### Language-Specific Fuzzing
@@ -170,22 +177,24 @@ func FuzzParseInput(f *testing.F) {
         }
     })
 }
-```
 
+```bash
 **Run locally**:
 
 ```bash
 # Run fuzzing for 30 seconds
 go test -fuzz=FuzzParseInput -fuzztime=30s
-```
 
+```bash
 **In CI**:
 
 ```yaml
-- name: Fuzz test
-  run: go test -fuzz=Fuzz -fuzztime=60s ./...
-```
 
+- name: Fuzz test
+
+  run: go test -fuzz=Fuzz -fuzztime=60s ./...
+
+```bash
 **Result**: Scorecard detects Go native fuzzing.
 
 #### Rust Fuzzing (cargo-fuzz)
@@ -194,14 +203,14 @@ go test -fuzz=FuzzParseInput -fuzztime=30s
 
 ```bash
 cargo install cargo-fuzz
-```
 
+```bash
 **Initialize**:
 
 ```bash
 cargo fuzz init
-```
 
+```bash
 **Write fuzz target** in `fuzz/fuzz_targets/fuzz_target_1.rs`:
 
 ```rust
@@ -213,31 +222,33 @@ fuzz_target!(|data: &[u8]| {
     // Fuzz target - should not panic
     let _ = parse_input(data);
 });
-```
 
+```bash
 **Run**:
 
 ```bash
 cargo fuzz run fuzz_target_1
-```
 
+```bash
 **In CI**:
 
 ```yaml
+
 - name: Fuzz test
+
   run: |
     cargo install cargo-fuzz
     cargo fuzz run fuzz_target_1 -- -max_total_time=60
-```
 
+```bash
 #### Python Fuzzing (Atheris)
 
 **Install**:
 
 ```bash
 pip install atheris
-```
 
+```bash
 **Write fuzz target** in `fuzz_parse.py`:
 
 ```python
@@ -254,22 +265,22 @@ def TestOneInput(data):
 
 atheris.Setup(sys.argv, TestOneInput)
 atheris.Fuzz()
-```
 
+```bash
 **Run**:
 
 ```bash
 python fuzz_parse.py
-```
 
+```bash
 #### JavaScript Fuzzing (Jazzer.js)
 
 **Install**:
 
 ```bash
 npm install --save-dev @jazzer.js/core
-```
 
+```bash
 **Write fuzz target** in `fuzz/parse.fuzz.js`:
 
 ```javascript
@@ -286,16 +297,17 @@ module.exports.fuzz = function(data) {
     // Expected errors are fine
   }
 };
-```
 
+```bash
 **In CI**:
 
 ```yaml
+
 - name: Fuzz test
+
   run: npx jazzer fuzz/parse.fuzz.js --timeout=60
-```
 
-
+```bash
 ---
 
 ## Advanced Topics

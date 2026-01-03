@@ -19,7 +19,7 @@ Critical checks that protect against supply chain attacks. These have the highes
 - **Binary-Artifacts**: Remove binaries from source control
 - **SAST**: Static application security testing
 
-**Weight**: High - These checks prevent real supply chain attacks.
+**Weight**: High. These checks prevent real supply chain attacks.
 
 ---
 
@@ -83,7 +83,7 @@ Some actions **require** version tags and will fail with SHA pins:
 #### Exception 1: ossf/scorecard-action
 
 ```yaml
-# MUST use version tag - action verifies its own workflow identity
+# MUST use version tag. Action verifies its own workflow identity
 - uses: ossf/scorecard-action@v2.4.0
 ```
 
@@ -92,7 +92,7 @@ Some actions **require** version tags and will fail with SHA pins:
 #### Exception 2: slsa-framework/slsa-github-generator
 
 ```yaml
-# MUST use version tag - verifier validates builder by tag
+# MUST use version tag. Verifier validates builder by tag
 uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
 ```
 
@@ -151,7 +151,7 @@ gh api repos/actions/checkout/git/ref/tags/v4.1.1 --jq .object.sha
 - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
 ```
 
-**Always include version comment** - humans need to understand which version the SHA represents.
+**Always include version comment**. Humans need to understand which version the SHA represents.
 
 ### Container Images
 
@@ -189,7 +189,7 @@ Pin download URLs to specific versions:
 
 **Expected**: Scorecard will flag `ossf/scorecard-action` and `slsa-framework/slsa-github-generator`.
 
-**Action**: Document exceptions in repository README or PR descriptions. Scorecard score reflects reality - some tools don't support SHA pinning.
+**Action**: Document exceptions in repository README or PR descriptions. Scorecard score reflects reality. Some tools don't support SHA pinning.
 
 #### Renovate not creating SHA pin PRs
 

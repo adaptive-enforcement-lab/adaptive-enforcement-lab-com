@@ -235,7 +235,7 @@ Admins included: No
 
 1. Create a PR with a workflow that reports the status check
 2. Wait for workflow to complete
-3. Return to branch protection settings - check should now appear
+3. Return to branch protection settings. The check should now appear
 
 **Example workflow to establish check**:
 
@@ -273,7 +273,7 @@ jobs:
 3. Re-enable "Include administrators"
 4. Document the incident in post-mortem
 
-#### Issue: Can't enable "Require branches to be up to date" - status checks fail
+#### Issue: Can't enable "Require branches to be up to date" because status checks fail
 
 **Symptom**: Enabling "Require branches to be up to date" causes all PRs to fail because workflows don't run on PR branches.
 

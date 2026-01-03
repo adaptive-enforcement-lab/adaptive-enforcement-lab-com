@@ -20,8 +20,8 @@ fuzzing will be re-evaluated.
 
 **Decision date**: 2026-01-02
 **Next review**: 2026-07-01
-```
 
+```bash
 ### When to Implement Fuzzing
 
 If you parse untrusted input, invest in fuzzing:
@@ -32,31 +32,37 @@ name: Fuzzing
 
 on:
   schedule:
+
     - cron: '0 2 * * *'  # Nightly
+
   workflow_dispatch:
 
 jobs:
   fuzz:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
 
       - name: Build fuzzers
+
         run: make build-fuzzers
 
       - name: Run fuzzing (4 hours)
+
         run: |
           # ClusterFuzzLite for GitHub Actions
           timeout 14400 ./fuzz-targets/parser-fuzz || true
 
       - name: Upload crash artifacts
+
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: fuzzing-crashes
           path: crash-*
-```
 
+```bash
 **Time investment**: 1-3 days initial setup, ongoing CI time cost.
 
 ---
@@ -103,22 +109,26 @@ While we don't pursue the OpenSSF Best Practices badge (Scorecard: 0/10),
 we implement these equivalent controls:
 
 **Project oversight**:
+
 - [x] Public version control (GitHub)
 - [x] Public issue tracker
 - [x] SECURITY.md with vulnerability reporting
 
 **Change control**:
+
 - [x] Require 2 reviewers for main branch
 - [x] All status checks must pass
 - [x] CODEOWNERS enforce security team review
 
 **Continuous integration**:
+
 - [x] Automated tests on every PR
 - [x] SAST via CodeQL
 - [x] Dependency scanning via Dependabot
 - [x] SLSA provenance for releases
 
 **Security knowledge**:
+
 - [x] Security point of contact documented
 - [x] Threat model maintained
 - [x] Incident response process defined
@@ -128,8 +138,8 @@ This is an internal tool with no external users. The questionnaire process
 (6-8 hours) provides no security benefit beyond the practices we already follow.
 
 **Decision date**: 2026-01-02
-```
 
+```bash
 ---
 
 ## Controversial Check: Auto-Merge for Dependencies
@@ -154,8 +164,8 @@ Auto-Merge Enabled:
 ✅ Dependencies stay current
 ✅ CI verification instead of human review
 ❌ No human eyes on changes
-```
 
+```bash
 ### Decision Matrix
 
 | Update Type | Human Review | Auto-Merge | Rationale |
@@ -206,8 +216,8 @@ Auto-Merge Enabled:
     }
   ]
 }
-```
 
+```bash
 **Result**:
 
 - Security patches: Auto-merged within hours
@@ -272,13 +282,16 @@ as a SAST tool, though it serves the same purpose.
 
     ```yaml
     # .github/workflows/security.yml
+
     - name: Clippy (Rust SAST)
+
       run: cargo clippy --all-targets --all-features -- -D warnings
 
     - name: Cargo audit (dependency CVEs)
-      run: cargo audit
-    ```
 
+      run: cargo audit
+
+    ```bash
 **Decision**: Accept 0/10 Scorecard score. Our SAST implementation is equivalent
 to CodeQL for other languages, but Scorecard doesn't recognize Rust-specific tools.
 
@@ -286,8 +299,8 @@ to CodeQL for other languages, but Scorecard doesn't recognize Rust-specific too
 
 **Decision date**: 2026-01-02
 **Review date**: 2026-07-01
-```
 
+```bash
 ---
 
 ## Documentation Template: Comprehensive Exceptions
@@ -332,11 +345,13 @@ This document explains intentional deviations from Scorecard recommendations.
 SHA pinning causes authentication failures.
 
 **Mitigation**:
+
 - Action maintained by OpenSSF (trusted source)
 - Renovate monitors for new versions
 - Manual review process for updates
 
 **References**:
+
 - [Scorecard Action Issue #1234](https://github.com/ossf/scorecard-action/issues/1234)
 - Internal decision: `docs/adr/0042-scorecard-action-version-tags.md` (example ADR path in your repository)
 

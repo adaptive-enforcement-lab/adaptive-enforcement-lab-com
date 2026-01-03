@@ -5,8 +5,8 @@ Scorecard flags them, but removing them provides no security benefit.
 
 - sample.pdf: 2KB PDF for parser testing
 - test-image.png: 1KB image for upload testing
-```
 
+```bash
 **Expected score**: 8/10 to 9/10 depending on fixture size
 
 #### False Positive: Font Files in Documentation
@@ -18,8 +18,8 @@ docs/
   assets/
     fonts/
       custom-font.woff2  # Sometimes flagged
-```
 
+```bash
 **Why false positive**: Fonts are assets, not executable code.
 
 **Resolution**:
@@ -29,8 +29,8 @@ Check if Scorecard actually flags it (varies by file type):
 ```bash
 # Run Scorecard locally to confirm
 scorecard --repo=github.com/your-org/your-repo --checks=Binary-Artifacts
-```
 
+```bash
 If flagged:
 
 - Move fonts to CDN
@@ -57,10 +57,12 @@ Accept 0/10 for SAST on documentation repositories. The check doesn't apply.
 
 ```yaml
 # .github/workflows/lint.yml
-- name: Markdown lint (satisfies SAST intent)
-  uses: DavidAnson/markdownlint-cli2-action@v16
-```
 
+- name: Markdown lint (satisfies SAST intent)
+
+  uses: DavidAnson/markdownlint-cli2-action@v16
+
+```bash
 Scorecard won't recognize this as SAST, but it serves the same purpose.
 
 #### False Positive: Language Not Supported
@@ -75,14 +77,18 @@ Document language-specific linting:
 
 ```yaml
 # For Rust projects
+
 - name: Clippy (Rust static analysis)
+
   run: cargo clippy -- -D warnings
 
 # For Shell scripts
-- name: ShellCheck
-  run: shellcheck **/*.sh
-```
 
+- name: ShellCheck
+
+  run: shellcheck **/*.sh
+
+```bash
 **Expected score**: 0/10 from Scorecard (doesn't recognize these)
 
 **When to report**: If widely-used linters exist for your language, open an issue asking Scorecard to recognize them.
@@ -100,8 +106,8 @@ Document language-specific linting:
 ```bash
 $ git log
 a1b2c3d Initial commit - import from internal repo (no PR review)
-```
 
+```bash
 **Why flagged**: Scorecard analyzes last 30 days of commits.
 
 **Why false positive**: Historical imports can't have review.
@@ -115,8 +121,8 @@ Wait 30 days. Scorecard only checks recent commits.
 ```bash
 # Don't do this - introduces audit trail gaps
 git rebase -i --root
-```
 
+```bash
 Better to accept 8/10 for first month, then achieve 10/10.
 
 #### False Positive: Bot Commits
@@ -141,8 +147,8 @@ Require human approval for dependency updates:
     }
   ]
 }
-```
 
+```bash
 Or accept that automated dependency updates are a trade-off:
 
 - Lower Code-Review score
@@ -179,8 +185,8 @@ resource "github_branch_protection" "main" {
   pattern        = "main"
   enforce_admins = true  # No bypass allowed
 }
-```
 
+```bash
 **Small teams (1-3 people)**: Allow admin bypass, document rationale
 
 ```hcl
@@ -189,8 +195,8 @@ resource "github_branch_protection" "main" {
   pattern        = "main"
   enforce_admins = false  # Allow bypass for emergencies
 }
-```
 
+```bash
 Document in `SECURITY.md`:
 
 ```markdown
@@ -198,8 +204,8 @@ Document in `SECURITY.md`:
 
 Admins can bypass branch protection for emergency hotfixes.
 All bypasses are logged and reviewed in monthly security audits.
-```
 
+```bash
 **Expected score**: 9/10 with bypass allowed, 10/10 without
 
 #### False Positive: Required Checks Don't Exist
@@ -224,19 +230,21 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
       - name: Validate links
-        run: echo "Link validation would run here"
-```
 
+        run: echo "Link validation would run here"
+
+```bash
 Then require it in branch protection:
 
 ```text
 Settings > Branches > Branch protection rules
 ✓ Require status checks to pass before merging
   ✓ validate
-```
 
+```bash
 ---
 
 ## Security Practice Checks
@@ -262,8 +270,8 @@ Move or duplicate to expected location:
 ```bash
 # Create standard location
 cp docs/SECURITY.md SECURITY.md
-```
 
+```bash
 Or add at root with link:
 
 ```markdown
@@ -271,8 +279,8 @@ Or add at root with link:
 # Security Policy
 
 See docs/SECURITY.md for our complete security policy.
-```
 
+```bash
 **Expected score**: 10/10 after adding root file
 
 ---

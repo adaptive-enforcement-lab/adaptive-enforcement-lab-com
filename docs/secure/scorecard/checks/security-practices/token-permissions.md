@@ -3,10 +3,12 @@ description: >-
   Complete remediation guide for OpenSSF Scorecard Token-Permissions check.
   Use job-level permission scoping to minimize blast radius.
 tags:
+
   - scorecard
   - github-actions
   - permissions
   - least-privilege
+
 ---
 
 # Token-Permissions Check
@@ -40,9 +42,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: go test ./...  # Doesn't need write!
-```
 
+      - run: go test ./...  # Doesn't need write!
+
+```bash
 **Result**: Token-Permissions alerts
 
 ### After: Job-Level Permissions
@@ -58,10 +61,11 @@ jobs:
       contents: read  # Minimal for this job
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
       - run: go test ./...
-```
 
+```bash
 **Result**: Token-Permissions 10/10
 
 ### Common Permission Patterns
@@ -105,12 +109,11 @@ grep -r "^permissions:" .github/workflows/
 
 # Should see only "permissions: {}" at workflow level
 # Job-level permissions are indented under jobs
-```
 
+```bash
 **Blog post**: [16 Alerts Cleared Overnight](../../../blog/posts/2025-12-20-sixteen-alerts-overnight.md) - Real-world Token-Permissions mass fix
 
 ---
-
 
 ---
 

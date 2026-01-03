@@ -1,12 +1,14 @@
 ## OpenSSF Best Practices
 
 While this repository is private, we follow OpenSSF Best Practices:
+
 - [x] Security policy documented
 - [x] Vulnerability reporting process
 - [x] HTTPS for all endpoints
-[... full checklist ...]
-```
 
+[... full checklist ...]
+
+```bash
 Makes public transition easier.
 
 ---
@@ -23,8 +25,8 @@ Makes public transition easier.
     "vulnerable-test-tool": "1.0.0"  // Has known CVE
   }
 }
-```
 
+```bash
 **Why flagged**: Scorecard doesn't distinguish dev from production dependencies.
 
 **Why sometimes false positive**: Dev dependencies don't ship to production.
@@ -36,8 +38,8 @@ Makes public transition easier.
 ```bash
 # Update dev dependencies too
 npm audit fix
-```
 
+```bash
 Simpler than explaining the difference.
 
 #### Option 2: Document if unfixable
@@ -49,8 +51,8 @@ Simpler than explaining the difference.
   - Impact: Dev environment only, not in production
   - Mitigation: No fix available, tool only used in CI
   - Risk: Low - isolated CI environment
-```
 
+```bash
 **Expected score**: 10/10 if fixed, lower if documented
 
 ---
@@ -67,8 +69,8 @@ jobs:
   call-reusable:
     uses: ./.github/workflows/reusable.yml@main
     # Permissions inherited from reusable workflow
-```
 
+```bash
 **Why flagged**: Scorecard may not follow the permission chain.
 
 **Resolution**:
@@ -82,8 +84,8 @@ jobs:
     permissions:
       contents: read  # Explicit, even though reusable sets its own
     uses: ./.github/workflows/reusable.yml@main
-```
 
+```bash
 **Expected score**: 10/10 with explicit permissions
 
 ---
@@ -111,6 +113,7 @@ name: Release
 on:
   push:
     tags:
+
       - 'v*'
 
 permissions:
@@ -120,8 +123,8 @@ permissions:
 jobs:
   release:
     uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
-```
 
+```bash
 First release will immediately achieve 10/10.
 
 ---
@@ -174,8 +177,8 @@ Copyright (c) 2026 YourCompany, Inc.
 
 All rights reserved. This software is proprietary and confidential.
 Unauthorized copying, distribution, or use is strictly prohibited.
-```
 
+```bash
 Or create `LICENSE.md`:
 
 ```markdown
@@ -183,8 +186,8 @@ Or create `LICENSE.md`:
 
 This is proprietary software owned by YourCompany, Inc.
 For licensing inquiries, contact legal@yourcompany.com.
-```
 
+```bash
 **Expected score**: Scorecard may still give 0/10 (it expects OSI-approved licenses)
 
 **When legitimate**: Private and proprietary code. Accept the score.
@@ -228,8 +231,8 @@ This repository is maintained by YourCompany.
 Contributions are managed through internal systems and synced to GitHub.
 
 External contributions are welcome via pull requests.
-```
 
+```bash
 ---
 
 ### Maintained
@@ -249,8 +252,8 @@ External contributions are welcome via pull requests.
 ```bash
 # Monthly dependency updates via Renovate
 # Keeps commit history active
-```
 
+```bash
 #### Option 2: Document maintenance status
 
 ```markdown
@@ -263,15 +266,15 @@ Infrequent commits reflect stability, not abandonment.
 
 Maintained by: @yourname
 Last reviewed: 2026-01-02
-```
 
+```bash
 #### Option 3: Archive if truly complete
 
 ```bash
 # If no further development planned
 gh repo archive your-org/your-repo
-```
 
+```bash
 Scorecard will still flag it, but users know it's intentional.
 
 ---
@@ -286,42 +289,42 @@ Report false positives to help improve Scorecard heuristics.
 
 ```text
 Example: All SLSA projects hit this false positive
-```
 
+```bash
 **Clear safe pattern exists**:
 
 ```text
 Example: pull_request_target with no checkout is safe
 Already documented in GitHub security best practices
-```
 
+```bash
 **Tool should recognize alternatives**:
 
 ```text
 Example: Clippy for Rust is equivalent to CodeQL for other languages
 Request: Recognize `cargo clippy` as SAST
-```
 
+```bash
 ### Not Worth Reporting
 
 **Edge case specific to your project**:
 
 ```text
 Example: Our custom build system doesn't fit standard patterns
-```
 
+```bash
 **Already documented in Scorecard limitations**:
 
 ```text
 Check: https://github.com/ossf/scorecard/blob/main/docs/checks.md
 Known limitation: Admin bypass detection
-```
 
+```bash
 **Requires context Scorecard can't have**:
 
 ```text
 Example: This binary is safe because we audited it
 Scorecard can't verify human audit processes
-```
 
+```bash
 ---

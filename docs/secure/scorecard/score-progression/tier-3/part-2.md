@@ -18,6 +18,7 @@ on:
     branches: [main]
   pull_request:
   schedule:
+
     - cron: '0 0 * * 1'  # Weekly
 
 jobs:
@@ -27,9 +28,11 @@ jobs:
       security-events: write
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
 
       - uses: aquasecurity/trivy-action@master
+
         with:
           scan-type: 'fs'
           scan-ref: '.'
@@ -38,24 +41,28 @@ jobs:
           severity: 'CRITICAL,HIGH'
 
       - uses: github/codeql-action/upload-sarif@v3
+
         with:
           sarif_file: 'trivy-results.sarif'
-```
 
+```bash
 ### Process for Handling Vulnerabilities
 
 **1. Review alerts** (Weekly minimum):
+
 - Check Dependabot/Renovate PRs
 - Review GitHub Security tab
 - Monitor Trivy scan results
 
 **2. Triage findings**:
+
 - **Critical/High**: Address immediately
 - **Medium**: Fix in next sprint
 - **Low**: Evaluate and schedule
 - **False positives**: Document and suppress
 
 **3. Update dependencies**:
+
 ```bash
 # For Go
 go get -u ./...
@@ -66,15 +73,17 @@ npm audit fix
 
 # For Python
 pip-audit --fix
-```
 
+```bash
 **4. For unfixable CVEs**:
+
 - Document risk acceptance
 - Implement compensating controls
 - Monitor for patches
 - Consider alternative dependencies
 
 **5. Verify fixes**:
+
 - Run scans after updates
 - Ensure no new vulnerabilities introduced
 - Test application functionality
@@ -82,14 +91,17 @@ pip-audit --fix
 ### Monitoring Schedule
 
 **Weekly**:
+
 - Review new vulnerability alerts
 - Merge security patch PRs
 
 **Monthly**:
+
 - Comprehensive dependency audit
 - Review suppressed findings (still valid?)
 
 **Quarterly**:
+
 - Evaluate dependency alternatives
 - Update scanning tools
 
@@ -108,11 +120,13 @@ pip-audit --fix
 **What it measures**: Diversity of committers (different people, different organizations).
 
 **Score factors**:
+
 - Number of unique contributors
 - Distribution of commits across contributors
 - Recent contributor activity
 
 **What you can't control**:
+
 - Solo-maintained projects inherently score lower
 - Small teams have limited contributor diversity
 
@@ -123,11 +137,13 @@ pip-audit --fix
 **What it measures**: Recent activity signals active maintenance.
 
 **Score factors**:
+
 - Recent commits (last 90 days)
 - Issue activity (opened, closed, commented)
 - Release frequency
 
 **What you can control**:
+
 - Keep project active with regular commits
 - Respond to issues promptly
 - Release updates regularly (even small ones)
@@ -145,18 +161,21 @@ Achieving 10/10 is not the end. Scorecard checks evolve. Dependencies update. Ne
 ### Ongoing Tasks
 
 **Weekly**:
+
 - ✅ Review Dependabot/Renovate PRs
 - ✅ Monitor new Scorecard findings (if automated)
 - ✅ Triage new vulnerability alerts
 - ✅ Merge security patches
 
 **Monthly**:
+
 - ✅ Run Scorecard manually (verify automation working)
 - ✅ Review branch protection settings (still enforced?)
 - ✅ Check for new CVEs in dependencies
 - ✅ Audit token permissions in new workflows
 
 **Quarterly**:
+
 - ✅ Update SLSA generator to latest version
 - ✅ Review and update SECURITY.md
 - ✅ Verify CII badge criteria still met
@@ -171,6 +190,7 @@ name: Scorecard
 
 on:
   schedule:
+
     - cron: '0 0 * * 1'  # Weekly on Monday at midnight UTC
 
 permissions:
@@ -182,18 +202,22 @@ jobs:
   scorecard:
     runs-on: ubuntu-latest
     steps:
+
       - uses: ossf/scorecard-action@v2.4.0
+
         with:
           results_file: results.sarif
           results_format: sarif
           publish_results: true
 
       - uses: github/codeql-action/upload-sarif@v3
+
         with:
           sarif_file: results.sarif
-```
 
+```bash
 **Benefits**:
+
 - Automated weekly Scorecard runs
 - Results uploaded to Code Scanning tab
 - Alerts on score regressions
@@ -282,6 +306,7 @@ The Scorecard score measures best practices. Best practices should be evaluated 
 - **CII badge**: Shows commitment to security. Quick win for projects already following best practices.
 
 **What matters**:
+
 - Fix real security gaps (Tier 1 and 2)
 - Document justified exceptions (Tier 3)
 - Maintain what you implement (Ongoing)

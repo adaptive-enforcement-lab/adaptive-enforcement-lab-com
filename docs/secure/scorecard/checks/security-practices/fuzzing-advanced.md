@@ -3,9 +3,11 @@ description: >-
   Advanced fuzzing techniques for OpenSSF Scorecard. Write effective fuzz
   targets, manage corpus, and implement continuous fuzzing strategies.
 tags:
+
   - scorecard
   - fuzzing
   - testing
+
 ---
 
 # Advanced Fuzzing Techniques
@@ -32,8 +34,8 @@ func FuzzParse(f *testing.F) {
         _, _ = Parse(data)
     })
 }
-```
 
+```bash
 **Bad fuzz target**:
 
 ```go
@@ -46,8 +48,8 @@ func FuzzParse(f *testing.F) {
         os.WriteFile("/tmp/fuzz", data, 0644)
     })
 }
-```
 
+```bash
 ### Corpus Management
 
 **Seed corpus**: Initial inputs that fuzzer mutates.
@@ -61,8 +63,8 @@ testdata/
       valid-input-1
       edge-case-2
       regression-3
-```
 
+```bash
 **Benefits**:
 
 - Fuzzer starts from known-good inputs
@@ -78,32 +80,37 @@ testdata/
 ```yaml
 on:
   schedule:
-    - cron: '0 2 * * *'  # 2 AM daily
-```
 
+    - cron: '0 2 * * *'  # 2 AM daily
+
+```bash
 **Longer fuzz time for scheduled runs**:
 
 ```yaml
+
 - name: Long fuzz run
+
   if: github.event_name == 'schedule'
   run: go test -fuzz=Fuzz -fuzztime=1h ./...
-```
 
+```bash
 **PR validation**:
 
 ```yaml
 on:
   pull_request:
-```
 
+```bash
 **Shorter fuzz time for PRs**:
 
 ```yaml
+
 - name: Quick fuzz check
+
   if: github.event_name == 'pull_request'
   run: go test -fuzz=Fuzz -fuzztime=30s ./...
-```
 
+```bash
 ### Troubleshooting
 
 #### Fuzzing not detected by Scorecard
@@ -124,8 +131,8 @@ fuzz-seconds: 30
 
 # Scheduled: 1 hour
 fuzz-seconds: 3600
-```
 
+```bash
 #### Fuzzing finds crashes in third-party dependencies
 
 **Upstream the finding**:
@@ -149,7 +156,6 @@ fuzz-seconds: 3600
 **Reality**: Most projects score 0/10 on Fuzzing. Only implement if it genuinely adds security value.
 
 ---
-
 
 ---
 

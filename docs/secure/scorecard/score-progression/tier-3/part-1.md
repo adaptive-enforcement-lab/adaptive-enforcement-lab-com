@@ -3,11 +3,13 @@ description: >-
   Selective improvements for Scorecard scores 9 to 10. CII badge, fuzzing integration,
   perfect branch protection, and ongoing maintenance. Diminishing returns, evaluate context.
 tags:
+
   - scorecard
   - compliance
   - cii-badge
   - fuzzing
   - maintenance
+
 ---
 
 # Tier 3: Score 9 to 10 (Advanced → Exceptional)
@@ -42,24 +44,28 @@ Edge cases, community certification, and continuous monitoring. These are high-e
 Most projects with good CI/CD **already meet these criteria**:
 
 **Project Basics**:
+
 - ✅ Public version control (GitHub)
 - ✅ Change history (git log)
 - ✅ Unique version numbers (releases with tags)
 - ✅ Release notes (CHANGELOG.md or GitHub releases)
 
 **Quality**:
+
 - ✅ Automated test suite (CI with tests)
 - ✅ High test coverage (95%+)
 - ✅ Warning-free builds
 - ✅ Reproducible builds
 
 **Security**:
+
 - ✅ Security policy (SECURITY.md from Tier 1)
 - ✅ Static analysis (SAST from Tier 2)
 - ✅ Dependency scanning (Renovate/Dependabot from Tier 1)
 - ✅ Known vulnerabilities addressed
 
 **Documentation**:
+
 - ✅ README with purpose, installation, usage
 - ✅ LICENSE file
 - ✅ Contribution guidelines (CONTRIBUTING.md)
@@ -96,6 +102,7 @@ If you've completed Tier 1 and 2, **you already have the practices**. The badge 
 ### When to Prioritize Fuzzing
 
 **✅ Implement fuzzing for**:
+
 - Parsers (JSON, XML, YAML, Markdown, protocol buffers)
 - Cryptographic code (encryption, signing, verification)
 - Network protocol handlers (HTTP, WebSocket, custom protocols)
@@ -104,6 +111,7 @@ If you've completed Tier 1 and 2, **you already have the practices**. The badge 
 - Serialization/deserialization logic
 
 **❌ Skip fuzzing for**:
+
 - Simple CRUD applications
 - CLI tools with validated input
 - Internal tools with trusted input only
@@ -127,17 +135,20 @@ jobs:
     permissions:
       contents: read
     steps:
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
 
       - uses: google/oss-fuzz/infra/cifuzz/actions/build_fuzzers@master
+
         with:
           language: go  # or: python, rust, java, c, c++
 
       - uses: google/oss-fuzz/infra/cifuzz/actions/run_fuzzers@master
+
         with:
           fuzz-seconds: 600
-```
 
+```bash
 ### Manual Fuzzing with Go
 
 ```go
@@ -156,8 +167,8 @@ func FuzzParse(f *testing.F) {
         _, _ = Parse(data)
     })
 }
-```
 
+```bash
 Run with: `go test -fuzz=FuzzParse -fuzztime=30s`
 
 ### Continuous Fuzzing with OSS-Fuzz (Full Integration)
@@ -176,11 +187,13 @@ Apply to [OSS-Fuzz project](https://github.com/google/oss-fuzz):
 ### Trade-offs
 
 **Benefits**:
+
 - Finds edge cases human testing misses
 - Continuous security testing
 - Industry best practice for security-critical code
 
 **Costs**:
+
 - High implementation effort (8+ hours minimum)
 - Ongoing maintenance (triaging findings)
 - May find issues in dependencies you can't fix
@@ -222,17 +235,20 @@ Apply to [OSS-Fuzz project](https://github.com/google/oss-fuzz):
 ### Trade-offs
 
 **Signed commits**:
+
 - **Pro**: Cryptographic proof of author identity
 - **Con**: All contributors need GPG keys configured
 - **Con**: CI commits need signing setup
 - **Effort**: 1 to 2 hours per contributor for initial setup
 
 **Admin bypass disabled**:
+
 - **Pro**: Maximum security, no exceptions
 - **Con**: Blocks emergency fixes in crisis situations
 - **Con**: May slow incident response
 
 **Force push restrictions**:
+
 - **Pro**: Protects git history from rewriting
 - **Con**: Complicates history cleanup
 - **Con**: May need workarounds for large refactors
@@ -240,12 +256,14 @@ Apply to [OSS-Fuzz project](https://github.com/google/oss-fuzz):
 ### When to Implement
 
 **✅ Implement for**:
+
 - Large teams (5+ contributors)
 - Public projects with external contributors
 - High-security contexts (cryptography, authentication, infrastructure)
 - Regulated industries (finance, healthcare)
 
 **❌ Skip for**:
+
 - Solo maintainer projects
 - Small teams (2 to 3 people) with trusted members
 - Internal tools with limited access
@@ -265,8 +283,8 @@ All commits are reviewed through PR process.
 
 **Admin bypass**: Enabled for emergency hotfixes. Admin access is limited
 to 2 team leads. All admin pushes are logged and reviewed.
-```
 
+```bash
 **Impact**: Maximum security for high-risk projects. Overkill for small teams or low-risk contexts.
 
 ---

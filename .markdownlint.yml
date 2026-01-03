@@ -36,3 +36,9 @@ MD025: false
 # Disable link fragment validation (conflicts with MkDocs pymdownx.slugs config)
 # MkDocs uses separator: "_" and case: lower, which markdownlint can't detect
 MD051: false
+
+# Disable first-line-h1 check for part files (included in parent docs)
+MD041: false
+
+# Allow heading increments (H1 to H3) for included part files
+MD001: false

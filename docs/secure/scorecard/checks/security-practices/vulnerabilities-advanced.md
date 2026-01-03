@@ -3,10 +3,12 @@ description: >-
   Advanced vulnerability management for OpenSSF Scorecard. Handle unfixable 
   vulnerabilities, false positives, and disclosure processes.
 tags:
+
   - scorecard
   - vulnerabilities
   - cve
   - security-advisories
+
 ---
 
 # Advanced Vulnerability Management
@@ -33,10 +35,12 @@ If vulnerability is low severity and doesn't affect your use case:
 - **Severity**: Low
 - **Status**: Awaiting upstream patch
 - **Mitigation**: Vulnerability requires physical access to server,
-  not exploitable in our deployment model
-- **Tracking**: https://github.com/upstream/repo/issues/1234
-```
 
+  not exploitable in our deployment model
+
+- **Tracking**: https://github.com/upstream/repo/issues/1234
+
+```bash
 **Document** in repository README or security advisory.
 
 #### Option 2: Pin to Last Good Version
@@ -50,8 +54,8 @@ If vulnerability is low severity and doesn't affect your use case:
     "vulnerable-package": "1.2.3"
   }
 }
-```
 
+```bash
 **Trade-off**: May miss future security patches.
 
 #### Option 3: Replace Dependency
@@ -65,8 +69,8 @@ npm install vulnerable-package
 # After
 npm uninstall vulnerable-package
 npm install secure-alternative
-```
 
+```bash
 **Best for**: When multiple alternatives exist.
 
 #### Option 4: Vendor and Patch
@@ -84,8 +88,8 @@ git commit -m "fix: CVE-2024-1234"
 
 # Use your fork
 npm install github:yourorg/vulnerable-package#fix/cve-2024-1234
-```
 
+```bash
 **Maintenance burden**: You own the patches.
 
 ### False Positives
@@ -102,8 +106,8 @@ uses the `hash()` function, making this CVE not applicable.
 
 **Mitigation**: Code review confirms vulnerable code path is never executed.
 **Tracking**: Waiting for upstream patch to eliminate alert.
-```
 
+```bash
 #### Example 2: Development Dependency Only
 
 ```json
@@ -112,8 +116,8 @@ uses the `hash()` function, making this CVE not applicable.
     "vulnerable-test-tool": "1.0.0"
   }
 }
-```
 
+```bash
 **Reality**: Development-only vulnerability doesn't affect production.
 
 **Scorecard limitation**: May still flag it.
@@ -128,8 +132,8 @@ If **your project** has a vulnerability:
 
 ```text
 Security tab → Advisories → New draft security advisory
-```
 
+```bash
 **Step 2**: Work on private patch
 
 ```bash
@@ -138,8 +142,8 @@ git clone <temporary-fork-url>
 git checkout -b fix/vulnerability
 # ... develop fix ...
 git push
-```
 
+```bash
 **Step 3**: Request CVE (automatic through GitHub)
 
 **Step 4**: Publish advisory and release patch
@@ -169,13 +173,15 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
+
       - name: Auto-merge Dependabot PRs
+
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
 
+```bash
 #### Scorecard still shows vulnerabilities after fixing
 
 **Check**: Did dependencies actually update?
@@ -183,8 +189,8 @@ jobs:
 ```bash
 # Verify fix is in lockfile
 npm ls vulnerable-package
-```
 
+```bash
 **Scorecard scan lag**: Can take 24 to 48 hours to reflect fixes.
 
 **Clear cache**: Re-run Scorecard locally to verify fix:
@@ -193,8 +199,8 @@ npm ls vulnerable-package
 docker run -e GITHUB_TOKEN=$GITHUB_TOKEN gcr.io/openssf/scorecard:stable \
   --repo=github.com/your-org/your-repo \
   --checks=Vulnerabilities
-```
 
+```bash
 #### Vulnerability in OS package, not application dependency
 
 **Scenario**: Container base image has CVE.
@@ -207,17 +213,16 @@ FROM ubuntu:20.04
 
 # After
 FROM ubuntu:24.04
-```
 
+```bash
 Or use minimal base images:
 
 ```dockerfile
 # Use distroless or alpine
 FROM gcr.io/distroless/static-debian12
-```
 
+```bash
 ---
-
 
 ---
 

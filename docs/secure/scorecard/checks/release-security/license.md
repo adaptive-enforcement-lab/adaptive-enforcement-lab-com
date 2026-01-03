@@ -3,9 +3,11 @@ description: >-
   Complete remediation guide for OpenSSF Scorecard License check.
   Add OSI-approved license for legal clarity and open source compliance.
 tags:
+
   - scorecard
   - license
   - legal
+
 ---
 
 # License Check
@@ -38,8 +40,8 @@ $ ls -la
 README.md
 src/
 tests/
-```
 
+```bash
 **Legal status**: All rights reserved. Users cannot legally use or distribute code.
 
 **Scorecard result**: License 0/10
@@ -52,8 +54,8 @@ README.md
 LICENSE          ← OSI-approved license
 src/
 tests/
-```
 
+```bash
 **Legal status**: Users have explicit rights defined by license.
 
 **Scorecard result**: License 10/10
@@ -92,8 +94,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
 
+```bash
 #### Apache License 2.0 (Permissive with Patent Grant)
 
 **Best for**: Projects where patent protection matters
@@ -149,8 +151,8 @@ sed -i 's/\[fullname\]/Your Name/g' LICENSE
 git add LICENSE
 git commit -m "Add MIT License"
 git push
-```
 
+```bash
 #### Via license CLI Tool
 
 ```bash
@@ -162,8 +164,8 @@ license -o LICENSE mit
 
 # Or Apache-2.0
 license -o LICENSE apache
-```
 
+```bash
 ### License in package.json (npm)
 
 ```json
@@ -176,8 +178,8 @@ license -o LICENSE apache
     "url": "https://github.com/your-org/your-repo"
   }
 }
-```
 
+```bash
 ### License in setup.py (Python)
 
 ```python
@@ -189,8 +191,8 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
 )
-```
 
+```bash
 ### License in Cargo.toml (Rust)
 
 ```toml
@@ -198,8 +200,8 @@ setup(
 name = "your-package"
 version = "1.2.3"
 license = "MIT OR Apache-2.0"
-```
 
+```bash
 ### License in go.mod (Go)
 
 Go doesn't include license in `go.mod`, but package registries (pkg.go.dev) detect LICENSE file automatically.
@@ -221,8 +223,8 @@ Go doesn't include license in `go.mod`, but package registries (pkg.go.dev) dete
 ```text
 LICENSE          ← Standard license (MIT, Apache)
 LICENSE.CUSTOM   ← Your custom terms
-```
 
+```bash
 Reference both in README.md.
 
 #### Issue: Multiple license files (LICENSE and COPYING)
@@ -258,12 +260,11 @@ Run Scorecard:
 ```bash
 docker run -e GITHUB_TOKEN=$GITHUB_TOKEN gcr.io/openssf/scorecard:stable \
   --repo=github.com/your-org/your-repo --show-details | grep License
-```
 
+```bash
 Expected: **License 10/10**
 
 ---
-
 
 ---
 

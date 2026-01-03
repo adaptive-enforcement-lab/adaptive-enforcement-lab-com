@@ -17,7 +17,7 @@ Configuration checks that enforce development workflows and dependency hygiene. 
 - **Branch-Protection**: Enforce review requirements and prevent force pushes
 - **Dependency-Update-Tool**: Automated dependency updates via Renovate or Dependabot
 
-**Weight**: High for both - These checks prevent common security and stability issues.
+**Weight**: High for both. These checks prevent common security and stability issues.
 
 ---
 

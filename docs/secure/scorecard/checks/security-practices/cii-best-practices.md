@@ -3,9 +3,11 @@ description: >-
   Complete remediation guide for OpenSSF Scorecard CII-Best-Practices check.
   Earn OpenSSF Best Practices Badge to demonstrate security maturity.
 tags:
+
   - scorecard
   - best-practices
   - certification
+
 ---
 
 # CII-Best-Practices Check
@@ -135,9 +137,10 @@ All notable changes to this project will be documented in this file.
 ## [1.0.0] - 2025-01-02
 
 ### Added
-- Initial release
-```
 
+- Initial release
+
+```bash
 #### Reporting Section (20 minutes)
 
 - Security vulnerability reporting: ✓ (point to SECURITY.md)
@@ -163,8 +166,8 @@ pytest
 
 # JavaScript example
 npm test
-```
 
+```bash
 Even minimal tests satisfy requirement.
 
 #### Security Section (60 minutes)
@@ -195,8 +198,8 @@ Add badge to README.md:
 [![OpenSSF Best Practices](https://www.bestpractices.coreinfrastructure.org/projects/12345/badge)](https://www.bestpractices.coreinfrastructure.org/projects/12345)
 
 Project description here.
-```
 
+```bash
 **Replace** `12345` with your project's badge ID.
 
 **Result**: CII-Best-Practices 5/10 (passing badge)
@@ -212,8 +215,8 @@ Project description here.
 
 ```text
 Organization Settings → Authentication security → Require two-factor authentication
-```
 
+```bash
 #### "We don't have signed releases"
 
 **Passing badge**: Not required
@@ -265,7 +268,6 @@ Organization Settings → Authentication security → Require two-factor authent
 **Silver/Gold badges**: May involve OpenSSF review for complex criteria.
 
 ---
-
 
 ---
 

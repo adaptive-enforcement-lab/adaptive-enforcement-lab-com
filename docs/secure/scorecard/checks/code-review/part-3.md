@@ -49,7 +49,7 @@ $ gh issue list --state closed --search "closed:>2024-12-01" | wc -l
 12
 ```
 
-**Result**: Maintained 10/10 - active development visible.
+**Result**: Maintained 10/10. Active development is visible.
 
 ### Stable Project Pattern
 
@@ -213,9 +213,9 @@ git log -1 --format="%ci"
 
 **Order of implementation** for fastest improvement:
 
-1. **Code-Review** (1 to 2 hours) - Enable branch protection requiring approvals
-2. **Maintained** (0 to 1 hour) - Enable Renovate for automated updates
-3. **Contributors** (N/A) - Organic growth over time, cannot be forced
+1. **Code-Review** (1 to 2 hours): Enable branch protection requiring approvals
+2. **Maintained** (0 to 1 hour): Enable Renovate for automated updates
+3. **Contributors** (N/A): Organic growth over time, cannot be forced
 
 **Total estimated effort**: 1 to 3 hours for immediate fixes.
 
@@ -251,14 +251,14 @@ Active maintenance correlates with faster vulnerability remediation.
 
 **Existing guides**:
 
-- [Scorecard Index](../index.md) - Overview of all 18 checks
-- [Branch Protection Checks](./branch-protection.md) - Detailed branch protection configuration
-- [Supply Chain Checks](./supply-chain.md) - Pinned-Dependencies and Token-Permissions
-- [Tier 1 Progression](../score-progression/tier-1.md) - Quick wins including branch protection
+- [Scorecard Index](../index.md): Overview of all 18 checks
+- [Branch Protection Checks](./branch-protection.md): Detailed branch protection configuration
+- [Supply Chain Checks](./supply-chain.md): Pinned-Dependencies and Token-Permissions
+- [Tier 1 Progression](../score-progression/tier-1.md): Quick wins including branch protection
 
 **Related patterns**:
 
-- [GitHub Apps](../../github-apps/index.md) - Bot accounts for automation without admin access
+- [GitHub Apps](../../github-apps/index.md): Bot accounts for automation without admin access
 
 ---
 

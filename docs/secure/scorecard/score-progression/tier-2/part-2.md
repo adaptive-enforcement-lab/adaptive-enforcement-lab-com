@@ -18,19 +18,22 @@ jobs:
       security-events: write
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
 
       - name: Run GoSec
+
         uses: securego/gosec@master
         with:
           args: '-no-fail -fmt sarif -out gosec.sarif ./...'
 
       - name: Upload SARIF
+
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: gosec.sarif
-```
 
+```bash
 ### For Multiple Languages: CodeQL
 
 ```yaml
@@ -46,22 +49,25 @@ jobs:
       security-events: write
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
 
       - uses: github/codeql-action/init@v3
+
         with:
           languages: javascript, python
 
       - uses: github/codeql-action/autobuild@v3
 
       - uses: github/codeql-action/analyze@v3
-```
 
+```bash
 **CodeQL supports**: JavaScript, TypeScript, Python, Ruby, Java, Kotlin, Go, C, C++
 
 ### Results in GitHub Security Tab
 
 SARIF upload creates alerts in:
+
 - **Security → Code scanning alerts**
 - Visible on PRs as check annotations
 - Blocks merge if critical issues found (configurable)
@@ -142,8 +148,8 @@ After implementing all Priority 1-5 fixes:
 ```bash
 # Correct format
 sha256sum files* | base64 -w0
-```
 
+```bash
 **Check**: Is workflow using version tag `@v2.1.0`?
 
 ### "Signed-Releases still at 8/10 after SLSA"
@@ -191,6 +197,7 @@ Ready for [Tier 3: Score 9 to 10](tier-3.md) with CII badge, selective fuzzing, 
 **Not ready for Tier 3 yet?**
 
 Focus on stabilization:
+
 - Monitor SLSA workflow for several releases
 - Verify provenance validation works
 - Ensure SAST findings are actionable

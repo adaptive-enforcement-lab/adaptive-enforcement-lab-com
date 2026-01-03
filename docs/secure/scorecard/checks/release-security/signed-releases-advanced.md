@@ -3,9 +3,11 @@ description: >-
   Advanced troubleshooting and remediation for OpenSSF Scorecard Signed-Releases.
   Fix common provenance issues and optimize SLSA implementation.
 tags:
+
   - scorecard
   - slsa
   - troubleshooting
+
 ---
 
 # Signed-Releases Advanced Guide
@@ -25,8 +27,8 @@ This guide covers troubleshooting and advanced patterns for Signed-Releases.
 ```bash
 # Ensure base64 encoding in hash generation step
 sha256sum readability_* | base64 -w0 > hashes.txt
-```
 
+```bash
 #### Issue: Verifier fails with "builder identity not trusted"
 
 **Cause**: Using SHA pin instead of version tag for `slsa-github-generator`.
@@ -39,8 +41,8 @@ uses: slsa-framework/slsa-github-generator/...@abc123...
 
 # To version tag
 uses: slsa-framework/slsa-github-generator/...@v2.1.0
-```
 
+```bash
 #### Issue: Score stuck at 8/10 despite provenance
 
 **Cause**: GitHub auto-generated source archives are unsigned.
@@ -57,7 +59,9 @@ uses: slsa-framework/slsa-github-generator/...@v2.1.0
 build:
   steps:
     # Upload artifacts
+
     - uses: actions/upload-artifact@v4
+
       with:
         name: binaries
         path: dist/
@@ -65,8 +69,8 @@ build:
 provenance:
   needs: [build]  # Ensure dependency
   uses: slsa-framework/slsa-github-generator/...
-```
 
+```bash
 ### Remediation Steps
 
 **Time estimate**: 3 to 4 hours (initial setup), 15 minutes per release (ongoing)
@@ -82,14 +86,16 @@ provenance:
 Modify build job to output base64-encoded hashes:
 
 ```yaml
+
 - name: Generate hashes
+
   id: hash
   run: |
     cd dist
     sha256sum * | base64 -w0 > ../hashes.txt
     echo "hashes=$(cat ../hashes.txt)" >> "$GITHUB_OUTPUT"
-```
 
+```bash
 **Step 2: Add provenance job** (1 hour)
 
 Add reusable workflow call:
@@ -105,8 +111,8 @@ provenance:
   with:
     base64-subjects: "${{ needs.build.outputs.hashes }}"
     upload-assets: true
-```
 
+```bash
 **Step 3: Configure Renovate exception** (15 minutes)
 
 Add to `.github/renovate.json`:
@@ -122,8 +128,8 @@ Add to `.github/renovate.json`:
     }
   ]
 }
-```
 
+```bash
 **Step 4: Add source archive signing** (1 hour)
 
 Create job to sign GitHub auto-generated source archives:
@@ -136,7 +142,9 @@ sign-source-archives:
     id-token: write
   runs-on: ubuntu-latest
   steps:
+
     - name: Sign source archives
+
       run: |
         gh release download ${{ github.ref_name }} \
           --pattern "*.zip" --pattern "*.tar.gz" --dir source/
@@ -146,8 +154,8 @@ sign-source-archives:
         gh release upload ${{ github.ref_name }} source/*.sig
       env:
         GH_TOKEN: ${{ github.token }}
-```
 
+```bash
 **Step 5: Test with release** (30 minutes)
 
 Create test release and verify:
@@ -166,8 +174,8 @@ cosign verify-blob Source_code.zip \
   --signature Source_code.zip.sig \
   --certificate-identity-regexp "https://github.com/your-org" \
   --certificate-oidc-issuer "https://token.actions.githubusercontent.com"
-```
 
+```bash
 **Step 6: Validate Scorecard** (15 minutes)
 
 Run Scorecard and confirm 10/10:
@@ -175,10 +183,9 @@ Run Scorecard and confirm 10/10:
 ```bash
 docker run -e GITHUB_TOKEN=$GITHUB_TOKEN gcr.io/openssf/scorecard:stable \
   --repo=github.com/your-org/your-repo --show-details | grep Signed-Releases
-```
 
+```bash
 ---
-
 
 ---
 

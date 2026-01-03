@@ -226,10 +226,10 @@ steps:
 
 **Critical metrics**:
 
-1. **Overall score trend** - Is it improving or declining?
-2. **Check-specific scores** - Which checks are problematic?
-3. **Regression frequency** - How often do scores drop?
-4. **Time to remediation** - How fast are regressions fixed?
+1. **Overall score trend**: Is it improving or declining?
+2. **Check-specific scores**: Which checks are problematic?
+3. **Regression frequency**: How often do scores drop?
+4. **Time to remediation**: How fast are regressions fixed?
 
 **Dashboard example**:
 

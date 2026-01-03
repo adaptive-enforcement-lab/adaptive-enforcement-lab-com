@@ -3,10 +3,12 @@ description: >-
   Complete remediation guide for OpenSSF Scorecard Signed-Releases check.
   Achieve 10/10 with SLSA provenance using slsa-github-generator.
 tags:
+
   - scorecard
   - slsa
   - provenance
   - signatures
+
 ---
 
 # Signed-Releases Check
@@ -77,7 +79,7 @@ Package registries often require signatures for publishing, making these complem
 
 OSI-approved license is required for OpenSSF Best Practices Badge.
 
-## Related Content
+## Check Categories
 
 **Other check categories**:
 

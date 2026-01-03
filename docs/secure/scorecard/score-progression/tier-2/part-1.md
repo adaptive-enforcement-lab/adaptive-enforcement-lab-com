@@ -3,11 +3,13 @@ description: >-
   Advanced security improvements for Scorecard scores 8 to 9. SLSA provenance, SHA pinning,
   SAST integration. Build integrity and comprehensive supply chain protections.
 tags:
+
   - scorecard
   - compliance
   - slsa
   - supply-chain
   - provenance
+
 ---
 
 # Tier 2: Score 8 to 9 (Strong Posture → Advanced Security)
@@ -52,7 +54,7 @@ The attestation is cryptographically bound to the artifacts. Change a byte, veri
 
 ### Implementation
 
-**Step 1: Build job generates hashes**
+#### Step 1: Build job generates hashes
 
 ```yaml
 jobs:
@@ -60,12 +62,15 @@ jobs:
     outputs:
       hashes: ${{ steps.hash.outputs.hashes }}
     steps:
+
       - name: Build artifacts
+
         run: |
           go build -o readability_linux_amd64
           go build -o readability_darwin_amd64
 
       - name: Generate hashes
+
         id: hash
         run: |
           # IMPORTANT: Base64-encoded, not hex
@@ -73,7 +78,7 @@ jobs:
           echo "hashes=$(cat hashes.txt)" >> "$GITHUB_OUTPUT"
 ```
 
-**Step 2: Provenance job consumes hashes**
+#### Step 2: Provenance job consumes hashes
 
 ```yaml
   provenance:
@@ -86,11 +91,12 @@ jobs:
     with:
       base64-subjects: ${{ needs.build.outputs.hashes }}
       upload-assets: true
+
 ```
 
 ### Critical Details
 
-**1. Must use version tag `@v2.1.0`, not SHA pin**
+#### 1. Must use version tag `@v2.1.0`, not SHA pin
 
 ```yaml
 # REQUIRED - verifier validates against version tag
@@ -98,11 +104,12 @@ uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_s
 
 # WRONG - verification will fail
 uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@abc123...
+
 ```
 
 **Why**: `slsa-verifier` validates builder identity against known version tags. SHA references fail verification.
 
-**2. Hashes must be base64-encoded**
+#### 2. Hashes must be base64-encoded
 
 ```bash
 # CORRECT - base64 encoding
@@ -186,7 +193,9 @@ gh release upload "$TAG" \
 ### Workflow Integration
 
 ```yaml
+
 - name: Sign Source Archives
+
   run: |
     TAG="${{ github.ref_name }}"
 
@@ -224,9 +233,11 @@ gh release upload "$TAG" \
 
 ```yaml
 # Before - version tag only
+
 - uses: actions/checkout@v4
 
 # After - SHA pin with comment
+
 - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
 ```
 
@@ -248,6 +259,7 @@ Update `.github/renovate.json`:
 ```
 
 Renovate will:
+
 - Automatically pin actions to SHA digests
 - Add version tag as comment
 - Update both SHA and tag when new versions release
@@ -256,14 +268,15 @@ Renovate will:
 
 Some actions **require** version tags and fail with SHA pins:
 
-**1. ossf/scorecard-action**
+#### 1. ossf/scorecard-action
 
 ```yaml
 # MUST use version tag - internal verification fails with SHA
+
 - uses: ossf/scorecard-action@v2.4.0
 ```
 
-**2. slsa-framework/slsa-github-generator**
+#### 2. slsa-framework/slsa-github-generator
 
 ```yaml
 # MUST use version tag - verifier validates builder identity

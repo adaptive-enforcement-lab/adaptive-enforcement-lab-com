@@ -53,10 +53,10 @@ graph TD
 
 **General principles**:
 
-1. **Fix when easy** - Simpler than documenting exceptions
-2. **Document when necessary** - Explain legitimate deviations
-3. **Report when widespread** - Help improve Scorecard heuristics
-4. **Don't chase perfection** - Some scores won't reach 10/10
+1. **Fix when easy**: Simpler than documenting exceptions
+2. **Document when necessary**: Explain legitimate deviations
+3. **Report when widespread**: Help improve Scorecard heuristics
+4. **Don't chase perfection**: Some scores won't reach 10/10
 
 ---
 
@@ -194,7 +194,7 @@ Configure Renovate:
 
 **Expected score**: Should be 10/10 if all actions are SHA-pinned
 
-**If Scorecard still flags it**: Open an issue with Scorecard project - this is a heuristic limitation.
+**If Scorecard still flags it**: Open an issue with Scorecard project. This is a heuristic limitation.
 
 ---
 

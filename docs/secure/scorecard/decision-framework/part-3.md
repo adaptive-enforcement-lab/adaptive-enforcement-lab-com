@@ -9,18 +9,21 @@
 support separation of admin vs. developer roles.
 
 **Mitigation**:
+
 - Emergency bypass procedure documented in SECURITY.md
 - All bypasses logged in `.github/EMERGENCY-BYPASSES.md`
 - Monthly audit of bypass usage
 - Bypass count (last 12 months): 2
 
 **Remediation plan**:
+
 - **2026-02-01**: Hire additional developer
 - **2026-03-01**: Restructure teams (2 admins, 2 developers)
 - **2026-03-15**: Enable `enforce_admins = true`
 - **2026-04-01**: Verify 10/10 score
 
 **References**:
+
 - Team structure: `docs/team.md` (example path in your repository)
 - Emergency bypass log: `.github/EMERGENCY-BYPASSES.md` (example path in your repository)
 
@@ -37,6 +40,7 @@ support separation of admin vs. developer roles.
 input processing, no binary parsing, no network services.
 
 **Alternative controls**:
+
 - Markdown linting (markdownlint)
 - Link validation (automated checks)
 - Dependency scanning (Renovate + Dependabot)
@@ -60,6 +64,7 @@ input processing, no binary parsing, no network services.
 
 **Alternative controls**:
 We implement equivalent practices without the badge:
+
 - Security policy (SECURITY.md)
 - Vulnerability disclosure process
 - Automated testing and SAST
@@ -77,6 +82,7 @@ We implement equivalent practices without the badge:
 **Frequency**: Quarterly (January, April, July, October)
 
 **Process**:
+
 1. Review each exception for continued relevance
 2. Update status and scores
 3. Evaluate new Scorecard releases for changed recommendations
@@ -95,8 +101,8 @@ We implement equivalent practices without the badge:
 |------|-------|--------|--------|
 | 2026-01-02 | All | Initial documentation | Baseline exception tracking |
 | 2025-12-15 | Branch-Protection | Added remediation plan | Team expansion approved |
-```
 
+```bash
 ---
 
 ## Cross-References

@@ -3,10 +3,12 @@ description: >-
   Complete remediation guide for OpenSSF Scorecard Vulnerabilities check.
   Fix known CVEs and automate dependency security with Dependabot or Renovate.
 tags:
+
   - scorecard
   - vulnerabilities
   - dependencies
   - cve
+
 ---
 
 # Vulnerabilities Check
@@ -49,8 +51,8 @@ Severity: high
 Dependency of: my-package
 Path: my-package > some-tool > lodash
 CVE: CVE-2024-1234
-```
 
+```bash
 **Scorecard result**: Vulnerabilities 0/10
 
 ### After: Dependencies Updated
@@ -59,8 +61,8 @@ CVE: CVE-2024-1234
 $ npm update
 $ npm audit
 found 0 vulnerabilities
-```
 
+```bash
 **Scorecard result**: Vulnerabilities 10/10
 
 ### Automated Vulnerability Management
@@ -76,8 +78,8 @@ Settings → Security → Code security and analysis
   ✓ Dependency graph
   ✓ Dependabot alerts
   ✓ Dependabot security updates
-```
 
+```bash
 **Result**: Dependabot automatically:
 
 1. Detects vulnerable dependencies
@@ -89,13 +91,15 @@ Settings → Security → Code security and analysis
 ```yaml
 version: 2
 updates:
+
   - package-ecosystem: "npm"
+
     directory: "/"
     schedule:
       interval: "daily"
     open-pull-requests-limit: 10
-```
 
+```bash
 #### Renovate (More Powerful)
 
 Create `.github/renovate.json`:
@@ -119,8 +123,8 @@ Create `.github/renovate.json`:
     }
   ]
 }
-```
 
+```bash
 **Features**:
 
 - Automatically merges security patches
@@ -140,15 +144,17 @@ npm audit fix
 
 # See details
 npm audit --json
-```
 
+```bash
 **In CI**:
 
 ```yaml
-- name: Audit dependencies
-  run: npm audit --audit-level=moderate
-```
 
+- name: Audit dependencies
+
+  run: npm audit --audit-level=moderate
+
+```bash
 **Result**: CI fails if moderate+ vulnerabilities found.
 
 #### Go
@@ -159,17 +165,19 @@ go list -json -deps ./... | nancy sleuth
 
 # Or use govulncheck
 govulncheck ./...
-```
 
+```bash
 **In CI**:
 
 ```yaml
+
 - name: Scan for vulnerabilities
+
   run: |
     go install golang.org/x/vuln/cmd/govulncheck@latest
     govulncheck ./...
-```
 
+```bash
 #### Python
 
 ```bash
@@ -178,17 +186,19 @@ pip-audit
 
 # Or use safety
 safety check
-```
 
+```bash
 **In CI**:
 
 ```yaml
+
 - name: Audit dependencies
+
   run: |
     pip install pip-audit
     pip-audit
-```
 
+```bash
 #### Rust
 
 ```bash
@@ -197,18 +207,19 @@ cargo audit
 
 # Fix vulnerable dependencies
 cargo update
-```
 
+```bash
 **In CI**:
 
 ```yaml
+
 - name: Audit dependencies
+
   run: |
     cargo install cargo-audit
     cargo audit
-```
 
-
+```bash
 ---
 
 ## Advanced Topics
