@@ -434,6 +434,87 @@ nav:
           - Common Permissions: secure/github-apps/common-permissions.md
           - Troubleshooting: secure/github-apps/troubleshooting.md
           - Maintenance: secure/github-apps/maintenance.md
+      - GitHub Actions Security:
+          - secure/github-actions-security/index.md
+          - Action Pinning:
+              - secure/github-actions-security/action-pinning/index.md
+              - SHA Pinning Patterns: secure/github-actions-security/action-pinning/sha-pinning.md
+              - Automation Scripts: secure/github-actions-security/action-pinning/automation.md
+              - Dependabot Config: secure/github-actions-security/action-pinning/dependabot.md
+          - Token Permissions:
+              - secure/github-actions-security/token-permissions/index.md
+              - Workflow Templates: secure/github-actions-security/token-permissions/templates.md
+              - Job-Level Scoping: secure/github-actions-security/token-permissions/job-scoping.md
+          - Third-Party Actions:
+              - secure/github-actions-security/third-party-actions/index.md
+              - Evaluation Criteria: secure/github-actions-security/third-party-actions/evaluation.md
+              - Common Actions Review: secure/github-actions-security/third-party-actions/common-actions.md
+              - Action Allowlisting: secure/github-actions-security/third-party-actions/allowlisting.md
+          - Secret Management:
+              - secure/github-actions-security/secrets/secrets-management/index.md
+              - Best Practices: secure/github-actions-security/secrets/secrets-management/best-practices.md
+              - OIDC Federation:
+                  - secure/github-actions-security/secrets/oidc/index.md
+                  - Cloud Providers: secure/github-actions-security/secrets/oidc/cloud-providers.md
+              - Secret Rotation:
+                  - secure/github-actions-security/secrets/rotation/index.md
+                  - Cloud Patterns: secure/github-actions-security/secrets/rotation/cloud-patterns.md
+                  - Emergency & Checklist: secure/github-actions-security/secrets/rotation/emergency-checklist.md
+              - Secret Scanning:
+                  - secure/github-actions-security/secrets/scanning/index.md
+                  - Custom Patterns: secure/github-actions-security/secrets/scanning/custom-patterns.md
+                  - Alert Response: secure/github-actions-security/secrets/scanning/alert-response.md
+          - Runner Security:
+              - secure/github-actions-security/runners/index.md
+              - Hardening:
+                  - secure/github-actions-security/runners/hardening/index.md
+                  - Network Isolation: secure/github-actions-security/runners/hardening/network-isolation.md
+                  - Credential Protection: secure/github-actions-security/runners/hardening/credential-protection.md
+              - Ephemeral Runners:
+                  - secure/github-actions-security/runners/ephemeral/index.md
+                  - VM Patterns: secure/github-actions-security/runners/ephemeral/vm-patterns.md
+                  - ARC Patterns: secure/github-actions-security/runners/ephemeral/arc-patterns.md
+              - Runner Groups:
+                  - secure/github-actions-security/runners/groups/index.md
+                  - Repository Access: secure/github-actions-security/runners/groups/repository-access.md
+                  - Workflow Restrictions: secure/github-actions-security/runners/groups/workflow-restrictions.md
+          - Workflow Patterns:
+              - Secure Triggers:
+                  - secure/github-actions-security/workflows/triggers/index.md
+                  - Fork Patterns: secure/github-actions-security/workflows/triggers/fork-patterns.md
+              - Environment Protection:
+                  - secure/github-actions-security/workflows/environments/index.md
+                  - Deployment Gates: secure/github-actions-security/workflows/environments/deployment-gates.md
+                  - API Configuration: secure/github-actions-security/workflows/environments/api-configuration.md
+              - Reusable Workflows:
+                  - secure/github-actions-security/workflows/reusable/index.md
+                  - Secret Patterns: secure/github-actions-security/workflows/reusable/secret-patterns.md
+                  - Caller Validation: secure/github-actions-security/workflows/reusable/caller-validation-pinning.md
+          - Complete Examples:
+              - secure/github-actions-security/examples/index.md
+              - Secure CI Workflow:
+                  - secure/github-actions-security/examples/ci-workflow/index.md
+                  - Language-Specific: secure/github-actions-security/examples/ci-workflow/language-specific.md
+                  - Advanced & Checklist: secure/github-actions-security/examples/ci-workflow/advanced-checklist.md
+              - Release Workflow:
+                  - secure/github-actions-security/examples/release-workflow/index.md
+                  - Container Release: secure/github-actions-security/examples/release-workflow/container-release.md
+                  - Multi-Arch Builds: secure/github-actions-security/examples/release-workflow/multi-arch-builds.md
+                  - Package & Checklist: secure/github-actions-security/examples/release-workflow/package-release-checklist.md
+              - Deployment Workflow:
+                  - secure/github-actions-security/examples/deployment-workflow/index.md
+                  - Multi-Environment: secure/github-actions-security/examples/deployment-workflow/multi-environment.md
+                  - Rollback: secure/github-actions-security/examples/deployment-workflow/rollback.md
+                  - Security Checklist: secure/github-actions-security/examples/deployment-workflow/security-checklist.md
+              - Security Scanning:
+                  - secure/github-actions-security/examples/security-scanning/index.md
+                  - Language-Specific: secure/github-actions-security/examples/security-scanning/language-specific.md
+                  - Advanced Patterns: secure/github-actions-security/examples/security-scanning/advanced-patterns.md
+                  - CodeQL Configuration: secure/github-actions-security/examples/security-scanning/codeql-configuration.md
+                  - Checklist: secure/github-actions-security/examples/security-scanning/checklist.md
+          - Quick Reference:
+              - secure/github-actions-security/cheat-sheet/index.md
+              - Advanced Patterns: secure/github-actions-security/cheat-sheet/advanced-patterns.md
       - Vulnerability Scanning: secure/vulnerability-scanning/vulnerability-scanning.md
       - SBOM: secure/sbom/sbom-generation.md
       - Go Security:
