@@ -159,15 +159,18 @@ Release v1.7.0 Assets:
 TAG="v1.7.0"
 
 # Download GitHub's auto-generated archive
+
 curl -sL "https://github.com/owner/repo/archive/refs/tags/${TAG}.tar.gz" \
   -o "source_${TAG}.tar.gz"
 
 # Sign with Cosign
+
 cosign sign-blob \
   --bundle "source_${TAG}.tar.gz.sig" \
   "source_${TAG}.tar.gz"
 
 # Upload signature to release
+
 gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
 ```
 
@@ -200,6 +203,7 @@ gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
 
 ```yaml
 # Scorecard wants this
+
 - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
 ```
 
@@ -211,6 +215,7 @@ gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
 
 ```yaml
 # MUST use version tag - internal workflow verification fails with SHA
+
 - uses: ossf/scorecard-action@v2.4.0
 ```
 
@@ -220,6 +225,7 @@ gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
 
 ```yaml
 # MUST use version tag - verifier validates builder identity
+
 uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
 ```
 
@@ -315,7 +321,6 @@ These need GitHub admin access:
 ## Related Patterns
 
 - [Scorecard Workflow Examples](scorecard-workflow-examples.md) - Complete working workflows
-- [SLSA Implementation Playbook](../../enforce/slsa-provenance/index.md) - Complete guide for SLSA provenance implementation
 - [SLSA Level 3 Provenance](../../enforce/slsa-provenance/slsa-provenance.md) - Build attestations for 10/10
 - [SBOM Generation](../sbom/sbom-generation.md) - Complete attestation stack
 - [OpenSSF Best Practices Badge](../../blog/posts/2025-12-17-openssf-badge-two-hours.md) - Scorecard validates what badge certifies
