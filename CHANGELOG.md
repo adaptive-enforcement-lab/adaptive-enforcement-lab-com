@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.7.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.6.0...1.7.0) (2026-01-03)
+
+
+### New Content
+
+* add OpenSSF Scorecard achievement guide ([#208](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/208)) ([976410e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/976410e36f5e86175c07d60c24dc610666cd7d68))
+* add policy-as-code template library ([#210](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/210)) ([22e6824](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/22e6824eb2c8e6d9b2271feb4fa7efa0b0c5f29a))
+
+
+### Content Fixes
+
+* add required heading to mkdocs-build skill for markdownlint ([#213](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/213)) ([aac29b0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/aac29b02cf8355fa1ea4663b417e8e21f6eba7c1))
+
+
+### Maintenance
+
+* make mkdocs-build skill direct and authoritative ([#214](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/214)) ([1043fbb](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/1043fbb25f35b963d2ce44b64eb967ca0815e6dd))
+
 ## [1.6.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.5.0...1.6.0) (2026-01-03)
 
 
