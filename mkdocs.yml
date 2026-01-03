@@ -491,6 +491,7 @@ nav:
                   - Secret Patterns: secure/github-actions-security/workflows/reusable/secret-patterns.md
                   - Caller Validation: secure/github-actions-security/workflows/reusable/caller-validation-pinning.md
           - Complete Examples:
+              - secure/github-actions-security/examples/index.md
               - Secure CI Workflow:
                   - secure/github-actions-security/examples/ci-workflow/index.md
                   - Language-Specific: secure/github-actions-security/examples/ci-workflow/language-specific.md
@@ -498,6 +499,7 @@ nav:
               - Release Workflow:
                   - secure/github-actions-security/examples/release-workflow/index.md
                   - Container Release: secure/github-actions-security/examples/release-workflow/container-release.md
+                  - Multi-Arch Builds: secure/github-actions-security/examples/release-workflow/multi-arch-builds.md
                   - Package & Checklist: secure/github-actions-security/examples/release-workflow/package-release-checklist.md
               - Deployment Workflow:
                   - secure/github-actions-security/examples/deployment-workflow/index.md

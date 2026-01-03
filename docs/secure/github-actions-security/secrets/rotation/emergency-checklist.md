@@ -1,7 +1,7 @@
 ---
 title: Emergency Rotation and Checklist
 description: >-
-  Breach response workflow, rotation checklist, and common mistakes
+  Emergency breach response workflows with automated rotation scripts, comprehensive pre-rotation checklist, and common secret rotation mistakes to avoid
 ---
 
 Before implementing rotation:
@@ -100,7 +100,7 @@ The best secret rotation strategy is no secrets at all.
 - Cryptographic binding to workflow context
 - Zero operational overhead
 
-See [OIDC Federation Patterns](oidc.md) for implementation.
+See [OIDC Federation Patterns](../oidc/index.md) for implementation.
 
 ## Security Best Practices
 
@@ -128,8 +128,8 @@ See [OIDC Federation Patterns](oidc.md) for implementation.
 
 Ready to implement rotation automation? Continue with:
 
-- **[OIDC Federation Patterns](oidc.md)**: Eliminate stored secrets entirely with secretless cloud authentication
-- **[Secret Scanning Integration](scanning.md)**: Detect leaked secrets before rotation becomes emergency response
+- **[OIDC Federation Patterns](../oidc/index.md)**: Eliminate stored secrets entirely with secretless cloud authentication
+- **[Secret Scanning Integration](../scanning/index.md)**: Detect leaked secrets before rotation becomes emergency response
 - **[Secret Management Overview](index.md)**: Storage hierarchy, threat model, and exposure prevention
 
 ## Quick Reference

@@ -1,10 +1,14 @@
 ---
 title: Security Scanning Checklist
 description: >-
-  Comprehensive checklist and common mistakes for security scanning workflows
+  Comprehensive security scanning checklist with SAST, dependency scanning, container scanning, and common workflow mistakes
 ---
 
 ## Security Checklist
+
+!!! warning "Security Scanning is Non-Negotiable"
+
+    Every unchecked item represents a detection gap. Complete all checklist items before deploying to production. Security scanning is not optional—it is baseline hygiene for modern software delivery.
 
 Use this checklist to verify your security scanning workflow follows best practices.
 
@@ -247,12 +251,12 @@ on:
 
 ## Related Patterns
 
-- **[CI Workflow](./ci-workflow.md)**: Hardened CI workflow with integrated security scanning
-- **[Release Workflow](./release-workflow.md)**: Signed releases with SLSA provenance and attestations
-- **[Token Permissions](../token-permissions/templates.md)**: GITHUB_TOKEN permission templates for security scanning jobs
-- **[Action Pinning](../action-pinning/sha-pinning.md)**: SHA pinning patterns for security scanning actions
-- **[Secret Management](../secrets/scanning.md)**: GitHub secret scanning and push protection configuration
-- **[Third-Party Actions](../third-party-actions/common-actions.md)**: Security review of common scanning actions (CodeQL, Trivy, Dependabot)
+- **[CI Workflow](../ci-workflow/index.md)**: Hardened CI workflow with integrated security scanning
+- **[Release Workflow](../release-workflow/index.md)**: Signed releases with SLSA provenance and attestations
+- **[Token Permissions](../../token-permissions/templates.md)**: GITHUB_TOKEN permission templates for security scanning jobs
+- **[Action Pinning](../../action-pinning/sha-pinning.md)**: SHA pinning patterns for security scanning actions
+- **[Secret Management](../../secrets/scanning/index.md)**: GitHub secret scanning and push protection configuration
+- **[Third-Party Actions](../../third-party-actions/common-actions.md)**: Security review of common scanning actions (CodeQL, Trivy, Dependabot)
 
 ## Summary
 

@@ -40,7 +40,6 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
-      min_admonitions: 0
 
   # Build: Graduate+ level (advanced technical content)
   # Reference-style docs with lists/tables break readability formulas
@@ -51,7 +50,6 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
-      min_admonitions: 0
 
   # Enforce: Graduate+ level (policy enforcement content)
   # Reference-style docs with lists/tables break readability formulas
@@ -62,7 +60,6 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
-      min_admonitions: 0
 
   # Secure: Graduate+ level (security tooling content)
   # Reference-style docs with lists/tables break readability formulas
@@ -73,4 +70,3 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
-      min_admonitions: 0

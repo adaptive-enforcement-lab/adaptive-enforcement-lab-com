@@ -1,10 +1,16 @@
 ---
 title: Secret Scanning Alert Response
 description: >-
-  Alert triage workflow and incident response playbook
+  Alert triage workflow, incident response playbook, and emergency revocation procedures for leaked credentials in repositories
 ---
 
+!!! warning "Revoke First, Investigate Later"
 
+    When secret scanning alerts trigger, revoke the credential immediately before investigating. Leaked credentials are compromised the moment they reach GitHub. Speed of revocation determines blast radius.
+
+## Remove Secret from Git History
+
+```bash
 # 1. Clone mirror
 
 git clone --mirror <https://github.com/org/repo.git> repo-mirror
@@ -28,7 +34,6 @@ git gc --prune=now --aggressive
 git push --force
 
 echo "⚠ Secret removed from history. All developers must re-clone."
-
 ```
 
 **Alternative: Git Filter-Branch**:
@@ -51,7 +56,7 @@ git push origin --force --tags
 - Update protected branch rules if force push blocked
 - Monitor for secret re-introduction
 
-#### Step 6: Document the Incident
+## Step 6: Document the Incident
 
 Create incident report for security audit trail.
 
@@ -251,7 +256,7 @@ git commit -m "Add deployment config (secret removed)"
 
 **Prevention**:
 
-- Use [OIDC federation](oidc.md) instead of long-lived secrets
+- Use [OIDC federation](../oidc/index.md) instead of long-lived secrets
 - Add `.env`, `*.key`, `*.pem` to `.gitignore`
 - Deploy pre-commit hooks to all developer workstations
 - Educate team on secret management during onboarding
@@ -273,6 +278,6 @@ git commit -m "Add deployment config (secret removed)"
 ## Related Resources
 
 - [Secret Management Overview](index.md)
-- [OIDC Federation Patterns](oidc.md)
-- [Secret Rotation Automation](rotation.md)
-- [Workflow Trigger Security](../workflows/triggers.md)
+- [OIDC Federation Patterns](../oidc/index.md)
+- [Secret Rotation Automation](../rotation/index.md)
+- [Workflow Trigger Security](../../workflows/triggers/index.md)

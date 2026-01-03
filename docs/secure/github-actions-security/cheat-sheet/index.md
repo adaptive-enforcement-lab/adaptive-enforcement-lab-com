@@ -65,7 +65,7 @@ steps:
 | `actions/upload-artifact` | `26f96dfa697d77e81fd5907df203aa23a56210a8` | Tier 1 (GitHub) |
 | `github/codeql-action/init` | `cdcdbb579706841c47f7063dda365e292e5cad7a` | Tier 1 (GitHub) |
 
-[**See full pinning guide →**](action-pinning/sha-pinning.md)
+[**See full pinning guide →**](../action-pinning/sha-pinning.md)
 
 ### Dependabot Auto-Updates
 
@@ -86,7 +86,7 @@ updates:
           - "github/*"
 ```
 
-[**See Dependabot guide →**](action-pinning/dependabot.md)
+[**See Dependabot guide →**](../action-pinning/dependabot.md)
 
 ## GITHUB_TOKEN Permissions
 
@@ -142,7 +142,7 @@ jobs:
 | `id-token` | - | Request OIDC JWT (cloud auth) |
 | `security-events` | - | Upload SARIF to Security tab |
 
-[**See permissions guide →**](token-permissions/index.md)
+[**See permissions guide →**](../token-permissions/index.md)
 
 ## Secret Management
 
@@ -177,7 +177,7 @@ jobs:
 | **Branch** | `repo:org/repo:ref:refs/heads/main` | Medium |
 | **Repository** | `repo:org/repo` | Broad (use with caution) |
 
-[**See OIDC guide →**](secrets/oidc.md)
+[**See OIDC guide →**](../secrets/oidc/index.md)
 
 ### Secret Rotation Schedule
 
@@ -189,7 +189,7 @@ jobs:
 | Test environment | 180 days | Medium |
 | Development tokens | 365 days | Low |
 
-[**See rotation guide →**](secrets/rotation.md)
+[**See rotation guide →**](../secrets/rotation/index.md)
 
 ### Secret Scanning
 
@@ -215,7 +215,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-[**See scanning guide →**](secrets/scanning.md)
+[**See scanning guide →**](../secrets/scanning/index.md)
 
 ## Third-Party Actions
 
@@ -242,7 +242,7 @@ Before adding a third-party action:
 - [ ] Verify maintenance activity (recent commits, responsive maintainers)
 - [ ] Consider forking for critical workflows
 
-[**See evaluation guide →**](third-party-actions/evaluation.md)
+[**See evaluation guide →**](../third-party-actions/evaluation.md)
 
 ### Organization Allowlisting
 
@@ -258,7 +258,7 @@ Allowed actions and reusable workflows:
       - google-github-actions/*@*
 ```
 
-[**See allowlisting guide →**](third-party-actions/allowlisting.md)
+[**See allowlisting guide →**](../third-party-actions/allowlisting.md)
 
 ## Self-Hosted Runner Security
 
@@ -289,7 +289,7 @@ podman run --rm \
   ghcr.io/myorg/runner:latest
 ```
 
-[**See ephemeral patterns →**](runners/ephemeral.md)
+[**See ephemeral patterns →**](../runners/ephemeral/index.md)
 
 ### Runner Hardening Checklist
 
@@ -302,7 +302,7 @@ podman run --rm \
 - [ ] Enable audit logging (auditd, centralized collection)
 - [ ] Automatic security updates (unattended-upgrades, yum-cron)
 
-[**See hardening guide →**](runners/hardening.md)
+[**See hardening guide →**](../runners/hardening/index.md)
 
 ### Runner Group Restrictions
 
@@ -320,7 +320,7 @@ gh api --method PUT \
   -F selected_workflows='[".github/workflows/deploy.yml@refs/heads/main"]'
 ```
 
-[**See runner groups →**](runners/groups.md)
+[**See runner groups →**](../runners/groups/index.md)
 
 ## Workflow Triggers
 

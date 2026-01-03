@@ -1,15 +1,19 @@
 ---
 title: Deployment Security Checklist
 description: >-
-  Security checklist and common deployment mistakes
+  Comprehensive deployment security checklist with OIDC authentication, environment protection, common deployment mistakes, and production security best practices
 ---
+
+!!! warning "Zero Stored Credentials"
+
+    OIDC federation eliminates long-lived service account keys. Any stored cloud credentials in GitHub secrets represent a security vulnerability and should be migrated to OIDC authentication immediately.
 
 - [ ] Deployment uses image digest (not tag) for immutability
 - [ ] Health checks verify deployment before routing traffic
 - [ ] Canary deployment pattern used for production
 - [ ] Rollback automation tested and verified
 
-### Monitoring and Rollback
+## Monitoring and Rollback
 
 - [ ] Post-deployment health checks verify service availability
 - [ ] Canary metrics monitored (error rate, latency, throughput)
@@ -145,11 +149,11 @@ jobs:
 
 ## Related Patterns
 
-- **[OIDC Federation](../secrets/oidc.md)**: Complete OIDC setup for AWS, GCP, and Azure
-- **[Environment Protection](../workflows/environments.md)**: Environment configuration with approval gates and wait timers
-- **[Token Permissions](../token-permissions/templates.md)**: GITHUB_TOKEN permissions for deployment workflows
-- **[Release Workflow](./release-workflow.md)**: Signed releases with SLSA provenance
-- **[Action Pinning](../action-pinning/sha-pinning.md)**: SHA pinning patterns and Dependabot configuration
+- **[OIDC Federation](../../secrets/oidc/index.md)**: Complete OIDC setup for AWS, GCP, and Azure
+- **[Environment Protection](../../workflows/environments/index.md)**: Environment configuration with approval gates and wait timers
+- **[Token Permissions](../../token-permissions/templates.md)**: GITHUB_TOKEN permissions for deployment workflows
+- **[Release Workflow](../release-workflow/index.md)**: Signed releases with SLSA provenance
+- **[Action Pinning](../../action-pinning/sha-pinning.md)**: SHA pinning patterns and Dependabot configuration
 
 ## Summary
 

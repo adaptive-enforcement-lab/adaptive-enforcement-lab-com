@@ -1,10 +1,14 @@
 ---
 title: Actions Runner Controller Patterns
 description: >-
-  ARC deployment, autoscaling, and security policies for Kubernetes-based runners. Horizontal pod autoscaling, network policies, and pod security standards for ephemeral self-hosted runners in Kubernetes.
+  Deploy ephemeral GitHub Actions runners on Kubernetes with ARC, horizontal pod autoscaling, network policies, and pod security standards for secure self-hosted infrastructure
 ---
 
 # Actions Runner Controller Patterns
+
+!!! warning "Kubernetes Cluster Required"
+
+    ARC patterns require a functional Kubernetes cluster with cert-manager and RBAC configured. Verify cluster security posture and network policies before deploying runner pods. Misconfigured clusters expose runners to lateral movement risks.
 
 ## State Isolation Best Practices
 
@@ -190,12 +194,12 @@ Use this checklist when deploying ephemeral runners.
 
 ## Next Steps
 
-- **[Runner Hardening](hardening.md)**: Apply OS and network hardening to runner images
-- **[Runner Groups](groups.md)**: Organize ephemeral runners by trust level and repository access
+- **[Runner Hardening](../hardening/index.md)**: Apply OS and network hardening to runner images
+- **[Runner Groups](../groups/index.md)**: Organize ephemeral runners by trust level and repository access
 - **[Runner Security Overview](index.md)**: Review threat model and deployment strategies
 
 ## Related Documentation
 
-- [OIDC Federation](../secrets/oidc.md): Secretless authentication for ephemeral runners
-- [Secret Management](../secrets/index.md): Temporary credential patterns
-- [Workflow Triggers](../workflows/triggers.md): Understanding which events provision runners
+- [OIDC Federation](../../secrets/oidc/index.md): Secretless authentication for ephemeral runners
+- [Secret Management](../../secrets/secrets-management/index.md): Temporary credential patterns
+- [Workflow Triggers](../../workflows/triggers/index.md): Understanding which events provision runners

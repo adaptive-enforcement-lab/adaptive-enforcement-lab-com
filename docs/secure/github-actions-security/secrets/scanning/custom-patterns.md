@@ -1,13 +1,16 @@
 ---
 title: Custom Secret Patterns
 description: >-
-  Creating custom secret scanning patterns for organization-specific credentials
+  Create custom secret scanning patterns with regex for organization-specific credentials, API keys, database connection strings, and internal service tokens
 ---
 
+!!! tip "Define Organization-Specific Patterns"
+
+    GitHub detects common cloud providers automatically, but organization-specific credentials require custom patterns. Define regex patterns for internal API keys, database connection strings, and proprietary service tokens.
 
 Follow this runbook when secret scanning detects a credential.
 
-#### Step 1: Verify the Alert
+## Step 1: Verify the Alert
 
 **Check if secret is real**:
 
@@ -28,7 +31,9 @@ Follow this runbook when secret scanning detects a credential.
 - Real secret: Proceed to Step 2
 - False positive: Dismiss alert with reason
 
-#### Step 2: Classify Severity
+## Response Workflow
+
+### Step 2: Classify Severity
 
 **Critical (Production Credential)**:
 
@@ -56,7 +61,7 @@ Follow this runbook when secret scanning detects a credential.
 - Test secrets with no real access
 - Expired certificates
 
-#### Step 3: Revoke the Credential
+### Step 3: Revoke the Credential
 
 **Immediate Revocation (Critical)**:
 
@@ -106,7 +111,7 @@ gcloud auth activate-service-account --key-file=old-key.json
 gcloud projects list  # Should fail with authentication error
 ```
 
-#### Step 4: Rotate the Credential
+### Step 4: Rotate the Credential
 
 Generate new credential and update GitHub secret.
 
@@ -144,7 +149,7 @@ gh workflow run verify-deploy.yml \
 - Update configuration files referencing secret
 - Notify teams using the credential
 
-#### Step 5: Remove from Git History
+### Step 5: Remove from Git History
 
 Leaked secrets remain in Git history even after revocation. Remove completely.
 

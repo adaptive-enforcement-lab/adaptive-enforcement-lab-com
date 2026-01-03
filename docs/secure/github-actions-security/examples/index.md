@@ -7,13 +7,17 @@ description: >-
 
 # Complete Workflow Examples
 
+!!! info "Ready-to-Deploy Templates"
+
+    These examples integrate multiple security controls into production-ready workflows. Each template includes inline security comments, permission scoping, and cross-references to detailed pattern documentation.
+
 Copy-paste ready workflows demonstrating all security patterns from this hub.
 
-Each example integrates multiple security controls from across the hub—action pinning, minimal permissions, secret management, safe triggers, and more—into complete, production-ready workflows.
+Each example integrates multiple security controls from across the hub: action pinning, minimal permissions, secret management, safe triggers, and more. All examples are complete and production-ready.
 
 ## Available Examples
 
-### [Secure CI Workflow](ci-workflow.md)
+### [Secure CI Workflow](ci-workflow/index.md)
 
 Hardened continuous integration with comprehensive security controls.
 
@@ -29,7 +33,7 @@ Hardened continuous integration with comprehensive security controls.
 
 ---
 
-### [Release Workflow](release-workflow.md)
+### [Release Workflow](release-workflow/index.md)
 
 Signed releases with SLSA provenance and artifact attestations.
 
@@ -45,7 +49,7 @@ Signed releases with SLSA provenance and artifact attestations.
 
 ---
 
-### [Deployment Workflow](deployment-workflow.md)
+### [Deployment Workflow](deployment-workflow/index.md)
 
 OIDC-based cloud deployment with environment protection and automated rollback.
 
@@ -61,7 +65,7 @@ OIDC-based cloud deployment with environment protection and automated rollback.
 
 ---
 
-### [Security Scanning](security-scanning.md)
+### [Security Scanning](security-scanning/index.md)
 
 Comprehensive SAST, dependency scanning, container scanning, and SARIF upload.
 
@@ -106,10 +110,10 @@ These examples reference patterns from:
 
 - [Action Pinning](../action-pinning/index.md) - SHA pinning, Dependabot, automation
 - [Token Permissions](../token-permissions/index.md) - Minimal scopes, job-level permissions
-- [Secret Management](../secrets/index.md) - OIDC, rotation, scanning
+- [Secret Management](../secrets/secrets-management/index.md) - OIDC, rotation, scanning
 - [Third-Party Actions](../third-party-actions/index.md) - Trust tiers, evaluation
 - [Runner Security](../runners/index.md) - Hardening, ephemeral patterns
-- [Workflow Patterns](../workflows/triggers.md) - Safe triggers, environments, reusable workflows
+- [Workflow Patterns](../workflows/triggers/index.md) - Safe triggers, environments, reusable workflows
 
 ## Quick Start
 
@@ -120,4 +124,4 @@ These examples reference patterns from:
 5. **Test** with `act` or a draft PR
 6. **Deploy** to production
 
-For additional guidance, see the [Quick Reference Cheat Sheet](../cheat-sheet.md).
+For additional guidance, see the [Quick Reference Cheat Sheet](../cheat-sheet/index.md).

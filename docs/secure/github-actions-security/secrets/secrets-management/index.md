@@ -241,7 +241,7 @@ jobs:
 
 **Benefit**: Eliminates long-lived credentials. Reduces secret sprawl and rotation burden.
 
-See [OIDC Federation Patterns](oidc.md) for complete implementation guide.
+See [OIDC Federation Patterns](../oidc/index.md) for complete implementation guide.
 
 ## Secret Exposure Threat Model
 

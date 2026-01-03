@@ -1,9 +1,16 @@
 ---
 title: Repository Access and Workflow Restrictions
 description: >-
-  Repository access configuration, API-based setup, and workflow restrictions
+  Configure runner group repository access, API-based workflow restrictions, and deny-by-default permission patterns
 ---
 
+!!! warning "Deny by Default"
+
+    Default runner groups to zero repository access. Explicitly grant access only to required repositories with documented business justification. All-repository access for production runners is a critical security vulnerability.
+
+## Configure Workflow Restrictions
+
+```bash
 # Configure workflow restrictions for runner group
 
 set -euo pipefail

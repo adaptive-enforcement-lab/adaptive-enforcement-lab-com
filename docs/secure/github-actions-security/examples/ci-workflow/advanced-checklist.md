@@ -1,11 +1,14 @@
 ---
 title: Advanced Security Patterns and Checklist
 description: >-
-  Fork PR security, secret scanning prevention, and security checklist
+  Advanced fork PR security patterns with two-stage workflows, secret scanning prevention techniques, and comprehensive CI security checklist for production
 ---
 
+!!! warning "Complete All Checklist Items"
 
-### Trigger Security
+    This checklist represents minimum security requirements for production CI workflows. Every unchecked item increases attack surface. Address all items before merging workflows to default branch.
+
+## Trigger Security
 
 - [ ] `pull_request` trigger used (not `pull_request_target` for untrusted code)
 - [ ] Fork PR builds isolated with read-only token
@@ -163,11 +166,11 @@ jobs:
 
 ## Related Patterns
 
-- **[Action Pinning](../action-pinning/sha-pinning.md)**: SHA pinning patterns and Dependabot configuration
-- **[Token Permissions](../token-permissions/templates.md)**: GITHUB_TOKEN permission templates for all workflow types
-- **[Fork PR Security](../workflows/triggers.md)**: Safe handling of fork pull requests with two-stage workflows
-- **[Secret Management](../secrets/index.md)**: Secret exposure prevention and OIDC patterns
-- **[Security Scanning](./security-scanning.md)**: Comprehensive security scanning with SAST, dependency review, and SARIF upload
+- **[Action Pinning](../../action-pinning/sha-pinning.md)**: SHA pinning patterns and Dependabot configuration
+- **[Token Permissions](../../token-permissions/templates.md)**: GITHUB_TOKEN permission templates for all workflow types
+- **[Fork PR Security](../../workflows/triggers/index.md)**: Safe handling of fork pull requests with two-stage workflows
+- **[Secret Management](../../secrets/secrets-management/index.md)**: Secret exposure prevention and OIDC patterns
+- **[Security Scanning](../security-scanning/index.md)**: Comprehensive security scanning with SAST, dependency review, and SARIF upload
 
 ## Summary
 

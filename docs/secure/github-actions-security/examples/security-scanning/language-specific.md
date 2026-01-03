@@ -1,11 +1,14 @@
 ---
 title: Language-Specific Security Scanning
 description: >-
-  Security scanning workflows for Node.js, Python, and Go with language-specific tools
+  Security scanning workflows for Node.js, Python, and Go with npm audit, Bandit, gosec, and CodeQL integration for comprehensive language-specific coverage
 ---
 
+!!! tip "Use Language-Native Tools"
 
-### Node.js / TypeScript Security Scanning
+    CodeQL provides broad coverage, but language-specific tools detect patterns CodeQL misses. Combine npm audit, Bandit, gosec, and CodeQL for defense in depth. Upload all results to Security tab.
+
+## Node.js / TypeScript Security Scanning
 
 Comprehensive security scanning for Node.js projects with npm audit and ESLint security rules.
 

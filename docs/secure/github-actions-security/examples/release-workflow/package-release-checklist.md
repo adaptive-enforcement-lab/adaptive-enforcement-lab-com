@@ -1,9 +1,16 @@
 ---
 title: Package Release and Security Checklist
 description: >-
-  NPM package releases, security checklist, and common release mistakes
+  NPM package releases with provenance, security checklist for artifact attestations, and common release workflow mistakes to avoid
 ---
 
+!!! warning "Verify Before Release"
+
+    Release workflows publish to public registries. Verify artifact checksums, provenance generation, and signature verification instructions before tagging releases. Published packages cannot be deleted.
+
+## NPM Package Release
+
+```yaml
           registry-url: 'https://npm.pkg.github.com'
           scope: '@${{ github.repository_owner }}'
 
@@ -52,12 +59,12 @@ description: >-
             ### Provenance Verification
 
             Verify package provenance:
+
             ```bash
             npm audit signatures
             ```
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 ```
 
 **Provenance**: npm CLI automatically generates and publishes provenance statements when `--provenance` flag used.
@@ -112,7 +119,7 @@ Use this checklist to verify your release workflow follows security best practic
 
 ### Distribution Security
 
-- [ ] Container images pushed to GHCR (no Docker Hub)
+- [ ] Container images pushed to GHCR or cloud-native artifact registries
 - [ ] Multi-architecture manifests created for containers
 - [ ] NPM packages published to both npm and GitHub Packages
 - [ ] Registry authentication via OIDC (no long-lived tokens)
@@ -155,7 +162,7 @@ jobs:
           subject-path: 'dist/*'
 ```
 
-### Mistake 2: Unverified Release Artifacts
+## Mistake 2: Unverified Release Artifacts
 
 **Bad**:
 
@@ -205,10 +212,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: ghcr.io/org/image:latest
+      - name: Build container
+        run: |
+          buildah build --tag ghcr.io/org/image:latest .
+          buildah push ghcr.io/org/image:latest
 ```
 
 **Good**:
@@ -223,19 +230,29 @@ jobs:
       id-token: write
       attestations: write
     steps:
-      - uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56  # v5.1.0
-        id: push
-        with:
-          push: true
-          tags: ghcr.io/org/image:${{ github.ref_name }}
-          provenance: true  # SLSA provenance
-          sbom: true        # Software Bill of Materials
+      - name: Build container with buildah
+        id: build
+        run: |
+          IMAGE="ghcr.io/org/image:${{ github.ref_name }}"
+
+          # Build with OCI-compliant tooling
+          buildah build \
+            --tag "${IMAGE}" \
+            --label org.opencontainers.image.version="${{ github.ref_name }}" \
+            .
+
+          # Push to registry
+          buildah push "${IMAGE}"
+
+          # Get digest for attestation
+          DIGEST=$(buildah inspect "${IMAGE}" | jq -r '.Digest')
+          echo "digest=${DIGEST}" >> $GITHUB_OUTPUT
 
       # SECURITY: Attest container with GitHub attestations
       - uses: actions/attest-build-provenance@1c608d11d69870c2092266b3f9a6f3abbf17002c  # v1.4.3
         with:
           subject-name: ghcr.io/org/image
-          subject-digest: ${{ steps.push.outputs.digest }}
+          subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true
 ```
 
@@ -321,11 +338,11 @@ jobs:
 
 ## Related Patterns
 
-- **[Action Pinning](../action-pinning/sha-pinning.md)**: SHA pinning patterns and Dependabot configuration
-- **[Token Permissions](../token-permissions/templates.md)**: GITHUB_TOKEN permission templates for all workflow types
-- **[Environment Protection](../workflows/environments.md)**: Deployment gates and approval workflows
-- **[Secret Management](../secrets/oidc.md)**: OIDC patterns for keyless signing and cloud authentication
-- **[Third-Party Actions](../third-party-actions/common-actions.md)**: Security review of release-related actions
+- **[Action Pinning](../../action-pinning/sha-pinning.md)**: SHA pinning patterns and Dependabot configuration
+- **[Token Permissions](../../token-permissions/templates.md)**: GITHUB_TOKEN permission templates for all workflow types
+- **[Environment Protection](../../workflows/environments/index.md)**: Deployment gates and approval workflows
+- **[Secret Management](../../secrets/oidc/index.md)**: OIDC patterns for keyless signing and cloud authentication
+- **[Third-Party Actions](../../third-party-actions/common-actions.md)**: Security review of release-related actions
 
 ## Summary
 

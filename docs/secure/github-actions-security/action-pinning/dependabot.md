@@ -357,7 +357,7 @@ ignore:
 
 - **[Third-Party Action Evaluation](../third-party-actions/index.md)**: Assess actions before approval
 - **[GITHUB_TOKEN Permissions](../token-permissions/index.md)**: Review permission changes
-- **[Workflow Security](../workflows/triggers.md)**: Workflow security context
+- **[Workflow Security](../workflows/triggers/index.md)**: Workflow security context
 
 ---
 

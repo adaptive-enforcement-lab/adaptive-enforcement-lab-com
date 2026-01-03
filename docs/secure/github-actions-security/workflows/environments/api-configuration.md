@@ -1,9 +1,16 @@
 ---
 title: Environment API Configuration and Best Practices
 description: >-
-  Environment configuration via API, deployment tracking, and common mistakes
+  Automate environment configuration via GitHub API and CLI, deployment tracking patterns, and common protection rule mistakes
 ---
 
+!!! tip "Automate Environment Configuration"
+
+    Configure environments via GitHub API or CLI for consistency across repositories. Version control protection rules and audit changes. Manual configuration through web UI doesn't scale and leads to drift.
+
+## Monitor Pending Deployments
+
+```yaml
           GH_TOKEN: ${{ github.token }}
         run: |
           PENDING=$(gh api \
@@ -178,8 +185,8 @@ Settings → Environments → production → Wait timer → 15-30 minutes
 
 ## Related Pages
 
-- [Workflow Trigger Security](./triggers.md) - Fork PR security, `pull_request_target` patterns
-- [Reusable Workflow Security](./reusable.md) - Environment inheritance in reusable workflows
-- [OIDC Federation Patterns](../secrets/oidc.md) - Secretless authentication with environment-scoped trust
-- [GITHUB_TOKEN Permissions](../token-permissions/index.md) - Minimal permissions for deployment workflows
-- [Secret Management](../secrets/index.md) - Environment secret scoping
+- [Workflow Trigger Security](../triggers/index.md) - Fork PR security, `pull_request_target` patterns
+- [Reusable Workflow Security](../reusable/index.md) - Environment inheritance in reusable workflows
+- [OIDC Federation Patterns](../../secrets/oidc/index.md) - Secretless authentication with environment-scoped trust
+- [GITHUB_TOKEN Permissions](../../token-permissions/index.md) - Minimal permissions for deployment workflows
+- [Secret Management](../../secrets/secrets-management/index.md) - Environment secret scoping

@@ -1,9 +1,16 @@
 ---
 title: VM-Based Ephemeral Runners
 description: >-
-  Cloud VM autoscaling and Packer image patterns for ephemeral runners
+  Cloud VM autoscaling patterns, Packer hardened image creation, and Kubernetes ARC ephemeral runner deployment configurations
 ---
 
+!!! tip "Pre-Harden VM Images"
+
+    Use Packer to create hardened VM images with security controls baked in. Pre-configured images reduce provisioning time and ensure consistent security baselines across all ephemeral runners.
+
+## Kubernetes-Based Ephemeral Runners (ARC)
+
+```yaml
 kind: Namespace
 metadata:
   name: actions-runner-system
@@ -27,7 +34,7 @@ metadata:
 
 ```
 
-### Ephemeral Runner Deployment
+## Ephemeral Runner Deployment
 
 Configure runner pools with ephemeral mode enabled.
 
@@ -88,7 +95,7 @@ spec:
             sizeLimit: 8Gi
 ```
 
-### ARC Horizontal Autoscaler
+## ARC Horizontal Autoscaler
 
 Scale runners based on job queue depth.
 
@@ -117,7 +124,7 @@ spec:
       duration: 5m  # Scale up for 5 minutes after trigger
 ```
 
-### Network Policies for ARC Runners
+## Network Policies for ARC Runners
 
 Restrict network access for runner pods.
 
@@ -168,7 +175,7 @@ spec:
       ports: []  # Empty ports = deny all
 ```
 
-### Pod Security Standards
+## Pod Security Standards
 
 Enforce restricted security policies for runner pods.
 
@@ -190,7 +197,7 @@ metadata:
 
 Ensure zero state leakage between jobs.
 
-### Filesystem Cleanup Verification
+## Filesystem Cleanup Verification
 
 ```bash
 #!/bin/bash

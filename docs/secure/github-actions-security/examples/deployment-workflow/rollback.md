@@ -1,10 +1,14 @@
 ---
 title: Manual Rollback and Security Checklist
 description: >-
-  Rollback procedures, security checklist, and common deployment mistakes
+  Emergency rollback workflows with approval gates, multi-environment deployment security checklist, and common deployment pattern mistakes to avoid
 ---
 
+!!! warning "Test Rollback Before Production"
 
+    Test manual rollback workflows in non-production environments first. Verify health checks detect failures and traffic migration completes successfully before enabling automatic rollback in production.
+
+```yaml
           gcloud run deploy ${{ vars.SERVICE_NAME }}-dev \
             --image "${IMAGE_URL}" \
             --region ${{ vars.GCP_REGION }} \

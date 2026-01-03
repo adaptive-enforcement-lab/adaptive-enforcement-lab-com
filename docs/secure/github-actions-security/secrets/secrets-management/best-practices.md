@@ -1,9 +1,16 @@
 ---
 title: Secret Management Best Practices
 description: >-
-  Security best practices and quick reference for secret management
+  Security best practices for GitHub Actions secrets with OIDC federation patterns, safe interpolation techniques, and comprehensive quick reference guide
 ---
 
+!!! warning "Secrets Leak Through Multiple Vectors"
+
+    GitHub Actions secrets can leak through workflow logs, compromised third-party actions, script injection, and fork PR workflows. Default to OIDC federation to eliminate stored credentials. Never interpolate secrets directly in shell commands.
+
+## Fork PR Safety Pattern
+
+```yaml
 # Safe - fork workflows don't get secrets
 
 name: CI
@@ -18,10 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
       - run: npm test  # No secrets available
-
 ```
 
-See [Workflow Triggers Security](../workflows/triggers.md) for fork workflow patterns.
+See [Workflow Triggers Security](../../workflows/triggers/index.md) for fork workflow patterns.
 
 ### Exposure Vector 3: Compromised Action
 
@@ -52,9 +58,9 @@ permissions:
     aws-region: us-east-1
 ```
 
-See [Third-Party Action Risk Assessment](../third-party-actions/index.md) for action evaluation framework.
+See [Third-Party Action Risk Assessment](../../third-party-actions/index.md) for action evaluation framework.
 
-### Exposure Vector 4: Script Injection
+## Exposure Vector 4: Script Injection
 
 **Mechanism**: Untrusted input injected into shell command
 
@@ -181,11 +187,11 @@ jobs:
 
 **Rotate secrets regularly**: Implement automated rotation for long-lived credentials.
 
-See [Secret Rotation Patterns](rotation.md) for automation workflows.
+See [Secret Rotation Patterns](../rotation/index.md) for automation workflows.
 
 **Use secret scanning**: Enable push protection to prevent accidental commits.
 
-See [Secret Scanning Integration](scanning.md) for detection and response.
+See [Secret Scanning Integration](../scanning/index.md) for detection and response.
 
 **Restrict pull_request_target**: Only use with extreme caution. Prefer `pull_request` for untrusted code.
 
@@ -195,9 +201,9 @@ See [Secret Scanning Integration](scanning.md) for detection and response.
 
 Ready to implement secure secret management? Continue with:
 
-- **[OIDC Federation Patterns](oidc.md)**: Eliminate stored credentials with secretless cloud authentication (AWS, GCP, Azure)
-- **[Secret Rotation Automation](rotation.md)**: Automated rotation workflows, notification patterns, zero-downtime strategies
-- **[Secret Scanning Integration](scanning.md)**: Push protection setup, custom patterns, incident response playbook
+- **[OIDC Federation Patterns](../oidc/index.md)**: Eliminate stored credentials with secretless cloud authentication (AWS, GCP, Azure)
+- **[Secret Rotation Automation](../rotation/index.md)**: Automated rotation workflows, notification patterns, zero-downtime strategies
+- **[Secret Scanning Integration](../scanning/index.md)**: Push protection setup, custom patterns, incident response playbook
 
 ## Quick Reference
 

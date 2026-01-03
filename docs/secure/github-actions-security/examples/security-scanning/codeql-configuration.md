@@ -1,10 +1,14 @@
 ---
 title: CodeQL Configuration
 description: >-
-  Custom CodeQL configuration for enhanced SAST analysis
+  Configure CodeQL with custom query suites, security-extended analysis, and language-specific scanning patterns for comprehensive SAST coverage in GitHub Actions
 ---
 
 ## CodeQL Configuration
+
+!!! note "Query Customization Available"
+
+    Default CodeQL queries provide good coverage, but custom configurations reduce false positives and focus scanning on critical paths. Exclude test files and vendor code to improve signal-to-noise ratio.
 
 ### Custom CodeQL Configuration
 

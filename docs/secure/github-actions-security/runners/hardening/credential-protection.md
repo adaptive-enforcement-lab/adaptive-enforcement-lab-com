@@ -1,11 +1,17 @@
 ---
 title: Credential Protection
 description: >-
-  OIDC federation and credential protection patterns for GitHub Actions runners
+  Protect runner credentials with OIDC federation, metadata endpoint blocking, IMDSv2 enforcement, and firewall rules to prevent credential exfiltration attacks
 ---
 
-          fi
+!!! warning "Block Metadata Endpoints"
 
+    Cloud metadata endpoints expose temporary credentials to any process running on the runner. Block 169.254.169.254 with firewall rules and use IMDSv2 when metadata access is unavoidable.
+
+## Block Cloud Metadata Endpoints
+
+```bash
+          fi
 ```
 
 ## Audit Logging
@@ -209,12 +215,12 @@ Use this checklist when deploying or auditing runner security.
 
 ## Next Steps
 
-- **[Ephemeral Runners](ephemeral.md)**: Deploy VM and container-based ephemeral runners for maximum isolation
-- **[Runner Groups](groups.md)**: Organize runners by trust level and security requirements
+- **[Ephemeral Runners](../ephemeral/index.md)**: Deploy VM and container-based ephemeral runners for maximum isolation
+- **[Runner Groups](../groups/index.md)**: Organize runners by trust level and security requirements
 - **[Runner Security Overview](index.md)**: Review threat model and deployment strategies
 
 ## Related Documentation
 
-- [OIDC Federation](../secrets/oidc.md): Secretless authentication patterns
-- [Secret Management](../secrets/index.md): Handling credentials securely
-- [Workflow Triggers](../workflows/triggers.md): Understanding which events execute on runners
+- [OIDC Federation](../../secrets/oidc/index.md): Secretless authentication patterns
+- [Secret Management](../../secrets/secrets-management/index.md): Handling credentials securely
+- [Workflow Triggers](../../workflows/triggers/index.md): Understanding which events execute on runners

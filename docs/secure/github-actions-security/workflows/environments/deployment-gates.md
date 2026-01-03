@@ -1,8 +1,16 @@
 ---
 title: Deployment Gates Patterns
 description: >-
-  Production triple gates, fork PR previews, and canary deployment patterns
+  Production deployment with triple-gate protection, secure fork PR preview environments, and progressive canary deployment patterns with automated rollback
 ---
+
+!!! note "Layer Multiple Protection Gates"
+
+    Combine required reviewers, wait timers, and branch restrictions for production environments. Single-gate protection is insufficient. Triple-gate pattern provides defense in depth against unauthorized deployments and compromised workflows.
+
+## Deployment Gate Patterns
+
+### Pattern 1: Production Triple Gate
 
 1. Workflow waits 15 minutes (wait timer)
 2. Two reviewers must approve

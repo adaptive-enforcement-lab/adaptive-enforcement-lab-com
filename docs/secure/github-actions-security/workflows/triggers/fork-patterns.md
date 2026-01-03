@@ -1,9 +1,16 @@
 ---
 title: Fork Workflow Security Patterns
 description: >-
-  Two-stage fork CI, approval gates, and trigger security decision trees
+  Secure fork PR workflows with two-stage CI patterns, manual approval gates for external contributions, and comprehensive trigger security decision trees
 ---
 
+!!! warning "Never Trust Fork PR Code"
+
+    Fork pull requests run attacker-controlled code. Use `pull_request` trigger for testing (no secrets), not `pull_request_target` (has secrets). Deploying fork code requires approval gates and environment protection.
+
+## Fork PR Security Scan
+
+```yaml
     branches: [main]
 
 permissions:
@@ -24,7 +31,6 @@ jobs:
           fi
 
       - run: npm audit --production
-
 ```
 
 ## `workflow_call` Security
@@ -185,8 +191,8 @@ Passing payloads via environment variables prevents shell injection.
 
 ## Related Pages
 
-- [Environment Protection Patterns](./environments.md) - Approval gates and deployment controls
-- [Reusable Workflow Security](./reusable.md) - Secure workflow composition patterns
-- [Token Permissions](../token-permissions/index.md) - GITHUB_TOKEN scoping
-- [Secret Management](../secrets/index.md) - Secret exposure prevention
-- [Runner Security](../runners/index.md) - Self-hosted runner fork isolation
+- [Environment Protection Patterns](../environments/index.md) - Approval gates and deployment controls
+- [Reusable Workflow Security](../reusable/index.md) - Secure workflow composition patterns
+- [Token Permissions](../../token-permissions/index.md) - GITHUB_TOKEN scoping
+- [Secret Management](../../secrets/secrets-management/index.md) - Secret exposure prevention
+- [Runner Security](../../runners/index.md) - Self-hosted runner fork isolation

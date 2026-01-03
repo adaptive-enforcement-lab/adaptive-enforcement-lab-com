@@ -1,12 +1,14 @@
 ---
 title: Language-Specific CI Workflows
 description: >-
-  Hardened CI workflows for Node.js, Python, and Go with security controls
+  Hardened CI workflows for Node.js, Python, and Go with dependency caching, security scanning, test coverage, and language-specific security controls
 ---
 
-```
+!!! tip "Adapt to Your Stack"
 
-### Go CI
+    These workflows demonstrate language-specific security patterns. Customize scanning tools, dependency managers, and build steps for your technology stack while preserving the core security controls.
+
+## Go CI
 
 Hardened CI for Go projects with static analysis and vulnerability scanning.
 

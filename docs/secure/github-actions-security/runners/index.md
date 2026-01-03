@@ -347,13 +347,13 @@ Use this checklist when deploying or auditing self-hosted runners.
 
 ## Next Steps
 
-- **[Hardening Checklist](hardening.md)**: Comprehensive OS and runtime hardening steps
-- **[Ephemeral Runners](ephemeral.md)**: Deployment patterns for VM and container-based ephemeral runners
-- **[Runner Groups](groups.md)**: Organizing runners by trust level and security requirements
+- **[Hardening Checklist](hardening/index.md)**: Comprehensive OS and runtime hardening steps
+- **[Ephemeral Runners](ephemeral/index.md)**: Deployment patterns for VM and container-based ephemeral runners
+- **[Runner Groups](groups/index.md)**: Organizing runners by trust level and security requirements
 
 ## Related Documentation
 
-- [Secret Management Overview](../secrets/index.md): Securing credentials for runner access
-- [OIDC Federation](../secrets/oidc.md): Secretless authentication from runners to cloud providers
+- [Secret Management Overview](../secrets/secrets-management/index.md): Securing credentials for runner access
+- [OIDC Federation](../secrets/oidc/index.md): Secretless authentication from runners to cloud providers
 - [Third-Party Action Risk Assessment](../third-party-actions/index.md): Evaluating actions that execute on runners
-- [Workflow Triggers](../workflows/triggers.md): Understanding which events trigger runner execution
+- [Workflow Triggers](../workflows/triggers/index.md): Understanding which events trigger runner execution

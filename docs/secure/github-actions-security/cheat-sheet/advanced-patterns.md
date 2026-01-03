@@ -1,17 +1,33 @@
 ---
 title: Advanced Security Patterns
 description: >-
-  Third-party actions evaluation, runner security, and advanced patterns
+  Third-party actions evaluation, self-hosted runner security hardening, and advanced workflow security patterns for production
 ---
 
+!!! warning "Production Implementation Required"
+
+    These advanced patterns require organization-level configuration and infrastructure setup. Verify environment protection rules, OIDC federation, and runner hardening are in place before deploying workflows to production.
+
+## Fork PR Safety Pattern
+
+```yaml
+# .github/workflows/ci.yml
+name: CI
+on:
+  pull_request_target:  # Required for PR comments
+
+permissions:
+  contents: read  # Minimal permissions for untrusted code
+
+jobs:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
       - run: npm test
       # Secrets not accessible - safe from exfiltration
 
-# Save artifacts for later comment workflow
-
+  # Save artifacts for later comment workflow
   save-pr-number:
     runs-on: ubuntu-latest
     steps:
@@ -20,7 +36,6 @@ description: >-
         with:
           name: pr-number
           path: pr-number.txt
-
 ```
 
 ```yaml
@@ -53,9 +68,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-[**See trigger patterns →**](workflows/triggers.md)
+[**See trigger patterns →**](../workflows/triggers/index.md)
 
-### Input Validation
+## Input Validation
 
 ```yaml
 steps:
@@ -100,7 +115,7 @@ jobs:
 - ✅ Deployment branches: `main` and `release/*` only
 - ✅ Environment secrets: Production credentials scoped to this environment
 
-[**See environment patterns →**](workflows/environments.md)
+[**See environment patterns →**](../workflows/environments/index.md)
 
 ## Reusable Workflows
 
@@ -185,7 +200,7 @@ jobs:
       DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 ```
 
-[**See reusable workflow patterns →**](workflows/reusable.md)
+[**See reusable workflow patterns →**](../workflows/reusable/index.md)
 
 ## Complete Examples
 
@@ -193,10 +208,10 @@ Production-ready workflow templates:
 
 | Example | Coverage | Link |
 | ------- | -------- | ---- |
-| **CI Workflow** | SHA pinning, minimal permissions, security scanning, fork PR safety | [View →](examples/ci-workflow.md) |
-| **Release Workflow** | SLSA provenance, signed releases, attestations, package publishing | [View →](examples/release-workflow.md) |
-| **Deployment Workflow** | OIDC authentication, environment protection, canary rollout, rollback | [View →](examples/deployment-workflow.md) |
-| **Security Scanning** | CodeQL, Trivy, dependency scanning, SARIF upload, scheduled scans | [View →](examples/security-scanning.md) |
+| **CI Workflow** | SHA pinning, minimal permissions, security scanning, fork PR safety | [View →](../examples/ci-workflow/index.md) |
+| **Release Workflow** | SLSA provenance, signed releases, attestations, package publishing | [View →](../examples/release-workflow/index.md) |
+| **Deployment Workflow** | OIDC authentication, environment protection, canary rollout, rollback | [View →](../examples/deployment-workflow/index.md) |
+| **Security Scanning** | CodeQL, Trivy, dependency scanning, SARIF upload, scheduled scans | [View →](../examples/security-scanning/index.md) |
 
 ## Security Audit Scripts
 
@@ -221,7 +236,7 @@ done
 echo "Scan complete. Pin actions to SHA for security."
 ```
 
-[**See automation guide →**](action-pinning/automation.md)
+[**See automation guide →**](../action-pinning/automation.md)
 
 ### Audit for Over-Privileged Workflows
 
@@ -269,7 +284,7 @@ Implement security controls in this order for maximum impact:
 - [ ] Run audit script to verify no unpinned actions
 
 **Impact**: Prevents supply chain attacks
-[**See action pinning →**](action-pinning/index.md)
+[**See action pinning →**](../action-pinning/index.md)
 
 ### Phase 2: Token Permissions (Week 1-2)
 
@@ -279,7 +294,7 @@ Implement security controls in this order for maximum impact:
 - [ ] Run audit script to verify no default permissions
 
 **Impact**: Limits blast radius of successful attacks
-[**See token permissions →**](token-permissions/index.md)
+[**See token permissions →**](../token-permissions/index.md)
 
 ### Phase 3: Secret Management (Week 2-3)
 
@@ -289,7 +304,7 @@ Implement security controls in this order for maximum impact:
 - [ ] Configure environment secrets for production deployments
 
 **Impact**: Eliminates long-lived credentials
-[**See secret management →**](secrets/index.md)
+[**See secret management →**](../secrets/secrets-management/index.md)
 
 ### Phase 4: Workflow Triggers (Week 3-4)
 
@@ -299,7 +314,7 @@ Implement security controls in this order for maximum impact:
 - [ ] Run audit script to verify trigger safety
 
 **Impact**: Prevents fork-based injection attacks
-[**See workflow patterns →**](workflows/triggers.md)
+[**See workflow patterns →**](../workflows/triggers/index.md)
 
 ### Phase 5: Runner Security (Week 4+)
 
@@ -309,7 +324,7 @@ Implement security controls in this order for maximum impact:
 - [ ] Block cloud metadata endpoints
 
 **Impact**: Prevents persistent access and lateral movement
-[**See runner security →**](runners/index.md)
+[**See runner security →**](../runners/index.md)
 
 ## Additional Resources
 

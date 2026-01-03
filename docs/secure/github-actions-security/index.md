@@ -167,7 +167,7 @@ Eliminate long-lived credentials. Use OIDC federation for cloud access, implemen
 - Secret scanning configuration
 - Incident response for leaked secrets
 
-[**Explore Secret Management →**](secrets/index.md)
+[**Explore Secret Management →**](secrets/secrets-management/index.md)
 
 ### 5. Self-Hosted Runner Security
 
@@ -193,7 +193,7 @@ Secure triggers and execution context. Understand `pull_request_target` risks, i
 - Reusable workflow security
 - Input validation patterns
 
-[**Explore Workflow Patterns →**](workflows/triggers.md)
+[**Explore Workflow Patterns →**](workflows/triggers/index.md)
 
 ### 7. Complete Examples
 
@@ -206,7 +206,7 @@ Production-ready workflows demonstrating all security patterns. Copy-paste templ
 - Deployment workflow with OIDC and approvals
 - Security scanning workflow
 
-[**Explore Examples →**](examples/ci-workflow.md)
+[**Explore Examples →**](examples/ci-workflow/index.md)
 
 ## Quick Start
 

@@ -1,10 +1,16 @@
 ---
 title: Cloud Provider OIDC Patterns
 description: >-
-  GCP Workload Identity Federation and Azure federated credentials setup
+  GCP Workload Identity Federation setup, Azure federated credentials configuration, and secretless cloud authentication patterns
 ---
 
+!!! note "Environment-Level Trust Recommended"
 
+    Use environment-level subject claims for production OIDC access. Combine GitHub environment protection with OIDC trust policies to require approval gates before assuming cloud roles. This prevents unauthorized deployments.
+
+## GCP Workload Identity Federation
+
+```yaml
       # google-github-actions/auth v2.1.0
       - uses: google-github-actions/auth@f112390a2df9932162083945e46d439060d66ec2
         with:
@@ -13,7 +19,6 @@ description: >-
 
       # Temporary credentials now available
       - run: gcloud storage cp ./dist/* gs://my-deployment-bucket/
-
 ```
 
 ## Azure Federated Credentials
@@ -261,7 +266,7 @@ on:
     branches: [main]
 ```
 
-See [Workflow Triggers Security](../workflows/triggers.md) for fork workflow patterns.
+See [Workflow Triggers Security](../../workflows/triggers/index.md) for fork workflow patterns.
 
 ## Migration from Stored Secrets
 
@@ -305,9 +310,9 @@ permissions:
 
 Ready to secure your workflows? Continue with:
 
-- **[Secret Rotation Patterns](rotation.md)**: Automated rotation for remaining long-lived secrets
-- **[Secret Scanning Integration](scanning.md)**: Detect leaked credentials with push protection
-- **[Environment Protection](../workflows/environments.md)**: Combine OIDC with approval gates
+- **[Secret Rotation Patterns](../rotation/index.md)**: Automated rotation for remaining long-lived secrets
+- **[Secret Scanning Integration](../scanning/index.md)**: Detect leaked credentials with push protection
+- **[Environment Protection](../../workflows/environments/index.md)**: Combine OIDC with approval gates
 
 ## Quick Reference
 

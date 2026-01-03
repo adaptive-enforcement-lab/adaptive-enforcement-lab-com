@@ -1,9 +1,14 @@
 ---
 title: Container Release Workflows
 description: >-
-  Signed container releases with SLSA provenance and multi-architecture builds
+  Signed container releases with SLSA provenance, Cosign keyless signing, and multi-architecture image build patterns for production
 ---
 
+!!! note "GHCR Authentication Required"
+
+    These workflows authenticate to GitHub Container Registry using GITHUB_TOKEN. Ensure repository has packages write permission and GHCR is enabled before deploying container release workflows.
+
+```yaml
         with:
           images: ghcr.io/${{ github.repository }}
           tags: |
@@ -12,30 +17,35 @@ description: >-
             type=semver,pattern={{major}}
             type=sha,prefix={{branch}}-
 
-      # SECURITY: Build and push with provenance and SBOM
-      - name: Build and push container
-        id: push
-        uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56  # v5.1.0
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          # SECURITY: Enable provenance and SBOM attestations
-          provenance: true    # SLSA provenance
-          sbom: true          # Software Bill of Materials
-          # SECURITY: Build args for reproducibility
-          build-args: |
-            VERSION=${{ github.ref_name }}
-            COMMIT=${{ github.sha }}
-            BUILD_DATE=${{ github.event.head_commit.timestamp }}
+      # SECURITY: Build and push with OCI-compliant tooling
+      - name: Build container image
+        id: build
+        run: |
+          IMAGE_NAME="ghcr.io/${{ github.repository }}"
+          VERSION="${{ github.ref_name }}"
+
+          buildah build \
+            --tag "${IMAGE_NAME}:${VERSION}" \
+            --build-arg VERSION="${VERSION}" \
+            --build-arg COMMIT="${{ github.sha }}" \
+            --build-arg BUILD_DATE="${{ github.event.head_commit.timestamp }}" \
+            --label org.opencontainers.image.version="${VERSION}" \
+            --label org.opencontainers.image.revision="${{ github.sha }}" \
+            .
+
+          # Push to registry
+          buildah push "${IMAGE_NAME}:${VERSION}"
+
+          # Get digest for attestation
+          DIGEST=$(buildah inspect "${IMAGE_NAME}:${VERSION}" | jq -r '.Digest')
+          echo "digest=${DIGEST}" >> $GITHUB_OUTPUT
 
       # SECURITY: Attest container provenance with GitHub attestations
       - name: Attest container image
         uses: actions/attest-build-provenance@1c608d11d69870c2092266b3f9a6f3abbf17002c  # v1.4.3
         with:
           subject-name: ghcr.io/${{ github.repository }}
-          subject-digest: ${{ steps.push.outputs.digest }}
+          subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true
 
 # Job 2: Scan container for vulnerabilities before release
@@ -107,252 +117,42 @@ description: >-
 
 **Registry**: GitHub Container Registry (GHCR) with OIDC authentication. No long-lived credentials.
 
-### Multi-Architecture Container Release
+## Key Patterns
 
-Build and release containers for multiple architectures with unified manifests.
+**Build and Attestation Flow**:
 
-```yaml
-name: Multi-Arch Container Release
-on:
-  push:
-    tags:
-      - 'v*.*.*'
+1. Build container with buildah (OCI-compliant tooling)
+2. Push to GHCR with digest-based reference
+3. Scan with Trivy for vulnerabilities
+4. Sign with Cosign keyless signing (OIDC)
+5. Attest with GitHub attestations API
 
-permissions:
-  contents: read
+**Security Controls**:
 
-jobs:
-  # Job 1: Build matrix for multiple architectures
-  build-matrix:
-    runs-on: ubuntu-latest
-    environment: production
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-      attestations: write
-    strategy:
-      matrix:
-        platform:
-          - linux/amd64
-          - linux/arm64
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
-        with:
-          persist-credentials: false
+- SHA-pinned actions with version comments
+- Minimal GITHUB_TOKEN permissions scoped per job
+- Environment protection for production releases
+- OIDC authentication to GHCR (no stored credentials)
+- Vulnerability scanning before signing
+- Provenance and SBOM generation
 
-      # SECURITY: Set up QEMU for cross-platform builds
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@68827325e0b33c7199eb31dd4e31fbe9023e06e3  # v3.0.0
+## Related Patterns
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226  # v3.0.0
+- **[Multi-Architecture Builds](multi-arch-builds.md)**: Build containers for multiple platforms with unified manifests
+- **[Package Release Checklist](package-release-checklist.md)**: Security checklist for all release workflows
+- **[Action Pinning](../../action-pinning/sha-pinning.md)**: SHA-256 pinning patterns and Dependabot automation
+- **[Token Permissions](../../token-permissions/templates.md)**: Permission templates for release workflows
+- **[Environment Protection](../../workflows/environments/index.md)**: Deployment gates and approval workflows
+- **[OIDC Patterns](../../secrets/oidc/cloud-providers.md)**: Keyless authentication to cloud registries
 
-      - name: Log in to GHCR
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d  # v3.0.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+## Summary
 
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81  # v5.5.1
-        with:
-          images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=semver,pattern={{version}}
-            type=sha
+Secure container releases require comprehensive attestation and signing:
 
-      # SECURITY: Build for specific platform with provenance
-      - name: Build and push by digest
-        id: build
-        uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56  # v5.1.0
-        with:
-          context: .
-          platforms: ${{ matrix.platform }}
-          push: true
-          labels: ${{ steps.meta.outputs.labels }}
-          provenance: mode=max  # Maximum provenance detail
-          sbom: true
-          # SECURITY: Output digest for manifest creation
-          outputs: type=image,name=ghcr.io/${{ github.repository }},push-by-digest=true,name-canonical=true
+1. **Build with OCI-compliant tooling** (buildah, podman) for vendor neutrality
+2. **Scan before release** with Trivy or equivalent container scanner
+3. **Sign with keyless signing** using OIDC (no long-lived signing keys)
+4. **Generate attestations** linking container to source and build provenance
+5. **Push to GHCR** with environment protection and approval gates
 
-      # SECURITY: Attest each platform image
-      - name: Attest platform image
-        uses: actions/attest-build-provenance@1c608d11d69870c2092266b3f9a6f3abbf17002c  # v1.4.3
-        with:
-          subject-name: ghcr.io/${{ github.repository }}
-          subject-digest: ${{ steps.build.outputs.digest }}
-          push-to-registry: true
-
-      # SECURITY: Export digest for manifest list
-      - name: Export digest
-        run: |
-          mkdir -p /tmp/digests
-          digest="${{ steps.build.outputs.digest }}"
-          platform="${{ matrix.platform }}"
-          touch "/tmp/digests/${digest#sha256:}"
-          echo "$platform" > "/tmp/digests/${digest#sha256:}.platform"
-
-      - name: Upload digest
-        uses: actions/upload-artifact@c7d193f32edcb7bfad88892161225aeda64e9392  # v4.0.0
-        with:
-          name: digests-${{ strategy.job-index }}
-          path: /tmp/digests/*
-          retention-days: 1
-
-  # Job 2: Create multi-arch manifest
-  manifest:
-    needs: build-matrix
-    runs-on: ubuntu-latest
-    environment: production
-    permissions:
-      contents: write
-      packages: write
-      id-token: write
-    steps:
-      - name: Download digests
-        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16  # v4.1.8
-        with:
-          path: /tmp/digests
-          pattern: digests-*
-          merge-multiple: true
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226  # v3.0.0
-
-      - name: Log in to GHCR
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d  # v3.0.0
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81  # v5.5.1
-        with:
-          images: ghcr.io/${{ github.repository }}
-          tags: |
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
-
-      # SECURITY: Create manifest list from platform digests
-      - name: Create manifest list and push
-        working-directory: /tmp/digests
-        run: |
-          docker buildx imagetools create \
-            $(jq -cr '.tags | map("-t " + .) | join(" ")' <<< "$DOCKER_METADATA_OUTPUT_JSON") \
-            $(printf 'ghcr.io/${{ github.repository }}@sha256:%s ' *)
-
-      # SECURITY: Create GitHub release with manifest reference
-      - name: Create GitHub release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844  # v0.1.15
-        with:
-          generate_release_notes: true
-          body: |
-            ## Container Images
-
-            Multi-architecture container images available at:
-            ```
-            ghcr.io/${{ github.repository }}:${{ github.ref_name }}
-            ```
-
-            Supported platforms:
-            - linux/amd64
-            - linux/arm64
-
-            ### Verification
-
-            Verify image signatures with Cosign:
-            ```bash
-            cosign verify \
-              --certificate-identity-regexp="^https://github.com/${{ github.repository }}" \
-              --certificate-oidc-issuer="https://token.actions.githubusercontent.com" \
-              ghcr.io/${{ github.repository }}:${{ github.ref_name }}
-            ```
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-**Architecture Support**: amd64, arm64 with unified manifest list.
-
-## NPM Package Release
-
-Secure workflow for publishing npm packages with provenance statements.
-
-### NPM with Provenance
-
-Publish to npm registry with automated provenance generation.
-
-```yaml
-name: NPM Release with Provenance
-on:
-  push:
-    tags:
-      - 'v*.*.*'
-
-permissions:
-  contents: read
-
-jobs:
-  # Job 1: Publish to npm with provenance
-  publish-npm:
-    runs-on: ubuntu-latest
-    environment:
-      name: npm-production
-      url: https://www.npmjs.com/package/${{ github.event.repository.name }}
-    permissions:
-      contents: read
-      id-token: write  # Generate provenance
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
-        with:
-          persist-credentials: false
-
-      - uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d  # v3.8.1
-        with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build package
-        run: npm run build
-
-      # SECURITY: Verify package contents before publishing
-      - name: Verify package contents
-        run: |
-          npm pack --dry-run
-          echo "Package contents:"
-          tar -tzf "$(npm pack)"
-
-      # SECURITY: Publish with provenance
-      # Provenance links package to source repository and build
-      - name: Publish to npm
-        run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  # Job 2: Publish to GitHub Packages
-  publish-github:
-    runs-on: ubuntu-latest
-    environment: github-packages
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
-        with:
-          persist-credentials: false
-
-      - uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d  # v3.8.1
-        with:
+For multi-architecture support, see [Multi-Architecture Builds](multi-arch-builds.md) for matrix build patterns and manifest list creation.

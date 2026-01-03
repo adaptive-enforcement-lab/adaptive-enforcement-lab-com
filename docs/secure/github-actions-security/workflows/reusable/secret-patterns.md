@@ -1,13 +1,21 @@
 ---
 title: Secret Inheritance Patterns
 description: >-
-  Safe secret passing patterns for reusable workflows with caller validation
+  Safe secret passing patterns for reusable workflows with explicit inheritance, caller validation, and workflow pinning strategies
 ---
 
+!!! warning "Avoid secrets: inherit"
+
+    Using `secrets: inherit` exposes all repository and organization secrets to reusable workflows. If the reusable workflow is compromised, attackers gain access to every credential. Always pass secrets explicitly.
+
+## Secret Inheritance Patterns
+
+### Dangerous: secrets: inherit
+
+```yaml
     with:
       environment: production
     secrets: inherit  # DANGEROUS: Passes all secrets
-
 ```
 
 **Risk**: Reusable workflow has access to ALL repository and organization secrets, including unrelated credentials.

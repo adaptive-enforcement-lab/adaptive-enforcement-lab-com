@@ -1,11 +1,17 @@
 ---
 title: Workflow Restrictions
 description: >-
-  Workflow restriction patterns for sensitive runner groups
+  Configure workflow restrictions for sensitive runner groups with branch pinning, file path patterns, and repository access controls to prevent unauthorized workflow execution
 ---
 
-- org/app/.github/workflows/deploy.yml@refs/heads/main
+!!! note "Pin to Specific Branches"
 
+    Workflow restrictions must reference specific branches, not wildcards. Wildcard branch references allow attackers to create malicious branches that bypass security controls while still matching allowed workflow patterns.
+
+## Common Misconfigurations
+
+```text
+- org/app/.github/workflows/deploy.yml@refs/heads/main
 ```
 
 ### Misconfiguration 4: Public Repository Access
@@ -172,11 +178,11 @@ jobs:
 ## Next Steps
 
 - **[Runner Security Overview](index.md)**: Understanding the self-hosted runner threat model
-- **[Hardening Checklist](hardening.md)**: OS-level and runtime hardening for runners
-- **[Ephemeral Runners](ephemeral.md)**: Disposable runner patterns for state isolation
+- **[Hardening Checklist](../hardening/index.md)**: OS-level and runtime hardening for runners
+- **[Ephemeral Runners](../ephemeral/index.md)**: Disposable runner patterns for state isolation
 
 ## Related Documentation
 
-- [Token Permissions](../token-permissions/index.md): Scoping GITHUB_TOKEN permissions for runner jobs
-- [Third-Party Actions](../third-party-actions/index.md): Evaluating actions that execute on runners
-- [Workflow Triggers](../workflows/triggers.md): Understanding which events trigger runner execution
+- [Token Permissions](../../token-permissions/index.md): Scoping GITHUB_TOKEN permissions for runner jobs
+- [Third-Party Actions](../../third-party-actions/index.md): Evaluating actions that execute on runners
+- [Workflow Triggers](../../workflows/triggers/index.md): Understanding which events trigger runner execution

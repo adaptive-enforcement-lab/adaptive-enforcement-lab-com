@@ -1,10 +1,16 @@
 ---
 title: Network Isolation and Credential Protection
 description: >-
-  Network isolation, firewall configuration, and credential protection patterns
+  Deny-by-default firewall rules, cloud metadata endpoint blocking, network namespace isolation, and OIDC credential patterns
 ---
 
-### Firewall Configuration (UFW)
+!!! warning "Deny by Default Firewall"
+
+    Configure deny-all firewall rules with explicit allow-lists for GitHub and required package registries. Default-allow rules permit data exfiltration and lateral movement. Block cloud metadata endpoints to prevent credential theft.
+
+## Firewall Configuration
+
+### UFW (Uncomplicated Firewall)
 
 Configure deny-by-default firewall rules with explicit allow-lists.
 
@@ -192,7 +198,7 @@ jobs:
 - Subject claim validation prevents token reuse
 - Audit trail via cloud IAM logs
 
-See [OIDC Federation Patterns](../secrets/oidc.md) for complete setup.
+See [OIDC Federation Patterns](../../secrets/oidc/index.md) for complete setup.
 
 ### Environment Variable Injection
 

@@ -1,11 +1,17 @@
 ---
 title: Cloud-Specific Rotation Patterns
 description: >-
-  GCP service account rotation, Secrets Manager integration, and database credentials
+  GCP service account key rotation automation, cloud Secrets Manager integration patterns, and database credential rotation workflows
 ---
 
-            "${{ secrets.SLACK_WEBHOOK_URL }}"
+!!! tip "Automate Rotation Schedules"
 
+    Manual rotation fails at scale. Automate rotation with scheduled workflows and grace periods for credential overlap. Maintain secret inventory to track rotation status and prevent expired credential outages.
+
+## Secret Rotation Workflow
+
+```yaml
+            "${{ secrets.SLACK_WEBHOOK_URL }}"
 ```
 
 ### Secret Inventory Template

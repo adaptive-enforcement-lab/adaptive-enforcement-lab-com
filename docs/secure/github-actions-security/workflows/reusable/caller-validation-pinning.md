@@ -1,9 +1,16 @@
 ---
 title: Caller Validation and Workflow Pinning
 description: >-
-  Validating workflow callers and pinning reusable workflows to SHA references
+  Validate reusable workflow callers with repository and organization restrictions, pin workflows to SHA-256 commits, and prevent supply chain attacks
 ---
 
+!!! warning "Pin Reusable Workflows to SHA"
+
+    Branch or tag references for reusable workflows create supply chain attack vectors. Attackers who compromise upstream repositories can modify workflows and steal secrets from all callers. Always pin to full SHA commits.
+
+## Reusable Workflow Pattern
+
+```yaml
         type: choice
         options:
           - dev
@@ -97,7 +104,6 @@ jobs:
           curl -X POST "$SLACK_WEBHOOK" \
             -H 'Content-Type: application/json' \
             -d "{\"text\":\"Deployment $STATUS: $VERSION to $ENVIRONMENT\"}"
-
 ```
 
 **Caller Workflow**:
@@ -294,8 +300,8 @@ jobs:
 
 ## Related Pages
 
-- [Workflow Trigger Security](./triggers.md) - `workflow_call` vs other triggers, event security
-- [Environment Protection Patterns](./environments.md) - Deployment gates for reusable workflows
-- [Token Permissions](../token-permissions/index.md) - Permission inheritance in reusable workflows
-- [Secret Management](../secrets/index.md) - Secret scoping and OIDC patterns
-- [Action Pinning](../action-pinning/sha-pinning.md) - SHA pinning strategy for dependencies
+- [Workflow Trigger Security](../triggers/index.md) - `workflow_call` vs other triggers, event security
+- [Environment Protection Patterns](../environments/index.md) - Deployment gates for reusable workflows
+- [Token Permissions](../../token-permissions/index.md) - Permission inheritance in reusable workflows
+- [Secret Management](../../secrets/secrets-management/index.md) - Secret scoping and OIDC patterns
+- [Action Pinning](../../action-pinning/sha-pinning.md) - SHA pinning strategy for dependencies

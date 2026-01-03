@@ -1,9 +1,14 @@
 ---
 title: Multi-Environment Deployment Pipeline
 description: >-
-  Coordinated deployment across multiple environments with gates and approval workflows
+  Coordinate deployments across dev, staging, and production environments with approval gates, wait timers, and progressive rollout patterns for cloud infrastructure
 ---
 
+!!! note "Environment Protection Prerequisites"
+
+    Configure environment protection rules in repository settings before deploying this workflow. Production environments require approval gates, wait timers, and restricted deployment branches to function as intended.
+
+```yaml
       # SECURITY: Gradual traffic migration (canary deployment)
       - name: Canary deployment (10% traffic)
         run: |
@@ -141,7 +146,6 @@ description: >-
 
           echo "::error::Rollback health check failed"
           exit 1
-
 ```
 
 **Permissions**: `id-token: write` for OIDC, `contents: read` for code access.
@@ -153,6 +157,8 @@ description: >-
   - Required reviewers: `security-team`, `platform-leads`
   - Wait timer: 5 minutes
   - Deployment branches: `main` only
+
+## Alternative Deployment Patterns
 
 ### Kubernetes Deployment with Helm
 

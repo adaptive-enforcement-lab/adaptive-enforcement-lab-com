@@ -1,10 +1,14 @@
 ---
 title: Advanced Security Scanning Patterns
 description: >-
-  Container scanning, multi-tool SARIF aggregation, and scheduled vulnerability scanning
+  Advanced security scanning with container vulnerability detection, multi-tool SARIF aggregation, scheduled scans, and automated issue creation workflows
 ---
 
 ## Advanced Security Scanning Patterns
+
+!!! tip "Layer Multiple Scanners"
+
+    No single security scanner detects all vulnerabilities. Layer CodeQL, Trivy, language-specific tools, and SBOM scanning for comprehensive coverage. Upload all results to Security tab with unique categories.
 
 ### Container Scanning in CI/CD Pipeline
 
