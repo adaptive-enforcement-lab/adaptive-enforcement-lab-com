@@ -316,8 +316,8 @@ echo "::error::API call failed with token: $GH_TOKEN"
 - **[Token Lifecycle Management](../token-lifecycle/index.md)** - Token expiration and refresh strategies
 - **[JWT Authentication](../jwt-authentication/index.md)** - JWT generation and app-level operations
 - **[OAuth Authentication](../oauth-authentication/index.md)** - OAuth flow error handling
-- **[Authentication Decision Guide](../../../secure/github-apps/authentication-decision-guide.md)** - Choose authentication method
-- **[Security Best Practices](../../../secure/github-apps/security-best-practices.md)** - Secure error handling patterns
+- **[Authentication Decision Guide](../../../../secure/github-apps/authentication-decision-guide.md)** - Choose authentication method
+- **[Security Best Practices](../../../../secure/github-apps/security-best-practices.md)** - Secure error handling patterns
 
 ---
 

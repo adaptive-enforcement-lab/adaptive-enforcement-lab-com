@@ -234,10 +234,10 @@ JWTs share the app-level rate limit: **5,000 requests/hour per app**.
 
 ## Related Documentation
 
-- [Authentication Decision Guide](../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
-- [Token Generation](token-generation.md) - Generate installation tokens
-- [Security Best Practices](security-best-practices.md) - Secure token handling
-- [Storing Credentials](../../../secure/github-apps/storing-credentials.md) - Secure credential management
+- [Authentication Decision Guide](../../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
+- [Token Generation](../token-generation/index.md) - Generate installation tokens
+- [Security Best Practices](../../../../secure/github-apps/security-best-practices.md) - Secure token handling
+- [Storing Credentials](../../../../secure/github-apps/storing-credentials/index.md) - Secure credential management
 
 ## References
 

@@ -289,9 +289,9 @@ Installation tokens share the installation's rate limit: **5,000 requests/hour p
 ## Related Documentation
 
 - [Authentication Decision Guide](../../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
-- [Token Refresh Patterns](../../token-lifecycle/refresh-patterns.md) - Token lifecycle and expiration handling
-- [JWT Authentication](../jwt-authentication.md) - App-level authentication for installation discovery
-- [OAuth User Authentication](../oauth-authentication.md) - User-context operations
+- [Token Refresh Patterns](../token-lifecycle/refresh-patterns.md) - Token lifecycle and expiration handling
+- [JWT Authentication](../jwt-authentication/index.md) - App-level authentication for installation discovery
+- [OAuth User Authentication](../oauth-authentication/index.md) - User-context operations
 - [Storing Credentials](../../../../secure/github-apps/storing-credentials/index.md) - Secret management patterns
 
 ## References

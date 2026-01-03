@@ -323,11 +323,11 @@ print(f"Resets at: {limit_status['reset']}")
 
 ## Related Documentation
 
-- [Authentication Decision Guide](../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
-- [JWT Authentication](jwt-authentication.md) - App-level authentication
-- [Token Generation](token-generation.md) - Installation token automation
-- [Security Best Practices](security-best-practices.md) - Secure token handling
-- [Storing Credentials](../../../secure/github-apps/storing-credentials.md) - Credential management
+- [Authentication Decision Guide](../../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
+- [JWT Authentication](../jwt-authentication/index.md) - App-level authentication
+- [Token Generation](../token-generation/index.md) - Installation token automation
+- [Security Best Practices](../../../../secure/github-apps/security-best-practices.md) - Secure token handling
+- [Storing Credentials](../../../../secure/github-apps/storing-credentials/index.md) - Credential management
 
 ## References
 

@@ -161,7 +161,7 @@ Error: API rate limit exceeded (403)
 
 ## Related Documentation
 
-- [Authentication Decision Guide](../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
+- [Authentication Decision Guide](../../../../secure/github-apps/authentication-decision-guide.md) - Choose the right auth method
 - [Token Generation](token-generation.md) - Generate installation tokens
 - [JWT Authentication](jwt-authentication.md) - App-level authentication
 - [OAuth Authentication](oauth-authentication.md) - User-context authentication
