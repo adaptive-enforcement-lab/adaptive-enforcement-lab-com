@@ -11,34 +11,46 @@ description: >-
   Generate SLSA Level 3 provenance with slsa-github-generator. Cryptographically prove build integrity from source commit to artifact for OpenSSF Scorecard 10/10.
 ---
 
-# SLSA Level 3 Provenance Implementation
+# SLSA Level 3 Provenance: Implementation Guide
 
-Build provenance that cryptographically proves what source code, build environment, and process produced an artifact.
+Practical implementation patterns for `slsa-github-generator` in GitHub Actions workflows.
+
+!!! info "Looking for Comprehensive Guidance?"
+    This page is a focused implementation reference for `slsa-github-generator`. For complete SLSA guidance including level classification, verification workflows, and adoption roadmaps, see the **[SLSA Implementation Playbook](index.md)**.
 
 !!! warning "Version Tag Requirement"
     `slsa-github-generator` **must** use version tags (`@v2.1.0`), not SHA pins. `slsa-verifier` validates against known version tags. SHA references fail verification. Document this exception in Renovate config.
 
 ---
 
-## What SLSA Provenance Provides
+## What This Guide Covers
 
-SLSA Level 3 provenance generates `.intoto.jsonl` attestation files signed by GitHub's OIDC provider that prove:
+**Implementation patterns for**:
 
-- **Exact source commit** that produced the artifact
-- **Isolated build environment** (GitHub-hosted runner)
-- **Workflow identity** that triggered the build
-- **Tamper-evident artifact linkage** via cryptographic hashing
+- Workflow integration with `slsa-github-generator`
+- Base64 hash generation for multiple artifacts
+- Version tag pinning requirements
+- Renovate configuration exceptions
+- Source archive signing for GitHub releases
+- Common troubleshooting scenarios
 
-This moves beyond signatures (which only prove distribution integrity) to prove **build integrity**.
+**Not covered here** (see playbook):
+
+- SLSA vs SBOM comparison → [SLSA vs SBOM](slsa-vs-sbom.md)
+- SLSA level classification → [SLSA Levels](slsa-levels.md)
+- Verification workflows → [Verification Workflows](verification-workflows.md)
+- GitHub Actions patterns → [GitHub Actions Patterns](github-actions-patterns.md)
+- Toolchain integration → [Go](toolchains/go-integration.md), [Node.js](toolchains/node-integration.md), [Python](toolchains/python-integration.md)
 
 ---
 
-## OpenSSF Scorecard Impact
+## Quick Reference
 
-- **Score 8**: Cryptographic signatures present (Cosign, GPG)
-- **Score 10**: SLSA provenance present (`.intoto.jsonl` files)
+**Outcome**: `.intoto.jsonl` attestation files that cryptographically prove build integrity
 
-Provenance is what moves Signed-Releases from 8 to 10.
+**OpenSSF Scorecard Impact**: Moves Signed-Releases check from 8/10 to 10/10
+
+**Key Artifact**: Base64-encoded SHA256 hashes passed to `slsa-framework/slsa-github-generator`
 
 ---
 
@@ -214,25 +226,85 @@ gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
 
 ---
 
-## Security Properties
+## Implementation Patterns
 
-SLSA Level 3 provenance provides:
+### Pattern 1: Single Binary Release
 
-- **Non-falsifiable**: Signed by GitHub's OIDC, not developer credentials
-- **Tamper-evident**: Cryptographic binding to artifacts
-- **Auditable**: Build parameters recorded in attestation
-- **Isolated**: GitHub-hosted runners prevent local tampering
+Use when building one artifact per platform:
 
-This is the gap between "I signed this" and "GitHub's infrastructure built this from this commit."
+```yaml
+- name: Generate hashes
+  id: hash
+  run: |
+    cd dist
+    sha256sum myapp_linux_amd64 | base64 -w0 > ../hashes.txt
+    echo "hashes=$(cat ../hashes.txt)" >> "$GITHUB_OUTPUT"
+```
+
+### Pattern 2: Multi-Binary Release
+
+Use when building multiple artifacts (multi-platform, multi-architecture):
+
+```yaml
+- name: Generate hashes
+  id: hash
+  run: |
+    cd dist
+    sha256sum myapp_* | base64 -w0 > ../hashes.txt
+    echo "hashes=$(cat ../hashes.txt)" >> "$GITHUB_OUTPUT"
+```
+
+### Pattern 3: Container Image Provenance
+
+For container images, use `generator_container_slsa3.yml`:
+
+```yaml
+provenance:
+  needs: [build]
+  permissions:
+    actions: read
+    id-token: write
+    packages: write
+  uses: slsa-framework/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@v2.1.0
+  with:
+    image: ghcr.io/${{ github.repository }}
+    digest: ${{ needs.build.outputs.digest }}
+```
+
+See [GitHub Actions Patterns](github-actions-patterns.md) for complete container workflows.
 
 ---
 
-## Related Patterns
+## Next Steps
+
+**Expand your implementation**:
+
+- **Verify provenance**: [Verification Workflows](verification-workflows.md) - Add verification gates to CI/CD
+- **Enforce policies**: [Policy Templates](policy-templates.md) - Kyverno and OPA templates
+- **Integrate toolchains**: [Go](toolchains/go-integration.md), [Node.js](toolchains/node-integration.md), [Python](toolchains/python-integration.md)
+- **Plan adoption**: [Adoption Roadmap](adoption-roadmap.md) - Incremental SLSA 1→3 path
+
+**Understand SLSA fundamentals**:
+
+- **Level requirements**: [SLSA Levels](slsa-levels.md) - Detailed explanation of Levels 1-4
+- **SLSA vs SBOM**: [Comparison Guide](slsa-vs-sbom.md) - When to use each
+- **Runner classification**: [Runner Configuration](runner-configuration.md) - GitHub-hosted vs self-hosted
+
+**Related patterns**:
 
 - [OpenSSF Scorecard Compliance](../../secure/scorecard/scorecard-compliance.md) - Job-level permissions, dependency pinning
 - [SBOM Generation](../../secure/sbom/sbom-generation.md) - Complete attestation stack
-- [Zero-Vulnerability Pipelines](../../blog/posts/2025-12-15-zero-vulnerability-pipelines.md) - Trivy + SBOM + SLSA
 
 ---
 
-*SLSA provenance moves from signatures (8/10) to cryptographically proven builds (10/10). The gap is build integrity, not distribution integrity.*
+## Summary
+
+**What you get**: `.intoto.jsonl` attestation files that cryptographically prove build integrity
+
+**Critical requirement**: Use version tags (`@v2.1.0`), never SHA pins
+
+**Common gotcha**: Hash format must be base64-encoded (`base64 -w0`), not hex
+
+**Verification**: Use `slsa-verifier` to validate provenance before deployment
+
+For comprehensive SLSA guidance, see the **[SLSA Implementation Playbook](index.md)**.

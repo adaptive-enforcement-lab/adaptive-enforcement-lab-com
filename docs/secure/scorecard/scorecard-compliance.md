@@ -315,6 +315,7 @@ These need GitHub admin access:
 ## Related Patterns
 
 - [Scorecard Workflow Examples](scorecard-workflow-examples.md) - Complete working workflows
+- [SLSA Implementation Playbook](../../enforce/slsa-provenance/index.md) - Complete guide for SLSA provenance implementation
 - [SLSA Level 3 Provenance](../../enforce/slsa-provenance/slsa-provenance.md) - Build attestations for 10/10
 - [SBOM Generation](../sbom/sbom-generation.md) - Complete attestation stack
 - [OpenSSF Best Practices Badge](../../blog/posts/2025-12-17-openssf-badge-two-hours.md) - Scorecard validates what badge certifies

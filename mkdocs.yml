@@ -500,27 +500,7 @@ nav:
               - Remediation Cost: secure/risk-management/engineer-framework/remediation-cost.md
   - Enforce:
       - enforce/index.md
-      - Branch Protection:
-          - enforce/branch-protection/index.md
-          - Security Tiers: enforce/branch-protection/security-tiers.md
-          - Rules Reference: enforce/branch-protection/branch-protection.md
-          - Infrastructure as Code:
-              - Terraform Modules: enforce/branch-protection/terraform-modules.md
-              - OpenTofu Modules: enforce/branch-protection/opentofu-modules.md
-              - Multi-Repo Management: enforce/branch-protection/multi-repo-management.md
-          - GitHub App Enforcement:
-              - Overview: enforce/branch-protection/github-app-enforcement.md
-              - Enforcement Workflows: enforce/branch-protection/enforcement-workflows.md
-              - Drift Detection: enforce/branch-protection/drift-detection.md
-          - Audit & Compliance:
-              - Audit Evidence: enforce/branch-protection/audit-evidence.md
-              - Compliance Reporting: enforce/branch-protection/compliance-reporting.md
-              - Verification Scripts: enforce/branch-protection/verification-scripts.md
-          - Bypass Controls:
-              - Bypass Controls: enforce/branch-protection/bypass-controls.md
-              - Emergency Access: enforce/branch-protection/emergency-access.md
-              - Exception Management: enforce/branch-protection/exception-management.md
-          - Troubleshooting: enforce/branch-protection/troubleshooting.md
+      - Branch Protection: enforce/branch-protection/branch-protection.md
       - Commit Signing: enforce/commit-signing/commit-signing.md
       - Pre-commit Hooks:
           - enforce/pre-commit-hooks/pre-commit-hooks.md
@@ -561,7 +541,32 @@ nav:
               - enforce/policy-as-code/operations/index.md
               - Monitoring: enforce/policy-as-code/operations/monitoring.md
               - Workflows: enforce/policy-as-code/operations/workflows.md
-      - SLSA Provenance: enforce/slsa-provenance/slsa-provenance.md
+      - SLSA Provenance:
+          - enforce/slsa-provenance/index.md
+          - Implementation Guide: enforce/slsa-provenance/slsa-provenance.md
+          - SLSA Levels: enforce/slsa-provenance/slsa-levels.md
+          - SLSA vs SBOM: enforce/slsa-provenance/slsa-vs-sbom.md
+          - Level Classification: enforce/slsa-provenance/level-classification.md
+          - Runner Configuration: enforce/slsa-provenance/runner-configuration.md
+          - GitHub Actions:
+              - Workflow Patterns: enforce/slsa-provenance/github-actions-patterns.md
+              - Advanced Patterns: enforce/slsa-provenance/github-actions-advanced.md
+          - Verification:
+              - Verification Workflows: enforce/slsa-provenance/verification-workflows.md
+              - Advanced Verification: enforce/slsa-provenance/verification-advanced.md
+          - Policy Templates: enforce/slsa-provenance/policy-templates.md
+          - Adoption:
+              - Adoption Roadmap: enforce/slsa-provenance/adoption-roadmap.md
+              - Phase 3 Adoption: enforce/slsa-provenance/adoption-phase3.md
+              - Adoption Metrics: enforce/slsa-provenance/adoption-metrics.md
+              - Adoption Management: enforce/slsa-provenance/adoption-management.md
+          - Toolchains:
+              - enforce/slsa-provenance/toolchains/index.md
+              - Go Integration: enforce/slsa-provenance/toolchains/go-integration.md
+              - Go Advanced: enforce/slsa-provenance/toolchains/go-advanced.md
+              - Node.js Integration: enforce/slsa-provenance/toolchains/node-integration.md
+              - Node.js Advanced: enforce/slsa-provenance/toolchains/node-advanced.md
+              - Python Integration: enforce/slsa-provenance/toolchains/python-integration.md
       - Testing Enforcement:
           - Coverage Patterns: enforce/testing-enforcement/coverage-patterns.md
           - Coverage Enforcement: enforce/testing-enforcement/coverage-enforcement.md
