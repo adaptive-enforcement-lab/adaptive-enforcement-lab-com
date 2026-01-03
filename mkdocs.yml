@@ -481,7 +481,12 @@ nav:
                   - secure/scorecard/checks/release-security.md
                   - Signed-Releases: secure/scorecard/checks/release-security/signed-releases.md
                   - Signed-Releases Advanced: secure/scorecard/checks/release-security/signed-releases-advanced.md
-                  - Packaging: secure/scorecard/checks/release-security/packaging.md
+                  - Packaging:
+                      - secure/scorecard/checks/release-security/packaging.md
+                      - Containers: secure/scorecard/checks/release-security/packaging/containers.md
+                      - Go Modules: secure/scorecard/checks/release-security/packaging/go-modules.md
+                      - NPM: secure/scorecard/checks/release-security/packaging/npm.md
+                      - PyPI: secure/scorecard/checks/release-security/packaging/pypi.md
                   - License: secure/scorecard/checks/release-security/license.md
               - Branch Protection:
                   - secure/scorecard/checks/branch-protection.md

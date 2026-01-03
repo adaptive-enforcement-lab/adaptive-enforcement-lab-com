@@ -1,3 +1,8 @@
+---
+description: >-
+  Automate branch protection across repositories using Terraform and GitHub Rulesets. Infrastructure-as-code patterns for consistent, auditable enforcement.
+---
+
 # Branch Protection via Terraform
 
 !!! tip "Key Insight"
