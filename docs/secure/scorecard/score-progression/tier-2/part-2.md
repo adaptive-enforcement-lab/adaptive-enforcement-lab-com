@@ -1,3 +1,8 @@
+# Tier 2 Additional Priorities
+
+!!! tip "Key Insight"
+    SAST and security policies formalize security practices.
+
 ## Priority 4: SAST (1 to 2 hours)
 
 **Target**: SAST 10/10
@@ -147,6 +152,7 @@ After implementing all Priority 1-5 fixes:
 
 ```bash
 # Correct format
+
 sha256sum files* | base64 -w0
 
 ```bash

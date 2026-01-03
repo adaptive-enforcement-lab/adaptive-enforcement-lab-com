@@ -13,13 +13,16 @@ tags:
 
 # Token-Permissions Check
 
+!!! tip "Key Insight"
+    Job-level permissions minimize blast radius from compromised workflows.
+
 **Target**: 10/10 by using job-level permission scoping
 
 **What it checks**: Whether GitHub Actions workflows grant minimal permissions to each job.
 
 **Why it matters**: Workflow-level permissions grant all jobs maximum access. If any job is compromised (via malicious dependency or workflow injection), attackers get write access to repository and secrets. Job-level permissions limit blast radius.
 
-### Quick Summary
+## Quick Summary
 
 Token-Permissions is **extensively covered** in existing documentation:
 
@@ -105,9 +108,11 @@ Production workflows demonstrating:
 
 ```bash
 # Check for workflow-level permissions
+
 grep -r "^permissions:" .github/workflows/
 
 # Should see only "permissions: {}" at workflow level
+
 # Job-level permissions are indented under jobs
 
 ```bash

@@ -1,3 +1,8 @@
+# Dependency Update Tools
+
+!!! tip "Key Insight"
+    Automated dependency updates reduce security debt and improve Scorecard scores.
+
 ## Dependency-Update-Tool
 
 **Target**: 10/10 by enabling Dependabot or Renovate

@@ -10,6 +10,9 @@ tags:
 
 # Security Practices Checks
 
+!!! tip "Key Insight"
+    Security practices demonstrate proactive vulnerability management.
+
 Checks that measure security processes, documentation, and proactive security measures. These demonstrate security maturity beyond basic hygiene.
 
 ## Covered Checks

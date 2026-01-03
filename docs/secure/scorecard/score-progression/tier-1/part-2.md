@@ -1,3 +1,8 @@
+# Tier 1 Troubleshooting
+
+!!! tip "Key Insight"
+    Common implementation challenges have well-documented solutions.
+
 ## Troubleshooting
 
 ### "Token-Permissions alerts still appearing"
@@ -6,6 +11,7 @@
 
 ```yaml
 # Wrong - permissions at workflow level
+
 permissions:
   contents: write
 

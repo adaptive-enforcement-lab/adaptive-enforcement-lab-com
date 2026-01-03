@@ -1,5 +1,8 @@
 # Decision Framework
 
+!!! tip "Key Insight"
+    ROI analysis helps prioritize Scorecard improvements.
+
 This content has been split into multiple parts:
 
 - [Part 1](./decision-framework/part-1.md) (310 lines)

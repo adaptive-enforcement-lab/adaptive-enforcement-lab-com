@@ -12,13 +12,16 @@ tags:
 
 # Fuzzing Check
 
+!!! tip "Key Insight"
+    Fuzzing automatically discovers edge cases that manual testing misses.
+
 **Target**: 10/10 by integrating continuous fuzzing
 
 **What it checks**: Whether project uses automated fuzz testing to discover vulnerabilities.
 
 **Why it matters**: Fuzzing discovers edge cases and vulnerabilities that unit tests miss. Critical for parsing untrusted input (file formats, network protocols, user data).
 
-### Understanding the Score
+## Understanding the Score
 
 Scorecard looks for:
 
@@ -183,6 +186,7 @@ func FuzzParseInput(f *testing.F) {
 
 ```bash
 # Run fuzzing for 30 seconds
+
 go test -fuzz=FuzzParseInput -fuzztime=30s
 
 ```bash

@@ -10,6 +10,9 @@ tags:
 
 # Release Security Checks
 
+!!! tip "Key Insight"
+    Release security ensures artifacts are signed and properly distributed.
+
 Checks that measure release security practices including signatures, provenance, distribution, and licensing.
 
 ## Covered Checks

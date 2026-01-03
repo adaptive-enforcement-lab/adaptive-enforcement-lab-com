@@ -10,6 +10,9 @@ tags:
 
 # Supply Chain Security Checks
 
+!!! tip "Key Insight"
+    Pinning dependencies prevents unexpected malicious updates.
+
 Critical checks that protect against supply chain attacks. These have the highest security impact and should be prioritized first.
 
 **Covered checks:**
@@ -84,6 +87,7 @@ Some actions **require** version tags and will fail with SHA pins:
 
 ```yaml
 # MUST use version tag. Action verifies its own workflow identity
+
 - uses: ossf/scorecard-action@v2.4.0
 ```
 
@@ -93,6 +97,7 @@ Some actions **require** version tags and will fail with SHA pins:
 
 ```yaml
 # MUST use version tag. Verifier validates builder by tag
+
 uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
 ```
 
@@ -140,9 +145,11 @@ If you can't use Renovate:
 
 ```bash
 # Find SHA for a specific version
+
 gh api repos/actions/checkout/git/ref/tags/v4.1.1 --jq .object.sha
 
 # Result: b4ffde65f46336ab88eb53be808477a3936bae11
+
 ```
 
 **Format**:
@@ -159,9 +166,11 @@ Pin container images to SHA digests too:
 
 ```dockerfile
 # Before (mutable tag)
+
 FROM golang:1.21
 
 # After (immutable digest)
+
 FROM golang:1.21@sha256:4746d26432a9117a5f58e95cb9f954ddf0de128e9d5816886514199316e4a2fb
 ```
 
@@ -171,9 +180,11 @@ Pin download URLs to specific versions:
 
 ```yaml
 # Before (latest, mutable)
+
 - run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh
 
 # After (pinned version)
+
 - run: |
     curl -sSfL https://github.com/golangci/golangci-lint/releases/download/v1.55.2/golangci-lint-1.55.2-linux-amd64.tar.gz \
       -o golangci-lint.tar.gz
@@ -201,11 +212,15 @@ Pin download URLs to specific versions:
 
 ```bash
 # GitHub CLI
+
 gh api repos/OWNER/REPO/git/ref/tags/VERSION --jq .object.sha
 
 # Web UI
+
 # Go to https://github.com/OWNER/REPO/releases
+
 # Click on version tag → Commits → Copy SHA
+
 ```
 
 ---

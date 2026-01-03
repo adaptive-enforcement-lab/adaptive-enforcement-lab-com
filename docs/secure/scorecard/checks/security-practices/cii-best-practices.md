@@ -12,13 +12,16 @@ tags:
 
 # CII-Best-Practices Check
 
+!!! tip "Key Insight"
+    CII Best Practices badge signals project maturity and security commitment.
+
 **Target**: Passing or higher badge from OpenSSF
 
 **What it checks**: Whether project has earned OpenSSF Best Practices Badge.
 
 **Why it matters**: Badge certification demonstrates comprehensive security practices beyond what automated tools can check. Required for some enterprise procurement processes.
 
-### Understanding the Score
+## Understanding the Score
 
 Scorecard looks for:
 
@@ -159,12 +162,15 @@ All notable changes to this project will be documented in this file.
 
 ```bash
 # Go example
+
 go test ./...
 
 # Python example
+
 pytest
 
 # JavaScript example
+
 npm test
 
 ```bash

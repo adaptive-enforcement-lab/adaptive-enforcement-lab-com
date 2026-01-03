@@ -1,4 +1,9 @@
-### Branch Protection via Terraform
+# Branch Protection via Terraform
+
+!!! tip "Key Insight"
+    Terraform-managed branch protection provides consistent, auditable enforcement across repositories.
+
+## Branch Protection via Terraform
 
 Infrastructure-as-code approach for managing multiple repositories:
 
@@ -52,6 +57,7 @@ GitHub's newer Repository Rulesets provide more flexible configuration and bette
 
 ```yaml
 # Ruleset: Main Branch Protection
+
 Enforcement status: Active
 Bypass list: (empty for maximum protection)
 
@@ -96,6 +102,7 @@ For enforcing protection across all repositories:
 
 ```yaml
 # Organization Ruleset: Default Branch Protection
+
 Enforcement status: Active
 
 Target repositories:
@@ -301,6 +308,7 @@ on:
 
 ```yaml
 # .github/renovate.json
+
 {
   "automerge": true,
   "automergeType": "pr",
@@ -338,9 +346,11 @@ Scorecard only checks the default branch (shown on repo homepage). Protection ru
 
 ```bash
 # Check default branch
+
 gh repo view --json defaultBranchRef --jq .defaultBranchRef.name
 
 # Check protection on that branch
+
 gh api repos/:owner/:repo/branches/main/protection
 ```
 

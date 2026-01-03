@@ -1,5 +1,8 @@
 # Tier 1
 
+!!! tip "Key Insight"
+    Tier 1 fixes provide quick wins with minimal effort.
+
 This content has been split into multiple parts:
 
 - [Part 1](./tier-1/part-1.md) (365 lines)

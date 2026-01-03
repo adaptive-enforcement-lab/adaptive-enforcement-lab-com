@@ -1,3 +1,8 @@
+# Common False Positives
+
+!!! tip "Key Insight"
+    Binary test fixtures require documentation to avoid false positives.
+
 ## Binary Test Fixtures
 
 These binaries are test fixtures only, not production code.
@@ -28,6 +33,7 @@ Check if Scorecard actually flags it (varies by file type):
 
 ```bash
 # Run Scorecard locally to confirm
+
 scorecard --repo=github.com/your-org/your-repo --checks=Binary-Artifacts
 
 ```bash
@@ -120,6 +126,7 @@ Wait 30 days. Scorecard only checks recent commits.
 
 ```bash
 # Don't do this - introduces audit trail gaps
+
 git rebase -i --root
 
 ```bash
@@ -139,6 +146,7 @@ Require human approval for dependency updates:
 
 ```yaml
 # .github/renovate.json
+
 {
   "packageRules": [
     {
@@ -222,6 +230,7 @@ Add minimal CI workflow:
 
 ```yaml
 # .github/workflows/validate.yml
+
 name: Validate
 
 on: [pull_request]
@@ -269,6 +278,7 @@ Move or duplicate to expected location:
 
 ```bash
 # Create standard location
+
 cp docs/SECURITY.md SECURITY.md
 
 ```bash

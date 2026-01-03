@@ -1,3 +1,8 @@
+# npm Publishing
+
+!!! tip "Key Insight"
+    npm provenance attestations provide verifiable build integrity.
+
 ## npm (Automated Publishing)
 
 ```yaml

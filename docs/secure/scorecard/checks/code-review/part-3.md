@@ -1,3 +1,8 @@
+# Repository Maintenance
+
+!!! tip "Key Insight"
+    Repository activity metrics help identify abandoned or unmaintained projects.
+
 ## Maintained
 
 **Target**: 10/10 by committing regularly
@@ -45,6 +50,7 @@ v2.0.0  Major   2024-12-01
 
 ```bash
 # Issues closed in last 30 days
+
 $ gh issue list --state closed --search "closed:>2024-12-01" | wc -l
 12
 ```
@@ -90,6 +96,7 @@ $ gh issue list --state closed --search "closed:>2024-12-01" | wc -l
 
 ```bash
 # Automated monthly commit to show activity
+
 echo "$(date)" > .last-update
 git add .last-update
 git commit -m "Update timestamp"
@@ -278,6 +285,7 @@ Active maintenance correlates with faster vulnerability remediation.
 
 ```bash
 # Check current Code-Review score
+
 docker run -e GITHUB_TOKEN=$GITHUB_TOKEN gcr.io/openssf/scorecard:stable \
   --repo=github.com/your-org/your-repo \
   --checks=Code-Review,Contributors,Maintained

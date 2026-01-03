@@ -10,6 +10,9 @@ tags:
 
 # Branch Protection & Dependency Management Checks
 
+!!! tip "Key Insight"
+    Branch protection ensures code quality through mandatory reviews and status checks.
+
 Configuration checks that enforce development workflows and dependency hygiene. These prevent accidental breakage and ensure dependencies stay current.
 
 **Covered checks:**
@@ -54,7 +57,9 @@ Scorecard analyzes default branch protection settings via GitHub API.
 
 ```bash
 # GitHub Settings > Branches shows no protection rules
+
 # Any developer can:
+
 $ git push -f origin main  # Force push destroys history
 $ git push origin :main     # Delete branch entirely
 ```

@@ -1,3 +1,8 @@
+# Enforcement Patterns
+
+!!! tip "Key Insight"
+    Enforcement patterns prevent security regressions in CI pipelines.
+
 ## Enforcement Patterns
 
 ### Minimum Score Requirements
@@ -275,4 +280,4 @@ Most Problematic: Fuzzing (stuck at 0)
 
 ---
 
-*Scorecard automation turns security practices from aspirational to enforced. Set it up once, prevent regressions forever. The goal isn't a perfect score—it's continuous improvement and no backsliding.*
+*Scorecard automation turns security practices from aspirational to enforced. Set it up once, prevent regressions forever. The goal isn't a perfect score: it's continuous improvement and no backsliding.*

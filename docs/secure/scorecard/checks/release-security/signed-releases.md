@@ -13,13 +13,16 @@ tags:
 
 # Signed-Releases Check
 
+!!! tip "Key Insight"
+    Release signing proves artifacts haven't been tampered with after publishing.
+
 **Priority**: High (required for SLSA compliance)
 
 **Advanced**: [Signed-Releases Advanced Guide](./release-security/signed-releases-advanced.md)
 
 ---
 
-### [Packaging](./release-security/packaging.md)
+## [Packaging](./release-security/packaging.md)
 
 **Target**: 10/10 by publishing to package registries
 

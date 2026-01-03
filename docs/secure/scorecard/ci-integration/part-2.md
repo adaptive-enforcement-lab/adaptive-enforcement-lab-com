@@ -1,3 +1,8 @@
+# Badge Integration
+
+!!! tip "Key Insight"
+    Scorecard badges provide transparency into project security posture.
+
 ## Badge Integration
 
 ### Display Current Score

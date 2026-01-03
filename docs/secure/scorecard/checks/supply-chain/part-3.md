@@ -1,3 +1,8 @@
+# Binary-Artifacts Check
+
+!!! tip "Key Insight"
+    Binary artifacts in repositories indicate potential supply chain compromise.
+
 ## Binary-Artifacts
 
 **Target**: 10/10 by removing binaries from git history
@@ -22,6 +27,7 @@ Scorecard detects:
 
 ```bash
 # Search for common binary extensions
+
 find . -type f \( \
   -name "*.exe" -o \
   -name "*.dll" -o \
@@ -39,6 +45,7 @@ Even if binaries are deleted from current state, Scorecard checks git history:
 
 ```bash
 # Find all binary files ever committed
+
 git log --all --numstat --diff-filter=A --summary | \
   grep -E "\.(exe|dll|so|dylib|jar|zip|tar\.gz)$" | \
   head -20
@@ -52,9 +59,11 @@ If binary is in current state but you don't want to rewrite history:
 
 ```bash
 # Move to GitHub Releases
+
 gh release upload v1.0.0 binary_file
 
 # Remove from git
+
 git rm binary_file
 git commit -m "Remove binary from git, use GitHub Releases"
 git push
@@ -68,12 +77,15 @@ git push
 
 ```bash
 # Install git-filter-repo
+
 pip install git-filter-repo
 
 # Remove binary from all history
+
 git filter-repo --path binary_file --invert-paths
 
 # Force push (DESTRUCTIVE!)
+
 git push --force-with-lease
 ```
 
@@ -87,7 +99,9 @@ Instead of committing binaries:
 
 ```yaml
 # Don't commit to git
+
 # Upload to GitHub Releases
+
 - name: Upload Release Asset
   run: gh release upload ${{ github.ref_name }} binary_file
 ```
@@ -96,7 +110,9 @@ Instead of committing binaries:
 
 ```dockerfile
 # Don't commit vendor/
+
 # Download at build time
+
 FROM golang:1.21
 WORKDIR /app
 COPY go.mod go.sum ./
@@ -107,7 +123,9 @@ RUN go mod download
 
 ```yaml
 # Don't commit bin/
+
 # Install from package manager
+
 - name: Install Tools
   run: |
     curl -sSfL https://github.com/tool/releases/download/v1.0.0/tool-linux-amd64.tar.gz | \
@@ -120,6 +138,7 @@ Add to `.gitignore`:
 
 ```gitignore
 # Binaries
+
 *.exe
 *.dll
 *.so
@@ -129,11 +148,13 @@ Add to `.gitignore`:
 *.ear
 
 # Compressed archives
+
 *.zip
 *.tar.gz
 *.tgz
 
 # Build outputs
+
 bin/
 dist/
 build/
@@ -141,10 +162,12 @@ build/
 *.a
 
 # Package manager caches
+
 vendor/
 node_modules/
 
 # OS-specific
+
 .DS_Store
 Thumbs.db
 ```
@@ -159,6 +182,7 @@ Prevent accidental binary commits:
 #!/bin/bash
 
 # Check for binary files
+
 binaries=$(git diff --cached --name-only --diff-filter=A | \
   grep -E '\.(exe|dll|so|dylib|jar|zip|tar\.gz)$')
 

@@ -1,3 +1,8 @@
+# Tier 3 Additional Priorities
+
+!!! tip "Key Insight"
+    Vulnerability automation and contributor diversity strengthen long-term security.
+
 ## Priority 4: Vulnerabilities (Ongoing)
 
 **Target**: Vulnerabilities 10/10
@@ -65,13 +70,16 @@ jobs:
 
 ```bash
 # For Go
+
 go get -u ./...
 go mod tidy
 
 # For npm
+
 npm audit fix
 
 # For Python
+
 pip-audit --fix
 
 ```bash

@@ -1,3 +1,8 @@
+# Dangerous-Workflow Check
+
+!!! tip "Key Insight"
+    Dangerous workflows can leak secrets or enable code injection attacks.
+
 ## Dangerous-Workflow
 
 **Target**: 10/10 by eliminating dangerous workflow patterns
@@ -230,6 +235,7 @@ Run through these for every workflow:
 
 ```yaml
 # Stage 1: PR validation (no secrets)
+
 on:
   pull_request:
 
@@ -243,6 +249,7 @@ jobs:
 ---
 
 # Stage 2: Integration tests (with secrets)
+
 on:
   push:
     branches: [main]

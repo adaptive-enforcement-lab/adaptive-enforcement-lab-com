@@ -1,5 +1,8 @@
 # False Positives
 
+!!! tip "Key Insight"
+    False positives require investigation before filing exceptions.
+
 This content has been split into multiple parts:
 
 - [Part 1](./false-positives/part-1.md) (341 lines)

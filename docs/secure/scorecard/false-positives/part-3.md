@@ -1,3 +1,8 @@
+# OpenSSF Best Practices
+
+!!! tip "Key Insight"
+    CII badge false positives often indicate incomplete profile configuration.
+
 ## OpenSSF Best Practices
 
 While this repository is private, we follow OpenSSF Best Practices:
@@ -37,6 +42,7 @@ Makes public transition easier.
 
 ```bash
 # Update dev dependencies too
+
 npm audit fix
 
 ```bash
@@ -65,6 +71,7 @@ Simpler than explaining the difference.
 
 ```yaml
 # caller.yml
+
 jobs:
   call-reusable:
     uses: ./.github/workflows/reusable.yml@main
@@ -79,6 +86,7 @@ Explicitly set permissions in caller:
 
 ```yaml
 # caller.yml
+
 jobs:
   call-reusable:
     permissions:
@@ -108,6 +116,7 @@ jobs:
 
 ```yaml
 # .github/workflows/release.yml
+
 name: Release
 
 on:
@@ -251,6 +260,7 @@ External contributions are welcome via pull requests.
 
 ```bash
 # Monthly dependency updates via Renovate
+
 # Keeps commit history active
 
 ```bash
@@ -272,6 +282,7 @@ Last reviewed: 2026-01-02
 
 ```bash
 # If no further development planned
+
 gh repo archive your-org/your-repo
 
 ```bash

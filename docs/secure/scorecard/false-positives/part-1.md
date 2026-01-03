@@ -72,6 +72,7 @@ graph TD
 
 ```yaml
 # These MUST use version tags
+
 - uses: ossf/scorecard-action@v2.4.0
 - uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
 ```
@@ -115,9 +116,11 @@ Configure Renovate to exclude these from SHA pinning:
 
 ```dockerfile
 # Scorecard flags this
+
 FROM node:20
 
 # Scorecard wants this
+
 FROM node:20@sha256:a1b2c3d4...
 ```
 
@@ -133,16 +136,20 @@ FROM node:20@sha256:a1b2c3d4...
 
 ```dockerfile
 # Keep semantic version for security updates
+
 FROM node:20-alpine
 
 # Document in commit message:
+
 # "Using version tag for automated security patches from container registry"
+
 ```
 
 #### Option 2: Pin with automated updates
 
 ```dockerfile
 # Pin to SHA but let Renovate update it
+
 FROM node:20-alpine@sha256:a1b2c3d4e5f6...
 ```
 
@@ -172,6 +179,7 @@ Configure Renovate:
 
 ```yaml
 # Scorecard flags this
+
 - uses: actions/setup-node@v4
   with:
     node-version: '20'  # Not SHA-pinned
@@ -187,6 +195,7 @@ Configure Renovate:
 
 ```yaml
 # This is sufficiently secure
+
 - uses: actions/setup-node@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1
   with:
     node-version: '20'  # Version selector, not a download
@@ -206,6 +215,7 @@ Configure Renovate:
 
 ```yaml
 # Scorecard flags this
+
 on:
   pull_request_target:
     types: [labeled]
@@ -237,6 +247,7 @@ Document the safe pattern in your PR description or workflow comments:
 
 ```yaml
 # Safe: Only reads PR metadata, doesn't execute PR code
+
 on:
   pull_request_target:
     types: [labeled]
@@ -259,6 +270,7 @@ jobs:
 
 ```yaml
 # Scorecard flags this as potential script injection
+
 - name: Set version
   run: echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
 ```
@@ -273,6 +285,7 @@ Use intermediate environment variables to avoid injection:
 
 ```yaml
 # Better: Expression in env, not run
+
 - name: Set version
   env:
     INPUT_VERSION: ${{ github.event.inputs.version }}
@@ -285,6 +298,7 @@ This eliminates the theoretical injection vector and satisfies Scorecard.
 
 ```yaml
 # Only triggered by maintainers with write access
+
 on:
   workflow_dispatch:
     inputs:
@@ -317,6 +331,7 @@ tests/
 
 ```yaml
 # .github/workflows/test.yml
+
 - name: Generate test fixtures
   run: |
     python scripts/generate-test-pdf.py
@@ -329,6 +344,7 @@ Removes binaries from git, improves security.
 
 ```bash
 # Download fixtures during test setup
+
 wget https://example.com/test-fixtures/sample.pdf
 ```
 

@@ -1,3 +1,8 @@
+# SAST Check
+
+!!! tip "Key Insight"
+    SAST detects security vulnerabilities before code review.
+
 ## SAST (Static Application Security Testing)
 
 **Target**: 10/10 by integrating static analysis tools

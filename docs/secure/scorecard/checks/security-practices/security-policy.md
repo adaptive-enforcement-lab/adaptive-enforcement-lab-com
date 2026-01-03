@@ -10,6 +10,9 @@ tags:
 
 # Security-Policy Check
 
+!!! tip "Key Insight"
+    Security policies guide responsible vulnerability disclosure.
+
 **Target**: 10/10 by adding SECURITY.md file
 
 **What it checks**: Whether repository has a documented security vulnerability disclosure policy.
@@ -196,10 +199,12 @@ Submit reports through the platform for bounty consideration.
 
 ```bash
 # Correct locations
+
 ./SECURITY.md
 ./.github/SECURITY.md
 
 # Incorrect (not detected)
+
 ./docs/SECURITY.md
 ./security.md
 ./SECURITY.txt

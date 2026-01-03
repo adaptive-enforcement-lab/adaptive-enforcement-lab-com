@@ -70,4 +70,3 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
-      min_admonitions: 0

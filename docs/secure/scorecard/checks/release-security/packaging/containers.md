@@ -1,3 +1,8 @@
+# Container Registry Publishing
+
+!!! tip "Key Insight"
+    Container registries require OIDC authentication for provenance generation.
+
 ## Container Registries
 
 ```yaml

@@ -106,22 +106,32 @@ graph TD
 
 ```dockerfile
 # Option 1: Version tag (mutable)
+
 FROM node:20-alpine
 
 # ✅ Automatic security patches from registry
+
 # ✅ Low maintenance overhead
+
 # ❌ Lower Scorecard score
+
 # ❌ Unexpected behavior changes possible
+
 ```
 
 ```dockerfile
 # Option 2: SHA pin (immutable)
+
 FROM node:20-alpine@sha256:a1b2c3d4e5f6...
 
 # ✅ Higher Scorecard score
+
 # ✅ Reproducible builds
+
 # ❌ Manual or automated update process required
+
 # ❌ Delayed security patches unless Renovate is configured
+
 ```
 
 **Decision criteria**:
@@ -249,6 +259,7 @@ Admins may bypass branch protection for:
 
 ```hcl
 # terraform/github_repositories.tf
+
 resource "github_branch_protection" "main" {
   repository_id  = github_repository.repo.node_id
   pattern        = "main"

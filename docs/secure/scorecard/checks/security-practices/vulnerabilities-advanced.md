@@ -13,17 +13,20 @@ tags:
 
 # Advanced Vulnerability Management
 
+!!! tip "Key Insight"
+    Automated vulnerability remediation reduces time-to-patch for critical issues.
+
 This guide covers complex vulnerability scenarios for the Scorecard Vulnerabilities check.
 
 **Prerequisites**: Read [Vulnerabilities check](./vulnerabilities.md) first for basics.
 
-### Handling Unfixable Vulnerabilities
+## Handling Unfixable Vulnerabilities
 
 **Scenario**: Vulnerability exists but no patch available yet.
 
 **Options**:
 
-#### Option 1: Wait for Patch
+### Option 1: Wait for Patch
 
 If vulnerability is low severity and doesn't affect your use case:
 
@@ -43,7 +46,7 @@ If vulnerability is low severity and doesn't affect your use case:
 ```bash
 **Document** in repository README or security advisory.
 
-#### Option 2: Pin to Last Good Version
+### Option 2: Pin to Last Good Version
 
 ```json
 {
@@ -58,35 +61,41 @@ If vulnerability is low severity and doesn't affect your use case:
 ```bash
 **Trade-off**: May miss future security patches.
 
-#### Option 3: Replace Dependency
+### Option 3: Replace Dependency
 
 Find alternative package without vulnerability:
 
 ```bash
 # Before
+
 npm install vulnerable-package
 
 # After
+
 npm uninstall vulnerable-package
 npm install secure-alternative
 
 ```bash
 **Best for**: When multiple alternatives exist.
 
-#### Option 4: Vendor and Patch
+### Option 4: Vendor and Patch
 
 For critical dependencies:
 
 ```bash
 # Fork upstream repository
+
 gh repo fork upstream/vulnerable-package
 
 # Apply security patch
+
 git checkout -b fix/cve-2024-1234
 # ... make fixes ...
+
 git commit -m "fix: CVE-2024-1234"
 
 # Use your fork
+
 npm install github:yourorg/vulnerable-package#fix/cve-2024-1234
 
 ```bash
@@ -96,7 +105,7 @@ npm install github:yourorg/vulnerable-package#fix/cve-2024-1234
 
 **Scenario**: Scorecard flags vulnerability that doesn't affect your project.
 
-#### Example 1: Vulnerability in Unused Code Path
+### Example 1: Vulnerability in Unused Code Path
 
 ```markdown
 # CVE-2024-5678 in crypto-library
@@ -108,7 +117,7 @@ uses the `hash()` function, making this CVE not applicable.
 **Tracking**: Waiting for upstream patch to eliminate alert.
 
 ```bash
-#### Example 2: Development Dependency Only
+### Example 2: Development Dependency Only
 
 ```json
 {
@@ -138,9 +147,11 @@ Security tab → Advisories → New draft security advisory
 
 ```bash
 # GitHub creates temporary private fork for you
+
 git clone <temporary-fork-url>
 git checkout -b fix/vulnerability
 # ... develop fix ...
+
 git push
 
 ```bash
@@ -152,7 +163,7 @@ git push
 
 ### Troubleshooting
 
-#### Dependabot PRs not auto-merging
+### Dependabot PRs not auto-merging
 
 **Check**: Do you have branch protection requiring reviews?
 
@@ -160,6 +171,7 @@ git push
 
 ```yaml
 # .github/workflows/dependabot-auto-merge.yml
+
 name: Dependabot Auto-Merge
 
 on: pull_request
@@ -182,12 +194,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 ```bash
-#### Scorecard still shows vulnerabilities after fixing
+### Scorecard still shows vulnerabilities after fixing
 
 **Check**: Did dependencies actually update?
 
 ```bash
 # Verify fix is in lockfile
+
 npm ls vulnerable-package
 
 ```bash
@@ -201,7 +214,7 @@ docker run -e GITHUB_TOKEN=$GITHUB_TOKEN gcr.io/openssf/scorecard:stable \
   --checks=Vulnerabilities
 
 ```bash
-#### Vulnerability in OS package, not application dependency
+### Vulnerability in OS package, not application dependency
 
 **Scenario**: Container base image has CVE.
 
@@ -209,9 +222,11 @@ docker run -e GITHUB_TOKEN=$GITHUB_TOKEN gcr.io/openssf/scorecard:stable \
 
 ```dockerfile
 # Before
+
 FROM ubuntu:20.04
 
 # After
+
 FROM ubuntu:24.04
 
 ```bash
@@ -219,6 +234,7 @@ Or use minimal base images:
 
 ```dockerfile
 # Use distroless or alpine
+
 FROM gcr.io/distroless/static-debian12
 
 ```bash

@@ -1,3 +1,8 @@
+# Python (PyPI) Publishing
+
+!!! tip "Key Insight"
+    PyPI Trusted Publishing eliminates long-lived credentials in CI.
+
 ## Python (PyPI)
 
 ```yaml

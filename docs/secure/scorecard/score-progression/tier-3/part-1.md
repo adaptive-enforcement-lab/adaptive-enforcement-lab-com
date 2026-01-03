@@ -14,6 +14,9 @@ tags:
 
 # Tier 3: Score 9 to 10 (Advanced → Exceptional)
 
+!!! tip "Key Insight"
+    CII badge and fuzzing demonstrate advanced security maturity.
+
 Edge cases, community certification, and continuous monitoring. These are high-effort improvements with diminishing returns.
 
 **Estimated effort**: Ongoing maintenance and selective improvements

@@ -1,3 +1,8 @@
+# Contributors Check
+
+!!! tip "Key Insight"
+    Active contributors signal project health and reduce single-maintainer risk.
+
 ## Contributors
 
 **Target**: 5+/10 by encouraging diverse contributions
@@ -107,14 +112,18 @@ Encourage contributions from different teams:
 
 ```markdown
 # Project owned by Platform Team
+
 # Security Team contributions welcome
+
 # Product Team contributions for integrations
+
 ```
 
 **Track contributor diversity**:
 
 ```bash
 # Contributors by organization (from commit email domains)
+
 git log --format='%ae' | sed 's/.*@//' | sort | uniq -c | sort -rn
 ```
 
@@ -126,6 +135,7 @@ git log --format='%ae' | sed 's/.*@//' | sort | uniq -c | sort -rn
 
 ```bash
 # List unique authors
+
 git log --format='%an <%ae>' | sort | uniq
 ```
 
@@ -141,6 +151,7 @@ git log --format='%an <%ae>' | sort | uniq
 
 ```bash
 # Co-authored commit
+
 git commit -m "Feature implementation
 
 Co-authored-by: Contractor Name <contractor@email.com>"

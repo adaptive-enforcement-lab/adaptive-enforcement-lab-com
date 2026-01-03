@@ -10,6 +10,9 @@ tags:
 
 # Packaging Check
 
+!!! tip "Key Insight"
+    Package publishing automation reduces human error and improves supply chain security.
+
 **Target**: 10/10 by publishing to package manager
 
 **What it checks**: Whether project is published to language-specific package manager (npm, PyPI, Go modules, RubyGems, Maven Central, crates.io, NuGet).

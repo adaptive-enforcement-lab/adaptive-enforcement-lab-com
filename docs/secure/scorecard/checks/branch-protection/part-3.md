@@ -1,3 +1,8 @@
+# Remediation Priority
+
+!!! tip "Key Insight"
+    Prioritize Branch-Protection fixes based on repository criticality and team capacity.
+
 ## Remediation Priority
 
 **Order of implementation** for fastest score improvement:

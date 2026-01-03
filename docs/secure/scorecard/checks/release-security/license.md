@@ -12,13 +12,16 @@ tags:
 
 # License Check
 
+!!! tip "Key Insight"
+    License declarations enable legal compliance and dependency auditing.
+
 **Target**: 10/10 by adding LICENSE file
 
 **What it checks**: Whether repository contains a LICENSE file with OSI-approved or FSF-recognized license.
 
 **Why it matters**: Without a license, users have no legal right to use, modify, or distribute your code. Explicit licensing is required for open source adoption and enterprise procurement.
 
-### Understanding the Score
+## Understanding the Score
 
 Scorecard looks for:
 
@@ -140,14 +143,17 @@ SOFTWARE.
 
 ```bash
 # Download MIT license template
+
 curl https://raw.githubusercontent.com/licenses/license-templates/master/templates/mit.txt \
   -o LICENSE
 
 # Customize year and name
+
 sed -i 's/\[year\]/2025/g' LICENSE
 sed -i 's/\[fullname\]/Your Name/g' LICENSE
 
 # Commit
+
 git add LICENSE
 git commit -m "Add MIT License"
 git push
@@ -157,12 +163,15 @@ git push
 
 ```bash
 # Install license CLI
+
 go install github.com/nishanths/license/v5@latest
 
 # Generate MIT license
+
 license -o LICENSE mit
 
 # Or Apache-2.0
+
 license -o LICENSE apache
 
 ```bash

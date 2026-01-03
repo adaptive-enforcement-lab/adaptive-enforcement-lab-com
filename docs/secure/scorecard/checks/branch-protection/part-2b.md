@@ -1,4 +1,9 @@
-### Option 2: Renovate (Most Flexible)
+# Dependency Update Tools
+
+!!! tip "Key Insight"
+    Renovate provides advanced automation features for dependency management.
+
+## Option 2: Renovate (Most Flexible)
 
 **Advantages**:
 
@@ -15,7 +20,7 @@
 - More complex configuration
 - Steeper learning curve
 
-#### Basic Renovate Configuration
+### Basic Renovate Configuration
 
 **Create `.github/renovate.json`**:
 
@@ -285,9 +290,11 @@ updates:
 
 ```bash
 # Validate Dependabot config
+
 gh api /repos/:owner/:repo/dependabot/alerts
 
 # Validate Renovate config
+
 npx -y -p renovate renovate-config-validator
 ```
 

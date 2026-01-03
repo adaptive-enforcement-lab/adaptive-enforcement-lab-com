@@ -1,5 +1,8 @@
 # Code Review
 
+!!! tip "Key Insight"
+    Code review checks verify human oversight before code reaches production.
+
 This content has been split into multiple parts:
 
 - [Part 1](./code-review/part-1.md) (281 lines)

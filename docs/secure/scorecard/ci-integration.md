@@ -1,5 +1,8 @@
 # Ci Integration
 
+!!! tip "Key Insight"
+    CI integration enables continuous security monitoring and enforcement.
+
 This content has been split into multiple parts:
 
 - [Part 1](./ci-integration/part-1.md) (362 lines)

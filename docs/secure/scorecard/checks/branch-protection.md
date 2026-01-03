@@ -1,5 +1,8 @@
 # Branch Protection
 
+!!! note "Content Organization"
+    This guide has been split into multiple parts for readability. Each part can be read independently.
+
 This content has been split into multiple parts:
 
 - [Part 1](./branch-protection/part-1a.md) (166 lines)

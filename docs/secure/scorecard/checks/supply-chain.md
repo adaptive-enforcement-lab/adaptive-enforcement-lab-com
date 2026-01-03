@@ -1,5 +1,8 @@
 # Supply Chain
 
+!!! tip "Key Insight"
+    Supply chain checks prevent malicious code injection through dependencies.
+
 This content has been split into multiple parts:
 
 - [Part 1](./supply-chain/part-1.md) (212 lines)

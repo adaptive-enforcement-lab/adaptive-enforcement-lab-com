@@ -10,6 +10,9 @@ tags:
 
 # Code Review & Project Health Checks
 
+!!! tip "Key Insight"
+    Code reviews prevent security vulnerabilities and maintain code quality standards.
+
 Checks that measure code review practices and project health signals. These ensure human oversight of code changes and demonstrate active maintenance.
 
 **Covered checks:**
@@ -49,7 +52,9 @@ Scorecard analyzes:
 
 ```yaml
 # .github/settings.yml or branch protection UI
+
 # No branch protection configured
+
 ```
 
 **Commit history shows**:
@@ -67,6 +72,7 @@ g7h8i9j Add feature (committed directly to main)
 
 ```yaml
 # Settings > Branches > Branch protection rules for 'main'
+
 Required settings:
 ✓ Require a pull request before merging
   ✓ Require approvals: 1
@@ -148,6 +154,7 @@ GitHub's newer Repository Rulesets provide more flexible configuration:
 
 ```yaml
 # Enforcement: Active
+
 # Target: Default branch
 
 Rules:
@@ -173,18 +180,22 @@ Create `.github/CODEOWNERS` to require specific reviewers for sensitive paths:
 
 ```text
 # Default: require review from any team member
+
 * @org/developers
 
 # Security-sensitive: require security team review
+
 /security/          @org/security-team
 /auth/              @org/security-team
 /.github/workflows/ @org/security-team
 
 # Infrastructure: require platform team review
+
 /terraform/         @org/platform-team
 /k8s/               @org/platform-team
 
 # Specific files: require specific expertise
+
 package.json        @org/dependencies-team
 Dockerfile          @org/platform-team
 ```
@@ -234,6 +245,7 @@ Dockerfile          @org/platform-team
 
 ```bash
 # Count PR merges vs direct commits in last 30 days
+
 git log --since="30 days ago" --oneline | \
   grep -c "Merge pull request"
 ```
@@ -256,6 +268,7 @@ git log --since="30 days ago" --oneline | \
 
 ```yaml
 # Renovate example - creates PRs, doesn't push directly
+
 - name: Renovate
   uses: renovatebot/github-action@v40.1.11
   # Creates PRs that require review
@@ -265,6 +278,7 @@ git log --since="30 days ago" --oneline | \
 
 ```yaml
 # BAD: Bot pushes directly to main
+
 - run: |
     git config user.name "bot"
     git commit -am "Update dependencies"

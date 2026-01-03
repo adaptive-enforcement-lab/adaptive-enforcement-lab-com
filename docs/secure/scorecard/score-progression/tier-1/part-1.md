@@ -8,8 +8,10 @@ tags:
   - quick-wins
   - supply-chain
 ---
-
 # Tier 1: Score 7 to 8 (Good Hygiene → Strong Posture)
+
+!!! tip "Key Insight"
+    Token permissions and pinned dependencies are the highest ROI security improvements.
 
 Quick wins with high security impact. These fixes clear visible gaps in your supply chain security.
 
@@ -276,11 +278,13 @@ Navigate to: Settings → Branches → Branch protection rules → main
 
 ```bash
 # Search for common binary extensions
+
 git log --all --numstat --pretty="%H" --no-renames \
   -- "*.exe" "*.dll" "*.so" "*.dylib" "*.jar" "*.zip" "*.tar.gz" | \
   grep -v "^$" | head -20
 
 # Find large files (likely binaries)
+
 git rev-list --objects --all | \
   git cat-file --batch-check='%(objecttype) %(objectname) %(objectsize) %(rest)' | \
   awk '/^blob/ {print substr($0,6)}' | \
@@ -294,9 +298,11 @@ git rev-list --objects --all | \
 
 ```bash
 # Move to releases or external storage
+
 gh release upload v1.0.0 binary_file
 
 # Remove from git
+
 git rm binary_file
 git commit -m "Remove binary from git, use releases"
 ```
@@ -305,9 +311,11 @@ git commit -m "Remove binary from git, use releases"
 
 ```bash
 # Use BFG Repo-Cleaner or git-filter-repo
+
 git filter-repo --path binary_file --invert-paths
 
 # Force push (coordinate with team)
+
 git push --force
 ```
 
@@ -319,6 +327,7 @@ Add to `.gitignore`:
 
 ```gitignore
 # Binaries
+
 *.exe
 *.dll
 *.so
@@ -326,11 +335,13 @@ Add to `.gitignore`:
 *.jar
 
 # Compressed archives (unless source releases)
+
 *.zip
 *.tar.gz
 *.tgz
 
 # OS-specific
+
 *.DS_Store
 Thumbs.db
 ```

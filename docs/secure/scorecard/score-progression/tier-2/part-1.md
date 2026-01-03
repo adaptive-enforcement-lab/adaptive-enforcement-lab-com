@@ -14,6 +14,9 @@ tags:
 
 # Tier 2: Score 8 to 9 (Strong Posture → Advanced Security)
 
+!!! tip "Key Insight"
+    SLSA provenance and dependency updates provide continuous security improvements.
+
 Build provenance and comprehensive dependency pinning. These are the hardest but highest-impact improvements.
 
 **Estimated effort**: 1 to 2 days
@@ -100,9 +103,11 @@ jobs:
 
 ```yaml
 # REQUIRED - verifier validates against version tag
+
 uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
 
 # WRONG - verification will fail
+
 uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@abc123...
 
 ```
@@ -113,12 +118,15 @@ uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_s
 
 ```bash
 # CORRECT - base64 encoding
+
 sha256sum readability_* | base64 -w0 > hashes.txt
 
 # WRONG - hex encoding
+
 sha256sum readability_* > hashes.txt
 
 # WRONG - raw SHA256
+
 sha256sum readability_* | xxd -p > hashes.txt
 ```
 
@@ -175,16 +183,19 @@ Scorecard checks **every** asset. Unsigned auto-generated archives penalize the 
 TAG="v1.7.0"
 
 # Download GitHub's auto-generated archives
+
 curl -sL "https://github.com/owner/repo/archive/refs/tags/${TAG}.tar.gz" \
   -o "source_${TAG}.tar.gz"
 curl -sL "https://github.com/owner/repo/archive/refs/tags/${TAG}.zip" \
   -o "source_${TAG}.zip"
 
 # Sign with Cosign
+
 cosign sign-blob --bundle "source_${TAG}.tar.gz.sig" "source_${TAG}.tar.gz"
 cosign sign-blob --bundle "source_${TAG}.zip.sig" "source_${TAG}.zip"
 
 # Upload signatures to release
+
 gh release upload "$TAG" \
   "source_${TAG}.tar.gz.sig" \
   "source_${TAG}.zip.sig"
@@ -280,6 +291,7 @@ Some actions **require** version tags and fail with SHA pins:
 
 ```yaml
 # MUST use version tag - verifier validates builder identity
+
 uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
 ```
 

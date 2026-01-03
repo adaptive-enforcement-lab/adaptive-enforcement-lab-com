@@ -13,13 +13,16 @@ tags:
 
 # Vulnerabilities Check
 
+!!! tip "Key Insight"
+    Dependency scanning prevents known vulnerabilities from reaching production.
+
 **Target**: 10/10 by fixing all known CVEs
 
 **What it checks**: Whether repository has known security vulnerabilities in dependencies or code.
 
 **Why it matters**: Known vulnerabilities are actively exploited by attackers. Public CVE databases make vulnerable projects easy targets.
 
-### Understanding the Score
+## Understanding the Score
 
 Scorecard checks:
 
@@ -137,12 +140,15 @@ Create `.github/renovate.json`:
 
 ```bash
 # Audit dependencies
+
 npm audit
 
 # Fix automatically
+
 npm audit fix
 
 # See details
+
 npm audit --json
 
 ```bash
@@ -161,9 +167,11 @@ npm audit --json
 
 ```bash
 # Scan for known vulnerabilities
+
 go list -json -deps ./... | nancy sleuth
 
 # Or use govulncheck
+
 govulncheck ./...
 
 ```bash
@@ -182,9 +190,11 @@ govulncheck ./...
 
 ```bash
 # Audit dependencies
+
 pip-audit
 
 # Or use safety
+
 safety check
 
 ```bash
@@ -203,9 +213,11 @@ safety check
 
 ```bash
 # Audit dependencies
+
 cargo audit
 
 # Fix vulnerable dependencies
+
 cargo update
 
 ```bash

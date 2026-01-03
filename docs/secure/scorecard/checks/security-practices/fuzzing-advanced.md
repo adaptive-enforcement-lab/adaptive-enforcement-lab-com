@@ -12,11 +12,14 @@ tags:
 
 # Advanced Fuzzing Techniques
 
+!!! tip "Key Insight"
+    Advanced fuzzing techniques uncover complex security vulnerabilities.
+
 This guide covers advanced fuzzing practices for the Scorecard Fuzzing check.
 
 **Prerequisites**: Read [Fuzzing check](./fuzzing.md) first for setup and integration.
 
-### Writing Effective Fuzz Targets
+## Writing Effective Fuzz Targets
 
 **Principles**:
 
@@ -127,9 +130,11 @@ on:
 
 ```yaml
 # PR: 30 seconds
+
 fuzz-seconds: 30
 
 # Scheduled: 1 hour
+
 fuzz-seconds: 3600
 
 ```bash

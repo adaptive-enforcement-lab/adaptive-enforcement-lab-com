@@ -1,3 +1,8 @@
+# Fuzzing Assessment
+
+!!! tip "Key Insight"
+    Fuzzing ROI depends on codebase complexity and risk tolerance.
+
 ## Fuzzing Assessment
 
 **Status**: Not implemented
@@ -28,6 +33,7 @@ If you parse untrusted input, invest in fuzzing:
 
 ```yaml
 # .github/workflows/fuzzing.yml
+
 name: Fuzzing
 
 on:

@@ -1,3 +1,8 @@
+# Resolution Approaches
+
+!!! tip "Key Insight"
+    Resolution strategies balance security signal with operational overhead.
+
 ## Resolution Approaches
 
 ### Fix It (Preferred)
@@ -12,6 +17,7 @@
 
 ```yaml
 # Flagged: Pull request comment without explicit permissions
+
 on:
   pull_request:
 
@@ -26,6 +32,7 @@ Fix by adding explicit permissions:
 
 ```yaml
 # Clear: Explicit read-only permissions
+
 on:
   pull_request:
 
@@ -55,8 +62,11 @@ Result: Higher score + clearer intent.
 
 ```yaml
 # Admin bypass allowed for emergency hotfixes
+
 # All bypasses logged and reviewed monthly
+
 # Documented in SECURITY.md section 3.2
+
 ```
 
 **Where to document**:

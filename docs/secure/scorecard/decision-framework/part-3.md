@@ -1,3 +1,8 @@
+# Branch Protection Bypasses
+
+!!! tip "Key Insight"
+    Branch protection bypasses carry security and compliance risks.
+
 ## Branch-Protection: Admin Bypass Allowed
 
 **Current score**: 9/10
