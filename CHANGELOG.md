@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.8.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.7.0...1.8.0) (2026-01-03)
+
+
+### New Content
+
+* add comprehensive GitHub Actions security patterns hub ([#209](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/209)) ([99b71d9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/99b71d9786b5d69abfc7b56a2bec6558f70f9df0))
+* add github app authentication decision guide ([#211](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/211)) ([e0b680b](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e0b680b5cb3602d88a87366f8b2d42aa6b501491))
+
+
+### Documentation Updates
+
+* shorten blog index admonition for faster access to posts ([#217](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/217)) ([6da7f14](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6da7f14177a4a65881816403adb4ae65694c1c42))
+
+
+### Content Fixes
+
+* add missing navigation entries from PR 208 ([#215](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/215)) ([7baaad8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/7baaad8be95c8902dc4c5033e9ae6c0fa47147d3))
+
 ## [1.7.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.6.0...1.7.0) (2026-01-03)
 
 
