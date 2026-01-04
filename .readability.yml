@@ -70,3 +70,18 @@ overrides:
       max_ari: 60
       max_fog: 50
       min_ease: -100
+
+  # Reference: Glossaries and reference material
+  # Short definitions and technical terms break readability formulas
+  # Intentionally concise, direct sentences for quick reference
+  - path: docs/reference/
+    thresholds:
+      max_grade: 50
+      max_ari: 60
+      max_fog: 50
+      min_ease: -100
+
+  # Includes: Snippet files for site-wide features
+  # Not meant to be read as standalone documents
+  - path: docs/includes/
+    exclude: true
