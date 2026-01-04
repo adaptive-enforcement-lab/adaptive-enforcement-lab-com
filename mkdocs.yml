@@ -8,7 +8,7 @@ site_description: >-
 repo_url: https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com
 repo_name: adaptive-enforcement-lab/adaptive-enforcement-lab-com
 copyright: |
-  &copy; 2025 <a href="https://adaptive-enforcement-lab.com" target="_blank" rel="noopener">Adaptive Enforcement Lab</a>
+  &copy; 2026 <a href="https://adaptive-enforcement-lab.com" target="_blank" rel="noopener">Adaptive Enforcement Lab</a>
 extra:
   generator: false
   homepage: https://adaptive-enforcement-lab.com
@@ -1080,7 +1080,5 @@ nav:
               - Least Privilege: patterns/security/secure-by-design/least-privilege.md
               - Fail Secure: patterns/security/secure-by-design/fail-secure.md
               - End-to-End Integration: patterns/security/secure-by-design/integration.md
-  - Reference:
-      - Glossary: reference/glossary/index.md
   - Roadmap: roadmap.md
   - Tags: tags.md
