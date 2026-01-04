@@ -426,6 +426,7 @@ nav:
       - GitHub Apps:
           - secure/github-apps/index.md
           - Authentication Decision Guide: secure/github-apps/authentication-decision-guide.md
+          - Authentication Flows: secure/github-apps/authentication-flows.md
           - Creating the App: secure/github-apps/creating-the-app.md
           - Storing Credentials:
               - secure/github-apps/storing-credentials/index.md

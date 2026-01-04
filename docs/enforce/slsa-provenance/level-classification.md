@@ -26,7 +26,6 @@ Determine the right SLSA level for your security posture and infrastructure.
     **Self-hosted ephemeral runners** = SLSA Level 3 achievable
 
     **Compliance requirement** = Usually SLSA Level 3
----
 
 ## Overview
 
@@ -37,7 +36,6 @@ SLSA level selection depends on three factors:
 3. **Compliance mandates** - What do auditors require?
 
 This guide provides decision trees for each scenario.
----
 
 ## Decision Tree: Requirements-Based Classification
 
@@ -76,7 +74,6 @@ graph TD
 ```
 
 **Key decision factors**: OpenSSF 10/10 requires Level 3 (non-negotiable). Compliance frameworks (SOC 2, ISO 27001, FedRAMP) often mandate provenance. High-security applications (payment, auth, infrastructure) benefit from Level 3 isolation. If build tampering is in your threat model, choose Level 3.
----
 
 ## Decision Tree: Runner Configuration Classification
 
@@ -117,7 +114,6 @@ graph TD
 ```
 
 **Critical questions**: Ephemeral (fresh VM per job, destroyed after) vs Persistent (same VM for multiple jobs). State isolation: Can jobs access previous job artifacts? Developer access: Can devs SSH to runners or modify configuration?
----
 
 ## Decision Tree: Self-Hosted Runner Evaluation
 
@@ -167,7 +163,6 @@ graph TD
 ```
 
 **Runner evaluation**: Kubernetes fresh pods achieve Level 3 (pod-per-job, no persistent volumes). VM autoscaling achieves Level 3 (VM-per-job, destroyed after). Dedicated runners max at Level 2 unless automated rebuild after each job. Docker-in-Docker max Level 2 (shared kernel/host OS).
----
 
 ## Classification Matrix
 
@@ -185,7 +180,6 @@ Quick reference for common scenarios:
 | Docker-in-Docker | Shared kernel | **Level 2** | Host OS shared |
 | Persistent VM | Shared | **Level 2** | Sequential jobs |
 | Developer workstation | No isolation | **Level 1** | Manual provenance |
----
 
 ## Compliance-Driven Classification
 
@@ -228,7 +222,6 @@ graph TD
 ```
 
 **OpenSSF Scorecard**: Level 3 required for 10/10. **SOC 2**: Type I accepts Level 2, Type II benefits from Level 3. **ISO 27001**: Level 2 demonstrates compliance, Level 3 exceeds. **FedRAMP**: Moderate/High expect Level 3. **PCI DSS**: Level 2 audit trail, Level 3 recommended for payment processing.
----
 
 ## Migration Decision Tree
 
@@ -264,7 +257,6 @@ graph TD
     style L2_6 fill:#ffd866,color:#1b1d1e
 
 ```
----
 
 ## Common Scenarios
 
@@ -275,7 +267,6 @@ graph TD
 | **Open source project** | GitHub-hosted | Level 3 | Free runners, OpenSSF badge, 1 week implementation |
 | **Financial services** | Ephemeral | Level 3 | FedRAMP/PCI compliance, build tampering detection required |
 | **Internal tooling** | Any | Level 1-2 | Low-security, basic audit trail, no compliance mandate |
----
 
 ## Upgrade Path
 
@@ -284,7 +275,6 @@ graph TD
 | **Level 0 → 1** | 1-2 days | Document build, record source commit, manual provenance | No infrastructure changes |
 | **Level 1 → 2** | 1 week | Automate provenance, service signing, CI/CD integration | Requires CI/CD pipeline |
 | **Level 2 → 3** | 2-3 weeks | Isolated builds, slsa-github-generator, verification workflows | **Requires GitHub-hosted or ephemeral runners** |
----
 
 ## Decision Tree: When to Stop at Level 2
 
@@ -324,7 +314,6 @@ graph TD
     style No5 fill:#a7e22e,color:#1b1d1e
 
 ```
----
 
 ## Key Takeaways
 
@@ -337,7 +326,6 @@ graph TD
 **Compliance often drives requirements**: OpenSSF Scorecard mandates Level 3, FedRAMP expects Level 3, SOC 2 accepts Level 2.
 
 **Level 2 is pragmatic for many scenarios**: Provides service-generated provenance, doesn't require infrastructure changes, sufficient for audit trail.
----
 
 ## FAQ
 
@@ -350,7 +338,6 @@ graph TD
 **Does Level 2 satisfy compliance requirements?** Depends on framework. SOC 2 and ISO 27001 accept Level 2. OpenSSF Scorecard and FedRAMP Moderate expect Level 3.
 
 **How long does Level 2 to Level 3 upgrade take?** 2-3 weeks including infrastructure changes, verification workflows, and policy updates. Longer if migrating runner infrastructure.
----
 
 ## Related Content
 
@@ -358,6 +345,4 @@ graph TD
 - **[SLSA Implementation Playbook](index.md)**: Complete adoption guide
 - **[Current SLSA Implementation](slsa-provenance.md)**: Level 3 workflow patterns
 - **[OpenSSF Scorecard](../../secure/scorecard/scorecard-compliance.md)**: SLSA impact on scores
----
-
 *Classification determines feasibility. Requirements determine necessity. Infrastructure determines timeline. Start with honest assessment of all three.*

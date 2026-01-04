@@ -202,7 +202,6 @@ rules:
   resources: ["configmaps"]
   resourceNames: ["backend-config", "feature-flags"]
   verbs: ["get", "watch"]
----
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
@@ -369,7 +368,4 @@ If security controls are bypassed:
 - [Network Policy Recipes](https://github.com/ahmetb/kubernetes-network-policy-recipes)
 - [RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
 - [Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
-
----
-
 *Security by design: zero trust, defense in depth, least privilege, fail secure. Enforce all layers.*

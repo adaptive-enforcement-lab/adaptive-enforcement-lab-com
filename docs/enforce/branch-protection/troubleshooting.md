@@ -79,7 +79,6 @@ See **[GitHub App Enforcement](github-app-enforcement.md)** troubleshooting sect
 
 **Repository not found**: Remove deleted repositories from Terraform state with `terraform state rm 'module.repo_protection["deleted-repo"]'`.
 
-
 ---
 
 ### Drift Detection and Remediation

@@ -357,7 +357,6 @@ For organization-wide enforcement across 100+ repositories, see **[Multi-Repo Ma
 4. Refactor to tier modules for consistency
 5. Configure drift detection for compliance
 
-
 For organization-wide patterns, see **[Multi-Repo Management](multi-repo-management.md)**.
 
 ---
