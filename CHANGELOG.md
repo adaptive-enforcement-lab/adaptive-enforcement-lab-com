@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.10.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.9.0...1.10.0) (2026-01-04)
+
+
+### New Content
+
+* **docs:** add comprehensive DevSecOps glossary with tooltips ([#225](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/225)) ([b8d58a0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b8d58a0273c29a0552c2dd34287e5e8c7ad49934))
+
 ## [1.9.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.8.1...1.9.0) (2026-01-03)
 
 
