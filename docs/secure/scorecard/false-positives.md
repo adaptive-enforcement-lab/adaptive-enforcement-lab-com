@@ -1,8 +1,8 @@
 ---
+title: False Positives
 description: >-
   Identify and resolve OpenSSF Scorecard false positives through investigation, documentation, and upstream issue reporting for common edge cases.
 ---
-
 # False Positives
 
 !!! tip "Key Insight"

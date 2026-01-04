@@ -1,4 +1,5 @@
 ---
+title: OPA Security Context Templates
 description: >-
   OPA Gatekeeper security context templates. Enforce runAsNonRoot and readOnlyRootFilesystem with complete Rego implementations.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Security Context Templates
 
 Enforces required security context fields to ensure containers run as non-root and use read-only filesystems. These baseline security controls prevent privilege abuse and runtime modifications.

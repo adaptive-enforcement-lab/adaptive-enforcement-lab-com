@@ -1,4 +1,5 @@
 ---
+title: Kyverno Generation Templates
 description: >-
   Kyverno generation policy templates that auto-create supporting resources like NetworkPolicies, ResourceQuotas, and PodDisruptionBudgets for new workloads and namespaces.
 tags:
@@ -9,7 +10,6 @@ tags:
   - policy-as-code
   - templates
 ---
-
 # Kyverno Generation Templates
 
 Kyverno generation policies automatically create supporting resources when specific conditions are met. Instead of relying on manual configuration or documentation, generation policies enforce security and resilience by default.

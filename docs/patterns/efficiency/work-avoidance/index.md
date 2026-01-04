@@ -1,4 +1,5 @@
 ---
+title: Work Avoidance
 description: >-
   Skip work when outcomes won't change. Detect unchanged content, existing resources, and cached outputs to prevent unnecessary PRs, builds, and processing cycles.
 tags:
@@ -9,7 +10,6 @@ tags:
   - developers
   - operators
 ---
-
 # Work Avoidance
 
 Skip work when the outcome won't change.

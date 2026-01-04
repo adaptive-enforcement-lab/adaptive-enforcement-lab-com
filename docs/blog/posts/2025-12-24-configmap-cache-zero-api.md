@@ -1,4 +1,5 @@
 ---
+title: "Zero API Calls: The ConfigMap Pattern That Changed Everything"
 date: 2025-12-24
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Argo workflows hitting API limits. 100+ calls per execution. The volume mount pattern that dropped it to zero.
 slug: configmap-cache-zero-api
 ---
-
 # Zero API Calls: The ConfigMap Pattern That Changed Everything
 
 The workflows were slowing down. Not dramatically. Just... gradually. Week by week.

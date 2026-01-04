@@ -1,4 +1,5 @@
 ---
+title: The 75-Repo PR Storm We Almost Created
 date: 2025-12-01
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   Content-based change detection saved us from PR fatigue.
 slug: the-75-repo-pr-storm
 ---
-
 # The 75-Repo PR Storm We Almost Created
 
 The workflow looked perfect. CONTRIBUTING.md in our central repository, automatically distributed to all 75 repositories. Any change triggers PRs across the organization.

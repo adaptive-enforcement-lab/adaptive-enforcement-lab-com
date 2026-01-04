@@ -1,3 +1,6 @@
+---
+title: Contributors Check
+---
 # Contributors Check
 
 !!! tip "Key Insight"

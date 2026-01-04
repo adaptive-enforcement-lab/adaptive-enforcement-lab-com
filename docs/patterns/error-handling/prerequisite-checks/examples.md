@@ -1,8 +1,8 @@
 ---
+title: Prerequisite Check Examples
 description: >-
   Production-ready prerequisite validation code for Kubernetes deployments, GitHub Actions workflows, database migrations, and Go applications with structured gates.
 ---
-
 # Prerequisite Check Examples
 
 Real-world implementations of prerequisite validation patterns.

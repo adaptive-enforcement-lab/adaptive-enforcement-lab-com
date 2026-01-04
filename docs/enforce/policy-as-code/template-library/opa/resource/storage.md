@@ -1,4 +1,5 @@
 ---
+title: OPA Storage Class Templates
 description: >-
   OPA Gatekeeper storage class templates. Enforce approved storage classes and PVC size constraints with complete Rego implementations.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Storage Class Templates
 
 OPA/Gatekeeper constraint templates for storage governance. Enforce approved storage classes, prevent expensive storage tiers, and control PVC sizes.

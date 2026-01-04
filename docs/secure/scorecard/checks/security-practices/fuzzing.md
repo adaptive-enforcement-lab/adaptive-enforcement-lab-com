@@ -1,4 +1,5 @@
 ---
+title: Fuzzing Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard Fuzzing check.
   Integrate continuous fuzz testing with OSS-Fuzz or ClusterFuzzLite.
@@ -9,7 +10,6 @@ tags:
   - security-testing
 
 ---
-
 # Fuzzing Check
 
 !!! tip "Key Insight"

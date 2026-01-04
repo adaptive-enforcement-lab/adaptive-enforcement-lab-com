@@ -1,4 +1,5 @@
 ---
+title: Advanced SLSA Patterns for Node.js
 tags:
   - slsa
   - provenance
@@ -15,7 +16,6 @@ tags:
 description: >-
   Advanced SLSA patterns for Node.js: provenance verification with slsa-verifier, container deployment patterns, common gotchas, and production best practices.
 ---
-
 # Advanced SLSA Patterns for Node.js
 
 Verification workflows, deployment gates, and production best practices.

@@ -1,4 +1,5 @@
 ---
+title: "The Score That Wouldn't Move: Stuck at 8/10"
 date: 2025-12-18
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Scorecard said 8/10. Signatures alone weren't enough. The gap between signed and provably built.
 slug: scorecard-stuck-at-eight
 ---
-
 # The Score That Wouldn't Move: Stuck at 8/10
 
 The releases were signed. Checksums published. SBOM generated. Every asset had a Cosign signature.

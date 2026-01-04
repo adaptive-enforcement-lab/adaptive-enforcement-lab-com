@@ -1,4 +1,5 @@
 ---
+title: "Should Work ≠ Does Work: The Always Works Methodology"
 date: 2025-12-08
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   not just reading it.
 slug: always-works-qa-methodology
 ---
-
 # Should Work ≠ Does Work: The Always Works Methodology
 
 "The code looks correct" is not the same as "I ran the code and it works."

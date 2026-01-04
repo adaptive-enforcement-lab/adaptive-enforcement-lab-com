@@ -1,4 +1,5 @@
 ---
+title: Kyverno Network Service Templates
 description: >-
   Enforce Kubernetes Service type restrictions with Kyverno policies controlling LoadBalancer, NodePort, and ExternalName usage to prevent cost overruns and security risks.
 tags:
@@ -10,7 +11,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Network Service Templates
 
 Enforces Service type restrictions and configuration standards. Prevents unauthorized LoadBalancers, NodePort exposure, and ExternalName DNS hijacking.

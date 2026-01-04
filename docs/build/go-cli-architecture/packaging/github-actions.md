@@ -1,8 +1,8 @@
 ---
+title: GitHub Actions Distribution
 description: >-
   Distribute Go CLIs as GitHub Actions with composite action pattern. Pre-built binaries eliminate compilation delays for fast CI/CD workflow execution.
 ---
-
 # GitHub Actions Distribution
 
 Distribute your Go CLI as a reusable GitHub Action.

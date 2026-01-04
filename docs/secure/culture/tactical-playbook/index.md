@@ -1,4 +1,5 @@
 ---
+title: Security Culture Playbook
 date: 2026-01-02
 authors:
   - mark
@@ -14,7 +15,6 @@ tags:
   - team-building
   - culture
 ---
-
 # Security Culture Playbook
 
 Building security-conscious engineering teams isn't about lectures, policies, or fear. It's about friction reduction, visibility, and incentives. This playbook translates security enforcement into developer-friendly automation that makes security the path of least resistance.

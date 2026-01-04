@@ -1,8 +1,8 @@
 ---
+title: Ci Integration
 description: >-
   Integrate OpenSSF Scorecard into CI/CD pipelines for automated security monitoring, regression prevention, and continuous compliance enforcement.
 ---
-
 # Ci Integration
 
 !!! tip "Key Insight"

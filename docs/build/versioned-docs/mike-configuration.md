@@ -1,8 +1,8 @@
 ---
+title: Mike Configuration
 description: >-
   Configure MkDocs Material with mike for multi-version documentation hosting. Includes version provider setup, local development workflows, and alias management.
 ---
-
 # Mike Configuration
 
 Configure MkDocs Material with mike for multi-version documentation hosting.

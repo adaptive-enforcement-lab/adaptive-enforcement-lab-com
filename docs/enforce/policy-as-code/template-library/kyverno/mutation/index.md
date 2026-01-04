@@ -1,4 +1,5 @@
 ---
+title: Kyverno Mutation Templates
 description: >-
   Kyverno mutation policies that auto-inject labels, sidecars, and configuration into Kubernetes workloads at admission time.
 tags:
@@ -7,7 +8,6 @@ tags:
   - policy-as-code
   - kubernetes
 ---
-
 # Kyverno Mutation Templates
 
 Mutation policies modify resources at admission time, before they're persisted to etcd. This approach enforces standards without blocking deployments or requiring manual manifest updates.

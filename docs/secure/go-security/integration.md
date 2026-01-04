@@ -1,9 +1,9 @@
 ---
+title: Integrated Workflow
 description: >-
   Automate Go security with pre-commit hooks and CI. Run golangci-lint, race detector,
   and coverage checks on every commit with zero friction and seamless integration.
 ---
-
 # Integrated Workflow
 
 Security tools only work if they run automatically. Pre-commit hooks catch issues before commit. CI pipelines enforce checks before merge.

@@ -1,8 +1,8 @@
 ---
+title: Retry Strategy
 description: >-
   Handle transient failures with exponential backoff and retry policies. Configure per-step retries, avoid tight loops, and distinguish permanent vs temporary errors.
 ---
-
 # Retry Strategy
 
 Transient failures are inevitable in distributed systems. API servers become temporarily unavailable. Rate limits kick in during bursts. Network partitions resolve themselves after seconds. A well-designed retry strategy handles these without human intervention.

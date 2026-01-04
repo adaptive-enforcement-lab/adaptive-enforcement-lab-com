@@ -1,8 +1,8 @@
 ---
+title: Go Modules Publishing
 description: >-
   Publish Go modules through git tags without explicit workflows. Version control automatically triggers package registry updates for module distribution.
 ---
-
 # Go Modules Publishing
 
 !!! tip "Key Insight"

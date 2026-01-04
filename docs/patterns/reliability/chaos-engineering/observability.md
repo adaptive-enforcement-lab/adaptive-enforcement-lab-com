@@ -1,4 +1,5 @@
 ---
+title: Observability Patterns
 description: >-
   Instrument chaos experiments with Prometheus metrics, Grafana dashboards, circuit breaker state tracking, and alert rules for validating resilience patterns.
 tags:
@@ -7,7 +8,6 @@ tags:
   - metrics
   - prometheus
 ---
-
 # Observability Patterns
 
 ## Key Metrics to Instrument

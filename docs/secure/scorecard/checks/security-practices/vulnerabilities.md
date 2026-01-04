@@ -1,4 +1,5 @@
 ---
+title: Vulnerabilities Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard Vulnerabilities check.
   Fix known CVEs and automate dependency security with Dependabot or Renovate.
@@ -10,7 +11,6 @@ tags:
   - cve
 
 ---
-
 # Vulnerabilities Check
 
 !!! tip "Key Insight"

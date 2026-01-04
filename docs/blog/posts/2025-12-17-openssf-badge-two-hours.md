@@ -1,4 +1,5 @@
 ---
+title: "OpenSSF Best Practices Badge in 2 Hours: The Documentation Gap"
 date: 2025-12-17
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Earned OpenSSF Best Practices certification in 2 hours. The gap wasn't code quality. It was contributor documentation.
 slug: openssf-badge-two-hours
 ---
-
 # OpenSSF Best Practices Badge in 2 Hours: The Documentation Gap
 
 Six pull requests. Two hours. OpenSSF Best Practices badge earned.

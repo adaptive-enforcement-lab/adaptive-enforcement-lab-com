@@ -1,4 +1,5 @@
 ---
+title: Work Avoidance in GitHub Actions
 description: >-
   Skip unnecessary CI/CD operations before execution. Detect unchanged content, cached builds, and irrelevant paths to reduce workflow costs and execution time.
 tags:
@@ -9,7 +10,6 @@ tags:
   - developers
   - operators
 ---
-
 # Work Avoidance in GitHub Actions
 
 Apply [work avoidance patterns](../../../../patterns/efficiency/work-avoidance/index.md) to skip unnecessary CI/CD operations.

@@ -1,4 +1,5 @@
 ---
+title: "The Wall at 85%: When Tests Aren't the Problem"
 date: 2025-12-19
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   85% coverage. Comprehensive tests. Couldn't go higher. The blocker wasn't tests. It was code.
 slug: wall-at-eighty-five-percent
 ---
-
 # The Wall at 85%: When Tests Aren't the Problem
 
 The test suite was comprehensive. Table-driven tests. Error paths covered. Race detector enabled.

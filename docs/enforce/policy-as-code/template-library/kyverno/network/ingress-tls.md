@@ -1,4 +1,5 @@
 ---
+title: Kyverno Ingress TLS Templates
 description: >-
   Enforce TLS encryption on all Ingress resources with Kyverno policies preventing cleartext HTTP traffic and ensuring cert-manager integration.
 tags:
@@ -11,7 +12,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Ingress TLS Templates
 
 Enforces TLS encryption requirements for Ingress resources. Ensures production workloads use HTTPS with valid certificates and automated renewal.

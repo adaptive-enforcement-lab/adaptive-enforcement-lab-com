@@ -1,4 +1,5 @@
 ---
+title: Test Coverage Patterns
 description: >-
   Achieve 95%+ test coverage through complexity management and refactoring for testability. Break coverage walls by simplifying code, not adding mocks.
 tags:
@@ -9,7 +10,6 @@ tags:
   - quality-gates
   - developers
 ---
-
 # Test Coverage Patterns
 
 High test coverage (95%+) as a quality gate, achieved through complexity management and refactoring for testability.

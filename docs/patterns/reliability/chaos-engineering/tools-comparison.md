@@ -1,4 +1,5 @@
 ---
+title: Chaos Engineering Tools Comparison
 description: >-
   Chaos Mesh vs LitmusChaos comparison. Tool capabilities, use cases, and selection guidance for Kubernetes chaos engineering.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - tools
 ---
-
 # Chaos Engineering Tools Comparison
 
 !!! note "Tool Selection Depends on Maturity"

@@ -1,8 +1,8 @@
 ---
+title: Volatile Field Exclusion
 description: >-
   Strip version stamps, timestamps, and build IDs before comparison. Prevent false positives from automated fields in distributed configs and generated files.
 ---
-
 # Volatile Field Exclusion
 
 Strip fields that change without affecting semantics before comparison.

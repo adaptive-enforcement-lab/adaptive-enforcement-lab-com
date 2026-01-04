@@ -1,4 +1,5 @@
 ---
+title: OPA Image Digest Templates
 description: >-
   OPA Gatekeeper image digest enforcement. Require SHA256 digest references for immutable deployments and supply chain security.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Image Digest Templates
 
 Enforces SHA256 digest references instead of mutable tags. Digest-based references ensure immutable deployments and prevent tag-based image substitution attacks.

@@ -1,4 +1,5 @@
 ---
+title: Shipping a GitHub Action the Right Way
 date: 2025-12-06
 authors:
   - mark
@@ -10,7 +11,6 @@ slug: shipping-a-github-action-the-right-way
 description: >-
   Publishing a GitHub Action with versioned docs, automated releases, and proper change detection. Here's the pattern.
 ---
-
 # Shipping a GitHub Action the Right Way
 
 I just published [readability](https://github.com/adaptive-enforcement-lab/readability), a GitHub Action that checks docs. But this post isn't about metrics. It's about the release system that makes shipping easy.

@@ -1,4 +1,5 @@
 ---
+title: "Environment Progression Testing: Dev → Stage → Prod Validation"
 date: 2025-12-16
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Test deployments across environments before production. Automate smoke tests at each stage.
 slug: environment-progression-testing
 ---
-
 # Environment Progression Testing: Dev → Stage → Prod Validation
 
 The deployment worked in dev. Unit tests passed. Code review approved. Merged to main.

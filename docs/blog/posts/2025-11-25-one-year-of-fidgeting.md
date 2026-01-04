@@ -1,4 +1,5 @@
 ---
+title: "One Year of Fidgeting: The Journey to Enterprise-Grade Content Distribution"
 date: 2025-11-25
 authors:
   - mark
@@ -10,7 +11,6 @@ categories:
   - Retrospective
 slug: one-year-of-fidgeting-with-github-app-automation
 ---
-
 # One Year of Fidgeting: The Journey to Enterprise-Grade Content Distribution
 
 Today marks a milestone. The Adaptive Enforcement Lab documentation site is live, and with it, a year's worth of battle-tested patterns for GitHub App automation finally have a proper home.

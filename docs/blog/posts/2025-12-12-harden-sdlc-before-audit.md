@@ -1,4 +1,5 @@
 ---
+title: How to Harden Your SDLC Before the Audit Comes
 date: 2025-12-12
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   Enforcement will. Here's what actually passes SOC 2.
 slug: harden-sdlc-before-audit
 ---
-
 # How to Harden Your SDLC Before the Audit Comes
 
 The email arrived on a Monday. "SOC 2 audit in 30 days. Need evidence of secure development practices."

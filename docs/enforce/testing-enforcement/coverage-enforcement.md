@@ -1,8 +1,8 @@
 ---
+title: Test Coverage Enforcement
 description: >-
   Enforce test coverage thresholds with codecov.yml as single source of truth. CI integration, pre-commit hooks, and component-level coverage tracking.
 ---
-
 # Test Coverage Enforcement
 
 Single-source-of-truth threshold management with Codecov, CI enforcement, and pre-commit hooks.

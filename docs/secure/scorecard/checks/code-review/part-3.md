@@ -1,8 +1,8 @@
 ---
+title: Repository Maintenance
 description: >-
   Verify repository maintenance through commit activity, issue resolution, and contributor engagement metrics to assess project health and security.
 ---
-
 # Repository Maintenance
 
 !!! tip "Key Insight"

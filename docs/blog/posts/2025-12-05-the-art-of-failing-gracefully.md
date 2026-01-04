@@ -1,4 +1,5 @@
 ---
+title: "The Art of Failing Gracefully: Tiered Fallbacks for CI/CD"
 date: 2025-12-05
 authors:
   - mark
@@ -10,7 +11,6 @@ slug: the-art-of-failing-gracefully
 description: >-
   When your fast path fails, don't crash. Build tiered fallbacks that degrade performance, not availability.
 ---
-
 # The Art of Failing Gracefully: Tiered Fallbacks for CI/CD
 
 My workflow reads deployment mappings from a ConfigMap mounted as a volume. Five milliseconds, zero API calls. But what happens when the mount fails?

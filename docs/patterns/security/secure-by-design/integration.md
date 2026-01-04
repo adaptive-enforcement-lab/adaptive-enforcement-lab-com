@@ -1,4 +1,5 @@
 ---
+title: End-to-End Deployment
 description: >-
   End-to-end secure-by-design deployment example combining zero trust, defense in depth, least privilege, and fail-secure patterns with complete security audit checklist.
 tags:
@@ -7,7 +8,6 @@ tags:
   - integration
   - deployment
 ---
-
 # End-to-End Deployment
 
 Complete example combining all secure-by-design patterns into a production-ready deployment.

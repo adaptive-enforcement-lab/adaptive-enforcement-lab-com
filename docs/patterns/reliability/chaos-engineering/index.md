@@ -1,4 +1,5 @@
 ---
+title: Chaos Engineering for Kubernetes
 description: >-
   Chaos engineering for Kubernetes with Chaos Mesh and LitmusChaos. Pod deletion, network chaos, resource chaos, blast radius control, and validation patterns for reliability testing.
 tags:
@@ -8,7 +9,6 @@ tags:
   - testing
   - sre
 ---
-
 # Chaos Engineering for Kubernetes
 
 Chaos engineering transforms reliability from a passive afterthought into an active practice. Instead of waiting for failures to happen, you intentionally inject faults into your systems under controlled conditions. This reveals weaknesses before they become production incidents.

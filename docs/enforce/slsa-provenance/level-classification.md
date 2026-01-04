@@ -1,4 +1,5 @@
 ---
+title: SLSA Level Classification: Decision Trees
 tags:
   - slsa
   - provenance
@@ -13,7 +14,6 @@ tags:
 description: >-
   SLSA level classification decision trees: determine your target SLSA level based on security requirements, runner configuration, and compliance needs. Includes self-hosted runner evaluation.
 ---
-
 # SLSA Level Classification: Decision Trees
 
 Determine the right SLSA level for your security posture and infrastructure.

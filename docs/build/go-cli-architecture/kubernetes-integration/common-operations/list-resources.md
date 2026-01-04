@@ -1,8 +1,8 @@
 ---
+title: List Resources
 description: >-
   Query Kubernetes resources with server-side label selectors for efficient filtering. Reduce network traffic and memory usage in CLI operations.
 ---
-
 # List Resources
 
 Query Kubernetes resources with label selectors.

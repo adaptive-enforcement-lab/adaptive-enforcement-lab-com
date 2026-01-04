@@ -1,8 +1,8 @@
 ---
+title: Unit Testing
 description: >-
   Use fake clients and interface-based design for fast unit tests. Table-driven tests with fakes inspect state without mock complexity for CLI logic.
 ---
-
 # Unit Testing
 
 Use fake clients and interface-based design for fast, reliable unit tests.

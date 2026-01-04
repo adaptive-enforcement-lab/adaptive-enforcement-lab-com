@@ -1,8 +1,8 @@
 ---
+title: Tier 1 Troubleshooting
 description: >-
   Troubleshoot common OpenSSF Scorecard implementation challenges including permission errors, workflow configuration, and branch protection conflicts.
 ---
-
 # Tier 1 Troubleshooting
 
 !!! tip "Key Insight"

@@ -1,8 +1,8 @@
 ---
+title: Local Development with Policy-as-Code
 description: >-
   Run Kyverno policy validation locally with policy-platform containers. Zero local setup, same tools as CI, instant feedback before committing code changes.
 ---
-
 # Local Development with Policy-as-Code
 
 Run the same policy validation locally that runs in CI. Catch issues in seconds, not hours.

@@ -1,4 +1,5 @@
 ---
+title: Resource Chaos Experiments
 description: >-
   Resource chaos experiments. Memory pressure and CPU stress testing with OOM kill validation and recovery procedures.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - experiments
 ---
-
 # Resource Chaos Experiments
 
 Memory pressure and CPU stress testing to validate resource limit enforcement and graceful degradation.

@@ -1,4 +1,5 @@
 ---
+title: OpenSSF Scorecard Compliance
 description: >-
   Clear OpenSSF Scorecard findings with job-level permissions, dependency pinning, source
   archive signing. Practical workflow patterns for 10/10 Scorecard scores.
@@ -11,7 +12,6 @@ tags:
   - developers
   - operators
 ---
-
 # OpenSSF Scorecard Compliance
 
 Practical patterns for clearing Scorecard findings: job-level permissions, dependency pinning, and source archive signing.

@@ -1,4 +1,5 @@
 ---
+title: "Event-Driven Deployments with Argo: The Journey to Zero-Latency Automation"
 date: 2025-12-14
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   Image push triggers deployment restart. No polling. No manual steps. Full automation.
 slug: event-driven-deployments-argo
 ---
-
 # Event-Driven Deployments with Argo: The Journey to Zero-Latency Automation
 
 The [From 5 Seconds to 5 Milliseconds](2025-11-29-from-5-seconds-to-5-milliseconds.md) post showed how caching eliminated cluster scans. But that was only half the story. The real magic happens in how events flow through the system.

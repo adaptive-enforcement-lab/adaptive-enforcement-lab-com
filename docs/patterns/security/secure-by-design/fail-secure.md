@@ -1,4 +1,5 @@
 ---
+title: Fail Secure
 description: >-
   Fail-secure pattern for Kubernetes. Admission webhooks with safe failure modes, policy enforcement at admission time, and audit logging.
 tags:
@@ -7,7 +8,6 @@ tags:
   - admission-control
   - policy-enforcement
 ---
-
 # Fail Secure
 
 Fail secure means the system defaults to denying access. Failures default to safe states.

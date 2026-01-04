@@ -1,4 +1,5 @@
 ---
+title: Chaos Experiment Catalog
 description: >-
   Chaos experiment catalog overview. Pod deletion, network latency, memory pressure, and dependency failure experiment categories.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - scenarios
 ---
-
 # Chaos Experiment Catalog
 
 Each experiment follows this structure:

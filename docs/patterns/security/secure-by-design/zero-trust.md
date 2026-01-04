@@ -1,4 +1,5 @@
 ---
+title: Zero Trust Patterns
 description: >-
   Zero trust patterns for Kubernetes. Service mesh mTLS, mutual authentication, certificate rotation, and network-level verification.
 tags:
@@ -7,7 +8,6 @@ tags:
   - service-mesh
   - security
 ---
-
 # Zero Trust Patterns
 
 Zero trust rejects implicit trust. Every service, workload, and request proves its identity and intent. The network becomes a verification layer.

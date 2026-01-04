@@ -1,4 +1,5 @@
 ---
+title: Fail Fast
 tags:
   - fail-fast
   - error-handling
@@ -8,7 +9,6 @@ tags:
 description: >-
   Detect and halt on precondition failures before expensive operations begin. Validate inputs, permissions, and state upfront in CI/CD and automation workflows.
 ---
-
 # Fail Fast
 
 Detect and report problems as early as possible, before they cascade into larger failures.

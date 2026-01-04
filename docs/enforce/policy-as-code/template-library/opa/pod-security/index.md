@@ -1,4 +1,5 @@
 ---
+title: OPA Pod Security Templates
 description: >-
   OPA pod security policies preventing privileged containers, restricting Linux capabilities, and enforcing security contexts in Kubernetes.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - security
 ---
-
 # OPA Pod Security Templates
 
 Pod security policies written in Rego prevent privilege escalation and enforce security boundaries for containerized workloads.

@@ -1,4 +1,5 @@
 ---
+title: Build
 description: >-
   Production-grade Go CLI patterns, automated release workflows with Release Please, versioned docs, and coverage enforcement for DevSecOps build pipelines.
 tags:
@@ -8,7 +9,6 @@ tags:
   - developers
   - github-actions
 ---
-
 # Build
 
 Development tools and release processes.

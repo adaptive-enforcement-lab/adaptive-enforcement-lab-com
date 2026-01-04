@@ -1,8 +1,8 @@
 ---
+title: High Availability
 description: >-
   Eliminate single points of failure with HA configurations. Deploy redundant EventBus, EventSource, and Sensor replicas across availability zones.
 ---
-
 # High Availability
 
 Production event systems require redundancy. Single points of failure cause outages. High availability (HA) configurations ensure events continue flowing even when components fail.

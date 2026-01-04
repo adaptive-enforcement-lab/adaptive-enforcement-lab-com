@@ -1,4 +1,5 @@
 ---
+title: Kyverno Image Validation Templates
 description: >-
   Kyverno image validation: registry allowlists, digests, signatures, and CVE scanning gates for K8s supply chain security.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Image Validation Templates
 
 Enforce container image security controls before deployment. These policies validate image sources, require cryptographic signatures, enforce digest-based references, and block images with critical vulnerabilities.

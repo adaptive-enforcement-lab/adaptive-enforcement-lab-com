@@ -1,4 +1,5 @@
 ---
+title: Tier 2: Score 8 to 9 (Strong Posture → Advanced Security)
 description: >-
   Advanced security improvements for Scorecard scores 8 to 9. SLSA provenance, SHA pinning,
   SAST integration. Build integrity and comprehensive supply chain protections.
@@ -11,7 +12,6 @@ tags:
   - provenance
 
 ---
-
 # Tier 2: Score 8 to 9 (Strong Posture → Advanced Security)
 
 !!! tip "Key Insight"

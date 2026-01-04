@@ -1,8 +1,8 @@
 ---
+title: Extra-Files
 description: >-
   Track versions in arbitrary files using x-release-please-version annotations. Configure extra-files for documentation, APIs, and distributed content versioning.
 ---
-
 # Extra-Files
 
 Track versions in arbitrary files using the `extra-files` configuration.

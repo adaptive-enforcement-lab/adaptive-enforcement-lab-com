@@ -1,4 +1,5 @@
 ---
+title: Risk Prioritization Framework for Engineers
 tags:
   - risk-management
   - security
@@ -8,7 +9,6 @@ tags:
 description: >-
   Risk prioritization framework for engineers. CVSS interpretation, exploitability analysis, blast radius calculation, and decision trees for patch management and vulnerability remediation.
 ---
-
 # Risk Prioritization Framework for Engineers
 
 Making fast, defensible decisions about vulnerability remediation under pressure. This framework translates security metrics into actionable engineering decisions.

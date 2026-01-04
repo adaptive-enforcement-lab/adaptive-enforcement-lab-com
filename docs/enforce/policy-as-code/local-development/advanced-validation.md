@@ -1,8 +1,8 @@
 ---
+title: Advanced Validation Patterns
 description: >-
   Generate policy reports, detect deprecated APIs with Pluto, and validate Helm values with Spectral. Advanced Kyverno CLI patterns for local development.
 ---
-
 # Advanced Validation Patterns
 
 Deep-dive into policy reports, deprecated API detection, and schema validation for local development.

@@ -1,8 +1,8 @@
 ---
+title: Pre-Commit Hooks & IDE Integration
 description: >-
   Pre-commit hooks and IDE integration for shift-left security. Fast, auto-fixing checks that catch issues before code review without slowing developers down.
 ---
-
 # Pre-Commit Hooks & IDE Integration
 
 Shift left without friction. Catch security issues as early as possible, before they reach code review.

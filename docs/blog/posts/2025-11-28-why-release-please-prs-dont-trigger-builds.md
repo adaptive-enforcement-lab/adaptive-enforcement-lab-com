@@ -1,4 +1,5 @@
 ---
+title: Why Release-Please PRs Don't Trigger Your Builds
 date: 2025-11-28
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   and the dual-trigger pattern that fixes it.
 slug: why-release-please-prs-dont-trigger-builds
 ---
-
 # Why Release-Please PRs Don't Trigger Your Builds
 
 !!! warning "Update: There's a Better Way"

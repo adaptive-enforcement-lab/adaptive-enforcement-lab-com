@@ -1,4 +1,5 @@
 ---
+title: Argo Events
 description: >-
   Build event-driven Kubernetes automation with Argo Events. Connect external systems to reactive workflows using EventSources, EventBus, and Sensors.
 tags:
@@ -9,7 +10,6 @@ tags:
   - automation
   - operators
 ---
-
 # Argo Events
 
 Argo Events is an event-driven workflow automation framework for Kubernetes. It connects external event sources to Argo Workflows, enabling reactive automation. For comprehensive documentation, see the [official Argo Events docs](https://argoproj.github.io/argo-events/).

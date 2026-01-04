@@ -1,4 +1,5 @@
 ---
+title: Running Experiments Safely
 description: >-
   Running chaos experiments safely. Pre-experiment checklist, execution best practices, monitoring, and common pitfalls.
 tags:
@@ -7,7 +8,6 @@ tags:
   - safety
   - best-practices
 ---
-
 # Running Experiments Safely
 
 ## Pre-Experiment Checklist

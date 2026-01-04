@@ -1,4 +1,5 @@
 ---
+title: Kyverno Resource Limits Templates
 description: >-
   Enforce CPU and memory resource limits for all Kubernetes workloads with Kyverno policies preventing resource exhaustion and noisy neighbor OOM kill problems.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Resource Limits Templates
 
 Ensures all workloads define CPU and memory requests and limits. Prevents resource starvation and noisy neighbor problems.

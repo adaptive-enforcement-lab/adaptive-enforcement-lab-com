@@ -1,4 +1,5 @@
 ---
+title: Score Progression Guide
 description: >-
   Prioritized roadmap for improving OpenSSF Scorecard scores from 7 to 10.
   Learn which checks to fix first and estimate effort for each score tier.
@@ -10,7 +11,6 @@ tags:
   - developers
   - operators
 ---
-
 # Score Progression Guide
 
 Systematic approach to improving your OpenSSF Scorecard score. Prioritized fixes from 7 to 8 to 9 to 10.

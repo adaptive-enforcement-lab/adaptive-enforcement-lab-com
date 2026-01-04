@@ -1,4 +1,5 @@
 ---
+title: OPA LimitRange and Ephemeral Storage Templates
 description: >-
   OPA Gatekeeper LimitRange and ephemeral storage templates. Enforce default resource limits and storage constraints with Rego implementations.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA LimitRange and Ephemeral Storage Templates
 
 OPA/Gatekeeper constraint templates for LimitRange enforcement and ephemeral storage governance. Ensure namespaces have default resource limits and prevent disk exhaustion.

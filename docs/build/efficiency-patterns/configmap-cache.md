@@ -1,4 +1,5 @@
 ---
+title: ConfigMap as Cache Pattern
 tags:
   - kubernetes
   - performance
@@ -11,7 +12,6 @@ tags:
 description: >-
   ConfigMap as volume mount pattern for zero-API-overhead caching in Kubernetes workflows and jobs. Sub-millisecond lookups, no rate limits, clean implementation.
 ---
-
 # ConfigMap as Cache Pattern
 
 Zero-API-overhead caching for Kubernetes workflows and jobs. Volume mount pattern for sub-millisecond lookups without Kubernetes API calls.

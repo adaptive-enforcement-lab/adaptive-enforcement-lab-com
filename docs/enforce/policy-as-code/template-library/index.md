@@ -1,4 +1,5 @@
 ---
+title: Policy-as-Code Template Library
 description: >-
   Production-ready policy template library: 48 battle-tested policies (28 Kyverno + 20 OPA). Pod security, image validation, RBAC, resource governance, network security, and CI/CD integration.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Policy-as-Code Template Library
 
 **48 production-ready policies** for Kubernetes security and governance. Reduce the Rego learning curve. Copy, customize, deploy.

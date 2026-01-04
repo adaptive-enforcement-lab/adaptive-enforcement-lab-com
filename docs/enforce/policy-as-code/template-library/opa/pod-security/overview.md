@@ -1,4 +1,5 @@
 ---
+title: OPA Pod Security Templates
 description: >-
   OPA Gatekeeper pod security templates. Block privileged containers and host namespaces with complete Rego implementations.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Pod Security Templates
 
 OPA/Gatekeeper constraint templates for pod security enforcement. Block privileged containers and host namespace access with production-tested Rego implementations.

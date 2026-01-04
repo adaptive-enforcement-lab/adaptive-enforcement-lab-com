@@ -1,4 +1,5 @@
 ---
+title: Enterprise Supply Chain & Multi-Tenancy
 description: >-
   Enterprise supply chain security and multi-tenancy policies using JMESPath. Image signing, digest pinning, vulnerability scanning, and tenant isolation.
 tags:
@@ -8,7 +9,6 @@ tags:
   - multi-tenancy
   - kubernetes
 ---
-
 # Enterprise Supply Chain & Multi-Tenancy
 
 Advanced JMESPath patterns for supply chain security and multi-tenant isolation. Enforce image signing, digest pinning, vulnerability gates, and tenant isolation policies.

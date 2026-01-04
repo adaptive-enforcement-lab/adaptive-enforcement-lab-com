@@ -1,4 +1,5 @@
 ---
+title: "Git Diff Lies: The Untracked File Trap in CI/CD Pipelines"
 date: 2025-11-26
 authors:
   - mark
@@ -9,7 +10,6 @@ categories:
   - Shell Scripting
 slug: git-diff-lies-the-untracked-file-trap
 ---
-
 # Git Diff Lies: The Untracked File Trap in CI/CD Pipelines
 
 One conditional swap in a change detection script. That's all it took to unblock a file distribution workflow that had been silently failing for weeks.

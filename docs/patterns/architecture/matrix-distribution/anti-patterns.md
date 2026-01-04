@@ -1,8 +1,8 @@
 ---
+title: Anti-Patterns
 description: >-
   Avoid hardcoded lists, missing fail-fast disable, unbounded parallelism, and empty list handling errors in GitHub Actions matrix distribution workflows.
 ---
-
 # Anti-Patterns
 
 Common mistakes to avoid in matrix distribution workflows.

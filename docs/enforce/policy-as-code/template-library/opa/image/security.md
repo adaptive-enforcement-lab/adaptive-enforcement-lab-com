@@ -1,4 +1,5 @@
 ---
+title: OPA Image Security Templates
 description: >-
   OPA Gatekeeper image security templates. Enforce registry allowlists and tag validation with complete Rego implementations.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Image Security Templates
 
 OPA/Gatekeeper constraint templates for container image security. Enforce registry allowlists, block `latest` tags, and validate image sources with production-tested Rego implementations.

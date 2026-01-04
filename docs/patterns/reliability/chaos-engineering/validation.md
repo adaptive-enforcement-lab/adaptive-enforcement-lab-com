@@ -1,4 +1,5 @@
 ---
+title: Validation Patterns
 description: >-
   Validate chaos experiments with SLI monitoring, incident detection testing, auto-remediation verification, and post-experiment analysis for reliability goals.
 tags:
@@ -7,7 +8,6 @@ tags:
   - sli
   - observability
 ---
-
 # Validation Patterns
 
 Chaos without validation is just breaking things. Validation transforms it into reliability engineering.

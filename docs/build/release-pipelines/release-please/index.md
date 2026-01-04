@@ -1,4 +1,5 @@
 ---
+title: Release-Please Configuration
 description: >-
   Configure automated versioning with release-please. Set up semantic versioning, changelog generation, and monorepo support using GitHub App token authentication.
 tags:
@@ -9,7 +10,6 @@ tags:
   - ci-cd
   - developers
 ---
-
 # Release-Please Configuration
 
 [Release-please](https://github.com/marketplace/actions/release-please-action) automates version management based on conventional commits. It creates release PRs with updated changelogs, version bumps, and Git tags.

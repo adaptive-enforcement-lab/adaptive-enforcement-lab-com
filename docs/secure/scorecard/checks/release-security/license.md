@@ -1,4 +1,5 @@
 ---
+title: License Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard License check.
   Add OSI-approved license for legal clarity and open source compliance.
@@ -9,7 +10,6 @@ tags:
   - legal
 
 ---
-
 # License Check
 
 !!! tip "Key Insight"

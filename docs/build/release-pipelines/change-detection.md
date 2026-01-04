@@ -1,8 +1,8 @@
 ---
+title: Change Detection
 description: >-
   Detect changed components and skip unnecessary builds in monorepos. Implement cascade dependencies using tj-actions/changed-files with conditional job execution.
 ---
-
 # Change Detection
 
 Detect which components changed and skip unnecessary builds. This reduces CI time and resource usage in monorepos.

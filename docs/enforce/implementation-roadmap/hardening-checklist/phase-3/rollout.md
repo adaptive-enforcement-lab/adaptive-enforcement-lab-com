@@ -1,4 +1,5 @@
 ---
+title: Phase 3: Policy Rollout Strategy
 description: >-
   Policy rollout strategy for runtime enforcement. Audit-first approach, violation monitoring, phased enforcement, and metrics tracking for safe Kyverno deployment.
 tags:
@@ -8,7 +9,6 @@ tags:
   - monitoring
   - kyverno
 ---
-
 # Phase 3: Policy Rollout Strategy
 
 Deploy policies safely with audit-first approach.

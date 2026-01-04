@@ -1,4 +1,5 @@
 ---
+title: "The File That Wouldn't Verify: When Security Best Practices Contradict"
 date: 2025-12-23
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   SLSA provenance generated successfully. Verification failed. Version tags contradicted security advice. The exception that had to be documented.
 slug: file-wouldnt-verify
 ---
-
 # The File That Wouldn't Verify: When Security Best Practices Contradict
 
 The provenance file generated perfectly. Build completed. Release uploaded.

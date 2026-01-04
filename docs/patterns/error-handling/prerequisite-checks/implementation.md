@@ -1,4 +1,5 @@
 ---
+title: Prerequisite Check Implementation
 description: >-
   Implementation patterns for prerequisite checks including cost-based ordering, error collection strategies, and anti-patterns to avoid.
 tags:
@@ -6,7 +7,6 @@ tags:
   - implementation
   - patterns
 ---
-
 # Prerequisite Check Implementation
 
 Cost-based ordering, implementation patterns, and anti-patterns for prerequisite validation.

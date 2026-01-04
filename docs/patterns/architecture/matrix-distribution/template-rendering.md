@@ -1,8 +1,8 @@
 ---
+title: Template Rendering
 description: >-
   Variable substitution with envsubst, jq transformations, YAML templating, and file format conversions for distributed configuration across multiple targets.
 ---
-
 # Template Rendering
 
 Variable substitution and file transformations for distributed content.

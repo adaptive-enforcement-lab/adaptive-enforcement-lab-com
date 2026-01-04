@@ -1,4 +1,5 @@
 ---
+title: Kyverno HPA Requirements Templates
 description: >-
   Enforce HorizontalPodAutoscaler requirements with Kyverno policies ensuring proper configuration, resource metrics, and scaling boundaries.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno HPA Requirements Templates
 
 Ensures HorizontalPodAutoscalers are properly configured with resource requests, scaling boundaries, and target metrics. Prevents misconfigured autoscalers that fail to scale or cause resource thrashing.

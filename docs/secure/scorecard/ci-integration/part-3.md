@@ -1,8 +1,8 @@
 ---
+title: Enforcement Patterns
 description: >-
   Enforce minimum Scorecard thresholds in CI pipelines to prevent security regressions and maintain continuous compliance with GitHub Actions.
 ---
-
 # Enforcement Patterns
 
 !!! tip "Key Insight"

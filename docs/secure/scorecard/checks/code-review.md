@@ -1,3 +1,9 @@
+---
+title: Code Review
+description: >-
+  Implement code review requirements for OpenSSF Scorecard compliance.
+  Multi-part guide covering GitHub review settings, automation, and approval workflows.
+---
 # Code Review
 
 !!! tip "Key Insight"

@@ -1,8 +1,8 @@
 ---
+title: Sensor Configuration
 description: >-
   Route events to workflows with Sensors. Master event filtering, parameter extraction, multi-action routing, and rate limiting for production event processing.
 ---
-
 # Sensor Configuration
 
 Sensors are the decision-makers in Argo Events. They subscribe to events from the EventBus, evaluate filter conditions, and trigger downstream actions when those conditions are met. A well-designed sensor can route hundreds of different event types to the appropriate workflows while filtering out noise.

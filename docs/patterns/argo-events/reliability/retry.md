@@ -1,8 +1,8 @@
 ---
+title: Retry Strategies
 description: >-
   Recover from transient failures automatically with retry strategies. Configure exponential backoff, jitter, and trigger-level retries for reliable event flow.
 ---
-
 # Retry Strategies
 
 Transient failures like network timeouts, temporary service unavailability, and rate limits are common in distributed systems. Retry strategies automatically recover from these failures without manual intervention. For the complete reference, see the [official Trigger Retry docs](https://argoproj.github.io/argo-events/sensors/triggers/intro/#policy).

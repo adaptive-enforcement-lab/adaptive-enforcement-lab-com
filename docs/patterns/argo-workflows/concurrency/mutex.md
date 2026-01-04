@@ -1,8 +1,8 @@
 ---
+title: Mutex Synchronization
 description: >-
   Enforce single-execution guarantees with mutex synchronization. Queue workflows for shared resources, prevent overlapping deployments, and eliminate race conditions.
 ---
-
 # Mutex Synchronization
 
 A mutex (mutual exclusion) ensures only one workflow instance can run at a time. When a workflow acquires a mutex, other workflows requesting the same mutex wait in a queue. When the first workflow completes, the next in queue proceeds.

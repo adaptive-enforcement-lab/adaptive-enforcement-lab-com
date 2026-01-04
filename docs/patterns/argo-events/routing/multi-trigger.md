@@ -1,8 +1,8 @@
 ---
+title: Multi-Trigger Actions
 description: >-
   Execute multiple parallel actions from single events. Fan-out patterns enable coordinated workflows, notifications, and audit logging from one event source.
 ---
-
 # Multi-Trigger Actions
 
 A single Sensor can trigger multiple independent actions from one event. This fan-out pattern enables parallel processing, notifications, and coordinated responses. For the complete trigger reference, see the [official Triggers documentation](https://argoproj.github.io/argo-events/sensors/triggers/intro/).

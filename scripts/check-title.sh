@@ -16,6 +16,7 @@ EXCEPTION_PATTERNS=(
     "^README\.md$"                 # No title needed
     "^\.content-machine/"          # Internal planning docs
     "^docs/tags\.md$"              # Special generated page
+    "^docs/includes/"              # Include files
     "/\.meta\.yml$"                # Directory-wide metadata files
 )
 

@@ -1,4 +1,5 @@
 ---
+title: Supply Chain Security Checks
 description: >-
   Remediation playbooks for supply chain security checks including
   Pinned-Dependencies, Dangerous-Workflow, Binary-Artifacts, and SAST.
@@ -7,7 +8,6 @@ tags:
   - supply-chain
   - security
 ---
-
 # Supply Chain Security Checks
 
 !!! tip "Key Insight"

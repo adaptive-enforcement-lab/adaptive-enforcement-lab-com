@@ -1,4 +1,5 @@
 ---
+title: Risk Assessment Matrix
 tags:
   - risk-management
   - risk-assessment
@@ -6,7 +7,6 @@ tags:
 description: >-
   Risk assessment matrix for vulnerability prioritization. Impact, likelihood, and exploitability scoring with real-world examples and decision frameworks.
 ---
-
 # Risk Assessment Matrix
 
 Start by establishing baseline risk across three dimensions: impact, likelihood, and exploitability.

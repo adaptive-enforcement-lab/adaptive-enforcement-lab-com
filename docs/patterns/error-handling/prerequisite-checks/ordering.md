@@ -1,8 +1,8 @@
 ---
+title: Check Ordering
 description: >-
   Order prerequisite checks by cost: configuration first, then tools, local state, remote access, and expensive resource queries last for fastest failure detection.
 ---
-
 # Check Ordering
 
 Order checks from cheapest to most expensive.

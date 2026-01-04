@@ -1,4 +1,5 @@
 ---
+title: Chaos Experiment Design
 description: >-
   Chaos experiment design methodology. Hypothesis formation, success criteria definition, blast radius control, validation patterns, and SLI monitoring for effective chaos engineering.
 tags:
@@ -8,7 +9,6 @@ tags:
   - validation
   - sli
 ---
-
 # Chaos Experiment Design
 
 Chaos without validation is just breaking things. Proper experiment design transforms fault injection into reliability engineering.

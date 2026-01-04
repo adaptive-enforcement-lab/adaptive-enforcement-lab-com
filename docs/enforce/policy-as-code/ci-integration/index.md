@@ -1,4 +1,5 @@
 ---
+title: CI Integration: Automated Policy Enforcement
 tags:
   - policy-as-code
   - ci-cd
@@ -9,7 +10,6 @@ tags:
 description: >-
   Block non-compliant manifests at merge time using policy-platform container in CI. Automate Kyverno validation across environments with zero configuration drift.
 ---
-
 # CI Integration: Automated Policy Enforcement
 
 Block non-compliant code at merge time. Same container as local dev, zero configuration drift.

@@ -1,8 +1,8 @@
 ---
+title: Init Containers
 description: >-
   Build multi-stage pipelines with init containers. Sequential setup using purpose-built images, shared volumes, and independent security contexts for each stage.
 ---
-
 # Init Containers
 
 Init containers run sequentially before the main container, each completing before the next starts. They share volumes with each other and the main container, enabling multi-stage pipelines where each stage has its own image and dependencies.

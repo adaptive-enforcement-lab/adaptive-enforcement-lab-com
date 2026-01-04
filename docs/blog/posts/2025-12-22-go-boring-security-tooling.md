@@ -1,4 +1,5 @@
 ---
+title: Go's Boring Security Tooling (And Why That's Perfect)
 date: 2025-12-22
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Security teams love exotic tools. Go offers go test. Boring standard tools caught real vulnerabilities. OpenSSF compliance with zero custom infrastructure.
 slug: go-boring-security-tooling
 ---
-
 # Go's Boring Security Tooling (And Why That's Perfect)
 
 "What security tools do you use?"

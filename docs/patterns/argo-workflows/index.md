@@ -1,4 +1,5 @@
 ---
+title: Argo Workflows Patterns
 tags:
   - argo-workflows
   - kubernetes
@@ -9,7 +10,6 @@ tags:
 description: >-
   Production Argo Workflows patterns: reusable templates, error handling, concurrency control, composition, and scheduled automation for Kubernetes operators.
 ---
-
 # Argo Workflows Patterns
 
 Production patterns for Argo Workflows: reusable templates, error handling, concurrency control, workflow composition, and scheduled automation.

@@ -1,4 +1,5 @@
 ---
+title: JMESPath Function Reference
 description: >-
   Complete JMESPath function reference for Kyverno. String functions, array operations, filters, projections, and comparison operators.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - reference
 ---
-
 # JMESPath Function Reference
 
 Complete function reference for JMESPath in Kyverno policies. String functions, array operations, filters, and projections.

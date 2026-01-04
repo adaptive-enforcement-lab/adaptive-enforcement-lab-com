@@ -1,4 +1,5 @@
 ---
+title: Kyverno Pod Security Templates
 description: >-
   Kyverno pod security policies enforcing Pod Security Standards, privilege restrictions, and security profiles for Kubernetes workloads.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - security
 ---
-
 # Kyverno Pod Security Templates
 
 Pod security policies prevent privilege escalation, restrict dangerous capabilities, and enforce security boundaries for containerized workloads.

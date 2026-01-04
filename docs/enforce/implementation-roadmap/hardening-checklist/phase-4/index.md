@@ -1,4 +1,5 @@
 ---
+title: Phase 4: Advanced (Month 4+)
 description: >-
   Audit evidence collection and compliance validation. Automated archival, OpenSSF Scorecard monitoring, SLSA verification, and continuous proof of controls.
 tags:
@@ -8,7 +9,6 @@ tags:
   - openssf
   - slsa
 ---
-
 # Phase 4: Advanced (Month 4+)
 
 Prove compliance through continuous evidence collection and validation. Auditors get irrefutable proof that controls are real, not cosmetic.

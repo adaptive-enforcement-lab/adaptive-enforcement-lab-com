@@ -1,4 +1,5 @@
 ---
+title: OPA Privilege Escalation Prevention
 description: >-
   OPA Gatekeeper privilege escalation prevention. Block allowPrivilegeEscalation to prevent setuid/setgid attacks with complete Rego implementation and debugging guide.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Privilege Escalation Prevention
 
 Blocks containers from escalating privileges via `allowPrivilegeEscalation` flag. Prevents setuid/setgid binaries from gaining elevated privileges during runtime.

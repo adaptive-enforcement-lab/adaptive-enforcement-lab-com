@@ -1,8 +1,8 @@
 ---
+title: Cross-Workflow Communication
 description: >-
   Decouple workflows with Pub/Sub messaging, shared storage, and ConfigMaps. Enable cross-workflow communication without tight parent-child coupling in Argo.
 ---
-
 # Cross-Workflow Communication
 
 Sometimes workflows need to share data or trigger other workflows without direct parent-child relationships. This decoupled communication uses message brokers, shared storage, or Kubernetes resources to bridge the gap.

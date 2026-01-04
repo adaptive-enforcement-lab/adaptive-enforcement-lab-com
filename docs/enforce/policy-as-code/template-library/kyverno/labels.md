@@ -1,4 +1,5 @@
 ---
+title: Kyverno Mandatory Labels Templates
 description: >-
   Kyverno mandatory labels templates. Enforce required metadata for observability, cost tracking, and compliance auditing across all workloads.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Mandatory Labels Templates
 
 Ensures all workloads have required metadata for observability, cost tracking, and compliance auditing.

@@ -1,7 +1,7 @@
 ---
+title: Automation & Self-Service Tools
 description: Deploy automated secret rotation systems and self-service security tools to eliminate repetitive toil and enable developers to run security scans independently.
 ---
-
 # Automation & Self-Service Tools
 
 Toil is work that's repetitive, low-cognitive-load, and unbounded. Automated security work is foundational to culture change.

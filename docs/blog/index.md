@@ -1,5 +1,5 @@
 ---
-title: Blog
+title: DevSecOps Blog
 description: >-
   Field notes from the trenches of DevSecOps automation.
   Real-world patterns, troubleshooting stories, and lessons learned.

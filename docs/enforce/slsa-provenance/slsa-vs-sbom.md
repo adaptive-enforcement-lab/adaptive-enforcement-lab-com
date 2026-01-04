@@ -1,4 +1,5 @@
 ---
+title: SLSA vs SBOM: What's the Difference?
 tags:
   - slsa
   - sbom
@@ -12,7 +13,6 @@ tags:
 description: >-
   SLSA vs SBOM: Clear distinction between build provenance and dependency inventory. Understand when to use each, why you need both, and how they complement each other in supply chain security.
 ---
-
 # SLSA vs SBOM: What's the Difference?
 
 SLSA proves how artifacts were built. SBOM lists what's inside them. Different problems, different solutions.

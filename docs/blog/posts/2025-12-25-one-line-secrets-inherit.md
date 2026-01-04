@@ -1,4 +1,5 @@
 ---
+title: "One Line: `secrets: inherit`"
 date: 2025-12-25
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Codecov worked in CI. Failed in release. Same token, different context. One missing line broke everything.
 slug: one-line-secrets-inherit
 ---
-
 # One Line: `secrets: inherit`
 
 `CODECOV_TOKEN` worked perfectly in `ci.yml`.

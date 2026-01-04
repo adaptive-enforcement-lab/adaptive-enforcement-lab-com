@@ -1,4 +1,5 @@
 ---
+title: Secure-by-Design Pattern Library
 description: >-
   Secure-by-design architecture patterns for Kubernetes. Zero trust, defense in depth, least privilege, and fail-secure patterns with implementation examples and threat models.
 tags:
@@ -8,7 +9,6 @@ tags:
   - patterns
   - zero-trust
 ---
-
 # Secure-by-Design Pattern Library
 
 Building security into architecture from the ground up, not bolting it on afterward. These patterns enforce security properties at the application, network, and admission control layers, making violations visible and costly.

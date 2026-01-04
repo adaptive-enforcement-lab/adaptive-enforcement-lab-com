@@ -1,4 +1,5 @@
 ---
+title: "Pre-commit Hooks as Security Gates: Enforcement Before Commit"
 date: 2025-12-04
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Block forbidden tools at commit time. Enforce vendor-neutral standards before code reaches CI.
 slug: pre-commit-security-gates
 ---
-
 # Pre-commit Hooks as Security Gates: Enforcement Before Commit
 
 The Terraform config was already committed. Three pull requests deep before anyone noticed. Now it's in git history. Audit logs show violations. The team is explaining how vendor lock-in crept in.

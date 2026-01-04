@@ -1,4 +1,5 @@
 ---
+title: The Architecture That Couldn't Be Breached
 date: 2026-01-04
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When container escape meets defense in depth. The secure-by-design patterns that contained the breach before it started.
 slug: architecture-couldnt-be-breached
 ---
-
 # The Architecture That Couldn't Be Breached
 
 Container escape achieved. Attacker privilege: still none. Why?

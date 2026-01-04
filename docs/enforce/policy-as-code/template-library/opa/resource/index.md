@@ -1,4 +1,5 @@
 ---
+title: OPA Resource Governance Templates
 description: >-
   OPA resource governance policies enforcing CPU/memory limits, ResourceQuota compliance, LimitRange validation, and storage constraints.
 tags:
@@ -8,7 +9,6 @@ tags:
   - governance
   - kubernetes
 ---
-
 # OPA Resource Governance Templates
 
 Resource governance policies prevent overconsumption, enforce quotas, and validate LimitRange compliance across your cluster.

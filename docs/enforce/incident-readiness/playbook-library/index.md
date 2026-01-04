@@ -1,4 +1,5 @@
 ---
+title: Incident Response Playbook Templates
 description: >-
   Incident response playbook templates for Kubernetes. Detection, containment, remediation, and post-incident procedures with decision trees and validation steps.
 tags:
@@ -8,7 +9,6 @@ tags:
   - playbooks
   - security
 ---
-
 # Incident Response Playbook Templates
 
 Operational runbooks for Kubernetes security incidents. Each playbook combines decision trees, step-by-step procedures, and validation criteria to enable rapid, confident response to common incident patterns.

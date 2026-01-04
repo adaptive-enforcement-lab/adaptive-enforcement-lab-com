@@ -1,8 +1,8 @@
 ---
+title: Tier 3 Additional Priorities
 description: >-
   Achieve perfect 10.0 Scorecard rating through automated vulnerability remediation, active contributor diversity, and comprehensive fuzzing coverage.
 ---
-
 # Tier 3 Additional Priorities
 
 !!! tip "Key Insight"

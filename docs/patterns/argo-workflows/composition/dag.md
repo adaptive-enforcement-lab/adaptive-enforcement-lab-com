@@ -1,8 +1,8 @@
 ---
+title: DAG Orchestration
 description: >-
   Express complex dependencies declaratively with DAG templates. Automatic parallelization, diamond patterns, and failure propagation for multi-path pipelines.
 ---
-
 # DAG Orchestration
 
 For complex dependency graphs that don't fit the step-by-step model, use DAG (Directed Acyclic Graph) templates. DAGs express dependencies explicitly, and the scheduler automatically parallelizes what it can.

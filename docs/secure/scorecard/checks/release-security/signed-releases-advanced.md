@@ -1,4 +1,5 @@
 ---
+title: Signed-Releases Advanced Guide
 description: >-
   Advanced troubleshooting and remediation for OpenSSF Scorecard Signed-Releases.
   Fix common provenance issues and optimize SLSA implementation.
@@ -9,7 +10,6 @@ tags:
   - troubleshooting
 
 ---
-
 # Signed-Releases Advanced Guide
 
 !!! tip "Key Insight"

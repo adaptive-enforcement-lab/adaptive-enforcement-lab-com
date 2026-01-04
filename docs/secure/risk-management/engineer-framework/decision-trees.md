@@ -1,4 +1,5 @@
 ---
+title: Decision Trees
 tags:
   - risk-management
   - decision-framework
@@ -6,7 +7,6 @@ tags:
 description: >-
   Decision trees for vulnerability remediation. Patch-now vs. later, mitigate vs. accept vs. transfer, and emergency vs. standard patching workflows.
 ---
-
 # Decision Trees
 
 !!! tip "Use Decision Trees to Avoid Analysis Paralysis"

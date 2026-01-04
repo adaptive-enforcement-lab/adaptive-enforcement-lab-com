@@ -1,4 +1,5 @@
 ---
+title: "golangci-lint v2: What Broke and How to Fix It"
 date: 2025-12-11
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   that keeps your code clean.
 slug: golangci-lint-v2-migration
 ---
-
 # golangci-lint v2: What Broke and How to Fix It
 
 You updated `golangci/golangci-lint-action` to v9. CI failed. Welcome to golangci-lint v2.

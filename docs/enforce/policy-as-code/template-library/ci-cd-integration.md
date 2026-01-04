@@ -1,4 +1,5 @@
 ---
+title: CI/CD Integration for Policy Validation
 description: >-
   CI/CD integration for policy-as-code. GitHub Actions pre-flight validation, ArgoCD policy gating, and pre-commit hooks for automated policy enforcement in development pipelines.
 tags:
@@ -7,7 +8,6 @@ tags:
   - argocd
   - policy-as-code
 ---
-
 # CI/CD Integration for Policy Validation
 
 Automated policy validation in development pipelines. Catch policy violations before deployment using GitHub Actions, ArgoCD, and pre-commit hooks.

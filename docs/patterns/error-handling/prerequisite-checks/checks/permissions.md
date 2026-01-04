@@ -1,4 +1,5 @@
 ---
+title: Permission Checks
 description: >-
   Permission validation checks for API tokens, GitHub Apps, Kubernetes RBAC, and cloud IAM roles before operations.
 tags:
@@ -7,7 +8,6 @@ tags:
   - rbac
   - iam
 ---
-
 # Permission Checks
 
 Verify access rights before attempting operations.

@@ -1,4 +1,5 @@
 ---
+title: Kyverno Policy Templates
 description: >-
   Kyverno policy templates overview. 28 production-ready policies for pod security, image validation, resource limits, network security, mutation, and generation.
 tags:
@@ -7,7 +8,6 @@ tags:
   - policy-as-code
   - templates
 ---
-
 # Kyverno Policy Templates
 
 !!! warning "Start with Audit Mode"

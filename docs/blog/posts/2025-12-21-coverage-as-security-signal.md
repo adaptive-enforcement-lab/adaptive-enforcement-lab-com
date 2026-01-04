@@ -1,4 +1,5 @@
 ---
+title: "The Coverage That Mattered: When 99% Became a Security Signal"
 date: 2025-12-21
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Started at 0% coverage. OpenSSF Passing has no requirement. We targeted 95% (above Gold's 90%). Hit a wall at 85%. Refactoring broke through. 99% became the security signal.
 slug: coverage-as-security-signal
 ---
-
 # The Coverage That Mattered: When 99% Became a Security Signal
 
 The OpenSSF Best Practices **Passing** badge doesn't mandate a specific coverage percentage.

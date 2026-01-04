@@ -1,4 +1,5 @@
 ---
+title: SLSA Provenance for Go Projects
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   SLSA provenance for Go projects: slsa-github-generator integration, multi-platform builds, and GoReleaser patterns with cryptographic build integrity proofs.
 ---
-
 # SLSA Provenance for Go Projects
 
 Turn Go builds from reproducible to provable.

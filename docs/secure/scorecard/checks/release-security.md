@@ -1,4 +1,5 @@
 ---
+title: Release Security Checks
 description: >-
   Remediation playbooks for release security checks including Signed-Releases,
   Packaging, and License.
@@ -7,7 +8,6 @@ tags:
   - releases
   - security
 ---
-
 # Release Security Checks
 
 !!! tip "Key Insight"

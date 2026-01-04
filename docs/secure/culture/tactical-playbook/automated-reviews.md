@@ -1,7 +1,7 @@
 ---
+title: Automated PR Reviews
 description: Configure GitHub Actions workflows to run automated security checks on every pull request with fast feedback loops and branch protection enforcement rules.
 ---
-
 # Automated PR Reviews
 
 GitHub Actions can run security checks on every pull request and provide actionable feedback inline.

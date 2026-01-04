@@ -1,4 +1,5 @@
 ---
+title: Real-World Vulnerability Scenarios
 tags:
   - risk-management
   - case-studies
@@ -6,7 +7,6 @@ tags:
 description: >-
   Real-world vulnerability scenarios with complete risk assessments, decision rationale, and execution plans. Log4Shell, dependency vulnerabilities, and Kubernetes exploits.
 ---
-
 # Real-World Vulnerability Scenarios
 
 !!! note "Learn from Log4Shell"

@@ -1,4 +1,5 @@
 ---
+title: Security Practices Checks
 description: >-
   Remediation playbooks for security practice checks including Security-Policy,
   CII-Best-Practices, Vulnerabilities, Fuzzing, and Token-Permissions.
@@ -7,7 +8,6 @@ tags:
   - security
   - best-practices
 ---
-
 # Security Practices Checks
 
 !!! tip "Key Insight"

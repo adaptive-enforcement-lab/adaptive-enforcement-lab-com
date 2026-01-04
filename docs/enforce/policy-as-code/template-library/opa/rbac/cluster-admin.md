@@ -1,4 +1,5 @@
 ---
+title: OPA Cluster-Admin Prevention Template
 description: >-
   OPA Gatekeeper cluster-admin prevention template. Block cluster-admin role assignments to prevent privilege escalation attacks.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Cluster-Admin Prevention Template
 
 Prevents assignment of cluster-admin role through RoleBindings and ClusterRoleBindings. Cluster-admin grants unrestricted cluster access and is the most common privilege escalation target.

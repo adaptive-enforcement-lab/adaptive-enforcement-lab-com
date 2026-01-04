@@ -1,4 +1,5 @@
 ---
+title: Patterns
 tags:
   - patterns
   - automation
@@ -7,7 +8,6 @@ tags:
 description: >-
   Battle-tested automation patterns for GitHub Actions, Argo, and Kubernetes. Build resilient, idempotent workflows that scale with hub-and-spoke design.
 ---
-
 # Patterns
 
 Reusable design patterns for resilient automation.

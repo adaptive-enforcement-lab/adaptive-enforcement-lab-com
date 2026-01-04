@@ -1,4 +1,5 @@
 ---
+title: Workload Identity Federation Implementation
 description: >-
   Workload Identity Federation implementation guide. GKE setup, IAM bindings, ServiceAccount configuration, migration from service account keys, and troubleshooting patterns.
 tags:
@@ -8,7 +9,6 @@ tags:
   - iam
   - cloud-security
 ---
-
 # Workload Identity Federation Implementation
 
 Containers need cloud access. But service account keys are **static credentials** that never rotate, frequently get stolen, and live forever.

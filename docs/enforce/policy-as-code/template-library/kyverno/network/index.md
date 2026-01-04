@@ -1,4 +1,5 @@
 ---
+title: Kyverno Network Security Templates
 description: >-
   Kyverno network security policies that enforce NetworkPolicy requirements, Ingress rules, and Service restrictions in Kubernetes.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - networkpolicy
 ---
-
 # Kyverno Network Security Templates
 
 Network policies control traffic between pods, namespaces, and external endpoints. These templates enforce network segmentation and prevent unauthorized communication.

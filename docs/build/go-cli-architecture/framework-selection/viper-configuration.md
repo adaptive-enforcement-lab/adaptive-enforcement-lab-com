@@ -1,8 +1,8 @@
 ---
+title: Configuration with Viper
 description: >-
   Layer CLI configuration with Viper for flexible behavior. Flags override environment variables, config files, and defaults. Support in-cluster detection.
 ---
-
 # Configuration with Viper
 
 Layer configuration sources for flexible CLI behavior.

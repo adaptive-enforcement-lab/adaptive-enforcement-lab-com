@@ -1,4 +1,5 @@
 ---
+title: OPA Capabilities Templates
 description: >-
   OPA Gatekeeper Linux capabilities templates. Enforce dropping ALL capabilities and restrict dangerous kernel-level privileges.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Capabilities Templates
 
 Enforces dropping ALL Linux capabilities and restricts dangerous kernel-level privileges. Capabilities grant kernel-level access that can bypass security controls and enable container escapes.

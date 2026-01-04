@@ -1,4 +1,5 @@
 ---
+title: The GKE Cluster That Nobody Could Break
 date: 2026-01-02
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When penetration testers give up after 3 days. The GKE hardening guide that turned a cluster into a fortress.
 slug: gke-cluster-nobody-could-break
 ---
-
 # The GKE Cluster That Nobody Could Break
 
 **Day 1 of pentest.** Security firm arrives with methodology, tools, and confidence. The plan is simple: find gaps in the Kubernetes cluster, prove impact, deliver a detailed report of findings.

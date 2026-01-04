@@ -1,4 +1,5 @@
 ---
+title: Environment Validation
 description: >-
   Environment validation checks for required tools, variables, and network connectivity before deployment or automation tasks.
 tags:
@@ -6,7 +7,6 @@ tags:
   - environment
   - validation
 ---
-
 # Environment Validation
 
 Check that the environment has everything needed before starting work.

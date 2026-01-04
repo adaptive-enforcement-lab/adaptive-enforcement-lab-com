@@ -1,4 +1,5 @@
 ---
+title: Advanced Verification Patterns
 tags:
   - slsa
   - provenance
@@ -14,7 +15,6 @@ tags:
 description: >-
   Advanced SLSA provenance verification: policy engine integration, artifact registry verification, local security audits. Kyverno and OPA Gatekeeper patterns.
 ---
-
 # Advanced Verification Patterns
 
 Policy enforcement, registry verification, and security audits.

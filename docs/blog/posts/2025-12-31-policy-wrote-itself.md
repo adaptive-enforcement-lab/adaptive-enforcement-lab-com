@@ -1,4 +1,5 @@
 ---
+title: The Policy That Wrote Itself
 date: 2025-12-31
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When every team needs pod security policies but nobody wants to write YAML. The template library that turns policy enforcement into fill-in-the-blanks.
 slug: policy-wrote-itself
 ---
-
 # The Policy That Wrote Itself
 
 12 teams. 47 namespaces. 1 security requirement. 0 teams wanted to write policies.

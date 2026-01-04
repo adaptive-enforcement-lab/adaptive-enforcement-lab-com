@@ -1,4 +1,5 @@
 ---
+title: SLSA Provenance for Node.js Projects
 tags:
   - slsa
   - provenance
@@ -15,7 +16,6 @@ tags:
 description: >-
   SLSA provenance for Node.js projects: npm package publishing, container images, and dependency lockfile patterns with cryptographic build integrity proofs.
 ---
-
 # SLSA Provenance for Node.js Projects
 
 Turn npm builds from lockfiles to provable pipelines.
