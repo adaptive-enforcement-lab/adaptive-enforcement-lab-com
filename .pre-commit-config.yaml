@@ -6,9 +6,9 @@ repos:
       - id: markdownlint
         args: ["--config", ".markdownlint.yml"]
         files: \.md$
-        exclude: ^(CHANGELOG\.md|\.content-machine/.*)$
+        exclude: ^(CHANGELOG\.md|\.content-machine/.*|docs/includes/.*)$
   - repo: https://github.com/adaptive-enforcement-lab/readability
-    rev: v1.14.2
+    rev: v3.0.0
     hooks:
       - id: readability-docs
         name: check documentation readability
@@ -25,10 +25,14 @@ repos:
         entry: scripts/check-description.sh
         language: script
         files: \.md$
+        exclude: ^docs/includes/.*$
         pass_filenames: true
       - id: mkdocs-build
         name: mkdocs build
-        entry: bash -c 'if [ -f .venv/bin/mkdocs ]; then .venv/bin/mkdocs build --strict; else mkdocs build --strict; fi'
+        entry: >-
+          bash -c 'if [ -f .venv/bin/mkdocs ]; then
+          .venv/bin/mkdocs build --strict; else
+          mkdocs build --strict; fi'
         language: system
         pass_filenames: false
         files: \.(md|yml|yaml)$
