@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.11.0...1.11.1) (2026-01-04)
+
+
+### Content Fixes
+
+* resolve GitHub discussion feedback ([#230](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/230), [#223](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/223)) ([#231](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/231)) ([3cb259a](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/3cb259a9bf7d09a8da7a0cf14631fd7af54db4ff))
+
 ## [1.11.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.10.0...1.11.0) (2026-01-04)
 
 ### New Content
