@@ -60,10 +60,12 @@ graph TB
     RBAC -.authorizes.-> API
     RBAC -.authorizes.-> Backend
 
+    %% Ghostty Hardcore Theme
     style Mesh fill:#f92572,color:#1b1d1e
     style NetPol fill:#fd971e,color:#1b1d1e
     style AdmCtrl fill:#a6e22e,color:#1b1d1e
     style RBAC fill:#66d9ef,color:#1b1d1e
+
 ```
 
 ## Namespace Configuration

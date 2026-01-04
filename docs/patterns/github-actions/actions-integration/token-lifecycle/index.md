@@ -30,6 +30,8 @@ Installation token lifecycle management enables:
 
 ```mermaid
 gantt
+
+%% Ghostty Hardcore Theme
     title Installation Token Lifecycle
     dateFormat X
     axisFormat %M min
@@ -47,6 +49,7 @@ gantt
     section Token B (refreshed)
     Generation               :milestone, 55, 0
     Valid (60 min)           :active, t2, 55, 115
+
 ```
 
 ### Expiration Characteristics

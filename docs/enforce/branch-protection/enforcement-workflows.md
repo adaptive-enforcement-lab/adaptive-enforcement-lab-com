@@ -40,11 +40,13 @@ graph TD
 
     SCHEDULED -.->|Backup| WEBHOOK
 
+    %% Ghostty Hardcore Theme
     style WEBHOOK fill:#65d9ef,color:#1b1d1e
     style SCHEDULED fill:#fd971e,color:#1b1d1e
     style DRIFT fill:#f92572,color:#1b1d1e
     style PROTECTION fill:#a7e22e,color:#1b1d1e
     style AUDIT fill:#9e6ffe,color:#1b1d1e
+
 ```
 
 **Webhook-triggered**: Real-time response to protection changes (< 1 minute).

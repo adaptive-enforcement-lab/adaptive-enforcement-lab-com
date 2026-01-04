@@ -667,7 +667,6 @@ nav:
           - Implementation: enforce/branch-protection/branch-protection.md
           - Security Tiers: enforce/branch-protection/security-tiers.md
           - GitHub App Enforcement: enforce/branch-protection/github-app-enforcement.md
-          - Terraform Modules: enforce/branch-protection/terraform-modules.md
           - OpenTofu Modules: enforce/branch-protection/opentofu-modules.md
           - Multi-Repo Management: enforce/branch-protection/multi-repo-management.md
           - Enforcement Workflows: enforce/branch-protection/enforcement-workflows.md

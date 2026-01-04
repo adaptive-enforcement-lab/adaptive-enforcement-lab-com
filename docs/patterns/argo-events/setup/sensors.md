@@ -92,10 +92,12 @@ flowchart LR
     B -->|"{{body.digest}}"| C
     C -->|inputs.parameters.image| D[Script]
 
+    %% Ghostty Hardcore Theme
     style A fill:#9e6ffe,color:#1b1d1e
     style B fill:#f92572,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#65d9ef,color:#1b1d1e
+
 ```
 
 **Parameter transformation flow:**

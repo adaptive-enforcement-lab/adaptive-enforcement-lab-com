@@ -34,12 +34,14 @@ flowchart TD
     D -->|Yes| E[Prerequisite Check]
     D -->|No| F[Graceful Degradation]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
     style E fill:#65d9ef,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

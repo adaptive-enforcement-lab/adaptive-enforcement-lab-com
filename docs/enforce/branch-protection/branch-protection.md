@@ -159,7 +159,6 @@ Prevents accidental or malicious branch deletion.
 ## Configuration via API
 
 !!! tip "Infrastructure as Code"
-    For production deployments, use **[Terraform Modules](terraform-modules.md)** or **[OpenTofu Modules](opentofu-modules.md)** instead of manual API calls.
 
 Terraform and manual UI configuration don't scale. Use GitHub API:
 
@@ -349,7 +348,6 @@ See [Required Status Checks](../status-checks/index.md) for full CI/CD integrati
 **Branch Protection**: [Overview](index.md) · [Security Tiers](security-tiers.md) · [Multi-Repo](multi-repo-management.md) · [GitHub App Enforcement](github-app-enforcement.md) · [Drift Detection](drift-detection.md) · [Bypass Controls](bypass-controls.md) · [Emergency Access](emergency-access.md) ·
 [Verification Scripts](verification-scripts.md)
 
-**Infrastructure as Code**: [Terraform Modules](terraform-modules.md) ·
 [OpenTofu Modules](opentofu-modules.md)
 
 **Audit & Compliance**: [Audit Evidence](audit-evidence.md) ·

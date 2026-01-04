@@ -20,8 +20,10 @@ graph TD
     POL -->|Pass| ETCD[(etcd)]
     POL -->|Fail| REJECT[Reject Request]
 
+    %% Ghostty Hardcore Theme
     style ETCD fill:#a7e22e,color:#1b1d1e
     style REJECT fill:#f92572,color:#1b1d1e
+
 ```
 
 !!! warning "Runtime is the Final Safety Net"

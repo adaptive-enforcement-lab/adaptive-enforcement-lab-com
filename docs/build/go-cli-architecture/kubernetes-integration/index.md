@@ -44,6 +44,8 @@ graph TB
     CreateClient --> Ready[Client Ready]
 
     %% Start node - cyan
+
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
 
     %% Decision nodes - orange
@@ -60,6 +62,7 @@ graph TB
     %% Processing and success nodes
     style CreateClient fill:#65d9ef,color:#1b1d1e
     style Ready fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

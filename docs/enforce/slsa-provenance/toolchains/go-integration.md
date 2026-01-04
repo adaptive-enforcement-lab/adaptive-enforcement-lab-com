@@ -55,11 +55,13 @@ graph LR
     C --> D
     D -->|Proves| E[Build Integrity]
 
+    %% Ghostty Hardcore Theme
     style A fill:#a7e22e,color:#1b1d1e
     style B fill:#ffd866,color:#1b1d1e
     style C fill:#65d9ef,color:#1b1d1e
     style D fill:#fc9867,color:#1b1d1e
     style E fill:#a9dc76,color:#1b1d1e
+
 ```
 
 ---
@@ -311,9 +313,11 @@ graph TD
     B --> E[Complete Supply Chain Security]
     D --> E
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style C fill:#65d9ef,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **go.sum protects against**: Dependency tampering, dependency confusion

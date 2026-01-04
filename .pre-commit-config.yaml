@@ -8,7 +8,7 @@ repos:
         files: \.md$
         exclude: ^(CHANGELOG\.md|\.content-machine/.*|docs/includes/.*)$
   - repo: https://github.com/adaptive-enforcement-lab/readability
-    rev: v3.0.0
+    rev: v3.0.1
     hooks:
       - id: readability-docs
         name: check documentation readability

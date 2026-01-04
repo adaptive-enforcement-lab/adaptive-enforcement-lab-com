@@ -51,6 +51,7 @@ graph TD
     G -->|Verified| H[✅ Allow]
     G -->|Not Verified| I[❌ Deny]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#ffd866,color:#1b1d1e
@@ -58,6 +59,7 @@ graph TD
     style H fill:#a9dc76,color:#1b1d1e
     style I fill:#f92572,color:#1b1d1e
     style X fill:#f92572,color:#1b1d1e
+
 ```
 
 **Critical insight**: Policy engines don't verify provenance directly. They enforce that only verified images are deployed.

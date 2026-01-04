@@ -235,12 +235,14 @@ graph TD
     D --> E[Level 3: Build tampering blocked]
     E --> F[Level 4: Dependency compromise blocked]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#ff6188,color:#1b1d1e
     style C fill:#fc9867,color:#1b1d1e
     style D fill:#ffd866,color:#1b1d1e
     style E fill:#a9dc76,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **Level 1**: Prevents nothing, enables forensics

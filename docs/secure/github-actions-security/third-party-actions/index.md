@@ -64,6 +64,7 @@ flowchart TD
     F --> I["Persistent Access"]
     F --> J["Supply Chain Compromise"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style F fill:#e6db74,color:#1b1d1e
@@ -71,6 +72,7 @@ flowchart TD
     style H fill:#66d9ef,color:#1b1d1e
     style I fill:#66d9ef,color:#1b1d1e
     style J fill:#66d9ef,color:#1b1d1e
+
 ```
 
 ## Trust Tier Framework
@@ -259,6 +261,7 @@ flowchart TD
     Q5 -->|Yes| A6["✓ Treat as Tier 3<br/>✓ Enhanced Scrutiny<br/>✓ Fork Required"]
     Q5 -->|No| Reject
 
+    %% Ghostty Hardcore Theme
     style Start fill:#66d9ef,color:#1b1d1e
     style Tier1 fill:#a6e22e,color:#1b1d1e
     style Tier2 fill:#e6db74,color:#1b1d1e
@@ -267,6 +270,7 @@ flowchart TD
     style Reject fill:#f92572,color:#1b1d1e
     style A1 fill:#a6e22e,color:#1b1d1e
     style A4 fill:#e6db74,color:#1b1d1e
+
 ```
 
 ## Security Best Practices

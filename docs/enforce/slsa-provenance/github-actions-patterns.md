@@ -48,11 +48,13 @@ graph TD
     E -->|Pass| F[Deploy/Release]
     E-->|Fail| G[Block]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style E fill:#ffd866,color:#1b1d1e
     style F fill:#a9dc76,color:#1b1d1e
     style G fill:#f92572,color:#1b1d1e
+
 ```
 
 **Critical pattern**: Build, provenance generation, and verification are **separate jobs** with minimal permissions each.

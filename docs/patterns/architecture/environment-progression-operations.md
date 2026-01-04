@@ -125,10 +125,12 @@ flowchart TD
     R -->|No| S[Auto Rollback]
     R -->|Yes| T[Success]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style E fill:#f92572,color:#1b1d1e
     style S fill:#f92572,color:#1b1d1e
     style T fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

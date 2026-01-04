@@ -29,12 +29,14 @@ flowchart LR
     D -->|No| E[Disaster]
     D -->|Yes| F[Success Maybe]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style E fill:#f92572,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 Six months of development. One deploy. Production traffic hits unknown code. Bugs discovered under real load. No rollback path.
@@ -53,12 +55,14 @@ flowchart TD
     C --> E[Legacy Backend]
     D --> F[New Backend]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
     style E fill:#f92572,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 Router directs traffic. Start with 1% to new system. Monitor. Increase gradually. Eventually 100% on new system. Remove legacy.

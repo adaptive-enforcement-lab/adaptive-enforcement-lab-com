@@ -220,9 +220,11 @@ graph TD
     D -->|Verification| E[Runtime Deployment]
     E -->|Policy-as-Code| F[Production]
 
+    %% Ghostty Hardcore Theme
     style A fill:#a7e22e,color:#1b1d1e
     style D fill:#65d9ef,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 **Integration points**:

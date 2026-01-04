@@ -87,6 +87,7 @@ flowchart TD
     H -->|Yes| I[Use Tombstone Markers]
     H -->|No| J[Use Check-Before-Act]
 
+    %% Ghostty Hardcore Theme
     style A fill:#5e7175,color:#f8f8f3
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
@@ -97,6 +98,7 @@ flowchart TD
     style H fill:#fd971e,color:#1b1d1e
     style I fill:#9e6ffe,color:#1b1d1e
     style J fill:#65d9ef,color:#1b1d1e
+
 ```
 
 | Scenario | Recommended Pattern |

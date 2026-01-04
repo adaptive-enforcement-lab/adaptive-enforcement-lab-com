@@ -143,12 +143,14 @@ flowchart TD
     H --> J["Infrastructure Compromise"]
     H --> K["Supply Chain Attack"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style H fill:#e6db74,color:#1b1d1e
     style I fill:#f92572,color:#1b1d1e
     style J fill:#f92572,color:#1b1d1e
     style K fill:#f92572,color:#1b1d1e
+
 ```
 
 ## Secret Storage Comparison

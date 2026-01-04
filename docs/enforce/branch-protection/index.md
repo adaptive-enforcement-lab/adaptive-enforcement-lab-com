@@ -75,10 +75,12 @@ graph TD
     BP -->|Enforces| PR[Pull Requests]
     PR -->|Generates| AUDIT[Audit Evidence]
 
+    %% Ghostty Hardcore Theme
     style T fill:#a7e22e,color:#1b1d1e
     style GA fill:#65d9ef,color:#1b1d1e
     style DRIFT fill:#f92572,color:#1b1d1e
     style BP fill:#fd971e,color:#1b1d1e
+
 ```
 
 **Key Components**:
@@ -102,7 +104,6 @@ This section covers comprehensive branch protection enforcement:
 
 ### Infrastructure as Code
 
-- **[Terraform Modules](terraform-modules.md)** - Managing protection at scale with Terraform
 - **[OpenTofu Modules](opentofu-modules.md)** - OpenTofu-specific patterns and considerations
 - **[Multi-Repo Management](multi-repo-management.md)** - Patterns for 100+ repository enforcement
 
@@ -147,8 +148,6 @@ gh api --method PUT \
 ```
 
 **Automated (organization-wide)**:
-
-Use **[Terraform Modules](terraform-modules.md)** for consistent deployment across all repositories.
 
 ### Step 3: Monitor Compliance
 
@@ -229,8 +228,6 @@ Bypass controls with approval workflows, time-boxing, and automatic re-enablemen
 ## Next Steps
 
 Start with **[Security Tiers](security-tiers.md)** to understand the tiered protection model, then review **[Branch Protection Rules](branch-protection.md)** for detailed configuration options.
-
-For automated enforcement at scale, proceed to **[Terraform Modules](terraform-modules.md)** and **[GitHub App Enforcement](github-app-enforcement.md)**.
 
 ---
 

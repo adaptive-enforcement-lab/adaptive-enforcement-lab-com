@@ -82,6 +82,8 @@ graph TB
     Cache --> Store
 
     %% CLI Layer nodes - cyan
+
+    %% Ghostty Hardcore Theme
     style Root fill:#65d9ef,color:#1b1d1e
     style Orch fill:#65d9ef,color:#1b1d1e
     style Sub1 fill:#65d9ef,color:#1b1d1e
@@ -98,6 +100,7 @@ graph TB
     style API fill:#9e6ffe,color:#1b1d1e
     style Argo fill:#9e6ffe,color:#1b1d1e
     style Store fill:#9e6ffe,color:#1b1d1e
+
 ```
 
 ---

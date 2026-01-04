@@ -26,12 +26,14 @@ graph TD
     D --> E["Calculate User/Data Exposure"]
     E --> F["Risk Score"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style B fill:#65d9ef,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#a6e22e,color:#1b1d1e
     style E fill:#f92572,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 ## Blast Radius Multipliers

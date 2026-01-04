@@ -29,6 +29,7 @@ flowchart TD
     H -->|Yes| I["MEDIUM<br/>Target: 30 days"]
     H -->|No| J["LOW<br/>Next maintenance window"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
@@ -39,6 +40,7 @@ flowchart TD
     style H fill:#fd971e,color:#1b1d1e
     style I fill:#a6e22e,color:#1b1d1e
     style J fill:#66d9ef,color:#1b1d1e
+
 ```
 
 **Implementation Checklist for IMMEDIATE**:
@@ -100,6 +102,7 @@ flowchart TD
     J --> K["3. Change request approval"]
     K --> L["4. Deploy in standard window<br/>Next deployment slot"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
@@ -112,6 +115,7 @@ flowchart TD
     style J fill:#a6e22e,color:#1b1d1e
     style K fill:#a6e22e,color:#1b1d1e
     style L fill:#a6e22e,color:#1b1d1e
+
 ```
 
 ---

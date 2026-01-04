@@ -35,10 +35,12 @@ flowchart LR
     B -->|Pass| C[etcd]
     B -->|Fail| D[Rejected]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
+
 ```
 
 Admission controllers validate before persistence. No limits? Rejected. No labels? Rejected. Wrong registry? Rejected.

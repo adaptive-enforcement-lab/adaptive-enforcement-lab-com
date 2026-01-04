@@ -22,12 +22,14 @@ flowchart TD
     D --> E[5. Remote State]
     E --> F[6. Resource Availability]
 
+    %% Ghostty Hardcore Theme
     style A fill:#a7e22e,color:#1b1d1e
     style B fill:#a7e22e,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
     style E fill:#f92572,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 ---

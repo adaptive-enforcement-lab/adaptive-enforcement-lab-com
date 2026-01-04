@@ -67,6 +67,7 @@ flowchart TD
     H --> J["Data Breach"]
     H --> K["Supply Chain Attack"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#e6db74,color:#1b1d1e
@@ -74,6 +75,7 @@ flowchart TD
     style I fill:#f92572,color:#1b1d1e
     style J fill:#f92572,color:#1b1d1e
     style K fill:#f92572,color:#1b1d1e
+
 ```
 
 ## GitHub-Hosted vs Self-Hosted Comparison

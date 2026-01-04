@@ -87,12 +87,14 @@ flowchart LR
     D -->|20s wait| E[Retry 3]
     E -->|Fail| F[Permanent Failure]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#65d9ef,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
     style E fill:#65d9ef,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 **Aggressive backoff** (short duration, low factor): Faster recovery from brief blips, but more load on failing systems. Use for internal APIs that can handle the traffic.

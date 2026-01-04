@@ -37,11 +37,13 @@ flowchart TD
     Decision -->|High Risk| Fork["⚠ Fork & Internal<br/>Maintenance"]
     Decision -->|Critical Risk| Reject["❌ Reject"]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#66d9ef,color:#1b1d1e
     style Approve fill:#a6e22e,color:#1b1d1e
     style Conditional fill:#e6db74,color:#1b1d1e
     style Fork fill:#fd971e,color:#1b1d1e
     style Reject fill:#f92572,color:#1b1d1e
+
 ```
 
 ## 1. Maintainer Trust Evaluation

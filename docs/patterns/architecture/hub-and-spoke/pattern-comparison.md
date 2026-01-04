@@ -32,10 +32,12 @@ flowchart TD
     S2 --> Hub
     S3 --> Hub
 
+    %% Ghostty Hardcore Theme
     style Hub fill:#9e6ffe,color:#1b1d1e
     style S1 fill:#a7e22e,color:#1b1d1e
     style S2 fill:#a7e22e,color:#1b1d1e
     style S3 fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **Connections:** O(n). Hub connects to each spoke.
@@ -56,10 +58,12 @@ flowchart TD
     P2 <--> P4
     P3 <--> P4
 
+    %% Ghostty Hardcore Theme
     style P1 fill:#fd971e,color:#1b1d1e
     style P2 fill:#fd971e,color:#1b1d1e
     style P3 fill:#fd971e,color:#1b1d1e
     style P4 fill:#fd971e,color:#1b1d1e
+
 ```
 
 **Connections:** O(n²). Every peer connects to every other peer.
@@ -81,11 +85,13 @@ flowchart LR
     N1 --- N5
     N2 --- N4
 
+    %% Ghostty Hardcore Theme
     style N1 fill:#65d9ef,color:#1b1d1e
     style N2 fill:#65d9ef,color:#1b1d1e
     style N3 fill:#65d9ef,color:#1b1d1e
     style N4 fill:#65d9ef,color:#1b1d1e
     style N5 fill:#65d9ef,color:#1b1d1e
+
 ```
 
 **Connections:** Partial mesh. Selected connections for redundancy.
@@ -98,10 +104,12 @@ flowchart LR
     T2 --> T3[Task 3]
     T3 --> T4[Task 4]
 
+    %% Ghostty Hardcore Theme
     style T1 fill:#f92472,color:#1b1d1e
     style T2 fill:#f92472,color:#1b1d1e
     style T3 fill:#f92472,color:#1b1d1e
     style T4 fill:#f92472,color:#1b1d1e
+
 ```
 
 **Connections:** O(n) linear. Each task connects to next.
@@ -326,6 +334,7 @@ flowchart TD
     Opt -->|No| Hub2[Use Hub-Spoke]
     Opt -->|Yes| Partition[Partition hub<br/>or use Mesh]
 
+    %% Ghostty Hardcore Theme
     style Seq fill:#a7e22e,color:#1b1d1e
     style P2P fill:#fd971e,color:#1b1d1e
     style Mesh fill:#65d9ef,color:#1b1d1e
@@ -333,6 +342,7 @@ flowchart TD
     style Hub2 fill:#9e6ffe,color:#1b1d1e
     style Simple fill:#a7e22e,color:#1b1d1e
     style Partition fill:#f92472,color:#1b1d1e
+
 ```
 
 ---

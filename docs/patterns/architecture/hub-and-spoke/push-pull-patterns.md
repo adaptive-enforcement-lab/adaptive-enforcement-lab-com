@@ -24,6 +24,8 @@ Hub triggers spokes directly. Spokes don't poll. Hub controls timing.
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant Hub
     participant Spoke1
     participant Spoke2
@@ -34,6 +36,7 @@ sequenceDiagram
     Spoke2-->>Hub: Report complete
 
     Note over Hub: Hub controls timing<br/>Low latency, high coupling
+
 ```
 
 ### GitHub Actions Push Implementation
@@ -110,6 +113,8 @@ Hub publishes work queue. Spokes poll and pull tasks. Spokes control timing.
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant Hub
     participant Queue
     participant Spoke1
@@ -126,6 +131,7 @@ sequenceDiagram
     Spoke2->>Queue: Mark complete
 
     Note over Spoke1,Spoke2: Spokes control timing<br/>Decoupled, higher latency
+
 ```
 
 ### ConfigMap Queue Implementation
@@ -226,6 +232,8 @@ Hub publishes event. Spokes listen for events, then pull work. Combines low late
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant Hub
     participant EventBus
     participant Queue
@@ -242,6 +250,7 @@ sequenceDiagram
     Spoke2->>Queue: Mark complete
 
     Note over Spoke1,Spoke2: Event triggers pull<br/>Low latency, low coupling
+
 ```
 
 ### Argo Events + ConfigMap Implementation

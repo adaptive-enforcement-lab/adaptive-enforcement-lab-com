@@ -44,11 +44,13 @@ graph TD
     G --> I
     H --> J[Consider opening<br/>Scorecard issue]
 
+    %% Ghostty Hardcore Theme
     style A fill:#1f77b4,stroke:#fff,stroke-width:2px,color:#fff
     style C fill:#2ca02c,stroke:#fff,stroke-width:2px,color:#fff
     style E fill:#2ca02c,stroke:#fff,stroke-width:2px,color:#fff
     style G fill:#ff7f0e,stroke:#fff,stroke-width:2px,color:#fff
     style H fill:#d62728,stroke:#fff,stroke-width:2px,color:#fff
+
 ```
 
 **General principles**:

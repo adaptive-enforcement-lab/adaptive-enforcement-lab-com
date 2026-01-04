@@ -22,11 +22,13 @@ graph TD
 
     PP -->|Contains all policies| OUT[Unified Enforcement]
 
+    %% Ghostty Hardcore Theme
     style SP fill:#f92572,color:#1b1d1e
     style DP fill:#fd971e,color:#1b1d1e
     style KC fill:#9e6ffe,color:#1b1d1e
     style APP fill:#a7e22e,color:#1b1d1e
     style PP fill:#65d9ef,color:#1b1d1e
+
 ```
 
 !!! tip "Policy Repos as OCI Containers"

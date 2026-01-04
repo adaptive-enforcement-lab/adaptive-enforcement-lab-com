@@ -30,11 +30,13 @@ flowchart LR
     C --> E[Done]
     D --> E
 
+    %% Ghostty Hardcore Theme
     style A fill:#5e7175,color:#f8f8f3
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#65d9ef,color:#1b1d1e
     style E fill:#5e7175,color:#f8f8f3
+
 ```
 
 ---
@@ -172,6 +174,8 @@ The time between "check" and "act" creates a window for race conditions:
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant W1 as Worker 1
     participant S as Shared State
     participant W2 as Worker 2
@@ -187,6 +191,7 @@ sequenceDiagram
     rect rgb(27, 29, 30)
         Note over W1,W2: Both workers pass the check<br/>before either acts
     end
+
 ```
 
 ```bash

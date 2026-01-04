@@ -96,12 +96,14 @@ flowchart TD
     G -->|Yes| H[Pipeline Succeeds]
     G -->|No| F
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style E fill:#fd971e,color:#1b1d1e
     style H fill:#a7e22e,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 The orchestrator manages the flow. Each child workflow handles its specific task. The UI shows the full hierarchy.

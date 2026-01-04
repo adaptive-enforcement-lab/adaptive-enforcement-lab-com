@@ -171,6 +171,7 @@ graph TD;
     K -->|Compliant| M[Pod created]
     M --> N[Policy Reporter logs compliance]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style E fill:#fd971e,color:#1b1d1e
@@ -178,6 +179,7 @@ graph TD;
     style K fill:#fd971e,color:#1b1d1e
     style L fill:#f92572,color:#1b1d1e
     style M fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **Shift-left:** Local validation and CI checks catch 90% of violations.

@@ -26,11 +26,13 @@ flowchart LR
     T2 -.->|blocked| Build[Build Pipeline]
     A2 --> Build
 
+    %% Ghostty Hardcore Theme
     style T1 fill:#f92572,color:#1b1d1e
     style T2 fill:#f92572,color:#1b1d1e
     style A1 fill:#a7e22e,color:#1b1d1e
     style A2 fill:#a7e22e,color:#1b1d1e
     style Build fill:#65d9ef,color:#1b1d1e
+
 ```
 
 !!! warning "GITHUB_TOKEN Security Measure"

@@ -74,10 +74,12 @@ graph TB
     CA --> API
     PSC --> API
 
+    %% Ghostty Hardcore Theme
     style API fill:#2D4263
     style WI fill:#4A7A8C
     style BA fill:#6B8E9F
     style CA fill:#6B8E9F
+
 ```
 
 ## Quick Start

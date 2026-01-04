@@ -28,11 +28,13 @@ flowchart LR
 
     A2[Same Content] --> B
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style A2 fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
+
 ```
 
 !!! info "Content-Addressable by Design"

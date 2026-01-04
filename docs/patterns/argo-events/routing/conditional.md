@@ -21,12 +21,14 @@ flowchart TD
     D -->|Yes| E[Trigger: Deploy Staging]
     D -->|No| F[Trigger: Log Only]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#f92572,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
     style F fill:#75715e,color:#f8f8f3
+
 ```
 
 ---

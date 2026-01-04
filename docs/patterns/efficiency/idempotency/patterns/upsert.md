@@ -31,12 +31,14 @@ flowchart LR
         B1[Upsert] --> B2[Done]
     end
 
+    %% Ghostty Hardcore Theme
     style A1 fill:#5e7175,color:#f8f8f3
     style A2 fill:#fd971e,color:#1b1d1e
     style A3 fill:#a7e22e,color:#1b1d1e
     style A4 fill:#65d9ef,color:#1b1d1e
     style B1 fill:#9e6ffe,color:#1b1d1e
     style B2 fill:#a7e22e,color:#1b1d1e
+
 ```
 
 !!! info "Atomic by Design"

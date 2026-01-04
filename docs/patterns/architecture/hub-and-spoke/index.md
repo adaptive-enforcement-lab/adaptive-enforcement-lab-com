@@ -27,11 +27,13 @@ flowchart LR
     C --> D[Task 3]
     D --> E[Task 4]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
     style E fill:#fd971e,color:#1b1d1e
+
 ```
 
 Total time: sum of all tasks. Can't parallelize. Bottleneck at the orchestrator.
@@ -55,11 +57,13 @@ flowchart TD
     S3 --> Hub
     S4 --> Hub
 
+    %% Ghostty Hardcore Theme
     style Hub fill:#9e6ffe,color:#1b1d1e
     style S1 fill:#a7e22e,color:#1b1d1e
     style S2 fill:#a7e22e,color:#1b1d1e
     style S3 fill:#a7e22e,color:#1b1d1e
     style S4 fill:#a7e22e,color:#1b1d1e
+
 ```
 
 Total time: longest single task. Linear scaling. Hub unchanged as spokes grow.

@@ -44,6 +44,8 @@ The `synchronization.mutexes` field declares which mutexes this workflow needs. 
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant A as Workflow A
     participant M as Mutex: build-lock
     participant B as Workflow B
@@ -66,6 +68,7 @@ sequenceDiagram
     B->>M: Release lock
     M-->>C: Lock granted
     Note over C: Running...
+
 ```
 
 Workflows execute in FIFO order. The first to request the lock gets it. Others queue up. No workflow starves indefinitely. Eventually it reaches the front of the queue.

@@ -49,12 +49,14 @@ graph LR
     D -->|Passes| E[Deploy/Release]
     D -->|Fails| F[Block]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#ffd866,color:#1b1d1e
     style C fill:#ffd866,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
     style E fill:#a9dc76,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 **Critical insight**: Verification happens **after** build but **before** deployment or release. This creates an enforcement gate.
@@ -274,6 +276,7 @@ graph TD
     V5 -->|Yes| Pass[✅ Allow]
     V5 -->|No| Fail5[❌ Block: Insufficient SLSA level]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style Pass fill:#a7e22e,color:#1b1d1e
     style Fail1 fill:#f92572,color:#1b1d1e
@@ -281,6 +284,7 @@ graph TD
     style Fail3 fill:#f92572,color:#1b1d1e
     style Fail4 fill:#f92572,color:#1b1d1e
     style Fail5 fill:#f92572,color:#1b1d1e
+
 ```
 
 ---

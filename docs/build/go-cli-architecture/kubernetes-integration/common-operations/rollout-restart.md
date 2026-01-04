@@ -23,11 +23,13 @@ graph LR
     ScaleUp --> ScaleDown[Scale Down Old Pods]
     ScaleDown --> Done[Restart Complete]
 
+    %% Ghostty Hardcore Theme
     style Patch fill:#fd971e,color:#1b1d1e
     style NewRS fill:#65d9ef,color:#1b1d1e
     style ScaleUp fill:#65d9ef,color:#1b1d1e
     style ScaleDown fill:#65d9ef,color:#1b1d1e
     style Done fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

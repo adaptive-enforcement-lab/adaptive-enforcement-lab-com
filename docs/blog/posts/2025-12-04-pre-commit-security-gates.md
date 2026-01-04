@@ -39,12 +39,14 @@ flowchart LR
     E -->|No| F[Fix & Recommit]
     F --> C
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style E fill:#f92572,color:#1b1d1e
     style F fill:#9e6ffe,color:#1b1d1e
+
 ```
 
 The violation already happened at step B. Everything after is damage control.
@@ -64,12 +66,14 @@ flowchart LR
     C --> E[Push]
     E --> F[CI Validates]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 Violations never enter git history. CI becomes validation, not discovery.

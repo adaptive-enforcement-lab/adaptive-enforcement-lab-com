@@ -44,6 +44,7 @@ flowchart LR
     G -->|Yes| E
     G -->|No| F[Abort with Report]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#65d9ef,color:#1b1d1e
     style C fill:#65d9ef,color:#1b1d1e
@@ -51,6 +52,7 @@ flowchart LR
     style G fill:#fd971e,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 The key insight: **check everything, then do everything**.

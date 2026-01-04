@@ -158,10 +158,12 @@ graph TD
     E -->|Referenced by| F[Policy Engine]
     F -->|Enforces| G[Kubernetes Admission]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
     style G fill:#ffd866,color:#1b1d1e
+
 ```
 
 **Flow**: CI/CD verifies provenance, adds image to verified registry, policy engine allows only verified images.

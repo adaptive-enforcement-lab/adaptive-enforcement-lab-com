@@ -33,11 +33,13 @@ graph LR
     Compile --> Binary[Static Binary]
     Distroless[distroless/static] --> Binary
 
+    %% Ghostty Hardcore Theme
     style Go fill:#65d9ef,color:#1b1d1e
     style Deps fill:#65d9ef,color:#1b1d1e
     style Compile fill:#65d9ef,color:#1b1d1e
     style Distroless fill:#a7e22e,color:#1b1d1e
     style Binary fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

@@ -41,11 +41,13 @@ flowchart LR
     C --> D[Merge]
     D --> E[Git Tag]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 The workflow trigger was standard:
@@ -133,11 +135,13 @@ flowchart TD
     PR --> Build[Build Pipeline]
     Push --> Build
 
+    %% Ghostty Hardcore Theme
     style Dev fill:#65d9ef,color:#1b1d1e
     style RP fill:#9e6ffe,color:#1b1d1e
     style PR fill:#fd971e,color:#1b1d1e
     style Push fill:#fd971e,color:#1b1d1e
     style Build fill:#a7e22e,color:#1b1d1e
+
 ```
 
 - Regular PRs trigger on `pull_request`
@@ -229,6 +233,7 @@ flowchart LR
     D3 --> Build[Build Pipeline]
     A4 --> Build
 
+    %% Ghostty Hardcore Theme
     style D1 fill:#65d9ef,color:#1b1d1e
     style D2 fill:#65d9ef,color:#1b1d1e
     style D3 fill:#fd971e,color:#1b1d1e
@@ -237,6 +242,7 @@ flowchart LR
     style A3 fill:#9e6ffe,color:#1b1d1e
     style A4 fill:#fd971e,color:#1b1d1e
     style Build fill:#a7e22e,color:#1b1d1e
+
 ```
 
 The pattern generalizes beyond release-please. Any automation that creates PRs via API needs a secondary trigger.

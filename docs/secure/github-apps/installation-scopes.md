@@ -92,6 +92,8 @@ Choosing the right installation scope for your GitHub Core App.
 
 ```mermaid
 flowchart TD
+
+%% Ghostty Hardcore Theme
     A[Installation Scope Decision] --> B{Need org-wide access?}
     B -->|Yes| C{Trust all workflows?}
     C -->|Yes| D[Organization-Wide]
@@ -99,6 +101,7 @@ flowchart TD
     B -->|No| F{Single team only?}
     F -->|Yes| G[Team-Scoped]
     F -->|No| E
+
 ```
 
 ## Implementation Examples

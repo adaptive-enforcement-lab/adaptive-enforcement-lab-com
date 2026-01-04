@@ -12,6 +12,8 @@ Installation tokens expire after **1 hour**.
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant W as Workflow
     participant A as Action
     participant G as GitHub API
@@ -31,6 +33,7 @@ sequenceDiagram
     A->>G: Request new token
     G->>A: Return fresh token
     A->>W: Output new token
+
 ```
 
 ## Automatic Token Refresh

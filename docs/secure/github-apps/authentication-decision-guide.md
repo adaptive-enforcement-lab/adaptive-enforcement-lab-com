@@ -40,7 +40,6 @@ flowchart TD
     style E fill:#9e6ffe,stroke:#9e6ffe,stroke-width:2px,color:#1b1d1e
     style F fill:#f92572,stroke:#ff669d,stroke-width:2px,color:#1b1d1e
 ```
-
 ## Detailed Decision Tree
 
 ```mermaid
@@ -81,7 +80,6 @@ flowchart TD
     style F2 fill:#515354,stroke:#ccccc7,stroke-width:1px,color:#ccccc7
     style F3 fill:#515354,stroke:#ccccc7,stroke-width:1px,color:#ccccc7
 ```
-
 ## Authentication Method Comparison
 
 | Aspect | JWT Token | Installation Token | OAuth Token |
@@ -172,6 +170,8 @@ User clicks "Create Issue" → OAuth flow → Token generated → Issue created 
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant W as Workflow
     participant K as Private Key
     participant G as GitHub API
@@ -183,12 +183,15 @@ sequenceDiagram
     G->>W: App-level response
 
     Note over W,G: Valid for 10 minutes
+
 ```
 
 ### Installation Token Flow
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant W as Workflow
     participant A as actions/create-github-app-token
     participant G as GitHub API
@@ -202,12 +205,15 @@ sequenceDiagram
     W->>R: Repository operations
 
     Note over W,R: Valid for 1 hour
+
 ```
 
 ### OAuth Flow
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant U as User
     participant A as Your App
     participant G as GitHub
@@ -222,6 +228,7 @@ sequenceDiagram
     A->>R: Operations as user
 
     Note over U,R: Valid until revoked
+
 ```
 
 ## Security Considerations by Method

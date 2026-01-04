@@ -12,6 +12,8 @@ description: >-
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant W as Workflow
     participant K as Private Key Secret
     participant J as JWT Generator
@@ -30,6 +32,7 @@ sequenceDiagram
 
     Note over J,G: Valid for 10 minutes max
     Note over W,G: Cannot access repositories
+
 ```
 
 ## Security Best Practices

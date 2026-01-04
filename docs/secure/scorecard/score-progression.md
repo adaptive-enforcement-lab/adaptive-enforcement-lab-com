@@ -29,10 +29,12 @@ graph LR
     B -->|1-2 days| C[Score 9<br/>Advanced Security]
     C -->|Ongoing| D[Score 10<br/>Exceptional]
 
+    %% Ghostty Hardcore Theme
     style A fill:#1f77b4,stroke:#fff,stroke-width:2px,color:#fff
     style B fill:#2ca02c,stroke:#fff,stroke-width:2px,color:#fff
     style C fill:#ff7f0e,stroke:#fff,stroke-width:2px,color:#fff
     style D fill:#d62728,stroke:#fff,stroke-width:2px,color:#fff
+
 ```
 
 Each tier represents a meaningful improvement in security posture. Not just a higher number.

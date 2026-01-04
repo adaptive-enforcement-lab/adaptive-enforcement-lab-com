@@ -36,6 +36,7 @@ graph LR
     Restart --> Done[Done]
     Skip --> Done
 
+    %% Ghostty Hardcore Theme
     style Start fill:#5e7175,color:#f8f8f3
     style Check fill:#fd971e,color:#1b1d1e
     style Skip fill:#65d9ef,color:#1b1d1e
@@ -43,6 +44,7 @@ graph LR
     style Select fill:#65d9ef,color:#1b1d1e
     style Restart fill:#65d9ef,color:#1b1d1e
     style Done fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

@@ -154,6 +154,8 @@ Push protection blocks commits containing secrets before they reach GitHub.
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant Dev as Developer
     participant Git as Git Client
     participant GH as GitHub
@@ -172,6 +174,7 @@ sequenceDiagram
         GH-->>Git: ✓ Push accepted
         Git-->>Dev: Push successful
     end
+
 ```
 
 ### Bypassing Push Protection
@@ -342,8 +345,10 @@ flowchart TD
     Clean1 --> Document1["6. Document incident"]
     Clean2 --> Document2["6. Document incident"]
 
+    %% Ghostty Hardcore Theme
     style Alert fill:#66d9ef,color:#1b1d1e
     style Critical fill:#f92572,color:#1b1d1e
     style Medium fill:#e6db74,color:#1b1d1e
     style Dismiss fill:#75715e,color:#f8f8f2
+
 ```

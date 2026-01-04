@@ -59,6 +59,8 @@ TTL interacts with mutex synchronization. A workflow holding a mutex continues h
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant A as Workflow A
     participant M as Mutex
     participant B as Workflow B
@@ -77,6 +79,7 @@ sequenceDiagram
     A->>M: Release lock
     M-->>B: Lock granted
     Note over B: Finally runs
+
 ```
 
 Keep failure TTL reasonable. Very long TTLs mean long waits when failures hold mutexes.

@@ -22,10 +22,12 @@ graph LR
     Env --> Config[Config File]
     Config --> Defaults[Defaults]
 
+    %% Ghostty Hardcore Theme
     style Flags fill:#f92572,color:#1b1d1e
     style Env fill:#fd971e,color:#1b1d1e
     style Config fill:#65d9ef,color:#1b1d1e
     style Defaults fill:#5e7175,color:#f8f8f3
+
 ```
 
 ---

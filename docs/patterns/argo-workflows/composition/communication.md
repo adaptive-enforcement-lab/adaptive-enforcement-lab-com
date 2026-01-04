@@ -83,12 +83,14 @@ flowchart LR
     D -->|event| E[Sensor]
     E -->|trigger| F[Deploy Workflow]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
     style E fill:#fd971e,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 The build workflow publishes without knowing about deployment. The deploy workflow triggers without knowing about the build. Pub/Sub and Argo Events bridge the gap.
