@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.11.1...1.11.2) (2026-01-04)
+
+
+### Maintenance
+
+* **deps:** update adaptive-enforcement-lab/readability action to v3.0.1 ([#226](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/226)) ([73cd584](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/73cd58484b75ff1d2bcaf5a3832b95845d98b934))
+
 ## [1.11.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.11.0...1.11.1) (2026-01-04)
 
 
