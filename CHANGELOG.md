@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.10.0...1.11.0) (2026-01-04)
+
+
+### New Content
+
+* **docs:** move glossary from main nav to footer ([#228](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/228)) ([a5884e1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/a5884e1ef0487297c29a0899584a534267123408))
+
 ## [1.10.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.9.0...1.10.0) (2026-01-04)
 
 
