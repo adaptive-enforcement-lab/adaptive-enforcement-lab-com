@@ -1,4 +1,5 @@
 ---
+title: Dependency Chaos Experiments
 description: >-
   Test dependency failures with chaos experiments validating circuit breakers, fallback patterns, graceful degradation, and automatic recovery in microservices.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - experiments
 ---
-
 # Dependency Chaos Experiments
 
 Multi-service resilience testing to validate circuit breakers, fallback patterns, and graceful degradation.

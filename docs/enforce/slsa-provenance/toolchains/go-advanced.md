@@ -1,4 +1,5 @@
 ---
+title: Advanced SLSA Patterns for Go
 tags:
   - slsa
   - provenance
@@ -14,7 +15,6 @@ tags:
 description: >-
   Advanced SLSA patterns for Go: container images with distroless, provenance verification with slsa-verifier, common gotchas, and production best practices.
 ---
-
 # Advanced SLSA Patterns for Go
 
 Container images, verification workflows, and production best practices.

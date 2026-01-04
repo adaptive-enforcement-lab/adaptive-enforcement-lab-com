@@ -1,4 +1,5 @@
 ---
+title: Kyverno Image Signature Verification
 description: >-
   Kyverno image signature verification using Sigstore cosign. Verify container image signatures and attestations before deployment for supply chain security.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Image Signature Verification
 
 Verifies container image signatures using Sigstore cosign before allowing deployment. Ensures only cryptographically signed images from trusted sources reach production.

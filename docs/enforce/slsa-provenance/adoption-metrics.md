@@ -1,4 +1,5 @@
 ---
+title: SLSA Adoption Metrics and Pilot Programs
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   SLSA adoption metrics and pilot programs: track coverage, quality, and verification success. Measure ROI with security improvements, compliance benefits, and operational efficiency gains.
 ---
-
 # SLSA Adoption Metrics and Pilot Programs
 
 Measure success and demonstrate value of SLSA adoption.

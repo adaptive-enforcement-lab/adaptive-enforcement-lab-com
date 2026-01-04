@@ -1,4 +1,5 @@
 ---
+title: Phase 4: Compliance Validation
 description: >-
   Compliance validation for SDLC hardening. OpenSSF Scorecard monitoring, Best Practices Badge, SLSA verification, dependency compliance, and automated report generation.
 tags:
@@ -8,7 +9,6 @@ tags:
   - scorecard
   - validation
 ---
-
 # Phase 4: Compliance Validation
 
 Prove to auditors that controls are real, not cosmetic.

@@ -1,4 +1,5 @@
 ---
+title: What Release-Please Can't Do
 date: 2025-11-30
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   When I tried to track CONTRIBUTING.md separately, I learned why.
 slug: what-release-please-cant-do
 ---
-
 # What Release-Please Can't Do
 
 I wanted to version CONTRIBUTING.md independently from the main project. Separate changelog. Separate release cycle. Separate tags.

@@ -1,4 +1,5 @@
 ---
+title: The Regex That Fixed Everything
 date: 2025-12-26
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Components configured. Codecov showed "No report uploaded." Paths looked correct. Glob patterns vs regex syntax.
 slug: regex-that-fixed-everything
 ---
-
 # The Regex That Fixed Everything
 
 Codecov components were configured. Five components, clean breakdown by package.

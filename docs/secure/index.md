@@ -1,4 +1,5 @@
 ---
+title: Secure
 description: >-
   Find and fix security issues before they become incidents. Vulnerability scanning,
   SBOM generation, supply chain security, and secure authentication workflows.
@@ -8,7 +9,6 @@ tags:
   - developers
   - operators
 ---
-
 # Secure
 
 Finding and fixing security issues before they become incidents.

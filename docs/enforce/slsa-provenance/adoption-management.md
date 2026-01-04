@@ -1,4 +1,5 @@
 ---
+title: SLSA Adoption Management Guide
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   SLSA adoption management: team coordination, risk management strategies, pilot program design, and success metrics. Organizational playbook for rolling out SLSA at scale.
 ---
-
 # SLSA Adoption Management Guide
 
 Organizational strategies for rolling out SLSA at scale.

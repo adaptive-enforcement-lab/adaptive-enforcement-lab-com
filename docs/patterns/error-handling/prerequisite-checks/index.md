@@ -1,4 +1,5 @@
 ---
+title: Prerequisite Checks
 description: >-
   Consolidate all precondition validation into a dedicated gate phase. Check tools, permissions, state, and resources before executing deployment or automation tasks.
 tags:
@@ -9,7 +10,6 @@ tags:
   - developers
   - github-actions
 ---
-
 # Prerequisite Checks
 
 Validate all preconditions before executing expensive or irreversible operations.

@@ -1,4 +1,5 @@
 ---
+title: Phase 1: Foundation (Weeks 1-4)
 description: >-
   Deploy pre-commit hooks for secrets detection, branch protection with required reviews, commit signature verification, and org-wide distribution strategies.
 tags:
@@ -8,7 +9,6 @@ tags:
   - secrets-detection
   - code-review
 ---
-
 # Phase 1: Foundation (Weeks 1-4)
 
 Establish local development controls and repository protection. These controls prevent bad code from ever entering git history.

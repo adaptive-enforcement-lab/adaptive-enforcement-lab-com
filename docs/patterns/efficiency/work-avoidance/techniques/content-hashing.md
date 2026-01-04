@@ -1,8 +1,8 @@
 ---
+title: Content Hashing
 description: >-
   Compare cryptographic hashes to detect meaningful changes. SHA-256, streaming strategies, and algorithm selection for file comparisons and config synchronization.
 ---
-
 # Content Hashing
 
 Compare content hashes to detect meaningful changes.

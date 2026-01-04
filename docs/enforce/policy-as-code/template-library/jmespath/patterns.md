@@ -1,4 +1,5 @@
 ---
+title: JMESPath Patterns for Kyverno Policies
 description: >-
   JMESPath patterns for advanced Kyverno policies. Master data extraction, complex conditions, and cross-field validation with production-tested examples.
 tags:
@@ -7,7 +8,6 @@ tags:
   - policy-as-code
   - kubernetes
 ---
-
 # JMESPath Patterns for Kyverno Policies
 
 Master JMESPath for complex Kyverno policies. Extract data, build conditions, and validate nested Kubernetes resources with production-tested patterns.

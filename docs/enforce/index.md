@@ -1,4 +1,5 @@
 ---
+title: Enforce
 tags:
   - policy-enforcement
   - security
@@ -9,7 +10,6 @@ tags:
 description: >-
   Make security mandatory through automation. Branch protection, pre-commit hooks, status checks, policy-as-code, and SLSA provenance for SOC 2 compliance.
 ---
-
 # Enforce
 
 Making security mandatory through automation.

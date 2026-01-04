@@ -1,8 +1,8 @@
 ---
+title: Common Patterns
 description: >-
   Debug frequent Argo Events issues with proven solutions. Fix JSON parsing failures, dependency mismatches, namespace conflicts, and webhook delivery problems.
 ---
-
 # Common Patterns
 
 Frequently encountered issues and their solutions. These patterns appear across different EventSource types and Sensor configurations.

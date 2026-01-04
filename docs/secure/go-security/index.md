@@ -1,4 +1,5 @@
 ---
+title: Go Security Tooling
 description: >-
   Standard Go security toolkit: race detector, golangci-lint, Trivy, govulncheck. Zero
   cost, seamless integration, and OpenSSF-certified security workflow patterns.
@@ -10,7 +11,6 @@ tags:
   - govulncheck
   - developers
 ---
-
 # Go Security Tooling
 
 Security-focused tooling built into the Go ecosystem. No exotic tools needed. Everything is standard, integrated, and runs every commit.

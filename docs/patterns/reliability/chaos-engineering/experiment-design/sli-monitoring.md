@@ -1,4 +1,5 @@
 ---
+title: SLI Monitoring During Chaos
 description: >-
   SLI monitoring during chaos experiments. Baseline measurement, live tracking, recovery validation, and metric comparison patterns.
 tags:
@@ -7,7 +8,6 @@ tags:
   - monitoring
   - metrics
 ---
-
 # SLI Monitoring During Chaos
 
 Link chaos experiments to Service Level Indicators for measurable validation.

@@ -1,4 +1,5 @@
 ---
+title: The Checklist That Passed the Audit
 date: 2025-12-30
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When auditors ask "how do you know?" and you have receipts. The SDLC hardening checklist that turned compliance from panic to process.
 slug: checklist-passed-audit
 ---
-
 # The Checklist That Passed the Audit
 
 Audit notice: 30 days. Evidence requested: everything.

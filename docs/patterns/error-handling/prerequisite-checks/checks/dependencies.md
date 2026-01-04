@@ -1,4 +1,5 @@
 ---
+title: Dependency Checks
 description: >-
   Dependency validation checks for upstream jobs, required artifacts, external services, and API rate limits.
 tags:
@@ -6,7 +7,6 @@ tags:
   - dependencies
   - validation
 ---
-
 # Dependency Checks
 
 Verify dependencies are ready.

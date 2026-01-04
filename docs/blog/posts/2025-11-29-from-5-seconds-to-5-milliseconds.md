@@ -1,4 +1,5 @@
 ---
+title: "From 5 Seconds to 5ms: Event-Driven Deployment Evolution"
 date: 2025-11-29
 authors:
   - mark
@@ -10,7 +11,6 @@ categories:
   - Engineering Patterns
 slug: from-5-seconds-to-5-milliseconds
 ---
-
 # From 5 Seconds to 5 Milliseconds: The Evolution of Event-Driven Deployment Automation
 
 Every time someone pushed a container image, my Kubernetes API server winced. The workflow that was supposed to be "instant" took 5-10 seconds and hammered the cluster with requests.

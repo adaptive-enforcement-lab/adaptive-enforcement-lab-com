@@ -1,4 +1,5 @@
 ---
+title: Pod-Level Chaos Experiments
 description: >-
   Run pod-level chaos experiments using Chaos Mesh to validate Kubernetes orchestration recovery, replica scaling, readiness probes, and graceful pod shutdown.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - experiments
 ---
-
 # Pod-Level Chaos Experiments
 
 Pod deletion and crash loop testing experiments to validate application recovery and orchestration behavior.

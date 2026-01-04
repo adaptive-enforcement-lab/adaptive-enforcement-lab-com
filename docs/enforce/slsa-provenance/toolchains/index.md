@@ -1,4 +1,5 @@
 ---
+title: SLSA Provenance: Toolchain Integration
 tags:
   - slsa
   - provenance
@@ -13,7 +14,6 @@ tags:
 description: >-
   SLSA provenance for Go, Node.js, and Python: binary builds, package publishing, container images, and dependency verification with cryptographic integrity proofs.
 ---
-
 # SLSA Provenance: Toolchain Integration
 
 Turn language-specific builds into provable pipelines.

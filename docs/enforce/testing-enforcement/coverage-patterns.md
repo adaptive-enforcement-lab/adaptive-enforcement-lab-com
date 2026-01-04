@@ -1,8 +1,8 @@
 ---
+title: Test Coverage Patterns
 description: >-
   Achieve 95%+ test coverage by refactoring for testability. Break complexity walls with extracted functions and table-driven tests, not exotic tooling.
 ---
-
 # Test Coverage Patterns
 
 High test coverage (95%+) as a quality gate, achieved through complexity management and refactoring for testability.

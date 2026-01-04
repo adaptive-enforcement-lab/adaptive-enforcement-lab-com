@@ -1,4 +1,5 @@
 ---
+title: Phase 4: Audit Evidence Collection
 description: >-
   Audit evidence collection for SDLC hardening. Branch protection archival, PR review records, commit signature tracking, workflow logs, and SBOM storage for compliance validation.
 tags:
@@ -8,7 +9,6 @@ tags:
   - archival
   - documentation
 ---
-
 # Phase 4: Audit Evidence Collection
 
 Document everything. Auditors will ask. Automated collection ensures evidence exists when needed.

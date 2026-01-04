@@ -1,4 +1,5 @@
 ---
+title: CI/CD Integration
 description: >-
   Automate OpenSSF Scorecard monitoring in CI/CD pipelines. Detect score
   regressions, alert on changes, and prevent security practice decay.
@@ -7,7 +8,6 @@ tags:
   - ci-cd
   - automation
 ---
-
 # CI/CD Integration
 
 Scorecard in CI prevents security practice decay. Run it automatically, detect regressions before they ship, and enforce minimum scores across your organization.

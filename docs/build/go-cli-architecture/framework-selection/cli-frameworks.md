@@ -1,8 +1,8 @@
 ---
+title: CLI Frameworks
 description: >-
   Compare Cobra, urfave/cli, and Kong for Go CLI development. Match kubectl conventions with automatic help generation and shell completion support.
 ---
-
 # CLI Frameworks
 
 Compare Go CLI frameworks to choose the right foundation for your tool.

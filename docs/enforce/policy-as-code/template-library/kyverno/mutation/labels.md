@@ -1,4 +1,5 @@
 ---
+title: Kyverno Mutation Templates: Labels
 description: >-
   Automatically add required labels to Kubernetes workloads with Kyverno mutation policies ensuring consistent metadata and resource governance.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Mutation Templates: Labels
 
 Automatically injects required labels into Kubernetes resources. Ensures consistent metadata without requiring manual configuration in every manifest.

@@ -1,4 +1,5 @@
 ---
+title: "Zero-API Lookups: ConfigMap as a Cache Pattern"
 date: 2025-12-03
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Mount ConfigMaps as volumes for millisecond reads. Zero API calls. Self-healing cache misses.
 slug: configmap-cache-zero-api
 ---
-
 # Zero-API Lookups: ConfigMap as a Cache Pattern
 
 The cluster scan was killing performance. Every image push meant querying the API server for all deployments. 5-10 seconds of latency. Hundreds of API calls per day asking the same question.

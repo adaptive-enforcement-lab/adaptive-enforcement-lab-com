@@ -1,4 +1,5 @@
 ---
+title: OPA Policy Templates
 description: >-
   OPA Gatekeeper policy templates overview. 20 production-ready constraint templates for pod security, image validation, RBAC, and resource governance.
 tags:
@@ -8,7 +9,6 @@ tags:
   - policy-as-code
   - templates
 ---
-
 # OPA Policy Templates
 
 !!! warning "Deploy in Audit Mode First"

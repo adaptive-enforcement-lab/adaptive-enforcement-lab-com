@@ -1,4 +1,5 @@
 ---
+title: State Preconditions
 description: >-
   State precondition checks for resource existence, naming conflicts, service health, and system state before operations.
 tags:
@@ -6,7 +7,6 @@ tags:
   - state
   - validation
 ---
-
 # State Preconditions
 
 Validate system state before operations.

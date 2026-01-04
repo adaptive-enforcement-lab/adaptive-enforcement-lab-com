@@ -1,4 +1,5 @@
 ---
+title: Policy-as-Code: End-to-End Enforcement
 tags:
   - policy-enforcement
   - kubernetes
@@ -10,7 +11,6 @@ tags:
 description: >-
   Enforce security and compliance policies across local dev, CI pipelines, and runtime admission. Three-layer Kyverno enforcement eliminates policy gaps entirely.
 ---
-
 # Policy-as-Code: End-to-End Enforcement
 
 Enforce security and operational policies across the entire SDLC: local development, CI pipelines, and runtime admission control.

@@ -1,4 +1,5 @@
 ---
+title: Kyverno Network Security Templates
 description: >-
   Enforce Kubernetes network policies and egress restrictions with Kyverno policies preventing lateral movement and data exfiltration.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Network Security Templates
 
 Enforces network isolation through NetworkPolicy requirements and egress restrictions. Prevents lateral movement and unauthorized external communication.

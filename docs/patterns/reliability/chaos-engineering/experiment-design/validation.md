@@ -1,4 +1,5 @@
 ---
+title: Validation Patterns
 description: >-
   Validation patterns for chaos experiments. Incident detection testing, auto-remediation verification, experiment catalog template, and pre-experiment checklist.
 tags:
@@ -7,7 +8,6 @@ tags:
   - testing
   - runbooks
 ---
-
 # Validation Patterns
 
 Transform observations into actionable reliability improvements.

@@ -1,4 +1,5 @@
 ---
+title: SDLC Hardening Implementation Roadmap
 description: >-
   Deploy defense-in-depth SDLC hardening across four phases: pre-commit hooks, CI/CD gates, runtime enforcement, and continuous audit evidence collection systems.
 tags:
@@ -8,7 +9,6 @@ tags:
   - enforcement
   - roadmap
 ---
-
 # SDLC Hardening Implementation Roadmap
 
 Every control in this roadmap is actionable and verifiable. No vague policies. No wishful thinking.

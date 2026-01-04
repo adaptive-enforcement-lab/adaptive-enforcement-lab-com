@@ -1,4 +1,5 @@
 ---
+title: False Positives Guide
 description: >-
   Identify and resolve OpenSSF Scorecard false positives. Learn which check
   failures are legitimate deviations and how to document exceptions.
@@ -7,7 +8,6 @@ tags:
   - troubleshooting
   - false-positives
 ---
-
 # False Positives Guide
 
 OpenSSF Scorecard uses heuristics, not perfect knowledge. This creates false positives where the tool flags secure patterns as problems, and false negatives where it misses real issues.

@@ -1,8 +1,8 @@
 ---
+title: Backpressure Handling
 description: >-
   Prevent system overload with backpressure controls. Configure EventBus limits, Sensor rate limiting, and workflow concurrency for production event flows.
 ---
-
 # Backpressure Handling
 
 When events arrive faster than they can be processed, systems must apply backpressure by slowing or rejecting new events to prevent overload. Without backpressure, queues grow unbounded, memory exhausts, and systems crash.

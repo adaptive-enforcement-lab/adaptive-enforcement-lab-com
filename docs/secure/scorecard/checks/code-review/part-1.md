@@ -1,4 +1,5 @@
 ---
+title: Code Review & Project Health Checks
 description: >-
   Remediation playbooks for code review checks including Code-Review,
   Contributors, and Maintained with GitHub branch protection patterns.
@@ -7,7 +8,6 @@ tags:
   - code-review
   - quality
 ---
-
 # Code Review & Project Health Checks
 
 !!! tip "Key Insight"

@@ -1,4 +1,5 @@
 ---
+title: Remediation Cost vs. Risk Analysis
 tags:
   - risk-management
   - cost-benefit
@@ -6,7 +7,6 @@ tags:
 description: >-
   Remediation cost vs. risk analysis framework. Cost calculation, priority scoring, and examples of high vs. low priority patches.
 ---
-
 # Remediation Cost vs. Risk Analysis
 
 Not all patches are equal. Sometimes the "fix" introduces more risk than the vulnerability.

@@ -1,4 +1,5 @@
 ---
+title: Signed-Releases Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard Signed-Releases check.
   Achieve 10/10 with SLSA provenance using slsa-github-generator.
@@ -10,7 +11,6 @@ tags:
   - signatures
 
 ---
-
 # Signed-Releases Check
 
 !!! tip "Key Insight"

@@ -1,4 +1,5 @@
 ---
+title: CII-Best-Practices Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard CII-Best-Practices check.
   Earn OpenSSF Best Practices Badge to demonstrate security maturity.
@@ -9,7 +10,6 @@ tags:
   - certification
 
 ---
-
 # CII-Best-Practices Check
 
 !!! tip "Key Insight"

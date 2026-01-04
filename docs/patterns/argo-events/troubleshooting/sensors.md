@@ -1,8 +1,8 @@
 ---
+title: Sensor Troubleshooting
 description: >-
   Fix Sensor filter mismatches, condition failures, and trigger permission errors. Debug event routing with structured approaches for production troubleshooting.
 ---
-
 # Sensor Troubleshooting
 
 Sensors receive events from the EventBus and trigger actions. When events arrive but workflows don't start, the problem is usually in the Sensor configuration: filters, conditions, or triggers.

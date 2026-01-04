@@ -1,4 +1,5 @@
 ---
+title: OPA vs Kyverno: Detailed Comparison
 description: >-
   Detailed comparison of OPA/Gatekeeper vs Kyverno. Language differences, operational models, capability matrix, use case mapping, ecosystem integration, and performance benchmarks.
 tags:
@@ -8,7 +9,6 @@ tags:
   - gatekeeper
   - comparison
 ---
-
 # OPA vs Kyverno: Detailed Comparison
 
 Side-by-side comparison of capabilities, learning curves, and operational trade-offs. Deep dive into language differences, ecosystem integration, and performance characteristics.

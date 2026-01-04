@@ -1,4 +1,5 @@
 ---
+title: Kyverno Resource Governance Templates
 description: >-
   Kyverno resource governance policies enforcing CPU/memory limits, HPA requirements, and storage constraints for Kubernetes workloads.
 tags:
@@ -8,7 +9,6 @@ tags:
   - governance
   - kubernetes
 ---
-
 # Kyverno Resource Governance Templates
 
 Resource governance policies prevent overconsumption, enforce autoscaling requirements, and control storage allocation across your cluster.

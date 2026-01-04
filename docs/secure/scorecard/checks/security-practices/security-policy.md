@@ -1,4 +1,5 @@
 ---
+title: Security-Policy Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard Security-Policy check.
   Add SECURITY.md with clear vulnerability disclosure process.
@@ -7,7 +8,6 @@ tags:
   - security
   - vulnerability-disclosure
 ---
-
 # Security-Policy Check
 
 !!! tip "Key Insight"

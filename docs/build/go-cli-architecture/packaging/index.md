@@ -1,8 +1,8 @@
 ---
+title: Packaging
 description: >-
   Package Go CLIs as minimal secure containers with distroless base images. Static binaries, non-root users, read-only filesystems for production.
 ---
-
 # Packaging
 
 Build minimal, secure container images for your Go CLI.

@@ -1,8 +1,8 @@
 ---
+title: SAST Check
 description: >-
   Integrate CodeQL or Semgrep for automated vulnerability scanning. SAST tools detect security flaws before code review with zero manual configuration.
 ---
-
 # SAST Check
 
 !!! tip "Key Insight"

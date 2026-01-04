@@ -1,4 +1,5 @@
 ---
+title: OPA Image Verification Templates
 description: >-
   OPA Gatekeeper image signature verification. Require annotations proving cosign signature validation for supply chain security.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Image Verification Templates
 
 Validates container images have been cryptographically verified. Enforces required annotations proving cosign signature validation occurred in CI/CD pipeline.

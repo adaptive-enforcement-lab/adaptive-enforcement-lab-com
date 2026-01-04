@@ -1,4 +1,5 @@
 ---
+title: Input Validation
 description: >-
   Input validation checks for required fields, formats, and cross-field validation before processing data or operations.
 tags:
@@ -6,7 +7,6 @@ tags:
   - input-validation
   - validation
 ---
-
 # Input Validation
 
 Validate all inputs before processing.

@@ -1,4 +1,5 @@
 ---
+title: Advanced Fuzzing Techniques
 description: >-
   Advanced fuzzing techniques for OpenSSF Scorecard. Write effective fuzz
   targets, manage corpus, and implement continuous fuzzing strategies.
@@ -9,7 +10,6 @@ tags:
   - testing
 
 ---
-
 # Advanced Fuzzing Techniques
 
 !!! tip "Key Insight"

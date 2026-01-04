@@ -1,4 +1,5 @@
 ---
+title: The Security Team That Became Invisible
 date: 2026-01-07
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When security stops being the bottleneck. The culture playbook that made security everyone's job (and nobody's blocker).
 slug: security-team-became-invisible
 ---
-
 # The Security Team That Became Invisible
 
 Security team tickets: 200/month → 20/month. Security incidents: same → 0. How?

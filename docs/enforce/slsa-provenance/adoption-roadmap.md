@@ -1,4 +1,5 @@
 ---
+title: SLSA Adoption Roadmap
 tags:
   - slsa
   - provenance
@@ -13,7 +14,6 @@ tags:
 description: >-
   SLSA adoption roadmap: phased approach from Level 1 to Level 3 with validation checkpoints and rollback strategies. Incremental path to production-grade supply chain security.
 ---
-
 # SLSA Adoption Roadmap
 
 Incremental path from zero to production-grade supply chain security.

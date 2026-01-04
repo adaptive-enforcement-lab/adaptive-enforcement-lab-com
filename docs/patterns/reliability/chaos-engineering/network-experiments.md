@@ -1,4 +1,5 @@
 ---
+title: Network Chaos Experiments
 description: >-
   Network chaos experiments. Latency injection and dependency timeout testing with circuit breaker validation and recovery procedures.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - experiments
 ---
-
 # Network Chaos Experiments
 
 Network latency injection and dependency timeout testing to validate circuit breakers and fallback patterns.

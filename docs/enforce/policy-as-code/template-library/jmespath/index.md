@@ -1,4 +1,5 @@
 ---
+title: JMESPath for Kyverno
 description: >-
   Master JMESPath for Kyverno policies. Query nested resources, build complex conditions, and validate Kubernetes workloads with production-tested patterns.
 tags:
@@ -7,7 +8,6 @@ tags:
   - policy-as-code
   - kubernetes
 ---
-
 # JMESPath for Kyverno
 
 Master JMESPath to unlock advanced Kyverno policy capabilities. Query nested JSON structures, build complex validation logic, and enforce standards that simple pattern matching cannot express.

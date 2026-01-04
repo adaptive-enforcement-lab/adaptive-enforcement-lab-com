@@ -1,8 +1,8 @@
 ---
+title: Version Strategies
 description: >-
   Manage documentation version aliases with major version pointers, latest redirects, and dev deployments. Patterns for lifecycle management and multi-version support.
 ---
-
 # Version Strategies
 
 Patterns for managing documentation versions and aliases.

@@ -1,4 +1,5 @@
 ---
+title: Hypothesis Formation
 description: >-
   Hypothesis formation for chaos experiments. Structure hypotheses with given-when-then-and format, define observable outcomes, and create specific testable predictions.
 tags:
@@ -6,7 +7,6 @@ tags:
   - hypothesis
   - experiment-design
 ---
-
 # Hypothesis Formation
 
 Start with a question about system behavior under failure conditions.

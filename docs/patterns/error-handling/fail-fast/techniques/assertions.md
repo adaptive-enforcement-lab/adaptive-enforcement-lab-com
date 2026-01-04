@@ -1,4 +1,5 @@
 ---
+title: Assertion Patterns
 description: >-
   Assertion patterns: runtime assertions, contract validation, invariant checks, and type guards for fail fast validation.
 tags:
@@ -6,7 +7,6 @@ tags:
   - assertions
   - contracts
 ---
-
 # Assertion Patterns
 
 Validate assumptions and fail if they're wrong.

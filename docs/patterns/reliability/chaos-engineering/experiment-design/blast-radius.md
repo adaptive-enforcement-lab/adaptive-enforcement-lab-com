@@ -1,4 +1,5 @@
 ---
+title: Blast Radius Control
 description: >-
   Blast radius control for chaos experiments. Targeting strategies, progressive intensity, automatic rollback, and safe production chaos patterns.
 tags:
@@ -7,7 +8,6 @@ tags:
   - safety
   - production
 ---
-
 # Blast Radius Control
 
 Uncontrolled chaos destroys production. Controlled chaos reveals fragility.

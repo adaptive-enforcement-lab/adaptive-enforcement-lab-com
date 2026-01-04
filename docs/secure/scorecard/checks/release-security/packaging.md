@@ -1,4 +1,5 @@
 ---
+title: Packaging Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard Packaging check.
   Publish to package registries for wider distribution and trust.
@@ -7,7 +8,6 @@ tags:
   - packaging
   - registries
 ---
-
 # Packaging Check
 
 !!! tip "Key Insight"

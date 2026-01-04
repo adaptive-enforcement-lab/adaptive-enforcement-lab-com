@@ -1,9 +1,9 @@
 ---
+title: The Standard Toolkit
 description: >-
   Complete Go security toolkit reference: race detector, golangci-lint, Trivy, govulncheck,
   syft, TruffleHog. Free tools that run on every commit automatically.
 ---
-
 # The Standard Toolkit
 
 Go provides a complete security toolkit built into the standard toolchain. No separate installations or subscriptions required.

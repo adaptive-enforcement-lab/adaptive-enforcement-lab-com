@@ -1,4 +1,5 @@
 ---
+title: Kyverno Privilege Escalation Prevention
 description: >-
   Kyverno privilege escalation prevention templates. Block setuid, setgid, and privileged container execution to enforce least privilege principles.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Privilege Escalation Prevention
 
 Blocks containers from escalating privileges during runtime. These policies prevent `setuid`, `setgid`, and other privilege elevation mechanisms that could compromise cluster security.

@@ -1,8 +1,8 @@
 ---
+title: Semaphores
 description: >-
   Control concurrent access with semaphores. Limit N simultaneous workflows, adjust capacity at runtime via ConfigMap, and protect resources from overload in Argo.
 ---
-
 # Semaphores
 
 Semaphores limit concurrent access to a resource without requiring exclusive access. Unlike mutexes (which allow exactly one holder), semaphores allow N concurrent holders. This enables controlled parallelism. Multiple workflows can run simultaneously, but not unlimited numbers.

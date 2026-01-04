@@ -1,4 +1,5 @@
 ---
+title: Kyverno Base Image Enforcement
 description: >-
   Kyverno base image enforcement. Restrict allowed base images to approved, secure, and maintained distributions.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Base Image Enforcement
 
 Enforces base image standards. Restricts container images to approved base images only, preventing teams from using arbitrary or vulnerable base images.

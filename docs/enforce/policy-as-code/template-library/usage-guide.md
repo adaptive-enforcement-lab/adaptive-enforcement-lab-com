@@ -1,4 +1,5 @@
 ---
+title: Policy Template Usage Guide
 description: >-
   Policy template customization guide. Workflow for adapting templates, validation best practices, common customization patterns, and troubleshooting for Kyverno and OPA policies.
 tags:
@@ -7,7 +8,6 @@ tags:
   - troubleshooting
   - best-practices
 ---
-
 # Policy Template Usage Guide
 
 Complete guide to customizing, validating, and troubleshooting policy templates. Step-by-step workflow from download to production deployment.

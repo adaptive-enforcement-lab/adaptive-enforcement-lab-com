@@ -1,4 +1,5 @@
 ---
+title: The Chaos That Proved We Were Ready
 date: 2026-01-06
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When chaos engineering finds the incident before production does. The pod deletion that validated our operational resilience.
 slug: chaos-proved-we-were-ready
 ---
-
 # The Chaos That Proved We Were Ready
 
 You can test incident response in only two ways: during an actual incident (catastrophically late), or before one happens (the entire point of chaos engineering).

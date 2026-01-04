@@ -1,4 +1,5 @@
 ---
+title: The Last Service Account Key
 date: 2026-01-05
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When you delete the last JSON key file from production. The Workload Identity migration that eliminated credential leaks forever.
 slug: last-service-account-key
 ---
-
 # The Last Service Account Key
 
 ```text

@@ -1,4 +1,5 @@
 ---
+title: CVSS Score Interpretation for Engineers
 tags:
   - risk-management
   - cvss
@@ -6,7 +7,6 @@ tags:
 description: >-
   CVSS score interpretation for engineers. Understanding CVSS 3.1 components, translating scores to actionable decisions, and real-world vulnerability assessment examples.
 ---
-
 # CVSS Score Interpretation for Engineers
 
 CVSS (Common Vulnerability Scoring System) is useful but incomplete. Translate base scores to engineering decisions.

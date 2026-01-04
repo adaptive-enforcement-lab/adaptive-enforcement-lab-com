@@ -1,4 +1,5 @@
 ---
+title: Token-Permissions Check
 description: >-
   Complete remediation guide for OpenSSF Scorecard Token-Permissions check.
   Use job-level permission scoping to minimize blast radius.
@@ -10,7 +11,6 @@ tags:
   - least-privilege
 
 ---
-
 # Token-Permissions Check
 
 !!! tip "Key Insight"

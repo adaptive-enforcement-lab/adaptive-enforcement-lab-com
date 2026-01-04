@@ -1,4 +1,5 @@
 ---
+title: The 3am Incident That Followed The Playbook
 date: 2026-01-01
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When production breaks at 3am and muscle memory takes over. The incident playbook that turned chaos into checklist.
 slug: 3am-incident-followed-playbook
 ---
-
 # The 3am Incident That Followed The Playbook
 
 3:17am. The pager vibrates on the nightstand. Half asleep, hand fumbles for phone. The message is three lines. Pod restart storms. API latency spiking. Customers seeing timeouts.

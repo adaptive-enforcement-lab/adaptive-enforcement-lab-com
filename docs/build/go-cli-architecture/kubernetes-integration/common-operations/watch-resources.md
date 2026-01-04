@@ -1,8 +1,8 @@
 ---
+title: Watch Resources
 description: >-
   React to real-time Kubernetes resource changes with watch interface. Use event streams for efficient updates instead of polling cluster resources.
 ---
-
 # Watch Resources
 
 React to real-time Kubernetes resource changes.

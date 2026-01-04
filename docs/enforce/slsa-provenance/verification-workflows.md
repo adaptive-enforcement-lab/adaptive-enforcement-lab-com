@@ -1,4 +1,5 @@
 ---
+title: SLSA Provenance Verification Workflows
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   SLSA provenance verification in CI/CD: validate build integrity with slsa-verifier in PR checks, release gates, and deployment workflows. Practical GitHub Actions patterns.
 ---
-
 # SLSA Provenance Verification Workflows
 
 Turn provenance generation from aspirational to mandatory.

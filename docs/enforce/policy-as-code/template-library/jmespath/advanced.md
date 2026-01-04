@@ -1,4 +1,5 @@
 ---
+title: Advanced JMESPath Patterns for Kyverno
 description: >-
   Advanced JMESPath patterns for Kyverno. Label transformations, array operations, and string parsing with production examples.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - advanced
 ---
-
 # Advanced JMESPath Patterns for Kyverno
 
 Advanced JMESPath techniques for complex Kyverno policies. Label transformations, array operations, and string parsing.

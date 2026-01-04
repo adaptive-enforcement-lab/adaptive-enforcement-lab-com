@@ -1,4 +1,5 @@
 ---
+title: Blast Radius Calculation
 tags:
   - risk-management
   - blast-radius
@@ -6,7 +7,6 @@ tags:
 description: >-
   Blast radius calculation for vulnerability impact analysis. System coverage assessment, dependency mapping, and real-world examples.
 ---
-
 # Blast Radius Calculation
 
 Impact isn't uniform across your infrastructure. A vulnerability that affects 1% of servers is lower risk than one affecting 80%.

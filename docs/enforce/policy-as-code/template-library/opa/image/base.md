@@ -1,4 +1,5 @@
 ---
+title: OPA Base Image Templates
 description: >-
   OPA Gatekeeper base image enforcement. Require approved base images and block deprecated or vulnerable base image patterns.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Base Image Templates
 
 Enforces approved base images for container builds. Blocks deprecated base images and requires standardized base image patterns for supply chain security.

@@ -1,8 +1,8 @@
 ---
+title: CI/CD Examples
 description: >-
   Tombstone marker implementations for GitHub Actions, databases, and caches. Step-level, artifact-based, and cache-based completion tracking for CI/CD systems.
 ---
-
 # CI/CD Examples
 
 !!! example "Implementation Reference"

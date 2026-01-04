@@ -1,4 +1,5 @@
 ---
+title: "Policy-as-Code with Kyverno: Kubernetes Validation at Admission Time"
 date: 2025-12-13
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   Enforce security policies at admission time. Block misconfigured resources before they hit etcd.
 slug: policy-as-code-kyverno
 ---
-
 # Policy-as-Code with Kyverno: Kubernetes Validation at Admission Time
 
 The deployment had no resource limits. Memory leaked. The node crashed. Three pods died.

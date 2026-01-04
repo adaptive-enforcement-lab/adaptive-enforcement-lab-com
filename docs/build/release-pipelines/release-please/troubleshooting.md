@@ -1,8 +1,8 @@
 ---
+title: Troubleshooting
 description: >-
   Debug common release-please issues including missing PRs, version bumps, and workflow triggers. Validate configuration and resolve manifest path mismatches quickly.
 ---
-
 # Troubleshooting
 
 Common release-please issues and solutions.

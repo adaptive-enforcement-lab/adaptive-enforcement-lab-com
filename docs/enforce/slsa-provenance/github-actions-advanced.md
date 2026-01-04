@@ -1,4 +1,5 @@
 ---
+title: Advanced GitHub Actions Patterns for SLSA
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   Advanced GitHub Actions patterns for SLSA: multi-platform builds, monorepo patterns, organization-wide reusable workflows, and monitoring coverage.
 ---
-
 # Advanced GitHub Actions Patterns for SLSA
 
 Scale SLSA provenance from single repositories to organization-wide enforcement.

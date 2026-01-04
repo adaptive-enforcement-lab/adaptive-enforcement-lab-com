@@ -1,8 +1,8 @@
 ---
+title: Resolution Approaches
 description: >-
   Choose optimal resolution strategies for Scorecard false positives by balancing documentation effort, upstream fixes, and legitimate exceptions.
 ---
-
 # Resolution Approaches
 
 !!! tip "Key Insight"

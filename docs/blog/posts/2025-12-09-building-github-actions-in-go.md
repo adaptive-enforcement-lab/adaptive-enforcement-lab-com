@@ -1,4 +1,5 @@
 ---
+title: "Go-Based GitHub Actions: From Code to Marketplace"
 date: 2025-12-09
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   Ship Go-based GitHub Actions the right way.
 slug: building-github-actions-in-go
 ---
-
 # Go-Based GitHub Actions: From Code to Marketplace
 
 Go works well for GitHub Actions. Single binaries, fast starts, cross-platform builds, and no runtime deps.

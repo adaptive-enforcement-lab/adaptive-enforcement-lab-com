@@ -1,4 +1,5 @@
 ---
+title: Open Source Project Templates
 tags:
   - open-source
   - templates
@@ -9,7 +10,6 @@ tags:
 description: >-
   Production-ready templates for CONTRIBUTING.md, SECURITY.md, and GitHub issue forms. OpenSSF Best Practices Badge compliant, copy-paste ready, with realistic SLAs.
 ---
-
 # Open Source Project Templates
 
 Copy-paste templates for open source project documentation based on real OpenSSF Best Practices Badge certification work. CONTRIBUTING.md, SECURITY.md, and GitHub issue forms with realistic SLAs and proven compliance.

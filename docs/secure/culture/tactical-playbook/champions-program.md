@@ -1,7 +1,7 @@
 ---
+title: Security Champions Program
 description: Establish security champions program with structured training curriculum, protected time allocation, monthly community syncs, and public recognition systems.
 ---
-
 # Security Champions Program
 
 Identify and empower technical leaders within each team to drive security practices.

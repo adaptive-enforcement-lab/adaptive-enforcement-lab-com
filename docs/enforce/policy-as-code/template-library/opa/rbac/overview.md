@@ -1,4 +1,5 @@
 ---
+title: OPA RBAC Templates
 description: >-
   OPA Gatekeeper RBAC templates. Enforce service account restrictions and role binding limits with complete Rego implementations.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA RBAC Templates
 
 OPA/Gatekeeper constraint templates for RBAC security enforcement. Block default service accounts, enforce namespace boundaries, and prevent privilege escalation through production-tested Rego implementations.

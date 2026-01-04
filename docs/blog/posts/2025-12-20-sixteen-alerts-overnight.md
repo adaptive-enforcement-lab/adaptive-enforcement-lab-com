@@ -1,4 +1,5 @@
 ---
+title: "Sixteen Alerts Overnight: When Permissions Look Fine"
 date: 2025-12-20
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   16 Token-Permissions alerts appeared overnight. The workflows looked fine. The problem was invisible.
 slug: sixteen-alerts-overnight
 ---
-
 # Sixteen Alerts Overnight: When Permissions Look Fine
 
 The workflows had been running for months. Cosign signing. SBOM generation. Release automation.

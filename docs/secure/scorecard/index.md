@@ -1,4 +1,5 @@
 ---
+title: OpenSSF Scorecard Achievement Guide
 description: >-
   Complete OpenSSF Scorecard achievement guide. Understand all 18 security checks, fix
   false positives, navigate controversial recommendations, and progress from 7 to 10/10.
@@ -10,7 +11,6 @@ tags:
   - developers
   - operators
 ---
-
 # OpenSSF Scorecard Achievement Guide
 
 Comprehensive guide for understanding, interpreting, and improving OpenSSF Scorecard results. Covers all 18 checks, false positive handling, controversial check guidance, and remediation playbooks.

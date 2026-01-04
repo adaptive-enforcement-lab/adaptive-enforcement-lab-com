@@ -1,8 +1,8 @@
 ---
+title: Remediation Priority
 description: >-
   Prioritize Branch-Protection fixes with dependency updates and protection rules. Quick wins achieve passing scores in 1.5-2.5 hours total effort.
 ---
-
 # Remediation Priority
 
 !!! tip "Key Insight"

@@ -1,4 +1,5 @@
 ---
+title: GitHub Actions Workflow Patterns for SLSA
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   Reusable GitHub Actions workflow patterns for SLSA provenance with slsa-github-generator: generic artifacts, container images, and verification gates.
 ---
-
 # GitHub Actions Workflow Patterns for SLSA
 
 Turn SLSA provenance generation into repeatable, organization-wide patterns.

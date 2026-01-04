@@ -1,8 +1,8 @@
 ---
+title: Badge Integration
 description: >-
   Display OpenSSF Scorecard badges in README files to communicate security posture and track improvement trends across your organization.
 ---
-
 # Badge Integration
 
 !!! tip "Key Insight"

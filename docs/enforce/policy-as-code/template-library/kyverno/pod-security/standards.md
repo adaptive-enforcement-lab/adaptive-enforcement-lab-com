@@ -1,4 +1,5 @@
 ---
+title: Kyverno Pod Security Templates
 description: >-
   Kyverno pod security templates. Enforce pod security standards, prevent privileged containers, require read-only roots, and drop dangerous capabilities.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Pod Security Templates
 
 Enforces pod security standards with sensible defaults for production workloads. Prevents privileged containers, required read-only roots, and enforces security contexts.

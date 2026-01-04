@@ -1,4 +1,5 @@
 ---
+title: Error Escalation
 description: >-
   Error escalation strategies: when to throw vs return, error aggregation, panic vs recoverable errors, and exit codes.
 tags:
@@ -6,7 +7,6 @@ tags:
   - error-escalation
   - error-handling
 ---
-
 # Error Escalation
 
 Determine when to throw vs return, when to panic vs recover.

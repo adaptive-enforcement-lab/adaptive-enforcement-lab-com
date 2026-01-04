@@ -1,4 +1,5 @@
 ---
+title: Go CLI Architecture
 description: >-
   Build Kubernetes-native CLIs in Go with type safety, testability, and complex orchestration logic for deployment tools and cluster automation.
 tags:
@@ -9,7 +10,6 @@ tags:
   - testing
   - developers
 ---
-
 # Go CLI Architecture
 
 Build orchestration CLIs in Go for Kubernetes-native automation.

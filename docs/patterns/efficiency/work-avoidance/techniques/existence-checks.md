@@ -1,8 +1,8 @@
 ---
+title: Existence Checks
 description: >-
   Skip resource creation when it already exists. Check-before-create patterns for PRs, branches, cloud resources, and Kubernetes with race condition mitigation.
 ---
-
 # Existence Checks
 
 Skip creation when the resource already exists.

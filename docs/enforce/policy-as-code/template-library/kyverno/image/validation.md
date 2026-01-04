@@ -1,4 +1,5 @@
 ---
+title: Kyverno Image Validation Templates
 description: >-
   Enforce container image registry allowlists and prohibit latest tags using Kyverno policies for supply chain security and container signature verification.
 tags:
@@ -7,7 +8,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Image Validation Templates
 
 Controls which container images can be deployed. Enforces registry allowlists, prohibits `latest` tags, and optionally requires image signatures.

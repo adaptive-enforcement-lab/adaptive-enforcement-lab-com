@@ -1,3 +1,9 @@
+---
+title: Branch Protection
+description: >-
+  Configure GitHub branch protection rules for OpenSSF Scorecard compliance.
+  Multi-part guide covering required status checks, admin enforcement, and security settings.
+---
 # Branch Protection
 
 !!! note "Content Organization"

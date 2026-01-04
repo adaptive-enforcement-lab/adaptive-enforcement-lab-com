@@ -1,4 +1,5 @@
 ---
+title: Kyverno Resource Storage Templates
 description: >-
   Enforce ephemeral storage limits and PVC size constraints with Kyverno policies preventing disk exhaustion and runaway storage costs.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Resource Storage Templates
 
 Controls ephemeral storage consumption and persistent volume claim sizes. Prevents disk exhaustion and runaway storage costs.

@@ -1,4 +1,5 @@
 ---
+title: OPA RBAC Wildcard Prevention Template
 description: >-
   OPA Gatekeeper RBAC wildcard prevention template. Block wildcard resources and API groups to enforce least-privilege RBAC.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA RBAC Wildcard Prevention Template
 
 Prevents Roles and ClusterRoles from using wildcard (`*`) in resources, apiGroups, or verbs. Wildcards grant overly broad permissions and violate least-privilege principles.

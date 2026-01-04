@@ -1,4 +1,5 @@
 ---
+title: Success Criteria Definition
 description: >-
   Success criteria definition for chaos experiments. SLI-based validation, observable metrics, recovery verification, and validation timeline patterns.
 tags:
@@ -7,7 +8,6 @@ tags:
   - success-criteria
   - metrics
 ---
-
 # Success Criteria Definition
 
 Define concrete, measurable outcomes that prove your hypothesis.

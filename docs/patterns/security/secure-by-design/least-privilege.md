@@ -1,4 +1,5 @@
 ---
+title: Least Privilege
 description: >-
   Least privilege pattern for Kubernetes. Scoped ServiceAccounts, minimal RBAC permissions, and resource-level access control to limit blast radius.
 tags:
@@ -7,7 +8,6 @@ tags:
   - rbac
   - least-privilege
 ---
-
 # Least Privilege
 
 Least privilege grants only the minimum permissions required for a task. Nothing more.

@@ -1,4 +1,5 @@
 ---
+title: Decision Framework
 description: >-
   Navigate controversial Scorecard recommendations with decision frameworks
   for SHA pinning, fuzzing requirements, and branch protection rules.
@@ -7,7 +8,6 @@ tags:
   - decision-making
   - trade-offs
 ---
-
 # Decision Framework
 
 OpenSSF Scorecard gives you a score, not a prescription. Some recommendations are controversial. Some don't apply to your project. Some create more problems than they solve.

@@ -1,4 +1,5 @@
 ---
+title: Defense in Depth
 description: >-
   Defense in depth security pattern for Kubernetes. Multiple layers of security controls including pod security contexts, network policies, and resource limits.
 tags:
@@ -7,7 +8,6 @@ tags:
   - defense-in-depth
   - hardening
 ---
-
 # Defense in Depth
 
 Defense in depth layers multiple independent security controls. Compromise at one layer does not compromise the system.

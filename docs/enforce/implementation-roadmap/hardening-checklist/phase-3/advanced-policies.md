@@ -1,4 +1,5 @@
 ---
+title: Phase 3: Advanced Runtime Policies
 description: >-
   Advanced runtime policies. Namespace resource quotas, pod security standards, network policy enforcement, and comprehensive Kubernetes security controls.
 tags:
@@ -8,7 +9,6 @@ tags:
   - resource-quotas
   - kubernetes
 ---
-
 # Phase 3: Advanced Runtime Policies
 
 Extend runtime enforcement with namespace quotas, pod security standards, and network policies.

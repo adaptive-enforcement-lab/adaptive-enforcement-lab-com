@@ -1,4 +1,5 @@
 ---
+title: JMESPath Testing and Debugging
 description: >-
   JMESPath testing and debugging for Kyverno. Testing techniques, debugging tools, common pitfalls, and troubleshooting guide.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - testing
 ---
-
 # JMESPath Testing and Debugging
 
 Complete testing guide for JMESPath in Kyverno policies. Testing techniques, debugging tools, and troubleshooting.

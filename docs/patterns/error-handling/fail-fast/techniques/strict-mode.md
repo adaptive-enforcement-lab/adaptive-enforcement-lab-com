@@ -1,4 +1,5 @@
 ---
+title: Strict Mode Execution
 description: >-
   Strict mode execution: shell strict mode, TypeScript strict mode, linter enforcement, and schema validation.
 tags:
@@ -6,7 +7,6 @@ tags:
   - strict-mode
   - validation
 ---
-
 # Strict Mode Execution
 
 Enable strictest validation and error detection.

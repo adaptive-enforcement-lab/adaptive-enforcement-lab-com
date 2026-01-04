@@ -1,4 +1,5 @@
 ---
+title: OPA Privileged Verbs Template
 description: >-
   OPA Gatekeeper privileged RBAC verbs template. Block dangerous verbs like escalate, impersonate, and bind to prevent privilege escalation.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Privileged Verbs Template
 
 Prevents Roles and ClusterRoles from using dangerous verbs that enable privilege escalation. Verbs like `escalate`, `impersonate`, and `bind` allow attackers to gain higher permissions.

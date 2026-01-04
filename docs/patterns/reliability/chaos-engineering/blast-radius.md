@@ -1,4 +1,5 @@
 ---
+title: Blast Radius Control
 description: >-
   Control chaos engineering blast radius with namespace isolation, label scoping, time windows, progressive intensity scaling, and automatic rollback mechanisms.
 tags:
@@ -7,7 +8,6 @@ tags:
   - safety
   - kubernetes
 ---
-
 # Blast Radius Control
 
 Uncontrolled chaos destroys production. Controlled chaos reveals fragility.

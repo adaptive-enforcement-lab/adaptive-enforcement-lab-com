@@ -1,4 +1,5 @@
 ---
+title: OPA RBAC Templates
 description: >-
   OPA RBAC policies preventing cluster-admin privilege escalation, restricting privileged verbs, and blocking wildcard permissions.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - security
 ---
-
 # OPA RBAC Templates
 
 RBAC policies control who can perform which actions on which resources. These templates prevent privilege escalation through overly permissive roles.

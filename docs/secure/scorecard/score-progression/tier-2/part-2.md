@@ -1,8 +1,8 @@
 ---
+title: Tier 2 Additional Priorities
 description: >-
   Implement SAST scanning and security policies to formalize vulnerability detection and responsible disclosure practices in your repositories.
 ---
-
 # Tier 2 Additional Priorities
 
 !!! tip "Key Insight"

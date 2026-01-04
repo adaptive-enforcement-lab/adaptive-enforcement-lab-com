@@ -1,8 +1,8 @@
 ---
+title: Content Comparison
 description: >-
   Eliminate PR fatigue from version-only changes. Strip volatile fields before comparing files to skip distribution when only metadata bumps across 40+ repositories.
 ---
-
 # Content Comparison
 
 Skip file distribution when only version metadata changed.

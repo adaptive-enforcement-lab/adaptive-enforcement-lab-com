@@ -1,8 +1,8 @@
 ---
+title: Monitoring and Compliance
 description: >-
   Track policy compliance with Prometheus metrics, Slack alerts, and Policy Reporter dashboards. Manage exceptions and troubleshoot Kyverno enforcement.
 ---
-
 # Monitoring and Compliance
 
 Track policy compliance, manage exceptions, troubleshoot issues, and generate audit evidence.

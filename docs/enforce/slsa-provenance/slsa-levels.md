@@ -1,4 +1,5 @@
 ---
+title: SLSA Levels: Requirements and Security Guarantees
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   SLSA Levels 0-4 explained: requirements, security guarantees, and runner configurations. Understand what each level protects against and how to achieve compliance.
 ---
-
 # SLSA Levels: Requirements and Security Guarantees
 
 Incremental build security from documentation to hermetic builds.

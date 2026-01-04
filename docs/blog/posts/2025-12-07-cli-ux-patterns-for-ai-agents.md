@@ -1,4 +1,5 @@
 ---
+title: Designing Error Messages AI Agents Can't Misinterpret
 date: 2025-12-07
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   correct fixes, not destructive shortcuts.
 slug: cli-ux-patterns-for-ai-agents
 ---
-
 # Designing Error Messages AI Agents Can't Misinterpret
 
 AI coding assistants are increasingly the first responders to pre-commit failures and CI errors. The error messages your CLI produces directly influence how these agents attempt fixes. Often, these fixes happen without human review.

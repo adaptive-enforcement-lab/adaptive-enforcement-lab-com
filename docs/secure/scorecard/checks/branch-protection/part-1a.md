@@ -1,4 +1,5 @@
 ---
+title: Branch Protection & Dependency Management Checks
 description: >-
   Remediation playbooks for Branch-Protection and Dependency-Update-Tool
   checks with GitHub settings and Renovate/Dependabot configuration.
@@ -7,7 +8,6 @@ tags:
   - branch-protection
   - dependencies
 ---
-
 # Branch Protection & Dependency Management Checks
 
 !!! tip "Key Insight"

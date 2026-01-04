@@ -1,4 +1,5 @@
 ---
+title: SLSA Implementation Playbook
 tags:
   - slsa
   - provenance
@@ -12,7 +13,6 @@ tags:
 description: >-
   Complete SLSA implementation playbook: clarify SLSA vs SBOM confusion, classify runner configurations, implement verification workflows, and adopt incrementally from Level 1 to Level 3.
 ---
-
 # SLSA Implementation Playbook
 
 Turn supply chain security from aspirational to operational.

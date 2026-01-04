@@ -1,4 +1,5 @@
 ---
+title: OPA/Kyverno Migration Strategies
 description: >-
   Migration strategies for OPA and Kyverno. Migrate from Kyverno to OPA, supplement OPA with Kyverno, or run hybrid deployments. Policy translation examples and phased rollout guides.
 tags:
@@ -8,7 +9,6 @@ tags:
   - gatekeeper
   - migration
 ---
-
 # OPA/Kyverno Migration Strategies
 
 Migration paths between OPA and Kyverno. Phased rollout strategies, policy translation examples, and hybrid deployment patterns.

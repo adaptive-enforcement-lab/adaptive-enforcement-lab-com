@@ -1,4 +1,5 @@
 ---
+title: Runner Configuration for SLSA Compliance
 tags:
   - slsa
   - provenance
@@ -11,7 +12,6 @@ tags:
 description: >-
   GitHub-hosted vs self-hosted runners for SLSA: isolation requirements, security implications, and configuration patterns. Understand which runner types achieve each SLSA level.
 ---
-
 # Runner Configuration for SLSA Compliance
 
 Choose the right runner infrastructure to achieve your target SLSA level.

@@ -1,4 +1,5 @@
 ---
+title: Timeout Enforcement
 description: >-
   Timeout enforcement: operation timeouts, job timeouts, circuit breaker timeouts, and deadlock detection for fail fast patterns.
 tags:
@@ -6,7 +7,6 @@ tags:
   - timeouts
   - circuit-breakers
 ---
-
 # Timeout Enforcement
 
 Prevent operations from running indefinitely.

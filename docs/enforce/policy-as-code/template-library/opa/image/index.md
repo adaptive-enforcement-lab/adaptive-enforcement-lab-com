@@ -1,4 +1,5 @@
 ---
+title: OPA Image Security Templates
 description: >-
   OPA image security policies for container registry allowlisting, digest enforcement, and signature verification in Kubernetes.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - cosign
 ---
-
 # OPA Image Security Templates
 
 Image security policies control which container images can run in your cluster. These templates enforce registry allowlists, require immutable digests, and validate cryptographic signatures.

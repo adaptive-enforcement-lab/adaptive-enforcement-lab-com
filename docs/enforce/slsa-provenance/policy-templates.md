@@ -1,4 +1,5 @@
 ---
+title: SLSA Provenance Policy Templates
 tags:
   - slsa
   - provenance
@@ -14,7 +15,6 @@ tags:
 description: >-
   Production-ready Kyverno and OPA Gatekeeper policy templates for enforcing SLSA provenance requirements in Kubernetes clusters. Copy-paste ready policies for SLSA Levels 1-3.
 ---
-
 # SLSA Provenance Policy Templates
 
 Enforce SLSA requirements through policy-as-code.

@@ -1,4 +1,5 @@
 ---
+title: The CLI That Replaced 47 Shell Scripts
 date: 2025-12-28
 authors:
   - mark
@@ -10,7 +11,6 @@ description: >-
   When kubectl isn't enough and shell scripts become unmaintainable. The architecture decisions that make CLIs testable, deployable, and debuggable.
 slug: cli-replaced-47-shell-scripts
 ---
-
 # The CLI That Replaced 47 Shell Scripts
 
 47 shell scripts. 12 CronJobs. Zero test coverage. One production incident that forced a rebuild.

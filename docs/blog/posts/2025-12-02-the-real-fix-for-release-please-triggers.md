@@ -1,4 +1,5 @@
 ---
+title: The Real Fix for Release-Please Triggers
 date: 2025-12-02
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   real fix for release-please workflow triggers.
 slug: the-real-fix-for-release-please-triggers
 ---
-
 # The Real Fix for Release-Please Triggers
 
 A few days ago I wrote about [why release-please PRs don't trigger builds](./2025-11-28-why-release-please-prs-dont-trigger-builds.md) and proposed a dual-trigger pattern as the fix. Today I discovered that pattern is a workaround with side effects. Here's the actual solution.

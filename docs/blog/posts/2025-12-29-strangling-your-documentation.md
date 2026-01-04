@@ -1,4 +1,5 @@
 ---
+title: "Strangling Your Documentation: A Meta-Journey"
 date: 2025-12-29
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   the hard way that shortcuts create technical debt. A meta-journey.
 slug: strangling-your-documentation
 ---
-
 # Strangling Your Documentation: A Meta-Journey
 
 You know the pattern. Build the new thing alongside the old. Ensure compatibility. Swap when ready. Remove the old.

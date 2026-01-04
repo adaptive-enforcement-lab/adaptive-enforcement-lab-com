@@ -1,4 +1,5 @@
 ---
+title: Phase 3: SLSA Level 3 Implementation
 tags:
   - slsa
   - provenance
@@ -13,7 +14,6 @@ tags:
 description: >-
   SLSA Level 3 implementation: isolated builds with slsa-github-generator, verification workflows, and OpenSSF Scorecard 10/10. Complete guide with validation checkpoints.
 ---
-
 # Phase 3: SLSA Level 3 Implementation
 
 Achieve build isolation with verification workflows and OpenSSF Scorecard 10/10.

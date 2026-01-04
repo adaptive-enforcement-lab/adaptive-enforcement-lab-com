@@ -1,4 +1,5 @@
 ---
+title: Advanced Vulnerability Management
 description: >-
   Advanced vulnerability management for OpenSSF Scorecard. Handle unfixable 
   vulnerabilities, false positives, and disclosure processes.
@@ -10,7 +11,6 @@ tags:
   - security-advisories
 
 ---
-
 # Advanced Vulnerability Management
 
 !!! tip "Key Insight"

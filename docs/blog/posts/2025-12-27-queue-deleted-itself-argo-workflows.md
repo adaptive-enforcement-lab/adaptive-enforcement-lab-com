@@ -1,4 +1,5 @@
 ---
+title: The Queue That Deleted Itself
 date: 2025-12-27
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   Pre-execution cleanup eliminated 70% of resource waste in production.
 slug: queue-deleted-itself-argo-workflows
 ---
-
 # The Queue That Deleted Itself
 
 Eight workflows queued. Seven deleted themselves before execution. Zero wasted builds.

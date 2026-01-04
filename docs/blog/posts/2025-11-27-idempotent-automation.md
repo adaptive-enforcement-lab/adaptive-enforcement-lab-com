@@ -1,4 +1,5 @@
 ---
+title: "Idempotent Automation: Why Reruns Shouldn't Scare You"
 date: 2025-11-27
 authors:
   - mark
@@ -8,7 +9,6 @@ categories:
   - Engineering Patterns
 slug: idempotent-automation-why-reruns-shouldnt-scare-you
 ---
-
 # Idempotent Automation: Why Reruns Shouldn't Scare You
 
 Your workflow failed at step 47 of 50. Do you fix the issue and rerun from the beginning, or do you manually complete the remaining steps?

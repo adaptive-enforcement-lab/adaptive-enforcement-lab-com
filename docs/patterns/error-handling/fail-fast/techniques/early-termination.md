@@ -1,4 +1,5 @@
 ---
+title: Early Termination
 description: >-
   Early termination techniques: shell strict mode, matrix fail-fast, error propagation, and circuit breakers for fail fast patterns.
 tags:
@@ -6,7 +7,6 @@ tags:
   - early-termination
   - techniques
 ---
-
 # Early Termination
 
 Stop execution immediately when errors occur.

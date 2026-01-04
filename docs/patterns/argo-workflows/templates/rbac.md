@@ -1,8 +1,8 @@
 ---
+title: RBAC Configuration
 description: >-
   Apply least privilege to workflows with ServiceAccount RBAC. Restrict verbs, resources, and names to minimize blast radius and prevent security escalation.
 ---
-
 # RBAC Configuration
 
 Workflows execute with the permissions of their ServiceAccount. The principle of least privilege applies: grant only the verbs and resources the workflow actually needs. Overly permissive RBAC creates security risks; overly restrictive RBAC causes runtime failures.

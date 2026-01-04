@@ -1,4 +1,5 @@
 ---
+title: SLSA Provenance for Python Projects
 tags:
   - slsa
   - provenance
@@ -15,7 +16,6 @@ tags:
 description: >-
   SLSA provenance for Python projects: PyPI package publishing, container images, and dependency lockfile patterns with cryptographic build integrity proofs.
 ---
-
 # SLSA Provenance for Python Projects
 
 Turn pip installs from lockfiles to provable pipelines.

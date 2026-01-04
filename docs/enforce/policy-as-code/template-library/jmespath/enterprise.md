@@ -1,4 +1,5 @@
 ---
+title: Enterprise JMESPath Policy Examples
 description: >-
   Enterprise JMESPath policy examples for Kyverno. Registry validation, cost allocation, high availability requirements, and production-ready patterns.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - enterprise
 ---
-
 # Enterprise JMESPath Policy Examples
 
 Real-world enterprise Kyverno policies using advanced JMESPath. Production-tested patterns for registry validation, cost allocation, and compliance.

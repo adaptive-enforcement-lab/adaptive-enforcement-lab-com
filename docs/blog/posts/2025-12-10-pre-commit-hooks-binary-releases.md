@@ -1,4 +1,5 @@
 ---
+title: Pre-commit Hooks That Don't Make You Wait
 date: 2025-12-10
 authors:
   - mark
@@ -11,7 +12,6 @@ description: >-
   hooks developers actually want to use.
 slug: pre-commit-hooks-binary-releases
 ---
-
 # Pre-commit Hooks That Don't Make You Wait
 
 Your first commit after cloning a repo takes 30 seconds. Why? Pre-commit is compiling Go from source.

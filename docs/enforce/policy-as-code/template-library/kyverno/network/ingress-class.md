@@ -1,4 +1,5 @@
 ---
+title: Kyverno Ingress Class Templates
 description: >-
   Enforce approved Ingress classes with Kyverno policies ensuring production workloads use standardized controllers and blocking deprecated configurations.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Ingress Class Templates
 
 Enforces Ingress controller standards. Ensures production workloads use approved ingress classes and prevents deprecated annotation usage.

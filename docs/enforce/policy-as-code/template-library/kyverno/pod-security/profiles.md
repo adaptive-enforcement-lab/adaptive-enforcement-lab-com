@@ -1,4 +1,5 @@
 ---
+title: Kyverno Pod Security Profiles
 description: >-
   Kyverno security profile templates for seccomp and AppArmor. Enforce runtime security profiles to reduce container attack surface and restrict system calls.
 tags:
@@ -9,7 +10,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # Kyverno Pod Security Profiles
 
 Security profile policies for seccomp and AppArmor. These policies enforce runtime security mechanisms that restrict container capabilities and reduce the attack surface.

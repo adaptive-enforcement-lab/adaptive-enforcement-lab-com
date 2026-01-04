@@ -1,4 +1,5 @@
 ---
+title: OPA Resource Governance Templates
 description: >-
   OPA Gatekeeper resource governance templates. Enforce resource limits, requests, and quota requirements with complete Rego implementations.
 tags:
@@ -8,7 +9,6 @@ tags:
   - kubernetes
   - templates
 ---
-
 # OPA Resource Governance Templates
 
 OPA/Gatekeeper constraint templates for resource governance. Enforce resource limits, CPU/memory requests, and prevent resource exhaustion with production-tested Rego implementations.

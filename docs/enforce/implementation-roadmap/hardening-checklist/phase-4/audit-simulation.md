@@ -1,4 +1,5 @@
 ---
+title: Phase 4: Audit Simulation
 description: >-
   Audit simulation for SDLC hardening. Mock audit timeline, document requests, sampling validation, gap analysis, and remediation process before real auditors arrive.
 tags:
@@ -8,7 +9,6 @@ tags:
   - validation
   - readiness
 ---
-
 # Phase 4: Audit Simulation
 
 Run a mock audit before the real one.
