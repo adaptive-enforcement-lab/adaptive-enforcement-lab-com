@@ -27,6 +27,13 @@ repos:
         files: \.md$
         exclude: ^docs/includes/.*$
         pass_filenames: true
+      - id: check-title
+        name: check title frontmatter
+        entry: scripts/check-title.sh
+        language: script
+        files: \.md$
+        exclude: ^docs/includes/.*$
+        pass_filenames: true
       - id: mkdocs-build
         name: mkdocs build
         entry: >-
