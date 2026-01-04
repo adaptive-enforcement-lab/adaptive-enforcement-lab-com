@@ -49,6 +49,7 @@ flowchart TD
 
     O --> P["Inherits Caller's<br/>GITHUB_TOKEN Permissions"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style B fill:#e6db74,color:#1b1d1e
     style C fill:#a6e22e,color:#1b1d1e
@@ -61,6 +62,7 @@ flowchart TD
     style L fill:#a6e22e,color:#1b1d1e
     style M fill:#f92572,color:#1b1d1e
     style N fill:#a6e22e,color:#1b1d1e
+
 ```
 
 ## Secure Input Handling

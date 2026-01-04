@@ -56,11 +56,13 @@ graph TD
     REMEDIATE -->|restores| PROTECTION[Branch Protection]
     REMEDIATE -->|logs| AUDIT[Audit Trail]
 
+    %% Ghostty Hardcore Theme
     style APP fill:#65d9ef,color:#1b1d1e
     style DRIFT fill:#fd971e,color:#1b1d1e
     style REMEDIATE fill:#f92572,color:#1b1d1e
     style PROTECTION fill:#a7e22e,color:#1b1d1e
     style AUDIT fill:#9e6ffe,color:#1b1d1e
+
 ```
 
 **Enforcement flow**: GitHub App monitors repositories → Webhook triggers on protection changes → Workflow queries current state → Compares against desired state → Detects drift → Restores protection → Logs audit event.
@@ -123,6 +125,8 @@ Monitor branch protection changes in real-time.
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant User
     participant GitHub
     participant App as GitHub App
@@ -135,6 +139,7 @@ sequenceDiagram
     GitHub-->>Workflow: Protection disabled
     Workflow->>GitHub: Restore protection
     Workflow->>GitHub: Log audit event
+
 ```
 
 **Webhook events**: `branch_protection_rule.created`, `branch_protection_rule.edited`, `branch_protection_rule.deleted`
@@ -165,9 +170,11 @@ flowchart LR
     CHECK -->|No| BLOCK[Block Merge]
     BLOCK --> NOTIFY[Notify Security Team]
 
+    %% Ghostty Hardcore Theme
     style CHECK fill:#fd971e,color:#1b1d1e
     style APPROVE fill:#a7e22e,color:#1b1d1e
     style BLOCK fill:#f92572,color:#1b1d1e
+
 ```
 
 **Enforcement**: Required status check fails if protection weakened.

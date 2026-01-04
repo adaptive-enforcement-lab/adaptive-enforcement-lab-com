@@ -83,10 +83,12 @@ graph TD
     E --> E1["Create incident ticket<br/>Assign to engineer<br/>Set 1-hour response SLO"]
     F --> F1["Log for audit<br/>Schedule review<br/>No immediate response"]
 
+    %% Ghostty Hardcore Theme
     style C fill:#dc2626
     style D fill:#ea580c
     style E fill:#eab308
     style F fill:#22c55e
+
 ```
 
 ---

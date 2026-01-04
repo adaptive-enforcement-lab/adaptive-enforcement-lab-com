@@ -50,6 +50,7 @@ flowchart TD
     F --> F2["pull_request_target"]
     F --> F3["Untrusted input"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style B fill:#f92572,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
@@ -71,6 +72,7 @@ flowchart TD
     style F1 fill:#fd971e,color:#1b1d1e
     style F2 fill:#fd971e,color:#1b1d1e
     style F3 fill:#fd971e,color:#1b1d1e
+
 ```
 
 ## Threat Landscape Summary
@@ -255,11 +257,13 @@ flowchart LR
     C --> D["4. Secure<br/>Triggers"]
     D --> E["5. Harden<br/>Runners"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#e6db74,color:#1b1d1e
     style D fill:#a6e22e,color:#1b1d1e
     style E fill:#66d9ef,color:#1b1d1e
+
 ```
 
 **Rationale**:

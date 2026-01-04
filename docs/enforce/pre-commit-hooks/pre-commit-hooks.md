@@ -30,9 +30,11 @@ flowchart LR
     B -->|Pass| C[Commit Created]
     B -->|Fail| D[Commit Blocked]
 
+    %% Ghostty Hardcore Theme
     style B fill:#a7e22e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
+
 ```
 
 Violations block the commit. Developer fixes locally before pushing.

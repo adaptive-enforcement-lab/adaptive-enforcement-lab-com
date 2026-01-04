@@ -53,10 +53,12 @@ flowchart TD
     F --> G[Execute Main Build]
     G --> H[Release Mutex]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style F fill:#f92572,color:#f8f8f3
     style G fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

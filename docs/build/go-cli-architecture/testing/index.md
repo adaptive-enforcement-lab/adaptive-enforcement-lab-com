@@ -32,9 +32,11 @@ graph TB
 
     E2E --> Integration --> Unit
 
+    %% Ghostty Hardcore Theme
     style E2E fill:#9e6ffe,color:#1b1d1e
     style Integration fill:#65d9ef,color:#1b1d1e
     style Unit fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

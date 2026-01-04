@@ -86,6 +86,7 @@ flowchart TD
     F -->|No| C
     F -->|Yes| G[Increase Traffic]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
@@ -93,6 +94,7 @@ flowchart TD
     style E fill:#a7e22e,color:#1b1d1e
     style F fill:#fd971e,color:#1b1d1e
     style G fill:#a7e22e,color:#1b1d1e
+
 ```
 
 Error rate spike: Immediate rollback. Latency degradation >20%: Rollback. Stable for 24 hours: Proceed.

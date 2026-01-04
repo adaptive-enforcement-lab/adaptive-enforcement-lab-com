@@ -56,11 +56,13 @@ flowchart TD
     Volatile -->|Yes| Skip
     Volatile -->|No| Execute
 
+    %% Ghostty Hardcore Theme
     style Exists fill:#65d9ef,color:#1b1d1e
     style Hash fill:#fd971e,color:#1b1d1e
     style Volatile fill:#9e6ffe,color:#1b1d1e
     style Skip fill:#5e7175,color:#f8f8f3
     style Execute fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

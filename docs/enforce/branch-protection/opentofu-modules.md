@@ -343,7 +343,6 @@ For organization-wide enforcement across 100+ repositories, see **[Multi-Repo Ma
 ## Related Patterns
 
 - **[Security Tiers](security-tiers.md)** - Pre-configured tier templates
-- **[Terraform Modules](terraform-modules.md)** - Terraform equivalent patterns
 - **[Multi-Repo Management](multi-repo-management.md)** - Organization-wide enforcement
 - **[Drift Detection](drift-detection.md)** - Automated monitoring
 - **[GitHub Apps Setup](../../secure/github-apps/index.md)** - Authentication
@@ -357,8 +356,6 @@ For organization-wide enforcement across 100+ repositories, see **[Multi-Repo Ma
 3. Enable state encryption for production
 4. Refactor to tier modules for consistency
 5. Configure drift detection for compliance
-
-For Terraform users, see **[Terraform Modules](terraform-modules.md)**.
 
 For organization-wide patterns, see **[Multi-Repo Management](multi-repo-management.md)**.
 

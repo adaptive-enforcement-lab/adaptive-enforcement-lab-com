@@ -42,10 +42,12 @@ flowchart LR
     Check -->|No| Skip
     Check -->|Yes| Execute
 
+    %% Ghostty Hardcore Theme
     style Event fill:#65d9ef,color:#1b1d1e
     style Check fill:#fd971e,color:#1b1d1e
     style Skip fill:#5e7175,color:#f8f8f3
     style Execute fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

@@ -26,12 +26,14 @@ graph LR
     Modified --> Handle
     Deleted --> Handle
 
+    %% Ghostty Hardcore Theme
     style Watch fill:#fd971e,color:#1b1d1e
     style Stream fill:#65d9ef,color:#1b1d1e
     style Added fill:#a7e22e,color:#1b1d1e
     style Modified fill:#9e6ffe,color:#1b1d1e
     style Deleted fill:#f92572,color:#1b1d1e
     style Handle fill:#65d9ef,color:#1b1d1e
+
 ```
 
 ---

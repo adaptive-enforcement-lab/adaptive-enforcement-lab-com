@@ -49,10 +49,12 @@ graph LR
     B -->|Read File| C[Script]
     C -->|Sub-millisecond| D[Data Available]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef
     style B fill:#9e6ffe
     style C fill:#a7e22e
     style D fill:#fd971e
+
 ```
 
 **Key Points**:

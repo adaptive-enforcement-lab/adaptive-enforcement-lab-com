@@ -28,6 +28,7 @@ graph LR
     Download --> Run[Execute CLI]
     Run --> Outputs[Set Outputs]
 
+    %% Ghostty Hardcore Theme
     style Tag fill:#65d9ef,color:#1b1d1e
     style GR fill:#65d9ef,color:#1b1d1e
     style Binaries fill:#a7e22e,color:#1b1d1e
@@ -35,6 +36,7 @@ graph LR
     style Download fill:#9e6ffe,color:#1b1d1e
     style Run fill:#9e6ffe,color:#1b1d1e
     style Outputs fill:#9e6ffe,color:#1b1d1e
+
 ```
 
 ---

@@ -20,11 +20,13 @@ flowchart LR
     C -->|Backpressure| D[Sensor]
     D -->|Backpressure| E[Workflows]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#515354,color:#f8f8f3
     style D fill:#f92572,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 Each component needs its own backpressure configuration.

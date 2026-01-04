@@ -39,6 +39,7 @@ flowchart TB
     EB1 --> S1
     EB2 --> S2
 
+    %% Ghostty Hardcore Theme
     style ES1 fill:#fd971e,color:#1b1d1e
     style ES2 fill:#fd971e,color:#1b1d1e
     style EB1 fill:#515354,color:#f8f8f3
@@ -46,6 +47,7 @@ flowchart TB
     style EB3 fill:#515354,color:#f8f8f3
     style S1 fill:#f92572,color:#1b1d1e
     style S2 fill:#f92572,color:#1b1d1e
+
 ```
 
 ---

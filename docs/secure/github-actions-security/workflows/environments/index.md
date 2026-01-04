@@ -55,6 +55,7 @@ flowchart TD
     L --> N["Deployment Tracked"]
     C4 --> O["Immediate Risk"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style B fill:#e6db74,color:#1b1d1e
     style C fill:#f92572,color:#1b1d1e
@@ -65,6 +66,7 @@ flowchart TD
     style L fill:#a6e22e,color:#1b1d1e
     style M fill:#f92572,color:#1b1d1e
     style C4 fill:#f92572,color:#1b1d1e
+
 ```
 
 ## Environment Protection Rules

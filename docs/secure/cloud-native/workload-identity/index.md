@@ -53,9 +53,11 @@ sequenceDiagram
     Pod->>GCP API: Call API with access token
     GCP API->>Pod: Return data
 
+    %% Ghostty Hardcore Theme
     style K8s API fill:#2D4263
     style GCP STS fill:#4A7A8C
     style GCP API fill:#6B8E9F
+
 ```
 
 ## Implementation Guide

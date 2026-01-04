@@ -426,6 +426,7 @@ nav:
       - GitHub Apps:
           - secure/github-apps/index.md
           - Authentication Decision Guide: secure/github-apps/authentication-decision-guide.md
+          - Authentication Flows: secure/github-apps/authentication-flows.md
           - Creating the App: secure/github-apps/creating-the-app.md
           - Storing Credentials:
               - secure/github-apps/storing-credentials/index.md
@@ -667,7 +668,6 @@ nav:
           - Implementation: enforce/branch-protection/branch-protection.md
           - Security Tiers: enforce/branch-protection/security-tiers.md
           - GitHub App Enforcement: enforce/branch-protection/github-app-enforcement.md
-          - Terraform Modules: enforce/branch-protection/terraform-modules.md
           - OpenTofu Modules: enforce/branch-protection/opentofu-modules.md
           - Multi-Repo Management: enforce/branch-protection/multi-repo-management.md
           - Enforcement Workflows: enforce/branch-protection/enforcement-workflows.md

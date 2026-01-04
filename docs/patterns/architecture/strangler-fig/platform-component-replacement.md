@@ -64,6 +64,7 @@ flowchart TD
         N --> G
     end
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92672,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
@@ -71,6 +72,7 @@ flowchart TD
     style J fill:#65d9ef,color:#1b1d1e
     style M fill:#a7e22e,color:#1b1d1e
     style N fill:#f92672,color:#1b1d1e
+
 ```
 
 **No traffic routing**. No percentage-based rollout. Just: build, deploy, swap, remove.

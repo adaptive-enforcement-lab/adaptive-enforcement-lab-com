@@ -54,6 +54,8 @@ The double-dash syntax (`- -`) starts a new sequential step. Multiple items unde
 
 ```mermaid
 gantt
+
+%% Ghostty Hardcore Theme
     title Sequential vs Parallel Execution
     dateFormat X
     axisFormat %s
@@ -69,6 +71,7 @@ gantt
     Tests: b2, after b1, 5
     Lint: b3, after b1, 2
     Deploy: b4, after b2 b3, 3
+
 ```
 
 The parallel version completes in 11 time units versus 13 for sequential. With more parallel tasks, the savings grow larger.

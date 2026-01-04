@@ -39,6 +39,7 @@ graph TB
         E4["High: Requires zero-day or<br/>sophisticated attack"]
     end
 
+    %% Ghostty Hardcore Theme
     style I1 fill:#f92572,color:#1b1d1e
     style I2 fill:#fd971e,color:#1b1d1e
     style I3 fill:#a6e22e,color:#1b1d1e
@@ -53,6 +54,7 @@ graph TB
     style E2 fill:#fd971e,color:#1b1d1e
     style E3 fill:#a6e22e,color:#1b1d1e
     style E4 fill:#66d9ef,color:#1b1d1e
+
 ```
 
 ## Scoring Table

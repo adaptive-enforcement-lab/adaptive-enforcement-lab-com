@@ -20,11 +20,13 @@ flowchart LR
     B --> D[Trigger 2: Notify]
     B --> E[Trigger 3: Audit]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#f92572,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

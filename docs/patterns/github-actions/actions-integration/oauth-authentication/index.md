@@ -91,6 +91,8 @@ For CLI tools and applications without web browsers.
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant U as User
     participant A as Your App
     participant G as GitHub
@@ -109,6 +111,7 @@ sequenceDiagram
     A->>R: API operations as user
 
     Note over U,R: Token valid until revoked
+
 ```
 
 ### Step 1: Direct User to GitHub

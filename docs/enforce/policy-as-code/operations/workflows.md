@@ -23,8 +23,10 @@ graph TD
     STG --> ENFORCE[7. Switch to Enforce]
     ENFORCE --> PRD[8. Deploy to Production]
 
+    %% Ghostty Hardcore Theme
     style DEV fill:#a7e22e,color:#1b1d1e
     style PRD fill:#65d9ef,color:#1b1d1e
+
 ```
 
 !!! warning "Never Skip Audit Phase"

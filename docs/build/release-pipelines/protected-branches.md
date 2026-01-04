@@ -20,11 +20,13 @@ flowchart LR
     Generate --> Push[git push]
     Push -->|blocked| Protection[Branch Protection]
 
+    %% Ghostty Hardcore Theme
     style Merge fill:#65d9ef,color:#1b1d1e
     style Workflow fill:#9e6ffe,color:#1b1d1e
     style Generate fill:#fd971e,color:#1b1d1e
     style Push fill:#f92572,color:#1b1d1e
     style Protection fill:#f92572,color:#1b1d1e
+
 ```
 
 Common tools that auto-commit:

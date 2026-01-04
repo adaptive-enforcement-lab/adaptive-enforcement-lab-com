@@ -112,6 +112,8 @@ aws s3api put-public-access-block \
 
 ```mermaid
 graph LR
+
+%% Ghostty Hardcore Theme
     A[Workflow Execution] --> B[Capture Evidence]
     B --> C[Upload to S3 Standard]
     C --> D{90 Days}
@@ -120,6 +122,7 @@ graph LR
     E --> G{1 Year}
     G --> H[Delete]
     F --> I[Permanent Retention]
+
 ```
 
 **Automation**:

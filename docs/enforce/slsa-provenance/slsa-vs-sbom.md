@@ -121,9 +121,14 @@ graph LR
     D -->|Vulnerability Scanning| E[Risk Assessment]
     C -->|Deploy| F[Production]
 
+    %% Ghostty Hardcore Theme
     style A fill:#a7e22e,color:#1b1d1e
+    style B fill:#fd971e,color:#1b1d1e
     style C fill:#65d9ef,color:#1b1d1e
+    style D fill:#9e6ffe,color:#1b1d1e
+    style E fill:#e6db74,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 **SLSA protects against**:

@@ -28,8 +28,10 @@ graph LR
     MERGE -->|Yes| ALLOW[Allow Merge]
     MERGE -->|No| BLOCK[Block Merge]
 
+    %% Ghostty Hardcore Theme
     style ALLOW fill:#a7e22e,color:#1b1d1e
     style BLOCK fill:#f92572,color:#1b1d1e
+
 ```
 
 **Key Principle**: CI uses identical validation to local development. No surprises.

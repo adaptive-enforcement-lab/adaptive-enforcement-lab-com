@@ -20,11 +20,13 @@ flowchart LR
     C --> D[4. Trigger]
     D --> E[5. Workflow]
 
+    %% Ghostty Hardcore Theme
     style A fill:#fd971e,color:#1b1d1e
     style B fill:#515354,color:#f8f8f3
     style C fill:#f92572,color:#1b1d1e
     style D fill:#9e6ffe,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 Check each component in order. The failure is usually at the first component that doesn't show expected behavior.

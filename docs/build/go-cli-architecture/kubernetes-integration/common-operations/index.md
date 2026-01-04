@@ -36,6 +36,7 @@ graph TB
     Mutate --> Create[Get-or-Create]
     Watch --> Events[Event Stream]
 
+    %% Ghostty Hardcore Theme
     style CLI fill:#65d9ef,color:#1b1d1e
     style List fill:#a7e22e,color:#1b1d1e
     style Mutate fill:#fd971e,color:#1b1d1e
@@ -44,6 +45,7 @@ graph TB
     style Patch fill:#5e7175,color:#f8f8f3
     style Create fill:#5e7175,color:#f8f8f3
     style Events fill:#5e7175,color:#f8f8f3
+
 ```
 
 ---

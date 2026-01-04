@@ -39,11 +39,13 @@ flowchart TD
     T2 -->|Fails| T3
     T3 --> Success
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style T1 fill:#a7e22e,color:#1b1d1e
     style T2 fill:#fd971e,color:#1b1d1e
     style T3 fill:#f92572,color:#1b1d1e
     style Success fill:#a7e22e,color:#1b1d1e
+
 ```
 
 The key insight: **degrade performance, not availability**.

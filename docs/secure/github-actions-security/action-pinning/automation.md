@@ -29,6 +29,7 @@ flowchart LR
     F -->|Yes| G["Pass"]
     F -->|No| H["Block PR"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#a6e22e,color:#1b1d1e
     style B fill:#e6db74,color:#1b1d1e
     style C fill:#66d9ef,color:#1b1d1e
@@ -37,6 +38,7 @@ flowchart LR
     style F fill:#e6db74,color:#1b1d1e
     style G fill:#a6e22e,color:#1b1d1e
     style H fill:#f92572,color:#1b1d1e
+
 ```
 
 ## 1. Audit Script
@@ -272,10 +274,12 @@ flowchart TD
     F --> G["6. Enable CI"]
     G --> I["7. Dependabot"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#66d9ef,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style H fill:#a6e22e,color:#1b1d1e
     style I fill:#66d9ef,color:#1b1d1e
+
 ```
 
 ### Commands

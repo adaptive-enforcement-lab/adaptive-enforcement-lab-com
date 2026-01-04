@@ -52,6 +52,8 @@ New runs start regardless of whether previous runs are active. This is the defau
 
 ```mermaid
 gantt
+
+%% Ghostty Hardcore Theme
     title Allow Policy
     dateFormat X
     axisFormat %s
@@ -60,6 +62,7 @@ gantt
     Run 1: a1, 0, 8
     Run 2: a2, 5, 8
     Run 3: a3, 10, 8
+
 ```
 
 Runs overlap freely. With slow workflows and frequent schedules, you might have many running simultaneously.
@@ -81,6 +84,8 @@ New runs don't start while a previous run is active. The scheduled run is skippe
 
 ```mermaid
 gantt
+
+%% Ghostty Hardcore Theme
     title Forbid Policy
     dateFormat X
     axisFormat %s
@@ -90,6 +95,7 @@ gantt
     Run 2 (skipped): crit, a2, 5, 0
     Run 3 (skipped): crit, a3, 10, 0
     Run 4: a4, 15, 8
+
 ```
 
 Run 1 takes longer than the schedule interval, so runs 2 and 3 are skipped. Run 4 starts after run 1 completes.
@@ -114,6 +120,8 @@ When a new run triggers, any active run is cancelled and the new one starts.
 
 ```mermaid
 gantt
+
+%% Ghostty Hardcore Theme
     title Replace Policy
     dateFormat X
     axisFormat %s
@@ -122,6 +130,7 @@ gantt
     Run 1 (cancelled): crit, a1, 0, 5
     Run 2 (cancelled): crit, a2, 5, 5
     Run 3: a3, 10, 8
+
 ```
 
 Each new scheduled time cancels the previous run and starts fresh.

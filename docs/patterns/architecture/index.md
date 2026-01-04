@@ -77,6 +77,7 @@ flowchart TD
     F --> G[Strangler Fig]
     G --> B
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#a7e22e,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
@@ -84,6 +85,7 @@ flowchart TD
     style E fill:#a7e22e,color:#1b1d1e
     style F fill:#65d9ef,color:#1b1d1e
     style G fill:#f92572,color:#1b1d1e
+
 ```
 
 Separation of Concerns provides the foundation. Hub and Spoke scales it. Strangler Fig migrates to it.

@@ -53,10 +53,12 @@ flowchart TD
     Patterns --> P3["specific repos<br/>(owner/repo@*)"]
     Patterns --> P4["org actions<br/>(my-org/*)")
 
+    %% Ghostty Hardcore Theme
     style Policy fill:#66d9ef,color:#1b1d1e
     style Level2 fill:#a6e22e,color:#1b1d1e
     style Level3 fill:#e6db74,color:#1b1d1e
     style Level1 fill:#f92572,color:#1b1d1e
+
 ```
 
 ### Recommended Policy Configuration
@@ -146,10 +148,12 @@ flowchart TD
     Fork --> Monitor
     Reject --> Alternatives["Suggest Tier 1/2<br/>Alternatives"]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#66d9ef,color:#1b1d1e
     style Approve fill:#a6e22e,color:#1b1d1e
     style Fork fill:#e6db74,color:#1b1d1e
     style Reject fill:#f92572,color:#1b1d1e
+
 ```
 
 ### Action Approval Request Template

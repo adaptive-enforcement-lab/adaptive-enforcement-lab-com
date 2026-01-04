@@ -22,12 +22,14 @@ flowchart LR
     D -->|No| F[Drop]
     E --> G[Trigger]
 
+    %% Ghostty Hardcore Theme
     style A fill:#fd971e,color:#1b1d1e
     style B fill:#515354,color:#f8f8f3
     style C fill:#f92572,color:#1b1d1e
     style E fill:#9e6ffe,color:#1b1d1e
     style G fill:#a7e22e,color:#1b1d1e
     style F fill:#75715e,color:#f8f8f3
+
 ```
 
 **Key decision points:**

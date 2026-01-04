@@ -39,6 +39,7 @@ flowchart LR
 
     G --> H["Automated Response"]
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#a6e22e,color:#1b1d1e
     style C fill:#a6e22e,color:#1b1d1e
@@ -47,6 +48,7 @@ flowchart LR
     style F fill:#a6e22e,color:#1b1d1e
     style G fill:#66d9ef,color:#1b1d1e
     style H fill:#e6db74,color:#1b1d1e
+
 ```
 
 ## OS-Level Hardening

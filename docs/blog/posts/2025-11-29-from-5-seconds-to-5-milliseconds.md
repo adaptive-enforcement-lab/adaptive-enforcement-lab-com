@@ -32,11 +32,13 @@ flowchart LR
     C --> D[Find Deployments]
     D --> E[Restart]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 That red "Find Deployments" step? That's where the pain lived.
@@ -109,12 +111,14 @@ flowchart LR
     E --> C
     C --> F[Restart Deployments]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style E fill:#9e6ffe,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 The cache is a simple hash map stored in a Kubernetes ConfigMap:
@@ -177,12 +181,14 @@ flowchart LR
     E -->|No| D
     D --> F
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
     style E fill:#fd971e,color:#1b1d1e
     style F fill:#a7e22e,color:#1b1d1e
+
 ```
 
 !!! success "Final Results"

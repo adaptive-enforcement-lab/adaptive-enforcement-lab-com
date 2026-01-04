@@ -66,12 +66,14 @@ graph TD
     C --> M
     F --> M
 
+    %% Ghostty Hardcore Theme
     style A fill:#1f77b4,stroke:#fff,stroke-width:2px,color:#fff
     style I fill:#2ca02c,stroke:#fff,stroke-width:2px,color:#fff
     style K fill:#ff7f0e,stroke:#fff,stroke-width:2px,color:#fff
     style L fill:#d62728,stroke:#fff,stroke-width:2px,color:#fff
     style C fill:#d62728,stroke:#fff,stroke-width:2px,color:#fff
     style F fill:#d62728,stroke:#fff,stroke-width:2px,color:#fff
+
 ```
 
 **Key questions to ask:**

@@ -28,9 +28,11 @@ graph LR
     B -->|policy-platform container| B1[Kyverno CLI]
     C -->|Kyverno controller| C1[Admission Webhook]
 
+    %% Ghostty Hardcore Theme
     style A fill:#a7e22e,color:#1b1d1e
     style B fill:#a7e22e,color:#1b1d1e
     style C fill:#65d9ef,color:#1b1d1e
+
 ```
 
 **The Core Principle**: Same policies, three enforcement points. Zero gaps.
@@ -70,10 +72,12 @@ graph TD
     PP -->|Container image| CI[CI Pipeline]
     PP -->|Helm chart| RT[Runtime]
 
+    %% Ghostty Hardcore Theme
     style SP fill:#f92572,color:#1b1d1e
     style DP fill:#fd971e,color:#1b1d1e
     style KC fill:#9e6ffe,color:#1b1d1e
     style PP fill:#65d9ef,color:#1b1d1e
+
 ```
 
 ### Policy Aggregation

@@ -70,11 +70,13 @@ flowchart LR
     D[Workflow D] -.->|waiting| Semaphore
     E[Workflow E] -.->|waiting| Semaphore
 
+    %% Ghostty Hardcore Theme
     style A fill:#a7e22e,color:#1b1d1e
     style B fill:#a7e22e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
     style E fill:#fd971e,color:#1b1d1e
+
 ```
 
 Three workflows hold permits and run. Two workflows wait. When A, B, or C completes, D gets the released permit.

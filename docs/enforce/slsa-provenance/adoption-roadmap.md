@@ -61,6 +61,7 @@ graph TD
     Val3 -->|Fail| Fix3[Fix Issues]
     Fix3 --> Phase3
 
+    %% Ghostty Hardcore Theme
     style Start fill:#f92572,color:#1b1d1e
     style Phase1 fill:#fc9867,color:#1b1d1e
     style Phase2 fill:#ffd866,color:#1b1d1e
@@ -69,6 +70,7 @@ graph TD
     style Val1 fill:#65d9ef,color:#1b1d1e
     style Val2 fill:#65d9ef,color:#1b1d1e
     style Val3 fill:#65d9ef,color:#1b1d1e
+
 ```
 
 ---
@@ -333,12 +335,14 @@ graph TD
     Val3 -->|No| Phase3
     Jump --> Val3
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style Phase1 fill:#fc9867,color:#1b1d1e
     style Phase2 fill:#ffd866,color:#1b1d1e
     style Phase3 fill:#a7e22e,color:#1b1d1e
     style Jump fill:#a9dc76,color:#1b1d1e
     style Done fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---

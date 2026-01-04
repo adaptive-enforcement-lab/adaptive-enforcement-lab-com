@@ -21,7 +21,9 @@ graph LR
     TEMPLATE[Policy templates] --> HELM
     HELM --> RENDERED[Rendered policies]
 
+    %% Ghostty Hardcore Theme
     style RENDERED fill:#65d9ef,color:#1b1d1e
+
 ```
 
 **Example command**:

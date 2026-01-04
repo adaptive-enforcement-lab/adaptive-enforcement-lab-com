@@ -55,11 +55,13 @@ flowchart LR
     C --> D[Workflow]
     D --> E[Restart]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **Artifact Registry** publishes to **Pub/Sub** on every image push. **Argo Events** subscribes and normalizes the event. An **Argo Workflow** executes the restart logic.
@@ -114,11 +116,13 @@ flowchart LR
     D --> C
     C --> E[Restart Each]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#f92572,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
+
 ```
 
 The cache rebuilds on miss. Most of the time, it hits. The rare misses trigger a full scan, but that's acceptable because they're rare.

@@ -168,61 +168,7 @@ User clicks "Create Issue" → OAuth flow → Token generated → Issue created 
 
 ## Authentication Flow Comparison
 
-### JWT Flow
-
-```mermaid
-sequenceDiagram
-    participant W as Workflow
-    participant K as Private Key
-    participant G as GitHub API
-
-    W->>K: Load private key
-    K->>W: Return key
-    W->>W: Generate JWT<br/>(sign with key)
-    W->>G: API request with JWT
-    G->>W: App-level response
-
-    Note over W,G: Valid for 10 minutes
-```
-
-### Installation Token Flow
-
-```mermaid
-sequenceDiagram
-    participant W as Workflow
-    participant A as actions/create-github-app-token
-    participant G as GitHub API
-    participant R as Repository
-
-    W->>A: Provide app-id & private-key
-    A->>A: Generate JWT
-    A->>G: Request installation token
-    G->>A: Return installation token
-    A->>W: Set GH_TOKEN env var
-    W->>R: Repository operations
-
-    Note over W,R: Valid for 1 hour
-```
-
-### OAuth Flow
-
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant A as Your App
-    participant G as GitHub
-    participant R as Repository
-
-    U->>A: Initiate login
-    A->>G: Redirect to GitHub OAuth
-    U->>G: Authorize app
-    G->>A: Return authorization code
-    A->>G: Exchange code for token
-    G->>A: Return OAuth token
-    A->>R: Operations as user
-
-    Note over U,R: Valid until revoked
-```
+See **[Authentication Flows](authentication-flows.md)** for detailed sequence diagrams showing how each authentication method works (JWT, Installation Token, OAuth).
 
 ## Security Considerations by Method
 

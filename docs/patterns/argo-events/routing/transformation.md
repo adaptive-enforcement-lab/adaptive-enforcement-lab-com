@@ -19,10 +19,12 @@ flowchart LR
     B --> C[Structured Payload]
     C --> D[Workflow]
 
+    %% Ghostty Hardcore Theme
     style A fill:#fd971e,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#65d9ef,color:#1b1d1e
+
 ```
 
 **Common transformations:**

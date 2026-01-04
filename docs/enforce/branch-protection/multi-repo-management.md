@@ -23,8 +23,6 @@ One repository is configuration. One hundred repositories is infrastructure. Man
 
 Discover repositories. Classify by tier. Apply protection as code. Monitor drift. Remediate automatically.
 
----
-
 ## The Challenge
 
 **Manual configuration at scale**:
@@ -36,8 +34,6 @@ Discover repositories. Classify by tier. Apply protection as code. Monitor drift
 - Emergency changes affect only subset of repositories
 
 **The solution**: Automated discovery, classification, and enforcement.
-
----
 
 ## Architecture Patterns
 
@@ -68,17 +64,17 @@ flowchart LR
     REPOS -->|generates| TF[Terraform Config]
     TF -->|applies| PROTECTION[Branch Protection]
 
+    %% Ghostty Hardcore Theme
     style GH fill:#65d9ef,color:#1b1d1e
     style API fill:#fd971e,color:#1b1d1e
     style TF fill:#a7e22e,color:#1b1d1e
     style PROTECTION fill:#f92572,color:#1b1d1e
+
 ```
 
 **Use when**: > 200 repositories. Frequent repository creation.
 
 **Benefit**: No manual repository lists. Auto-discovery. Scales to 1000+ repos.
-
----
 
 ## Repository Discovery
 
@@ -133,8 +129,6 @@ def classify_repository(repo):
     return 'enhanced' if repo['private'] else 'standard'
 ```
 
----
-
 ## Dynamic Terraform Generation
 
 Generate configuration from repository data.
@@ -180,8 +174,6 @@ terraform init
 terraform plan
 ```
 
----
-
 ## Bulk Updates
 
 ### GitHub Actions Workflow
@@ -224,8 +216,6 @@ jobs:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
 ```
 
----
-
 ## Staged Rollout
 
 Test changes before organization-wide deployment.
@@ -239,10 +229,12 @@ flowchart LR
     PILOT -.->|Issues found| ROLLBACK
     ROLLBACK --> FIX[Fix & Retry]
 
+    %% Ghostty Hardcore Theme
     style CANARY fill:#a7e22e,color:#1b1d1e
     style PILOT fill:#fd971e,color:#1b1d1e
     style PROD fill:#65d9ef,color:#1b1d1e
     style ROLLBACK fill:#f92572,color:#1b1d1e
+
 ```
 
 ### Implementation
@@ -282,8 +274,6 @@ terraform apply -var="rollout_stage=pilot"    # Monitor 48h
 terraform apply -var="rollout_stage=production"
 ```
 
----
-
 ## Monitoring and Compliance
 
 ### Compliance Dashboard
@@ -312,8 +302,6 @@ done
 
 See **[Drift Detection](drift-detection.md)** for automated monitoring patterns.
 
----
-
 ## Best Practices
 
 **1. Start with discovery**: Audit current state before making changes.
@@ -327,8 +315,6 @@ See **[Drift Detection](drift-detection.md)** for automated monitoring patterns.
 **5. Use GitHub Apps for auth**: Personal access tokens don't scale. See [GitHub Apps](../../secure/github-apps/index.md).
 
 **6. Version Terraform modules**: Pin module versions to prevent unintended changes.
-
----
 
 ## Troubleshooting
 
@@ -346,18 +332,13 @@ See **[Drift Detection](drift-detection.md)** for automated monitoring patterns.
 
 See **[Troubleshooting](troubleshooting.md)** for more issues.
 
----
-
 ## Related Patterns
 
 - **[Security Tiers](security-tiers.md)** - Tier classification and templates
-- **[Terraform Modules](terraform-modules.md)** - Base module patterns
 - **[OpenTofu Modules](opentofu-modules.md)** - OpenTofu-specific patterns
 - **[GitHub App Enforcement](github-app-enforcement.md)** - Automated drift remediation
 - **[Drift Detection](drift-detection.md)** - Organization-wide monitoring
 - **[Audit Evidence](audit-evidence.md)** - Compliance reporting at scale
-
----
 
 ## Next Steps
 
@@ -367,7 +348,4 @@ See **[Troubleshooting](troubleshooting.md)** for more issues.
 4. Deploy drift detection for continuous monitoring
 
 For advanced enforcement, see **[GitHub App Enforcement](github-app-enforcement.md)**.
-
----
-
 *One hundred repositories were discovered. Tiers were assigned. Protection was applied in waves. Drift was impossible. Compliance became continuous. Manual work disappeared.*

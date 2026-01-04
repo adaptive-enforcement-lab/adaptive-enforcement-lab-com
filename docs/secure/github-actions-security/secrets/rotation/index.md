@@ -72,6 +72,8 @@ Maintain two versions of each secret during rotation window.
 
 ```mermaid
 gantt
+
+%% Ghostty Hardcore Theme
     title Zero-Downtime Secret Rotation
     dateFormat  YYYY-MM-DD
     axisFormat %m-%d
@@ -84,6 +86,7 @@ gantt
     section New Secret
     Created (NEW_SECRET)          :b1, 2026-01-08, 7d
     Active (promoted to primary)  :b2, 2026-01-15, 30d
+
 ```
 
 **Implementation**:

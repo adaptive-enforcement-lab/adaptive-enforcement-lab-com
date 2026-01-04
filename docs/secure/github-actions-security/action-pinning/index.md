@@ -48,6 +48,7 @@ flowchart TD
     F --> H
     F --> I
 
+    %% Ghostty Hardcore Theme
     style A fill:#f92572,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#e6db74,color:#1b1d1e
@@ -57,6 +58,7 @@ flowchart TD
     style G fill:#66d9ef,color:#1b1d1e
     style H fill:#66d9ef,color:#1b1d1e
     style I fill:#66d9ef,color:#1b1d1e
+
 ```
 
 ## Tag References vs SHA Pinning

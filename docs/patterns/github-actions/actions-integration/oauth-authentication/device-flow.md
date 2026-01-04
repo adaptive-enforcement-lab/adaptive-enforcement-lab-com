@@ -12,6 +12,8 @@ For CLI tools and headless environments without browser access.
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant C as CLI Tool
     participant U as User
     participant G as GitHub
@@ -33,6 +35,7 @@ sequenceDiagram
     C->>R: API operations as user
 
     Note over C,R: Token valid until revoked
+
 ```
 
 ### Step 1: Request Device Code

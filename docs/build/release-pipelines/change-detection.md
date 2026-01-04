@@ -32,6 +32,7 @@ flowchart LR
         Frontend --> BuildF[Build Frontend]
     end
 
+    %% Ghostty Hardcore Theme
     style Files fill:#65d9ef,color:#1b1d1e
     style Categories fill:#fd971e,color:#1b1d1e
     style Contracts fill:#9e6ffe,color:#1b1d1e
@@ -39,6 +40,7 @@ flowchart LR
     style Frontend fill:#a7e22e,color:#1b1d1e
     style BuildB fill:#a7e22e,color:#1b1d1e
     style BuildF fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---
@@ -146,12 +148,14 @@ flowchart TD
     FC -->|yes| FNB
     FC -->|yes| ANC
 
+    %% Ghostty Hardcore Theme
     style CC fill:#fd971e,color:#1b1d1e
     style BC fill:#fd971e,color:#1b1d1e
     style FC fill:#fd971e,color:#1b1d1e
     style BNB fill:#a7e22e,color:#1b1d1e
     style FNB fill:#a7e22e,color:#1b1d1e
     style ANC fill:#65d9ef,color:#1b1d1e
+
 ```
 
 ---

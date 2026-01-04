@@ -67,6 +67,8 @@ templates:
 
 ```mermaid
 sequenceDiagram
+
+%% Ghostty Hardcore Theme
     participant P as Parent Workflow
     participant K as Kubernetes API
     participant C as Child Workflow
@@ -84,6 +86,7 @@ sequenceDiagram
     P->>K: Get Workflow status
     K-->>P: status.phase = Succeeded
     Note over P: Step completes (success)
+
 ```
 
 The parent polls the child's status until it reaches a terminal state. This happens automatically; you don't implement the polling. However, there's latency: the parent doesn't immediately know when the child finishes.

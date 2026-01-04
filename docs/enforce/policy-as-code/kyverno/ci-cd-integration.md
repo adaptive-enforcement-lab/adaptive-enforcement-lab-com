@@ -20,10 +20,12 @@ graph LR;
     C -->|Kyverno + Policy Reporter| D[Production]
     D -->|Feedback| A
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **Three enforcement layers:**

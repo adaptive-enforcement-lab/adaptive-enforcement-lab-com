@@ -55,10 +55,12 @@ graph TD
     Per --> Per1[Shared between jobs]
     Per1 --> Per2[Maximum: SLSA Level 2]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style GH3 fill:#a7e22e,color:#1b1d1e
     style Eph2 fill:#a7e22e,color:#1b1d1e
     style Per2 fill:#ffd866,color:#1b1d1e
+
 ```
 
 ---
@@ -260,8 +262,10 @@ graph LR
     K8s --> L3
     VM --> L3
 
+    %% Ghostty Hardcore Theme
     style Current fill:#ffd866,color:#1b1d1e
     style L3 fill:#a7e22e,color:#1b1d1e
+
 ```
 
 ---
@@ -285,11 +289,13 @@ graph TD
     Q5 -->|Yes| Persistent[Persistent OK]
     Q5 -->|No| GH3[GitHub-hosted]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style GH1 fill:#a7e22e,color:#1b1d1e
     style GH2 fill:#a7e22e,color:#1b1d1e
     style Cloud fill:#a7e22e,color:#1b1d1e
     style Persistent fill:#ffd866,color:#1b1d1e
+
 ```
 
 ---

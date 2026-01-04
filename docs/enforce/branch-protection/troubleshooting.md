@@ -79,8 +79,6 @@ See **[GitHub App Enforcement](github-app-enforcement.md)** troubleshooting sect
 
 **Repository not found**: Remove deleted repositories from Terraform state with `terraform state rm 'module.repo_protection["deleted-repo"]'`.
 
-See **[Terraform Modules](terraform-modules.md)** and **[Multi-Repo Management](multi-repo-management.md)** troubleshooting sections.
-
 ---
 
 ### Drift Detection and Remediation
@@ -189,7 +187,6 @@ Each pattern page contains dedicated troubleshooting section with detailed solut
 
 ### Infrastructure as Code
 
-- **[Terraform Modules](terraform-modules.md)**: IaC, state management, import procedures
 - **[OpenTofu Modules](opentofu-modules.md)**: OpenTofu-specific issues and state encryption
 - **[Multi-Repo Management](multi-repo-management.md)**: Organization-wide operations, bulk updates, staging
 

@@ -48,12 +48,14 @@ flowchart TB
     E --> E2["compliance-runners group<br/>Audited workloads"]
     E --> E3["gpu-runners group<br/>High-cost resources"]
 
+    %% Ghostty Hardcore Theme
     style C1 fill:#f92572,color:#1b1d1e
     style D1 fill:#e6db74,color:#1b1d1e
     style D2 fill:#e6db74,color:#1b1d1e
     style E1 fill:#a6e22e,color:#1b1d1e
     style E2 fill:#a6e22e,color:#1b1d1e
     style E3 fill:#fd971e,color:#1b1d1e
+
 ```
 
 ### Strategy 1: Trust-Based Organization

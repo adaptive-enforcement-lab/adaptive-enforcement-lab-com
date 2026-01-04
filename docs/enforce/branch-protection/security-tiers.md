@@ -225,12 +225,14 @@ flowchart TD
     ENHANCED --> APPLY2[2 reviews, code owners, admin enforced]
     MAXIMUM --> APPLY3[2 reviews, signatures required, push restricted]
 
+    %% Ghostty Hardcore Theme
     style STANDARD fill:#a7e22e,color:#1b1d1e
     style ENHANCED fill:#fd971e,color:#1b1d1e
     style MAXIMUM fill:#f92572,color:#1b1d1e
     style APPLY1 fill:#a7e22e,color:#1b1d1e
     style APPLY2 fill:#fd971e,color:#1b1d1e
     style APPLY3 fill:#f92572,color:#1b1d1e
+
 ```
 
 **Decision criteria**:

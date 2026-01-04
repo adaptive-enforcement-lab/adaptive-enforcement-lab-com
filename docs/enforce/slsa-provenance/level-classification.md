@@ -27,8 +27,6 @@ Determine the right SLSA level for your security posture and infrastructure.
 
     **Compliance requirement** = Usually SLSA Level 3
 
----
-
 ## Overview
 
 SLSA level selection depends on three factors:
@@ -38,8 +36,6 @@ SLSA level selection depends on three factors:
 3. **Compliance mandates** - What do auditors require?
 
 This guide provides decision trees for each scenario.
-
----
 
 ## Decision Tree: Requirements-Based Classification
 
@@ -68,16 +64,16 @@ graph TD
     Q8 -->|Yes| Level1
     Q8 -->|No| Level0[Level 0: No SLSA]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style Level3 fill:#a7e22e,color:#1b1d1e
     style Level2 fill:#ffd866,color:#1b1d1e
     style Level1 fill:#fc9867,color:#1b1d1e
     style Level0 fill:#f92572,color:#1b1d1e
+
 ```
 
 **Key decision factors**: OpenSSF 10/10 requires Level 3 (non-negotiable). Compliance frameworks (SOC 2, ISO 27001, FedRAMP) often mandate provenance. High-security applications (payment, auth, infrastructure) benefit from Level 3 isolation. If build tampering is in your threat model, choose Level 3.
-
----
 
 ## Decision Tree: Runner Configuration Classification
 
@@ -107,17 +103,17 @@ graph TD
     SH8 -->|Yes| SH9[Maximum Level: SLSA 1]
     SH8 -->|No| SH7
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style GH2 fill:#a7e22e,color:#1b1d1e
     style SH4 fill:#a7e22e,color:#1b1d1e
     style SH5 fill:#ffd866,color:#1b1d1e
     style SH7 fill:#ffd866,color:#1b1d1e
     style SH9 fill:#fc9867,color:#1b1d1e
+
 ```
 
 **Critical questions**: Ephemeral (fresh VM per job, destroyed after) vs Persistent (same VM for multiple jobs). State isolation: Can jobs access previous job artifacts? Developer access: Can devs SSH to runners or modify configuration?
-
----
 
 ## Decision Tree: Self-Hosted Runner Evaluation
 
@@ -157,16 +153,16 @@ graph TD
     DinD2 -->|No| DinD3[Container isolation not sufficient for Level 3]
     DinD1 -->|No| Level2
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style Level3 fill:#a7e22e,color:#1b1d1e
     style Level2 fill:#ffd866,color:#1b1d1e
     style Level1 fill:#fc9867,color:#1b1d1e
     style DinD3 fill:#ffd866,color:#1b1d1e
+
 ```
 
 **Runner evaluation**: Kubernetes fresh pods achieve Level 3 (pod-per-job, no persistent volumes). VM autoscaling achieves Level 3 (VM-per-job, destroyed after). Dedicated runners max at Level 2 unless automated rebuild after each job. Docker-in-Docker max Level 2 (shared kernel/host OS).
-
----
 
 ## Classification Matrix
 
@@ -184,8 +180,6 @@ Quick reference for common scenarios:
 | Docker-in-Docker | Shared kernel | **Level 2** | Host OS shared |
 | Persistent VM | Shared | **Level 2** | Sequential jobs |
 | Developer workstation | No isolation | **Level 1** | Manual provenance |
-
----
 
 ## Compliance-Driven Classification
 
@@ -217,17 +211,17 @@ graph TD
     PCI2 -->|Yes| PCI3[Level 3 recommended]
     PCI2 -->|No| PCI4[Level 2 sufficient]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style OSF1 fill:#f92572,color:#1b1d1e
     style SOC3 fill:#a7e22e,color:#1b1d1e
     style ISO3 fill:#a7e22e,color:#1b1d1e
     style Fed3 fill:#f92572,color:#1b1d1e
     style PCI3 fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **OpenSSF Scorecard**: Level 3 required for 10/10. **SOC 2**: Type I accepts Level 2, Type II benefits from Level 3. **ISO 27001**: Level 2 demonstrates compliance, Level 3 exceeds. **FedRAMP**: Moderate/High expect Level 3. **PCI DSS**: Level 2 audit trail, Level 3 recommended for payment processing.
-
----
 
 ## Migration Decision Tree
 
@@ -256,13 +250,13 @@ graph TD
     L2_4 -->|Yes| L2_5[Plan infrastructure migration]
     L2_4 -->|No| L2_6[Stay at Level 2]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style L0_5 fill:#a7e22e,color:#1b1d1e
     style L2_2 fill:#a7e22e,color:#1b1d1e
     style L2_6 fill:#ffd866,color:#1b1d1e
-```
 
----
+```
 
 ## Common Scenarios
 
@@ -274,8 +268,6 @@ graph TD
 | **Financial services** | Ephemeral | Level 3 | FedRAMP/PCI compliance, build tampering detection required |
 | **Internal tooling** | Any | Level 1-2 | Low-security, basic audit trail, no compliance mandate |
 
----
-
 ## Upgrade Path
 
 | From | To | Effort | Key Changes |
@@ -283,8 +275,6 @@ graph TD
 | **Level 0 → 1** | 1-2 days | Document build, record source commit, manual provenance | No infrastructure changes |
 | **Level 1 → 2** | 1 week | Automate provenance, service signing, CI/CD integration | Requires CI/CD pipeline |
 | **Level 2 → 3** | 2-3 weeks | Isolated builds, slsa-github-generator, verification workflows | **Requires GitHub-hosted or ephemeral runners** |
-
----
 
 ## Decision Tree: When to Stop at Level 2
 
@@ -312,6 +302,7 @@ graph TD
     Q8 -->|Yes| No5[No, upgrade to Level 3]
     Q8 -->|No| Yes3[Yes, Level 2 is pragmatic choice]
 
+    %% Ghostty Hardcore Theme
     style Start fill:#65d9ef,color:#1b1d1e
     style Yes1 fill:#ffd866,color:#1b1d1e
     style Yes2 fill:#ffd866,color:#1b1d1e
@@ -321,9 +312,8 @@ graph TD
     style No3 fill:#a7e22e,color:#1b1d1e
     style No4 fill:#a7e22e,color:#1b1d1e
     style No5 fill:#a7e22e,color:#1b1d1e
-```
 
----
+```
 
 ## Key Takeaways
 
@@ -337,8 +327,6 @@ graph TD
 
 **Level 2 is pragmatic for many scenarios**: Provides service-generated provenance, doesn't require infrastructure changes, sufficient for audit trail.
 
----
-
 ## FAQ
 
 **Can I skip Level 1 and 2 and go directly to Level 3?** Yes, if using GitHub-hosted runners. The levels are cumulative in requirements but not in implementation path.
@@ -351,15 +339,10 @@ graph TD
 
 **How long does Level 2 to Level 3 upgrade take?** 2-3 weeks including infrastructure changes, verification workflows, and policy updates. Longer if migrating runner infrastructure.
 
----
-
 ## Related Content
 
 - **[SLSA Levels Explained](slsa-levels.md)**: Detailed requirements for each level
 - **[SLSA Implementation Playbook](index.md)**: Complete adoption guide
 - **[Current SLSA Implementation](slsa-provenance.md)**: Level 3 workflow patterns
 - **[OpenSSF Scorecard](../../secure/scorecard/scorecard-compliance.md)**: SLSA impact on scores
-
----
-
 *Classification determines feasibility. Requirements determine necessity. Infrastructure determines timeline. Start with honest assessment of all three.*

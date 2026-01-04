@@ -67,10 +67,12 @@ flowchart LR
     B -->|"/workspace/src"| C[build]
     C -->|"/workspace/bin/app"| D[publish]
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
+
 ```
 
 **The handoff chain:**
@@ -99,12 +101,14 @@ flowchart TD
     D -->|success| E[Template Succeeds]
     D -->|fail| F
 
+    %% Ghostty Hardcore Theme
     style A fill:#65d9ef,color:#1b1d1e
     style B fill:#9e6ffe,color:#1b1d1e
     style C fill:#fd971e,color:#1b1d1e
     style D fill:#a7e22e,color:#1b1d1e
     style E fill:#a7e22e,color:#1b1d1e
     style F fill:#f92572,color:#1b1d1e
+
 ```
 
 For cases where you need partial success handling (for example, running tests even if linting fails), use steps or DAG patterns instead of init containers.

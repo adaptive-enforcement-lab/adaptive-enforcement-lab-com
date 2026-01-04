@@ -94,10 +94,12 @@ flowchart LR
     B -->|"inputs.parameters"| C[Template]
     C -->|"{{inputs.parameters.x}}"| D[Script]
 
+    %% Ghostty Hardcore Theme
     style A fill:#9e6ffe,color:#1b1d1e
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#65d9ef,color:#1b1d1e
+
 ```
 
 **The parameter journey:**
