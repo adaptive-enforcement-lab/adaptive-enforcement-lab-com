@@ -1,5 +1,5 @@
 ---
-title: Phase 2: Automation (Weeks 5-8)
+title: "Phase 2: Automation (Weeks 5-8)"
 description: >-
   Automation phase SDLC hardening overview. CI/CD gates, SBOM generation, vulnerability scanning, SLSA provenance, and automated evidence collection for secure software supply chain enforcement.
 tags:
