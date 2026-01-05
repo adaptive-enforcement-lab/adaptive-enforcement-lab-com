@@ -1,5 +1,5 @@
 ---
-title: CI Integration: Automated Policy Enforcement
+title: "CI Integration: Automated Policy Enforcement"
 tags:
   - policy-as-code
   - ci-cd

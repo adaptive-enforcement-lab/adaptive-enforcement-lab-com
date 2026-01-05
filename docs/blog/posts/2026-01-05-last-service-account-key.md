@@ -179,6 +179,8 @@ Enforcement turns an optional pattern into a standard.
 ## Related
 
 - [Workload Identity Guide](../../secure/cloud-native/workload-identity/index.md) - Complete implementation guide
+<!-- TODO: Add links when pages exist
 - [Least Privilege Across Environments](../../patterns/access-control/least-privilege/index.md) - Design IAM bindings that minimize blast radius
 - [Credential Rotation at Scale](../../secure/credential-management/rotation/index.md) - When you still need to rotate things
 - [Audit and Compliance](../../patterns/governance/audit-logging/index.md) - Making every identity change traceable
+-->

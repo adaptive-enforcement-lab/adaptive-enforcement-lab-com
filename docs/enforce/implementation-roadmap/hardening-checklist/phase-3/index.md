@@ -1,5 +1,5 @@
 ---
-title: Phase 3: Runtime (Weeks 9-12)
+title: "Phase 3: Runtime (Weeks 9-12)"
 description: >-
   Runtime enforcement phase overview. Policy-as-code with Kyverno, resource limits, image source verification, security context enforcement, and policy observability for production Kubernetes hardening.
 tags:

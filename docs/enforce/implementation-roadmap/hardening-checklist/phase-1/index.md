@@ -1,5 +1,5 @@
 ---
-title: Phase 1: Foundation (Weeks 1-4)
+title: "Phase 1: Foundation (Weeks 1-4)"
 description: >-
   Deploy pre-commit hooks for secrets detection, branch protection with required reviews, commit signature verification, and org-wide distribution strategies.
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Policy-as-Code: End-to-End Enforcement
+title: "Policy-as-Code: End-to-End Enforcement"
 tags:
   - policy-enforcement
   - kubernetes

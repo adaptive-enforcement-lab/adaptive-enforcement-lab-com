@@ -1,5 +1,5 @@
 ---
-title: SLSA Provenance: Toolchain Integration
+title: "SLSA Provenance: Toolchain Integration"
 tags:
   - slsa
   - provenance
