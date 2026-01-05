@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.12.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.11.2...1.12.0) (2026-01-05)
+
+
+### New Content
+
+* add title frontmatter validation and mass update ([#235](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/235)) ([9e55a4e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9e55a4e71c2919f5d008b1ea8ef90a2e430f74eb))
+* use Core App token for release-please ([#234](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/234)) ([996bec0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/996bec0fa65a6c6bf0199c06e228a6387496ff64))
+
+
+### Content Fixes
+
+* quote title frontmatter with colons ([#237](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/237)) ([72fa429](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/72fa429bc293542730ec2a595600378f77a4eeb9))
+
 ## [1.11.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.11.1...1.11.2) (2026-01-04)
 
 
