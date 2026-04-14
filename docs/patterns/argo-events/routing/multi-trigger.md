@@ -5,7 +5,7 @@ description: >-
 ---
 # Multi-Trigger Actions
 
-A single Sensor can trigger multiple independent actions from one event. This fan-out pattern enables parallel processing, notifications, and coordinated responses. For the complete trigger reference, see the [official Triggers documentation](https://argoproj.github.io/argo-events/sensors/triggers/intro/).
+A single Sensor can trigger multiple independent actions from one event. This fan-out pattern enables parallel processing, notifications, and coordinated responses. For the complete trigger reference, see the [official Triggers documentation](https://argoproj.github.io/argo-events/concepts/trigger/).
 
 ---
 
@@ -104,11 +104,11 @@ Different actions for different purposes:
 | Trigger Type | Purpose | Argo Docs |
 | -------------- | --------- | ----------- |
 | `argoWorkflow` | Submit Argo Workflows | [Argo Workflow Trigger](https://argoproj.github.io/argo-events/sensors/triggers/argo-workflow/) |
-| `http` | HTTP/webhook requests | [HTTP Trigger](https://argoproj.github.io/argo-events/sensors/triggers/http/) |
-| `k8s` | Create/patch K8s resources | [Kubernetes Trigger](https://argoproj.github.io/argo-events/sensors/triggers/k8s/) |
+| `http` | HTTP/webhook requests | [HTTP Trigger](https://argoproj.github.io/argo-events/sensors/triggers/http-trigger/) |
+| `k8s` | Create/patch K8s resources | [Kubernetes Trigger](https://argoproj.github.io/argo-events/sensors/triggers/k8s-object-trigger/) |
 | `awsLambda` | Invoke Lambda functions | [AWS Lambda Trigger](https://argoproj.github.io/argo-events/sensors/triggers/aws-lambda/) |
-| `kafka` | Publish to Kafka topics | [Kafka Trigger](https://argoproj.github.io/argo-events/sensors/triggers/kafka/) |
-| `slack` | Send Slack messages | [Slack Trigger](https://argoproj.github.io/argo-events/sensors/triggers/slack/) |
+| `kafka` | Publish to Kafka topics | [Kafka Trigger](https://argoproj.github.io/argo-events/sensors/triggers/kafka-trigger/) |
+| `slack` | Send Slack messages | [Slack Trigger](https://argoproj.github.io/argo-events/sensors/triggers/slack-trigger/) |
 
 ---
 
@@ -207,4 +207,4 @@ If you need sequential execution, use a single workflow trigger that handles the
 - [Simple Filtering](filtering.md) - Control which events trigger
 - [Event Transformation](transformation.md) - Modify payloads before triggering
 - [Conditional Routing](conditional.md) - Complex decision trees
-- [Official Triggers Docs](https://argoproj.github.io/argo-events/sensors/triggers/intro/) - Complete reference
+- [Official Triggers Docs](https://argoproj.github.io/argo-events/concepts/trigger/) - Complete reference

@@ -119,8 +119,8 @@ Balance risk vs. effort:
 
 - [CVSS Specification](https://www.first.org/cvss/v3.1/specification-document)
 - [NVD CVE Database](https://nvd.nist.gov/vuln)
-- [OWASP Risk Rating](https://owasp.org/www-project-risk-rating-manager/)
-- [NIST Security Controls](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5)
+- [OWASP Risk Rating](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology)
+- [NIST Security Controls](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 
 ---
 

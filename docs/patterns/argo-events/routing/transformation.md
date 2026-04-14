@@ -5,7 +5,7 @@ description: >-
 ---
 # Event Transformation
 
-Transformations modify event payloads before they reach triggers. This enables data normalization, field extraction, and payload restructuring without changing EventSource or workflow code. For the complete reference, see the [official Trigger Parameterization docs](https://argoproj.github.io/argo-events/sensors/trigger-parameterization/).
+Transformations modify event payloads before they reach triggers. This enables data normalization, field extraction, and payload restructuring without changing EventSource or workflow code. For the complete reference, see the [official Trigger Parameterization docs](https://argoproj.github.io/argo-events/tutorials/02-parameterization/).
 
 ---
 
@@ -217,4 +217,4 @@ The template outputs a JSON string that becomes the parameter value.
 - [Simple Filtering](filtering.md) - Control which events trigger
 - [Multi-Trigger Actions](multi-trigger.md) - Fan-out patterns
 - [Sensor Configuration](../../../patterns/argo-events/setup/sensors.md) - Basic Sensor setup
-- [Official Parameterization Docs](https://argoproj.github.io/argo-events/sensors/trigger-parameterization/) - Complete reference
+- [Official Parameterization Docs](https://argoproj.github.io/argo-events/tutorials/02-parameterization/) - Complete reference

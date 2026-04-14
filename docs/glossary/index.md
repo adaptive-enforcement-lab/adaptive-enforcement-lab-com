@@ -365,6 +365,6 @@ Private clusters. Workload Identity. Binary Authorization. Infrastructure as Cod
 
 !!! tip "Missing a Term?"
 
-    If you find terminology not defined here, please [open an issue](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab.com/issues).
+    If you find terminology not defined here, please [open an issue](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues).
 
 **Related**: [Roadmap](../roadmap.md) | [Patterns](../patterns/index.md) | [Blog](../blog/index.md)
