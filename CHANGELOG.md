@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.12.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.0...1.12.1) (2026-04-14)
+
+
+### Content Fixes
+
+* replace 28 broken external links across docs ([#249](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/249)) ([ff2f1ba](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/ff2f1bafe56bd4216310e25ea991b16ed51a8d2d))
+
+
+### Maintenance
+
+* **deps:** update actions/create-github-app-token action to v3 ([#245](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/245)) ([a287bb7](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/a287bb77b2e5f3b477dbe9c41ca6d2df02d4d9b2))
+* **deps:** update actions/deploy-pages action to v5 ([#246](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/246)) ([7212ddf](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/7212ddfedb5b01e45a0d8521880e883ecaff1506))
+* **deps:** update actions/upload-pages-artifact action to v5 ([#248](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/248)) ([6f13808](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6f13808f9b7d928c0fb7a82f38ea92dfcc015d38))
+* **deps:** update adaptive-enforcement-lab/readability action to v3.0.2 ([#247](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/247)) ([d1a0633](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/d1a0633e3cfd3097a856a5ebf9af39578c986ec7))
+* **deps:** update corentinmusard/otel-cicd-action action to v4 ([#244](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/244)) ([cd2a430](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/cd2a4309550643e162aaf3c703b850dab82e4353))
+
 ## [1.12.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.11.2...1.12.0) (2026-01-05)
 
 
