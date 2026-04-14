@@ -5,7 +5,7 @@ description: >-
 ---
 # Event Routing
 
-Event routing controls how events flow from EventSources through Sensors to Triggers. Argo Events provides powerful filtering, transformation, and multi-action capabilities. For the complete reference, see the [official Sensors documentation](https://argoproj.github.io/argo-events/sensors/intro/).
+Event routing controls how events flow from EventSources through Sensors to Triggers. Argo Events provides powerful filtering, transformation, and multi-action capabilities. For the complete reference, see the [official Sensors documentation](https://argoproj.github.io/argo-events/concepts/sensor/).
 
 ---
 
@@ -89,4 +89,4 @@ This Sensor only triggers when images are pushed with tags starting with `v` or 
 - [Simple Filtering](filtering.md) - Basic filter expressions
 - [Multi-Trigger Actions](multi-trigger.md) - Fan-out patterns
 - [Sensor Configuration](../../../patterns/argo-events/setup/sensors.md) - Basic Sensor setup
-- [Official Sensor Docs](https://argoproj.github.io/argo-events/sensors/intro/) - Complete reference
+- [Official Sensor Docs](https://argoproj.github.io/argo-events/concepts/sensor/) - Complete reference

@@ -89,8 +89,8 @@ Where:
 
 ## References
 
-- [OWASP Risk Rating](https://owasp.org/www-project-risk-rating-manager/)
-- [NIST Security Controls](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5)
+- [OWASP Risk Rating](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology)
+- [NIST Security Controls](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final)
 
 ---
 

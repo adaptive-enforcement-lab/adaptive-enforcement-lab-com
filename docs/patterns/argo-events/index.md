@@ -38,10 +38,10 @@ flowchart LR
 
 | Component | Purpose | Argo Docs |
 | ----------- | --------- | ----------- |
-| **EventSource** | Connects to external systems | [EventSource Types](https://argoproj.github.io/argo-events/eventsources/setup/intro/) |
-| **EventBus** | Message broker for delivery | [EventBus](https://argoproj.github.io/argo-events/eventbus/) |
-| **Sensor** | Filters events and triggers | [Sensors](https://argoproj.github.io/argo-events/sensors/intro/) |
-| **Trigger** | Action when conditions met | [Triggers](https://argoproj.github.io/argo-events/sensors/triggers/intro/) |
+| **EventSource** | Connects to external systems | [EventSource Types](https://argoproj.github.io/argo-events/concepts/event_source/) |
+| **EventBus** | Message broker for delivery | [EventBus](https://argoproj.github.io/argo-events/eventbus/eventbus/) |
+| **Sensor** | Filters events and triggers | [Sensors](https://argoproj.github.io/argo-events/concepts/sensor/) |
+| **Trigger** | Action when conditions met | [Triggers](https://argoproj.github.io/argo-events/concepts/trigger/) |
 
 ---
 

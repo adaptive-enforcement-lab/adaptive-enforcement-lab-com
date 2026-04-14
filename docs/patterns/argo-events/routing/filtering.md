@@ -16,7 +16,7 @@ Argo Events supports multiple filter types that can be combined:
 | Filter Type | Purpose | Argo Docs |
 | ------------- | --------- | ----------- |
 | `data` | Match event payload fields | [Data Filters](https://argoproj.github.io/argo-events/sensors/filters/data/) |
-| `context` | Match CloudEvents context | [Context Filters](https://argoproj.github.io/argo-events/sensors/filters/context/) |
+| `context` | Match CloudEvents context | [Context Filters](https://argoproj.github.io/argo-events/sensors/filters/ctx/) |
 | `time` | Match time windows | [Time Filters](https://argoproj.github.io/argo-events/sensors/filters/time/) |
 | `expr` | Complex expressions | [Expr Filters](https://argoproj.github.io/argo-events/sensors/filters/expr/) |
 

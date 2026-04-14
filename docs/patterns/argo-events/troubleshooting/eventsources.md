@@ -250,4 +250,4 @@ If this works, the issue is with your specific EventSource configuration.
 
 - [EventSource Configuration](../setup/event-sources.md) - Setup reference
 - [Sensor Issues](sensors.md) - Next debugging step
-- [Official EventSource Docs](https://argoproj.github.io/argo-events/eventsources/setup/intro/) - Complete reference
+- [Official EventSource Docs](https://argoproj.github.io/argo-events/concepts/event_source/) - Complete reference

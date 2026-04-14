@@ -5,7 +5,7 @@ description: >-
 ---
 # Retry Strategies
 
-Transient failures like network timeouts, temporary service unavailability, and rate limits are common in distributed systems. Retry strategies automatically recover from these failures without manual intervention. For the complete reference, see the [official Trigger Retry docs](https://argoproj.github.io/argo-events/sensors/triggers/intro/#policy).
+Transient failures like network timeouts, temporary service unavailability, and rate limits are common in distributed systems. Retry strategies automatically recover from these failures without manual intervention. For the complete reference, see the [official Trigger Retry docs](https://argoproj.github.io/argo-events/tutorials/07-policy/).
 
 ---
 
@@ -191,4 +191,4 @@ spec:
 - [Dead Letter Queues](dead-letter.md) - Handle exhausted retries
 - [Backpressure Handling](backpressure.md) - Prevent overload during retries
 - [Workflow Retry Strategy](../../argo-workflows/templates/retry-strategy.md) - Workflow-level retries
-- [Official Retry Docs](https://argoproj.github.io/argo-events/sensors/triggers/intro/#policy) - Complete reference
+- [Official Retry Docs](https://argoproj.github.io/argo-events/tutorials/07-policy/) - Complete reference
