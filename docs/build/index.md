@@ -31,6 +31,8 @@ This section covers the development practices, tooling choices, and automation p
 
 **[Versioned Documentation](versioned-docs/index.md)**: Multi-version docs with Mike to prevent user confusion
 
+**[Documentation as Skills](documentation-as-skills/index.md)**: Compile documentation into Claude Code skills so patterns reach engineers inside the agent (5 pages)
+
 ## Integration with Secure and Enforce
 
 Build processes integrate with security and enforcement:
