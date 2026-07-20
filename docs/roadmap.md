@@ -14,6 +14,22 @@ Adaptive Enforcement Lab is actively building. Here's what's shipped and what's 
 
 ## Recently Shipped
 
+!!! success "Claude Code Skills Marketplace (July 2026)"
+
+    **117 skills, generated from these docs, delivered into the agent**
+
+    The documentation on this site now compiles into Claude Code skills. Same markdown source, different delivery mechanism — patterns arrive at the moment code is written instead of waiting to be searched for.
+
+    - ✅ **[claude-skills marketplace](https://github.com/adaptive-enforcement-lab/claude-skills)** - `v1.0.x`, four plugin collections
+    - ✅ **Patterns** (38 skills) - Error handling, idempotency, work avoidance, resilience, architecture
+    - ✅ **Secure** (33 skills) - GitHub Actions hardening, GKE, supply chain, OIDC federation
+    - ✅ **Enforce** (34 skills) - Kyverno, OPA, policy-as-code, SDLC hardening roadmap
+    - ✅ **Build** (12 skills) - Go CLI architecture, release pipelines, packaging, versioned docs
+    - ✅ **Automated generation** - Go extraction pipeline, clean/hexagonal architecture, release-please versioning
+    - ✅ **Continuous sync** - Skills regenerate on documentation change; source and skills cannot drift
+
+    **Story:** [The Docs Nobody Read](blog/posts/2026-07-21-docs-nobody-read.md)
+
 !!! success "Major Content Release (January 2026)"
 
     **Comprehensive Security & DevOps Content Pipeline**
@@ -99,15 +115,11 @@ Adaptive Enforcement Lab is actively building. Here's what's shipped and what's 
 
 ## In Progress
 
-!!! info "Claude Code Skills Marketplace"
+!!! info "Skills Marketplace Documentation"
 
-    Building automated skill generation pipeline to package AEL patterns as reusable Claude Code skills:
-
-    - 🔄 Automated skill generator from pattern articles (#194, #198)
-    - 🔄 Multi-skill marketplace structure (#195)
-    - 🔄 Pattern-based skills: Fail Fast, Prerequisite Checks, Idempotency, Work Avoidance
-    - 🔄 Enforcement skills: Pre-commit hooks, policy-as-code, CI gates
-    - 🔄 Build skills: Release pipelines, versioned docs, CLI architecture
+    - ✅ **[Documentation as Skills](build/documentation-as-skills/index.md)** - Extraction pipeline, skill anatomy, marketplace versioning, CI automation
+    - 🔄 Installation and team distribution guide
+    - 🔄 Usage telemetry: which skills actually load
 
 !!! info "Community Hub"
 
