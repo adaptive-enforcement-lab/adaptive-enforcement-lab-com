@@ -64,7 +64,7 @@ tests/
 **Tools**:
 
 ```dockerfile
-FROM alpine:3.22.1  # Not :latest
+FROM alpine:3.24.1  # Not :latest
 RUN curl ...v1.13.2/kyverno...  # Not /latest/
 ```
 
