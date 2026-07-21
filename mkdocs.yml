@@ -416,6 +416,12 @@ nav:
           - Change Detection: build/release-pipelines/change-detection.md
           - Workflow Triggers: build/release-pipelines/workflow-triggers.md
           - Protected Branches: build/release-pipelines/protected-branches.md
+      - Documentation as Skills:
+          - build/documentation-as-skills/index.md
+          - Extraction Pipeline: build/documentation-as-skills/extraction-pipeline.md
+          - Skill Anatomy: build/documentation-as-skills/skill-anatomy.md
+          - Marketplace & Versioning: build/documentation-as-skills/marketplace-versioning.md
+          - CI Automation: build/documentation-as-skills/ci-automation.md
       - Versioned Docs:
           - build/versioned-docs/index.md
           - Mike Configuration: build/versioned-docs/mike-configuration.md

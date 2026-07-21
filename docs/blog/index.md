@@ -19,4 +19,4 @@ Field notes from the trenches of DevSecOps automation. Real-world patterns, trou
 
 !!! info "What's Coming"
 
-    Check the [Roadmap](../roadmap.md) for upcoming content including Claude Code skills marketplace, work avoidance deep dives, and community features.
+    Check the [Roadmap](../roadmap.md) for upcoming content including work avoidance deep dives, skills marketplace documentation, and community features.
