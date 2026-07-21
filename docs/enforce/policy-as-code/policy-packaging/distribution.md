@@ -86,11 +86,11 @@ docker run --rm -v $(pwd):/workspace policy-platform:latest bash -c '\
 
 ```dockerfile
 # Build tools in separate stages
-FROM alpine:3.22.1 AS builder
+FROM alpine:3.24.1 AS builder
 RUN apk add build-base
 
 # Final image only has binaries
-FROM alpine:3.22.1
+FROM alpine:3.24.1
 COPY --from=builder /usr/local/bin/kyverno /usr/local/bin/
 ```
 

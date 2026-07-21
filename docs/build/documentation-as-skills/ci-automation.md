@@ -91,7 +91,7 @@ Both repositories are checked out, the generator is built from source, and it ru
 
 - uses: actions/setup-go@v6
   with:
-    go-version: '1.25'
+    go-version: '1.26'
 
 - run: go build -o ../bin/skillgen ./cmd/skillgen
   working-directory: skillgen
