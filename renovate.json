@@ -6,6 +6,19 @@
   "pre-commit": {
     "enabled": true
   },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Detect container images in Dockerfile examples embedded in policy-as-code documentation. These fenced blocks are extracted into real .dockerfile files by skillgen, so they are genuine dependencies despite living inside markdown.",
+      "managerFilePatterns": [
+        "/^docs/enforce/policy-as-code/.*\\.md$/"
+      ],
+      "matchStrings": [
+        "FROM\\s+(?<depName>[a-z0-9][a-z0-9._/-]*):(?<currentValue>[\\w][\\w.-]*)"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
   "packageRules": [
     {
       "description": "Pin GitHub Actions to commit SHAs while keeping readable semver updates",
@@ -14,6 +27,34 @@
       ],
       "extractVersion": "^v?(?<version>\\d+\\.\\d+\\.\\d+)$",
       "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
+    },
+    {
+      "description": "template-library examples deliberately reference deprecated images to demonstrate what policies block",
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchFileNames": [
+        "docs/enforce/policy-as-code/template-library/**"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Placeholder image names used to illustrate multi-source policy layering. They do not resolve to real registries.",
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "backend-applications-repo",
+        "devops-policy-repo",
+        "policy-repo-1",
+        "policy-repo-2",
+        "policy-repo-3",
+        "security-policy-repo",
+        "europe-west6-docker.pkg.dev/ops/charts/backend-applications-repo",
+        "europe-west6-docker.pkg.dev/ops/charts/devops-policy-repo",
+        "europe-west6-docker.pkg.dev/ops/charts/security-policy-repo"
+      ],
+      "enabled": false
     }
   ]
 }
