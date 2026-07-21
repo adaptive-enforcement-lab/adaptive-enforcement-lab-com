@@ -5,5 +5,15 @@
   ],
   "pre-commit": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "description": "Pin GitHub Actions to commit SHAs while keeping readable semver updates",
+      "extends": [
+        "helpers:pinGitHubActionDigests"
+      ],
+      "extractVersion": "^v?(?<version>\\d+\\.\\d+\\.\\d+)$",
+      "versioning": "regex:^v?(?<major>\\d+)(\\.(?<minor>\\d+)\\.(?<patch>\\d+))?$"
+    }
+  ]
 }
