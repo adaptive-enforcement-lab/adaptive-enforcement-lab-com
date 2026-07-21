@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Analyze documentation
-        uses: adaptive-enforcement-lab/readability@v3.1.0
+        uses: adaptive-enforcement-lab/readability@206893a5d5ad3a0039c7e16bc97937c4257741e4 # v3.1.0
         with:
           path: docs/
           check: ${{ inputs.fail_on_threshold }}
