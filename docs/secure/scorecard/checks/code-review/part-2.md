@@ -1,5 +1,7 @@
 ---
 title: Contributors Check
+description: >-
+  Raise the OpenSSF Scorecard Contributors score by attracting diverse contributors and reducing single-maintainer risk across your project.
 ---
 # Contributors Check
 
