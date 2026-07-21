@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.12.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.1...1.12.2) (2026-07-21)
+
+
+### Documentation Updates
+
+* document the skills marketplace, add blog post, correct roadmap ([#256](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/256)) ([41be980](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/41be980c2fdffd24b63c2d5e13c7852e40a71396))
+* update alpine base images and Go version references ([#261](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/261)) ([88752d5](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/88752d5b58de87e87f786532c54592534ed460c7))
+
+
+### Maintenance
+
+* consolidate renovate dependency updates ([#258](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/258)) ([d30c0f8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/d30c0f8b13ad35124ef8fe52945d18cd2f7dd29a))
+* **deps:** pin dependencies ([#262](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/262)) ([b51c8c1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b51c8c11c3f0ad004d2091185028fdd3245250f7))
+* **deps:** update actions/checkout action to v7.0.1 ([#253](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/253)) ([733cb95](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/733cb95690bcebe8eefd673a0c7462c5e759d60d))
+* **deps:** update corentinmusard/otel-cicd-action action to v4.0.1 ([#264](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/264)) ([8f77420](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8f7742041255a487c6665eaa236b980295a03fa3))
+* **deps:** update pre-commit hook igorshubovych/markdownlint-cli to v0.49.1 ([#259](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/259)) ([de3b6ae](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/de3b6aee14d0fc80aee64cb91d88e39ad56f241b))
+* **deps:** update tj-actions/changed-files action to v47.0.6 ([#265](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/265)) ([f4fdf44](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/f4fdf44cff2674a7cb07041a87a0834e9d90b569))
+* detect container images in policy-as-code documentation ([#263](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/263)) ([9fe6f22](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9fe6f22bf3274c995bfffc7345674513413baffe))
+* pin GitHub Actions to commit SHAs ([#260](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/260)) ([76cdf97](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/76cdf97a3a55da877233e414be6ca66a18f4b48d))
+
 ## [1.12.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.0...1.12.1) (2026-04-14)
 
 
