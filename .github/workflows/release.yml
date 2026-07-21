@@ -37,13 +37,13 @@ jobs:
     steps:
       - name: Generate App Token
         id: app-token
-        uses: actions/create-github-app-token@v3
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
         with:
           app-id: ${{ secrets.CORE_APP_ID }}
           private-key: ${{ secrets.CORE_APP_PRIVATE_KEY }}
           owner: adaptive-enforcement-lab
 
-      - uses: googleapis/release-please-action@v5
+      - uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5
         id: release
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -110,12 +110,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0  # Full history for RSS plugin dates
 
       - name: Setup Python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with:
           python-version: "3.14"
 
@@ -123,7 +123,7 @@ jobs:
         run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
       - name: Cache MkDocs Material
-        uses: actions/cache@v6
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: ~/.cache
@@ -137,7 +137,7 @@ jobs:
         run: mkdocs build
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: site/
 
@@ -155,7 +155,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5
 
   release-status:
     name: Release Status
