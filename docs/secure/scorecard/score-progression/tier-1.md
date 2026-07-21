@@ -1,5 +1,7 @@
 ---
 title: Tier 1
+description: >-
+  Quick-win OpenSSF Scorecard fixes that raise your rating with minimal effort, covering branch protection, security policy, and dependency pinning.
 ---
 # Tier 1
 
