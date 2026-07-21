@@ -27,7 +27,7 @@ jobs:
       workflows_changed: ${{ steps.changes.outputs.workflows_any_changed }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
