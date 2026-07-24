@@ -123,7 +123,7 @@ jobs:
         run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
       - name: Cache MkDocs Material
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # 6.1.0
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: ~/.cache
