@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.12.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.2...1.12.3) (2026-08-09)
+
+
+### Documentation Updates
+
+* draft pattern post from content-machine ([#274](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/274)) ([63b927d](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/63b927d730e0123a35dac010478c9f58135255ad))
+
+
+### Maintenance
+
+* **deps:** update actions/cache action to v6.1.0 ([#254](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/254)) ([c4790e4](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c4790e49b7a7a2a8931cf4759fa55d7a4f2afa58))
+* **deps:** update actions/create-github-app-token action to v3.2.0 ([#266](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/266)) ([69e9a6c](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/69e9a6c06d98b378954cac6814a2f75e8687a7eb))
+* **deps:** update corentinmusard/otel-cicd-action action to v4.1.0 ([#268](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/268)) ([43bfbf4](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/43bfbf4aff1575ca6cf0684ef475053bb6080830))
+* **deps:** update pre-commit hook adaptive-enforcement-lab/readability to v3.1.2 ([#252](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/252)) ([c3e6a63](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c3e6a63ef285b3c8d9a42284c734ff7dd89bcaa5))
+
 ## [1.12.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.1...1.12.2) (2026-07-21)
 
 
