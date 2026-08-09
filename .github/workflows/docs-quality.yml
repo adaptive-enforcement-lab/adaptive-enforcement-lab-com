@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
 
       - name: Analyze documentation
-        uses: adaptive-enforcement-lab/readability@206893a5d5ad3a0039c7e16bc97937c4257741e4 # v3.1.0
+        uses: adaptive-enforcement-lab/readability@535241f37bd640a6eea1083c2013cd3eaebf9f45 # 3.1.2
         with:
           path: docs/
           check: ${{ inputs.fail_on_threshold }}
