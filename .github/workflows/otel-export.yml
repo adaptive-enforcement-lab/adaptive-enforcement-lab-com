@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Export Workflow Trace
-        uses: corentinmusard/otel-cicd-action@f2d88ecf54d9dd3e01ea95e25f93603212ee93d3 # 4.0.1
+        uses: corentinmusard/otel-cicd-action@6022e68732c1cab4d2c8218b810f69006ee5cc34 # 4.1.0
         with:
           otlpEndpoint: ${{ secrets.DASH0_OTLP_ENDPOINT }}
           otlpHeaders: ${{ secrets.DASH0_OTLP_HEADERS }}
