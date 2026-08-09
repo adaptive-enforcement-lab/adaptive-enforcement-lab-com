@@ -14,7 +14,7 @@ Reusable design patterns for resilient automation.
 
 !!! abstract "Solve Once, Apply Everywhere"
 
-    Good patterns solve problems once. Great patterns solve problems across technologies, languages, and platforms.
+    Develop solutions that transcend technologies and platforms. Our patterns address recurring challenges, ensuring consistency and resilience across your ecosystem.
 
 ## Overview
 

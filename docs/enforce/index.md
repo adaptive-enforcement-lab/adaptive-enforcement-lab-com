@@ -20,7 +20,7 @@ Making security mandatory through automation.
 
 ## Overview
 
-This section covers the **enforcement mechanisms** that make security policies mandatory, auditable, and impossible to ignore.
+This section details the **enforcement mechanisms** that make security policies mandatory, auditable, and impossible to ignore.
 
 These controls pass SOC 2, ISO 27001, and PCI-DSS audits by shifting security left and making compliance automatic.
 

@@ -19,7 +19,7 @@ Finding and fixing security issues before they become incidents.
 
 ## Overview
 
-This section covers the **tools and practices** for discovering and remediating security issues in code, dependencies, containers, and supply chains.
+This section covers **tactical tools and practices** for discovering and remediating security issues in code, dependencies, containers, and supply chains.
 
 ## Secure vs Enforce
 

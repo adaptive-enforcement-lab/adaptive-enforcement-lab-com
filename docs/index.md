@@ -10,13 +10,13 @@ comments: false
 
 Security isn't a checkbox. It's a lifecycle.
 
-`Adaptive Enforcement Lab` is where you come to build systems that withstand.
+`Adaptive Enforcement Lab` builds systems that enforce security by design.
 
 ---
 
 ## What We Do
 
-We're providing a tactical knowledge hub focused on embedding enforcement-driven security and governance into the full software development lifecycle. From design to deploy, from pipeline to policy: we focus on real-world, adaptive, resilient, full-spectrum control.
+We deliver tactical knowledge to embed enforcement-driven security and governance across your SDLC. From design to deploy, from pipeline to policy: we focus on real-world, adaptive, resilient, full-spectrum control.
 
 !!! abstract "Core Topics"
 
