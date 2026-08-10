@@ -30,12 +30,16 @@ System design patterns for building maintainable, scalable automation.
 
 #### Separation of Concerns
 
+Build scalable automation through distinct, composable modules. Reduces coupling and improves testability.
+
 - Split functionality into distinct, composable modules
 - Each component does one thing well
 - Reduces coupling, improves testability
 - Examples: Script-based workflow stages, modular Helm charts
 
 #### Hub-and-Spoke
+
+Distribute configuration from a central hub to many spokes. Enforce consistency and enable organization-wide policy updates.
 
 - Central hub distributes configuration to many spokes
 - Enforces consistency across repositories or clusters
@@ -44,12 +48,16 @@ System design patterns for building maintainable, scalable automation.
 
 #### Strangler Fig
 
+Incrementally replace legacy systems. Route traffic to new implementations, reducing risk with gradual cutovers.
+
 - Incrementally replace legacy systems without Big Bang rewrites
 - Route traffic to new implementation while old runs
 - Gradual cutover reduces risk
 - Examples: Feature flags, API gateway routing, Kubernetes Ingress
 
 #### Three-Stage Design
+
+Implement workflows using a Discovery → Execution → Summary pattern. Find, process, and aggregate results efficiently.
 
 - Discovery → Execution → Summary pattern for workflows
 - Discovery: Find what needs processing
@@ -59,12 +67,16 @@ System design patterns for building maintainable, scalable automation.
 
 #### Matrix Distribution
 
+Execute operations in parallel across multiple dimensions. Leverage conditional execution and template rendering for diverse scenarios.
+
 - Parallel execution across multiple dimensions
 - Conditional execution based on matrix values
 - Template rendering for each matrix combination
 - Examples: Multi-environment deployments, multi-arch builds
 
 #### Environment Progression
+
+Manage sequential deployments across environments (dev → staging → prod). Automate promotion on success and rollback on failure.
 
 - Sequential deployment through environments (dev → staging → prod)
 - Automated promotion on success
@@ -77,12 +89,16 @@ Patterns that reduce runtime, cost, and toil.
 
 #### Idempotency
 
+Ensure operations are safe to run multiple times without side effects. Critical for reliable automation and retry mechanisms.
+
 - Safe to run multiple times without side effects
 - Enables retries without duplication
 - Critical for automation reliability
 - Techniques: Check-before-act, upsert, tombstone markers, unique identifiers
 
 #### Work Avoidance
+
+Optimize automation by skipping unnecessary work when outcomes are unchanged. Use content hashes and existence checks.
 
 - Skip unnecessary work when outcomes are unchanged
 - Compare content hashes, not timestamps
@@ -95,6 +111,8 @@ Patterns that make automation resilient to failure.
 
 #### Fail Fast
 
+Detect errors early and exit immediately on unrecoverable issues. Provides clear error messages and prevents expensive operations.
+
 - Detect errors early, before expensive operations
 - Exit immediately on unrecoverable errors
 - Provide clear error messages
@@ -102,12 +120,16 @@ Patterns that make automation resilient to failure.
 
 #### Prerequisite Checks
 
+Verify all requirements before starting work. Ensure optimal order of checks to prevent partial execution states.
+
 - Verify all requirements before starting work
 - Check in optimal order (cheap first, expensive last)
 - Avoid partial execution states
 - Examples: Dependency checks, permission validation
 
 #### Graceful Degradation
+
+Maintain functionality with reduced capabilities when components fail. Use fallback mechanisms to preserve critical operations.
 
 - Continue with reduced functionality when components fail
 - Fallback to alternative implementations
