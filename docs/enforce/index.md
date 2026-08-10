@@ -49,7 +49,7 @@ Understanding the distinction:
 
 ### Branch Protection
 
-Require code reviews, passing status checks, commit signatures, and up-to-date branches before merging to protected branches.
+Enforce code reviews, status checks, commit signatures, and up-to-date branches on protected branches.
 
 **Why it matters**: Prevents direct commits to main, ensures peer review, and blocks broken code from reaching production.
 
@@ -62,7 +62,7 @@ Require code reviews, passing status checks, commit signatures, and up-to-date b
 
 ### Pre-commit Hooks
 
-Client-side and server-side hooks that block commits violating security policies, code standards, or compliance requirements.
+Block commits violating security policies, code standards, or compliance, using client-side and server-side hooks.
 
 **Why it matters**: Catch violations at commit time, before CI/CD ever runs. Fastest possible feedback loop.
 
@@ -75,7 +75,7 @@ Client-side and server-side hooks that block commits violating security policies
 
 ### Status Checks
 
-GitHub status checks that gate pull request merges on passing tests, security scans, policy validation, and approval workflows.
+Gate pull request merges with GitHub status checks, requiring passing tests, security scans, policy validation, and approval.
 
 **Why it matters**: Automated quality gates that prevent human error and enforce organizational standards.
 
@@ -88,7 +88,7 @@ GitHub status checks that gate pull request merges on passing tests, security sc
 
 ### Policy-as-Code
 
-Runtime admission control using Kyverno and OPA to enforce security policies, compliance requirements, and operational standards in Kubernetes clusters.
+Enforce security policies, compliance, and operational standards in Kubernetes clusters via runtime admission control with Kyverno and OPA.
 
 **Why it matters**: Prevent misconfigured resources from ever being admitted to the cluster. Policy enforcement at the API server level cannot be bypassed.
 
@@ -103,7 +103,7 @@ Runtime admission control using Kyverno and OPA to enforce security policies, co
 
 ### SLSA Provenance
 
-Generate cryptographically signed attestations proving the integrity of build processes, source code, and artifacts.
+Generate cryptographically signed attestations. Prove build process, source code, and artifact integrity.
 
 **Why it matters**: Supply chain attacks (SolarWinds, Log4Shell) exploit build process compromise. SLSA provenance proves your builds are tamper-proof.
 
@@ -116,7 +116,7 @@ Generate cryptographically signed attestations proving the integrity of build pr
 
 ### Testing Enforcement
 
-Enforce minimum code coverage thresholds, require tests for new code, and block PRs that reduce coverage.
+Enforce minimum code coverage, require tests for new code, and block PRs that reduce coverage.
 
 **Why it matters**: Code without tests is code that breaks in production. Enforce testing discipline at merge time.
 
@@ -129,7 +129,7 @@ Enforce minimum code coverage thresholds, require tests for new code, and block 
 
 ### Audit & Compliance
 
-Automated collection of audit evidence, compliance documentation, and attestation generation for SOC 2, ISO 27001, and PCI-DSS audits.
+Automate audit evidence collection, compliance documentation, and attestation generation for SOC 2, ISO 27001, and PCI-DSS audits.
 
 **Why it matters**: Manual audit evidence collection is error-prone and time-consuming. Automate evidence generation to pass audits without scrambling.
 

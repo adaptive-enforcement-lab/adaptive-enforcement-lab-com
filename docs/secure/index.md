@@ -46,7 +46,7 @@ Understanding the distinction:
 
 ### GitHub Apps
 
-Secure authentication for automated workflows. GitHub Apps provide granular permissions, auditable actions, and organization-level credential management without Personal Access Tokens.
+Secure authentication for automated workflows. GitHub Apps offer granular permissions, auditable actions, and organization-level credential management.
 
 **Why it matters**: Pass SOC 2 and ISO 27001 audits by replacing PATs with trackable, scoped authentication.
 
@@ -85,7 +85,7 @@ Generate machine-readable inventories of all software components, dependencies, 
 
 ### Go Security Tooling
 
-Specialized security tooling for Go projects, including static analysis, vulnerability detection, and compliance checks.
+Leverage specialized security tooling for Go projects, including static analysis, vulnerability detection, and compliance checks.
 
 **Why it matters**: Go's standard library security model requires specific tooling that understands Go's unique characteristics.
 
