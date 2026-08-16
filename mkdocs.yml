@@ -1086,5 +1086,6 @@ nav:
               - Least Privilege: patterns/security/secure-by-design/least-privilege.md
               - Fail Secure: patterns/security/secure-by-design/fail-secure.md
               - End-to-End Integration: patterns/security/secure-by-design/integration.md
+      - Gated Certificate Operator Promotion in Environment Pipelines: patterns/gated-certificate-operator-promotion-through-a-fleet-wide-environment-pipeline/index.md
   - Roadmap: roadmap.md
   - Tags: tags.md
