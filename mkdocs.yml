@@ -427,6 +427,7 @@ nav:
           - Mike Configuration: build/versioned-docs/mike-configuration.md
           - Pipeline Integration: build/versioned-docs/pipeline-integration.md
           - Version Strategies: build/versioned-docs/version-strategies.md
+      - Structured Component Version Promotion: build/structured-component-version-promotion/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
