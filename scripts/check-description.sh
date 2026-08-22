@@ -12,8 +12,14 @@ TOO_LONG=()
 OPTIMAL=()
 
 # Files to exclude from description requirement
+#
+# Blog posts are NOT exempt: they still use a `description:` frontmatter
+# field (see any docs/blog/posts/*.md), just with a stricter hard cap
+# below -- content-review.md's rubric says "description under 160 chars"
+# for blog posts specifically. This used to be a blanket exemption; that
+# let real posts merge with descriptions up to 250 chars long (content-
+# machine PRs #274, #275 on adaptive-enforcement-lab-com), unenforced.
 EXCEPTION_PATTERNS=(
-    "^docs/blog/posts/"           # Blog posts use different frontmatter
     "^CHANGELOG\.md$"              # No description needed
     "^README\.md$"                 # No description needed
     "^\.content-machine/"          # Internal planning docs
@@ -27,6 +33,10 @@ MIN_RECOMMENDED=100
 OPTIMAL_MIN=155
 OPTIMAL_MAX=160
 MAX_ALLOWED=200
+# Blog posts get a stricter hard cap matching content-review.md's rubric
+# verbatim ("description under 160 chars"), rather than the 200-char
+# ceiling general docs pages get.
+BLOG_MAX_ALLOWED=160
 
 is_exception() {
     local file="$1"
@@ -106,13 +116,18 @@ check_file() {
         return
     fi
 
-    # Check length
+    # Check length. Blog posts get a stricter hard cap (160) matching
+    # content-review.md's rubric verbatim, instead of general docs' 200.
     local length=${#description}
+    local max_allowed=$MAX_ALLOWED
+    if [[ "$file" == docs/blog/posts/* ]]; then
+        max_allowed=$BLOG_MAX_ALLOWED
+    fi
 
     if (( length < MIN_RECOMMENDED )); then
         TOO_SHORT+=("$file|$length|$description")
         EXIT_CODE=1
-    elif (( length > MAX_ALLOWED )); then
+    elif (( length > max_allowed )); then
         TOO_LONG+=("$file|$length|$description")
         EXIT_CODE=1
     elif (( length < OPTIMAL_MIN )) || (( length > OPTIMAL_MAX )); then
@@ -156,7 +171,7 @@ if [[ ${#MISSING[@]} -gt 0 ]] || [[ ${#TOO_SHORT[@]} -gt 0 ]] || [[ ${#TOO_LONG[
     fi
 
     if [[ ${#TOO_LONG[@]} -gt 0 ]]; then
-        echo "Description too long (> $MAX_ALLOWED chars):" >&2
+        echo "Description too long (> $MAX_ALLOWED chars, blog posts: > $BLOG_MAX_ALLOWED chars):" >&2
         for entry in "${TOO_LONG[@]}"; do
             IFS='|' read -r file length desc <<< "$entry"
             echo "  ⚠️  $file" >&2

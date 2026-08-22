@@ -46,10 +46,55 @@ jobs:
     with:
       fail_on_threshold: true
 
+  # Runs the repo's own local pre-commit script hooks (check-description,
+  # check-title, check-forbidden-tech, check-blog-not-howto, check-blog-fold)
+  # in CI, scoped to just this push's changed markdown files. Before this job
+  # existed, those hooks only ever ran two ways: a contributor's own local
+  # `pre-commit install` (opt-in, per CONTRIBUTING.md, easy to skip) or
+  # content-machine's generate-draft pipeline invoking `pre-commit run`
+  # against its own drafted post before opening a PR. Neither covers a
+  # human-authored PR that never ran pre-commit locally -- this job is the
+  # backstop for that gap, independent of markdownlint/readability which
+  # lint-docs and analyze-docs already cover above.
+  lint-content-standards:
+    name: Lint Content Standards
+    needs: detect-changes
+    if: needs.detect-changes.outputs.docs_changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # 7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Get changed markdown files
+        id: changed-md
+        uses: tj-actions/changed-files@9426d40962ed5378910ee2e21d5f8c6fcbf2dd96 # 47.0.6
+        with:
+          files: docs/**/*.md
+
+      - name: Run content standards checks
+        if: steps.changed-md.outputs.any_changed == 'true'
+        env:
+          CHANGED_MD_FILES: ${{ steps.changed-md.outputs.all_changed_files }}
+        run: |
+          set -euo pipefail
+          echo "Checking: $CHANGED_MD_FILES"
+          # shellcheck disable=SC2086
+          ./scripts/check-description.sh $CHANGED_MD_FILES
+          # shellcheck disable=SC2086
+          ./scripts/check-title.sh $CHANGED_MD_FILES
+          # shellcheck disable=SC2086
+          ./scripts/check-forbidden-tech.sh $CHANGED_MD_FILES
+          # shellcheck disable=SC2086
+          ./scripts/check-blog-not-howto.sh $CHANGED_MD_FILES
+          # shellcheck disable=SC2086
+          ./scripts/check-blog-fold.sh $CHANGED_MD_FILES
+
   build-status:
     name: Build Status
     runs-on: ubuntu-latest
-    needs: [detect-changes, lint-docs, analyze-docs]
+    needs: [detect-changes, lint-docs, analyze-docs, lint-content-standards]
     if: always()
     steps:
       - name: Check build results
@@ -60,9 +105,11 @@ jobs:
           echo "|-----------|---------|--------|" >> "$GITHUB_STEP_SUMMARY"
           echo "| Docs Lint | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.lint-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Doc Analysis | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.analyze-docs.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Content Standards | ${{ needs.detect-changes.outputs.docs_changed }} | ${{ needs.lint-content-standards.result || 'skipped' }} |" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail if any required job failed
         if: |
           needs.lint-docs.result == 'failure' ||
-          needs.analyze-docs.result == 'failure'
+          needs.analyze-docs.result == 'failure' ||
+          needs.lint-content-standards.result == 'failure'
         run: exit 1
