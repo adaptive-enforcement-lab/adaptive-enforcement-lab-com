@@ -34,6 +34,18 @@ repos:
         files: \.md$
         exclude: ^docs/includes/.*$
         pass_filenames: true
+      - id: check-blog-not-howto
+        name: block how-to content in blog posts
+        entry: scripts/check-blog-not-howto.sh
+        language: script
+        files: ^docs/blog/posts/.*\.md$
+        pass_filenames: true
+      - id: check-blog-fold
+        name: check blog excerpt marker and above-the-fold admonitions
+        entry: scripts/check-blog-fold.sh
+        language: script
+        files: ^docs/blog/posts/.*\.md$
+        pass_filenames: true
       - id: mkdocs-build
         name: mkdocs build
         entry: >-
