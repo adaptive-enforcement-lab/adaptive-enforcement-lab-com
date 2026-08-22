@@ -3,7 +3,10 @@ title: Managing Incompatible Dependency Updates
 description: >-
   Strategically revert incompatible dependency updates to ensure consistent peer-dependency resolution and prevent automated build failures.
 ---
-Effectively managing dependency versions is crucial for maintaining system stability, particularly in complex software ecosystems where peer-dependency resolution can lead to unexpected build failures.
+# Managing Incompatible Dependency Updates
+
+An automated dependency update lands, the build breaks, and the error points at a peer-dependency conflict two levels removed from the change you actually reviewed.
+This happens the moment one dependency is bumped past a version another dependency still pins against. The fastest fix is usually to revert, not to chase the conflict upstream.
 
 !!! warning "Peer Dependency Conflicts Can Halt Development"
     Incompatible peer-dependency requirements can prevent successful dependency installation, leading to stalled automated build systems and requiring immediate intervention.
@@ -35,7 +38,11 @@ When faced with such a conflict, the most direct solution is often to revert the
 1.  **Pinning the Dependency:** Explicitly set the version of the offending dependency to a known compatible version. This bypasses the breaking change introduced by the newer version.
 
     *   **Example:** If `Component A` was upgraded to `v17.0.0` but `Component B` requires `<=16.0.0`, revert `Component A` to `v16.0.0` (or the highest compatible version).
-    *   **Action:** Update the `package.json` (or equivalent manifest file) to specify `"component-a": "16.0.0"`.
+    *   **Action:** Update the `package.json` (or equivalent manifest file) to specify `"component-a": "16.0.0"`, or pin it directly:
+
+        ```bash
+        npm install component-a@16.0.0 --save-exact
+        ```
 
 2.  **Validating the Reversion:** After reverting, run the dependency installation process and the automated build system again to confirm that the conflict is resolved and the system builds successfully.
 
@@ -51,3 +58,9 @@ Proactive measures can significantly reduce the occurrence of such issues:
 | **Strict Peer Dependency Ranges**  | When publishing libraries, define peer dependency ranges as narrowly as possible to signal compatibility. When consuming libraries, understand the impact of broad ranges.                  |
 | **Pre-merge CI Checks**            | Implement robust Continuous Integration (CI) pipelines that include dependency installation and full build validation *before* merging any dependency update.                               |
 | **Regular Dependency Audits**      | Periodically review the dependency tree for potential conflicts, especially before major releases or when encountering unexpected build issues.                                           |
+
+## See Also
+
+Reverting a single incompatible update is a tactical fix.
+If conflicts like this keep recurring because your dependency tooling opens too many PRs, see [Consolidating Automated Dependency Updates](../consolidating-automated-dependency-updates/index.md).
+That guide covers merging related updates into a single, testable change stream instead of resolving conflicts one PR at a time.
