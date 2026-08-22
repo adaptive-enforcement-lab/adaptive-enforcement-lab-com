@@ -1096,6 +1096,7 @@ nav:
           - Gated Certificate Promotion: patterns/security/gated-certificate-promotion/index.md
       - Governance:
           - patterns/governance/index.md
+          - Ownership & Criticality Tagging: patterns/governance/ownership-tagging/index.md
       - Authoritative Architectural Documentation and Data Contracts: patterns/authoritative-architectural-documentation-and-data-contracts/index.md
   - Roadmap: roadmap.md
   - Tags: tags.md
