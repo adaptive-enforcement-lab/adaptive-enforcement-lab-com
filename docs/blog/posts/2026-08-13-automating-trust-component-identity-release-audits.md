@@ -1,5 +1,5 @@
 ---
-title: Automating Trust: Component Identity and Release Audits
+title: "Automating Trust: Component Identity and Release Audits"
 date: 2026-08-13
 authors:
   - mark
@@ -35,17 +35,9 @@ assurance. The pattern we began to develop centered on embedding `integrity scan
 directly into our continuous integration and delivery workflows. This turned potential
 human errors into automatically caught exceptions.
 
-Our first step was to formalize `component identity` checks. Every `service module`
-now generates a cryptographically signed manifest upon build. Our CI system automatically
-verifies this signature against an authoritative registry during packaging and deployment.
-This ensures that any `application unit` moving through the pipeline is exactly what
-it purports to be, with an unbroken chain of custody.
-
-Next, we tackled `release procedure` compliance. This wasn't just about what components
-were being deployed, but *how* they were being deployed. We integrated automated checks
-to ensure that every `production rollout` adhered to our `change management workflows`.
-This verified approval stages, environmental prerequisites, and configuration standards.
-If a deployment plan deviated from policy, the pipeline would halt, flagging the precise non-compliance.
+We stopped trusting spreadsheets. Every `service module` now signs its own manifest,
+and the pipeline halts the instant a `production rollout` drifts from our
+`change management workflows`, so no one has to hope a human catches it first.
 
 !!! warning "Don't just add a checkbox"
     It's easy to think of compliance as a hurdle to clear. The real value comes
@@ -60,3 +52,7 @@ it has freed our team to focus on innovation. We know that the foundational inte
 of our `Core Platform` is continuously and automatically validated. Establishing these
 `automated compliance audits` has not only improved adherence to our `security standards`
 but has significantly bolstered `system integrity` and our collective peace of mind.
+
+## Related
+
+- [CI/CD Compliance Audits for Component Integrity](../../enforce/ci-cd-compliance-audits-for-component-integrity/index.md) - The implementation patterns behind this audit approach
