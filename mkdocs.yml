@@ -427,6 +427,7 @@ nav:
           - Mike Configuration: build/versioned-docs/mike-configuration.md
           - Pipeline Integration: build/versioned-docs/pipeline-integration.md
           - Version Strategies: build/versioned-docs/version-strategies.md
+      - Consolidating Automated Dependency Updates: build/consolidating-automated-dependency-updates/index.md
       - Managing Incompatible Dependency Updates: build/managing-incompatible-dependency-updates/index.md
   - Secure:
       - secure/index.md
@@ -862,6 +863,7 @@ nav:
           - Usage Guide: enforce/policy-as-code/template-library/usage-guide.md
       - Incident Readiness:
           - Playbook Library: enforce/incident-readiness/playbook-library/index.md
+      - "CI/CD Compliance Audits for Component Integrity": enforce/ci-cd-compliance-audits-for-component-integrity/index.md
   - Patterns:
       - patterns/index.md
       - Architecture:
@@ -1087,5 +1089,6 @@ nav:
               - Least Privilege: patterns/security/secure-by-design/least-privilege.md
               - Fail Secure: patterns/security/secure-by-design/fail-secure.md
               - End-to-End Integration: patterns/security/secure-by-design/integration.md
+      - Authoritative Architectural Documentation and Data Contracts: patterns/authoritative-architectural-documentation-and-data-contracts/index.md
   - Roadmap: roadmap.md
   - Tags: tags.md
