@@ -1088,6 +1088,8 @@ nav:
               - Least Privilege: patterns/security/secure-by-design/least-privilege.md
               - Fail Secure: patterns/security/secure-by-design/fail-secure.md
               - End-to-End Integration: patterns/security/secure-by-design/integration.md
+      - Governance:
+          - patterns/governance/index.md
       - Authoritative Architectural Documentation and Data Contracts: patterns/authoritative-architectural-documentation-and-data-contracts/index.md
   - Roadmap: roadmap.md
   - Tags: tags.md
