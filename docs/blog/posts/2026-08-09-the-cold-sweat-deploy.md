@@ -1,5 +1,5 @@
 ---
-title: My Journey to Declarative App Delivery on Kubernetes
+title: The Cold Sweat Deploy
 date: 2026-08-09
 authors:
   - mark
@@ -8,13 +8,12 @@ categories:
   - kubernetes
   - devops
 description: >-
-  I remember the cold sweat, staring at a failing deployment log, knowing that a single, forgotten
-  manual step was costing us precious minutes of critical service downtime. That was the moment I
-  truly understood the chaos of non-declarative operations.
-slug: my-journey-to-declarative-app-delivery-on-kubernetes
+  A failed midnight deploy taught us why GitOps beats scripted kubectl apply across a growing
+  fleet of Kubernetes clusters.
+slug: the-cold-sweat-deploy
 ---
 
-# My Journey to Declarative App Delivery on Kubernetes
+# The Cold Sweat Deploy
 
 I remember the cold sweat, staring at a failing deployment log, knowing that a single, forgotten
 manual step was costing us precious minutes of critical service downtime. That was the moment I
@@ -50,15 +49,10 @@ back to a previous known good state became as simple as a Git commit and push. I
 Our audit trail was now inherently built into our version control system. Every change, every
 deployment, every rollback had a clear, traceable history.
 
-Another powerful pattern emerged as we scaled: managing multiple, related applications across various
-clusters. Imagine needing to deploy a core set of observability agents to dozens of Kubernetes
-clusters, or ensuring that a critical shared library was always present. Manually configuring each
-one was tedious and error-prone. We found immense value in approaches that allowed us to define
-application patterns that could be instantiated dynamically. We could template configurations, then
-specify parameters for each cluster or application group. This meant we could declare "this cluster
-needs *these* applications with *these* specific settings" without writing boilerplate YAML for every
-single instance. It significantly reduced our operational burden and ensured consistency across our
-distributed infrastructure.
+Another shift came once we needed the same core set of applications running consistently across
+dozens of clusters. Templating that once and letting the tooling instantiate it everywhere turned a
+week of error-prone, cluster-by-cluster configuration into an afternoon, and finally gave us the
+consistency we had been chasing across the fleet.
 
 The journey wasn't without its bumps. There were learning curves, debates about repository structure,
 and adjustments to our CI/CD pipelines. But the outcome was undeniable. Our deployments became
@@ -66,3 +60,9 @@ faster, more reliable, and far less stressful. The "cold sweat" moments became a
 embracing GitOps patterns, we transformed our application delivery from a series of manual
 interventions into an automated, auditable, and truly declarative process. It allowed us to focus less
 on the mechanics of deployment and more on delivering value to our users.
+
+---
+
+## Related
+
+- [Environment Progression Testing](../../patterns/architecture/environment-progression.md) - Argo CD's Application model for promoting one service through dev, staging, and production. Not the multi-cluster fan-out covered here, but the closest existing Argo CD content on the site.

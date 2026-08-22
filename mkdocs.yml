@@ -235,6 +235,7 @@ plugins:
         'developer-guide/efficiency-patterns/work-avoidance/techniques/content-hashing.md': 'patterns/efficiency/work-avoidance/techniques/content-hashing.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/existence-checks.md': 'patterns/efficiency/work-avoidance/techniques/existence-checks.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/index.md': 'patterns/efficiency/work-avoidance/techniques/index.md'
+        'developer-guide/efficiency-patterns/work-avoidance/techniques/matrix-filtering.md': 'patterns/efficiency/work-avoidance/techniques/matrix-filtering.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/queue-cleanup.md': 'patterns/efficiency/work-avoidance/techniques/queue-cleanup.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md': 'patterns/efficiency/work-avoidance/techniques/volatile-field-exclusion.md'
         'developer-guide/error-handling/fail-fast/index.md': 'patterns/error-handling/fail-fast/index.md'
@@ -427,6 +428,9 @@ nav:
           - Mike Configuration: build/versioned-docs/mike-configuration.md
           - Pipeline Integration: build/versioned-docs/pipeline-integration.md
           - Version Strategies: build/versioned-docs/version-strategies.md
+      - Consolidating Automated Dependency Updates: build/consolidating-automated-dependency-updates/index.md
+      - Managing Incompatible Dependency Updates: build/managing-incompatible-dependency-updates/index.md
+      - Structured Component Version Promotion: build/structured-component-version-promotion/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
@@ -861,6 +865,7 @@ nav:
           - Usage Guide: enforce/policy-as-code/template-library/usage-guide.md
       - Incident Readiness:
           - Playbook Library: enforce/incident-readiness/playbook-library/index.md
+      - "CI/CD Compliance Audits for Component Integrity": enforce/ci-cd-compliance-audits-for-component-integrity/index.md
   - Patterns:
       - patterns/index.md
       - Architecture:
@@ -909,6 +914,7 @@ nav:
                   - Upsert: patterns/efficiency/idempotency/patterns/upsert.md
                   - Force Overwrite: patterns/efficiency/idempotency/patterns/force-overwrite.md
                   - Unique Identifiers: patterns/efficiency/idempotency/patterns/unique-identifiers.md
+                  - Deduplication: patterns/efficiency/idempotency/patterns/deduplication.md
                   - Tombstone Markers:
                       - patterns/efficiency/idempotency/patterns/tombstone-markers/index.md
                       - CI/CD Examples: patterns/efficiency/idempotency/patterns/tombstone-markers/ci-cd-examples.md
@@ -924,6 +930,7 @@ nav:
                   - Volatile Field Exclusion: patterns/efficiency/work-avoidance/techniques/volatile-field-exclusion.md
                   - Existence Checks: patterns/efficiency/work-avoidance/techniques/existence-checks.md
                   - Cache-Based Skip: patterns/efficiency/work-avoidance/techniques/cache-based-skip.md
+                  - Matrix Filtering: patterns/efficiency/work-avoidance/techniques/matrix-filtering.md
                   - Queue Cleanup: patterns/efficiency/work-avoidance/techniques/queue-cleanup.md
               - Anti-Patterns: patterns/efficiency/work-avoidance/anti-patterns.md
       - Error Handling:
@@ -1087,5 +1094,8 @@ nav:
               - Fail Secure: patterns/security/secure-by-design/fail-secure.md
               - End-to-End Integration: patterns/security/secure-by-design/integration.md
           - Gated Certificate Promotion: patterns/security/gated-certificate-promotion/index.md
+      - Governance:
+          - patterns/governance/index.md
+      - Authoritative Architectural Documentation and Data Contracts: patterns/authoritative-architectural-documentation-and-data-contracts/index.md
   - Roadmap: roadmap.md
   - Tags: tags.md

@@ -22,6 +22,7 @@ Each technique answers a specific question:
 | [Volatile Field Exclusion](volatile-field-exclusion.md) | "Did anything meaningful change?" | Version bumps, timestamps |
 | [Existence Checks](existence-checks.md) | "Does it already exist?" | Resource creation (PRs, branches) |
 | [Cache-Based Skip](cache-based-skip.md) | "Is the output already built?" | Build artifacts, dependencies |
+| [Matrix Filtering](matrix-filtering.md) | "Which combinations changed?" | Monorepo matrix builds |
 | [Queue Cleanup](queue-cleanup.md) | "Should queued work execute?" | Mutex-locked workflows |
 
 ---
@@ -77,6 +78,7 @@ flowchart TD
 | Dependency installation | [Cache-Based Skip](cache-based-skip.md) |
 | API state synchronization | [Content Hashing](content-hashing.md) |
 | Generated file deployment | [Volatile Field Exclusion](volatile-field-exclusion.md) |
+| Monorepo builds with many packages | [Matrix Filtering](matrix-filtering.md) |
 | Idempotent workflows with mutex locks | [Queue Cleanup](queue-cleanup.md) |
 
 ---

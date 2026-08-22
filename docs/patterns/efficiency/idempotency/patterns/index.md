@@ -1,12 +1,12 @@
 ---
 title: Implementation Patterns
 description: >-
-  Five idempotency patterns for automation: check-before-act, upsert, force overwrite, unique identifiers, and tombstones. Choose based on constraints and APIs.
+  Six idempotency patterns for automation: check-before-act, upsert, force overwrite, unique identifiers, deduplication, and tombstones. Pick by constraint and API.
 ---
 
 # Implementation Patterns
 
-Five patterns for making operations idempotent. Each has tradeoffs; choose based on your constraints.
+Six patterns for making operations idempotent. Each has tradeoffs; choose based on your constraints.
 
 ---
 
@@ -18,6 +18,7 @@ Five patterns for making operations idempotent. Each has tradeoffs; choose based
 | [Upsert](upsert.md) | APIs with atomic operations | Not universally available |
 | [Force Overwrite](force-overwrite.md) | Content that can be safely replaced | Destructive if misused |
 | [Unique Identifiers](unique-identifiers.md) | Natural deduplication | ID logic can be complex |
+| [Deduplication](deduplication.md) | Preventing duplicate operations at a boundary | Requires enforcement at the right layer |
 | [Tombstone Markers](tombstone-markers/index.md) | Multi-step operations | Markers need cleanup |
 
 ---
@@ -60,6 +61,16 @@ Generate deterministic IDs so duplicate operations target the same resource.
 BRANCH="update-$(sha256sum file.txt | cut -c1-8)"
 ```
 
+### [Deduplication](deduplication.md)
+
+Enforce at the boundary where the duplicate would otherwise land: storage, request, or event.
+
+```sql
+INSERT INTO subscriptions (tenant_id, plan_code)
+VALUES ($1, $2)
+ON CONFLICT (tenant_id, plan_code) DO NOTHING;
+```
+
 ### [Tombstone/Marker Files](tombstone-markers/index.md)
 
 Leave markers indicating operations completed.
@@ -77,7 +88,9 @@ touch "$MARKER"
 
 ```mermaid
 flowchart TD
-    A[Need idempotency] --> B{API has upsert?}
+    A[Need idempotency] --> K{Preventing a duplicate<br/>at a system boundary?}
+    K -->|Yes| L[Use Deduplication]
+    K -->|No| B{API has upsert?}
     B -->|Yes| C[Use Upsert]
     B -->|No| D{Safe to overwrite?}
     D -->|Yes| E[Use Force Overwrite]
@@ -89,6 +102,8 @@ flowchart TD
 
     %% Ghostty Hardcore Theme
     style A fill:#5e7175,color:#f8f8f3
+    style K fill:#fd971e,color:#1b1d1e
+    style L fill:#f92572,color:#f8f8f3
     style B fill:#fd971e,color:#1b1d1e
     style C fill:#a7e22e,color:#1b1d1e
     style D fill:#fd971e,color:#1b1d1e
@@ -106,9 +121,10 @@ flowchart TD
 | Creating resources (PRs, branches, files) | [Check-Before-Act](check-before-act.md) |
 | Updating existing resources | [Upsert](upsert.md) or [Force Overwrite](force-overwrite.md) |
 | Operations with natural keys | [Unique Identifiers](unique-identifiers.md) |
+| Preventing duplicate rows, requests, or event handling | [Deduplication](deduplication.md) |
 | Complex multi-step operations | [Tombstone Markers](tombstone-markers/index.md) |
 | API supports atomic operations | [Upsert](upsert.md) |
 
 !!! tip "Combine Patterns"
 
-    Real-world automation often combines multiple patterns. A workflow might use Check-Before-Act for PR creation, Force Overwrite for branch updates, and Unique Identifiers for naming.
+    Real-world automation often combines multiple patterns. A workflow might use Check-Before-Act for PR creation, Force Overwrite for branch updates, Unique Identifiers for naming, and Deduplication at the storage layer underneath it all.

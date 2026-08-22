@@ -77,6 +77,7 @@ Work avoidance uses different techniques depending on what you're checking:
 | [Volatile Field Exclusion](techniques/volatile-field-exclusion.md) | "Did anything meaningful change?" | Version bumps, timestamps |
 | [Existence Checks](techniques/existence-checks.md) | "Does it already exist?" | Resource creation (PRs, branches) |
 | [Cache-Based Skip](techniques/cache-based-skip.md) | "Is the output already built?" | Build artifacts, dependencies |
+| [Matrix Filtering](techniques/matrix-filtering.md) | "Which combinations changed?" | Monorepo matrix builds |
 | [Queue Cleanup](techniques/queue-cleanup.md) | "Should queued work execute?" | Mutex-locked workflows |
 
 See [Techniques Overview](techniques/index.md) for detailed comparisons and when to use each.
