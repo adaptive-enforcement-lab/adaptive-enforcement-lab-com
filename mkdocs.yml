@@ -235,6 +235,7 @@ plugins:
         'developer-guide/efficiency-patterns/work-avoidance/techniques/content-hashing.md': 'patterns/efficiency/work-avoidance/techniques/content-hashing.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/existence-checks.md': 'patterns/efficiency/work-avoidance/techniques/existence-checks.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/index.md': 'patterns/efficiency/work-avoidance/techniques/index.md'
+        'developer-guide/efficiency-patterns/work-avoidance/techniques/matrix-filtering.md': 'patterns/efficiency/work-avoidance/techniques/matrix-filtering.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/queue-cleanup.md': 'patterns/efficiency/work-avoidance/techniques/queue-cleanup.md'
         'developer-guide/efficiency-patterns/work-avoidance/techniques/volatile-field-exclusion.md': 'patterns/efficiency/work-avoidance/techniques/volatile-field-exclusion.md'
         'developer-guide/error-handling/fail-fast/index.md': 'patterns/error-handling/fail-fast/index.md'
@@ -927,6 +928,7 @@ nav:
                   - Volatile Field Exclusion: patterns/efficiency/work-avoidance/techniques/volatile-field-exclusion.md
                   - Existence Checks: patterns/efficiency/work-avoidance/techniques/existence-checks.md
                   - Cache-Based Skip: patterns/efficiency/work-avoidance/techniques/cache-based-skip.md
+                  - Matrix Filtering: patterns/efficiency/work-avoidance/techniques/matrix-filtering.md
                   - Queue Cleanup: patterns/efficiency/work-avoidance/techniques/queue-cleanup.md
               - Anti-Patterns: patterns/efficiency/work-avoidance/anti-patterns.md
       - Error Handling:
