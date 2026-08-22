@@ -45,6 +45,7 @@ It is a scheduled, automated process with a defined cadence, a validation step t
 The pattern applies to any credential type: API keys, service account keys, signing certificates, or app-specific private keys.
 The rotation mechanism differs by platform, but the requirement, automated rotation on a fixed schedule with verified cutover, does not.
 
+The full pattern, including the automated issue-validate-revoke sequence and when to eliminate a credential entirely instead of rotating it, is documented at [Credential Rotation at Scale](../../secure/credential-management/rotation/index.md).
 See it applied to GitHub App private keys: [Credential Rotation and Security](../../secure/github-apps/storing-credentials/rotation-security.md).
 
 ## Least Privilege

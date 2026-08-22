@@ -532,6 +532,8 @@ nav:
               - Advanced Patterns: secure/github-actions-security/cheat-sheet/advanced-patterns.md
       - Vulnerability Scanning: secure/vulnerability-scanning/vulnerability-scanning.md
       - SBOM: secure/sbom/sbom-generation.md
+      - Credential Management:
+          - Rotation: secure/credential-management/rotation/index.md
       - Go Security:
           - secure/go-security/index.md
           - Standard Toolkit: secure/go-security/tools.md
