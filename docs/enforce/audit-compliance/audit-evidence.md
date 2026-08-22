@@ -98,6 +98,7 @@ The [Implementation guide](implementation.md) provides:
 - Blog: [Harden Your SDLC Before the Audit Comes](../../blog/posts/2025-12-12-harden-sdlc-before-audit.md) - Initial patterns and audit context
 - [SLSA Provenance Implementation](../slsa-provenance/slsa-provenance.md) - Build attestations for audit trail
 - [SBOM Generation](../../secure/sbom/sbom-generation.md) - Dependency evidence
+- [CI/CD Compliance Audits for Component Integrity](../ci-cd-compliance-audits-for-component-integrity/index.md) - A more specific case: verifying a single artifact's identity, signature, and provenance at release time, rather than collecting evidence across the whole SDLC
 
 **Branch Protection Evidence**:
 
