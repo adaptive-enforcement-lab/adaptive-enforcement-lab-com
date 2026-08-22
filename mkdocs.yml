@@ -429,6 +429,7 @@ nav:
           - Pipeline Integration: build/versioned-docs/pipeline-integration.md
           - Version Strategies: build/versioned-docs/version-strategies.md
       - Consolidating Automated Dependency Updates: build/consolidating-automated-dependency-updates/index.md
+      - Managing Incompatible Dependency Updates: build/managing-incompatible-dependency-updates/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
