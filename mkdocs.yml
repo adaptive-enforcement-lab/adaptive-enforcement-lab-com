@@ -911,6 +911,7 @@ nav:
                   - Upsert: patterns/efficiency/idempotency/patterns/upsert.md
                   - Force Overwrite: patterns/efficiency/idempotency/patterns/force-overwrite.md
                   - Unique Identifiers: patterns/efficiency/idempotency/patterns/unique-identifiers.md
+                  - Deduplication: patterns/efficiency/idempotency/patterns/deduplication.md
                   - Tombstone Markers:
                       - patterns/efficiency/idempotency/patterns/tombstone-markers/index.md
                       - CI/CD Examples: patterns/efficiency/idempotency/patterns/tombstone-markers/ci-cd-examples.md
