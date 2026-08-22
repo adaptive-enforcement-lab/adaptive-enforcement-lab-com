@@ -50,22 +50,18 @@ code that required them.
 
 Beyond RBAC, this principle of declarative, code-driven configuration
 extended to other critical aspects of our operator. Take, for instance,
-`TestRun` status updates. We embraced Kubernetes Server-Side Apply,
-explicitly designating our controller as the sole owner of the `status`
-subresource for our `TestRun` objects. This wasn't just about avoiding
-conflicts; it was about clearly defining responsibility. If another
-controller or user tried to modify the `status`, our operator would
-calmly re-assert its ownership, preventing subtle race conditions. This
-ensured the source of truth for the test's progress remained with the
-component designed to manage it.
+`TestRun` status updates. We embraced Kubernetes Server-Side Apply to end
+the ownership conflicts outright. It wasn't just about avoiding those
+conflicts; it was about clearly defining responsibility, and keeping
+the source of truth for the test's progress with the component
+designed to manage it.
 
 !!! tip "Embrace Server-Side Apply for clear ownership"
     When designing Kubernetes controllers, especially for custom resources,
     leverage Server-Side Apply (SSA) for status subresources. It simplifies
     reconciliation logic by clearly demarcating ownership and preventing
     conflicting updates. This significantly reduces debugging time for
-    intermittent status issues. Define your `fieldManager` clearly and
-    consistently.
+    intermittent status issues.
 
 The journey wasn't without its challenges. Integrating the RBAC generation
 into our CI/CD pipeline required careful scripting and testing. We had to
@@ -80,3 +76,8 @@ privilege by default. Now, when I see a new feature branch, I know the RBAC
 will be handled automatically, precisely, and correctly. It frees us up to
 focus on delivering robust and reliable integration testing for our
 cloud-native applications.
+
+## Related
+
+- [RBAC Setup](../../build/go-cli-architecture/kubernetes-integration/rbac-setup.md) - Manual least-privilege RBAC for a Kubernetes CLI; doesn't cover marker-driven generation, but the same least-privilege reasoning applies
+- [RBAC Configuration](../../patterns/argo-workflows/templates/rbac.md) - Why least-privilege RBAC matters for workflow ServiceAccounts; a different execution model, but the same underlying discipline
