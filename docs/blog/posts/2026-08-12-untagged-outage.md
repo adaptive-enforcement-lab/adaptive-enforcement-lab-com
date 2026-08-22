@@ -1,5 +1,5 @@
 ---
-title: From Chaos to Clarity: Labeling Our Infrastructure for Better Ops
+title: The Untagged Outage
 date: 2026-08-12
 authors:
   - mark
@@ -8,8 +8,8 @@ categories:
   - Governance
   - Operations
 description: >-
-  The day I pushed `PLAT-868` felt small, but it marked a massive shift in how we managed our infrastructure—we finally started applying clear ownership and criticality labels to everything.
-slug: from-chaos-to-clarity-labeling-our-infrastructure-for-better-ops
+  An outage turned into a scavenger hunt for who owned a dead data store. That's when ownership and criticality labels stopped being optional.
+slug: untagged-outage
 ---
 
 The day I pushed `PLAT-868` to our core infrastructure repository
@@ -44,19 +44,18 @@ pipeline, receives these labels. Ownership maps directly to the team
 responsible for its lifecycle. Impact level categorizes its criticality
 to our platform's core functionality.
 
-For instance, a component might be tagged with `owner:data-platform`
-and `criticality:tier-0` (mission-critical, immediate outage impact).
-Another might be `owner:analytics-eng` and `criticality:tier-3`
-(important, but with graceful degradation options). This is not just
-metadata for metadata's sake; it is operational intelligence.
+Each component now carries an owning team and a criticality tier, from
+mission-critical down to safe-to-degrade, so nobody has to guess twice.
+This is not just metadata for metadata's sake; it is operational
+intelligence.
 
 When an alert fires, the ownership group becomes immediately clear.
 This streamlines the on-call rotation and escalation path. Criticality
 levels dictate the urgency of our response and the resources we are
 willing to commit. There are no more guessing games in the heat of the
 moment. Resource allocation discussions have also transformed. We can
-now prioritize investments in our `tier-0` systems. This ensures they
-receive the necessary resilience and performance upgrades, while
+now prioritize investments in our most critical systems. This ensures
+they receive the necessary resilience and performance upgrades, while
 still appropriately maintaining less critical components.
 
 !!! tip "Start small, iterate often"
@@ -77,3 +76,7 @@ dividends in improved governance, more efficient resource planning,
 and significantly faster, more targeted incident response. It changed
 our infrastructure from a collection of anonymous services into a
 well-cataloged, understood ecosystem.
+
+## Related
+
+- **[Kyverno Mandatory Labels Templates](../../enforce/policy-as-code/template-library/kyverno/labels.md)** - Enforce required ownership, cost, and compliance labels via policy
