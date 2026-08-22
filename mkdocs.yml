@@ -427,6 +427,7 @@ nav:
           - Mike Configuration: build/versioned-docs/mike-configuration.md
           - Pipeline Integration: build/versioned-docs/pipeline-integration.md
           - Version Strategies: build/versioned-docs/version-strategies.md
+      - Managing Incompatible Dependency Updates: build/managing-incompatible-dependency-updates/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
