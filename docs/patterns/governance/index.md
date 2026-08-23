@@ -32,7 +32,7 @@ Without that record, an incident response team reconstructs events from memory i
 The pattern holds regardless of which logging backend collects the events.
 What matters is that the sink is append-only or write-once, that it captures both control-plane and data-plane operations, and that retention covers the compliance window that applies to the workload.
 
-See it applied to a managed Kubernetes control plane: [Audit Logging](../../secure/cloud-native/gke-hardening/iam-configuration/audit-logging.md).
+The full pattern, record structure, control-plane and data-plane collection, append-only sinks, retention, and evidence generation, is documented at [Audit Logging](audit-logging/index.md). See it applied to a managed Kubernetes control plane: [Audit Logging](../../secure/cloud-native/gke-hardening/iam-configuration/audit-logging.md).
 
 ## Ownership and Criticality Tagging
 
