@@ -417,6 +417,7 @@ nav:
           - Change Detection: build/release-pipelines/change-detection.md
           - Workflow Triggers: build/release-pipelines/workflow-triggers.md
           - Protected Branches: build/release-pipelines/protected-branches.md
+          - Shared Templates: build/standardizing-ci-cd-with-shared-templates-and-reusable-components/index.md
       - Documentation as Skills:
           - build/documentation-as-skills/index.md
           - Extraction Pipeline: build/documentation-as-skills/extraction-pipeline.md
@@ -431,7 +432,6 @@ nav:
       - Consolidating Automated Dependency Updates: build/consolidating-automated-dependency-updates/index.md
       - Managing Incompatible Dependency Updates: build/managing-incompatible-dependency-updates/index.md
       - Structured Component Version Promotion: build/structured-component-version-promotion/index.md
-      - "Standardizing CI/CD with Shared Templates and Reusable Components": build/standardizing-ci-cd-with-shared-templates-and-reusable-components/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
