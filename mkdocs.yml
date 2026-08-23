@@ -428,9 +428,10 @@ nav:
           - Mike Configuration: build/versioned-docs/mike-configuration.md
           - Pipeline Integration: build/versioned-docs/pipeline-integration.md
           - Version Strategies: build/versioned-docs/version-strategies.md
-      - Consolidating Automated Dependency Updates: build/consolidating-automated-dependency-updates/index.md
-      - Managing Incompatible Dependency Updates: build/managing-incompatible-dependency-updates/index.md
-      - Structured Component Version Promotion: build/structured-component-version-promotion/index.md
+      - Dependency Management:
+          - Automated Updates: build/consolidating-automated-dependency-updates/index.md
+          - Incompatible Updates: build/managing-incompatible-dependency-updates/index.md
+          - Version Promotion: build/structured-component-version-promotion/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
