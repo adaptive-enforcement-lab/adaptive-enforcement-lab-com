@@ -6,7 +6,7 @@ tags:
   - compliance
   - patterns
 description: >-
-  Vendor-neutral governance patterns for audit logging, credential rotation, and least privilege access control, each linked to a concrete implementation guide.
+  Vendor-neutral governance patterns for audit logging, credential rotation, ownership tagging, and least privilege, each linked to an implementation guide.
 ---
 # Governance Patterns
 
@@ -15,7 +15,7 @@ They are vendor-neutral by design.
 The underlying platform, whether a managed cloud, a self-hosted cluster, or a hybrid estate, changes which service produces the logs or issues the credentials.
 The pattern itself does not change.
 
-This page frames three governance patterns as a single family: audit logging, credential rotation, and least privilege.
+This page frames four governance patterns as a single family: audit logging, credential rotation, ownership and criticality tagging, and least privilege.
 Each section below states the principle in vendor-neutral terms, then links to a concrete page on this site that shows the principle implemented against a specific platform.
 
 !!! note "Why this page links out instead of duplicating"
@@ -33,6 +33,19 @@ The pattern holds regardless of which logging backend collects the events.
 What matters is that the sink is append-only or write-once, that it captures both control-plane and data-plane operations, and that retention covers the compliance window that applies to the workload.
 
 See it applied to a managed Kubernetes control plane: [Audit Logging](../../secure/cloud-native/gke-hardening/iam-configuration/audit-logging.md).
+
+## Ownership and Criticality Tagging
+
+A resource without an owner is a resource nobody fixes at 3am. Every resource needs two independent labels: which team is responsible for its lifecycle, and how much damage its failure causes.
+Ownership routes the page to the right team instead of starting a scavenger hunt.
+Criticality sets the response urgency and gives planning discussions an objective basis for prioritizing investment.
+
+The pattern holds regardless of where the labels physically live.
+Kubernetes labels, repository metadata, and a CMDB all carry the same two-axis taxonomy; only the storage mechanism changes.
+What matters is that the tags are enforced at admission, not applied once and left to drift as ownership changes.
+
+See it applied as a taxonomy: [Resource Ownership and Criticality Tagging](ownership-tagging/index.md).
+See it enforced: [Kyverno Mandatory Labels Templates](../../enforce/policy-as-code/template-library/kyverno/labels.md).
 
 ## Credential Rotation
 
@@ -62,4 +75,5 @@ See it applied to IAM roles on a managed Kubernetes cluster: [Least Privilege Ro
 ## Related Content
 
 - [Secure-by-Design Pattern Library](../security/secure-by-design/index.md): Zero trust, defense in depth, least privilege, and fail secure at the architecture layer
-- [The Last Service Account Key](../../blog/posts/2026-01-05-last-service-account-key.md): The incident that motivated these three patterns
+- [The Last Service Account Key](../../blog/posts/2026-01-05-last-service-account-key.md): The incident that motivated the audit logging, credential rotation, and least privilege patterns
+- [The Untagged Outage](../../blog/posts/2026-08-12-untagged-outage.md): The incident that motivated the ownership and criticality tagging pattern

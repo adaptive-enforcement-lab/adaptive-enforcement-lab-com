@@ -79,4 +79,5 @@ well-cataloged, understood ecosystem.
 
 ## Related
 
+- **[Resource Ownership and Criticality Tagging](../../patterns/governance/ownership-tagging/index.md)** - The vendor-neutral taxonomy behind `PLAT-868`: ownership groups, criticality tiers, and how they drive on-call and planning
 - **[Kyverno Mandatory Labels Templates](../../enforce/policy-as-code/template-library/kyverno/labels.md)** - Enforce required ownership, cost, and compliance labels via policy
