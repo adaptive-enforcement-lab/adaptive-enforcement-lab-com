@@ -431,6 +431,7 @@ nav:
       - Consolidating Automated Dependency Updates: build/consolidating-automated-dependency-updates/index.md
       - Managing Incompatible Dependency Updates: build/managing-incompatible-dependency-updates/index.md
       - Structured Component Version Promotion: build/structured-component-version-promotion/index.md
+      - "Standardizing CI/CD with Shared Templates and Reusable Components": build/standardizing-ci-cd-with-shared-templates-and-reusable-components/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
