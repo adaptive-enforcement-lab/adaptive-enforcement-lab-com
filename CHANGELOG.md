@@ -1,5 +1,49 @@
 # Changelog
 
+## [1.13.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.4...1.13.0) (2026-08-23)
+
+
+### New Content
+
+* close pre-commit gaps between content-review.md rubric and enforcement ([#306](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/306)) ([60a8535](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/60a8535132b07999cbbcf00f8d2c625622f4af84))
+
+
+### Documentation Updates
+
+* add code examples and conform data contracts article to pattern format ([#303](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/303)) ([e6b0253](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e6b0253eec2aff9c3f456fbae9bb73a12d9e13ba))
+* add code examples and cross-link CI/CD compliance audits article ([#302](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/302)) ([7768181](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/77681812c0f37b0d8a398de69362a07d9cb26e1d))
+* add code examples and cross-link to dependency updates article ([#299](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/299)) ([6dda0f3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6dda0f36e1e6e185882e11bdb1db7122b33285a1))
+* add governance patterns index linking existing security docs ([#294](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/294)) ([1035f85](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/1035f8548e714310ca925fefa9cc7c254b04dfa8))
+* add matrix filtering work-avoidance technique ([#293](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/293)) ([c6e2f8b](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c6e2f8b254cadbf9c5364936dea6885bbda0034b))
+* add vendor-neutral credential rotation pattern at scale ([#310](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/310)) ([32f701c](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/32f701c4bfa937727269581ca0a60e35df158567)), closes [#239](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/239)
+* Automating Trust: Component Identity and Release Audits ([#283](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/283)) ([87e4655](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/87e465589d788769c6037ee7a06dade475b769cf))
+* document deduplication patterns under idempotency ([#295](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/295)) ([ae024c0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/ae024c0dcbc1f1ba17a1cbb770f9b859c95b8d3d))
+* draft pattern post from content-machine ([#287](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/287)) ([9891ce9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9891ce9d8965dc07935c07b43fbb05d6dbb30184))
+* draft pattern post from content-machine ([#288](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/288)) ([b1ff571](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b1ff57164232cdb8f2c1af8142055665384308be))
+* draft pattern post from content-machine ([#289](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/289)) ([1b718d3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/1b718d33224791ba3cd94a348667028626581a78))
+* fix tone and add related link to boolean type-checking post ([#297](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/297)) ([cc24982](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/cc24982dde8d26b6b8df70cb9de05860eb68f5fa))
+* From Chaos to Clarity: Labeling Our Infrastructure for Better Ops ([#282](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/282)) ([b903b69](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b903b692fbc0860a07e0e053f51970e03a62e87f))
+* Gated Certificate Operator Promotion in Environment Pipelines ([#280](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/280)) ([15c5d19](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/15c5d196af6a145131bd738bc1b385612ff91797))
+* GitOps Multi-Cluster Delivery with ArgoCD ApplicationSets ([#311](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/311)) ([8bc3941](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8bc39415dc21404b2c57e48d5b074ae996b9c1db))
+* Managing Incompatible Dependency Updates ([#291](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/291)) ([55a34be](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/55a34be582594a2a2d00d5f2c4fa919955514cf5))
+* retitle gitops post, fix duplicated opening, flag missing companion article ([#300](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/300)) ([bace786](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/bace7861840e29a40e94b266cf3315defbc871a8))
+* retitle renovate triage post and add related link ([#296](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/296)) ([d689f94](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/d689f945489c51a1b53170673eeae0b85a9f4d90))
+* Speeding Up CI: The 'Detect' Job Pattern ([#281](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/281)) ([c64a6ab](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/c64a6ab8362b2355aef49402d1359afd07e3215d))
+* Structured Component Version Promotion ([#290](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/290)) ([2c1efc6](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/2c1efc6931ae09d4d65c13523fee2b165a6c4de8))
+* The Day One Repo Became Forty (blog post) ([#312](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/312)) ([e6db34a](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e6db34a3a7e058b59bc3d572a68a7d5fb5b15723))
+* trim implementation detail and add related links to RBAC post ([#298](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/298)) ([44d05ee](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/44d05eef998b848fb0f718db449918ff565283f4))
+
+
+### Content Fixes
+
+* remove dangling pre-commit hook entries with no corresponding scripts ([#307](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/307)) ([8ce257a](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/8ce257a6f42a4ece1aef9b72d08ed3a5d294cb63))
+
+
+### Maintenance
+
+* **deps:** update dependency mkdocs-redirects to &lt;1.2.4 ([#304](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/304)) ([3cd0083](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/3cd0083c41df4a12edb9805e0c479bdd871a142d))
+* **deps:** update dependency mkdocs-rss-plugin to &lt;1.19.1 ([#305](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/305)) ([34277c5](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/34277c5aa7377af3746fb594cf765b6c70e13d15))
+
 ## [1.12.4](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.3...1.12.4) (2026-08-15)
 
 
