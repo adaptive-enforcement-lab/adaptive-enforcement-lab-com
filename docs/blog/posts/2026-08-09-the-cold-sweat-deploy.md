@@ -20,13 +20,13 @@ manual step was costing us precious minutes of critical service downtime. That w
 truly understood the chaos of non-declarative operations, and the urgent need for a better way to
 manage our applications across our growing fleet of cluster environments.
 
+<!-- more -->
+
 !!! note "The Cost of Manual Operations"
     Manual deployment steps, even seemingly small ones, introduce significant risks. They are prone
     to human error, difficult to audit, and can lead to costly downtime or inconsistencies across
     environments. Automating these steps through declarative approaches like GitOps is crucial for
     maintaining reliability and scalability.
-
-<!-- more -->
 
 Before, our deployment process felt like a high-wire act without a net. Teams would diligently update
 their manifests, push them to a repository, and then… well, then it was a series of `kubectl apply`
@@ -65,4 +65,5 @@ on the mechanics of deployment and more on delivering value to our users.
 
 ## Related
 
-- [Environment Progression Testing](../../patterns/architecture/environment-progression.md) - Argo CD's Application model for promoting one service through dev, staging, and production. Not the multi-cluster fan-out covered here, but the closest existing Argo CD content on the site.
+- [GitOps Multi-Cluster Delivery with ArgoCD ApplicationSets](../../patterns/architecture/gitops-applicationset/index.md) - the tactical reference for the fan-out pattern this story describes, including the pruning guardrails that would have caught the failure above.
+- [Environment Progression Testing](../../patterns/architecture/environment-progression.md) - the companion pattern for promoting a single service through dev, staging, and production once the multi-cluster fan-out is in place.
