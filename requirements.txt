@@ -4,4 +4,4 @@ cairosvg
 # pinned below 1.18.0: 1.18.0+ added an unverified "properdocs" runtime dependency (supply-chain concern)
 mkdocs-rss-plugin<1.18.0
 # pinned below 1.2.3: 1.2.3+ added an unverified "properdocs" runtime dependency (supply-chain concern)
-mkdocs-redirects<1.2.3
+mkdocs-redirects<1.2.4
