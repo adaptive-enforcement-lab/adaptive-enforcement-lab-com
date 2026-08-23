@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.13.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.0...1.13.1) (2026-08-23)
+
+
+### Documentation Updates
+
+* draft pattern post from content-machine ([#317](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/317)) ([9c07452](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9c07452afe862d60350dd739e4afc8633caee0d0))
+* Standardizing CI/CD with Shared Templates and Reusable Components ([#313](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/313)) ([97b0970](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/97b0970184f6535a6f748d1ad408f5e3260d3db7))
+
+
+### Content Fixes
+
+* group 3 flat dependency-management leaves, shorten labels ([#315](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/315)) ([b5c9e33](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b5c9e331a2d4137cff33b966f76f80127b5330e0))
+
+
+### Maintenance
+
+* **deps:** update corentinmusard/otel-cicd-action action to v4.1.1 ([#285](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/285)) ([4fc898e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4fc898e1067c92c44cbf1f999063e780c3089173))
+
 ## [1.13.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.12.4...1.13.0) (2026-08-23)
 
 
