@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.1...1.13.2) (2026-08-23)
+
+
+### Documentation Updates
+
+* add resource ownership and criticality tagging pattern ([#308](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/308)) ([3f9c705](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/3f9c7052ef673bbf6f8cbdafa7ab46d784414ab8))
+
 ## [1.13.1](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.0...1.13.1) (2026-08-23)
 
 
