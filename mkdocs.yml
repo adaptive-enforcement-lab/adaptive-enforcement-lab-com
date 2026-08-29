@@ -533,6 +533,7 @@ nav:
           - Quick Reference:
               - secure/github-actions-security/cheat-sheet/index.md
               - Advanced Patterns: secure/github-actions-security/cheat-sheet/advanced-patterns.md
+          - CI Compliance Audits: secure/integrating-automated-compliance-audits-in-the-ci-pipeline/index.md
       - Vulnerability Scanning: secure/vulnerability-scanning/vulnerability-scanning.md
       - SBOM: secure/sbom/sbom-generation.md
       - Credential Management:
