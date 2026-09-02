@@ -734,6 +734,7 @@ nav:
               - enforce/policy-as-code/operations/index.md
               - Monitoring: enforce/policy-as-code/operations/monitoring.md
               - Workflows: enforce/policy-as-code/operations/workflows.md
+          - IaC Project Metadata: enforce/standardizing-cloud-project-metadata-with-iac/index.md
       - SLSA Provenance:
           - enforce/slsa-provenance/index.md
           - Implementation Guide: enforce/slsa-provenance/slsa-provenance.md
