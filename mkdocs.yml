@@ -434,6 +434,7 @@ nav:
           - Automated Updates: build/consolidating-automated-dependency-updates/index.md
           - Incompatible Updates: build/managing-incompatible-dependency-updates/index.md
           - Version Promotion: build/structured-component-version-promotion/index.md
+      - Config Connector Labels: build/classifying-config-connector-projects-via-metadata/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
