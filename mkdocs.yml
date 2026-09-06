@@ -739,6 +739,7 @@ nav:
               - Workflows: enforce/policy-as-code/operations/workflows.md
           - Automated Policy: enforce/automated-policy-enforcement-for-iac-in-ci-pipelines/index.md
           - IaC Project Metadata: enforce/standardizing-cloud-project-metadata-with-iac/index.md
+          - Automated RBAC: enforce/automating-kubernetes-rbac-from-source-code-annotations/index.md
       - SLSA Provenance:
           - enforce/slsa-provenance/index.md
           - Implementation Guide: enforce/slsa-provenance/slsa-provenance.md
