@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.13.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.2...1.13.3) (2026-09-06)
+
+
+### Documentation Updates
+
+* draft pattern post from content-machine ([#319](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/319)) ([105a8f2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/105a8f238ece5768c3dd9059053b62a9fe2b9277))
+* draft pattern post from content-machine ([#321](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/321)) ([402d6ea](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/402d6eab60e8fc9a642ddafc15891da375409fa4))
+* draft pattern post from content-machine ([#322](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/322)) ([dbde804](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/dbde804f5bdd50b2970d551a7448b4866a498357))
+* draft pattern post from content-machine ([#323](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/323)) ([69fc305](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/69fc305ed1d69c778444962119775d93208c2980))
+* draft pattern post from content-machine ([#324](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/324)) ([4aeffb7](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4aeffb7fa9bc4b191f040a4df229131e0c5da69f))
+* draft pattern post from content-machine ([#328](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/328)) ([b1bf94e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/b1bf94e1597f77ff7df9c1b1c4ba2e46619785d4))
+* draft pattern post from content-machine ([#329](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/329)) ([d098ad8](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/d098ad8f4921ead031e3e86378ebfd4f4911adc9))
+* draft pattern post from content-machine ([#330](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/330)) ([fa97e5b](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/fa97e5bcf4d19a2ebd50199f60194efe6094b09f))
+* draft pattern post from content-machine ([#331](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/331)) ([3f10e7e](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/3f10e7e2f40c889993d4eb9e9212c8d616a9db26))
+* draft pattern post from content-machine ([#332](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/332)) ([899d085](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/899d085ac64faba141286f6a1473e06d6d9033f3))
+* post-merge structural cleanup of Build/Enforce/Secure/Patterns nav ([#333](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/333)) ([9eac721](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9eac72119ec5e34c764ad863e2b12e4bcc0e0718))
+* Using Composite Keys for Reliable Application Identification ([#325](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/325)) ([488d4b9](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/488d4b9f1e07143d197bdcc852f4675dc9e790d4))
+
+
+### Maintenance
+
+* consolidate renovate dependency updates ([#334](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/334)) ([9226e7a](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9226e7a84750086f9879e3bb3bd964af2bc59e62))
+
 ## [1.13.2](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.1...1.13.2) (2026-08-23)
 
 
