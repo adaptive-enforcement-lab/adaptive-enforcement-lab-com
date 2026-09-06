@@ -59,3 +59,8 @@ Different audit workflows serve distinct but complementary purposes. Understandi
 | **Component Identity Compliance** | Verifies the integrity and origin of software components. | Cryptographic signature checks, dependency hash validation, build metadata verification, artifact name standardization. |
 
 By implementing a combination of these focused audits, teams can build a robust, multi-layered defense that secures both the process and the product of their development lifecycle.
+
+## Related
+
+- [CI/CD Compliance Audits for Component Integrity](../ci-cd-compliance-audits-for-component-integrity/index.md) - Component-identity specifics: signature verification, SBOM diffing, and provenance attestation checks for a single artifact
+- [Audit Evidence Collection](../audit-compliance/audit-evidence.md) - The broader discipline of collecting and retaining evidence across the full SDLC, not just at the CI gate
