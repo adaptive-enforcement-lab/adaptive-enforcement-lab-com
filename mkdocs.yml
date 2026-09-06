@@ -908,6 +908,7 @@ nav:
               - Conditional Distribution: patterns/architecture/matrix-distribution/conditional-distribution.md
               - Template Rendering: patterns/architecture/matrix-distribution/template-rendering.md
               - Anti-Patterns: patterns/architecture/matrix-distribution/anti-patterns.md
+          - Service Control Plane: patterns/centralizing-orchestration-with-a-service-control-plane/index.md
       - Efficiency:
           - patterns/efficiency/index.md
           - Idempotency:
