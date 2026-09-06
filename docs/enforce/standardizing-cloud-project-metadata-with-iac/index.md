@@ -55,19 +55,19 @@ By defining labels in code, you create a single source of truth for your resourc
 
 Implementing this in your IaC module for a cloud project is straightforward. All major IaC tools provide a mechanism for attaching key-value labels or tags to resources. For example, when defining a generic cloud project, you would include a `labels` block that specifies the required key-value pairs.
 
-Here is a conceptual example using a generic IaC syntax:
+Here is a concrete example using Config Connector, Google Cloud's Kubernetes-native IaC controller:
 
-```hcl
-resource "cloud_project" "example_project" {
-  provider     = "cloud-provider"
-  name         = "example-project-prod"
-  folder_id    = "folders/1234567890"
-
-  labels = {
-    owner-team  = "platform-engineering"
-    criticality = "tier-2"
-  }
-}
+```yaml
+apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
+kind: Project
+metadata:
+  name: example-project-prod
+  labels:
+    owner-team: "platform-engineering"
+    criticality: "tier-2"
+spec:
+  folderRef:
+    external: "folders/1234567890"
 ```
 
 In this example, the project is explicitly and permanently tagged with its owner and criticality. Any attempt to change these labels outside of the IaC pipeline will be detected and reverted, ensuring the integrity of the metadata.
@@ -87,3 +87,8 @@ With a standardized and enforced labeling schema in place, auditing and reportin
 This enables powerful, cross-cutting views of your cloud estate that are not tied to the organizational hierarchy of folders or accounts.
 You can instantly generate a report of all `tier-1` projects, list all resources owned by the `platform-engineering` team, or calculate the total cost of all `development` environments, regardless of where they reside in the resource hierarchy.
 This capability is the ultimate payoff for the discipline of maintaining metadata as code.
+
+## Related
+
+- [Resource Ownership and Criticality Tagging](../../patterns/governance/ownership-tagging/index.md) - The vendor-neutral governance pattern this article implements: a two-axis taxonomy independent of where the labels physically live
+- [Config Connector](../../patterns/governance/ownership-tagging/config-connector.md) - The GCP-specific mechanism, where labels can only reach the cloud project by way of Kubernetes `metadata.labels` propagation, not a `spec` field

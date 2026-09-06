@@ -80,6 +80,8 @@ Don't force one mechanism to do all three jobs. A Kubernetes label answers
 "who owns this workload" at runtime; a service catalog answers "what depends
 on this" for planning. Use the mechanism the question actually needs.
 
+For a concrete GCP example of the mechanism varying, see [Config Connector](config-connector.md): the cloud project resource has no `spec.labels` field, so ownership and criticality tags have to propagate from `metadata.labels` instead.
+
 ## Enforcement
 
 A taxonomy with no enforcement rots. Labels get set once at resource

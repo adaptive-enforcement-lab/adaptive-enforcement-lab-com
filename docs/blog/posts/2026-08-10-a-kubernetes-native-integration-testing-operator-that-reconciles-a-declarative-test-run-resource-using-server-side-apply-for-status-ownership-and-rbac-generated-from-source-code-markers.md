@@ -79,5 +79,6 @@ cloud-native applications.
 
 ## Related
 
+- [RBAC from Source Annotations](../../build/kubernetes-operator/rbac-from-annotations/index.md) - The tactical how-to for the marker-driven RBAC generation this post describes: `+kubebuilder:rbac` markers, `controller-gen`, and the pre-commit staleness check
 - [RBAC Setup](../../build/go-cli-architecture/kubernetes-integration/rbac-setup.md) - Manual least-privilege RBAC for a Kubernetes CLI; doesn't cover marker-driven generation, but the same least-privilege reasoning applies
 - [RBAC Configuration](../../patterns/argo-workflows/templates/rbac.md) - Why least-privilege RBAC matters for workflow ServiceAccounts; a different execution model, but the same underlying discipline

@@ -394,6 +394,8 @@ nav:
               - Unit Testing: build/go-cli-architecture/testing/unit-testing.md
               - Integration Testing: build/go-cli-architecture/testing/integration-testing.md
               - E2E Testing: build/go-cli-architecture/testing/e2e-testing.md
+      - Kubernetes Operator:
+          - RBAC from Source Annotations: build/kubernetes-operator/rbac-from-annotations/index.md
       - Coverage Patterns: build/coverage-patterns/coverage-patterns.md
       - Efficiency Patterns:
           - ConfigMap Cache:
@@ -435,7 +437,6 @@ nav:
           - Automated Updates: build/consolidating-automated-dependency-updates/index.md
           - Incompatible Updates: build/managing-incompatible-dependency-updates/index.md
           - Version Promotion: build/structured-component-version-promotion/index.md
-      - Config Connector Labels: build/classifying-config-connector-projects-via-metadata/index.md
   - Secure:
       - secure/index.md
       - GitHub Apps:
@@ -535,7 +536,6 @@ nav:
           - Quick Reference:
               - secure/github-actions-security/cheat-sheet/index.md
               - Advanced Patterns: secure/github-actions-security/cheat-sheet/advanced-patterns.md
-          - CI Compliance Audits: secure/integrating-automated-compliance-audits-in-the-ci-pipeline/index.md
       - Vulnerability Scanning: secure/vulnerability-scanning/vulnerability-scanning.md
       - SBOM: secure/sbom/sbom-generation.md
       - Credential Management:
@@ -739,7 +739,6 @@ nav:
               - Workflows: enforce/policy-as-code/operations/workflows.md
           - Automated Policy: enforce/automated-policy-enforcement-for-iac-in-ci-pipelines/index.md
           - IaC Project Metadata: enforce/standardizing-cloud-project-metadata-with-iac/index.md
-          - Automated RBAC: enforce/automating-kubernetes-rbac-from-source-code-annotations/index.md
       - SLSA Provenance:
           - enforce/slsa-provenance/index.md
           - Implementation Guide: enforce/slsa-provenance/slsa-provenance.md
@@ -877,6 +876,7 @@ nav:
       - Incident Readiness:
           - Playbook Library: enforce/incident-readiness/playbook-library/index.md
       - "CI/CD Compliance Audits for Component Integrity": enforce/ci-cd-compliance-audits-for-component-integrity/index.md
+      - CI Compliance Audits: enforce/integrating-automated-compliance-audits-in-the-ci-pipeline/index.md
   - Patterns:
       - patterns/index.md
       - Architecture:
@@ -1109,7 +1109,9 @@ nav:
           - Gated Certificate Promotion: patterns/security/gated-certificate-promotion/index.md
       - Governance:
           - patterns/governance/index.md
-          - Ownership & Criticality Tagging: patterns/governance/ownership-tagging/index.md
+          - Ownership & Criticality Tagging:
+              - patterns/governance/ownership-tagging/index.md
+              - Config Connector: patterns/governance/ownership-tagging/config-connector.md
           - Audit Logging: patterns/governance/audit-logging/index.md
           - Composite Application Keys: patterns/using-composite-keys-for-reliable-application-identification/index.md
       - Authoritative Architectural Documentation and Data Contracts: patterns/authoritative-architectural-documentation-and-data-contracts/index.md

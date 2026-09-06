@@ -115,3 +115,4 @@ Component-identity and release-integrity checks are one piece of a larger audit 
 * [Audit Evidence Collection](../audit-compliance/audit-evidence.md): what to collect, how to store it, how to retrieve it for auditors
 * [Evidence Types for Audit Compliance](../audit-compliance/evidence-types.md): the six evidence categories, including SBOM archives and deployment attestations
 * [Compliance Reporting](../audit-compliance/compliance-reporting.md): audit trail reconstruction and tamper-proof storage
+* [CI Compliance Audits](../integrating-automated-compliance-audits-in-the-ci-pipeline/index.md): the workflow-structure angle - single-purpose workflows and trigger timing for continuous validation
