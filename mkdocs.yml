@@ -422,6 +422,7 @@ nav:
           - Shared Templates: build/standardizing-ci-cd-with-shared-templates-and-reusable-components/index.md
           - "Type-Safe CI Logic": build/type-safe-ci-logic-and-the-dangers-of-implicit-coercion/index.md
           - Boolean Inputs: build/correctly-handling-boolean-inputs-in-ci-cd-workflows/index.md
+          - "On-Demand Environments": build/automated-on-demand-test-environments-for-performance-and-size-be/index.md
       - Documentation as Skills:
           - build/documentation-as-skills/index.md
           - Extraction Pipeline: build/documentation-as-skills/extraction-pipeline.md
