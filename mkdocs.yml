@@ -797,6 +797,7 @@ nav:
                   - Audit Evidence: enforce/implementation-roadmap/hardening-checklist/phase-4/audit-evidence.md
                   - Compliance: enforce/implementation-roadmap/hardening-checklist/phase-4/compliance.md
                   - Audit Simulation: enforce/implementation-roadmap/hardening-checklist/phase-4/audit-simulation.md
+          - "Stream-Based Migration": enforce/migrating-from-data-dumps-to-stream-based-assets/index.md
       - Policy Template Library:
           - enforce/policy-as-code/template-library/index.md
           - Decision Guide:
