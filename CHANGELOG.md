@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.4](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.3...1.13.4) (2026-09-26)
+
+
+### Documentation Updates
+
+* draft pattern post from content-machine ([#339](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/339)) ([e9ec7df](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e9ec7dfbced1c8d1881b1415b527a7596075b6fd))
+* draft pattern post from content-machine ([#342](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/342)) ([2bf5e82](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/2bf5e82f9d7e76bc540aea03dabfebd0823ca991))
+
 ## [1.13.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.2...1.13.3) (2026-09-06)
 
 
