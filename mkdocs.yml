@@ -455,6 +455,7 @@ nav:
           - Common Permissions: secure/github-apps/common-permissions.md
           - Troubleshooting: secure/github-apps/troubleshooting.md
           - Maintenance: secure/github-apps/maintenance.md
+          - Canonical Identity: secure/centralizing-user-identity-into-a-canonical-directory/index.md
       - GitHub Actions Security:
           - secure/github-actions-security/index.md
           - Action Pinning:
