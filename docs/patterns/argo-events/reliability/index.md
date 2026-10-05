@@ -5,7 +5,7 @@ description: >-
 ---
 # Reliability Patterns
 
-Production event systems must handle failures gracefully. Network blips, service outages, and malformed events are inevitable. These patterns ensure events don't get lost and systems recover automatically. For the complete reference, see the [official Argo Events reliability docs](https://argoproj.github.io/argo-events/sensors/more-about-sensors-and-triggers/).
+Production event systems must handle failures gracefully. Network blips, service outages, and malformed events are inevitable. These patterns ensure events don't get lost and systems recover automatically. For the complete reference, see the [official Argo Events reliability docs](https://argo-project.github.io/argo-events/sinks/overview/).
 
 ---
 
@@ -109,4 +109,4 @@ With persistence enabled, events survive EventBus pod restarts. The 3-replica co
 - [Dead Letter Queues](dead-letter.md) - Failed event capture
 - [EventBus Configuration](../../../patterns/argo-events/setup/event-bus.md) - Persistence setup
 - [High Availability](../../../patterns/argo-events/reliability/high-availability.md) - Production HA architecture
-- [Official Reliability Docs](https://argoproj.github.io/argo-events/sensors/more-about-sensors-and-triggers/) - Complete reference
+- [Official Reliability Docs](https://argo-project.github.io/argo-events/sinks/overview/) - Complete reference
