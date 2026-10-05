@@ -12,7 +12,7 @@ tags:
 ---
 # Argo Events
 
-Argo Events is an event-driven workflow automation framework for Kubernetes. It connects external event sources to Argo Workflows, enabling reactive automation. For comprehensive documentation, see the [official Argo Events docs](https://argoproj.github.io/argo-events/).
+Argo Events is an event-driven workflow automation framework for Kubernetes. It connects external event sources to Argo Workflows, enabling reactive automation. For comprehensive documentation, see the [official Argo Events docs](https://argo-project.github.io/argo-events/).
 
 ---
 
@@ -38,10 +38,10 @@ flowchart LR
 
 | Component | Purpose | Argo Docs |
 | ----------- | --------- | ----------- |
-| **EventSource** | Connects to external systems | [EventSource Types](https://argoproj.github.io/argo-events/concepts/event_source/) |
-| **EventBus** | Message broker for delivery | [EventBus](https://argoproj.github.io/argo-events/eventbus/eventbus/) |
-| **Sensor** | Filters events and triggers | [Sensors](https://argoproj.github.io/argo-events/concepts/sensor/) |
-| **Trigger** | Action when conditions met | [Triggers](https://argoproj.github.io/argo-events/concepts/trigger/) |
+| **EventSource** | Connects to external systems | [EventSource Types](https://argo-project.github.io/argo-events/concepts/event_source/) |
+| **EventBus** | Message broker for delivery | [EventBus](https://argo-project.github.io/argo-events/concepts/event_bus/) |
+| **Sensor** | Filters events and triggers | [Sensors](https://argo-project.github.io/argo-events/concepts/sensor/) |
+| **Trigger** | Action when conditions met | [Triggers](https://argo-project.github.io/argo-events/triggers/overview/) |
 
 ---
 
@@ -65,7 +65,7 @@ For deploying and managing Argo Events in production:
 ---
 
 !!! note "Prerequisites"
-    Argo Events requires Argo Workflows for workflow triggers. See the [official installation guide](https://argoproj.github.io/argo-events/installation/) for setup.
+    Argo Events requires Argo Workflows for workflow triggers. See the [official installation guide](https://argo-project.github.io/argo-events/installation/) for setup.
 
 ---
 

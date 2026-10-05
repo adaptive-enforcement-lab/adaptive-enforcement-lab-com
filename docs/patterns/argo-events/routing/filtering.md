@@ -5,7 +5,7 @@ description: >-
 ---
 # Simple Filtering
 
-Filters determine which events trigger actions. Well-designed filters reduce noise, prevent unnecessary workflow executions, and keep automation targeted. For the complete filter reference, see the [official Filters documentation](https://argoproj.github.io/argo-events/sensors/filters/intro/).
+Filters determine which events trigger actions. Well-designed filters reduce noise, prevent unnecessary workflow executions, and keep automation targeted. For the complete filter reference, see the [official Filters documentation](https://argo-project.github.io/argo-events/sensors/filters/).
 
 ---
 
@@ -15,10 +15,10 @@ Argo Events supports multiple filter types that can be combined:
 
 | Filter Type | Purpose | Argo Docs |
 | ------------- | --------- | ----------- |
-| `data` | Match event payload fields | [Data Filters](https://argoproj.github.io/argo-events/sensors/filters/data/) |
-| `context` | Match CloudEvents context | [Context Filters](https://argoproj.github.io/argo-events/sensors/filters/ctx/) |
-| `time` | Match time windows | [Time Filters](https://argoproj.github.io/argo-events/sensors/filters/time/) |
-| `expr` | Complex expressions | [Expr Filters](https://argoproj.github.io/argo-events/sensors/filters/expr/) |
+| `data` | Match event payload fields | [Data Filters](https://argo-project.github.io/argo-events/sensors/filters/) |
+| `context` | Match CloudEvents context | [Context Filters](https://argo-project.github.io/argo-events/sensors/filters/) |
+| `time` | Match time windows | [Time Filters](https://argo-project.github.io/argo-events/sensors/filters/) |
+| `expr` | Complex expressions | [Expr Filters](https://argo-project.github.io/argo-events/sensors/filters/) |
 
 ---
 
@@ -165,4 +165,4 @@ This triggers only for:
 - [Multi-Trigger Actions](multi-trigger.md) - Multiple actions from one event
 - [Event Transformation](transformation.md) - Modify payloads before triggering
 - [Troubleshooting Sensors](../../../patterns/argo-events/troubleshooting/sensors.md) - Debug filter issues
-- [Official Filters Docs](https://argoproj.github.io/argo-events/sensors/filters/intro/) - Complete reference
+- [Official Filters Docs](https://argo-project.github.io/argo-events/sensors/filters/) - Complete reference

@@ -46,7 +46,7 @@ Understanding the distinction:
 
 ### GitHub Apps
 
-Secure authentication for automated workflows. GitHub Apps offer granular permissions, auditable actions, and organization-level credential management.
+Secure, auditable authentication for CI/CD. Granular permissions, no more PATs.
 
 **Why it matters**: Pass SOC 2 and ISO 27001 audits by replacing PATs with trackable, scoped authentication.
 
@@ -59,7 +59,7 @@ Secure authentication for automated workflows. GitHub Apps offer granular permis
 
 ### Vulnerability Scanning
 
-Find CVEs in dependencies, containers, and runtime environments before they reach production.
+Find and fix CVEs everywhere. Scan dependencies, containers, and code before they ship.
 
 **Why it matters**: 84% of breaches exploit known vulnerabilities with available patches (Verizon DBIR 2024).
 
@@ -72,7 +72,7 @@ Find CVEs in dependencies, containers, and runtime environments before they reac
 
 ### SBOM (Software Bill of Materials)
 
-Generate machine-readable inventories of all software components, dependencies, and transitive dependencies.
+Map your software supply chain. Generate compliance-ready SBOMs for every build.
 
 **Why it matters**: Executive Order 14028 and European Cyber Resilience Act require SBOMs for supply chain transparency.
 
@@ -85,7 +85,7 @@ Generate machine-readable inventories of all software components, dependencies, 
 
 ### Go Security Tooling
 
-Leverage specialized security tooling for Go projects, including static analysis, vulnerability detection, and compliance checks.
+Specialized security for Go. `govulncheck` and `gosec` to secure your Go applications.
 
 **Why it matters**: Go's standard library security model requires specific tooling that understands Go's unique characteristics.
 
@@ -98,7 +98,7 @@ Leverage specialized security tooling for Go projects, including static analysis
 
 ### Scorecard
 
-OpenSSF Scorecard automated security checks for open-source best practices, SLSA compliance, and supply chain security.
+Quantify your security posture. Automated checks for open-source best practices and supply chain security.
 
 **Why it matters**: Quantifiable security posture that passes compliance audits and satisfies customer security questionnaires.
 

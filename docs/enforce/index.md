@@ -49,7 +49,7 @@ Understanding the distinction:
 
 ### Branch Protection
 
-Enforce code reviews, status checks, commit signatures, and up-to-date branches on protected branches.
+Mandate code reviews, status checks, and signed commits. Block direct commits to `main`.
 
 **Why it matters**: Prevents direct commits to main, ensures peer review, and blocks broken code from reaching production.
 
@@ -62,7 +62,7 @@ Enforce code reviews, status checks, commit signatures, and up-to-date branches 
 
 ### Pre-commit Hooks
 
-Block commits violating security policies, code standards, or compliance, using client-side and server-side hooks.
+Block bad commits before they happen. Catch secrets, enforce standards, and provide instant feedback.
 
 **Why it matters**: Catch violations at commit time, before CI/CD ever runs. Fastest possible feedback loop.
 
@@ -75,7 +75,7 @@ Block commits violating security policies, code standards, or compliance, using 
 
 ### Status Checks
 
-Gate pull request merges with GitHub status checks, requiring passing tests, security scans, policy validation, and approval.
+Automated quality gates for pull requests. Block merges that fail tests, scans, or policy checks.
 
 **Why it matters**: Automated quality gates that prevent human error and enforce organizational standards.
 
@@ -88,7 +88,7 @@ Gate pull request merges with GitHub status checks, requiring passing tests, sec
 
 ### Policy-as-Code
 
-Enforce security policies, compliance, and operational standards in Kubernetes clusters via runtime admission control with Kyverno and OPA.
+Enforce Kubernetes security at the API server. Reject non-compliant resources before they launch.
 
 **Why it matters**: Prevent misconfigured resources from ever being admitted to the cluster. Policy enforcement at the API server level cannot be bypassed.
 
@@ -103,7 +103,7 @@ Enforce security policies, compliance, and operational standards in Kubernetes c
 
 ### SLSA Provenance
 
-Generate cryptographically signed attestations. Prove build process, source code, and artifact integrity.
+Cryptographically prove build integrity. Generate signed attestations to prevent supply chain attacks.
 
 **Why it matters**: Supply chain attacks (SolarWinds, Log4Shell) exploit build process compromise. SLSA provenance proves your builds are tamper-proof.
 
@@ -116,7 +116,7 @@ Generate cryptographically signed attestations. Prove build process, source code
 
 ### Testing Enforcement
 
-Enforce minimum code coverage, require tests for new code, and block PRs that reduce coverage.
+Require tests for new code. Block PRs that reduce coverage and ship with confidence.
 
 **Why it matters**: Code without tests is code that breaks in production. Enforce testing discipline at merge time.
 
@@ -129,7 +129,7 @@ Enforce minimum code coverage, require tests for new code, and block PRs that re
 
 ### Audit & Compliance
 
-Automate audit evidence collection, compliance documentation, and attestation generation for SOC 2, ISO 27001, and PCI-DSS audits.
+Automate evidence collection. Pass SOC 2, ISO 27001, and PCI-DSS audits without the scramble.
 
 **Why it matters**: Manual audit evidence collection is error-prone and time-consuming. Automate evidence generation to pass audits without scrambling.
 

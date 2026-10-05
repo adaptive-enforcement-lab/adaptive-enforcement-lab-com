@@ -5,7 +5,7 @@ description: >-
 ---
 # Conditional Routing
 
-Complex event flows require sophisticated decision logic. Conditional routing enables routing decisions based on event content, combining multiple conditions, and implementing decision trees. For the complete reference, see the [official Trigger Conditions docs](https://argoproj.github.io/argo-events/sensors/trigger-conditions/).
+Complex event flows require sophisticated decision logic. Conditional routing enables routing decisions based on event content, combining multiple conditions, and implementing decision trees. For the complete reference, see the [official Trigger Conditions docs](https://argo-project.github.io/argo-events/sensors/conditions/).
 
 ---
 
@@ -233,4 +233,4 @@ triggers:
 - [Simple Filtering](filtering.md) - Pre-sensor filtering
 - [Multi-Trigger Actions](multi-trigger.md) - Fan-out patterns
 - [Troubleshooting Sensors](../../../patterns/argo-events/troubleshooting/sensors.md) - Debug routing issues
-- [Official Conditions Docs](https://argoproj.github.io/argo-events/sensors/trigger-conditions/) - Complete reference
+- [Official Conditions Docs](https://argo-project.github.io/argo-events/sensors/conditions/) - Complete reference
