@@ -6,7 +6,7 @@ tags:
   - developers
   - operators
 description: >-
-  Battle-tested automation patterns for GitHub Actions, Argo, and Kubernetes. Build resilient, idempotent workflows that scale with hub-and-spoke design.
+  Build resilient, idempotent automation that scales. Master battle-tested patterns for GitHub Actions, Argo, and Kubernetes.
 ---
 # Patterns
 
