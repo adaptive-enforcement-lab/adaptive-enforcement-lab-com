@@ -1,7 +1,7 @@
 ---
 title: Build
 description: >-
-  Production-grade Go CLI patterns, automated release workflows with Release Please, versioned docs, and coverage enforcement for DevSecOps build pipelines.
+  Production-grade Go CLI architecture, automated release workflows, versioned documentation, and testing patterns for secure and scalable CI/CD.
 tags:
   - ci-cd
   - automation
