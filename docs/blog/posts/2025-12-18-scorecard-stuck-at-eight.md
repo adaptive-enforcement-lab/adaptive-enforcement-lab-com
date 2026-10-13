@@ -8,7 +8,7 @@ categories:
   - Supply Chain Security
   - Open Source
 description: >-
-  Scorecard said 8/10. Signatures alone weren't enough. The gap between signed and provably built.
+  Achieve 10/10 on OpenSSF Scorecard. Understand signed releases vs. provable build provenance with SLSA attestations to secure your supply chain.
 slug: scorecard-stuck-at-eight
 ---
 # The Score That Wouldn't Move: Stuck at 8/10
@@ -33,13 +33,6 @@ Every security guide said the same thing:
 - ✅ Use HTTPS for distribution
 
 We had all of it. Release assets looked like this:
-
-```text
-readability_linux_amd64.tar.gz
-readability_linux_amd64.tar.gz.sig  ← Cosign signature
-sbom.cdx.json                       ← SBOM
-checksums.txt                       ← SHA256 hashes
-```
 
 The Scorecard documentation was clear: "Score 8: Cryptographic signatures present."
 
@@ -89,17 +82,7 @@ The `slsa-github-generator` workflow had one non-negotiable constraint: version 
 
 Every security guide says pin actions to SHA digests:
 
-```yaml
-# Standard security practice
-uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
-```
-
 But `slsa-github-generator` requires version tags:
-
-```yaml
-# Required for SLSA
-uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
-```
 
 Why? Because `slsa-verifier` validates the builder identity against **known version tags**. SHA references fail verification.
 
@@ -115,25 +98,13 @@ Three iterations to get it right:
 
 **Attempt 1**: Raw SHA256
 
-```bash
-sha256sum readability_* > hashes.txt
-```
-
 Result: Generator rejected the format.
 
 **Attempt 2**: Hex encoded
 
-```bash
-sha256sum readability_* | xxd -p > hashes.txt
-```
-
 Result: Still wrong format.
 
 **Attempt 3**: Base64 encoded
-
-```bash
-sha256sum readability_* | base64 -w0 > hashes.txt
-```
 
 Result: Generator accepted it.
 
@@ -147,19 +118,7 @@ Release v1.7.1 included a new file: `multiple.intoto.jsonl`
 
 Verification command:
 
-```bash
-slsa-verifier verify-artifact readability_linux_amd64 \
-  --provenance-path multiple.intoto.jsonl \
-  --source-uri github.com/adaptive-enforcement-lab/readability
-```
-
 Output:
-
-```text
-Verified build using builder "https://github.com/slsa-framework/slsa-github-generator/..."
-at commit 15dab4a45dd82c7c5eb28e2f89a83ac1794e97b9
-PASSED: SLSA verification passed
-```
 
 Next Scorecard run: **Signed-Releases 10/10**.
 
@@ -198,7 +157,6 @@ The jump from 8 to 10 wasn't about doing more. It was about proving more.
 
 ## Related Patterns
 
-<!--- **[OpenSSF Scorecard Practical Fixes](2025-12-20-openssf-scorecard-practical-fixes.md)** - How we cleared 16 Token-Permissions alerts (Coming soon) -->
 - **[OpenSSF Best Practices Badge](2025-12-17-openssf-badge-two-hours.md)** - The foundation that made SLSA implementation straightforward
 - **[SDLC Hardening](2025-12-12-harden-sdlc-before-audit.md)** - Supply chain defense in audit context
 
