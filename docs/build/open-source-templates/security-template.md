@@ -101,9 +101,7 @@ See [Security Scanning](.github/workflows/security.yml) workflow for details.
 
 We do not currently offer a bug bounty program. Security reports are greatly appreciated and credited.
 
-[Or if you have one]
 
-See our [Bug Bounty Policy](BOUNTY.md) for reward details.
 ```
 
 ---
