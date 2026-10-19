@@ -1,8 +1,8 @@
 ---
 title: Secret Management Overview
 description: >-
-  Understanding GitHub Actions secret types, storage hierarchy, and threat model.
-  Secure patterns for managing credentials, tokens, and sensitive configuration.
+  Securely manage credentials in GitHub Actions by eliminating long-lived secrets
+  in favor of short-lived, federated tokens, without storing static credentials.
 tags:
   - github-actions
   - security
