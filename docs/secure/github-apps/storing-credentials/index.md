@@ -1,8 +1,8 @@
 ---
 title: Storing Credentials
 description: >-
-  Securely store GitHub App credentials across different environments.
-  GitHub Actions secrets, external CI, Kubernetes, and automated rotation patterns.
+  Securely store and access GitHub App credentials for automated workflows.
+  Authenticate as a GitHub App from GitHub Actions, Kubernetes, or external CI/CD.
 tags:
   - github
   - security

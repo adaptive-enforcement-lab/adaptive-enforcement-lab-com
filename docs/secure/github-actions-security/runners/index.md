@@ -1,8 +1,8 @@
 ---
 title: Self-Hosted Runner Security Overview
 description: >-
-  Understanding the threat model for self-hosted GitHub Actions runners.
-  GitHub-hosted vs self-hosted comparison and secure deployment patterns.
+  Secure CI/CD with hardened, ephemeral, and isolated self-hosted runners.
+  Run workflows in a trusted, controlled environment, minimizing compromise risk.
 tags:
   - github-actions
   - security

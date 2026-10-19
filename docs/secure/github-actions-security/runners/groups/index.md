@@ -1,8 +1,8 @@
 ---
 title: Runner Group Management
 description: >-
-  Runner group organization strategies for GitHub Actions. Repository access
-  restrictions, workflow controls, and security boundaries for self-hosted runners.
+  Organize self-hosted runners into groups to isolate CI/CD workloads.
+  Control access to sensitive environments, restricting specific runners.
 tags:
   - github-actions
   - security

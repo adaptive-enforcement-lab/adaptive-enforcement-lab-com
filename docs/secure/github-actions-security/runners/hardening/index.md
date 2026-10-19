@@ -1,8 +1,8 @@
 ---
 title: Self-Hosted Runner Hardening
 description: >-
-  Comprehensive hardening steps for self-hosted GitHub Actions runners.
-  OS-level security, network isolation, credential protection, and audit logging.
+  Reduce the attack surface of self-hosted runners with defense-in-depth security.
+  Harden infrastructure with filesystem, network, and OS-level controls.
 tags:
   - github-actions
   - security

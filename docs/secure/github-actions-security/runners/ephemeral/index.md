@@ -1,8 +1,8 @@
 ---
 title: Ephemeral Runner Patterns
 description: >-
-  Disposable runner patterns for GitHub Actions. Container-based, VM-based, and
-  ARC deployment strategies with complete state isolation between jobs.
+  Improve CI/CD security with ephemeral, just-in-time (JIT) self-hosted runners.
+  Eliminate persistent state and lateral movement between workflow runs.
 tags:
   - github-actions
   - security

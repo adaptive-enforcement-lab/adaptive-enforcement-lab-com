@@ -1,8 +1,8 @@
 ---
 title: Action Pinning Overview
 description: >-
-  Why pinning GitHub Actions to SHA-256 commits matters for supply chain security.
-  Attack vectors from unpinned actions and comparison of tag vs SHA pinning.
+  Protect CI/CD pipelines from supply chain attacks. Pin GitHub Actions to immutable
+  SHA-256 commit hashes to prevent malicious or compromised actions.
 tags:
   - github-actions
   - security

@@ -1,8 +1,8 @@
 ---
 title: Secure
 description: >-
-  Find and fix security issues before they become incidents. Vulnerability scanning,
-  SBOM generation, supply chain security, and secure authentication workflows.
+  Find and fix security vulnerabilities in your software supply chain: CVE scanning,
+  SBOM generation, CI/CD hardening, and secure authentication for workflows.
 tags:
   - security
   - automation
