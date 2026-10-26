@@ -147,7 +147,7 @@ Visible recognition drives behavior change. Public badges on repositories and RE
    [![Security Score](https://api.example.com/badge/critical-issues?repo=api-gateway)](https://dashboard.example.com/api-gateway)
    [![SAST Coverage](https://api.example.com/badge/sast-coverage?repo=api-gateway)](https://sonar.example.com/api-gateway)
    [![Dependencies](https://img.shields.io/librariesio/release/npm/express)](https://deps.example.com)
-   [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+   [![License](https://img.shields.io/badge/license-MIT-green)](../../../../LICENSE)
    ```
 
 2. **Generate badges programmatically:**
