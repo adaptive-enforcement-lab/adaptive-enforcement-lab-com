@@ -37,9 +37,9 @@ Check each component in order. The failure is usually at the first component tha
 
 | Guide | When to Use |
 | ------- | ------------- |
-| [EventSource Issues](eventsources.md) | Events not arriving from external systems |
-| [Sensor Issues](sensors.md) | Events arrive but don't trigger actions |
-| [Common Patterns](common-patterns.md) | Frequently encountered problems and solutions |
+| [EventSource Issues](./eventsources.md) | Events not arriving from external systems |
+| [Sensor Issues](./sensors.md) | Events arrive but don't trigger actions |
+| [Common Patterns](./common-patterns.md) | Frequently encountered problems and solutions |
 
 ---
 
@@ -100,7 +100,7 @@ Return to `error` or `info` after debugging to reduce log volume.
 
 ## Related
 
-- [EventSource Issues](eventsources.md) - Debug event ingestion
-- [Sensor Issues](sensors.md) - Debug event processing
-- [Common Patterns](common-patterns.md) - Known issues and fixes
+- [EventSource Issues](./eventsources.md) - Debug event ingestion
+- [Sensor Issues](./sensors.md) - Debug event processing
+- [Common Patterns](./common-patterns.md) - Known issues and fixes
 - [Official Troubleshooting](https://argoproj.github.io/argo-events/FAQ/) - Argo Events troubleshooting guide
