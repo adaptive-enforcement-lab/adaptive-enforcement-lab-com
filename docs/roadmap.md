@@ -28,7 +28,7 @@ Adaptive Enforcement Lab is actively building. Here's what's shipped and what's 
     - ✅ **Automated generation** - Go extraction pipeline, clean/hexagonal architecture, release-please versioning
     - ✅ **Continuous sync** - Skills regenerate on documentation change; source and skills cannot drift
 
-    **Story:** [The Docs Nobody Read](blog/posts/2026-07-21-docs-nobody-read.md)
+    **Story:** [The Docs Nobody Read](/blog/posts/2026-07-21-docs-nobody-read.md)
 
 !!! success "Major Content Release (January 2026)"
 
@@ -117,7 +117,6 @@ Adaptive Enforcement Lab is actively building. Here's what's shipped and what's 
 
 !!! info "Skills Marketplace Documentation"
 
-    - ✅ **[Documentation as Skills](build/documentation-as-skills/index.md)** - Extraction pipeline, skill anatomy, marketplace versioning, CI automation
     - 🔄 Installation and team distribution guide
     - 🔄 Usage telemetry: which skills actually load
 

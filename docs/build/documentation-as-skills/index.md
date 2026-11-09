@@ -1,7 +1,7 @@
 ---
 title: Documentation as Skills
 description: >-
-  Compile MkDocs documentation into Claude Code skills so patterns reach engineers inside the agent instead of waiting to be searched for.
+  Compile MkDocs documentation into Claude Code skills, making engineering patterns available to your agent at authoring time.
 tags:
   - automation
   - ai-agents
@@ -62,9 +62,9 @@ graph LR
 
 **[Skill Anatomy](skill-anatomy.md)**: What a generated skill directory contains, how section mapping works, and the thresholds that decide which optional files appear.
 
-**[Marketplace and Versioning](marketplace-versioning.md)**: How plugin manifests and the marketplace catalog are generated, and how release-please drives version numbers.
+**[Marketplace Versioning](marketplace-versioning.md)**: How plugin manifests and the marketplace catalog are generated, and how release-please drives version numbers.
 
-**[CI Automation](ci-automation.md)**: Triggering regeneration from a documentation change, authenticating with a GitHub App, and the commit-versus-PR decision.
+**[CI Automation](ci-automation.md)**: How to trigger regeneration from a documentation change, authenticate with a GitHub App, and decide between a direct commit or a pull request.
 
 ## When to Apply
 

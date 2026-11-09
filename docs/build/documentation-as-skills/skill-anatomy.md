@@ -120,4 +120,4 @@ Content is de-indented during conversion. Admonition *titles* survive as bold te
 
 ---
 
-**Next:** [Marketplace and Versioning](marketplace-versioning.md) covers how manifests and versions are generated.
+**Next:** [Marketplace Versioning](marketplace-versioning.md) covers how manifests and versions are generated.
