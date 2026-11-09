@@ -165,7 +165,7 @@ permissions:
   pull-requests: write
 ```
 
-See [GITHUB_TOKEN Permissions](../../secure/github-actions-security/token-permissions/index.md) for least-privilege patterns.
+See [Token Permissions](../../secure/github-actions-security/token-permissions/index.md) for least-privilege patterns.
 
 ## Verification
 

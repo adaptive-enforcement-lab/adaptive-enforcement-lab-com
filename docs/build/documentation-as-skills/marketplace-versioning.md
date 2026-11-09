@@ -1,5 +1,5 @@
 ---
-title: Marketplace and Versioning
+title: Marketplace Versioning
 description: >-
   Generate plugin manifests and a marketplace catalog from config, and drive versions with release-please across a multi-package repository.
 tags:
