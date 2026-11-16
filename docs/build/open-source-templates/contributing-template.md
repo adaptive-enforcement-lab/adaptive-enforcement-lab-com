@@ -38,7 +38,7 @@ When reporting bugs, include:
 - **Environment**: OS, language version, project version
 - **Logs/Screenshots**: Error messages or visual evidence
 
-Use the [Bug Report template](.github/ISSUE_TEMPLATE/bug_report.yml) for structured reporting.
+Use the `Bug Report template` for structured reporting.
 
 ## Suggesting Features
 
@@ -48,7 +48,7 @@ Feature requests are welcome. When suggesting features:
 - **Alternatives**: Describe alternatives you've considered
 - **Implementation Ideas**: (Optional) Suggest how it could work
 
-Use the [Feature Request template](.github/ISSUE_TEMPLATE/feature_request.yml).
+Use the `Feature Request template`.
 
 ## Development Setup
 
@@ -154,7 +154,7 @@ Expect feedback within [TIMEFRAME]. We aim for constructive, respectful reviews.
 
 By contributing, you agree that your contributions will be licensed under the [LICENSE_NAME] License.
 
-See [LICENSE](LICENSE) for details.
+See [`LICENSE`](LICENSE) for details.
 ````
 
 ---
@@ -178,7 +178,7 @@ When reporting bugs:
 - **Environment**: OS, Go version, readability version
 - **Logs**: Error messages or stack traces
 
-Use the [Bug Report template](.github/ISSUE_TEMPLATE/bug_report.yml).
+Use the `Bug Report template`.
 
 ## Suggesting Features
 
@@ -187,7 +187,7 @@ Feature requests are welcome. Include:
 - **Use Case**: Problem this solves
 - **Alternatives**: Other approaches considered
 
-Use the [Feature Request template](.github/ISSUE_TEMPLATE/feature_request.yml).
+Use the `Feature Request template`.
 
 ## Development Setup
 
@@ -250,7 +250,7 @@ go tool cover -html=coverage.out
 
 ## License
 
-Contributions licensed under MIT License. See [LICENSE](LICENSE).
+Contributions licensed under MIT License. See [`LICENSE`](LICENSE).
 ````
 
 ---

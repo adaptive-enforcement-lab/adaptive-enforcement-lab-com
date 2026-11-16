@@ -12,11 +12,11 @@ Idempotency isn't free. Understanding the tradeoffs helps you decide where to in
 
 | Pros | Cons |
 | ------ | ------ |
-| [Safe Reruns](#safe_reruns) - Click rerun, walk away | [Implementation Complexity](#implementation_complexity) - Every op needs guards |
-| [Partial Failure Recovery](#partial_failure_recovery) - Matrix jobs retry cleanly | [Performance Overhead](#performance_overhead) - Extra API calls add up |
-| [Simplified Debugging](#simplified_debugging) - Debug without changing state | [Hidden Failures](#hidden_failures) - Silent skips mask real errors |
-| [Scheduled Job Safety](#scheduled_job_safety) - Handle duplicate triggers | [State Consistency Challenges](#state_consistency_challenges) - Detecting state is hard |
-| [Reduced Cognitive Load](#reduced_cognitive_load) - System tracks state | [Not Always Possible](#not_always_possible) - Some ops can't be idempotent |
+| [Safe Reruns](#safe-reruns) - Click rerun, walk away | [Implementation Complexity](#implementation-complexity) - Every op needs guards |
+| [Partial Failure Recovery](#partial-failure-recovery) - Matrix jobs retry cleanly | [Performance Overhead](#performance-overhead) - Extra API calls add up |
+| [Simplified Debugging](#simplified-debugging) - Debug without changing state | [Hidden Failures](#hidden-failures) - Silent skips mask real errors |
+| [Scheduled Job Safety](#scheduled-job-safety) - Handle duplicate triggers | [State Consistency Challenges](#state-consistency-challenges) - Detecting state is hard |
+| [Reduced Cognitive Load](#reduced-cognitive-load) - System tracks state | [Not Always Possible](#not-always-possible) - Some ops can't be idempotent |
 
 ---
 

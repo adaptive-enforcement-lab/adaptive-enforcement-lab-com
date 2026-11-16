@@ -93,7 +93,7 @@ This project employs:
 - **Signed releases**: [Cosign|GPG] signatures on release artifacts
 - **SLSA provenance**: Build attestations for supply chain security
 
-See [Security Scanning](.github/workflows/security.yml) workflow for details.
+See `Security Scanning` workflow for details.
 
 ## Bug Bounty
 
@@ -103,7 +103,7 @@ We do not currently offer a bug bounty program. Security reports are greatly app
 
 [Or if you have one]
 
-See our [Bug Bounty Policy](BOUNTY.md) for reward details.
+See our `Bug Bounty Policy` for reward details.
 ```
 
 ---

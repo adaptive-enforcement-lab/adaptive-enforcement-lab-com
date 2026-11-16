@@ -50,7 +50,7 @@ summary:
         if [ -n "$PR_URLS" ]; then
           while IFS= read -r pr_url; do
             repo_name=$(echo "$pr_url" | sed 's|.*/\([^/]*\)/pull/.*|\1|')
-            echo "- [$repo_name]($pr_url)" >> $GITHUB_STEP_SUMMARY
+            echo "- [$repo_name](`$pr_url`)" >> $GITHUB_STEP_SUMMARY
           done <<< "$PR_URLS"
         else
           echo "*No new pull requests created*" >> $GITHUB_STEP_SUMMARY
