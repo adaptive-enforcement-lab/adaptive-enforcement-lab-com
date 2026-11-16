@@ -144,4 +144,4 @@ Point the documentation for this domain directly at the schema file and this wor
 
 - **[Secure-by-Design Pattern Library](../security/secure-by-design/index.md)**: Enforcing properties at admission time rather than trusting convention
 - **[Fail Fast](../error-handling/fail-fast/index.md)**: Rejecting bad input before it enters the pipeline
-- **[Three-Stage Design](../index.md#pattern_categories)**: Validation as a discrete stage before processing
+- **[Three-Stage Design](../index.md#pattern-categories)**: Validation as a discrete stage before processing

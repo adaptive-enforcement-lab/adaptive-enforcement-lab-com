@@ -278,7 +278,7 @@ test_privileged_container_blocked {
 }
 ```
 
-See **[Privilege Escalation Prevention →](pod-security/escalation.md#rego_unit_testing)** for complete testing guide.
+See **[Privilege Escalation Prevention →](pod-security/escalation.md#rego-unit-testing)** for complete testing guide.
 
 ---
 

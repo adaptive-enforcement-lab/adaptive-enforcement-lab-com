@@ -125,7 +125,7 @@ spec:
 
 Register a new cluster with the `environment-tier: workload` label and it picks up the `api` application on the next reconciliation.
 
-Deregister it and the ApplicationSet controller removes the corresponding Application. Depending on `syncPolicy.preserveResourcesOnDeletion`, it may remove the deployed resources too. See [Rollback and Pruning Safety Guardrails](#rollback_and_pruning_safety_guardrails) below.
+Deregister it and the ApplicationSet controller removes the corresponding Application. Depending on `syncPolicy.preserveResourcesOnDeletion`, it may remove the deployed resources too. See [Rollback and Pruning Safety Guardrails](#rollback-and-pruning-safety-guardrails) below.
 
 ### Git Generator
 

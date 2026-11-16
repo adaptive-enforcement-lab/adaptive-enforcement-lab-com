@@ -21,9 +21,9 @@ This guide covers EventSource, EventBus, and Sensor configuration for event-driv
 
 ## Quick Start
 
-1. **Deploy EventBus** - Start with [JetStream for production](event-bus.md#jetstream_eventbus_production)
-2. **Configure EventSource** - Connect your [Pub/Sub topic](event-sources.md#pubsub_eventsource) or [GitHub webhooks](event-sources.md#github_webhook_eventsource)
-3. **Create Sensor** - Define [event filters and triggers](sensors.md#basic_sensor)
+1. **Deploy EventBus** - Start with [JetStream for production](event-bus.md#jetstream-eventbus-production)
+2. **Configure EventSource** - Connect your [Pub/Sub topic](event-sources.md#pubsub-eventsource) or [GitHub webhooks](event-sources.md#github-webhook-eventsource)
+3. **Create Sensor** - Define [event filters and triggers](sensors.md#basic-sensor)
 
 ---
 
@@ -48,7 +48,7 @@ This guide covers EventSource, EventBus, and Sensor configuration for event-driv
 
 ### Events Lost During Restarts
 
-1. Enable [persistence on EventBus](event-bus.md#nats_with_persistence)
+1. Enable [persistence on EventBus](event-bus.md#nats-with-persistence)
 2. Increase `maxAge` retention
 3. Monitor EventBus storage usage
 

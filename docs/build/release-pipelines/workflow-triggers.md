@@ -112,7 +112,7 @@ Personal Access Tokens also trigger workflow events, but they're the wrong tool:
 | Rotation | Manual | Automatic (tokens expire, keys rotatable) |
 | Audit | Actions attributed to user | Actions attributed to App |
 
-GitHub Apps are [the proper solution](../../secure/github-apps/index.md#why_use_a_core_app) for machine-to-machine authentication.
+GitHub Apps are [the proper solution](../../secure/github-apps/index.md#why-use-a-core-app) for machine-to-machine authentication.
 
 ---
 

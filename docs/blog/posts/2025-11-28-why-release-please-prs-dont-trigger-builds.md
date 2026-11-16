@@ -14,19 +14,13 @@ slug: why-release-please-prs-dont-trigger-builds
 ---
 # Why Release-Please PRs Don't Trigger Your Builds
 
+<!-- more -->
+
 !!! warning "Update: There's a Better Way"
 
     The dual-trigger pattern described below is a **workaround**, not the real fix.
     See [The Real Fix for Release-Please Triggers](./2025-12-02-the-real-fix-for-release-please-triggers.md)
     for the proper solution using GitHub App tokens.
-
-The release-please PR looked perfect. Clean changelog. Proper version bump. Ready to merge.
-
-One problem: the build pipeline never ran. Branch protection blocked the merge. No required checks had passed, because no checks had started.
-
-This is the story of a GitHub Actions limitation that wastes hours of debugging time, and the pattern that fixes it in two lines of YAML.
-
-<!-- more -->
 
 ---
 
@@ -34,29 +28,7 @@ This is the story of a GitHub Actions limitation that wastes hours of debugging 
 
 [Release-please](https://github.com/marketplace/actions/release-please-action) automates version management. It reads your conventional commits, generates changelogs, and creates release PRs. When those PRs merge, it tags releases.
 
-```mermaid
-flowchart LR
-    A[feat: new feature] --> B[Release-Please]
-    B --> C[Release PR]
-    C --> D[Merge]
-    D --> E[Git Tag]
-
-    %% Ghostty Hardcore Theme
-    style A fill:#65d9ef,color:#1b1d1e
-    style B fill:#9e6ffe,color:#1b1d1e
-    style C fill:#fd971e,color:#1b1d1e
-    style D fill:#a7e22e,color:#1b1d1e
-    style E fill:#a7e22e,color:#1b1d1e
-
-```
-
-The workflow trigger was standard:
-
-```yaml
-on:
-  pull_request:
-    branches: [main]
-```
+The workflow trigger was standard: It used the `pull_request` event on the `main` branch.
 
 Every PR should trigger the build. Simple.
 
@@ -82,7 +54,7 @@ The consequence: release-please can create the most beautiful PR in the world, a
 
 First instinct: use a Personal Access Token. If `GITHUB_TOKEN` is the problem, replace it.
 
-This works. But PATs come with [their own problems](../../secure/github-apps/index.md#why_use_a_core_app):
+This works. But PATs come with [their own problems](../../secure/github-apps/index.md#why-use-a-core-app):
 
 - Tied to individual user accounts (revoked when someone leaves)
 - No granular permission control
@@ -96,12 +68,7 @@ There's a simpler solution.
 
 Here's what's often missed: release-please doesn't just create PRs. It also commits to the PR branch. And commits emit `push` events, even when made by `GITHUB_TOKEN`.
 
-| Action | Event Emitted with GITHUB_TOKEN |
-| -------- | -------------------------------- |
-| Create PR | No |
-| Commit to branch | Yes |
-| Update PR | No |
-| Push to branch | Yes |
+Actions triggered by GITHUB_TOKEN have different event emission behaviors: PR creation and updates do not emit events, but commits and pushes to a branch do.
 
 The PR creation is silent. The branch push is not.
 
@@ -109,40 +76,7 @@ The PR creation is silent. The branch push is not.
 
 ## The Fix
 
-Two lines of YAML:
-
-```yaml
-on:
-  pull_request:
-    branches: [main]
-  push:
-    branches:
-      - 'release-please--**'
-```
-
-```mermaid
-flowchart TD
-    subgraph triggers[Build Triggers]
-        PR[pull_request on main]
-        Push[push to release-please--**]
-    end
-
-    subgraph sources[Event Sources]
-        Dev[Developer PR] -->|emits| PR
-        RP[Release-Please] -->|commits emit| Push
-    end
-
-    PR --> Build[Build Pipeline]
-    Push --> Build
-
-    %% Ghostty Hardcore Theme
-    style Dev fill:#65d9ef,color:#1b1d1e
-    style RP fill:#9e6ffe,color:#1b1d1e
-    style PR fill:#fd971e,color:#1b1d1e
-    style Push fill:#fd971e,color:#1b1d1e
-    style Build fill:#a7e22e,color:#1b1d1e
-
-```
+The fix involves adding a `push` trigger for `release-please--**` branches to the workflow.
 
 - Regular PRs trigger on `pull_request`
 - Release-please branches trigger on `push`
@@ -170,15 +104,7 @@ The glob pattern `release-please--**` catches both:
 
 This discovery solved another problem: change detection.
 
-Modern monorepo pipelines detect which components changed and only build what's affected:
-
-```yaml
-jobs:
-  detect-changes:
-    outputs:
-      backend_needs_build: ${{ steps.changes.outputs.backend_any_changed == 'true' }}
-      frontend_needs_build: ${{ steps.changes.outputs.frontend_any_changed == 'true' }}
-```
+Modern monorepo pipelines can detect which components changed and only build what's affected.
 
 But release-please PRs often bump version files across multiple components. Without the build running, I couldn't verify that version bumps didn't break anything.
 
@@ -197,19 +123,7 @@ One more trap: tools that auto-commit documentation changes.
 
 Helm-docs regenerates README files from chart values. If it runs on the main branch and finds outdated docs, it tries to push a commit. On a protected branch, that fails.
 
-The fix: run documentation generators on PR branches only.
-
-```yaml
-- name: Generate docs
-  run: helm-docs
-
-- name: Commit changes
-  if: github.ref_name != 'main'
-  run: |
-    git add .
-    git diff --staged --quiet || git commit -m "docs: update generated docs"
-    git push
-```
+The fix is to run documentation generators on PR branches only, to avoid issues with protected main branches.
 
 The conditional ensures docs update on PR branches (where builds run) but skip the commit on main (where protection rules apply).
 
@@ -217,39 +131,11 @@ The conditional ensures docs update on PR branches (where builds run) but skip t
 
 ## The Pattern
 
-```mermaid
-flowchart LR
-    subgraph developer[Developer Flow]
-        D1[Push Branch] --> D2[Open PR]
-        D2 --> D3[pull_request event]
-    end
-
-    subgraph automation[Automation Flow]
-        A1[Release-Please] --> A2[Create Branch]
-        A2 --> A3[Commit Version Bump]
-        A3 --> A4[push event]
-    end
-
-    D3 --> Build[Build Pipeline]
-    A4 --> Build
-
-    %% Ghostty Hardcore Theme
-    style D1 fill:#65d9ef,color:#1b1d1e
-    style D2 fill:#65d9ef,color:#1b1d1e
-    style D3 fill:#fd971e,color:#1b1d1e
-    style A1 fill:#9e6ffe,color:#1b1d1e
-    style A2 fill:#9e6ffe,color:#1b1d1e
-    style A3 fill:#9e6ffe,color:#1b1d1e
-    style A4 fill:#fd971e,color:#1b1d1e
-    style Build fill:#a7e22e,color:#1b1d1e
-
-```
-
 The pattern generalizes beyond release-please. Any automation that creates PRs via API needs a secondary trigger.
 
 - Dependabot PRs use `pull_request_target` (different security model)
 - GitHub Apps can trigger events if given proper permissions
-- Bot accounts with PATs trigger events normally
+- Bot accounts with PATs trigger events normally.
 
 For release-please specifically, the dual-trigger approach is cleanest.
 
@@ -257,25 +143,11 @@ For release-please specifically, the dual-trigger approach is cleanest.
 
 ## Deep Dive
 
-This post covers the core problem and fix. For complete implementation guides:
-
-| Guide | Description |
-| ------- | ------------- |
-| [Release-Please Setup](../../build/release-pipelines/release-please/index.md) | Configuration, changelog sections, monorepo patterns |
-| [Change Detection](../../build/release-pipelines/change-detection.md) | Skip unnecessary builds, cascade dependencies |
-| [Workflow Triggers](../../build/release-pipelines/workflow-triggers.md) | GITHUB_TOKEN limitations, alternative approaches |
-| [Protected Branches](../../build/release-pipelines/protected-branches.md) | Working with branch protection rules |
+This post covers the core problem and fix. For complete implementation guides on Release-Please setup, change detection, workflow triggers, and protected branches, refer to the detailed documentation.
 
 ---
 
-## Checklist
-
-If your release-please PRs aren't triggering builds:
-
-1. Add `push` trigger for `release-please--**` branches
-2. Verify branch protection requires the correct status check
-3. Ensure documentation generators skip commits on protected branches
-4. Test by merging a conventional commit and watching the PR
+To troubleshoot Release-Please PRs not triggering builds, consider adding a `push` trigger for `release-please--**` branches, verifying branch protection settings, ensuring documentation generators skip commits on protected branches, and testing the setup by merging a conventional commit.
 
 ---
 
