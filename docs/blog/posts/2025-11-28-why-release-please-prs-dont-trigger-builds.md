@@ -14,12 +14,6 @@ slug: why-release-please-prs-dont-trigger-builds
 ---
 # Why Release-Please PRs Don't Trigger Your Builds
 
-!!! warning "Update: There's a Better Way"
-
-    The dual-trigger pattern described below is a **workaround**, not the real fix.
-    See [The Real Fix for Release-Please Triggers](./2025-12-02-the-real-fix-for-release-please-triggers.md)
-    for the proper solution using GitHub App tokens.
-
 The release-please PR looked perfect. Clean changelog. Proper version bump. Ready to merge.
 
 One problem: the build pipeline never ran. Branch protection blocked the merge. No required checks had passed, because no checks had started.
@@ -27,6 +21,12 @@ One problem: the build pipeline never ran. Branch protection blocked the merge. 
 This is the story of a GitHub Actions limitation that wastes hours of debugging time, and the pattern that fixes it in two lines of YAML.
 
 <!-- more -->
+
+!!! warning "Update: There's a Better Way"
+
+    The dual-trigger pattern described below is a **workaround**, not the real fix.
+    See [The Real Fix for Release-Please Triggers](./2025-12-02-the-real-fix-for-release-please-triggers.md)
+    for the proper solution using GitHub App tokens.
 
 ---
 
@@ -50,15 +50,7 @@ flowchart LR
 
 ```
 
-The workflow trigger was standard:
-
-```yaml
-on:
-  pull_request:
-    branches: [main]
-```
-
-Every PR should trigger the build. Simple.
+The workflow was configured to trigger on pull requests targeting the `main` branch, a standard setup for most repositories.
 
 ---
 
@@ -82,7 +74,7 @@ The consequence: release-please can create the most beautiful PR in the world, a
 
 First instinct: use a Personal Access Token. If `GITHUB_TOKEN` is the problem, replace it.
 
-This works. But PATs come with [their own problems](../../secure/github-apps/index.md#why_use_a_core_app):
+This works. But PATs come with [their own problems](../../secure/github-apps/index.md#why-use-a-core-app):
 
 - Tied to individual user accounts (revoked when someone leaves)
 - No granular permission control
@@ -109,16 +101,7 @@ The PR creation is silent. The branch push is not.
 
 ## The Fix
 
-Two lines of YAML:
-
-```yaml
-on:
-  pull_request:
-    branches: [main]
-  push:
-    branches:
-      - 'release-please--**'
-```
+The fix involved modifying the workflow trigger to include both `pull_request` events for the `main` branch and `push` events for branches matching the pattern `release-please--**`.
 
 ```mermaid
 flowchart TD
@@ -170,15 +153,7 @@ The glob pattern `release-please--**` catches both:
 
 This discovery solved another problem: change detection.
 
-Modern monorepo pipelines detect which components changed and only build what's affected:
-
-```yaml
-jobs:
-  detect-changes:
-    outputs:
-      backend_needs_build: ${{ steps.changes.outputs.backend_any_changed == 'true' }}
-      frontend_needs_build: ${{ steps.changes.outputs.frontend_any_changed == 'true' }}
-```
+Modern monorepo pipelines detect which components changed and only build what's affected.
 
 But release-please PRs often bump version files across multiple components. Without the build running, I couldn't verify that version bumps didn't break anything.
 
@@ -197,19 +172,7 @@ One more trap: tools that auto-commit documentation changes.
 
 Helm-docs regenerates README files from chart values. If it runs on the main branch and finds outdated docs, it tries to push a commit. On a protected branch, that fails.
 
-The fix: run documentation generators on PR branches only.
-
-```yaml
-- name: Generate docs
-  run: helm-docs
-
-- name: Commit changes
-  if: github.ref_name != 'main'
-  run: |
-    git add .
-    git diff --staged --quiet || git commit -m "docs: update generated docs"
-    git push
-```
+The fix for protected branches involves running documentation generators only on PR branches, rather than directly on the main branch.
 
 The conditional ensures docs update on PR branches (where builds run) but skip the commit on main (where protection rules apply).
 

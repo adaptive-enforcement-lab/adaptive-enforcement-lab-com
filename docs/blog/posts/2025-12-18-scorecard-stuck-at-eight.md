@@ -8,7 +8,8 @@ categories:
   - Supply Chain Security
   - Open Source
 description: >-
-  Scorecard said 8/10. Signatures alone weren't enough. The gap between signed and provably built.
+  Elevate OpenSSF Scorecard from 8/10 to 10/10. Learn how SLSA Level 3 provenance ensures
+  provable build integrity beyond signed releases.
 slug: scorecard-stuck-at-eight
 ---
 # The Score That Wouldn't Move: Stuck at 8/10
@@ -32,14 +33,7 @@ Every security guide said the same thing:
 - ✅ Include SBOM
 - ✅ Use HTTPS for distribution
 
-We had all of it. Release assets looked like this:
-
-```text
-readability_linux_amd64.tar.gz
-readability_linux_amd64.tar.gz.sig  ← Cosign signature
-sbom.cdx.json                       ← SBOM
-checksums.txt                       ← SHA256 hashes
-```
+We had all of it. Our release assets included the main artifact, its Cosign signature, an SBOM, and SHA256 hashes.
 
 The Scorecard documentation was clear: "Score 8: Cryptographic signatures present."
 
@@ -87,19 +81,9 @@ The attestation is cryptographically bound to the artifacts. Change a byte, veri
 
 The `slsa-github-generator` workflow had one non-negotiable constraint: version tags, not SHA pins.
 
-Every security guide says pin actions to SHA digests:
+Every security guide recommends pinning actions to SHA digests, a standard practice for security.
 
-```yaml
-# Standard security practice
-uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
-```
-
-But `slsa-github-generator` requires version tags:
-
-```yaml
-# Required for SLSA
-uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
-```
+However, `slsa-github-generator` requires version tags for its operation, creating a conflict with standard recommendations.
 
 Why? Because `slsa-verifier` validates the builder identity against **known version tags**. SHA references fail verification.
 
@@ -113,29 +97,11 @@ The generator needed hashes in base64-encoded format. Not hex. Not raw SHA256. B
 
 Three iterations to get it right:
 
-**Attempt 1**: Raw SHA256
+Our first attempt involved generating raw SHA256 hashes using `sha256sum`, but the generator rejected this format.
 
-```bash
-sha256sum readability_* > hashes.txt
-```
+Next, we tried hex-encoding the SHA256 hashes, piping `sha256sum` output to `xxd -p`, but this also resulted in the wrong format.
 
-Result: Generator rejected the format.
-
-**Attempt 2**: Hex encoded
-
-```bash
-sha256sum readability_* | xxd -p > hashes.txt
-```
-
-Result: Still wrong format.
-
-**Attempt 3**: Base64 encoded
-
-```bash
-sha256sum readability_* | base64 -w0 > hashes.txt
-```
-
-Result: Generator accepted it.
+Finally, base64-encoding the SHA256 hashes using `base64 -w0` produced a format the generator accepted.
 
 The documentation mentioned this, but buried in examples. Trial and error won.
 
@@ -143,23 +109,7 @@ The documentation mentioned this, but buried in examples. Trial and error won.
 
 ## The Victory
 
-Release v1.7.1 included a new file: `multiple.intoto.jsonl`
-
-Verification command:
-
-```bash
-slsa-verifier verify-artifact readability_linux_amd64 \
-  --provenance-path multiple.intoto.jsonl \
-  --source-uri github.com/adaptive-enforcement-lab/readability
-```
-
-Output:
-
-```text
-Verified build using builder "https://github.com/slsa-framework/slsa-github-generator/..."
-at commit 15dab4a45dd82c7c5eb28e2f89a83ac1794e97b9
-PASSED: SLSA verification passed
-```
+Upon verification, running `slsa-verifier` with the artifact, provenance path, and source URI confirmed a successful build. The output clearly stated "PASSED: SLSA verification passed," indicating the build was verified using the SLSA GitHub generator for a specific commit.
 
 Next Scorecard run: **Signed-Releases 10/10**.
 
@@ -198,7 +148,7 @@ The jump from 8 to 10 wasn't about doing more. It was about proving more.
 
 ## Related Patterns
 
-<!--- **[OpenSSF Scorecard Practical Fixes](2025-12-20-openssf-scorecard-practical-fixes.md)** - How we cleared 16 Token-Permissions alerts (Coming soon) -->
+<!--- **[OpenSSF Scorecard Practical Fixes](../../secure/scorecard/index.md)** - How we cleared 16 Token-Permissions alerts (Coming soon) -->
 - **[OpenSSF Best Practices Badge](2025-12-17-openssf-badge-two-hours.md)** - The foundation that made SLSA implementation straightforward
 - **[SDLC Hardening](2025-12-12-harden-sdlc-before-audit.md)** - Supply chain defense in audit context
 

@@ -33,28 +33,13 @@ When we update the guidelines, we wanted:
 2. Tags like `contributing-1.0.0`, `contributing-1.1.0`
 3. Independent versioning from the main platform
 
-This seemed reasonable. Release-please supports [monorepo configurations](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md) with multiple packages. Why not add CONTRIBUTING.md as a package?
+This seemed reasonable. Release-please supports [monorepo configurations](https://github.com/google-github-actions/release-please-action/blob/main/docs/manifest-releaser.md) with multiple packages. Why not add CONTRIBUTING.md as a package?
 
 ---
 
 ## The Attempt
 
-```json
-{
-  "packages": {
-    ".": {
-      "release-type": "simple",
-      "component": "platform"
-    },
-    "contributing": {
-      "release-type": "simple",
-      "component": "contributing-guidelines"
-    }
-  }
-}
-```
-
-Error: `contributing` is not a directory.
+When attempting to configure release-please to manage `CONTRIBUTING.md` as an independent package, we encountered an error indicating that `contributing` is not a directory.
 
 ---
 
@@ -65,7 +50,7 @@ Error: `contributing` is not a directory.
 
 The configuration path must point to a directory containing versionable files.
 
-From the [release-please documentation](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md):
+From the [release-please documentation](https://github.com/google-github-actions/release-please-action/blob/main/docs/manifest-releaser.md):
 
 > Each package path should be a directory relative to the repository root.
 
@@ -83,22 +68,7 @@ All create more problems than they solve.
 
 Accept the limitation. Use `extra-files` instead:
 
-```json
-{
-  "packages": {
-    ".": {
-      "release-type": "simple",
-      "extra-files": [
-        {
-          "type": "generic",
-          "path": "CONTRIBUTING.md",
-          "glob": false
-        }
-      ]
-    }
-  }
-}
-```
+The solution involved accepting the limitation and using `extra-files` configuration to include `CONTRIBUTING.md`.
 
 The file gets its version updated alongside the main package. Add the annotation:
 
@@ -132,18 +102,7 @@ If you truly need independent versioning for a single file, you need a different
 
 Even without independent versioning, you can control what appears in changelogs. Hide noise with scope filtering:
 
-```json
-{
-  "changelog-sections": [
-    { "type": "feat", "section": "Features" },
-    { "type": "fix", "section": "Bug Fixes" },
-    { "type": "docs", "section": "Documentation" },
-    { "type": "chore", "scope": "deps", "section": "Dependencies", "hidden": true },
-    { "type": "test", "section": "Tests", "hidden": true },
-    { "type": "ci", "section": "CI/CD", "hidden": true }
-  ]
-}
-```
+Even without independent versioning, you can control what appears in changelogs. Hide noise with scope filtering.
 
 The `scope` field targets specific commit patterns. `chore(deps): bump lodash` gets hidden. `chore: update build config` appears under Maintenance.
 
@@ -153,11 +112,7 @@ The `scope` field targets specific commit patterns. `chore(deps): bump lodash` g
 
 One more lesson: **always validate against the schema**.
 
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
-}
-```
+It is always recommended to validate configurations against the schema to avoid errors.
 
 I initially tried `release-name` to customize the release title. The option doesn't exist. It was a hallucination. The schema would have caught it immediately.
 
@@ -178,8 +133,8 @@ Release-please is built for packages, not files. Once I accepted that, the confi
 ## Deep Dive
 
 - [Release-Please Setup](../../build/release-pipelines/release-please/index.md) - Configuration options including extra-files
-- [Release-Please Manifest Documentation](https://github.com/googleapis/release-please/blob/main/docs/manifest-releaser.md) - Official monorepo guide
-- [Customizing Release-Please](https://github.com/googleapis/release-please/blob/main/docs/customizing.md) - Extra-files and version annotations
+- [Release-Please Manifest Documentation](https://github.com/google-github-actions/release-please-action/blob/main/docs/manifest-releaser.md) - Official monorepo guide
+- [Customizing Release-Please](https://github.com/google-github-actions/release-please-action/blob/main/docs/customizing.md) - Extra-files and version annotations
 
 ---
 

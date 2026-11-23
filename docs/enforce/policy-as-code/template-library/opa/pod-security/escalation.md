@@ -251,7 +251,7 @@ kubectl patch k8sblockprivileged block-privileged-containers \
 kubectl logs -n gatekeeper-system -l control-plane=controller-manager --tail=100
 ```
 
-### Rego Unit Testing
+### Rego Unit Testing {#rego_unit_testing}
 
 ```rego
 # test_k8sblockprivilegeescalation_test.rego

@@ -1,7 +1,7 @@
 ---
 title: Marketplace and Versioning
 description: >-
-  Generate plugin manifests and a marketplace catalog from config, and drive versions with release-please across a multi-package repository.
+  Generate skill marketplace and plugin manifests from a central config, and manage versions with release-please.
 tags:
   - ci-cd
   - automation
