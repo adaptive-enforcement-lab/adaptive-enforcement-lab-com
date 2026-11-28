@@ -8,8 +8,9 @@ categories:
   - Go
   - Quality Assurance
 description: >-
-  85% coverage. Comprehensive tests. Couldn't go higher. The blocker wasn't tests. It was code.
+  85% coverage. Comprehensive tests. Couldn't go higher. The blocker wasn't tests. It was code. Refactoring for testability broke through to 99%.
 slug: wall-at-eighty-five-percent
+provenance: human
 ---
 # The Wall at 85%: When Tests Aren't the Problem
 
@@ -110,45 +111,12 @@ After refactoring:
 
 **Before tests:**
 
-```go
-func TestRun_AllCombinations(t *testing.T) {
-    // Need to test:
-    // - Config from file vs auto-detect
-    // - Multiple flag override scenarios
-    // - File vs directory analysis
-    // - JSON vs table vs markdown output
-    // - Pass vs fail thresholds
-    // - Error at each layer
-
-    // Result: 50+ test cases, each with complex setup
-}
-```
+One test for `run()` had to cover every combination of config source, flag overrides, input type, output format, thresholds and errors: 50+ cases, each with complex setup.
 
 **After tests:**
 
-```go
-func TestLoadConfig(t *testing.T) {
-    tests := []struct {
-        name    string
-        path    string
-        want    *Config
-        wantErr bool
-    }{
-        {"explicit file", "test.yml", expectedConfig, false},
-        {"auto-detect", "", autoConfig, false},
-        {"missing file", "none.yml", nil, true},
-    }
-    // Simple table-driven tests
-}
-
-func TestApplyFlagOverrides(t *testing.T) {
-    // Test ONLY flag application logic
-}
-
-func TestOutputResults(t *testing.T) {
-    // Test ONLY output formatting
-}
-```
+Table-driven tests for `LoadConfig`, plus separate tests that cover only flag overrides and only output formatting.
+The [coverage patterns guide](../../enforce/testing-enforcement/coverage-patterns.md) has both versions.
 
 Each function tested independently. Coverage jumped.
 
