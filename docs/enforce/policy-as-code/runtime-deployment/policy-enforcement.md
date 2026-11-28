@@ -15,16 +15,16 @@ Policies are packaged as Helm charts for multi-environment deployment:
 
 ```bash
 # Deploy security policies to production
-helm upgrade --install security-policy \
-  /repos/security-policy/charts/security-policy \
+helm upgrade --install security-rules \
+  /repos/security-rules/charts/security-rules \
   --namespace kyverno \
-  --values /repos/security-policy/cd/prd/values.yaml
+  --values /repos/security-rules/cd/prd/values.yaml
 ```
 
 **Chart structure**:
 
 ```text
-charts/security-policy/
+charts/security-rules/
 ├── Chart.yaml
 ├── values.yaml
 └── templates/
@@ -86,10 +86,10 @@ policies:
 for env in dev qac stg prd; do
   kubectl config use-context gke-${env}
 
-  helm upgrade --install security-policy \
-    /repos/security-policy/charts/security-policy \
+  helm upgrade --install security-rules \
+    /repos/security-rules/charts/security-rules \
     --namespace kyverno \
-    --values /repos/security-policy/cd/${env}/values.yaml
+    --values /repos/security-rules/cd/${env}/values.yaml
 done
 ```
 
@@ -247,13 +247,13 @@ Runtime policies should **match CI policies exactly**:
 **CI** (pre-deployment):
 
 ```bash
-kyverno apply /repos/security-policy/ --resource app.yaml
+kyverno apply /repos/security-rules/ --resource app.yaml
 ```
 
 **Runtime** (admission control):
 
 ```bash
-helm install security-policy /repos/security-policy/charts/security-policy
+helm install security-rules /repos/security-rules/charts/security-rules
 ```
 
 **Same policy source. Zero drift.**

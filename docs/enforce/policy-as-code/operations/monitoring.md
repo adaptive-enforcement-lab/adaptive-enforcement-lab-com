@@ -245,11 +245,11 @@ Track policy changes:
 
 ```bash
 # Policy deployment history
-helm history security-policy -n kyverno
+helm history security-rules -n kyverno
 
 # Git history of policy changes
-cd /repos/security-policy
-git log --oneline -- charts/security-policy/templates/
+cd /repos/security-rules
+git log --oneline -- charts/security-rules/templates/
 ```
 
 ### SOC 2 Evidence

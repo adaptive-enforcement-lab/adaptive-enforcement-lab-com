@@ -1,20 +1,20 @@
 ---
 title: Distribution and Testing
 description: >-
-  Version, test, and distribute policy-platform containers. Semantic versioning, security scanning with Trivy, and registry authentication patterns.
+  Version, test, and distribute policy-toolkit containers. Semantic versioning, security scanning with Trivy, and registry authentication patterns.
 ---
 # Distribution and Testing
 
-Versioning, testing, optimization, and distribution of the policy-platform container.
+Versioning, testing, optimization, and distribution of the policy-toolkit container.
 
 ## Versioning Strategy
 
 ### Semantic Versioning
 
-Policy-platform follows semantic versioning:
+Policy-toolkit follows semantic versioning:
 
 ```bash
-policy-platform:v2.1.3
+policy-toolkit:v2.1.3
 ```
 
 **Version components**:
@@ -27,15 +27,15 @@ policy-platform:v2.1.3
 
 ```bash
 # Tag with version
-docker tag policy-platform:latest policy-platform:v1.0.2
+docker tag policy-toolkit:latest policy-toolkit:v1.0.2
 
 # Tag with commit SHA
-docker tag policy-platform:latest policy-platform:sha-abc123
+docker tag policy-toolkit:latest policy-toolkit:sha-abc123
 
 # Push all tags
-docker push policy-platform:v1.0.2
-docker push policy-platform:sha-abc123
-docker push policy-platform:latest
+docker push policy-toolkit:v1.0.2
+docker push policy-toolkit:sha-abc123
+docker push policy-toolkit:latest
 ```
 
 !!! tip "Always Tag with Version AND SHA"
@@ -49,22 +49,22 @@ docker push policy-platform:latest
 
 ```bash
 # Verify tools installed
-docker run --rm policy-platform:latest kyverno version
-docker run --rm policy-platform:latest pluto version
-docker run --rm policy-platform:latest helm version
+docker run --rm policy-toolkit:latest kyverno version
+docker run --rm policy-toolkit:latest pluto version
+docker run --rm policy-toolkit:latest helm version
 
 # Verify policies present
-docker run --rm policy-platform:latest ls -R /repos/
+docker run --rm policy-toolkit:latest ls -R /repos/
 ```
 
 ### Integration Test
 
 ```bash
 # Test complete validation workflow
-docker run --rm -v $(pwd):/workspace policy-platform:latest bash -c '\
-  helm template app /repos/backend-applications/charts/app \
-    -f /repos/backend-applications/charts/app/values.yaml \
-  | kyverno apply /repos/security-policy/ --resource -'
+docker run --rm -v $(pwd):/workspace policy-toolkit:latest bash -c '\
+  helm template app /repos/service-charts/charts/app \
+    -f /repos/service-charts/charts/app/values.yaml \
+  | kyverno apply /repos/security-rules/ --resource -'
 ```
 
 ### CI Test Pipeline
@@ -73,9 +73,9 @@ docker run --rm -v $(pwd):/workspace policy-platform:latest bash -c '\
 - step:
     name: Test Container
     script:
-      - docker run policy-platform:${BUILD_NUMBER} kyverno version
-      - docker run policy-platform:${BUILD_NUMBER} pluto version
-      - docker run policy-platform:${BUILD_NUMBER} ls /repos/security-policy/
+      - docker run policy-toolkit:${BUILD_NUMBER} kyverno version
+      - docker run policy-toolkit:${BUILD_NUMBER} pluto version
+      - docker run policy-toolkit:${BUILD_NUMBER} ls /repos/security-rules/
 ```
 
 ---
@@ -119,23 +119,23 @@ After optimization:  320 MB
 **Google Artifact Registry**:
 
 ```bash
-docker push europe-west6-docker.pkg.dev/project/charts/policy-platform:v1.0.2
+docker push europe-west6-docker.pkg.dev/project/charts/policy-toolkit:v1.0.2
 ```
 
 **GitHub Container Registry**:
 
 ```bash
-docker push ghcr.io/org/policy-platform:v1.0.2
+docker push ghcr.io/org/policy-toolkit:v1.0.2
 ```
 
 **Docker Hub** (public images):
 
 ```bash
-docker push dockerhub-username/policy-platform:v1.0.2
+docker push dockerhub-username/policy-toolkit:v1.0.2
 ```
 
 !!! warning "Use Private Registries"
-    Policy-platform contains proprietary policies. Use private registries (GCR, ACR, GHCR) with authentication.
+    Policy-toolkit contains proprietary policies. Use private registries (GCR, ACR, GHCR) with authentication.
 
 ### Registry Authentication
 
@@ -143,7 +143,7 @@ docker push dockerhub-username/policy-platform:v1.0.2
 
 ```yaml
 image:
-  name: policy-platform:latest
+  name: policy-toolkit:latest
   username: _json_key
   password: $GCLOUD_API_KEYFILE
 ```
@@ -168,13 +168,13 @@ image:
 echo "v1.0.3" > VERSION
 
 # Build
-docker build -t policy-platform:$(cat VERSION) .
+docker build -t policy-toolkit:$(cat VERSION) .
 
 # Test
-docker run policy-platform:$(cat VERSION) kyverno version
+docker run policy-toolkit:$(cat VERSION) kyverno version
 
 # Push
-docker push policy-platform:$(cat VERSION)
+docker push policy-toolkit:$(cat VERSION)
 ```
 
 ### Automated Updates
@@ -185,10 +185,10 @@ pipelines:
   custom:
     weekly-rebuild:
       - step:
-          name: Rebuild Policy Platform
+          name: Rebuild Policy Toolkit
           script:
-            - docker build -t policy-platform:latest .
-            - docker push policy-platform:latest
+            - docker build -t policy-toolkit:latest .
+            - docker push policy-toolkit:latest
 ```
 
 ---
@@ -200,7 +200,7 @@ pipelines:
 ```bash
 # Scan for vulnerabilities
 docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
-  aquasec/trivy image policy-platform:latest
+  aquasec/trivy image policy-toolkit:latest
 ```
 
 ### CI Integration
@@ -209,13 +209,13 @@ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
 - step:
     name: Security Scan
     script:
-      - docker run aquasec/trivy image policy-platform:${BUILD_NUMBER}
+      - docker run aquasec/trivy image policy-toolkit:${BUILD_NUMBER}
 ```
 
 **Fail build on critical vulnerabilities**:
 
 ```yaml
-- trivy image --severity CRITICAL --exit-code 1 policy-platform:latest
+- trivy image --severity CRITICAL --exit-code 1 policy-toolkit:latest
 ```
 
 ---
@@ -224,4 +224,4 @@ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
 
 - **[Maintenance](maintenance.md)** - Troubleshooting and best practices
 - **[Operations](../operations/index.md)** - Day-to-day policy management
-- **[CI Integration](../ci-integration/index.md)** - Using policy-platform in CI
+- **[CI Integration](../ci-integration/index.md)** - Using policy-toolkit in CI

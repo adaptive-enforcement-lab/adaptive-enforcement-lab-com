@@ -85,17 +85,17 @@ Valid manifests must pass. Invalid must fail.
 !!! tip "Quick Start"
     This guide is part of a modular documentation set. Refer to related guides in the navigation for complete context.
 
-Use policy-platform container for local development:
+Use policy-toolkit container for local development:
 
 ```bash
 # Pull policy container
-docker pull europe-west6-docker.pkg.dev/neon-free-ops/operations/policy-platform:latest
+docker pull europe-west6-docker.pkg.dev/example-project/operations/policy-toolkit:latest
 
 # Run policies against local manifests
 docker run --rm \
   -v $(pwd)/manifests:/manifests \
   -v $(pwd)/policies:/policies \
-  policy-platform:latest \
+  policy-toolkit:latest \
   kyverno apply /policies --resource /manifests
 ```
 

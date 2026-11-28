@@ -12,7 +12,7 @@ description: >-
 slug: untagged-outage
 ---
 
-The day I pushed `PLAT-868` to our core infrastructure repository
+The day I pushed `TICKET-868` to our core infrastructure repository
 felt small at the time. It was just another pull request merged,
 another ticket closed. Looking back, however, it marked a massive
 shift in how we managed our growing fleet of infrastructure components.
@@ -36,7 +36,7 @@ resources intelligently, or respond to incidents swiftly without first
 understanding *what* we had, *who* was responsible, and *how critical*
 it truly was.
 
-This led to the `PLAT-868` initiative. It was a system for formalizing
+This led to the `TICKET-868` initiative. It was a system for formalizing
 project classification using two core concepts: **ownership groups**
 and **impact level tags**. Now, every infrastructure component,
 from a simple load balancer configuration to a complex data processing
@@ -79,5 +79,5 @@ well-cataloged, understood ecosystem.
 
 ## Related
 
-- **[Resource Ownership and Criticality Tagging](../../patterns/governance/ownership-tagging/index.md)** - The vendor-neutral taxonomy behind `PLAT-868`: ownership groups, criticality tiers, and how they drive on-call and planning
+- **[Resource Ownership and Criticality Tagging](../../patterns/governance/ownership-tagging/index.md)** - The vendor-neutral taxonomy behind `TICKET-868`: ownership groups, criticality tiers, and how they drive on-call and planning
 - **[Kyverno Mandatory Labels Templates](../../enforce/policy-as-code/template-library/kyverno/labels.md)** - Enforce required ownership, cost, and compliance labels via policy

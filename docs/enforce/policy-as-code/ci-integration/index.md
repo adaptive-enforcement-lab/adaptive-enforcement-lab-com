@@ -8,7 +8,7 @@ tags:
   - developers
   - operators
 description: >-
-  Block non-compliant manifests at merge time using policy-platform container in CI. Automate Kyverno validation across environments with zero configuration drift.
+  Block non-compliant manifests at merge time using policy-toolkit container in CI. Automate Kyverno validation across environments with zero configuration drift.
 ---
 # CI Integration: Automated Policy Enforcement
 
@@ -16,7 +16,7 @@ Block non-compliant code at merge time. Same container as local dev, zero config
 
 ## Overview
 
-CI integration enforces policies automatically in every pull request using the **same policy-platform container** developers run locally.
+CI integration enforces policies automatically in every pull request using the **same policy-toolkit container** developers run locally.
 
 ```mermaid
 graph LR
@@ -89,20 +89,20 @@ Validate Helm values against schemas **before** rendering manifests:
 ```yaml
 - step:
     name: Lint Values Against Schema
-    image: policy-platform:latest
+    image: policy-toolkit:latest
     script:
       - source environment.sh
       - |
         # Merge base values + environment values
         yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' \
-          /repos/backend-applications/charts/backend-app/values.yaml \
+          /repos/service-charts/charts/backend-app/values.yaml \
           ./cd/values.${ENVIRONMENT}.yaml \
         > combined_values.yaml
 
       - |
         # Validate merged values against schema
         spectral lint \
-          -r /repos/backend-applications/.spectral.yaml \
+          -r /repos/service-charts/.spectral.yaml \
           combined_values.yaml
 ```
 
@@ -123,30 +123,30 @@ Render environment-specific manifests:
 ```yaml
 - step:
     name: Build Environment Manifests
-    image: policy-platform:latest
+    image: policy-toolkit:latest
     script:
       - source environment.sh
       - |
         # Define chart paths
-        sec_pol_chart=/repos/security-policy/charts/security-policy
-        dev_pol_chart=/repos/devops-policy/charts/devops-policy
-        be_apps_chart=/repos/backend-applications/charts/backend-applications
+        sec_pol_chart=/repos/security-rules/charts/security-rules
+        dev_pol_chart=/repos/ops-rules/charts/ops-rules
+        be_apps_chart=/repos/service-charts/charts/service-charts
 
       - |
         # Render DevOps policies
-        helm template devops-policy ${dev_pol_chart} \
+        helm template ops-rules ${dev_pol_chart} \
           -f ${dev_pol_chart}/values.yaml \
-          -f /repos/devops-policy/cd/values.yaml \
-          -f /repos/devops-policy/cd/${ENVIRONMENT}/values.yaml \
-        > devops-policy.yaml
+          -f /repos/ops-rules/cd/values.yaml \
+          -f /repos/ops-rules/cd/${ENVIRONMENT}/values.yaml \
+        > ops-rules.yaml
 
       - |
         # Render Security policies
-        helm template security-policy ${sec_pol_chart} \
+        helm template security-rules ${sec_pol_chart} \
           -f ${sec_pol_chart}/values.yaml \
-          -f /repos/security-policy/cd/values.yaml \
-          -f /repos/security-policy/cd/${ENVIRONMENT}/values.yaml \
-        > security-policy.yaml
+          -f /repos/security-rules/cd/values.yaml \
+          -f /repos/security-rules/cd/${ENVIRONMENT}/values.yaml \
+        > security-rules.yaml
 
       - |
         # Render application manifests
@@ -156,15 +156,15 @@ Render environment-specific manifests:
         > backend-app.yaml
 
     artifacts:
-      - devops-policy.yaml
-      - security-policy.yaml
+      - ops-rules.yaml
+      - security-rules.yaml
       - backend-app.yaml
 ```
 
 **Three artifact types**:
 
-1. **security-policy.yaml** for Security rules (resource limits, image policies, etc.)
-2. **devops-policy.yaml** for Operational rules (labels, annotations, naming)
+1. **security-rules.yaml** for Security rules (resource limits, image policies, etc.)
+2. **ops-rules.yaml** for Operational rules (labels, annotations, naming)
 3. **backend-app.yaml** for Application manifests to validate
 
 ---
@@ -177,12 +177,12 @@ Validate against DevOps and Security policies **in parallel**:
 - parallel:
     steps:
       - step:
-          name: Validate DevOps Policy
-          image: policy-platform:latest
+          name: Validate Ops Rules
+          image: policy-toolkit:latest
           script:
             - |
               # Generate policy report
-              kyverno apply devops-policy.yaml \
+              kyverno apply ops-rules.yaml \
                 --resource backend-app.yaml \
                 --output mutated-resources \
                 --policy-report \
@@ -198,14 +198,14 @@ Validate against DevOps and Security policies **in parallel**:
 
             - |
               # Display summary
-              kyverno apply devops-policy.yaml \
+              kyverno apply ops-rules.yaml \
                 --resource backend-app.yaml \
                 --output mutated-resources \
                 --remove-color
 
             - |
               # Display detailed results table
-              kyverno apply devops-policy.yaml \
+              kyverno apply ops-rules.yaml \
                 --resource backend-app.yaml \
                 --output mutated-resources \
                 -t --detailed-results \
@@ -215,10 +215,10 @@ Validate against DevOps and Security policies **in parallel**:
 
       - step:
           name: Validate Security Policy
-          image: policy-platform:latest
+          image: policy-toolkit:latest
           script:
             - |
-              kyverno apply security-policy.yaml \
+              kyverno apply security-rules.yaml \
                 --resource backend-app.yaml \
                 --output mutated-resources \
                 --policy-report \
@@ -230,12 +230,12 @@ Validate against DevOps and Security policies **in parallel**:
                 | { echo '---'; cat; } \
               > policy-report.yaml
 
-            - kyverno apply security-policy.yaml \
+            - kyverno apply security-rules.yaml \
                 --resource backend-app.yaml \
                 --output mutated-resources \
                 --remove-color
 
-            - kyverno apply security-policy.yaml \
+            - kyverno apply security-rules.yaml \
                 --resource backend-app.yaml \
                 --output mutated-resources \
                 -t --detailed-results \
@@ -257,7 +257,7 @@ Full pipeline showing all stages:
 
 ```yaml
 image:
-  name: policy-platform:main
+  name: policy-toolkit:main
   username: _json_key
   password: "$GCLOUD_API_KEYFILE"
 
@@ -289,10 +289,10 @@ pipelines:
           script:
             - source environment.sh
             - yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' \
-                /repos/backend-applications/charts/backend-app/values.yaml \
+                /repos/service-charts/charts/backend-app/values.yaml \
                 ./cd/values.${ENVIRONMENT}.yaml \
               > combined_values.yaml
-            - spectral lint -r /repos/backend-applications/.spectral.yaml \
+            - spectral lint -r /repos/service-charts/.spectral.yaml \
                 combined_values.yaml
 
       # Stage 3: Render manifests
@@ -300,40 +300,40 @@ pipelines:
           name: Build Manifests
           script:
             - source environment.sh
-            - helm template devops-policy \
-                /repos/devops-policy/charts/devops-policy \
-                -f /repos/devops-policy/charts/devops-policy/values.yaml \
-                -f /repos/devops-policy/cd/${ENVIRONMENT}/values.yaml \
-              > devops-policy.yaml
-            - helm template security-policy \
-                /repos/security-policy/charts/security-policy \
-                -f /repos/security-policy/charts/security-policy/values.yaml \
-                -f /repos/security-policy/cd/${ENVIRONMENT}/values.yaml \
-              > security-policy.yaml
+            - helm template ops-rules \
+                /repos/ops-rules/charts/ops-rules \
+                -f /repos/ops-rules/charts/ops-rules/values.yaml \
+                -f /repos/ops-rules/cd/${ENVIRONMENT}/values.yaml \
+              > ops-rules.yaml
+            - helm template security-rules \
+                /repos/security-rules/charts/security-rules \
+                -f /repos/security-rules/charts/security-rules/values.yaml \
+                -f /repos/security-rules/cd/${ENVIRONMENT}/values.yaml \
+              > security-rules.yaml
             - helm template backend-app \
-                /repos/backend-applications/charts/backend-app \
-                -f /repos/backend-applications/charts/backend-app/values.yaml \
+                /repos/service-charts/charts/backend-app \
+                -f /repos/service-charts/charts/backend-app/values.yaml \
                 -f ./cd/values.${ENVIRONMENT}.yaml \
               > backend-app.yaml
           artifacts:
-            - devops-policy.yaml
-            - security-policy.yaml
+            - ops-rules.yaml
+            - security-rules.yaml
             - backend-app.yaml
 
       # Stage 4: Validate policies (parallel)
       - parallel:
           steps:
             - step:
-                name: DevOps Policy
+                name: Ops Rules
                 script:
-                  - kyverno apply devops-policy.yaml \
+                  - kyverno apply ops-rules.yaml \
                       --resource backend-app.yaml \
                       --policy-report --audit-warn \
                     > tmp-report.yaml
-                  - kyverno apply devops-policy.yaml \
+                  - kyverno apply ops-rules.yaml \
                       --resource backend-app.yaml \
                       --remove-color
-                  - kyverno apply devops-policy.yaml \
+                  - kyverno apply ops-rules.yaml \
                       --resource backend-app.yaml \
                       -t --detailed-results --remove-color
                 artifacts:
@@ -342,14 +342,14 @@ pipelines:
             - step:
                 name: Security Policy
                 script:
-                  - kyverno apply security-policy.yaml \
+                  - kyverno apply security-rules.yaml \
                       --resource backend-app.yaml \
                       --policy-report --audit-warn \
                     > tmp-report.yaml
-                  - kyverno apply security-policy.yaml \
+                  - kyverno apply security-rules.yaml \
                       --resource backend-app.yaml \
                       --remove-color
-                  - kyverno apply security-policy.yaml \
+                  - kyverno apply security-rules.yaml \
                       --resource backend-app.yaml \
                       -t --detailed-results --remove-color
                 artifacts:

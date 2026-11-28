@@ -9,10 +9,10 @@ GitHub Actions implementation for automated policy validation in pull requests.
 
 ## Overview
 
-GitHub Actions workflows provide the same policy enforcement as Bitbucket Pipelines, using the policy-platform container for consistent validation.
+GitHub Actions workflows provide the same policy enforcement as Bitbucket Pipelines, using the policy-toolkit container for consistent validation.
 
 !!! example "GitHub Actions Pattern"
-    Use job-level containers with the policy-platform image. Extract environment from branch names using GitHub context variables.
+    Use job-level containers with the policy-toolkit image. Extract environment from branch names using GitHub context variables.
 
 ---
 
@@ -34,7 +34,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     container:
-      image: policy-platform:latest
+      image: policy-toolkit:latest
       credentials:
         username: _json_key
         password: ${{ secrets.GCP_SA_KEY }}
@@ -54,18 +54,18 @@ jobs:
 
       - name: Render Manifests
         run: |
-          helm template backend-app /repos/backend-applications/charts/backend-app \
-            -f /repos/backend-applications/charts/backend-app/values.yaml \
+          helm template backend-app /repos/service-charts/charts/backend-app \
+            -f /repos/service-charts/charts/backend-app/values.yaml \
             -f ./cd/values.${{ steps.env.outputs.ENVIRONMENT }}.yaml \
           > backend-app.yaml
 
-          helm template security-policy /repos/security-policy/charts/security-policy \
-            -f /repos/security-policy/cd/${{ steps.env.outputs.ENVIRONMENT }}/values.yaml \
-          > security-policy.yaml
+          helm template security-rules /repos/security-rules/charts/security-rules \
+            -f /repos/security-rules/cd/${{ steps.env.outputs.ENVIRONMENT }}/values.yaml \
+          > security-rules.yaml
 
       - name: Validate Policies
         run: |
-          kyverno apply security-policy.yaml \
+          kyverno apply security-rules.yaml \
             --resource backend-app.yaml \
             -t --detailed-results
 ```
@@ -214,8 +214,8 @@ policies:
 **Solution**: Check Helm template output
 
 ```bash
-helm template security-policy /repos/security-policy/charts/security-policy \
-  -f /repos/security-policy/cd/prd/values.yaml \
+helm template security-rules /repos/security-rules/charts/security-rules \
+  -f /repos/security-rules/cd/prd/values.yaml \
 | grep -A 10 "kind: ClusterPolicy"
 ```
 
@@ -229,11 +229,11 @@ helm template security-policy /repos/security-policy/charts/security-policy \
 
 ```bash
 # Use SAME environment values as CI
-docker run --rm -v $(pwd):/workspace policy-platform:latest \
+docker run --rm -v $(pwd):/workspace policy-toolkit:latest \
   helm template app /workspace/charts/app \
     -f /workspace/charts/app/values.yaml \
     -f /workspace/cd/values.stg.yaml \
-  | kyverno apply /repos/security-policy/ --resource -
+  | kyverno apply /repos/security-rules/ --resource -
 ```
 
 !!! tip "Debug Environment Mismatch"
@@ -249,7 +249,7 @@ docker run --rm -v $(pwd):/workspace policy-platform:latest \
 
 ```yaml
 image:
-  name: policy-platform:latest
+  name: policy-toolkit:latest
   username: _json_key
   password: $GCLOUD_API_KEYFILE  # CI variable
 ```
@@ -288,5 +288,5 @@ Don't apply production policies to dev. Allow progressive strictness.
 
 - **[Runtime Deployment](../runtime-deployment/index.md)** - Deploy Kyverno admission control
 - **[Multi-Source Policies](../multi-source-policies/index.md)** - Aggregate multiple policy repos
-- **[Policy Packaging](../policy-packaging/index.md)** - Build policy-platform container
+- **[Policy Packaging](../policy-packaging/index.md)** - Build policy-toolkit container
 - **[Operations](../operations/index.md)** - Day-to-day policy management

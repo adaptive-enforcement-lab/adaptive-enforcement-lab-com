@@ -24,8 +24,8 @@ graph LR
     A[Local Development] -->|Push Code| B[CI Pipeline]
     B -->|Deploy| C[Runtime Admission]
 
-    A -->|policy-platform container| A1[Kyverno CLI]
-    B -->|policy-platform container| B1[Kyverno CLI]
+    A -->|policy-toolkit container| A1[Kyverno CLI]
+    B -->|policy-toolkit container| B1[Kyverno CLI]
     C -->|Kyverno controller| C1[Admission Webhook]
 
     %% Ghostty Hardcore Theme
@@ -64,8 +64,8 @@ Policies originate from version-controlled repositories:
 
 ```mermaid
 graph TD
-    SP[security-policy repo] -->|OCI container| PP[policy-platform]
-    DP[devops-policy repo] -->|OCI container| PP
+    SP[security-rules repo] -->|OCI container| PP[policy-toolkit]
+    DP[ops-rules repo] -->|OCI container| PP
     KC[Kyverno curated policies] -->|OCI container| PP
 
     PP -->|Container image| L[Local Dev]
@@ -82,19 +82,19 @@ graph TD
 
 ### Policy Aggregation
 
-The policy-platform container aggregates policies from multiple sources:
+The policy-toolkit container aggregates policies from multiple sources:
 
 **Dockerfile (multi-stage build)**:
 
 ```dockerfile
-FROM security-policy-repo:main AS security_policy_repo
-FROM devops-policy-repo:main AS devops_policy_repo
+FROM security-rules-repo:main AS security_rules_repo
+FROM ops-rules-repo:main AS ops_rules_repo
 
 FROM alpine:3.24
 RUN apk add helm kyverno pluto spectral
 
-COPY --from=security_policy_repo /repos/security-policy/ /repos/security-policy/
-COPY --from=devops_policy_repo /repos/devops-policy/ /repos/devops-policy/
+COPY --from=security_rules_repo /repos/security-rules/ /repos/security-rules/
+COPY --from=ops_rules_repo /repos/ops-rules/ /repos/ops-rules/
 ```
 
 **Result**: Single container with all policies, ready to run anywhere.
@@ -108,8 +108,8 @@ COPY --from=devops_policy_repo /repos/devops-policy/ /repos/devops-policy/
 Developer runs policy checks before commit:
 
 ```bash
-docker run policy-platform:latest \
-  kyverno apply /repos/security-policy/policies.yaml \
+docker run policy-toolkit:latest \
+  kyverno apply /repos/security-rules/policies.yaml \
   --resource my-deployment.yaml
 ```
 
@@ -126,10 +126,10 @@ Automated validation in every pull request:
 ```yaml
 steps:
   - name: Validate Security Policy
-    image: policy-platform:latest
+    image: policy-toolkit:latest
     script:
-      - kyverno apply security-policy.yaml --resource app.yaml
-      - kyverno apply devops-policy.yaml --resource app.yaml
+      - kyverno apply security-rules.yaml --resource app.yaml
+      - kyverno apply ops-rules.yaml --resource app.yaml
 ```
 
 **Benefits**:
@@ -179,7 +179,7 @@ This section covers complete policy-as-code implementation:
 2. **[CI Integration](ci-integration/index.md)** - Automated validation in pipelines
 3. **[Runtime Deployment](runtime-deployment/index.md)** - Kyverno admission control
 4. **[Multi-Source Policies](multi-source-policies/index.md)** - Aggregating policy repositories
-5. **[Policy Packaging](policy-packaging/index.md)** - Building the policy-platform container
+5. **[Policy Packaging](policy-packaging/index.md)** - Building the policy-toolkit container
 6. **[Operations](operations/index.md)** - Day-to-day policy management
 
 ---
@@ -201,8 +201,8 @@ This section covers complete policy-as-code implementation:
 **Step 1**: Run policies locally
 
 ```bash
-docker run policy-platform:latest \
-  kyverno apply /repos/security-policy/ \
+docker run policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ \
   --resource deployment.yaml
 ```
 
@@ -210,9 +210,9 @@ docker run policy-platform:latest \
 
 ```yaml
 - name: Policy Check
-  image: policy-platform:latest
+  image: policy-toolkit:latest
   script:
-    - kyverno apply /repos/security-policy/ --resource app.yaml
+    - kyverno apply /repos/security-rules/ --resource app.yaml
 ```
 
 **Step 3**: Deploy Kyverno to cluster
@@ -259,7 +259,7 @@ Local (warn) → CI (fail) → Runtime (block).
 ### 4. Separation of Concerns
 
 - **Policy repos**: Define rules
-- **Policy-platform**: Package and distribute
+- **Policy-toolkit**: Package and distribute
 - **Kyverno**: Enforce at runtime
 
 ---

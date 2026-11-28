@@ -27,7 +27,7 @@ dependent clients.
 A fundamental requirement for a successful migration is a clear and verifiable
 tracking mechanism. A labeling system applied to service and workflow manifests
 serves this purpose, but its integrity is paramount. The chosen label, such as
-`neon-free.ch/asset-producer`, must be governed by a strict, automated policy.
+`example.com/asset-producer`, must be governed by a strict, automated policy.
 In a key migration project, this policy was enforced by an admission controller
 that would reject any manifest attempting to apply the label to a component
 that did not declare its outputs as asset streams.
@@ -90,7 +90,7 @@ release cycles.
 Before any part of a legacy system is turned off, the changes must be rigorously
 validated. Simply hoping for the best is not a strategy. In the directory system
 migration, the removal of the old data dumps and the application of the
-`neon-free.ch/asset-producer` label were verified against a live operations admission
+`example.com/asset-producer` label were verified against a live operations admission
 controller using a server-side dry-run. This allowed the development team to
 confirm that the proposed changes would be accepted by the production
 environment's policy enforcement engine without actually deploying them.
