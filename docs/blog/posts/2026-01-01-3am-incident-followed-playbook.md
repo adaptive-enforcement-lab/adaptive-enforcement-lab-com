@@ -10,6 +10,7 @@ categories:
 description: >-
   When production breaks at 3am and muscle memory takes over. The incident playbook that turned chaos into checklist.
 slug: 3am-incident-followed-playbook
+provenance: human
 ---
 # The 3am Incident That Followed The Playbook
 
@@ -50,38 +51,8 @@ The pattern was consistent. Nobody was stupid. The system just had no structure.
 
 A real incident playbook isn't a document. It's a decision tree that removes thinking from 3am decisions.
 
-```text
-Incident Alert
-├── Severity Classification
-│   ├── SEV-1: User-facing outage
-│   ├── SEV-2: Degraded performance
-│   └── SEV-3: Single service issue
-│
-├── Immediate Actions (Do this first, no debate)
-│   ├── Start the incident thread
-│   ├── Notify on-call leadership
-│   ├── Enable verbose logging
-│   └── Open the runbook
-│
-├── Diagnosis Phase (Follow this order)
-│   ├── Check dashboard (Is it real?)
-│   ├── Check metrics (What's the pattern?)
-│   ├── Check logs (When did it start?)
-│   ├── Check recent changes (What touched it?)
-│   └── Form hypothesis
-│
-├── Response Phase (Execute, don't improvise)
-│   ├── Does the fix exist in the playbook?
-│   │   ├── Yes → Execute step-by-step
-│   │   └── No → Escalate, but document what you try
-│   └── Monitor recovery metrics
-│
-└── Resolution (Close deliberately)
-    ├── Verify metrics return to baseline
-    ├── Run rollback if fix wasn't stable
-    ├── Document exactly what happened
-    └── Schedule postmortem
-```
+Five branches, top to bottom: severity classification (SEV-1 to SEV-3), immediate actions with no debate, a diagnosis phase in fixed order, a response phase that executes the playbook fix or escalates, and a deliberate resolution.
+The [playbook structure guide](../../enforce/incident-readiness/playbook-library/playbook-structure.md) has the full tree.
 
 The key insight: **every decision point is pre-thought**. No creative problem-solving at 3am. Just execution.
 
@@ -104,40 +75,18 @@ Template: "If you see X and it matches Y, it's SEV-Z. First action is..."
 
 ### 2. Diagnostic Checklist
 
-Pre-written commands that answer "what's actually happening":
+Pre-written commands that answer "what's actually happening".
 
-```bash
-# Pod restart storms: check node status
-kubectl get nodes -o wide
-kubectl describe node <unhealthy-node>
-
-# API latency spike: check goroutine count
-curl http://service:9090/metrics | grep goroutine
-
-# Database issue: check connection pool
-SELECT count(*) FROM pg_stat_activity;
-
-# Recent deployment: check rollout status
-kubectl rollout history deployment/api --revision=<latest>
-kubectl rollout undo deployment/api --to-revision=<previous>
-```
+One command block per symptom: node status for restart storms, goroutine metrics for latency, `pg_stat_activity` for the connection pool, rollout history and undo for a recent deployment.
 
 No room for interpretation. No "let me think about what might help." Just execute.
 
 ### 3. Decision Logic
 
-For each symptom, define the decision path:
+For each symptom, define the decision path.
 
-```text
-If: Pod restart storms + Node in NotReady state
-Then:
-  1. Don't try to debug the pod
-  2. Cordon the node immediately
-  3. Page infrastructure team
-  4. Scale up 2 additional nodes
-  5. Wait for pods to migrate
-  6. Proceed to recovery check
-```
+If pods are in a restart storm and the node is `NotReady`: don't debug the pod. Cordon the node, page infrastructure, add two nodes, wait for the pods to migrate, then check recovery.
+The [playbook structure guide](../../enforce/incident-readiness/playbook-library/playbook-structure.md) has the checklist and the decision rule.
 
 No branching on "but what if." Just "if condition matches, do this."
 
@@ -221,12 +170,7 @@ The playbook is designed for 3am brains, not fresh 9am brains. It doesn't ask yo
 
 ### 1. Runbook Repository
 
-```text
-runbooks/
-├── kubernetes/node-recovery.md
-├── postgres/connection-pool.md
-└── observability/alert-validation.md
-```
+One markdown runbook per failure, grouped by system: `kubernetes/node-recovery.md`, `postgres/connection-pool.md`, `observability/alert-validation.md`.
 
 Stored in git. Version controlled. Updated in postmortems.
 
@@ -243,11 +187,7 @@ Result: Stable at 3:26am
 
 ### 3. Alert to Runbook Linking
 
-```yaml
-alert: PodRestartStorm
-annotations:
-  runbook_url: https://runbooks.example.com/kubernetes/pod-crashloop.md
-```
+Each alert carries a `runbook_url` annotation that points at its runbook.
 
 Click the alert. Runbook opens. Steps are waiting.
 
@@ -257,20 +197,8 @@ Click the alert. Runbook opens. Steps are waiting.
 
 Because the incident was documented live, the postmortem is nearly written. The meeting isn't "figure out what happened." It's "understand why the warning signs were missed."
 
-```markdown
-# Incident: Pod Restart Storms - 2026-01-08
-
-Timeline: 3:17am alert, 3:20am node identified, 3:26am closed
-
-Root Cause: Kubelet memory leak after 45-day uptime
-
-Fixes:
-1. Add kubelet memory alerting
-2. Enable node auto-restart after 40 days
-3. Add kubelet memory to pre-incident checks
-
-Impact: 9 minutes, ~50 affected requests
-```
+Title and date, a one-line timeline, the root cause (a kubelet memory leak after 45 days of uptime), three fixes, and the impact: 9 minutes, about 50 affected requests.
+The [playbook structure guide](../../enforce/incident-readiness/playbook-library/playbook-structure.md) has the runbook layout, the alert annotation and this template.
 
 This took 5 minutes to write. Complete. Actionable.
 
