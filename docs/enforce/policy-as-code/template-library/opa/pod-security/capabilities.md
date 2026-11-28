@@ -300,4 +300,4 @@ spec:
 - **[OPA Image Security Templates →](../image/security.md)** - Registry allowlists and signing
 - **[Kyverno Pod Security Templates →](../../kyverno/pod-security/standards.md)** - Kubernetes-native alternative
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

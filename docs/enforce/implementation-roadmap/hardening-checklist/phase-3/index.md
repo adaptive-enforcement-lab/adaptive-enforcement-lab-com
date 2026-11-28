@@ -155,7 +155,7 @@ Phase 4 completes the implementation with audit evidence collection, compliance 
 - **[Policy-as-Code with Kyverno](../../../policy-as-code/kyverno/index.md)** - Detailed policy configuration
 - **[Pod Security Standards](../../../../secure/cloud-native/gke-hardening/runtime-security/pod-security-standards.md)** - Security context requirements
 - **[Runtime Security](../../../../secure/cloud-native/gke-hardening/runtime-security/index.md)** - Resource limits and runtime controls
-- **[Implementation Roadmap Overview](index.md)** - Complete roadmap
+- **[Implementation Roadmap Overview](../index.md)** - Complete roadmap
 - **[Phase 2: Automation](../phase-2/index.md)** - CI/CD gates
 - **[Phase 4: Advanced →](../phase-4/index.md)** - Audit evidence and compliance
 

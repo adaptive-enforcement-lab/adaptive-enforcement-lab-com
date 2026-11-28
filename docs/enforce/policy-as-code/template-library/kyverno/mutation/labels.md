@@ -348,4 +348,4 @@ kubectl get deployments -A -o json | jq -r '.items[] | select(.metadata.labels."
 - **[Kyverno Generation - Namespaces →](../generation/namespace.md)** - ResourceQuota and NetworkPolicy generation
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Labels →](../labels.md)** - Label validation policies
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

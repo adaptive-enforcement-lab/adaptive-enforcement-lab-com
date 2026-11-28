@@ -290,4 +290,4 @@ kubectl describe clusterpolicy restrict-host-namespaces
 - **[Kyverno Image Validation →](../image/validation.md)** - Registry allowlists and tag validation
 - **[Kyverno Resource Limits →](../resource/limits.md)** - CPU and memory enforcement
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

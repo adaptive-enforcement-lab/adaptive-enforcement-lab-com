@@ -144,7 +144,7 @@ With Phase 4 complete, you have:
 - **[Audit Evidence Collection](../../../audit-compliance/audit-evidence.md)** - Evidence storage details
 - **[OpenSSF Scorecard](../../../../secure/scorecard/scorecard-compliance.md)** - Scorecard configuration
 - **[SLSA Provenance](../../../slsa-provenance/slsa-provenance.md)** - Build attestation
-- **[Implementation Roadmap Overview](index.md)** - Complete roadmap
+- **[Implementation Roadmap Overview](../index.md)** - Complete roadmap
 - **[Phase 3: Runtime](../phase-3/index.md)** - Runtime enforcement
 
 ---

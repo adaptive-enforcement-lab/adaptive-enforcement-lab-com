@@ -162,7 +162,7 @@ This is the most common idempotency pattern. It checks if a resource exists befo
 
 Tombstone markers are a work-avoidance technique. They leave a marker (like a file) after a task is done. This allows later runs to skip the operation.
 
-**Related**: [Tombstone Markers](../patterns/efficiency/idempotency/patterns/tombstone-markers.md)
+**Related**: [Tombstone Markers](../patterns/efficiency/idempotency/patterns/tombstone-markers/index.md)
 
 ### Content Hashing
 

@@ -334,7 +334,7 @@ conditions:
 - **[JMESPath Reference →](reference.md)** - Complete function reference
 - **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns and basics
 - **[Kyverno Templates Overview →](../kyverno/index.md)** - Complete template library
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../index.md)** - Back to main page
 
 ---
 

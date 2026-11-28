@@ -289,4 +289,4 @@ See **[Privilege Escalation Prevention →](pod-security/escalation.md#rego_unit
 - **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection criteria
 - **[OPA/Kyverno Comparison →](../opa-kyverno-comparison.md)** - Detailed feature comparison
 - **[Migration Guide →](../opa-kyverno-migration.md)** - Switching between OPA and Kyverno
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../index.md)** - Back to main page

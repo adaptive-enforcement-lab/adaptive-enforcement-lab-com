@@ -139,7 +139,7 @@ kubectl get clusterpolicy -w
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata enforcement
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Resource Limits →](../resource/limits.md)** - CPU and memory enforcement
-- **[Template Library Overview →](../index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page
 
 ---
 

@@ -197,7 +197,7 @@ Use this checklist when deploying ephemeral runners.
 
 - **[Runner Hardening](../hardening/index.md)**: Apply OS and network hardening to runner images
 - **[Runner Groups](../groups/index.md)**: Organize ephemeral runners by trust level and repository access
-- **[Runner Security Overview](index.md)**: Review threat model and deployment strategies
+- **[Runner Security Overview](../index.md)**: Review threat model and deployment strategies
 
 ## Related Documentation
 

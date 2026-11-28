@@ -311,4 +311,4 @@ kubectl get pods -A -o custom-columns=NAMESPACE:.metadata.namespace,NAME:.metada
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Image Validation →](../image/validation.md)** - Registry allowlists and tag validation
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

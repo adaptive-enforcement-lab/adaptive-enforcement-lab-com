@@ -235,4 +235,4 @@ done
 - **[Kyverno Resource HPA →](../resource/hpa.md)** - HorizontalPodAutoscaler requirements
 - **[Kyverno Generation - Namespaces →](namespace.md)** - ResourceQuota and NetworkPolicy generation
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
-- **[Template Library Overview →](../index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

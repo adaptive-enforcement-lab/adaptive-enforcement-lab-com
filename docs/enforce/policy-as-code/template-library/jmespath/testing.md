@@ -365,4 +365,4 @@ kubectl get policyreport -o json | \
 - **[JMESPath Advanced →](advanced.md)** - Advanced patterns
 - **[JMESPath Patterns (Core) →](patterns.md)** - Core patterns
 - **[Kyverno Templates Overview →](../kyverno/index.md)** - Complete template library
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../index.md)** - Back to main page

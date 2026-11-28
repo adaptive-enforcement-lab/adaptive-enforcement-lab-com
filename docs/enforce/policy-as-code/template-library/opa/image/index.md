@@ -283,4 +283,4 @@ Transition existing workloads to use digests:
 
 - [OPA Templates Overview](../index.md)
 - [OPA Pod Security](../pod-security/index.md)
-- [Kyverno Image Validation](../image/index.md)
+- [Kyverno Image Validation](../../kyverno/image/index.md)

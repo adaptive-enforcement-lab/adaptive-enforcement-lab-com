@@ -326,4 +326,4 @@ Transition existing workloads to secure configurations:
 
 - [OPA Templates Overview](../index.md)
 - [OPA RBAC Policies](../rbac/index.md)
-- [Kyverno Pod Security Templates](../pod-security/index.md)
+- [Kyverno Pod Security Templates](../../kyverno/pod-security/index.md)

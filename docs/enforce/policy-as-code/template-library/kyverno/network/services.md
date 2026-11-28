@@ -295,4 +295,4 @@ kubectl get services -A -o json | jq -r '[.items[] | select(.spec.type == "LoadB
 - **[Kyverno Ingress TLS →](ingress-tls.md)** - TLS encryption requirements
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
 - **[Kyverno Resource Limits →](../resource/limits.md)** - CPU and memory enforcement
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

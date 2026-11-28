@@ -199,4 +199,4 @@ Every template includes a customization table:
 - **[JMESPath Patterns →](../jmespath/patterns.md)** - Advanced Kyverno pattern examples
 - **[OPA Templates →](../opa/index.md)** - Gatekeeper constraint templates
 - **[Decision Guide →](../decision-guide.md)** - OPA vs Kyverno selection guide
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../index.md)** - Back to main page

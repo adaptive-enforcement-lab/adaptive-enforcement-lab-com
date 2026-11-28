@@ -218,7 +218,7 @@ Use this checklist when deploying or auditing runner security.
 
 - **[Ephemeral Runners](../ephemeral/index.md)**: Deploy VM and container-based ephemeral runners for maximum isolation
 - **[Runner Groups](../groups/index.md)**: Organize runners by trust level and security requirements
-- **[Runner Security Overview](index.md)**: Review threat model and deployment strategies
+- **[Runner Security Overview](../index.md)**: Review threat model and deployment strategies
 
 ## Related Documentation
 

@@ -248,4 +248,4 @@ Use resource policies to reduce cloud infrastructure costs:
 
 - [Kyverno Templates Overview](../index.md)
 - [Kyverno Pod Security](../pod-security/index.md)
-- [OPA Resource Governance](../resource/index.md)
+- [OPA Resource Governance](../../opa/resource/index.md)

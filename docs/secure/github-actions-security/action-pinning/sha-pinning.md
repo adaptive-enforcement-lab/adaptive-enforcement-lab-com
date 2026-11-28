@@ -347,7 +347,7 @@ Ready to automate SHA pinning?
 
 - **[GITHUB_TOKEN Permissions](../token-permissions/index.md)**: Minimize token scope alongside action pinning
 - **[Third-Party Action Evaluation](../third-party-actions/index.md)**: Assess actions before pinning
-- **[Complete Examples](../examples/ci-workflow/index.md)**: Production workflows with all patterns applied
+- **[Complete Examples](../examples/index.md)**: Production workflows with all patterns applied
 
 ---
 

@@ -144,4 +144,4 @@ done
 ## Related Resources
 
 - **[Kyverno Templates Overview](../index.md)** - Back to Kyverno templates
-- **[Template Library Overview](../index.md)** - Back to main template library
+- **[Template Library Overview](../../index.md)** - Back to main template library

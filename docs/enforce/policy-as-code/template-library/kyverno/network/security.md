@@ -360,4 +360,4 @@ kubectl logs -n kube-system -l k8s-app=calico-node | grep EGRESS
 - **[Kyverno Network Services →](services.md)** - Service type restrictions
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

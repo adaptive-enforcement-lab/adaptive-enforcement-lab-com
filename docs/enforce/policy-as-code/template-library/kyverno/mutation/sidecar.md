@@ -348,4 +348,4 @@ kubectl get pods -A -o json | jq -r '.items[] | select(.metadata.annotations."pr
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Resource Limits →](../resource/limits.md)** - Resource requests and limits
 - **[Kyverno Image Validation →](../image/validation.md)** - Image security
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

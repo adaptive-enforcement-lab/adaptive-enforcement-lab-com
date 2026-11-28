@@ -209,7 +209,7 @@ Production-ready workflows demonstrating all security patterns. Copy-paste templ
 - Deployment workflow with OIDC and approvals
 - Security scanning workflow
 
-[**Explore Examples →**](examples/ci-workflow/index.md)
+[**Explore Examples →**](examples/index.md)
 
 ## Quick Start
 
