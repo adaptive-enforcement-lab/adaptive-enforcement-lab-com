@@ -20,4 +20,5 @@ Adaptive Enforcement Lab was born from this realization. We build tools and patt
 - [Principles](principles.md) - Our core beliefs about security
 - [Approach](approach.md) - What makes us different
 - [Brand](brand.md) - Our identity and what it represents
+- [Operator](operator.md) - The person behind the lab
 - [Connect](connect.md) - Get involved with our community
