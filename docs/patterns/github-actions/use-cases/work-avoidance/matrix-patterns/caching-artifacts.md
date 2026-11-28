@@ -2,6 +2,7 @@
 title: Caching and Artifact Patterns
 description: >-
   Skip redundant work with dependency tracking, cache-based skips, and artifact reuse. Build once, test in parallel to reduce CI time from 30 to 6 minutes.
+provenance: human
 ---
 
 # Caching and Artifact Patterns

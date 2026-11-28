@@ -2,6 +2,7 @@
 title: Integration Testing
 description: >-
   Test against real Kubernetes API servers with envtest. Catch API contract issues unit tests miss without full cluster overhead for fast integration tests.
+provenance: human
 ---
 # Integration Testing
 

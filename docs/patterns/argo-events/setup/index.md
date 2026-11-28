@@ -2,6 +2,7 @@
 title: Argo Events Setup Guide
 description: >-
   Deploy event-driven automation with EventSource, EventBus, and Sensor configuration. Complete setup guide for production Argo Events on Kubernetes clusters.
+provenance: human
 ---
 # Argo Events Setup Guide
 

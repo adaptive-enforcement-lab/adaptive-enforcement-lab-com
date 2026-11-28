@@ -11,6 +11,7 @@ description: >-
   One repo built for a single cluster grew into config for forty. Here's the week
   copy-paste caught up with us, and how we finally trusted what was running.
 slug: the-day-one-repo-became-forty
+provenance: human
 ---
 
 # The Day One Repo Became Forty

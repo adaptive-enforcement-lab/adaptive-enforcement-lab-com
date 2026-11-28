@@ -2,6 +2,7 @@
 title: Orchestrator Pattern
 description: >-
   Coordinate multi-step workflows through a single CLI entry point. Implement dry-run mode, consistent exit codes, and error handling for production use.
+provenance: human
 ---
 # Orchestrator Pattern
 

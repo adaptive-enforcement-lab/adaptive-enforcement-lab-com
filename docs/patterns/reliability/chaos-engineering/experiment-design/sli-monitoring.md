@@ -7,6 +7,7 @@ tags:
   - sli
   - monitoring
   - metrics
+provenance: human
 ---
 # SLI Monitoring During Chaos
 

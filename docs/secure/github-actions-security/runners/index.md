@@ -8,6 +8,7 @@ tags:
   - security
   - runners
   - infrastructure
+provenance: human
 ---
 
 # Self-Hosted Runner Security Overview

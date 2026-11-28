@@ -2,6 +2,7 @@
 title: Token Refresh Patterns
 description: >-
   Token expiration handling, automatic refresh strategies, and lifecycle management patterns for GitHub App installation tokens.
+provenance: human
 ---
 
 # Token Refresh Patterns

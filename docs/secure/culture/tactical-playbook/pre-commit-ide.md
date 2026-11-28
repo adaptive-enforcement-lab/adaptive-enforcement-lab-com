@@ -2,6 +2,7 @@
 title: Pre-Commit Hooks & IDE Integration
 description: >-
   Pre-commit hooks and IDE integration for shift-left security. Fast, auto-fixing checks that catch issues before code review without slowing developers down.
+provenance: human
 ---
 # Pre-Commit Hooks & IDE Integration
 

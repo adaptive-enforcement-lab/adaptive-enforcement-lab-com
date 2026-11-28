@@ -3,6 +3,7 @@ title: The 15-Minute Performance Test
 date: 2026-09-13
 authors:
   - mark
+  - content-machine
 categories:
   - engineering
   - automation
@@ -11,6 +12,7 @@ description: >-
   Learn how to implement a 15-minute performance test in your CI/CD pipeline.
   Catch regressions early with automated, ephemeral production-scale environments.
 slug: the-15-minute-performance-test
+provenance: human_edited
 ---
 
 The pull request was small, a single-line change to a data processing job.

@@ -9,6 +9,7 @@ tags:
   - oidc
   - secrets
   - cloud
+provenance: human
 ---
 
 # OIDC Federation Patterns

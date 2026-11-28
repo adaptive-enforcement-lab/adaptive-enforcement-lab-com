@@ -10,6 +10,7 @@ tags:
   - cve
   - security-advisories
 
+provenance: human
 ---
 # Advanced Vulnerability Management
 

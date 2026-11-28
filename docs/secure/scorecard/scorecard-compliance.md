@@ -11,6 +11,7 @@ tags:
   - supply-chain
   - developers
   - operators
+provenance: human
 ---
 # OpenSSF Scorecard Compliance
 

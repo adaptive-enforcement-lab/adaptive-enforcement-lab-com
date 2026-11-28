@@ -6,6 +6,7 @@ tags:
   - fail-fast
   - assertions
   - contracts
+provenance: human
 ---
 # Assertion Patterns
 

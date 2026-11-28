@@ -9,6 +9,7 @@ tags:
   - operators
 description: >-
   Block non-compliant manifests at merge time using policy-toolkit container in CI. Automate Kyverno validation across environments with zero configuration drift.
+provenance: human
 ---
 # CI Integration: Automated Policy Enforcement
 

@@ -2,6 +2,7 @@
 title: Installation Token Generation
 description: >-
   Generate short-lived installation tokens from GitHub App credentials with actions/create-github-app-token. Organization-scoped and repository-scoped patterns for automated cross-repo workflows.
+provenance: human
 ---
 
 # Installation Token Generation

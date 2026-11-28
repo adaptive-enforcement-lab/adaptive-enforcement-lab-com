@@ -2,6 +2,7 @@
 title: Common Patterns
 description: >-
   Debug frequent Argo Events issues with proven solutions. Fix JSON parsing failures, dependency mismatches, namespace conflicts, and webhook delivery problems.
+provenance: human
 ---
 # Common Patterns
 

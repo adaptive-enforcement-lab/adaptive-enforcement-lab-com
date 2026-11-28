@@ -3,6 +3,7 @@ title: Installation Scopes
 description: >-
   Choose the right installation scope for your GitHub Core App.
   Organization-wide vs selective repository access patterns.
+provenance: human
 ---
 
 # Installation Scopes

@@ -2,6 +2,7 @@
 title: EventSource Configuration
 description: >-
   Connect to external systems with EventSources. Configure Pub/Sub subscriptions, GitHub webhooks, and resource limits for reliable event ingestion.
+provenance: human
 ---
 # EventSource Configuration
 

@@ -8,6 +8,7 @@ tags:
   - deployment
   - monitoring
   - kyverno
+provenance: human
 ---
 # Phase 3: Policy Rollout Strategy
 

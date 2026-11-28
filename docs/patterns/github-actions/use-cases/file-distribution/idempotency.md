@@ -2,6 +2,7 @@
 title: Idempotency
 description: >-
   Safe re-execution patterns for file distribution: force overwrite branch management, check-before-act change detection, and upsert PR creation with git status.
+provenance: human
 ---
 
 # Idempotency in File Distribution

@@ -2,6 +2,7 @@
 title: Managing Incompatible Dependency Updates
 description: >-
   Strategically revert incompatible dependency updates to ensure consistent peer-dependency resolution and prevent automated build failures.
+provenance: machine
 ---
 # Managing Incompatible Dependency Updates
 

@@ -9,6 +9,7 @@ tags:
   - runners
   - hardening
   - infrastructure
+provenance: human
 ---
 
 # Self-Hosted Runner Hardening

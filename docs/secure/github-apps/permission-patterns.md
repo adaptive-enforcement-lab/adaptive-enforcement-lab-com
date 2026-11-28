@@ -3,6 +3,7 @@ title: Permission Patterns
 description: >-
   Common GitHub App permission configurations for automation scenarios.
   Read-only, standard, and full automation patterns with decision tree.
+provenance: human
 ---
 
 # Permission Design Patterns

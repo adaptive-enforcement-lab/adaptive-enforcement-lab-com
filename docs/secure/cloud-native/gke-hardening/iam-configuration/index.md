@@ -2,6 +2,7 @@
 title: IAM Configuration
 description: >-
   Least-privilege IAM roles for GKE nodes and workloads. Workload Identity Federation for external authentication and comprehensive audit logging for visibility.
+provenance: human
 ---
 
 # IAM Configuration

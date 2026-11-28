@@ -2,6 +2,7 @@
 title: Policy-as-Code Operations
 description: >-
   Manage Kyverno policy lifecycle from creation to enforcement. Add policies safely, monitor compliance, handle exceptions, and maintain GitOps-driven operations.
+provenance: human
 ---
 # Policy-as-Code Operations
 

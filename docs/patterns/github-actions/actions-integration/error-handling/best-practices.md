@@ -2,6 +2,7 @@
 title: Error Handling Best Practices
 description: >-
   Error handling examples, best practices, patterns, and troubleshooting for GitHub Actions workflows.
+provenance: human
 ---
 
 ## Complete Error Handling Example

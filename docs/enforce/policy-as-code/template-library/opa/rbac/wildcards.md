@@ -9,6 +9,7 @@ tags:
   - wildcards
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA RBAC Wildcard Prevention Template
 

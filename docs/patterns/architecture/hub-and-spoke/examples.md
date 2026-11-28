@@ -2,6 +2,7 @@
 title: Hub and Spoke Implementation Examples
 description: >-
   GitHub Actions file distribution, event-driven Argo workflows, and hub-spoke communication patterns for parallel execution across multiple repositories.
+provenance: human
 ---
 
 # Hub and Spoke Implementation Examples

@@ -2,6 +2,7 @@
 title: Real-World Example
 description: >-
   File distribution across 40 repositories using idempotency patterns. Branch reset, change detection, conditional commits, and force-with-lease push strategies.
+provenance: human
 ---
 
 # Real-World Example: File Distribution

@@ -8,6 +8,7 @@ tags:
   - quotas
   - governance
   - kubernetes
+provenance: human
 ---
 # OPA Resource Governance Templates
 

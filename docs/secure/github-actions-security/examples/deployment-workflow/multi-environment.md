@@ -2,6 +2,7 @@
 title: Multi-Environment Deployment Pipeline
 description: >-
   Coordinate deployments across dev, staging, and production environments with approval gates, wait timers, and progressive rollout patterns for cloud infrastructure
+provenance: human
 ---
 
 !!! note "Environment Protection Prerequisites"

@@ -2,6 +2,7 @@
 title: Simple Filtering
 description: >-
   Filter events with data, context, time, and expression filters. Reduce noise and prevent unnecessary workflow executions with targeted event matching.
+provenance: human
 ---
 # Simple Filtering
 

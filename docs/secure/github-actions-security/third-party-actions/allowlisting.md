@@ -8,6 +8,7 @@ tags:
   - third-party-actions
   - governance
   - allowlisting
+provenance: human
 ---
 
 # Action Allowlisting and Organizational Governance

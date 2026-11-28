@@ -9,6 +9,7 @@ tags:
   - optimization
   - developers
   - operators
+provenance: human
 ---
 # Work Avoidance
 

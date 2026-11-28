@@ -2,6 +2,7 @@
 title: Actions Runner Controller Patterns
 description: >-
   Deploy ephemeral GitHub Actions runners on Kubernetes with ARC, horizontal pod autoscaling, network policies, and pod security standards for secure self-hosted infrastructure
+provenance: human
 ---
 
 # Actions Runner Controller Patterns

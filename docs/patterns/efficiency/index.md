@@ -2,6 +2,7 @@
 title: Efficiency Patterns
 description: >-
   Optimize automation with idempotency and work avoidance. Safe retries plus skipping unnecessary operations maximize efficiency in CI/CD and platform engineering.
+provenance: human
 ---
 # Efficiency Patterns
 

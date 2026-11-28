@@ -8,6 +8,7 @@ tags:
   - resource-limits
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Resource Governance Templates
 

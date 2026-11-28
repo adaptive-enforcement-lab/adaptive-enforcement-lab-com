@@ -12,6 +12,7 @@ tags:
   - operators
 description: >-
   Reusable GitHub Actions workflow patterns for SLSA provenance with slsa-github-generator: generic artifacts, container images, and verification gates.
+provenance: human
 ---
 # GitHub Actions Workflow Patterns for SLSA
 

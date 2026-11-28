@@ -2,6 +2,7 @@
 title: Sensor Troubleshooting
 description: >-
   Fix Sensor filter mismatches, condition failures, and trigger permission errors. Debug event routing with structured approaches for production troubleshooting.
+provenance: human
 ---
 # Sensor Troubleshooting
 

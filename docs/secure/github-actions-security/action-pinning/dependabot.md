@@ -7,6 +7,7 @@ tags:
   - security
   - dependabot
   - automation
+provenance: human
 ---
 
 # Dependabot for Action Updates

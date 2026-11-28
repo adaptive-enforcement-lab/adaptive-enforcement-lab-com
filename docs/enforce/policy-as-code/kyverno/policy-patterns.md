@@ -3,6 +3,7 @@ title: Kyverno Policy Patterns
 description: >-
   Common validation and mutation patterns: image provenance, required labels, resource limits,
   privilege escalation prevention, and automatic security configurations.
+provenance: human
 ---
 
 # Kyverno Policy Patterns

@@ -2,6 +2,7 @@
 title: Security Best Practices
 description: >-
   Secure GitHub App tokens with exposure prevention, minimal lifetime scope, and audit logging. Never log tokens; use environment variables and late generation.
+provenance: human
 ---
 
 # Security Best Practices

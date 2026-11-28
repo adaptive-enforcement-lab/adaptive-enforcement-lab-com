@@ -10,6 +10,7 @@ categories:
 description: >-
   When security stops being the bottleneck. The culture playbook that made security everyone's job (and nobody's blocker).
 slug: security-team-became-invisible
+provenance: human
 ---
 # The Security Team That Became Invisible
 

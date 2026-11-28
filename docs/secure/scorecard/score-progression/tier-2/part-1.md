@@ -11,6 +11,7 @@ tags:
   - supply-chain
   - provenance
 
+provenance: human
 ---
 # Tier 2: Score 8 to 9 (Strong Posture → Advanced Security)
 

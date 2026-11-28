@@ -9,6 +9,7 @@ tags:
   - dependency-scanning
   - container-security
   - sarif
+provenance: human
 ---
 
 # Security Scanning Workflows

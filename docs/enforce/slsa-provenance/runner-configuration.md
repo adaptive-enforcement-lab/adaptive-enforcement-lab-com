@@ -11,6 +11,7 @@ tags:
   - platform-teams
 description: >-
   GitHub-hosted vs self-hosted runners for SLSA: isolation requirements, security implications, and configuration patterns. Understand which runner types achieve each SLSA level.
+provenance: human
 ---
 # Runner Configuration for SLSA Compliance
 

@@ -1,8 +1,7 @@
 ---
 title: Emergency Access
 description: >-
-  Break-glass procedures for production incidents with proper governance and documentation.
-  Emergency access patterns that balance speed with accountability.
+  Break-glass procedures for production incidents with proper governance and documentation. Emergency access patterns that balance speed with accountability.
 tags:
   - github
   - security
@@ -10,6 +9,7 @@ tags:
   - incident-response
   - operators
   - policy-enforcement
+provenance: human
 ---
 
 # Emergency Access

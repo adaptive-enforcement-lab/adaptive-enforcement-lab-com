@@ -2,6 +2,7 @@
 title: ConfigMap Operations
 description: >-
   Store CLI state in Kubernetes ConfigMaps with get-or-create pattern for idempotent operations. Check IsNotFound before creating resources safely.
+provenance: human
 ---
 # ConfigMap Operations
 

@@ -2,6 +2,7 @@
 title: GitHub Actions Integration
 description: >-
   Implement Kyverno policy validation in GitHub Actions workflows. Automate environment detection, manifest rendering, and parallel security compliance checks.
+provenance: human
 ---
 # GitHub Actions Integration
 

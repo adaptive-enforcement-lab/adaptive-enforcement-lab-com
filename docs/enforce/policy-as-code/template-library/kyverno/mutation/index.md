@@ -7,6 +7,7 @@ tags:
   - mutation
   - policy-as-code
   - kubernetes
+provenance: human
 ---
 # Kyverno Mutation Templates
 

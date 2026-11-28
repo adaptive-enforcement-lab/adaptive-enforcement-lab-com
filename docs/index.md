@@ -4,6 +4,7 @@ description: >-
   DevSecOps automation patterns for enterprise-grade GitHub workflows.
   Security by design, policy as code, and enforcement at scale.
 comments: false
+provenance: human
 ---
 
 # Govern, Enforce, Secure

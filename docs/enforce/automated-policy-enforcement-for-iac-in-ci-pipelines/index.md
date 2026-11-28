@@ -3,6 +3,7 @@ title: Automated Policy Enforcement for IaC in CI Pipelines
 nav_title: Automated Policy
 description: >-
   Use CI/CD pipeline integration to proactively check Infrastructure as Code (IaC) against security, compliance, and cost policies before deployment.
+provenance: machine
 ---
 Embedding automated policy enforcement into a continuous integration (CI) pipeline
 provides early detection of infrastructure drift and non-compliant configurations,

@@ -2,6 +2,7 @@
 title: Volume Patterns
 description: >-
   Choose the right volume type for workflows: emptyDir scratch space, ConfigMap caches, Secrets for credentials, and PersistentVolumeClaims for durable storage.
+provenance: human
 ---
 # Volume Patterns
 

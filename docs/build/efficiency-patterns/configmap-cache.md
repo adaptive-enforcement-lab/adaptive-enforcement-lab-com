@@ -11,6 +11,7 @@ tags:
   - operators
 description: >-
   ConfigMap as volume mount pattern for zero-API-overhead caching in Kubernetes workflows and jobs. Sub-millisecond lookups, no rate limits, clean implementation.
+provenance: human
 ---
 # ConfigMap as Cache Pattern
 

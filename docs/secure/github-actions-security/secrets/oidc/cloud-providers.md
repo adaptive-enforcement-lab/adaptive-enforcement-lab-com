@@ -2,6 +2,7 @@
 title: Cloud Provider OIDC Patterns
 description: >-
   GCP Workload Identity Federation setup, Azure federated credentials configuration, and secretless cloud authentication patterns
+provenance: human
 ---
 
 !!! note "Environment-Level Trust Recommended"

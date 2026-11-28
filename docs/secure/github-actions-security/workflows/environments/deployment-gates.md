@@ -2,6 +2,7 @@
 title: Deployment Gates Patterns
 description: >-
   Production deployment with triple-gate protection, secure fork PR preview environments, and progressive canary deployment patterns with automated rollback
+provenance: human
 ---
 
 !!! note "Layer Multiple Protection Gates"

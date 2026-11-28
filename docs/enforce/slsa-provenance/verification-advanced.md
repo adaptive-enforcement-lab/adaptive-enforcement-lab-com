@@ -14,6 +14,7 @@ tags:
   - security-teams
 description: >-
   Advanced SLSA provenance verification: policy engine integration, artifact registry verification, local security audits. Kyverno and OPA Gatekeeper patterns.
+provenance: human
 ---
 # Advanced Verification Patterns
 

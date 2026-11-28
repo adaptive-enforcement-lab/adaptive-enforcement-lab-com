@@ -7,6 +7,7 @@ tags:
   - scorecard
   - security
   - best-practices
+provenance: human
 ---
 # Security Practices Checks
 

@@ -13,6 +13,7 @@ tags:
   - security-teams
 description: >-
   SLSA level classification decision trees: determine your target SLSA level based on security requirements, runner configuration, and compliance needs. Includes self-hosted runner evaluation.
+provenance: human
 ---
 # SLSA Level Classification: Decision Trees
 

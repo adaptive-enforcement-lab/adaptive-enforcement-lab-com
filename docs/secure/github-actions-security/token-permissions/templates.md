@@ -8,6 +8,7 @@ tags:
   - github-token
   - permissions
   - templates
+provenance: human
 ---
 
 # GITHUB_TOKEN Permission Templates

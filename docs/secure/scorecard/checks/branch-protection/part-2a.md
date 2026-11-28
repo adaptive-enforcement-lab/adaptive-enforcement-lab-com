@@ -2,6 +2,7 @@
 title: Dependency Update Tools
 description: >-
   Configure Dependabot for automated dependency updates with version constraints, grouped updates, and GitHub-native integration for pull requests.
+provenance: human
 ---
 # Dependency Update Tools
 

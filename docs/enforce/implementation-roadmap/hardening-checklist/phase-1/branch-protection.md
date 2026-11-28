@@ -8,6 +8,7 @@ tags:
   - github
   - commit-signing
   - enforcement
+provenance: human
 ---
 # Phase 1: Branch Protection Rules
 

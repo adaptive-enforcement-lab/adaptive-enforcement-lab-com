@@ -2,6 +2,7 @@
 title: Concurrency Control
 description: >-
   Prevent workflow conflicts with mutex synchronization, semaphores for limited parallelism, and TTL strategies for automatic cleanup of completed workflows.
+provenance: human
 ---
 # Concurrency Control
 

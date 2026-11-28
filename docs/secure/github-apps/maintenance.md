@@ -3,6 +3,7 @@ title: Maintenance
 description: >-
   Ongoing care and lifecycle management for GitHub Core Apps.
   Key rotation, permission audits, and health monitoring.
+provenance: human
 ---
 
 # Maintenance

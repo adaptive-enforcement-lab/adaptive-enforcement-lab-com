@@ -2,6 +2,7 @@
 title: Emergency Rotation and Checklist
 description: >-
   Emergency breach response workflows with automated rotation scripts, comprehensive pre-rotation checklist, and common secret rotation mistakes to avoid
+provenance: human
 ---
 
 Before implementing rotation:

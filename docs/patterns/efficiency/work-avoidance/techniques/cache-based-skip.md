@@ -2,6 +2,7 @@
 title: Cache-Based Skip
 description: >-
   Use artifact existence as work completion proxy. Cache key discipline, invalidation strategies, and validation patterns for builds, dependencies, and artifacts.
+provenance: human
 ---
 # Cache-Based Skip
 

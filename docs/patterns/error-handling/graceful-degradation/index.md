@@ -2,6 +2,7 @@
 title: Graceful Degradation
 description: >-
   Build tiered fallback systems that degrade performance, not availability. Cache layers, API resilience, and automatic failover patterns for platform reliability.
+provenance: human
 ---
 # Graceful Degradation
 

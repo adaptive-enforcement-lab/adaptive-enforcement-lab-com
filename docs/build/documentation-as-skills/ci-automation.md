@@ -6,6 +6,7 @@ tags:
   - ci-cd
   - github-actions
   - automation
+provenance: human
 ---
 # CI Automation
 

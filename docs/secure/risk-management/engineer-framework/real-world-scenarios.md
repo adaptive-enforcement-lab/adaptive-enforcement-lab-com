@@ -6,6 +6,7 @@ tags:
   - vulnerability-management
 description: >-
   Real-world vulnerability scenarios with complete risk assessments, decision rationale, and execution plans. Log4Shell, dependency vulnerabilities, and Kubernetes exploits.
+provenance: human
 ---
 # Real-World Vulnerability Scenarios
 

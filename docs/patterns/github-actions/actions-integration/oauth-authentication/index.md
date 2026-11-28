@@ -2,6 +2,7 @@
 title: OAuth User Authentication
 description: >-
   OAuth flows for user-context operations. Web application patterns, device flow for CLI tools, and token refresh strategies for GitHub Apps.
+provenance: human
 ---
 
 # OAuth User Authentication

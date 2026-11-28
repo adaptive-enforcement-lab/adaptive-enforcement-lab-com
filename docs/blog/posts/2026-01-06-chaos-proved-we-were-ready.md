@@ -10,6 +10,7 @@ categories:
 description: >-
   When chaos engineering finds the incident before production does. The pod deletion that validated our operational resilience.
 slug: chaos-proved-we-were-ready
+provenance: human
 ---
 # The Chaos That Proved We Were Ready
 

@@ -2,6 +2,7 @@
 title: Workflow Integration
 description: >-
   Integrate release-please with GitHub Actions using App tokens. Configure conditional builds, monorepo strategies, and output variables for automated releases.
+provenance: human
 ---
 # Workflow Integration
 

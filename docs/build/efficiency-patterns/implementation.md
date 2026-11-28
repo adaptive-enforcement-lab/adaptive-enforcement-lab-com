@@ -8,6 +8,7 @@ tags:
   - implementation
   - argo-workflows
   - operators
+provenance: human
 ---
 
 # ConfigMap Cache Implementation

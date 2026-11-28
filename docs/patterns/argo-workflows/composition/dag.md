@@ -2,6 +2,7 @@
 title: DAG Orchestration
 description: >-
   Express complex dependencies declaratively with DAG templates. Automatic parallelization, diamond patterns, and failure propagation for multi-path pipelines.
+provenance: human
 ---
 # DAG Orchestration
 

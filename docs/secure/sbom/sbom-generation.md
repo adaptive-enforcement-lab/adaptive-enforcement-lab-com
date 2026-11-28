@@ -12,6 +12,7 @@ tags:
   - developers
   - operators
   - sbom
+provenance: human
 ---
 
 # SBOM Generation

@@ -2,6 +2,7 @@
 title: Secret Scanning Alert Response
 description: >-
   Alert triage workflow, incident response playbook, and emergency revocation procedures for leaked credentials in repositories
+provenance: human
 ---
 
 !!! warning "Revoke First, Investigate Later"

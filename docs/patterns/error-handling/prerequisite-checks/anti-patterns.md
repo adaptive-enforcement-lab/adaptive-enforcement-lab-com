@@ -2,6 +2,7 @@
 title: Anti-Patterns
 description: >-
   Avoid scattered checks, silent failures, and incomplete validation. Learn what not to do when implementing prerequisite validation in deployment automation.
+provenance: human
 ---
 # Anti-Patterns
 

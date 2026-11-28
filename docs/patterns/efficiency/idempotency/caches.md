@@ -2,6 +2,7 @@
 title: Cache Considerations
 description: >-
   Survive cache misses with cache-resilient idempotency. True idempotent workflows work regardless of cache state, preventing mysterious rerun failures.
+provenance: human
 ---
 
 # Cache Considerations

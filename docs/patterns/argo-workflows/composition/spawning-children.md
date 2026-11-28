@@ -2,6 +2,7 @@
 title: Spawning Child Workflows
 description: >-
   Spawn independent child workflows with resource.action: create pattern. Achieve isolation, reusability, and visibility through parent-child workflow composition.
+provenance: human
 ---
 # Spawning Child Workflows
 

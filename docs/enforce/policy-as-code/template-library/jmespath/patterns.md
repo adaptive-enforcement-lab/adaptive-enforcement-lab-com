@@ -7,6 +7,7 @@ tags:
   - jmespath
   - policy-as-code
   - kubernetes
+provenance: human
 ---
 # JMESPath Patterns for Kyverno Policies
 

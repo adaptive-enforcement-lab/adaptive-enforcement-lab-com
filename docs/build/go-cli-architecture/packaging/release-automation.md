@@ -2,6 +2,7 @@
 title: Release Automation
 description: >-
   Automate multi-architecture builds with GoReleaser and GitHub Actions. One git tag push creates binaries, container images, and changelogs for all platforms.
+provenance: human
 ---
 # Release Automation
 

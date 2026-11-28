@@ -2,6 +2,7 @@
 title: Migration Guide
 description: >-
   Eight-phase checklist from shadow mode to decommission. Real-world timeline, common pitfalls, and pre-migration validation criteria for zero-risk migrations.
+provenance: human
 ---
 
 # Migration Guide

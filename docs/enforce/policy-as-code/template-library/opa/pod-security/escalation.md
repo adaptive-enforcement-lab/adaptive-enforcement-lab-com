@@ -9,6 +9,7 @@ tags:
   - pod-security
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Privilege Escalation Prevention
 

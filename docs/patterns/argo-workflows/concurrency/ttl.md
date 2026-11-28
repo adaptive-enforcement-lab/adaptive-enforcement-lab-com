@@ -2,6 +2,7 @@
 title: TTL Strategy
 description: >-
   Prevent unbounded workflow accumulation with TTL strategies. Automatic cleanup of completed workflows, distinct retention for successes vs failures, and etcd relief.
+provenance: human
 ---
 # TTL Strategy
 

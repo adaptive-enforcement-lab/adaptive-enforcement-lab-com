@@ -12,6 +12,7 @@ tags:
   - operators
 description: >-
   SLSA provenance for Go projects: slsa-github-generator integration, multi-platform builds, and GoReleaser patterns with cryptographic build integrity proofs.
+provenance: human
 ---
 # SLSA Provenance for Go Projects
 

@@ -3,6 +3,7 @@ title: Integrating Automated Compliance Audits in the CI Pipeline
 nav_title: CI Compliance Audits
 description: >-
   Implement automated compliance audits as discrete, single-purpose workflows within CI/CD. Treat compliance as code to enforce security policies and validate release integrity.
+provenance: human_edited
 ---
 Integrating automated compliance audits directly into the continuous integration (CI) pipeline is a foundational practice for ensuring system security and release integrity.
 By defining compliance checks in version-controlled workflows, teams can move from manual, error-prone gatekeeping to a consistent, enforceable, and transparent system that validates every commit and release candidate against established standards.

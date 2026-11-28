@@ -2,6 +2,7 @@
 title: Security Scanning Checklist
 description: >-
   Comprehensive security scanning checklist with SAST, dependency scanning, container scanning, and common workflow mistakes
+provenance: human
 ---
 
 ## Security Checklist

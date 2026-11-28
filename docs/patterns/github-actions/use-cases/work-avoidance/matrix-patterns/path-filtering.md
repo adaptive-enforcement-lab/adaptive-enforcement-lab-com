@@ -2,6 +2,7 @@
 title: Path-Based Filtering Patterns
 description: >-
   Run jobs only when specific files change. Compare static path triggers, dynamic matrix generation, and declarative filters for monorepos with shared dependencies.
+provenance: human
 ---
 
 # Path-Based Filtering Patterns

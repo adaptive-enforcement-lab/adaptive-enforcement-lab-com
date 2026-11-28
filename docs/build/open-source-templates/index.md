@@ -9,6 +9,7 @@ tags:
   - developers
 description: >-
   Production-ready templates for CONTRIBUTING.md, SECURITY.md, and GitHub issue forms. OpenSSF Best Practices Badge compliant, copy-paste ready, with realistic SLAs.
+provenance: human
 ---
 # Open Source Project Templates
 

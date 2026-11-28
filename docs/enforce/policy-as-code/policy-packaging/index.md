@@ -2,6 +2,7 @@
 title: Policy Packaging
 description: >-
   Build policy-toolkit containers that aggregate Kyverno policies from multiple OCI sources. Multi-stage Docker builds for local dev and CI validation.
+provenance: human
 ---
 # Policy Packaging
 

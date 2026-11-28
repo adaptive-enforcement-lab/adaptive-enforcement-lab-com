@@ -8,6 +8,7 @@ tags:
   - ci-cd
   - examples
   - workflows
+provenance: human
 ---
 
 # Hardened CI Workflow

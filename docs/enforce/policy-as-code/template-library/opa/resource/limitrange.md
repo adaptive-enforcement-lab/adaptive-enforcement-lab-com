@@ -9,6 +9,7 @@ tags:
   - ephemeral-storage
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA LimitRange and Ephemeral Storage Templates
 

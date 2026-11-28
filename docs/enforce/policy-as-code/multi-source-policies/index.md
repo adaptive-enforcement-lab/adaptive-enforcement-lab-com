@@ -2,6 +2,7 @@
 title: Multi-Source Policy Aggregation
 description: >-
   Aggregate Kyverno policies from security, DevOps, and application teams into unified enforcement. Build multi-stage containers using OCI repo dependencies.
+provenance: human
 ---
 # Multi-Source Policy Aggregation
 

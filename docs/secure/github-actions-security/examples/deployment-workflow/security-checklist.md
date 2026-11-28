@@ -2,6 +2,7 @@
 title: Deployment Security Checklist
 description: >-
   Comprehensive deployment security checklist with OIDC authentication, environment protection, common deployment mistakes, and production security best practices
+provenance: human
 ---
 
 !!! warning "Zero Stored Credentials"

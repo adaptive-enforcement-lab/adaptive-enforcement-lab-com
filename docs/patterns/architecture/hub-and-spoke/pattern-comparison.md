@@ -7,6 +7,7 @@ tags:
   - patterns
   - comparison
   - decision-making
+provenance: human
 ---
 
 # Hub-Spoke vs Alternative Patterns

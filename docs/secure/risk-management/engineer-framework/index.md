@@ -8,6 +8,7 @@ tags:
   - vulnerability-management
 description: >-
   Risk prioritization framework for engineers. CVSS interpretation, exploitability analysis, blast radius calculation, and decision trees for patch management and vulnerability remediation.
+provenance: human
 ---
 # Risk Prioritization Framework for Engineers
 

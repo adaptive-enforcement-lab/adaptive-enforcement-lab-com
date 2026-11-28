@@ -2,6 +2,7 @@
 title: Performance
 description: >-
   Optimize parallel processing with max-parallel tuning, rate limit management, and conditional processing. Scale distribution workflows from 10 to 100+ repos.
+provenance: human
 ---
 
 # Performance Optimization

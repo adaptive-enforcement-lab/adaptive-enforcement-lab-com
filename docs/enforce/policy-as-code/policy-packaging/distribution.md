@@ -2,6 +2,7 @@
 title: Distribution and Testing
 description: >-
   Version, test, and distribute policy-toolkit containers. Semantic versioning, security scanning with Trivy, and registry authentication patterns.
+provenance: human
 ---
 # Distribution and Testing
 

@@ -1,6 +1,7 @@
 ---
 title: Workload Identity
 description: Configure Workload Identity for secure pod-to-GCP authentication without service account keys, linking Kubernetes SAs to GCP SAs with Terraform best practices.
+provenance: human
 ---
 
 # Workload Identity

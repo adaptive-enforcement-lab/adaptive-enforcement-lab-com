@@ -3,6 +3,7 @@ title: Correctly Handling Boolean Inputs in CI/CD Workflows
 nav_title: Boolean Inputs
 description: >-
   Explicitly typed boolean inputs in CI/CD workflows must be handled as booleans, not strings, to prevent silent deployment failures and ensure consistent release processes.
+provenance: machine
 ---
 Correctly handling boolean type inputs in CI/CD workflows prevents silent deployment
 failures and ensures consistent release processes. A common mistake is to treat a

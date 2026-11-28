@@ -2,6 +2,7 @@
 title: "Stage 1: Discovery"
 description: >-
   Query organization repositories with GraphQL for distribution targets. Implements pagination handling, fail-fast guards, and dynamic team repository discovery.
+provenance: human
 ---
 
 # Stage 1: Repository Discovery

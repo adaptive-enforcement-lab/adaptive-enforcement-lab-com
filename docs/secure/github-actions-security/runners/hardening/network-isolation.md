@@ -2,6 +2,7 @@
 title: Network Isolation and Credential Protection
 description: >-
   Deny-by-default firewall rules, cloud metadata endpoint blocking, network namespace isolation, and OIDC credential patterns
+provenance: human
 ---
 
 !!! warning "Deny by Default Firewall"

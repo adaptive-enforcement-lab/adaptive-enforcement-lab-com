@@ -1,6 +1,7 @@
 ---
 title: Notifications & Badges
 description: Implement real-time Slack notifications and public security badges to drive immediate feedback and build visible recognition systems across engineering teams.
+provenance: human
 ---
 # Notifications & Badges
 

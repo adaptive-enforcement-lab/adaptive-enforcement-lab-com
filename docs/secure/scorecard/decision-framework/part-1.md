@@ -7,6 +7,7 @@ tags:
   - scorecard
   - decision-making
   - trade-offs
+provenance: human
 ---
 # Decision Framework
 

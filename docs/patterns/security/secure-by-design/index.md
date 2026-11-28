@@ -8,6 +8,7 @@ tags:
   - kubernetes
   - patterns
   - zero-trust
+provenance: human
 ---
 # Secure-by-Design Pattern Library
 

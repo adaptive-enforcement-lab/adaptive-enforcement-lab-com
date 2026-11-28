@@ -6,6 +6,7 @@ tags:
   - vulnerability-management
 description: >-
   CVSS score interpretation for engineers. Understanding CVSS 3.1 components, translating scores to actionable decisions, and real-world vulnerability assessment examples.
+provenance: human
 ---
 # CVSS Score Interpretation for Engineers
 

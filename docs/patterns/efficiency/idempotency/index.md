@@ -9,6 +9,7 @@ tags:
   - developers
   - operators
   - idempotency
+provenance: human
 ---
 
 # Idempotency

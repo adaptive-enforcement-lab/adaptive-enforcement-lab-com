@@ -7,6 +7,7 @@ tags:
   - kubernetes
   - defense-in-depth
   - hardening
+provenance: human
 ---
 # Defense in Depth
 

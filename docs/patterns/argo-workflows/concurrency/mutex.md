@@ -2,6 +2,7 @@
 title: Mutex Synchronization
 description: >-
   Enforce single-execution guarantees with mutex synchronization. Queue workflows for shared resources, prevent overlapping deployments, and eliminate race conditions.
+provenance: human
 ---
 # Mutex Synchronization
 

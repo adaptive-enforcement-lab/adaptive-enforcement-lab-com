@@ -8,6 +8,7 @@ tags:
   - kubernetes
   - iam
   - cloud-security
+provenance: human
 ---
 # Workload Identity Federation Implementation
 

@@ -2,6 +2,7 @@
 title: Workflow Triggers
 description: >-
   Ensure release-please PRs trigger build pipelines using GitHub App tokens. Bypass GITHUB_TOKEN security limitations with proper workflow event configuration.
+provenance: human
 ---
 # Workflow Triggers
 

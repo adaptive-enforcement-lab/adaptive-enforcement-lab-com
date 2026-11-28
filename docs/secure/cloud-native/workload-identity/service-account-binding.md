@@ -2,6 +2,7 @@
 title: Service Account Binding
 description: >-
   Create Kubernetes ServiceAccounts and GCP service accounts. Configure IAM bindings for Workload Identity with least-privilege access to GCP resources.
+provenance: human
 ---
 
 # Service Account Binding

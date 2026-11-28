@@ -8,6 +8,7 @@ tags:
   - slsa
   - scorecard
   - validation
+provenance: human
 ---
 # Phase 4: Compliance Validation
 

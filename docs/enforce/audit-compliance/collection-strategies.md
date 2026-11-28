@@ -8,6 +8,7 @@ tags:
   - evidence
   - ci-cd
   - operators
+provenance: human
 ---
 
 # Evidence Collection Strategies

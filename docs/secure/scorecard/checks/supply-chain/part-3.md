@@ -2,6 +2,7 @@
 title: Binary-Artifacts Check
 description: >-
   Detect and remediate binary artifacts in repositories to prevent supply chain compromise and improve dependency transparency for security audits.
+provenance: human
 ---
 # Binary-Artifacts Check
 

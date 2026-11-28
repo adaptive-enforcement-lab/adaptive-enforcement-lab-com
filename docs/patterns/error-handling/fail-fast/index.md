@@ -8,6 +8,7 @@ tags:
   - developers
 description: >-
   Detect and halt on precondition failures before expensive operations begin. Validate inputs, permissions, and state upfront in CI/CD and automation workflows.
+provenance: human
 ---
 # Fail Fast
 

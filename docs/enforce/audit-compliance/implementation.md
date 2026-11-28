@@ -8,6 +8,7 @@ tags:
   - implementation
   - ci-cd
   - operators
+provenance: human
 ---
 
 # Evidence Collection Implementation

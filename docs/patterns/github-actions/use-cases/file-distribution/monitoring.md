@@ -2,6 +2,7 @@
 title: Monitoring
 description: >-
   Track file distribution with workflow summaries, status badges, and metrics collection. Transform automation black boxes into transparent, auditable processes.
+provenance: human
 ---
 
 # Monitoring and Observability

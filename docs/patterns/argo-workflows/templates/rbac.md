@@ -2,6 +2,7 @@
 title: RBAC Configuration
 description: >-
   Apply least privilege to workflows with ServiceAccount RBAC. Restrict verbs, resources, and names to minimize blast radius and prevent security escalation.
+provenance: human
 ---
 # RBAC Configuration
 

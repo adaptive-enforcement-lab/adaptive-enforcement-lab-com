@@ -14,6 +14,7 @@ tags:
   - automation
   - team-building
   - culture
+provenance: human
 ---
 # Security Culture Playbook
 

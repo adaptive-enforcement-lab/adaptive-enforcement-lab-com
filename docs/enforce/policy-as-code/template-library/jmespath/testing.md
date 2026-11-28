@@ -8,6 +8,7 @@ tags:
   - policy-as-code
   - kubernetes
   - testing
+provenance: human
 ---
 # JMESPath Testing and Debugging
 

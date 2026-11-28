@@ -2,6 +2,7 @@
 title: Credential Rotation and Security
 description: >-
   Automated credential rotation patterns and security best practices for GitHub App credentials. Key rotation workflows.
+provenance: human
 ---
 
 # Credential Rotation and Security

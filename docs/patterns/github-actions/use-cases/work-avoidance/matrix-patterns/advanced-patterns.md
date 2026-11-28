@@ -2,6 +2,7 @@
 title: Advanced Matrix Patterns
 description: >-
   Combine fail-fast strategies with dynamic matrices. Segregate critical checks from optional validations and merge multiple filtering techniques for maximum efficiency.
+provenance: human
 ---
 
 # Advanced Matrix Patterns

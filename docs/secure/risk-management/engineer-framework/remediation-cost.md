@@ -6,6 +6,7 @@ tags:
   - remediation
 description: >-
   Remediation cost vs. risk analysis framework. Cost calculation, priority scoring, and examples of high vs. low priority patches.
+provenance: human
 ---
 # Remediation Cost vs. Risk Analysis
 

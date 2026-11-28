@@ -7,6 +7,7 @@ tags:
   - security
 description: >-
   Vendor-neutral patterns for automated credential rotation: safe cutover sequencing, zero-downtime rollout, rollback, and when to eliminate the credential instead.
+provenance: human
 ---
 # Credential Rotation at Scale
 

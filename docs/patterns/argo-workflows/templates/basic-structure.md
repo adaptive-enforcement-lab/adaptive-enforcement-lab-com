@@ -2,6 +2,7 @@
 title: Basic WorkflowTemplate Structure
 description: >-
   Master WorkflowTemplate anatomy: parameter flow, template types, resource limits, and validation. Build reusable, documented automation for Argo Workflows.
+provenance: human
 ---
 # Basic WorkflowTemplate Structure
 

@@ -7,6 +7,7 @@ tags:
   - patterns
 description: >-
   Vendor-neutral governance patterns for audit logging, credential rotation, ownership tagging, and least privilege, each linked to an implementation guide.
+provenance: human
 ---
 # Governance Patterns
 

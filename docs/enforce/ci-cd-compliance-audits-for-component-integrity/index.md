@@ -3,6 +3,7 @@ title: CI/CD Compliance Audits for Component Integrity
 description: >-
   Automate component identity and release process checks in CI/CD to catch
   supply chain violations before deployment.
+provenance: human_edited
 ---
 
 Compliance audits belong in the pipeline, not in a spreadsheet reviewed after release. A CI job that verifies signatures, diffs SBOMs, and checks provenance attestations blocks a non-compliant artifact before it ships. A quarterly manual review only tells you it already shipped.

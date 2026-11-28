@@ -2,6 +2,7 @@
 title: Cache-Based Skip
 description: >-
   Skip operations when output artifacts already exist. Derive cache keys from source file hashes to eliminate redundant builds when inputs remain unchanged.
+provenance: human
 ---
 # Cache-Based Skip
 

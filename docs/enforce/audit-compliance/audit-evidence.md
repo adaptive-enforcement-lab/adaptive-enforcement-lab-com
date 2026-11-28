@@ -9,6 +9,7 @@ tags:
   - sdlc
   - governance
   - operators
+provenance: human
 ---
 
 # Audit Evidence Collection

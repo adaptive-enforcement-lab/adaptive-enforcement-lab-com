@@ -2,6 +2,7 @@
 title: External CI/CD Platform Credentials
 description: >-
   Store GitHub App credentials in external CI/CD platforms including Jenkins, GitLab CI, and CircleCI.
+provenance: human
 ---
 
 # External CI/CD Platform Credentials

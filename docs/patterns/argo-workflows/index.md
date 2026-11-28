@@ -9,6 +9,7 @@ tags:
   - operators
 description: >-
   Production Argo Workflows patterns: reusable templates, error handling, concurrency control, composition, and scheduled automation for Kubernetes operators.
+provenance: human
 ---
 # Argo Workflows Patterns
 

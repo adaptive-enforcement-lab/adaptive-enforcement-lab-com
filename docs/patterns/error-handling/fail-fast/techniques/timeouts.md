@@ -6,6 +6,7 @@ tags:
   - fail-fast
   - timeouts
   - circuit-breakers
+provenance: human
 ---
 # Timeout Enforcement
 

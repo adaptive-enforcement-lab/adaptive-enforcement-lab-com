@@ -2,6 +2,7 @@
 title: Operational Workflows
 description: >-
   Safely roll out Kyverno policy changes using Audit-first workflows. Automate backups, tune performance for large clusters, and maintain operational excellence.
+provenance: human
 ---
 # Operational Workflows
 

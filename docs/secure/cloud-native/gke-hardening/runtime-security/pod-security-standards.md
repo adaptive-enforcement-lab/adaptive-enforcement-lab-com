@@ -1,6 +1,7 @@
 ---
 title: Pod Security Standards
 description: Enforce Pod Security Standards with restricted, baseline, and privileged levels for namespace-level workload security policies in production GKE environments.
+provenance: human
 ---
 
 # Pod Security Standards

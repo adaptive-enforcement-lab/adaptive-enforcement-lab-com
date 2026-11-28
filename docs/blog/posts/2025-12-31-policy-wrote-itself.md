@@ -10,6 +10,7 @@ categories:
 description: >-
   When every team needs pod security policies but nobody wants to write YAML. The template library that turns policy enforcement into fill-in-the-blanks.
 slug: policy-wrote-itself
+provenance: human
 ---
 # The Policy That Wrote Itself
 

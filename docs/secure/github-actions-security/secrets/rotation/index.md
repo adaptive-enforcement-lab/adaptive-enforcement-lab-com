@@ -9,6 +9,7 @@ tags:
   - secrets
   - rotation
   - automation
+provenance: human
 ---
 
 # Secret Rotation Patterns

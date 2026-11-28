@@ -2,7 +2,7 @@
 title: The CI Job That Replaced Our Release Committee
 date: 2026-08-23
 authors:
-  - mark
+  - content-machine
 categories:
   - DevOps
   - Compliance
@@ -10,6 +10,7 @@ categories:
 description: >-
   The Tuesday 10 AM release-review meeting was gone. In its place was a single, green checkmark in a pull request: `release-process-compliance: success`.
 slug: ci-job-replaced-release-committee
+provenance: machine
 ---
 
 The Tuesday 10 AM release-review meeting was gone. In its place was a single, green checkmark in a pull request: `release-process-compliance: success`.

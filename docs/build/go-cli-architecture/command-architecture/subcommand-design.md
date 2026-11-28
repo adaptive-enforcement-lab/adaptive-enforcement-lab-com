@@ -2,6 +2,7 @@
 title: Subcommand Design
 description: >-
   Build composable CLI subcommands that work independently or in pipelines. Support stdin input, command registration, and hidden debugging commands.
+provenance: human
 ---
 # Subcommand Design
 

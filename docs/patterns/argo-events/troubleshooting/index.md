@@ -2,6 +2,7 @@
 title: Troubleshooting
 description: >-
   Debug event flows systematically from EventSource to Workflow. Use diagnostic commands and logging levels to isolate failures in production event systems.
+provenance: human
 ---
 # Troubleshooting
 

@@ -2,6 +2,7 @@
 title: Matrix Filtering
 description: >-
   Generate GitHub Actions matrix combinations from changed paths instead of running every job every time. Skip unaffected packages, services, and platforms.
+provenance: human
 ---
 # Matrix Filtering
 

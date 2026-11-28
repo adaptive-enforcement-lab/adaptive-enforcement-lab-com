@@ -2,6 +2,7 @@
 title: Pipeline Integration
 description: >-
   Build unified release pipelines that deploy versioned docs conditionally. Integrate release-please, change detection, and GitHub Pages with work avoidance logic.
+provenance: human
 ---
 # Pipeline Integration
 

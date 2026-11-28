@@ -12,6 +12,7 @@ tags:
   - security-teams
 description: >-
   SLSA adoption metrics and pilot programs: track coverage, quality, and verification success. Measure ROI with security improvements, compliance benefits, and operational efficiency gains.
+provenance: human
 ---
 # SLSA Adoption Metrics and Pilot Programs
 

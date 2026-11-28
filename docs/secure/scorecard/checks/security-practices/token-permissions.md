@@ -10,6 +10,7 @@ tags:
   - permissions
   - least-privilege
 
+provenance: human
 ---
 # Token-Permissions Check
 

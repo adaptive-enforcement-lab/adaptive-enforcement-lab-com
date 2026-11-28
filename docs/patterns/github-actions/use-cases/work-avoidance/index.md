@@ -9,6 +9,7 @@ tags:
   - patterns
   - developers
   - operators
+provenance: human
 ---
 # Work Avoidance in GitHub Actions
 

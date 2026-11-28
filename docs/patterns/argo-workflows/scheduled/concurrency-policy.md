@@ -2,6 +2,7 @@
 title: Concurrency Policies
 description: >-
   Control overlapping scheduled runs with Allow, Forbid, and Replace policies. Prevent conflicts, manage resource exhaustion, and handle slow workflow execution.
+provenance: human
 ---
 # Concurrency Policies
 

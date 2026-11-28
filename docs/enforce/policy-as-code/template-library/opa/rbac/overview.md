@@ -8,6 +8,7 @@ tags:
   - rbac
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA RBAC Templates
 

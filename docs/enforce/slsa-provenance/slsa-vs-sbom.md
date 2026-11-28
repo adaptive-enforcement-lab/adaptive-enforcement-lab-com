@@ -12,6 +12,7 @@ tags:
   - security-teams
 description: >-
   SLSA vs SBOM: Clear distinction between build provenance and dependency inventory. Understand when to use each, why you need both, and how they complement each other in supply chain security.
+provenance: human
 ---
 # SLSA vs SBOM: What's the Difference?
 

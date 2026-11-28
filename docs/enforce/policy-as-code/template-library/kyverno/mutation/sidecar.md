@@ -9,6 +9,7 @@ tags:
   - observability
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Mutation Templates: Sidecar Injection
 

@@ -2,6 +2,7 @@
 title: Environment Progression Operations
 description: >-
   Feature flags, quality gates, automated monitoring, and rollback patterns for progressive deployment across dev, staging, and production environments.
+provenance: human
 ---
 
 # Environment Progression Operations

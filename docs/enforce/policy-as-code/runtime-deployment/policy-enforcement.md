@@ -2,6 +2,7 @@
 title: Policy Enforcement
 description: >-
   Deploy Kyverno policies using Helm with environment-specific enforcement modes. Configure background scanning and test admission control before production.
+provenance: human
 ---
 # Policy Enforcement
 

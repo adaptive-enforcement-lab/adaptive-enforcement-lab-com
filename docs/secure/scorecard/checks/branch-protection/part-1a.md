@@ -7,6 +7,7 @@ tags:
   - scorecard
   - branch-protection
   - dependencies
+provenance: human
 ---
 # Branch Protection & Dependency Management Checks
 

@@ -2,6 +2,7 @@
 title: Advanced Security Scanning Patterns
 description: >-
   Advanced security scanning with container vulnerability detection, multi-tool SARIF aggregation, scheduled scans, and automated issue creation workflows
+provenance: human
 ---
 
 ## Advanced Security Scanning Patterns

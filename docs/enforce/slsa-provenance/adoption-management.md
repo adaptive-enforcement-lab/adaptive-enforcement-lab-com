@@ -12,6 +12,7 @@ tags:
   - security-teams
 description: >-
   SLSA adoption management: team coordination, risk management strategies, pilot program design, and success metrics. Organizational playbook for rolling out SLSA at scale.
+provenance: human
 ---
 # SLSA Adoption Management Guide
 

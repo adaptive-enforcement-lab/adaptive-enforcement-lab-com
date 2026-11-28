@@ -1,6 +1,7 @@
 ---
 title: Audit Logging
 description: Enable comprehensive Cloud Logging audit trails for GKE cluster management with Cloud Storage sinks, lifecycle policies, and compliance retention controls.
+provenance: human
 ---
 
 # Audit Logging

@@ -2,6 +2,7 @@
 title: Advanced Security Patterns
 description: >-
   Third-party actions evaluation, self-hosted runner security hardening, and advanced workflow security patterns for production
+provenance: human
 ---
 
 !!! warning "Production Implementation Required"

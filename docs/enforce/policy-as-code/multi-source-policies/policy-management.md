@@ -3,6 +3,7 @@ title: Policy Management
 description: >-
   Render Kyverno policies from multiple repos using Helm and yq. Master environment-specific
   enforcement, semantic versioning, and conflict resolution strategies.
+provenance: human
 ---
 # Policy Management
 

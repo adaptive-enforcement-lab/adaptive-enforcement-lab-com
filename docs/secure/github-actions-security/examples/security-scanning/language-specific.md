@@ -2,6 +2,7 @@
 title: Language-Specific Security Scanning
 description: >-
   Security scanning workflows for Node.js, Python, and Go with npm audit, Bandit, gosec, and CodeQL integration for comprehensive language-specific coverage
+provenance: human
 ---
 
 !!! tip "Use Language-Native Tools"

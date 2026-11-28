@@ -2,6 +2,7 @@
 title: Retry Strategy
 description: >-
   Handle transient failures with exponential backoff and retry policies. Configure per-step retries, avoid tight loops, and distinguish permanent vs temporary errors.
+provenance: human
 ---
 # Retry Strategy
 

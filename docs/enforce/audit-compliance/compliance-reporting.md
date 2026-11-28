@@ -8,6 +8,7 @@ tags:
   - reporting
   - evidence
   - operators
+provenance: human
 ---
 
 # Compliance Reporting and Evidence Retrieval

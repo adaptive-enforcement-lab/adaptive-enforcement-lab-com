@@ -2,6 +2,7 @@
 title: Architecture Patterns
 description: >-
   Fundamental patterns for building maintainable, scalable systems: separation of concerns, distributed orchestration, and zero-downtime migration strategies.
+provenance: human
 ---
 
 # Architecture Patterns

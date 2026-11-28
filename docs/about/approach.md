@@ -3,6 +3,7 @@ title: Approach
 description: >-
   What makes Adaptive Enforcement Lab different from security resources. Production-tested
   enforcement, control planes over checklists, real implementations.
+provenance: human
 ---
 
 # What Makes Us Different

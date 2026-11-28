@@ -2,6 +2,7 @@
 title: Matrix Distribution
 description: >-
   Parallelize operations across dynamic target lists using GitHub Actions matrix strategies with failure isolation, rate limiting, and conditional logic.
+provenance: human
 ---
 
 # Matrix Distribution

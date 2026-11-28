@@ -2,6 +2,7 @@
 title: Long-Running Workflow Patterns
 description: >-
   Error handling and patterns for long-running workflows with token expiration and refresh management.
+provenance: human
 ---
 
 !!! note "Job Dependency Strategy"

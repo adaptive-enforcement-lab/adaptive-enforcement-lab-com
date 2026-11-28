@@ -8,6 +8,7 @@ tags:
   - evidence
   - openssf
   - slsa
+provenance: human
 ---
 # Phase 4: Advanced (Month 4+)
 

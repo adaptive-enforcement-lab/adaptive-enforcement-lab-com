@@ -7,6 +7,7 @@ tags:
   - labels
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Mandatory Labels Templates
 

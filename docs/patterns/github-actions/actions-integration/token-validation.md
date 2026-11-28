@@ -2,6 +2,7 @@
 title: Token Validation
 description: >-
   Verify GitHub App token scope and permissions before production deployment. Test organization access, team queries, and API permissions with validation patterns.
+provenance: human
 ---
 
 # Token Scope Validation

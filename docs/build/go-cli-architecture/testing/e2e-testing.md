@@ -2,6 +2,7 @@
 title: E2E Testing
 description: >-
   Test full CLI workflows in real Kubernetes clusters with kind and GitHub Actions. Isolated namespaces, cleanup on exit, matrix testing across versions.
+provenance: human
 ---
 # E2E Testing
 

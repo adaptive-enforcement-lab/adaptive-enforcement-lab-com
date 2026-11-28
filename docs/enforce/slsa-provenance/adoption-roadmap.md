@@ -13,6 +13,7 @@ tags:
   - security-teams
 description: >-
   SLSA adoption roadmap: phased approach from Level 1 to Level 3 with validation checkpoints and rollback strategies. Incremental path to production-grade supply chain security.
+provenance: human
 ---
 # SLSA Adoption Roadmap
 

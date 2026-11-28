@@ -2,6 +2,7 @@
 title: Tier 2
 description: >-
   Achieve 8.0+ Scorecard rating through SLSA provenance, automated dependency updates, and SAST integration for continuous security improvements.
+provenance: human
 ---
 # Tier 2
 

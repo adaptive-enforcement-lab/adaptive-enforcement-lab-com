@@ -2,6 +2,7 @@
 title: Separation of Concerns Implementation Techniques
 description: >-
   Interface boundaries, dependency injection, isolated testing, and error handling separation for maintainable Go CLI architectures and Kubernetes deployments.
+provenance: human
 ---
 
 # Separation of Concerns Implementation Techniques

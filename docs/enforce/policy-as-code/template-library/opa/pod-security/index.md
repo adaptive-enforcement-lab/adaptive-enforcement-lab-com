@@ -8,6 +8,7 @@ tags:
   - capabilities
   - kubernetes
   - security
+provenance: human
 ---
 # OPA Pod Security Templates
 

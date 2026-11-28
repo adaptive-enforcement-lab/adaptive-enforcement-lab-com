@@ -2,6 +2,7 @@
 title: Test Coverage Patterns
 description: >-
   Achieve 95%+ test coverage by refactoring for testability. Break complexity walls with extracted functions and table-driven tests, not exotic tooling.
+provenance: human
 ---
 # Test Coverage Patterns
 

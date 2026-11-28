@@ -11,6 +11,7 @@ tags:
   - automation
   - operators
   - policy-enforcement
+provenance: human
 ---
 
 # OpenTofu Modules

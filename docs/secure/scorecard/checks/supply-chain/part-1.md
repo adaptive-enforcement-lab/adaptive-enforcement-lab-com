@@ -7,6 +7,7 @@ tags:
   - scorecard
   - supply-chain
   - security
+provenance: human
 ---
 # Supply Chain Security Checks
 

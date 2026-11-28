@@ -6,6 +6,7 @@ tags:
   - vulnerability-management
 description: >-
   Risk assessment matrix for vulnerability prioritization. Impact, likelihood, and exploitability scoring with real-world examples and decision frameworks.
+provenance: human
 ---
 # Risk Assessment Matrix
 

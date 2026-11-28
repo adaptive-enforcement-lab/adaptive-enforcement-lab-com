@@ -2,6 +2,7 @@
 title: High Availability
 description: >-
   Eliminate single points of failure with HA configurations. Deploy redundant EventBus, EventSource, and Sensor replicas across availability zones.
+provenance: human
 ---
 # High Availability
 

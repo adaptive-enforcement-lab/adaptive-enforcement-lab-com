@@ -8,6 +8,7 @@ tags:
   - kubernetes
   - testing
   - sre
+provenance: human
 ---
 # Chaos Engineering for Kubernetes
 

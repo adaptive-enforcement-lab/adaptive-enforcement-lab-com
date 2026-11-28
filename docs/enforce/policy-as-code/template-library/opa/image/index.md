@@ -8,6 +8,7 @@ tags:
   - supply-chain
   - kubernetes
   - cosign
+provenance: human
 ---
 # OPA Image Security Templates
 

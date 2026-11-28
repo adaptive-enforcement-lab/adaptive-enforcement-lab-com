@@ -7,6 +7,7 @@ tags:
   - observability
   - metrics
   - prometheus
+provenance: human
 ---
 # Observability Patterns
 

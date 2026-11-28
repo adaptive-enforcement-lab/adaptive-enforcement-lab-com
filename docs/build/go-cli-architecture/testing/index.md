@@ -2,6 +2,7 @@
 title: Testing Strategies
 description: >-
   Build confidence with comprehensive CLI testing. Unit tests catch logic bugs with fakes, integration tests verify API contracts, E2E tests validate workflows.
+provenance: human
 ---
 # Testing Strategies
 

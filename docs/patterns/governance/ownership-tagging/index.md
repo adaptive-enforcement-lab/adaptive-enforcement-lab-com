@@ -7,6 +7,7 @@ tags:
   - patterns
 description: >-
   A vendor-neutral taxonomy for tagging resources by owning team and criticality tier, wired into on-call routing, incident urgency, and planning.
+provenance: human
 ---
 # Resource Ownership and Criticality Tagging
 

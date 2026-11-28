@@ -2,6 +2,7 @@
 title: Supporting Scripts
 description: >-
   Extract branch management into reusable scripts. Implement idempotent branch preparation with force reset, remote state handling, and git credential automation.
+provenance: human
 ---
 
 # Supporting Scripts

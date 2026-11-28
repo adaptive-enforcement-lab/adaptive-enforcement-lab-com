@@ -9,6 +9,7 @@ tags:
   - github-actions
   - ci-cd
   - developers
+provenance: human
 ---
 # Release-Please Configuration
 

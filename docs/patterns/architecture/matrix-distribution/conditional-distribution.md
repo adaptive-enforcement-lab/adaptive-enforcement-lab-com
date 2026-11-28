@@ -2,6 +2,7 @@
 title: Conditional Distribution
 description: >-
   Target type detection, include/exclude filtering, topic-based queries, and multi-file distribution patterns for selective GitHub Actions matrix processing.
+provenance: human
 ---
 # Conditional Distribution
 

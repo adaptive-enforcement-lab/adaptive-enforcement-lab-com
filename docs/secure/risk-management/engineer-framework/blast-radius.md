@@ -6,6 +6,7 @@ tags:
   - impact-analysis
 description: >-
   Blast radius calculation for vulnerability impact analysis. System coverage assessment, dependency mapping, and real-world examples.
+provenance: human
 ---
 # Blast Radius Calculation
 

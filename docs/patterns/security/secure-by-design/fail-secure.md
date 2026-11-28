@@ -2,11 +2,8 @@
 title: Fail Secure
 description: >-
   Fail-secure pattern for Kubernetes. Admission webhooks with safe failure modes, policy enforcement at admission time, and audit logging.
-tags:
-  - security
-  - kubernetes
-  - admission-control
-  - policy-enforcement
+tags: [security, kubernetes, admission-control, policy-enforcement]
+provenance: human
 ---
 # Fail Secure
 

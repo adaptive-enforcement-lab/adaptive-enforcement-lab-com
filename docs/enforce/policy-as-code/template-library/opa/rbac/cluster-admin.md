@@ -9,6 +9,7 @@ tags:
   - cluster-admin
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Cluster-Admin Prevention Template
 

@@ -8,6 +8,7 @@ tags:
   - pod-security
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Pod Security Templates
 

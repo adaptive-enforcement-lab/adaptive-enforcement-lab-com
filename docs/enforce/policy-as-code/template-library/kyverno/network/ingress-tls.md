@@ -11,6 +11,7 @@ tags:
   - network-security
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Ingress TLS Templates
 

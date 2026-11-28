@@ -12,6 +12,7 @@ tags:
   - infrastructure-as-code
   - operators
   - policy-enforcement
+provenance: human
 ---
 
 # Multi-Repository Management

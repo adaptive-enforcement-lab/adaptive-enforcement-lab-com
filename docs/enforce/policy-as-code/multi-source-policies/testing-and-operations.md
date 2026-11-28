@@ -2,6 +2,7 @@
 title: Testing and Operations
 description: >-
   Test multi-source Kyverno policy aggregation locally and in CI. Learn best practices for versioning policy repos and troubleshooting common integration issues.
+provenance: human
 ---
 # Testing and Operations
 

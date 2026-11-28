@@ -2,6 +2,7 @@
 title: Compatibility Layers
 description: >
   Maintain compatibility during platform component replacement with service abstraction, API gateways, conversion webhooks, and database views for zero-downtime migrations.
+provenance: human
 ---
 
 # Compatibility Layers

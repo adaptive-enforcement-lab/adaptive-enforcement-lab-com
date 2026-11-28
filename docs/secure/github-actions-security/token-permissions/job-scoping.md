@@ -9,6 +9,7 @@ tags:
   - github-token
   - permissions
   - job-scoping
+provenance: human
 ---
 
 # Job-Level Permission Scoping

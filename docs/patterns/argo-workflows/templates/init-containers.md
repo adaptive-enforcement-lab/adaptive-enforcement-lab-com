@@ -2,6 +2,7 @@
 title: Init Containers
 description: >-
   Build multi-stage pipelines with init containers. Sequential setup using purpose-built images, shared volumes, and independent security contexts for each stage.
+provenance: human
 ---
 # Init Containers
 

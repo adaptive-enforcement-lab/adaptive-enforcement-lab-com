@@ -7,6 +7,7 @@ tags:
   - scorecard
   - security
   - vulnerability-disclosure
+provenance: human
 ---
 # Security-Policy Check
 

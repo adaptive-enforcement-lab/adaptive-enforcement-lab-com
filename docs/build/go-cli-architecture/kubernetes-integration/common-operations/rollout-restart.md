@@ -2,6 +2,7 @@
 title: Rollout Restart
 description: >-
   Trigger zero-downtime rolling restarts with annotation patches. Strategic merge patches modify pod templates safely without full object replacement.
+provenance: human
 ---
 # Rollout Restart
 

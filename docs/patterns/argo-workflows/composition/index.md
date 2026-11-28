@@ -2,6 +2,7 @@
 title: Workflow Composition
 description: >-
   Build complex pipelines from reusable workflow components. Compose parent-child workflows, orchestrate multi-stage automation, and eliminate copy-paste YAML.
+provenance: human
 ---
 # Workflow Composition
 

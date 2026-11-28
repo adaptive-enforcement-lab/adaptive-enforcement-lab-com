@@ -2,6 +2,7 @@
 title: Token Lifecycle Best Practices
 description: >-
   Best practices, patterns, and troubleshooting for token lifecycle management in GitHub Actions workflows.
+provenance: human
 ---
 
 !!! warning "Token Expiration"

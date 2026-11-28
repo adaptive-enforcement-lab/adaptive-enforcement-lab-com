@@ -9,6 +9,7 @@ tags:
   - egress
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Network Security Templates
 

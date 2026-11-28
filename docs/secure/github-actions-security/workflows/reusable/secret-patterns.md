@@ -2,6 +2,7 @@
 title: Secret Inheritance Patterns
 description: >-
   Safe secret passing patterns for reusable workflows with explicit inheritance, caller validation, and workflow pinning strategies
+provenance: human
 ---
 
 !!! warning "Avoid secrets: inherit"

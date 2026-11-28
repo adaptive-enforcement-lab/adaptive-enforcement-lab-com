@@ -2,6 +2,7 @@
 title: Version Strategies
 description: >-
   Manage documentation version aliases with major version pointers, latest redirects, and dev deployments. Patterns for lifecycle management and multi-version support.
+provenance: human
 ---
 # Version Strategies
 

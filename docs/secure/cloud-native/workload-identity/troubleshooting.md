@@ -1,6 +1,7 @@
 ---
 title: Troubleshooting
 description: Debug Workload Identity authentication failures, token expiration issues, IAM binding errors, and metadata server connectivity using diagnostic command tools.
+provenance: human
 ---
 
 # Troubleshooting Workload Identity

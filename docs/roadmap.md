@@ -4,6 +4,7 @@ description: >-
   What's coming to Adaptive Enforcement Lab. Blog content, resources,
   deep dives, and community features in development.
 date: 2025-11-25
+provenance: human
 ---
 
 # Roadmap

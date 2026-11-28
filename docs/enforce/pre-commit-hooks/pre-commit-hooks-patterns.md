@@ -3,6 +3,7 @@ title: Pre-commit Hooks Implementation Guide
 description: >-
   Implement pattern detection hooks, manage exceptions, and integrate with CI/CD
   for comprehensive pre-commit security enforcement.
+provenance: human
 ---
 
 # Pre-commit Hooks Implementation Guide

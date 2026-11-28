@@ -9,6 +9,7 @@ tags:
   - slsa
   - troubleshooting
 
+provenance: human
 ---
 # Signed-Releases Advanced Guide
 

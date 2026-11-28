@@ -9,6 +9,7 @@ tags:
   - oidc
   - environments
   - rollback
+provenance: human
 ---
 
 # Hardened Deployment Workflow

@@ -2,6 +2,7 @@
 title: CodeQL Configuration
 description: >-
   Configure CodeQL with custom query suites, security-extended analysis, and language-specific scanning patterns for comprehensive SAST coverage in GitHub Actions
+provenance: human
 ---
 
 ## CodeQL Configuration

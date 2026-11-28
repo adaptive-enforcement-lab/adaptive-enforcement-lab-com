@@ -2,6 +2,7 @@
 title: Backpressure Handling
 description: >-
   Prevent system overload with backpressure controls. Configure EventBus limits, Sensor rate limiting, and workflow concurrency for production event flows.
+provenance: human
 ---
 # Backpressure Handling
 

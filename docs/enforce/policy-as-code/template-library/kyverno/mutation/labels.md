@@ -8,6 +8,7 @@ tags:
   - labels
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Mutation Templates: Labels
 

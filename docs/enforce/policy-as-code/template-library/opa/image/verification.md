@@ -9,6 +9,7 @@ tags:
   - cosign
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Image Verification Templates
 

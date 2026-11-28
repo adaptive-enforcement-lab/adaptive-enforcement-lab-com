@@ -1,6 +1,7 @@
 ---
 title: Least Privilege Roles
 description: Define fine-grained IAM roles for GKE service accounts with minimal permissions for nodes, cluster admins, and developer access using Terraform best practices.
+provenance: human
 ---
 
 # Least Privilege Roles

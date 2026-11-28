@@ -11,6 +11,7 @@ categories:
 description: >-
   Writing documentation is an act of hope. Hope is not a delivery mechanism. So the docs learned to install themselves.
 slug: docs-nobody-read
+provenance: human
 ---
 # The Docs Nobody Read
 

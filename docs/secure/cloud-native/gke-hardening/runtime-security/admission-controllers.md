@@ -1,6 +1,7 @@
 ---
 title: Admission Controllers
 description: Enforce security policies with Kubernetes ValidatingAdmissionPolicy controllers, blocking privileged containers and invalid configurations before deployment.
+provenance: human
 ---
 
 # Admission Controllers

@@ -1,6 +1,7 @@
 ---
 title: Scorecards & Dashboards
 description: Build automated security scorecards that aggregate metrics from code scanning, SAST, dependency alerts, and test coverage into a single visibility dashboard.
+provenance: human
 ---
 # Scorecards & Dashboards
 

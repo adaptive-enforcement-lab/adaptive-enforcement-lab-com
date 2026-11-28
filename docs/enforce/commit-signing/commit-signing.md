@@ -10,6 +10,7 @@ tags:
   - compliance
   - developers
   - commit-signing
+provenance: human
 ---
 
 # Commit Signing

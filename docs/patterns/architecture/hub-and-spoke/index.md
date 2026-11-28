@@ -8,6 +8,7 @@ tags:
   - github-actions
   - operators
   - hub-and-spoke
+provenance: human
 ---
 
 # Hub and Spoke

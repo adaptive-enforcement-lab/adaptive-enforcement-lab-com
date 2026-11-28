@@ -2,6 +2,7 @@
 title: Protected Branches
 description: >-
   Configure workflows to work with branch protection rules. Run documentation generators and auto-commit tools on PR branches without triggering protection blocks.
+provenance: human
 ---
 # Protected Branches
 

@@ -9,6 +9,7 @@ tags:
   - apparmor
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Pod Security Profiles
 

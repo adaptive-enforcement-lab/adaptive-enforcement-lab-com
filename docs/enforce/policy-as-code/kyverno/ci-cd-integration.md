@@ -3,6 +3,7 @@ title: Kyverno CI/CD Integration
 description: >-
   End-to-end policy enforcement from local development to production runtime.
   Shift-left with local validation, shift-down with admission control.
+provenance: human
 ---
 
 # Kyverno CI/CD Integration

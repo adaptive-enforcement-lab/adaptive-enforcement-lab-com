@@ -2,6 +2,7 @@
 title: OAuth Security and Troubleshooting
 description: >-
   Security best practices, troubleshooting, and rate limits for GitHub OAuth authentication. Common error scenarios and solutions.
+provenance: human
 ---
 
 ## Common Use Cases

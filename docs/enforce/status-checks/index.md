@@ -3,6 +3,7 @@ title: Required Status Checks
 description: >-
   CI/CD pipelines as merge gates. Tests, security scans, and linting must pass
   before code reaches production. Automated validation that satisfies auditors.
+provenance: human
 ---
 
 # Required Status Checks

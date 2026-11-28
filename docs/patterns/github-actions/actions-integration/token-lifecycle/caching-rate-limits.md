@@ -2,6 +2,7 @@
 title: Token Caching and Rate Limits
 description: >-
   Token caching patterns and rate limit management for GitHub App installation tokens. Share tokens across jobs efficiently.
+provenance: human
 ---
 
 ## Token Caching Patterns

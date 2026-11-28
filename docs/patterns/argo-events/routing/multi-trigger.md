@@ -2,6 +2,7 @@
 title: Multi-Trigger Actions
 description: >-
   Execute multiple parallel actions from single events. Fan-out patterns enable coordinated workflows, notifications, and audit logging from one event source.
+provenance: human
 ---
 # Multi-Trigger Actions
 

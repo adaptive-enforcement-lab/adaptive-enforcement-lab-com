@@ -8,6 +8,7 @@ tags:
   - privilege-escalation
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Privilege Escalation Prevention
 

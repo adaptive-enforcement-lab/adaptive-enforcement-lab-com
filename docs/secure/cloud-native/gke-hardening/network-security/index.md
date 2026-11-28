@@ -1,6 +1,7 @@
 ---
 title: Network Security
 description: Secure GKE networking with VPC-native IP allocation, zero-trust network policies, Private Service Connect endpoints, and Cloud Armor DDoS protection layers.
+provenance: human
 ---
 
 # Network Security

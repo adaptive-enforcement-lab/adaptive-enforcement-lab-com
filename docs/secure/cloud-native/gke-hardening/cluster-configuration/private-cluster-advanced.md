@@ -1,6 +1,7 @@
 ---
 title: Private Cluster Advanced Configuration
 description: Configure Cloud KMS encryption for etcd database, implement Binary Authorization policies, enable private endpoints, and deploy Cloud Armor WAF protection.
+provenance: human
 ---
 
 # Private Cluster Advanced Configuration

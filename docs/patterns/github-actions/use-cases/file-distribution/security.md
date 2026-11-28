@@ -2,6 +2,7 @@
 title: Security
 description: >-
   Secure file distribution with scoped tokens, branch protection, and audit trails. Apply least privilege to automated PR creation and cross-repo operations.
+provenance: human
 ---
 
 # Security Considerations

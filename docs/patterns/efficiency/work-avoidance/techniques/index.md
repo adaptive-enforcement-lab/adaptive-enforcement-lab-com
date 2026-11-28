@@ -2,6 +2,7 @@
 title: Work Avoidance Techniques
 description: >-
   Layer work avoidance checks from existence to content to semantic comparison. Each technique catches different skip scenarios for maximum automation efficiency.
+provenance: human
 ---
 # Work Avoidance Techniques
 

@@ -2,6 +2,7 @@
 title: Repository Access and Workflow Restrictions
 description: >-
   Configure runner group repository access, API-based workflow restrictions, and deny-by-default permission patterns
+provenance: human
 ---
 
 !!! warning "Deny by Default"

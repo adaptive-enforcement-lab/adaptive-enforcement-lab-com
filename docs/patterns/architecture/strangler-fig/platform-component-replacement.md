@@ -2,6 +2,7 @@
 title: Platform Component Replacement
 description: >-
   Replace infrastructure components without downtime. Build new, ensure compatibility, swap components, remove old. No traffic routing needed.
+provenance: human
 ---
 
 # Platform Component Replacement

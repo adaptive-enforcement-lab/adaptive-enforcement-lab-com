@@ -8,6 +8,7 @@ tags:
   - security
   - supply-chain
   - action-pinning
+provenance: human
 ---
 
 # Action Pinning Overview

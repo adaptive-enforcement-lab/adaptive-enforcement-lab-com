@@ -3,6 +3,7 @@ title: Scorecard-Compliant Workflow Examples
 description: >-
   Production-ready GitHub Actions workflows for OpenSSF Scorecard 10/10. Job-level
   permissions, SLSA provenance, dependency pinning, and source archive signing.
+provenance: human
 ---
 # Scorecard-Compliant Workflow Examples
 

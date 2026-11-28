@@ -2,6 +2,7 @@
 title: Monitoring and Rollback
 description: >-
   Track error rates, latency, throughput between legacy and new systems. Automated rollback via feature flags when metrics degrade during migration phases.
+provenance: human
 ---
 
 # Monitoring and Rollback

@@ -1,6 +1,7 @@
 ---
 title: Cluster Configuration
 description: Enable Workload Identity on GKE clusters and configure node pools with metadata server protection and network policy enforcement for production environments.
+provenance: human
 ---
 
 # Cluster Configuration

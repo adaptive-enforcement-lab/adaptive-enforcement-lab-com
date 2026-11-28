@@ -8,6 +8,7 @@ tags:
   - policy-as-code
   - kubernetes
   - advanced
+provenance: human
 ---
 # Advanced JMESPath Patterns for Kyverno
 

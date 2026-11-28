@@ -2,6 +2,7 @@
 title: Event Routing
 description: >-
   Control event flow from EventSources to triggers. Master filtering, transformation, and multi-action capabilities for sophisticated event-driven automation.
+provenance: human
 ---
 # Event Routing
 

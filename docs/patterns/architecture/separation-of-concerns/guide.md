@@ -2,6 +2,7 @@
 title: Separation of Concerns Usage Guide
 description: >-
   Apply separation of concerns to CLI tools, API handlers, and workflow orchestrators. Avoid over-separation and premature abstraction in production systems.
+provenance: human
 ---
 
 # Separation of Concerns Usage Guide

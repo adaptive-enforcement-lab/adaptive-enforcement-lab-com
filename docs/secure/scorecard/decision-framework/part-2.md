@@ -2,6 +2,7 @@
 title: Fuzzing Assessment
 description: >-
   Evaluate fuzzing investment ROI based on codebase complexity, user input handling, and security risk tolerance for your organization.
+provenance: human
 ---
 # Fuzzing Assessment
 

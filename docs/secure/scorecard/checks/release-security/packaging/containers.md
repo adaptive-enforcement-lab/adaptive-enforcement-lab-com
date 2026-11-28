@@ -2,6 +2,7 @@
 title: Container Registry Publishing
 description: >-
   Configure OIDC-based container registry publishing to GitHub Container Registry with automated provenance generation for supply chain security.
+provenance: human
 ---
 # Container Registry Publishing
 

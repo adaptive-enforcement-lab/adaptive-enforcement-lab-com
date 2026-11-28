@@ -5,6 +5,7 @@ description: >-
 tags:
   - documentation
   - ai-agents
+provenance: human
 ---
 # Skill Anatomy
 

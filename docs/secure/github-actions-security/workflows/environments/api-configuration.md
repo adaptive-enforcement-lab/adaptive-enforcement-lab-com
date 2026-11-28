@@ -2,6 +2,7 @@
 title: Environment API Configuration and Best Practices
 description: >-
   Automate environment configuration via GitHub API and CLI, deployment tracking patterns, and common protection rule mistakes
+provenance: human
 ---
 
 !!! tip "Automate Environment Configuration"

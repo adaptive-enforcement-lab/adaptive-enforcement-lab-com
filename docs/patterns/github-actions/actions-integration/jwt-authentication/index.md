@@ -1,7 +1,7 @@
 ---
 title: JWT Authentication
-description: >-
-  Generate JWTs for GitHub App authentication. Direct JWT generation for app-level operations, installation discovery, and bootstrapping workflows.
+description: Generate JWTs for GitHub App authentication. Direct JWT generation for app-level operations, installation discovery, and bootstrapping workflows.
+provenance: human
 ---
 
 # JWT Authentication

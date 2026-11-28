@@ -11,6 +11,7 @@ tags:
   - operators
   - policy-enforcement
   - incident-response
+provenance: human
 ---
 
 # Bypass Controls

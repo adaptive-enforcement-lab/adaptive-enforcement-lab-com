@@ -7,6 +7,7 @@ tags:
   - scorecard
   - releases
   - security
+provenance: human
 ---
 # Release Security Checks
 
