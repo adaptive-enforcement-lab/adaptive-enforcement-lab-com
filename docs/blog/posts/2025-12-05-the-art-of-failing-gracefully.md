@@ -10,6 +10,7 @@ categories:
 slug: the-art-of-failing-gracefully
 description: >-
   When your fast path fails, don't crash. Build tiered fallbacks that degrade performance, not availability.
+provenance: human
 ---
 # The Art of Failing Gracefully: Tiered Fallbacks for CI/CD
 
@@ -84,25 +85,9 @@ When Tier 1 works (99% of the time), the system flies. When it doesn't, the syst
 
 ## The Code Pattern
 
-```go
-func GetDeployments(image string) ([]Deployment, error) {
-    // Tier 1: Try volume mount
-    if data, err := os.ReadFile("/etc/cache/deployments.json"); err == nil {
-        metrics.RecordTier("mount")
-        return parseDeployments(data, image)
-    }
-
-    // Tier 2: Try API call
-    if data, err := k8s.GetConfigMap("deployment-cache"); err == nil {
-        metrics.RecordTier("api")
-        return parseDeployments(data, image)
-    }
-
-    // Tier 3: Rebuild from cluster scan
-    metrics.RecordTier("rebuild")
-    return scanClusterForImage(image)
-}
-```
+`GetDeployments` tries the volume mount, then the ConfigMap API, then a cluster scan.
+Each tier calls `metrics.RecordTier()` with its name before it returns.
+The [graceful degradation guide](../../patterns/error-handling/graceful-degradation/index.md) has the full function.
 
 Notice the `metrics.RecordTier()` calls. You need to know which tier is serving traffic. If Tier 1 starts failing, you want to know before your users notice the latency spike.
 
@@ -158,11 +143,7 @@ Every chain needs a final tier that **cannot fail**. A static default. A hardcod
 
 ### Expensive Default
 
-```yaml
-# Wasteful: always does the expensive thing
-- run: npm ci
-- uses: actions/cache/save@v4
-```
+The workflow runs `npm ci` on every run, then saves the result with `actions/cache/save@v4`.
 
 If you're always running Tier 3 and then caching the result, you've inverted the pattern. The point is to *avoid* the expensive path, not run it every time.
 
