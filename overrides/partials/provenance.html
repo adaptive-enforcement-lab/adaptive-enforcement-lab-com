@@ -1,0 +1,11 @@
+{#- One-line provenance note for machine-drafted pages (CONTRIBUTING.md, Provenance). -#}
+{% set provenance = page.meta.provenance %}
+{% if provenance == "machine" %}
+  <div class="admonition info provenance-note" data-provenance="machine">
+    <p class="admonition-title">Machine-drafted: written by the content-machine pipeline and published after review, without human edits.</p>
+  </div>
+{% elif provenance == "human_edited" %}
+  <div class="admonition info provenance-note" data-provenance="human_edited">
+    <p class="admonition-title">Machine-drafted, human-edited: written by the content-machine pipeline, then edited by a human before publishing.</p>
+  </div>
+{% endif %}

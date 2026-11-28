@@ -3,3 +3,7 @@ authors:
     name: Mark Cheret
     description: Founder, Adaptive Enforcement Lab
     avatar: https://github.com/markcheret.png
+  content-machine:
+    name: content-machine
+    description: Automated drafting pipeline. Its posts are machine-drafted.
+    avatar: https://avatars.githubusercontent.com/u/314820605?v=4
