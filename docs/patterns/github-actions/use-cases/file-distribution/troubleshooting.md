@@ -85,6 +85,28 @@ fi
 
 See [Change Detection](idempotency.md#change_detection) for the full pattern.
 
+**Reproduce it**: in a scratch repository, compare both checks for a modified tracked
+file and for a new untracked file:
+
+```bash
+mkdir test-repo && cd test-repo
+git init
+echo "tracked" > tracked.txt
+git add tracked.txt
+git commit -m "Initial commit"
+
+# Modified tracked file: both checks see it
+echo "modified" > tracked.txt
+echo "git diff exit code: $(git diff --quiet; echo $?)"  # 1 (changes)
+echo "git status output: '$(git status --porcelain)'"    # M tracked.txt
+git checkout -- tracked.txt
+
+# New untracked file: only git status sees it
+echo "new" > untracked.txt
+echo "git diff exit code: $(git diff --quiet; echo $?)"  # 0 (no changes!)
+echo "git status output: '$(git status --porcelain)'"    # ?? untracked.txt
+```
+
 ### Permission Denied
 
 **Symptom**: `403 Forbidden` errors

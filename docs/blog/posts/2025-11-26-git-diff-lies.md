@@ -8,7 +8,10 @@ categories:
   - CI/CD
   - Debugging
   - Shell Scripting
+description: >-
+  git diff --quiet never sees untracked files. One conditional swap fixed a file distribution workflow that had been silently skipping repos for weeks.
 slug: git-diff-lies-the-untracked-file-trap
+provenance: human
 ---
 # Git Diff Lies: The Untracked File Trap in CI/CD Pipelines
 
@@ -97,16 +100,9 @@ It's not wrong. It's just incomplete.
 
 ## The Fix
 
-Replace `git diff --quiet` with `git status --porcelain`:
+Replace `git diff --quiet` with `git status --porcelain`.
 
-```bash
-if [ -z "$(git status --porcelain)" ]; then
-  echo "has_changes=false" >> "$GITHUB_OUTPUT"
-  echo "No changes needed"
-else
-  echo "has_changes=true" >> "$GITHUB_OUTPUT"
-fi
-```
+`if [ -z "$(git status --porcelain)" ]` takes the place of `if git diff --quiet`. Both branches stay the same.
 
 ### Why This Works
 
@@ -134,36 +130,11 @@ The `--porcelain` flag guarantees machine-parseable output that won't change bet
 
 ### Before (Broken)
 
-```bash
-#!/bin/bash
-set -e
-
-# Checks if there are uncommitted changes in git working directory
-
-if git diff --quiet; then
-  echo "has_changes=false" >> "$GITHUB_OUTPUT"
-  echo "No changes needed"
-else
-  echo "has_changes=true" >> "$GITHUB_OUTPUT"
-fi
-```
+The `git diff --quiet` check above, wrapped in a `#!/bin/bash` script with `set -e`.
 
 ### After (Fixed)
 
-```bash
-#!/bin/bash
-set -e
-
-# Checks if there are uncommitted changes in git working directory
-# Uses git status --porcelain to detect both modified tracked files AND new untracked files
-
-if [ -z "$(git status --porcelain)" ]; then
-  echo "has_changes=false" >> "$GITHUB_OUTPUT"
-  echo "No changes needed"
-else
-  echo "has_changes=true" >> "$GITHUB_OUTPUT"
-fi
-```
+The same script with `git status --porcelain`, plus a comment saying it detects both modified tracked files and new untracked files. The [file distribution troubleshooting guide](../../patterns/github-actions/use-cases/file-distribution/troubleshooting.md) has both versions.
 
 One conditional swap. One comment added. Bug eliminated.
 
@@ -171,29 +142,9 @@ One conditional swap. One comment added. Bug eliminated.
 
 ## Testing the Fix
 
-You can verify this behavior in any Git repository:
+You can verify this behavior in any Git repository.
 
-```bash
-# Create a test repo
-mkdir test-repo && cd test-repo
-git init
-
-# Create and commit an initial file
-echo "tracked" > tracked.txt
-git add tracked.txt
-git commit -m "Initial commit"
-
-# Test 1: Modify tracked file
-echo "modified" > tracked.txt
-echo "git diff exit code: $(git diff --quiet; echo $?)"  # Returns 1 (changes)
-echo "git status output: '$(git status --porcelain)'"    # Shows: M tracked.txt
-git checkout -- tracked.txt
-
-# Test 2: Add untracked file
-echo "new" > untracked.txt
-echo "git diff exit code: $(git diff --quiet; echo $?)"  # Returns 0 (no changes!)
-echo "git status output: '$(git status --porcelain)'"    # Shows: ?? untracked.txt
-```
+A short script in a scratch repository shows it: modify a tracked file, then add an untracked one, and compare `git diff --quiet` with `git status --porcelain` each time. The [troubleshooting guide](../../patterns/github-actions/use-cases/file-distribution/troubleshooting.md) has the script.
 
 The difference is obvious when you test it. The challenge is remembering to test the untracked file case.
 
@@ -215,12 +166,9 @@ A successful workflow run only means the workflow executed without errors. It do
 
 ### Add Debug Output
 
-The fixed version includes additional logging:
+The fixed version includes additional logging.
 
-```bash
-echo "Changes detected:"
-git status --short
-```
+After `Changes detected:` it prints `git status --short`.
 
 When something goes wrong, visibility into state is invaluable. Silent success is just silent failure you haven't noticed yet.
 
