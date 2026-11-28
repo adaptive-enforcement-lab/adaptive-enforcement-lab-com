@@ -222,6 +222,55 @@ jobs:
 
 ---
 
+## Version Injection
+
+GoReleaser sets the version at build time through `ldflags`. The CLI only needs a
+package-level variable with a development default:
+
+```go
+package main
+
+import (
+    "fmt"
+    "os"
+
+    "github.com/spf13/cobra"
+)
+
+var version = "dev" // Set by goreleaser
+
+func main() {
+    rootCmd := &cobra.Command{
+        Use:     "my-action [path]",
+        Short:   "Analyze things quickly",
+        Version: version,
+        RunE:    run,
+    }
+
+    rootCmd.Flags().Bool("check", false, "Exit 1 on failure")
+    rootCmd.Flags().StringP("config", "c", "", "Config file path")
+
+    if err := rootCmd.Execute(); err != nil {
+        os.Exit(1)
+    }
+}
+
+func run(cmd *cobra.Command, args []string) error {
+    check, _ := cmd.Flags().GetBool("check")
+
+    // Your logic here...
+
+    if check && failed > 0 {
+        return fmt.Errorf("%d file(s) failed", failed)
+    }
+    return nil
+}
+```
+
+`my-action --version` then prints the release tag, and local builds print `dev`.
+
+---
+
 ## Makefile Integration
 
 ```makefile
