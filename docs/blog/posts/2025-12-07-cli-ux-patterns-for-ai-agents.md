@@ -11,6 +11,7 @@ description: >-
   AI agents take error messages literally. Design CLI output that guides
   correct fixes, not destructive shortcuts.
 slug: cli-ux-patterns-for-ai-agents
+provenance: human
 ---
 # Designing Error Messages AI Agents Can't Misinterpret
 
@@ -56,74 +57,31 @@ Now the AI agent knows: split files, don't delete content.
 
 ### 1. State What TO DO, Not Just What's Wrong
 
-```go
-// Bad: Only describes the problem
-fmt.Fprintln(os.Stderr, "Error: Readability score too low")
-
-// Good: Describes problem AND solution approach
-fmt.Fprintln(os.Stderr, "READABILITY: High grade level indicates complex sentences.")
-fmt.Fprintln(os.Stderr, "- Break long sentences into shorter ones (15-20 words)")
-fmt.Fprintln(os.Stderr, "- Add introductory sentences before code blocks")
-```
+The bad message only says `Error: Readability score too low`.
+The good one names what the score means, `READABILITY: High grade level indicates complex sentences.`, then lists fixes: shorter sentences of 15-20 words, an introductory sentence before each code block.
 
 ### 2. Explicitly State What NOT TO DO
 
-AI agents optimize for speed. Prohibit destructive shortcuts:
+AI agents optimize for speed. Prohibit destructive shortcuts.
 
-```go
-fmt.Fprintln(os.Stderr, "Do NOT remove content to meet thresholds.")
-fmt.Fprintln(os.Stderr, "Do NOT remove technical accuracy. Rewrite for clarity.")
-```
+Two lines do it: `Do NOT remove content to meet thresholds.` and `Do NOT remove technical accuracy. Rewrite for clarity.`
 
 ### 3. Provide Specific, Actionable Guidance
 
-Vague instructions produce vague fixes:
+Vague instructions produce vague fixes.
 
-```go
-// Bad: Vague
-fmt.Fprintln(os.Stderr, "Improve the readability of this document.")
-
-// Good: Specific actions
-fmt.Fprintln(os.Stderr, "- Break sentences over 20 words into multiple sentences")
-fmt.Fprintln(os.Stderr, "- Add brief explanations before bullet lists")
-fmt.Fprintln(os.Stderr, "- Use transitional phrases between dense sections")
-```
+"Improve the readability of this document" is vague.
+"Break sentences over 20 words into multiple sentences" is a fix an agent can apply.
 
 ---
 
 ## Implementation: Contextual Warnings
 
-Show different guidance based on failure type:
+Show different guidance based on failure type.
 
-```go
-func run() error {
-    // Analyze files...
-
-    if checkFlag && failed > 0 {
-        tooLong := countFilesExceedingLines(results, 375)
-        lowReadability := countLowReadability(results)
-
-        if tooLong > 0 {
-            fmt.Fprintln(os.Stderr, "")
-            fmt.Fprintln(os.Stderr, "IMPORTANT: Files exceeding line limits should be SPLIT.")
-            fmt.Fprintln(os.Stderr, "Do NOT remove content. Split by topic or section.")
-            fmt.Fprintln(os.Stderr, "")
-        }
-
-        if lowReadability > 0 {
-            fmt.Fprintln(os.Stderr, "")
-            fmt.Fprintln(os.Stderr, "READABILITY: Complex sentence structure detected.")
-            fmt.Fprintln(os.Stderr, "- Break long sentences (aim for 15-20 words)")
-            fmt.Fprintln(os.Stderr, "- Add context before code blocks and lists")
-            fmt.Fprintln(os.Stderr, "Do NOT remove technical content.")
-            fmt.Fprintln(os.Stderr, "")
-        }
-
-        return fmt.Errorf("%d file(s) failed", failed)
-    }
-    return nil
-}
-```
+The CLI counts files over the line limit and files with low readability separately.
+It prints the split guidance only when a file is too long, and the readability guidance only when a score failed.
+The [error messages for AI agents guide](../../build/go-cli-architecture/command-architecture/error-messages-for-ai-agents.md) has the code.
 
 !!! tip "Match Guidance to Failure"
     Don't show line-limit guidance for readability failures. Irrelevant advice confuses AI agents.
@@ -132,29 +90,10 @@ func run() error {
 
 ## Error Message Templates
 
-### Threshold Exceeded
-
-```text
-[CATEGORY]: [Metric] exceeds threshold ([actual] > [max]).
-
-To fix:
-- [Specific action 1]
-- [Specific action 2]
-
-Do NOT [prohibited shortcut].
-```
-
-### Quality Issue
-
-```text
-[CATEGORY]: [What the metric indicates].
-
-Improvement strategies:
-- [Strategy 1]
-- [Strategy 2]
-
-Do NOT [prohibited approach]. [Why it's wrong].
-```
+Two shapes cover most cases.
+A threshold message names the category, the metric with actual and maximum values, the specific fixes, and one prohibited shortcut.
+A quality message names the category, what the metric indicates, the improvement strategies, and the prohibited approach with the reason it is wrong.
+The [guide](../../build/go-cli-architecture/command-architecture/error-messages-for-ai-agents.md) has both templates.
 
 ---
 

@@ -384,6 +384,7 @@ nav:
               - Orchestrator Pattern: build/go-cli-architecture/command-architecture/orchestrator-pattern.md
               - Subcommand Design: build/go-cli-architecture/command-architecture/subcommand-design.md
               - I/O Contracts: build/go-cli-architecture/command-architecture/io-contracts.md
+              - Error Messages for AI Agents: build/go-cli-architecture/command-architecture/error-messages-for-ai-agents.md
           - Packaging:
               - build/go-cli-architecture/packaging/index.md
               - Container Builds: build/go-cli-architecture/packaging/container-builds.md
