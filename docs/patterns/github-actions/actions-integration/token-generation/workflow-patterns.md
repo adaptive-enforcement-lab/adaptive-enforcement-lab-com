@@ -163,11 +163,7 @@ jobs:
           git add ${{ github.event.inputs.workflow_file }}
           git commit -m "chore: update security scan workflow
 
-          Synchronized from central template repository.
-
-          🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-          Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+          Synchronized from central template repository."
 
           git push
 ```

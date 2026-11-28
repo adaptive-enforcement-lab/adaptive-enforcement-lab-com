@@ -95,8 +95,6 @@ Automated update of ${{ github.event.inputs.package }} to version ${{ github.eve
 - [ ] Verify build passes
 - [ ] Run test suite
 - [ ] Check for breaking changes
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
 EOF
 )" \
             --base main \
