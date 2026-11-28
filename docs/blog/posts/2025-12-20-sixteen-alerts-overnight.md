@@ -10,6 +10,7 @@ categories:
 description: >-
   16 Token-Permissions alerts appeared overnight. The workflows looked fine. The problem was invisible.
 slug: sixteen-alerts-overnight
+provenance: human
 ---
 # Sixteen Alerts Overnight: When Permissions Look Fine
 
@@ -57,19 +58,7 @@ But they both had `contents: write` and `id-token: write` because permissions we
 
 Every job inherited maximum permissions. Even jobs that didn't need them.
 
-```yaml
-name: Release
-
-permissions:
-  contents: write   # ALL jobs get this
-  id-token: write   # ALL jobs get this
-
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - run: golangci-lint run  # Doesn't need write or OIDC!
-```
+Both permissions sat at the top of `release.yml`. The `lint` job, which only runs `golangci-lint run`, inherited write access and OIDC like every other job.
 
 Scorecard's principle: grant minimum permissions per job, not maximum permissions per workflow.
 
@@ -77,29 +66,10 @@ Scorecard's principle: grant minimum permissions per job, not maximum permission
 
 ## The Fix
 
-Move permissions from workflow level to job level:
+Move permissions from workflow level to job level.
 
-```yaml
-name: Release
-
-permissions: {}  # Empty at workflow level
-
-jobs:
-  lint:
-    permissions:
-      contents: read  # Only what's needed
-    runs-on: ubuntu-latest
-    steps:
-      - run: golangci-lint run
-
-  sign-releases:
-    permissions:
-      contents: write   # Upload signatures
-      id-token: write   # OIDC for Cosign
-    runs-on: ubuntu-latest
-    steps:
-      - run: cosign sign-blob ...
-```
+Set `permissions: {}` at workflow level. Give each job only its own: `contents: read` for `lint`, `contents: write` and `id-token: write` for `sign-releases`.
+The [Scorecard compliance guide](../../secure/scorecard/scorecard-compliance.md) has the workflow.
 
 One commit. 16 alerts → 0 alerts.
 
@@ -118,14 +88,10 @@ These appear automatically. We didn't create them. We didn't sign them.
 
 Scorecard flagged unsigned assets.
 
-The fix required downloading GitHub's generated archives, signing them, and re-uploading:
+The fix required downloading GitHub's generated archives, signing them, and re-uploading.
 
-```bash
-TAG="v1.7.0"
-curl -sL "https://github.com/owner/repo/archive/refs/tags/${TAG}.tar.gz" -o "source_${TAG}.tar.gz"
-cosign sign-blob --bundle "source_${TAG}.tar.gz.sig" "source_${TAG}.tar.gz"
-gh release upload "$TAG" "source_${TAG}.tar.gz.sig"
-```
+Download the release's `.tar.gz` source archive from GitHub, sign it with `cosign sign-blob --bundle`, and upload the signature with `gh release upload`.
+The [Scorecard compliance guide](../../secure/scorecard/scorecard-compliance.md) has the script.
 
 Now every asset was signed.
 
@@ -133,12 +99,9 @@ Now every asset was signed.
 
 ## The Version Tag Exception
 
-Scorecard's Pinned-Dependencies check wants actions pinned to SHA digests:
+Scorecard's Pinned-Dependencies check wants actions pinned to SHA digests.
 
-```yaml
-# Scorecard wants this
-- uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
-```
+Scorecard wants `uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4`.
 
 But some actions **require** version tags.
 
