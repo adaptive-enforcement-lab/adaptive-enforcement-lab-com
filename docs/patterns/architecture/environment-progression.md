@@ -239,6 +239,8 @@ Automate rollback on smoke test failure:
 
 For operational patterns including feature flags, monitoring, and quality gates, see **[Environment Progression Operations](environment-progression-operations.md)**.
 
+For the sequential deployment workflow, smoke test script and namespace isolation, see **[Environment Progression Pipeline](environment-progression-pipeline.md)**.
+
 For related SDLC patterns:
 
 - **[SDLC Hardening](../../blog/posts/2025-12-12-harden-sdlc-before-audit.md)** - Build security into pipelines

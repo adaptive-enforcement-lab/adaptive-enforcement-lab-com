@@ -913,6 +913,7 @@ nav:
           - Environment Progression:
               - patterns/architecture/environment-progression.md
               - Operations: patterns/architecture/environment-progression-operations.md
+              - Pipeline: patterns/architecture/environment-progression-pipeline.md
           - GitOps ApplicationSet Delivery: patterns/architecture/gitops-applicationset/index.md
           - Three-Stage Design: patterns/architecture/three-stage-design.md
           - Matrix Distribution:
