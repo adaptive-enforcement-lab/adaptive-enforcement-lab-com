@@ -8,6 +8,7 @@ tags:
   - autoscaling
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno HPA Requirements Templates
 

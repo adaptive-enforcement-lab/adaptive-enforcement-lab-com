@@ -3,6 +3,7 @@ title: Troubleshooting
 description: >-
   Common GitHub App issues and solutions.
   Authentication errors, permission problems, and token generation failures.
+provenance: human
 ---
 
 # Troubleshooting

@@ -7,6 +7,7 @@ tags:
   - scorecard
   - packaging
   - registries
+provenance: human
 ---
 # Packaging Check
 

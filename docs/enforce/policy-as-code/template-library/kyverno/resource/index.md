@@ -8,6 +8,7 @@ tags:
   - limits
   - governance
   - kubernetes
+provenance: human
 ---
 # Kyverno Resource Governance Templates
 

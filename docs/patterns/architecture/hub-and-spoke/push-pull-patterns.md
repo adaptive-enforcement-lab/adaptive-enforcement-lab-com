@@ -7,6 +7,7 @@ tags:
   - patterns
   - hub-and-spoke
   - communication
+provenance: human
 ---
 
 # Hub and Spoke Communication Models

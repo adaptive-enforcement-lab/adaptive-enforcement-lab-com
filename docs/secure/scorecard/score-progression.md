@@ -10,6 +10,7 @@ tags:
   - supply-chain
   - developers
   - operators
+provenance: human
 ---
 # Score Progression Guide
 

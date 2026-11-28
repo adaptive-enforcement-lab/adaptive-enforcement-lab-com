@@ -2,6 +2,7 @@
 title: npm Publishing
 description: >-
   Enable npm provenance attestations with OIDC authentication to provide cryptographic proof of package integrity and build origin for consumers.
+provenance: human
 ---
 # npm Publishing
 

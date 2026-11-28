@@ -2,6 +2,7 @@
 title: Conditional Routing
 description: >-
   Route events with complex decision logic using CEL expressions. Implement conditional triggers, multi-event coordination, and fallback patterns for event flows.
+provenance: human
 ---
 # Conditional Routing
 

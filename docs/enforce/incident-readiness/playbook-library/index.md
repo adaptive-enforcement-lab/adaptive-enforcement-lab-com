@@ -8,6 +8,7 @@ tags:
   - kubernetes
   - playbooks
   - security
+provenance: human
 ---
 # Incident Response Playbook Templates
 

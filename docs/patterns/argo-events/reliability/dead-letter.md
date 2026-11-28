@@ -2,6 +2,7 @@
 title: Dead Letter Queues
 description: >-
   Capture failed events with dead letter queues. Route exhausted retries to DLQ handlers for analysis, alerting, and manual reprocessing in production.
+provenance: human
 ---
 # Dead Letter Queues
 

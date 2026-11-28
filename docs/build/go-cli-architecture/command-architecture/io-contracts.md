@@ -2,6 +2,7 @@
 title: Input/Output Contracts
 description: >-
   Design CLI output for both humans and scripts. Table format for eyes, JSON/names format for pipes. Support quiet mode for automation workflows.
+provenance: human
 ---
 # Input/Output Contracts
 

@@ -7,6 +7,7 @@ tags:
   - blast-radius
   - safety
   - kubernetes
+provenance: human
 ---
 # Blast Radius Control
 

@@ -1,6 +1,7 @@
 ---
 title: VPC-Native Networking
 description: Configure container-native IP allocation using GCP Alias IP ranges for direct pod-to-pod communication without additional routing overhead in GKE clusters.
+provenance: human
 ---
 
 # VPC-Native Networking

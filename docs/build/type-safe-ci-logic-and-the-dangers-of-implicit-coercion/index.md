@@ -5,6 +5,7 @@ description: >-
   A practice guide to preventing silent CI/CD failures by employing meticulous
   type handling and robust comparison logic in automation scripts, ensuring
   configuration values are interpreted as intended.
+provenance: machine
 ---
 Continuous integration pipelines that silently do the wrong thing are among the
 most hazardous sources of failure in automated release systems. When a job

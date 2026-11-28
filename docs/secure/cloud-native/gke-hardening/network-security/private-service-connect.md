@@ -1,6 +1,7 @@
 ---
 title: Private Service Connect
 description: Configure Private Service Connect endpoints for secure, private connectivity to GCP services without public IPs using Terraform forwarding rules and DNS zones.
+provenance: human
 ---
 
 # Private Service Connect

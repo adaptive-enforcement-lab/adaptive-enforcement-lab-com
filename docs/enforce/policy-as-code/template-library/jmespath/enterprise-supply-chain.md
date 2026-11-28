@@ -8,6 +8,7 @@ tags:
   - supply-chain-security
   - multi-tenancy
   - kubernetes
+provenance: human
 ---
 # Enterprise Supply Chain & Multi-Tenancy
 

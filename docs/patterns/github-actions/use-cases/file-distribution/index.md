@@ -9,6 +9,7 @@ tags:
   - patterns
   - operators
   - file-distribution
+provenance: human
 ---
 
 # File Distribution Workflow

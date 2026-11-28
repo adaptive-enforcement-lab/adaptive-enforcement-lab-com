@@ -2,6 +2,7 @@
 title: Multi-Architecture Container Builds
 description: >-
   Build and release multi-architecture container images with unified manifests, platform-specific attestations, and buildah-based OCI tooling for amd64 and arm64
+provenance: human
 ---
 
 !!! tip "Unified Manifest Lists"

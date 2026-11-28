@@ -2,6 +2,7 @@
 title: "Runtime Deployment: Admission Control with Kyverno"
 description: >-
   Deploy Kyverno admission control as final safety net before production. Install admission webhooks, policy reporters, and continuous compliance background scans.
+provenance: human
 ---
 # Runtime Deployment: Admission Control with Kyverno
 

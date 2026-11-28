@@ -2,7 +2,7 @@
 title: "Automating Trust: Component Identity and Release Audits"
 date: 2026-08-13
 authors:
-  - mark
+  - content-machine
 categories:
   - compliance
   - automation
@@ -11,6 +11,7 @@ description: >-
   Before our recent platform deployment, a near-miss with an unidentified component
   highlighted a critical gap in our manual compliance checks.
 slug: automating-trust-component-identity-release-audits
+provenance: machine
 ---
 I remember it clearly. It was a Friday afternoon, just hours before a significant
 deployment to our `Core Platform`. We were running through the final checklists.

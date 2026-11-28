@@ -9,6 +9,7 @@ tags:
   - fuzzing
   - testing
 
+provenance: human
 ---
 # Advanced Fuzzing Techniques
 

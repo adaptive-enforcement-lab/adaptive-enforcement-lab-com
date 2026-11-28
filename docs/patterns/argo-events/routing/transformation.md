@@ -2,6 +2,7 @@
 title: Event Transformation
 description: >-
   Transform event payloads before triggering workflows. Extract fields, restructure data, and normalize formats using JSONPath and Go template expressions.
+provenance: human
 ---
 # Event Transformation
 

@@ -2,6 +2,7 @@
 title: Helm Charts
 description: >-
   Deploy Go CLIs with Helm charts for Kubernetes environments. Package as Job resources with RBAC, configurable via values, using standard tooling.
+provenance: human
 ---
 # Helm Charts
 

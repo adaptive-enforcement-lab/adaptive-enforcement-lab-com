@@ -8,6 +8,7 @@ tags:
   - authentication
   - developers
   - operators
+provenance: human
 ---
 
 # GitHub App Authentication Flows

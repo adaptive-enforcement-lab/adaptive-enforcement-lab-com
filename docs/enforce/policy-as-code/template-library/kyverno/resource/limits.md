@@ -7,6 +7,7 @@ tags:
   - resource-limits
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Resource Limits Templates
 

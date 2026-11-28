@@ -2,6 +2,7 @@
 title: Caller Validation and Workflow Pinning
 description: >-
   Validate reusable workflow callers with repository and organization restrictions, pin workflows to SHA-256 commits, and prevent supply chain attacks
+provenance: human
 ---
 
 !!! warning "Pin Reusable Workflows to SHA"

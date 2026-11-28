@@ -8,6 +8,7 @@ tags:
   - testing
   - security-scanning
   - sbom
+provenance: human
 ---
 # Phase 2: CI/CD Gates
 

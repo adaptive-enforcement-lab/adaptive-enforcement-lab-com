@@ -7,6 +7,7 @@ tags:
   - pod-security
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Pod Security Templates
 

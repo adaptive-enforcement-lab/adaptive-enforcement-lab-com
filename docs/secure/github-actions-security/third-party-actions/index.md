@@ -8,6 +8,7 @@ tags:
   - security
   - third-party-actions
   - risk-assessment
+provenance: human
 ---
 
 # Third-Party Action Risk Assessment

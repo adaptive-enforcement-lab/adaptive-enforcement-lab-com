@@ -2,6 +2,7 @@
 title: Basic CronWorkflow
 description: >-
   Run workflows on cron schedules with timezone handling, starting deadlines, and WorkflowTemplateRef. Reliable time-based automation without manual intervention.
+provenance: human
 ---
 # Basic CronWorkflow
 

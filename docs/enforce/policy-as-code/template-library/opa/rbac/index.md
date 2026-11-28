@@ -8,6 +8,7 @@ tags:
   - permissions
   - kubernetes
   - security
+provenance: human
 ---
 # OPA RBAC Templates
 

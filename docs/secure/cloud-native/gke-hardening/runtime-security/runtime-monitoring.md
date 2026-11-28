@@ -1,6 +1,7 @@
 ---
 title: Runtime Monitoring
 description: Deploy Falco for runtime behavioral analysis to detect unauthorized process execution, file access violations, and anomalous network activity in workloads.
+provenance: human
 ---
 
 # Runtime Monitoring

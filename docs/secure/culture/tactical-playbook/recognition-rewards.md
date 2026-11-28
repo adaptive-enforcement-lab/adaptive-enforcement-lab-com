@@ -1,6 +1,7 @@
 ---
 title: Recognition & Rewards
 description: Implement public recognition programs and meaningful rewards to celebrate security achievements and drive cultural change through visible team-level incentives.
+provenance: human
 ---
 # Recognition & Rewards
 

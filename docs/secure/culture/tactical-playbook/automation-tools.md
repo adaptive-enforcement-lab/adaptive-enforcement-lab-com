@@ -1,6 +1,7 @@
 ---
 title: Automation & Self-Service Tools
 description: Deploy automated secret rotation systems and self-service security tools to eliminate repetitive toil and enable developers to run security scans independently.
+provenance: human
 ---
 # Automation & Self-Service Tools
 

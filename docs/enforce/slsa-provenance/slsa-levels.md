@@ -12,6 +12,7 @@ tags:
   - security-teams
 description: >-
   SLSA Levels 0-4 explained: requirements, security guarantees, and runner configurations. Understand what each level protects against and how to achieve compliance.
+provenance: human
 ---
 # SLSA Levels: Requirements and Security Guarantees
 

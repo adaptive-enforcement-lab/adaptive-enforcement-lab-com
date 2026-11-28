@@ -9,6 +9,7 @@ tags:
   - privilege-escalation
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Privileged Verbs Template
 

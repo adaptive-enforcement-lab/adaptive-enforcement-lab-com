@@ -9,6 +9,7 @@ tags:
   - patterns
   - automation
   - operators
+provenance: human
 ---
 # Argo Events
 

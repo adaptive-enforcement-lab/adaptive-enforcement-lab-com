@@ -8,6 +8,7 @@ tags:
   - security
   - kubernetes
   - networkpolicy
+provenance: human
 ---
 # Kyverno Network Security Templates
 

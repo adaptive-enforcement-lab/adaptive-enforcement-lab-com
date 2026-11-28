@@ -3,6 +3,7 @@ title: The Verified Layout That Wasn't
 date: 2026-09-04
 authors:
   - mark
+  - content-machine
 categories:
   - architecture
   - documentation
@@ -10,6 +11,7 @@ categories:
 description: >-
   A documentation block labeled "verified layout" for our data bus had drifted significantly, missing a critical namespace governed by an enforced contract.
 slug: the-verified-layout-that-wasnt
+provenance: human_edited
 ---
 A support ticket landed in my queue that seemed, at first, like a simple
 documentation cleanup. A section of our data architecture guide, labeled

@@ -8,6 +8,7 @@ tags:
   - kubernetes
   - policy-as-code
   - templates
+provenance: human
 ---
 # OPA Policy Templates
 

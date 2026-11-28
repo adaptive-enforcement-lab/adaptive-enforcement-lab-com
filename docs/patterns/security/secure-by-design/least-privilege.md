@@ -7,6 +7,7 @@ tags:
   - kubernetes
   - rbac
   - least-privilege
+provenance: human
 ---
 # Least Privilege
 

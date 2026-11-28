@@ -2,6 +2,7 @@
 title: Pod Configuration
 description: >-
   Deploy Kubernetes workloads with Workload Identity. Common GCP service access patterns for GCS, Firestore, BigQuery, Secret Manager, and Pub/Sub integration.
+provenance: human
 ---
 
 # Pod Configuration

@@ -2,6 +2,7 @@
 title: Testing Idempotency
 description: >-
   Verify idempotency by running workflows twice. Test for duplicates, same end state, performance, and partial failure recovery to ensure rerun-safe automation.
+provenance: human
 ---
 
 # Testing Idempotency

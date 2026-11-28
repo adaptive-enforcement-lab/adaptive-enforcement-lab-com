@@ -4,6 +4,7 @@ nav_title: Service Control Plane
 description: >-
   A dedicated control plane for microservices centralizes and standardizes concerns like service discovery, routing, and resilience,
 forming the foundation of a robust orchestration layer.
+provenance: machine
 ---
 Establishing a dedicated microservice orchestration layer is critical for centralizing service discovery, inter-service communication patterns, and fault tolerance mechanisms.
 This layer is often implemented as a service control plane. It consists of unified, platform-level components that manage the lifecycle and networking of individual services.

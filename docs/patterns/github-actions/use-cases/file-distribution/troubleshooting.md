@@ -2,6 +2,7 @@
 title: Troubleshooting
 description: >-
   Debug file distribution workflows with systematic verification. Resolve common issues from empty repositories to permission errors with debug workflow patterns.
+provenance: human
 ---
 
 # Troubleshooting

@@ -10,6 +10,7 @@ tags:
   - gosec
   - govulncheck
   - developers
+provenance: human
 ---
 # Go Security Tooling
 

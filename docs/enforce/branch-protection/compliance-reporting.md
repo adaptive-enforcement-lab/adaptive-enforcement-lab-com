@@ -10,6 +10,7 @@ tags:
   - audit
   - operators
   - policy-enforcement
+provenance: human
 ---
 
 # Compliance Reporting

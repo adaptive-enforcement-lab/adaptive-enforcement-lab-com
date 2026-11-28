@@ -9,6 +9,7 @@ tags:
   - ci-cd
   - quality-gates
   - developers
+provenance: human
 ---
 # Test Coverage Patterns
 

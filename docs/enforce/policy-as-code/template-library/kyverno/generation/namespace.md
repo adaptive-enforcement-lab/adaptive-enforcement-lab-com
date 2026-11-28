@@ -10,6 +10,7 @@ tags:
   - network-policy
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Generation Templates: Namespace Resources
 

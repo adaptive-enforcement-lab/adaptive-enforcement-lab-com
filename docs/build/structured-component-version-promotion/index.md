@@ -2,6 +2,7 @@
 title: Structured Component Version Promotion
 description: >-
   Promotion gates, immutable artifacts, and approval checkpoints for moving one component version from dev to production without drift.
+provenance: machine
 ---
 
 # Structured Component Version Promotion

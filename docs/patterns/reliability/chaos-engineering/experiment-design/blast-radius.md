@@ -7,6 +7,7 @@ tags:
   - blast-radius
   - safety
   - production
+provenance: human
 ---
 # Blast Radius Control
 

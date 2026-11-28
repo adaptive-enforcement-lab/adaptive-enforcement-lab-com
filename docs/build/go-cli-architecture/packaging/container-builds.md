@@ -2,6 +2,7 @@
 title: Container Builds
 description: >-
   Build minimal distroless container images with multi-stage OCI builds. Static Go binaries on non-root base images eliminate shell attack surface.
+provenance: human
 ---
 # Container Builds
 

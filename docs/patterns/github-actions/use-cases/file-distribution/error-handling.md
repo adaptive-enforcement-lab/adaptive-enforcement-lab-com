@@ -2,6 +2,7 @@
 title: Error Handling
 description: >-
   Failure strategies for matrix distribution workflows: fail-fast configuration, conditional execution, step outcome handling, and comprehensive error reporting.
+provenance: human
 ---
 
 # Error Handling

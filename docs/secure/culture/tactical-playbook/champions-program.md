@@ -1,6 +1,7 @@
 ---
 title: Security Champions Program
 description: Establish security champions program with structured training curriculum, protected time allocation, monthly community syncs, and public recognition systems.
+provenance: human
 ---
 # Security Champions Program
 

@@ -2,6 +2,7 @@
 title: JWT Security and Troubleshooting
 description: >-
   Security best practices, troubleshooting, and performance considerations for JWT authentication workflows.
+provenance: human
 ---
 
 # JWT Security and Troubleshooting

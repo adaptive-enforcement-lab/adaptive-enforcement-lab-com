@@ -2,7 +2,7 @@
 title: "Speeding Up CI: The 'Detect' Job Pattern"
 date: 2026-08-11
 authors:
-  - mark
+  - content-machine
 categories:
   - Continuous Integration
   - DevOps
@@ -11,6 +11,7 @@ description: >-
   I once watched a critical CI pipeline chew through resources for minutes,
   only to declare 'nothing to audit.' That's when I realized we needed a better gate.
 slug: speeding-up-ci-the-detect-job-pattern
+provenance: machine
 ---
 
 I still recall the sting of watching our build pipeline grind through a

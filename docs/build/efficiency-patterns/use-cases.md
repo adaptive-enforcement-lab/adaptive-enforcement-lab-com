@@ -8,6 +8,7 @@ tags:
   - use-cases
   - troubleshooting
   - operators
+provenance: human
 ---
 
 # ConfigMap Cache Use Cases and Troubleshooting

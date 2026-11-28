@@ -2,6 +2,7 @@
 title: OAuth Device Flow
 description: >-
   GitHub OAuth Device Flow implementation for user authentication in CLI tools and headless environments.
+provenance: human
 ---
 
 ## Device Flow

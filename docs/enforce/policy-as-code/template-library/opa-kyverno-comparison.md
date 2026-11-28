@@ -8,6 +8,7 @@ tags:
   - opa
   - gatekeeper
   - comparison
+provenance: human
 ---
 # OPA vs Kyverno: Detailed Comparison
 

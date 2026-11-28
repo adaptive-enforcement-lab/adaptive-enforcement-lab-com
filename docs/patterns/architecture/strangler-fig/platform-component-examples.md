@@ -2,6 +2,7 @@
 title: Platform Component Examples
 description: >
   Replace infrastructure components without downtime. Real-world examples include service mesh migrations, Kubernetes operator upgrades, and storage backend transitions with zero user impact.
+provenance: human
 ---
 
 # Platform Component Examples

@@ -2,6 +2,7 @@
 title: Scheduled Workflows
 description: >-
   CronWorkflow patterns for scheduled automation: time-based execution, concurrency policies, orchestration pipelines, and GitHub Actions integration for DevSecOps.
+provenance: human
 ---
 # Scheduled Workflows
 

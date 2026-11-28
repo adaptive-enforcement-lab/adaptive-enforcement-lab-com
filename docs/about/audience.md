@@ -3,6 +3,7 @@ title: Audience
 description: >-
   Who Adaptive Enforcement Lab builds for and serves. Security engineers, DevSecOps
   teams, SREs, compliance architects, and leaders building enforceable controls.
+provenance: human
 ---
 
 # Who We Are For

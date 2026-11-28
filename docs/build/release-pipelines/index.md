@@ -2,6 +2,7 @@
 title: Modular Release Pipelines
 description: >-
   Automate version management and changelog generation with smart builds. Only build changed components using GitHub App tokens and release-please integration.
+provenance: human
 ---
 # Modular Release Pipelines
 

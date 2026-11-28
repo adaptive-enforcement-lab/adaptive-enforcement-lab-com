@@ -15,6 +15,7 @@ tags:
   - operators
 description: >-
   SLSA provenance for Node.js projects: npm package publishing, container images, and dependency lockfile patterns with cryptographic build integrity proofs.
+provenance: human
 ---
 # SLSA Provenance for Node.js Projects
 

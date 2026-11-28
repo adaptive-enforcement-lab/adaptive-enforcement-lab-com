@@ -2,6 +2,7 @@
 title: Token Lifecycle Management
 description: >-
   Token expiration handling, refresh strategies, and caching patterns for long-running workflows. Manage installation token lifecycle and rate limits in GitHub Actions.
+provenance: human
 ---
 
 # Token Lifecycle Management

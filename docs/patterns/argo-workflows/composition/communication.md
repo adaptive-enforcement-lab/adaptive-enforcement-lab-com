@@ -2,6 +2,7 @@
 title: Cross-Workflow Communication
 description: >-
   Decouple workflows with Pub/Sub messaging, shared storage, and ConfigMaps. Enable cross-workflow communication without tight parent-child coupling in Argo.
+provenance: human
 ---
 # Cross-Workflow Communication
 

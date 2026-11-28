@@ -13,6 +13,7 @@ tags:
   - developers
 description: >-
   SLSA provenance for Go, Node.js, and Python: binary builds, package publishing, container images, and dependency verification with cryptographic integrity proofs.
+provenance: human
 ---
 # SLSA Provenance: Toolchain Integration
 

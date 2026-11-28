@@ -7,6 +7,7 @@ tags:
   - security
   - automation
   - action-pinning
+provenance: human
 ---
 
 # Action Pinning Automation

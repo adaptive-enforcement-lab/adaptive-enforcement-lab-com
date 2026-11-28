@@ -8,6 +8,7 @@ tags:
   - automation
   - cronjob
   - operators
+provenance: human
 ---
 
 # ConfigMap Cache Refresh Strategies

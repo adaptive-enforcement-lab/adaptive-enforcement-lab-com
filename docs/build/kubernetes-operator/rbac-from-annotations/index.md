@@ -5,6 +5,7 @@ description: >-
   Use source code annotations to automatically generate Kubernetes RBAC policies.
   Synchronize these policies with deployment manifests to prevent configuration
   drift.
+provenance: human_edited
 ---
 Automating Kubernetes RBAC generation from source code annotations ensures that
 a controller's permissions are the ground truth. This prevents drift between

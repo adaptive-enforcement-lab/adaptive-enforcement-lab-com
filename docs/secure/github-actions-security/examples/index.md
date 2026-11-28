@@ -3,6 +3,7 @@ title: Complete Workflow Examples
 description: >-
   Copy-paste hardened CI/CD workflows with SHA-pinned actions, minimal GITHUB_TOKEN permissions,
   OIDC authentication, and comprehensive security scanning for GitHub Actions.
+provenance: human
 ---
 
 # Complete Workflow Examples

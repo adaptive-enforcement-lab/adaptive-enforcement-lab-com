@@ -8,6 +8,7 @@ tags:
   - kubernetes
 description: >-
   Generate and sync ArgoCD Applications across many clusters with ApplicationSets, safe sync policies, and least-privilege RBAC.
+provenance: human
 ---
 
 # GitOps Multi-Cluster Delivery with ArgoCD ApplicationSets

@@ -2,6 +2,7 @@
 title: Retry Strategies
 description: >-
   Recover from transient failures automatically with retry strategies. Configure exponential backoff, jitter, and trigger-level retries for reliable event flow.
+provenance: human
 ---
 # Retry Strategies
 

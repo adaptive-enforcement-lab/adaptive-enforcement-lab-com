@@ -2,6 +2,7 @@
 title: Package Release and Security Checklist
 description: >-
   NPM package releases with provenance, security checklist for artifact attestations, and common release workflow mistakes to avoid
+provenance: human
 ---
 
 !!! warning "Verify Before Release"

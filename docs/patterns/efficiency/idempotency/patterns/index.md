@@ -2,6 +2,7 @@
 title: Implementation Patterns
 description: >-
   Six idempotency patterns for automation: check-before-act, upsert, force overwrite, unique identifiers, deduplication, and tombstones. Pick by constraint and API.
+provenance: human
 ---
 
 # Implementation Patterns

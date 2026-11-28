@@ -11,6 +11,7 @@ description: >-
   Building documentation about zero-downtime migrations while learning
   the hard way that shortcuts create technical debt. A meta-journey.
 slug: strangling-your-documentation
+provenance: human
 ---
 # Strangling Your Documentation: A Meta-Journey
 

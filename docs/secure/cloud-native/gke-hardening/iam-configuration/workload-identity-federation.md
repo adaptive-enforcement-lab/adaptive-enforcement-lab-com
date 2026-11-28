@@ -1,6 +1,7 @@
 ---
 title: Workload Identity Federation
 description: Enable GitHub Actions OIDC authentication to GCP using Workload Identity Federation, eliminating service account keys with Terraform configuration patterns.
+provenance: human
 ---
 
 # Workload Identity Federation

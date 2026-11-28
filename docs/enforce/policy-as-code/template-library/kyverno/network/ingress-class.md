@@ -9,6 +9,7 @@ tags:
   - network-security
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Ingress Class Templates
 

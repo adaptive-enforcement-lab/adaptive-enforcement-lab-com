@@ -8,6 +8,7 @@ tags:
   - policy-as-code
   - kubernetes
   - enterprise
+provenance: human
 ---
 # Enterprise JMESPath Policy Examples
 

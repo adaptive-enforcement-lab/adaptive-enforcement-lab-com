@@ -2,6 +2,7 @@
 title: Security and Troubleshooting
 description: >-
   Security best practices, troubleshooting common issues, and performance optimization for GitHub App installation tokens.
+provenance: human
 ---
 
 # Security and Troubleshooting

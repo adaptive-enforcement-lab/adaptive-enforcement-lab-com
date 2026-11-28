@@ -2,6 +2,7 @@
 title: Monitoring and Operations
 description: >-
   Monitor Kyverno policy compliance with dashboards, Prometheus metrics, and Slack alerts. Handle exceptions, troubleshoot violations, and follow best practices.
+provenance: human
 ---
 # Monitoring and Operations
 

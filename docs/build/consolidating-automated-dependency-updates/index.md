@@ -2,6 +2,7 @@
 title: Consolidating Automated Dependency Updates
 description: >-
   Merge automated dependency update PRs into a single change stream. Resolve conflicts and keep the dependency graph consistent.
+provenance: human_edited
 ---
 Dependency bots open a lot of small pull requests. Left unchecked, they flood CI/CD with individual runs and stack merge conflicts onto shared manifest files. Consolidating multiple updates into one change stream cuts that churn, speeds up review, and keeps the dependency graph stable.
 

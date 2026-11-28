@@ -2,6 +2,7 @@
 title: Branch Protection via Terraform
 description: >-
   Automate branch protection across repositories using Terraform and GitHub Rulesets. Infrastructure-as-code patterns for consistent, auditable enforcement.
+provenance: human
 ---
 # Branch Protection via Terraform
 

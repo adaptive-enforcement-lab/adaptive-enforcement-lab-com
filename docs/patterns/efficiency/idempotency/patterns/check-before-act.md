@@ -2,6 +2,7 @@
 title: Check-Before-Act
 description: >-
   Verify state exists before creating it. The most common idempotency pattern for PRs, branches, and resources, with edge cases and race condition handling.
+provenance: human
 ---
 
 # Check-Before-Act

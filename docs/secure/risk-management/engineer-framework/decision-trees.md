@@ -6,6 +6,7 @@ tags:
   - patch-management
 description: >-
   Decision trees for vulnerability remediation. Patch-now vs. later, mitigate vs. accept vs. transfer, and emergency vs. standard patching workflows.
+provenance: human
 ---
 # Decision Trees
 

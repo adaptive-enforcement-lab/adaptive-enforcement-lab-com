@@ -8,6 +8,7 @@ tags:
   - cloud-security
   - gcp
   - pulumi
+provenance: human
 ---
 
 # GKE Security Hardening Guide

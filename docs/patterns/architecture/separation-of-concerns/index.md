@@ -8,6 +8,7 @@ tags:
   - design-principles
   - developers
   - separation-of-concerns
+provenance: human
 ---
 
 # Separation of Concerns Pattern Overview

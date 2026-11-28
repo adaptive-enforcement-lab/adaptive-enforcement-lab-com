@@ -2,6 +2,7 @@
 title: Validation and Rollback
 description: >
   Test new components before production swap. Validation checklists, instant rollback strategies, and monitoring metrics for safe platform component replacement migrations.
+provenance: human
 ---
 
 # Validation and Rollback

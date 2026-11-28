@@ -3,6 +3,7 @@ title: Standardizing CI/CD with Shared Templates and Reusable Components
 description: >-
   Standardize CI/CD pipelines with shared templates and reusable components. Boost consistency,
   cut duplication, and reduce operational overhead.
+provenance: machine
 ---
 Centralizing and standardizing CI/CD pipeline definitions through the adoption of shared
 templates and consolidation of related tooling into reusable components ensures consistency

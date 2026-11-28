@@ -9,6 +9,7 @@ tags:
   - quality-gates
   - developers
   - pre-commit
+provenance: human
 ---
 
 # Pre-commit Hooks

@@ -2,6 +2,7 @@
 title: Workflow Restrictions
 description: >-
   Configure workflow restrictions for sensitive runner groups with branch pinning, file path patterns, and repository access controls to prevent unauthorized workflow execution
+provenance: human
 ---
 
 !!! note "Pin to Specific Branches"

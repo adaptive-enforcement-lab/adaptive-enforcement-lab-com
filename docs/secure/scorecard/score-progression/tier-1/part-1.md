@@ -1,13 +1,13 @@
 ---
 title: Tier 1: Score 7 to 8 (Good Hygiene → Strong Posture)
 description: >-
-  Quick wins for improving Scorecard scores from 7 to 8. Token permissions, security policy,
-  dependency updates, and binary artifacts. 4 to 8 hours of focused work.
+  Quick wins for improving Scorecard scores from 7 to 8. Token permissions, security policy, dependency updates, and binary artifacts. 4 to 8 hours of focused work.
 tags:
   - scorecard
   - compliance
   - quick-wins
   - supply-chain
+provenance: human
 ---
 # Tier 1: Score 7 to 8 (Good Hygiene → Strong Posture)
 

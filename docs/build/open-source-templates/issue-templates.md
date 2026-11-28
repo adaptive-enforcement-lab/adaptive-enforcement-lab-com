@@ -8,6 +8,7 @@ tags:
   - github
   - issues
   - developers
+provenance: human
 ---
 
 # GitHub Issue Templates

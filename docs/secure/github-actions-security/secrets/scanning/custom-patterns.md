@@ -2,6 +2,7 @@
 title: Custom Secret Patterns
 description: >-
   Create custom secret scanning patterns with regex for organization-specific credentials, API keys, database connection strings, and internal service tokens
+provenance: human
 ---
 
 !!! tip "Define Organization-Specific Patterns"

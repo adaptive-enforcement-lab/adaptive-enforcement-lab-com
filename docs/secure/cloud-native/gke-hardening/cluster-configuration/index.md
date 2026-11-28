@@ -7,6 +7,7 @@ tags:
   - kubernetes
   - terraform
   - workload-identity
+provenance: human
 ---
 
 # GKE Cluster Configuration

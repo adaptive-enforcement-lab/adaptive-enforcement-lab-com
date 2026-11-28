@@ -3,6 +3,7 @@ title: Kyverno Basics
 description: >-
   Install Kyverno, create validation policies, and understand audit vs enforce modes
   for Kubernetes admission control.
+provenance: human
 ---
 
 # Kyverno Basics

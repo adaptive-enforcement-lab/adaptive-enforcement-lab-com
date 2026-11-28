@@ -3,6 +3,7 @@ title: Implementation Roadmap
 description: >-
   Phased rollout plan for SDLC hardening. Foundation to runtime enforcement
   in 90 days. Prioritized by risk and audit importance.
+provenance: human
 ---
 
 # Implementation Roadmap

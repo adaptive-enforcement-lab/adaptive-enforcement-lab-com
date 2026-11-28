@@ -9,6 +9,7 @@ tags:
   - digest
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Image Digest Templates
 

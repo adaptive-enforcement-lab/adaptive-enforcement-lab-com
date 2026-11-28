@@ -10,6 +10,7 @@ tags:
   - network-security
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Network Service Templates
 

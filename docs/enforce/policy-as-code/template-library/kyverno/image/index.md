@@ -9,6 +9,7 @@ tags:
   - cve-scanning
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Image Validation Templates
 

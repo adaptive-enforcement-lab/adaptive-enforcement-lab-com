@@ -2,6 +2,7 @@
 title: GitHub Integration
 description: >-
   Trigger GitHub Actions from Argo Workflows via repository dispatch. Bidirectional integration between Kubernetes automation and GitHub CI/CD with App auth.
+provenance: human
 ---
 # GitHub Integration
 

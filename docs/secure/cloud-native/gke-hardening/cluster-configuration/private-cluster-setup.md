@@ -1,6 +1,7 @@
 ---
 title: Private GKE Cluster Setup
 description: Deploy private GKE clusters with VPC-native networking, custom hardened node pools, Workload Identity, and Shielded GKE nodes using Terraform best practices.
+provenance: human
 ---
 
 # Private GKE Cluster Setup

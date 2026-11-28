@@ -2,6 +2,7 @@
 title: Error Handling
 description: >-
   Handle token failures, API rate limits, and permission errors in GitHub Actions workflows with retry logic, validation checks, and actionable error messages.
+provenance: human
 ---
 
 # Error Handling

@@ -2,6 +2,7 @@
 title: Performance Optimization
 description: >-
   Optimize GitHub Actions workflows with token reuse, parallel operations, and matrix strategies. Generate once, use many times for maximum workflow efficiency.
+provenance: human
 ---
 
 # Performance Optimization

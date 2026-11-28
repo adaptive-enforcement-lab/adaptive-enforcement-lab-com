@@ -10,6 +10,7 @@ tags:
   - provenance
   - signatures
 
+provenance: human
 ---
 # Signed-Releases Check
 

@@ -12,6 +12,7 @@ tags:
   - security-teams
 description: >-
   SLSA provenance verification in CI/CD: validate build integrity with slsa-verifier in PR checks, release gates, and deployment workflows. Practical GitHub Actions patterns.
+provenance: human
 ---
 # SLSA Provenance Verification Workflows
 

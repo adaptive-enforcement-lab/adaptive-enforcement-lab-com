@@ -8,6 +8,7 @@ tags:
   - security
   - triggers
   - pull-requests
+provenance: human
 ---
 
 # Workflow Trigger Security

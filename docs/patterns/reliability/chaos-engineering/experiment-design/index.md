@@ -8,6 +8,7 @@ tags:
   - hypothesis
   - validation
   - sli
+provenance: human
 ---
 # Chaos Experiment Design
 

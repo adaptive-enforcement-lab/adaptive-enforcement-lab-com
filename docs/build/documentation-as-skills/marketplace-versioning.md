@@ -6,6 +6,7 @@ tags:
   - ci-cd
   - automation
   - release
+provenance: human
 ---
 # Marketplace and Versioning
 

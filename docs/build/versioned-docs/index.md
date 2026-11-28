@@ -2,6 +2,7 @@
 title: Versioned Documentation
 description: >-
   Deploy version-tagged documentation alongside releases using MkDocs Material, mike, and release-please for automated version alignment with software builds.
+provenance: human
 ---
 # Versioned Documentation
 

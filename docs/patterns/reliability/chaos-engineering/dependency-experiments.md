@@ -7,6 +7,7 @@ tags:
   - dependency-chaos
   - kubernetes
   - experiments
+provenance: human
 ---
 # Dependency Chaos Experiments
 

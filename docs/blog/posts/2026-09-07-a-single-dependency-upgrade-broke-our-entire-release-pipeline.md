@@ -2,13 +2,14 @@
 title: A Single Dependency Upgrade Broke Our Entire Release Pipeline
 date: 2026-09-07
 authors:
-  - mark
+  - content-machine
 categories:
   - engineering
   - ci-cd
 description: >-
   A dependency upgrade from v16 to v17 caused an ERESOLVE error, breaking our CI pipeline, prompting a review of our dependency management strategy.
 slug: dependency-upgrade-broke-release-pipeline
+provenance: machine
 ---
 
 The release build failed with a single, cryptic error: ERESOLVE. An automated

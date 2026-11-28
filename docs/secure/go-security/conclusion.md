@@ -3,6 +3,7 @@ title: Conclusion
 description: >-
   Zero-cost Go security stack achieves OpenSSF certification. Install golangci-lint,
   pre-commit hooks for production-grade security in one afternoon. No subscriptions.
+provenance: human
 ---
 # Conclusion
 

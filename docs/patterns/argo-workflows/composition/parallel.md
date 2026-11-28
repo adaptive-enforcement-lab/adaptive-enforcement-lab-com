@@ -2,6 +2,7 @@
 title: Parallel Execution
 description: >-
   Reduce pipeline time from sum of steps to longest step. Run independent child workflows simultaneously with fan-out patterns and resource-aware parallelism.
+provenance: human
 ---
 # Parallel Execution
 

@@ -8,6 +8,7 @@ tags:
   - base-images
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Base Image Enforcement
 

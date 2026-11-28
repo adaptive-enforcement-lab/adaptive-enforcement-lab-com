@@ -2,6 +2,7 @@
 title: Common False Positives
 description: >-
   Document binary test fixtures with inline comments to prevent false positive detections while maintaining realistic test data in your repository.
+provenance: human
 ---
 # Common False Positives
 

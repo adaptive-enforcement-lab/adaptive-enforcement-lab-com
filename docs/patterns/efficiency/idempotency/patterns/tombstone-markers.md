@@ -3,6 +3,7 @@ title: Tombstone Markers Pattern
 description: >-
   Learn about the tombstone markers pattern, a technique used in distributed systems
   for handling data deletion and ensuring consistency without immediate removal.
+provenance: machine
 ---
 
 # Tombstone Markers

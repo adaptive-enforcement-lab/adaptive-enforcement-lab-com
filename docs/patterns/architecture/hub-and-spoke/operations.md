@@ -2,6 +2,7 @@
 title: Hub and Spoke Operations Guide
 description: >-
   Scaling characteristics, failure isolation, result aggregation, and monitoring strategies for hub-and-spoke distributed workflow patterns in production.
+provenance: human
 ---
 
 # Hub and Spoke Operations Guide

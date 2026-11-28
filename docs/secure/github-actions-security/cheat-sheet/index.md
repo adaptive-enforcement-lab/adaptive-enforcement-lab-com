@@ -7,6 +7,7 @@ tags:
   - security
   - cheat-sheet
   - quick-reference
+provenance: human
 ---
 
 # GitHub Actions Security Cheat Sheet

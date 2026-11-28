@@ -11,6 +11,7 @@ description: >-
   IS_RELEASE_CANDIDATE=false shipped to production anyway. The string "false"
   evaluated as truthy. Here's how we stopped trusting booleans in CI.
 slug: the-boolean-that-lied
+provenance: human
 ---
 # The Boolean That Lied
 

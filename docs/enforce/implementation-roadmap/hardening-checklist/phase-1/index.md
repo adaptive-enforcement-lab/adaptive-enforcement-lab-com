@@ -8,6 +8,7 @@ tags:
   - git-hooks
   - secrets-detection
   - code-review
+provenance: human
 ---
 # Phase 1: Foundation (Weeks 1-4)
 

@@ -2,6 +2,7 @@
 title: Semaphores
 description: >-
   Control concurrent access with semaphores. Limit N simultaneous workflows, adjust capacity at runtime via ConfigMap, and protect resources from overload in Argo.
+provenance: human
 ---
 # Semaphores
 

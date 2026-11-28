@@ -2,6 +2,7 @@
 title: Branch Protection Bypasses
 description: >-
   Assess security risks and compliance implications of branch protection bypasses before implementing emergency workflows or admin overrides.
+provenance: human
 ---
 # Branch Protection Bypasses
 

@@ -8,6 +8,7 @@ tags:
   - evidence
   - sdlc
   - operators
+provenance: human
 ---
 
 # Evidence Types for Audit Compliance

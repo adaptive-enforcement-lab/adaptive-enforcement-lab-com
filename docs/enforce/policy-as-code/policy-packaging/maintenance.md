@@ -2,6 +2,7 @@
 title: Maintenance and Best Practices
 description: >-
   Troubleshoot container builds, optimize image size, and maintain tool versions. Best practices for pinning dependencies and testing policy-toolkit images.
+provenance: human
 ---
 # Maintenance and Best Practices
 

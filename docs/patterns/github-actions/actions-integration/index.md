@@ -9,6 +9,7 @@ tags:
   - developers
   - operators
   - github-actions
+provenance: human
 ---
 
 # GitHub Actions Integration with Core App

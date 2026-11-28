@@ -8,6 +8,7 @@ tags:
   - kubernetes
   - runtime-security
   - admission-control
+provenance: human
 ---
 # Phase 3: Runtime Policy Enforcement
 

@@ -7,6 +7,7 @@ tags:
   - scorecard
   - ci-cd
   - automation
+provenance: human
 ---
 # CI/CD Integration
 

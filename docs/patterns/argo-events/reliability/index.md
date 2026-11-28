@@ -2,6 +2,7 @@
 title: Reliability Patterns
 description: >-
   Build resilient event systems with retry strategies, dead letter queues, and EventBus persistence. Handle failures gracefully in production deployments.
+provenance: human
 ---
 # Reliability Patterns
 

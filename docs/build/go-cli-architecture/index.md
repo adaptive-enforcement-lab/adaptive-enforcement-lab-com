@@ -9,6 +9,7 @@ tags:
   - automation
   - testing
   - developers
+provenance: human
 ---
 # Go CLI Architecture
 

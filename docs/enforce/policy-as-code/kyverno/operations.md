@@ -3,6 +3,7 @@ title: Kyverno Operations and Monitoring
 description: >-
   Policy Reporter integration, monitoring and alerting setup, policy lifecycle management,
   and end-to-end CI/CD workflow integration.
+provenance: human
 ---
 
 # Kyverno Operations and Monitoring

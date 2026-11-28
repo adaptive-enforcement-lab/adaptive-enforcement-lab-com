@@ -7,6 +7,7 @@ tags:
   - security
   - action-pinning
   - supply-chain
+provenance: human
 ---
 
 # SHA Pinning Patterns

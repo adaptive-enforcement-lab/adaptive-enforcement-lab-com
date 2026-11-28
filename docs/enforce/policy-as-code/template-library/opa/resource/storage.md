@@ -9,6 +9,7 @@ tags:
   - pvc
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Storage Class Templates
 

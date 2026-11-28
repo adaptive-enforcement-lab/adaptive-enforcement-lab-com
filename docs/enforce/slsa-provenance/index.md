@@ -12,6 +12,7 @@ tags:
   - security-teams
 description: >-
   Complete SLSA implementation playbook: clarify SLSA vs SBOM confusion, classify runner configurations, implement verification workflows, and adopt incrementally from Level 1 to Level 3.
+provenance: human
 ---
 # SLSA Implementation Playbook
 

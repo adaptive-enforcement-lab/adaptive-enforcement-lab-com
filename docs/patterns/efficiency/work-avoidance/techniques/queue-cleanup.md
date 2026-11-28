@@ -2,6 +2,7 @@
 title: Queue Cleanup
 description: >-
   Delete pending workflows when only latest matters. Self-aware queue cleanup for mutex-locked idempotent workflows reduces wasteful builds by 70-90% in production.
+provenance: human
 ---
 # Queue Cleanup
 

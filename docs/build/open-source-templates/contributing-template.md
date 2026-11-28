@@ -8,6 +8,7 @@ tags:
   - contributing
   - openssf
   - developers
+provenance: human
 ---
 
 # CONTRIBUTING.md Template

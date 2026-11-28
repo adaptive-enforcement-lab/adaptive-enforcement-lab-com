@@ -2,6 +2,7 @@
 title: Packaging
 description: >-
   Package Go CLIs as minimal secure containers with distroless base images. Static binaries, non-root users, read-only filesystems for production.
+provenance: human
 ---
 # Packaging
 

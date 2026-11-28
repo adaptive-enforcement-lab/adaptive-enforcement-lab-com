@@ -6,6 +6,7 @@ tags:
   - prerequisite-checks
   - state
   - validation
+provenance: human
 ---
 # State Preconditions
 

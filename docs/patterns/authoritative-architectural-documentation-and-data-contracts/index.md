@@ -2,6 +2,7 @@
 title: Authoritative Architectural Documentation and Data Contracts
 description: >-
   Make architecture docs the enforced source of truth for data flows, backed by schema validation in CI that rejects any payload that violates the data contract.
+provenance: human_edited
 ---
 
 # Authoritative Architectural Documentation and Data Contracts

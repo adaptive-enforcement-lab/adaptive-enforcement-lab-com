@@ -2,6 +2,7 @@
 title: Rate Limiting Error Handling
 description: >-
   Handle rate limiting (429) and validation errors (422) in GitHub Actions workflows. Exponential backoff and retry patterns.
+provenance: human
 ---
 
 ## Rate Limiting (429 Errors)

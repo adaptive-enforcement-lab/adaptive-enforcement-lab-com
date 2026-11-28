@@ -1,8 +1,7 @@
 ---
 title: Audit Evidence Collection
 description: >-
-  Patterns for collecting and storing branch protection audit evidence.
-  Automated collection, retention policies, and compliance documentation.
+  Patterns for collecting and storing branch protection audit evidence. Automated collection, retention policies, and compliance documentation.
 tags:
   - github
   - security
@@ -10,6 +9,7 @@ tags:
   - audit
   - operators
   - policy-enforcement
+provenance: human
 ---
 
 # Audit Evidence Collection

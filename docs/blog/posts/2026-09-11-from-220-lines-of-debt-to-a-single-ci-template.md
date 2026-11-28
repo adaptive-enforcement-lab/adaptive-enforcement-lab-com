@@ -3,6 +3,7 @@ title: From 220 Lines of Debt to a Single CI Template
 date: 2026-09-10
 authors:
   - mark
+  - content-machine
 categories:
   - DevOps
   - CI/CD
@@ -11,6 +12,7 @@ description: >-
   A recent CI update cut 220 lines of debt to 50, standardizing our deployment
   tooling. It's the result of a year-long strategy for centralized CI/CD.
 slug: from-220-lines-of-debt-to-a-single-ci-template
+provenance: human_edited
 ---
 A pull request to update a service's CI pipeline landed. It deleted 220 lines
 of YAML and shell script, adding only 50. The test suite passed, the

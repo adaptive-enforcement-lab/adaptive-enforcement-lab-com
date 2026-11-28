@@ -11,6 +11,7 @@ tags:
   - operators
   - policy-enforcement
   - terraform
+provenance: human
 ---
 
 # Branch Protection Enforcement Patterns

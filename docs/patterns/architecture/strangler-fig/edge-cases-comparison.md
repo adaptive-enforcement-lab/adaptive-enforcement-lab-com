@@ -2,6 +2,7 @@
 title: Edge Cases and Comparison
 description: >
   When NOT to use component replacement, comparison with traffic routing, common gotchas and solutions.
+provenance: human
 ---
 
 # Edge Cases and Comparison

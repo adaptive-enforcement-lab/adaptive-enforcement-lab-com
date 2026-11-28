@@ -2,6 +2,7 @@
 title: Workflow Orchestration Examples
 description: >-
   Apply separation of concerns to Argo Workflows and GitHub Actions. Isolate step execution from orchestration logic for testable, reusable workflows.
+provenance: human
 ---
 
 # Workflow Orchestration Examples

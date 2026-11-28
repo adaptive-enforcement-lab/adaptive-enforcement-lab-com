@@ -9,6 +9,7 @@ tags:
   - high-availability
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Generation Templates: Workload Resources
 

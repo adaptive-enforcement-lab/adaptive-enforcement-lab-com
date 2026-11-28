@@ -11,6 +11,7 @@ tags:
   - operators
   - policy-enforcement
   - github-apps
+provenance: human
 ---
 
 # GitHub App Enforcement

@@ -2,6 +2,7 @@
 title: WorkflowTemplate Patterns
 description: >-
   WorkflowTemplate foundations: versioned, reusable automation building blocks with parameter contracts, error handling, volumes, and RBAC for production workflows.
+provenance: human
 ---
 # WorkflowTemplate Patterns
 

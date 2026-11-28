@@ -1,6 +1,7 @@
 ---
 title: Career Growth & Public Learning
 description: Build clear career progression paths for security-focused engineers with dedicated time allocation, training budgets, and public content creation programs.
+provenance: human
 ---
 # Career Growth & Public Learning
 

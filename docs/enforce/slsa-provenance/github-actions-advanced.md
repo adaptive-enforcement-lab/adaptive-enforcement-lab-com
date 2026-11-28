@@ -12,6 +12,7 @@ tags:
   - operators
 description: >-
   Advanced GitHub Actions patterns for SLSA: multi-platform builds, monorepo patterns, organization-wide reusable workflows, and monitoring coverage.
+provenance: human
 ---
 # Advanced GitHub Actions Patterns for SLSA
 

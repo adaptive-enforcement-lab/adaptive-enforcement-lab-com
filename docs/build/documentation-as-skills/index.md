@@ -7,6 +7,7 @@ tags:
   - ai-agents
   - documentation
   - ci-cd
+provenance: human
 ---
 # Documentation as Skills
 

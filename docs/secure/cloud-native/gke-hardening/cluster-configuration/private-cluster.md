@@ -1,6 +1,7 @@
 ---
 title: Private GKE Cluster Overview
 description: Configure private GKE clusters with isolated control planes, VPC networking, secondary IP ranges, and Cloud KMS encryption for secure production workloads.
+provenance: human
 ---
 
 # Private GKE Cluster Overview

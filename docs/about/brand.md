@@ -3,6 +3,7 @@ title: Brand
 description: >-
   The Adaptive Enforcement Lab identity and what each element represents. Adaptive
   controls, active enforcement, and rigorous lab validation of security patterns.
+provenance: human
 ---
 
 # Brand Identity

@@ -2,6 +2,7 @@
 title: Cloud-Specific Rotation Patterns
 description: >-
   GCP service account key rotation automation, cloud Secrets Manager integration patterns, and database credential rotation workflows
+provenance: human
 ---
 
 !!! tip "Automate Rotation Schedules"

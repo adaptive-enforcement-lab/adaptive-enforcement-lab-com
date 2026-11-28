@@ -3,6 +3,7 @@ title: The Untagged Outage
 date: 2026-08-12
 authors:
   - mark
+  - content-machine
 categories:
   - Infrastructure
   - Governance
@@ -10,6 +11,7 @@ categories:
 description: >-
   An outage turned into a scavenger hunt for who owned a dead data store. That's when ownership and criticality labels stopped being optional.
 slug: untagged-outage
+provenance: human_edited
 ---
 
 The day I pushed `TICKET-868` to our core infrastructure repository

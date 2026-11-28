@@ -9,6 +9,7 @@ tags:
   - sigstore
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Image Signature Verification
 

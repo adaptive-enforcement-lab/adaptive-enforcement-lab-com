@@ -7,6 +7,7 @@ tags:
   - github-actions
   - argocd
   - policy-as-code
+provenance: human
 ---
 # CI/CD Integration for Policy Validation
 

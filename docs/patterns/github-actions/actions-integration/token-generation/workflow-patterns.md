@@ -2,6 +2,7 @@
 title: Cross-Repository Workflow Patterns
 description: >-
   Patterns for cross-repository automation including discovery and distribution, synchronized updates, and parallel operations using GitHub App installation tokens.
+provenance: human
 ---
 
 # Cross-Repository Workflow Patterns

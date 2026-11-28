@@ -8,6 +8,7 @@ tags:
   - security
   - github-token
   - permissions
+provenance: human
 ---
 
 # GITHUB_TOKEN Permissions Overview

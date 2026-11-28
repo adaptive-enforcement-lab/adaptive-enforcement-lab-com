@@ -3,6 +3,7 @@ title: Kyverno Testing and Exceptions
 description: >-
   Test policies with Kyverno CLI before production deployment. Manage exceptions
   and exclusions. Troubleshoot common policy failures.
+provenance: human
 ---
 
 # Kyverno Testing and Exceptions

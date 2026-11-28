@@ -3,6 +3,7 @@ title: Classifying Config Connector Projects via Metadata
 nav_title: Config Connector Labels
 description: >-
   Use Kubernetes metadata to apply classification labels like ownership and criticality to cloud provider projects managed by Config Connector when direct labeling is unavailable.
+provenance: human_edited
 ---
 When managing cloud provider projects declaratively with Config Connector, it is
 essential to classify those projects with metadata, such as ownership and

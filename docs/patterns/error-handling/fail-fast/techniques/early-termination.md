@@ -6,6 +6,7 @@ tags:
   - fail-fast
   - early-termination
   - techniques
+provenance: human
 ---
 # Early Termination
 

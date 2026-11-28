@@ -3,6 +3,7 @@ title: Operator RBAC from Code Markers
 date: 2026-08-10
 authors:
   - mark
+  - content-machine
 categories:
   - kubernetes
   - operators
@@ -11,6 +12,7 @@ description: >-
   Our team struggled with complex RBAC rules for our integration testing
   operator. Manual YAML updates for every change were error-prone and slow.
 slug: operator-rbac-from-code-markers
+provenance: human_edited
 ---
 
 I still remember the late-night debugging session. I was staring at a `permission denied`

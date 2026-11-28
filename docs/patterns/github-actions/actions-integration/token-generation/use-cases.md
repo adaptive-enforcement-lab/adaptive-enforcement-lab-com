@@ -2,6 +2,7 @@
 title: Real-World Use Cases
 description: >-
   Real-world use cases for GitHub App installation tokens including dependency updates, health monitoring, issue triage, and release coordination.
+provenance: human
 ---
 
 # Real-World Use Cases

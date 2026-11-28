@@ -2,6 +2,7 @@
 title: Container Release Workflows
 description: >-
   Signed container releases with SLSA provenance, Cosign keyless signing, and multi-architecture image build patterns for production
+provenance: human
 ---
 
 !!! note "GHCR Authentication Required"

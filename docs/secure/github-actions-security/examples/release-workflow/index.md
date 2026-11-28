@@ -9,6 +9,7 @@ tags:
   - slsa
   - provenance
   - attestations
+provenance: human
 ---
 
 # Hardened Release Workflow

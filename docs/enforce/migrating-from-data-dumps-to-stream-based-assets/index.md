@@ -5,6 +5,7 @@ description: >-
   A practice guide for migrating from raw data dumps to a stream-based asset
   production model, requiring careful consumer coordination and strict labeling
   policies for migration tracking.
+provenance: human_edited
 ---
 
 Migrating from raw data dumps to a stream-based asset production model requires

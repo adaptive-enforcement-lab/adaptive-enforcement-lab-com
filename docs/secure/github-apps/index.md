@@ -9,6 +9,7 @@ tags:
   - automation
   - developers
   - operators
+provenance: human
 ---
 
 # GitHub Core App for Organizations

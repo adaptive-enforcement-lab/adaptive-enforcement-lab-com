@@ -14,6 +14,7 @@ tags:
   - operators
 description: >-
   Advanced SLSA patterns for Go: container images with distroless, provenance verification with slsa-verifier, common gotchas, and production best practices.
+provenance: human
 ---
 # Advanced SLSA Patterns for Go
 

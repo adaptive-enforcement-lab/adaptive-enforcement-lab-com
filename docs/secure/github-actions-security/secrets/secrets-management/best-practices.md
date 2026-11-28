@@ -2,6 +2,7 @@
 title: Secret Management Best Practices
 description: >-
   Security best practices for GitHub Actions secrets with OIDC federation patterns, safe interpolation techniques, and comprehensive quick reference guide
+provenance: human
 ---
 
 !!! warning "Secrets Leak Through Multiple Vectors"

@@ -2,6 +2,7 @@
 title: VM-Based Ephemeral Runners
 description: >-
   Cloud VM autoscaling patterns, Packer hardened image creation, and Kubernetes ARC ephemeral runner deployment configurations
+provenance: human
 ---
 
 !!! tip "Pre-Harden VM Images"

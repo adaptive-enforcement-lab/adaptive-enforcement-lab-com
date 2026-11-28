@@ -8,6 +8,7 @@ tags:
   - pss
   - kubernetes
   - security
+provenance: human
 ---
 # Kyverno Pod Security Templates
 

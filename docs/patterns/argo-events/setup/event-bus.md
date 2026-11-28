@@ -2,6 +2,7 @@
 title: EventBus Configuration
 description: >-
   Deploy reliable message delivery with NATS JetStream. Configure persistence, replicas, and resource limits for production EventBus high availability.
+provenance: human
 ---
 # EventBus Configuration
 

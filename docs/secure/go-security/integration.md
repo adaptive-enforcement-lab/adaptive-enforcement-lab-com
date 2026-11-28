@@ -3,6 +3,7 @@ title: Integrated Workflow
 description: >-
   Automate Go security with pre-commit hooks and CI. Run golangci-lint, race detector,
   and coverage checks on every commit with zero friction and seamless integration.
+provenance: human
 ---
 # Integrated Workflow
 

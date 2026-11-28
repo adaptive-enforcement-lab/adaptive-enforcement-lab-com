@@ -8,6 +8,7 @@ tags:
   - vulnerability-scanning
   - slsa
   - supply-chain
+provenance: human
 ---
 # Phase 2: Automation (Weeks 5-8)
 

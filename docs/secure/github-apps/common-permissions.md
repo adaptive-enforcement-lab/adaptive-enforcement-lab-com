@@ -3,6 +3,7 @@ title: Common Permissions
 description: >-
   Permission configurations for specific automation use cases.
   File distribution, CI/CD, repository management, and security scanning.
+provenance: human
 ---
 
 # Common Permission Requirements

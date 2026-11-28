@@ -1,6 +1,7 @@
 ---
 title: Binary Authorization
 description: Enforce binary authorization policies with Shielded GKE nodes, secure boot, measured boot, image attestation, and container signature verification workflows.
+provenance: human
 ---
 
 # Binary Authorization

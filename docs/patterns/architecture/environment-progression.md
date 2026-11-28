@@ -2,6 +2,7 @@
 title: Environment Progression Testing
 description: >-
   Progressive deployment validation with Kustomize overlays, Argo CD automation, load testing in staging, and rollback strategies for Kubernetes environments.
+provenance: human
 ---
 
 # Environment Progression Testing

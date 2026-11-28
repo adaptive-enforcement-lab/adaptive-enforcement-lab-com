@@ -14,6 +14,7 @@ tags:
   - security-teams
 description: >-
   Production-ready Kyverno and OPA Gatekeeper policy templates for enforcing SLSA provenance requirements in Kubernetes clusters. Copy-paste ready policies for SLSA Levels 1-3.
+provenance: human
 ---
 # SLSA Provenance Policy Templates
 

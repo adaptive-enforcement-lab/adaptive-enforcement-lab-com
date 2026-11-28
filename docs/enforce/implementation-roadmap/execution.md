@@ -3,6 +3,7 @@ title: Implementation Roadmap Execution Guide
 description: >-
   Track progress, verify audit readiness, plan rollbacks, estimate costs,
   and measure success metrics for SDLC hardening rollout.
+provenance: human
 ---
 
 # Implementation Roadmap Execution Guide

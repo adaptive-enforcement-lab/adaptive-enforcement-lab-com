@@ -2,6 +2,7 @@
 title: Change Detection
 description: >-
   Detect changed components and skip unnecessary builds in monorepos. Implement cascade dependencies using tj-actions/changed-files with conditional job execution.
+provenance: human
 ---
 # Change Detection
 

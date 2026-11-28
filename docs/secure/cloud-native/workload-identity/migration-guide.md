@@ -1,6 +1,7 @@
 ---
 title: Migration Guide
 description: Migrate from static service account keys to Workload Identity with zero downtime using parallel pod deployment and gradual production traffic shifting patterns.
+provenance: human
 ---
 
 # Migration from Service Account Keys

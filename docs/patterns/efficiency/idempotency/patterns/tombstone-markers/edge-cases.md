@@ -2,6 +2,7 @@
 title: Edge Cases
 description: >-
   Gotchas and mitigations for tombstone markers: stale markers, partial completion gaps, distributed access races, and cleanup strategies for production systems.
+provenance: human
 ---
 # Edge Cases
 

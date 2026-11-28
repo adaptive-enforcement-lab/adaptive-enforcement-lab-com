@@ -8,6 +8,7 @@ tags:
   - environments
   - deployment
   - approval
+provenance: human
 ---
 
 # Environment Protection Patterns

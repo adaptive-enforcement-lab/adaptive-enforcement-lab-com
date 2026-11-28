@@ -9,6 +9,7 @@ description: >-
   Vendor-neutral audit logging pattern: record structure, control-plane
   and data-plane collection, append-only sinks, retention, and
   compliance evidence generation.
+provenance: human
 ---
 # Audit Logging
 

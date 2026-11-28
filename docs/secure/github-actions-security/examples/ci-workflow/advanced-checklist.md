@@ -2,6 +2,7 @@
 title: Advanced Security Patterns and Checklist
 description: >-
   Advanced fork PR security patterns with two-stage workflows, secret scanning prevention techniques, and comprehensive CI security checklist for production
+provenance: human
 ---
 
 !!! warning "Complete All Checklist Items"

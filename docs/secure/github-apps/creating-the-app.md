@@ -3,6 +3,7 @@ title: Creating the Core App
 description: >-
   Step-by-step guide to creating a GitHub Core App.
   Configure permissions, generate credentials, and install on your organization.
+provenance: human
 ---
 
 # Creating the Core App

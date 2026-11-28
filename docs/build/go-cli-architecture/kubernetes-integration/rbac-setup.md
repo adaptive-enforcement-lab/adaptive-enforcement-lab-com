@@ -2,6 +2,7 @@
 title: RBAC Setup
 description: >-
   Configure minimal RBAC permissions for Kubernetes CLIs. Service accounts with namespace-scoped or cluster-wide roles following least privilege principle.
+provenance: human
 ---
 # RBAC Setup
 

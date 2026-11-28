@@ -7,6 +7,7 @@ tags:
   - kubernetes
   - policy-as-code
   - templates
+provenance: human
 ---
 # Kyverno Policy Templates
 

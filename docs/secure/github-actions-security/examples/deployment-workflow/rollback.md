@@ -2,6 +2,7 @@
 title: Manual Rollback and Security Checklist
 description: >-
   Emergency rollback workflows with approval gates, multi-environment deployment security checklist, and common deployment pattern mistakes to avoid
+provenance: human
 ---
 
 !!! warning "Test Rollback Before Production"

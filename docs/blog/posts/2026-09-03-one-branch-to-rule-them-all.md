@@ -3,6 +3,7 @@ title: One Branch to Rule Them All
 date: 2026-09-03
 authors:
   - mark
+  - content-machine
 categories:
   - engineering
   - go
@@ -10,6 +11,7 @@ categories:
 description: >-
   Several automated dependency update pull requests, each conflicting. The path to a clean merge wasn't through them, but around them.
 slug: one-branch-to-rule-them-all
+provenance: human_edited
 ---
 The queue held several pull requests from our dependency bot, all targeting the same `go.mod` file
 in our primary diagnostics service. three minor version bumps and two that were simple hash updates. Several sets of merge

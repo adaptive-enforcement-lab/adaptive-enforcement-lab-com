@@ -9,6 +9,7 @@ tags:
   - secrets
   - scanning
   - detection
+provenance: human
 ---
 
 # Secret Scanning Integration

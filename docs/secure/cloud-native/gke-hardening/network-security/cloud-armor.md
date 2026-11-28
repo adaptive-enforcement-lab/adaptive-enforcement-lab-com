@@ -1,6 +1,7 @@
 ---
 title: Cloud Armor
 description: Configure Cloud Armor for DDoS mitigation, WAF protection, rate limiting, geo-blocking, and bot defense at the GKE ingress layer with Terraform automation.
+provenance: human
 ---
 
 # Cloud Armor

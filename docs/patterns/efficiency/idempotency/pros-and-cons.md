@@ -2,6 +2,7 @@
 title: Pros and Cons
 description: >-
   Tradeoffs of idempotent automation: safe reruns and partial failure recovery versus implementation complexity, performance overhead, and hidden failure risks.
+provenance: human
 ---
 
 # Pros and Cons

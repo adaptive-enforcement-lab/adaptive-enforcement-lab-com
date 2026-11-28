@@ -2,6 +2,7 @@
 title: Kubernetes Secrets Integration
 description: >-
   Integrate GitHub App credentials with Kubernetes using External Secrets Operator, Sealed Secrets, and native Kubernetes secrets.
+provenance: human
 ---
 
 # Kubernetes Secrets Integration

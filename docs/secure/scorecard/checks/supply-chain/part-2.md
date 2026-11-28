@@ -2,6 +2,7 @@
 title: Dangerous-Workflow Check
 description: >-
   Prevent dangerous workflow patterns that leak secrets or enable code injection attacks through untrusted input in GitHub Actions event payloads.
+provenance: human
 ---
 # Dangerous-Workflow Check
 

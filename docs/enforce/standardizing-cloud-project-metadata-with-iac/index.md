@@ -3,6 +3,7 @@ title: Standardizing Cloud Project Metadata with IaC
 nav_title: IaC Project Metadata
 description: >-
   Use Infrastructure as Code (IaC) to enforce standardized metadata and ownership labels on all cloud projects, preventing configuration drift and enabling consistent inventory reporting.
+provenance: human_edited
 ---
 Standardizing metadata and ownership labeling for cloud projects through Infrastructure as Code is critical for maintaining an accurate inventory, preventing configuration drift, and enabling consistent, automated reporting across a large cloud estate.
 This practice ensures every provisioned resource can be immediately classified, tracked, and managed throughout its lifecycle, directly supporting governance, cost management, and operational stability.

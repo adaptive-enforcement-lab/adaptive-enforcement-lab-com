@@ -9,6 +9,7 @@ tags:
   - image-security
   - kubernetes
   - templates
+provenance: human
 ---
 # OPA Base Image Templates
 

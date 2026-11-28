@@ -1,6 +1,7 @@
 ---
 title: Network Policies
 description: Implement zero-trust Kubernetes network policies with default-deny ingress rules, explicit pod-to-pod traffic control, and granular egress filtering patterns.
+provenance: human
 ---
 
 # Network Policies

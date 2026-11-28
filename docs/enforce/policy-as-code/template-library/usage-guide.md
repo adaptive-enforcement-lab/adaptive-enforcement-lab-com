@@ -7,6 +7,7 @@ tags:
   - customization
   - troubleshooting
   - best-practices
+provenance: human
 ---
 # Policy Template Usage Guide
 

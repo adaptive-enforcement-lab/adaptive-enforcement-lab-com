@@ -8,6 +8,7 @@ tags:
   - security
   - secrets
   - credentials
+provenance: human
 ---
 
 # Secret Management Overview

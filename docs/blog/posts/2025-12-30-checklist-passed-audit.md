@@ -10,6 +10,7 @@ categories:
 description: >-
   When auditors ask "how do you know?" and you have receipts. The SDLC hardening checklist that turned compliance from panic to process.
 slug: checklist-passed-audit
+provenance: human
 ---
 # The Checklist That Passed the Audit
 

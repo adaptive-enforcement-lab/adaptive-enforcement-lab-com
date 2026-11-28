@@ -11,6 +11,7 @@ tags:
   - fuzzing
   - maintenance
 
+provenance: human
 ---
 # Tier 3: Score 9 to 10 (Advanced → Exceptional)
 

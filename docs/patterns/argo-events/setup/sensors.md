@@ -2,6 +2,7 @@
 title: Sensor Configuration
 description: >-
   Route events to workflows with Sensors. Master event filtering, parameter extraction, multi-action routing, and rate limiting for production event processing.
+provenance: human
 ---
 # Sensor Configuration
 

@@ -2,6 +2,7 @@
 title: Deduplication
 description: >-
   Stop duplicate rows, requests, and event deliveries with unique constraints, idempotency keys, and consumer-side event dedup for reliable distributed systems.
+provenance: human
 ---
 
 # Deduplication

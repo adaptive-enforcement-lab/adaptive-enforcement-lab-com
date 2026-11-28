@@ -7,6 +7,7 @@ tags:
   - mtls
   - service-mesh
   - security
+provenance: human
 ---
 # Zero Trust Patterns
 

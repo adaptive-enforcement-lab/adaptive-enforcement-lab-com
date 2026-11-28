@@ -2,6 +2,7 @@
 title: Pre-commit Hook Distribution
 description: >-
   Distribute Go CLIs as pre-commit hooks with binary releases. Eliminate 30-second cold start penalty for hooks developers keep enabled in workflows.
+provenance: human
 ---
 # Pre-commit Hook Distribution
 

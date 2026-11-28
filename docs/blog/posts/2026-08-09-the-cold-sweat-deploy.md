@@ -3,6 +3,7 @@ title: The Cold Sweat Deploy
 date: 2026-08-09
 authors:
   - mark
+  - content-machine
 categories:
   - gitops
   - kubernetes
@@ -11,6 +12,7 @@ description: >-
   A failed midnight deploy taught us why GitOps beats scripted kubectl apply across a growing
   fleet of Kubernetes clusters.
 slug: the-cold-sweat-deploy
+provenance: human_edited
 ---
 
 # The Cold Sweat Deploy

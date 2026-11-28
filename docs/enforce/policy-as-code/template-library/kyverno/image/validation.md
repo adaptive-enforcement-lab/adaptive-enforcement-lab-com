@@ -7,6 +7,7 @@ tags:
   - image-validation
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Image Validation Templates
 

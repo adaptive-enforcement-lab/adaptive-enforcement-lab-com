@@ -8,6 +8,7 @@ tags:
   - automation
   - devsecops
   - operators
+provenance: human
 ---
 
 # GitHub Actions Security Patterns Hub

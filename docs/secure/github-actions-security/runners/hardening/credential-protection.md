@@ -2,6 +2,7 @@
 title: Credential Protection
 description: >-
   Protect runner credentials with OIDC federation, metadata endpoint blocking, IMDSv2 enforcement, and firewall rules to prevent credential exfiltration attacks
+provenance: human
 ---
 
 !!! warning "Block Metadata Endpoints"

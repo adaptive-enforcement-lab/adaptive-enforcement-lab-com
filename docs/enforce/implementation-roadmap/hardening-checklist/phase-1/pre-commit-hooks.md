@@ -8,6 +8,7 @@ tags:
   - git-hooks
   - trufflehog
   - linting
+provenance: human
 ---
 # Phase 1: Pre-commit Hooks
 

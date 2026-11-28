@@ -5,6 +5,7 @@ description: >-
   A composite key, combining application name and packaging chart, prevents
   incorrect merges during automated promotions and ensures accurate selection
   of promotion candidates across environments.
+provenance: machine
 ---
 Employing a composite key made of an application's name and its packaging chart
 identifier is the most reliable method for uniquely identifying a deployable

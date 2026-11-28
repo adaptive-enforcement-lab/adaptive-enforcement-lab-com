@@ -9,6 +9,7 @@ tags:
   - pvc
   - kubernetes
   - templates
+provenance: human
 ---
 # Kyverno Resource Storage Templates
 

@@ -7,6 +7,7 @@ tags:
   - kubernetes
   - integration
   - deployment
+provenance: human
 ---
 # End-to-End Deployment
 

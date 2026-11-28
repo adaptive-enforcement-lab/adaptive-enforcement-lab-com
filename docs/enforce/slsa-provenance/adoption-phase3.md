@@ -13,6 +13,7 @@ tags:
   - security-teams
 description: >-
   SLSA Level 3 implementation: isolated builds with slsa-github-generator, verification workflows, and OpenSSF Scorecard 10/10. Complete guide with validation checkpoints.
+provenance: human
 ---
 # Phase 3: SLSA Level 3 Implementation
 

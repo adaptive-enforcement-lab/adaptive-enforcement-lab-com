@@ -2,6 +2,7 @@
 title: Force Overwrite
 description: >-
   Skip checks and overwrite targets when replacing with identical content is safe. Simplest idempotency pattern with force-with-lease safety for git operations.
+provenance: human
 ---
 
 # Force Overwrite

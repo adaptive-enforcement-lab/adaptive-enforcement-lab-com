@@ -2,6 +2,7 @@
 title: Using Tokens
 description: >-
   Integrate Core App tokens with GitHub CLI, Git operations, checkout action, and REST/GraphQL APIs. Environment variable patterns and credential configuration.
+provenance: human
 ---
 
 # Using Generated Tokens

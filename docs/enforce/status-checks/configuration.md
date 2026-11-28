@@ -3,6 +3,7 @@ title: Status Check Configuration Patterns
 description: >-
   Configure required vs optional checks, handle flaky tests, optimize check timing,
   and manage check names for reliable CI/CD gating.
+provenance: human
 ---
 
 # Status Check Configuration Patterns

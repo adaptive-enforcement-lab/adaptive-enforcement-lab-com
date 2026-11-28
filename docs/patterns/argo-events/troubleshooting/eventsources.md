@@ -2,6 +2,7 @@
 title: EventSource Troubleshooting
 description: >-
   Troubleshoot EventSource connectivity and authentication failures. Diagnose webhook delivery, Pub/Sub parsing, subscription conflicts, and network issues.
+provenance: human
 ---
 # EventSource Troubleshooting
 

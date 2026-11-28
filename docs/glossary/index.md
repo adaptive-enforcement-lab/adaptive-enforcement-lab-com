@@ -3,6 +3,7 @@ title: DevSecOps Glossary
 description: >-
   Comprehensive glossary of DevSecOps terminology, policy-as-code concepts,
   and security automation patterns used throughout Adaptive Enforcement Lab.
+provenance: human
 ---
 
 # DevSecOps Glossary

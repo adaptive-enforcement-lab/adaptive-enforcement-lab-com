@@ -3,6 +3,7 @@ title: Status Check Operations
 description: >-
   Debug failed checks, collect audit evidence, and optimize CI/CD costs
   through caching, path filtering, and self-hosted runners.
+provenance: human
 ---
 
 # Status Check Operations

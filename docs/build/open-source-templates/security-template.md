@@ -8,6 +8,7 @@ tags:
   - security
   - openssf
   - developers
+provenance: human
 ---
 
 # SECURITY.md Template

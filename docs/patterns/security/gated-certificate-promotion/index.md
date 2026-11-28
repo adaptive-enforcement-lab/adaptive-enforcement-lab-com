@@ -3,6 +3,7 @@ title: Gated Certificate Operator Promotion
 description: >-
   Gate cert-manager Certificate promotion across environments with Kyverno
   policy checks and GitHub Environment required reviewers.
+provenance: machine
 ---
 
 # Gated Certificate Operator Promotion

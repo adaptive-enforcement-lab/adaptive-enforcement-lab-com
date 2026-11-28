@@ -2,6 +2,7 @@
 title: Command Architecture
 description: >-
   Design CLI commands that work independently and compose well for automation. Orchestrator pattern coordinates, subcommands execute discrete tasks.
+provenance: human
 ---
 # Command Architecture
 

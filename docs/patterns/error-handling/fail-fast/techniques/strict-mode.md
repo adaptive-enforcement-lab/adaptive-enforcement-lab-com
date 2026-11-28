@@ -6,6 +6,7 @@ tags:
   - fail-fast
   - strict-mode
   - validation
+provenance: human
 ---
 # Strict Mode Execution
 

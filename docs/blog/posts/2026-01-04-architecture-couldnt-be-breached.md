@@ -10,6 +10,7 @@ categories:
 description: >-
   When container escape meets defense in depth. The secure-by-design patterns that contained the breach before it started.
 slug: architecture-couldnt-be-breached
+provenance: human
 ---
 # The Architecture That Couldn't Be Breached
 

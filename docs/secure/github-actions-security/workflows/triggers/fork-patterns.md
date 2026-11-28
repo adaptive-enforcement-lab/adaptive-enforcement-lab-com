@@ -2,6 +2,7 @@
 title: Fork Workflow Security Patterns
 description: >-
   Secure fork PR workflows with two-stage CI patterns, manual approval gates for external contributions, and comprehensive trigger security decision trees
+provenance: human
 ---
 
 !!! warning "Never Trust Fork PR Code"
