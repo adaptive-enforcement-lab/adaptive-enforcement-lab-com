@@ -74,4 +74,4 @@ For deploying and managing Argo Events in production:
 
 - [Argo Workflows Patterns](../argo-workflows/index.md) - WorkflowTemplate design and error handling
 - [Event-Driven Deployments](../../blog/posts/2025-12-14-event-driven-deployments-argo.md) - The journey to zero-latency automation
-- [ConfigMap as Cache Pattern](../efficiency/idempotency/caches.md) - Volume mounts for zero-API reads
+- [ConfigMap as Cache Pattern](../../build/efficiency-patterns/configmap-cache.md) - Volume mounts for zero-API reads

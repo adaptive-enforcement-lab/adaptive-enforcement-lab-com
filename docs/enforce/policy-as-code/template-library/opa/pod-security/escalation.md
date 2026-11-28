@@ -314,4 +314,4 @@ opa test -v k8sblockprivilegeescalation.rego \
 - **[OPA RBAC Templates →](../rbac/overview.md)** - Service account and role restrictions
 - **[Kyverno Pod Security Templates →](../../kyverno/pod-security/standards.md)** - Kubernetes-native alternative
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

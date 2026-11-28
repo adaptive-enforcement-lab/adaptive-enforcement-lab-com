@@ -348,4 +348,4 @@ done
 - **[OPA RBAC Templates →](../rbac/overview.md)** - Service account and role restrictions
 - **[Kyverno Resource Templates →](../../kyverno/resource/limits.md)** - Kubernetes-native alternative
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

@@ -327,6 +327,6 @@ kubectl get pods -A -o json | jq -r '
 - **[OPA Resource Governance Templates →](governance.md)** - Resource limits and quota enforcement
 - **[OPA Storage Class Templates →](storage.md)** - Storage class restrictions and PVC limits
 - **[OPA Pod Security Templates →](../pod-security/overview.md)** - Privileged containers and host namespaces
-- **[Kyverno Resource Templates →](../resource/storage.md)** - Kubernetes-native alternative
+- **[Kyverno Resource Templates →](../../kyverno/resource/limits.md)** - Kubernetes-native alternative
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

@@ -295,4 +295,4 @@ kubectl get pods -A -o json | jq -r '
 - **[OPA RBAC Templates →](../rbac/overview.md)** - Service account and role restrictions
 - **[Kyverno Image Validation Templates →](../../kyverno/image/validation.md)** - Kubernetes-native alternative
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

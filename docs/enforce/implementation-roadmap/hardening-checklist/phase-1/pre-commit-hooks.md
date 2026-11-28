@@ -227,7 +227,7 @@ Run manually before first commit: pre-commit run --all-files
 
 - **[Branch Protection →](branch-protection.md)** - GitHub repository protection
 - **[Phase 1 Overview →](index.md)** - Foundation phase summary
-- **[Implementation Roadmap](index.md)** - Complete roadmap
+- **[Implementation Roadmap](../index.md)** - Complete roadmap
 
 ---
 

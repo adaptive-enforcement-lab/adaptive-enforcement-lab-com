@@ -58,5 +58,5 @@ This guide covers EventSource, EventBus, and Sensor configuration for event-driv
 ## Related
 
 - [Argo Workflows Patterns](../../argo-workflows/index.md) - WorkflowTemplate design and error handling
-- [ConfigMap as Cache Pattern](../../../patterns/efficiency/idempotency/caches.md) - Volume mounts for zero-API reads
+- [ConfigMap as Cache Pattern](../../../build/efficiency-patterns/configmap-cache.md) - Volume mounts for zero-API reads
 - [Event-Driven Deployments](../../../blog/posts/2025-12-14-event-driven-deployments-argo.md) - The journey to zero-latency automation

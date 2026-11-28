@@ -363,4 +363,4 @@ spec:
 - **[OPA Wildcard Templates →](wildcards.md)** - Prevent wildcard resource permissions
 - **[OPA Pod Security Templates →](../pod-security/overview.md)** - Privileged containers and host namespaces
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

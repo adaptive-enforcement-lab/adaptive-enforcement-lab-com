@@ -125,7 +125,7 @@ Phase 2 builds on this foundation by adding CI/CD gates, SBOM generation, vulner
 
 - **[Pre-commit Security Gates](../../../pre-commit-hooks/pre-commit-hooks.md)** - Detailed hook configuration
 - **[Branch Protection Enforcement](../../../branch-protection/branch-protection.md)** - GitHub API automation
-- **[Implementation Roadmap Overview](index.md)** - Complete roadmap
+- **[Implementation Roadmap Overview](../index.md)** - Complete roadmap
 - **[Phase 2: Automation →](../phase-2/index.md)** - CI/CD gates
 
 ---

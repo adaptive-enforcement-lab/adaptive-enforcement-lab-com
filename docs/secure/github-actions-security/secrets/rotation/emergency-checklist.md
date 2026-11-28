@@ -131,7 +131,7 @@ Ready to implement rotation automation? Continue with:
 
 - **[OIDC Federation Patterns](../oidc/index.md)**: Eliminate stored secrets entirely with secretless cloud authentication
 - **[Secret Scanning Integration](../scanning/index.md)**: Detect leaked secrets before rotation becomes emergency response
-- **[Secret Management Overview](index.md)**: Storage hierarchy, threat model, and exposure prevention
+- **[Secret Management Overview](../secrets-management/index.md)**: Storage hierarchy, threat model, and exposure prevention
 
 ## Quick Reference
 

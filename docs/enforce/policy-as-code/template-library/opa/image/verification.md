@@ -300,7 +300,7 @@ done
 - **[OPA Base Image Templates →](base.md)** - Approved base image enforcement
 - **[Kyverno Image Signing Templates →](../../kyverno/image/signing.md)** - Native cosign verification alternative
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page
 
 ---
 

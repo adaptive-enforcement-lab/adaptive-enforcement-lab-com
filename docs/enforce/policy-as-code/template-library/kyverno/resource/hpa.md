@@ -288,4 +288,4 @@ kubectl patch hpa <name> -p '{"metadata":{"annotations":{"autoscaling.alpha.kube
 - **[Kyverno Resource Storage →](storage.md)** - Ephemeral storage and PVC limits
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

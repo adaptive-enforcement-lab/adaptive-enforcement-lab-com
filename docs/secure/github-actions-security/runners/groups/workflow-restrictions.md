@@ -178,7 +178,7 @@ jobs:
 
 ## Next Steps
 
-- **[Runner Security Overview](index.md)**: Understanding the self-hosted runner threat model
+- **[Runner Security Overview](../index.md)**: Understanding the self-hosted runner threat model
 - **[Hardening Checklist](../hardening/index.md)**: OS-level and runtime hardening for runners
 - **[Ephemeral Runners](../ephemeral/index.md)**: Disposable runner patterns for state isolation
 

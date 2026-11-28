@@ -128,7 +128,7 @@ Phase 3 extends enforcement to runtime by controlling what can actually deploy t
 - **[SLSA Provenance](../../../slsa-provenance/slsa-provenance.md)** - Build attestation details
 - **[SBOM Generation](../../../../secure/sbom/sbom-generation.md)** - Software Bill of Materials
 - **[Vulnerability Scanning](../../../../secure/vulnerability-scanning/vulnerability-scanning.md)** - Container image scanning
-- **[Implementation Roadmap Overview](index.md)** - Complete roadmap
+- **[Implementation Roadmap Overview](../index.md)** - Complete roadmap
 - **[Phase 1: Foundation](../phase-1/index.md)** - Pre-commit and branch protection
 - **[Phase 3: Runtime →](../phase-3/index.md)** - Production policy enforcement
 

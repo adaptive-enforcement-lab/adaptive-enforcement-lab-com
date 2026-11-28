@@ -358,4 +358,4 @@ Reduce cloud costs through policy enforcement:
 
 - [OPA Templates Overview](../index.md)
 - [OPA RBAC Policies](../rbac/index.md)
-- [Kyverno Resource Governance](../resource/index.md)
+- [Kyverno Resource Governance](../../kyverno/resource/index.md)

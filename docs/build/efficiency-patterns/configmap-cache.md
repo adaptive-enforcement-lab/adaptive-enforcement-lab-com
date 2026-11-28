@@ -140,7 +140,7 @@ The [Use Cases guide](use-cases.md) covers:
 
 - Blog: [Zero API Calls: The ConfigMap Pattern](../../blog/posts/2025-12-24-configmap-cache-zero-api.md) - Discovery story
 - [Go CLI Architecture - Kubernetes Integration](../go-cli-architecture/kubernetes-integration/index.md) - client-go patterns for API-based approaches
-- [Argo Workflows Patterns](../../enforce/policy-as-code/runtime-deployment/index.md) - Workflow orchestration context
+- [Argo Workflows Patterns](../../patterns/argo-workflows/index.md) - Workflow orchestration context
 
 ---
 

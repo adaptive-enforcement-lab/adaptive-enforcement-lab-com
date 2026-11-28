@@ -358,9 +358,9 @@ done
 - **[OPA Image Security Templates →](security.md)** - Registry allowlists and tag validation
 - **[OPA Image Digest Templates →](digest.md)** - SHA256 digest enforcement
 - **[OPA Image Verification Templates →](verification.md)** - Signature verification annotations
-- **[Kyverno Image Security Templates →](../image/security.md)** - Kubernetes native base image enforcement
+- **[Kyverno Image Security Templates →](../../kyverno/image/security.md)** - Kubernetes native base image enforcement
 - **[Decision Guide →](../../decision-guide.md)** - OPA vs Kyverno selection
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page
 
 ---
 

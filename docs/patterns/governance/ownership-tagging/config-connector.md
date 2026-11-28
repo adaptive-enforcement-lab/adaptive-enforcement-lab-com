@@ -144,4 +144,4 @@ the project is now correctly classified for inventory and reporting purposes.
 ## Related
 
 - [Standardizing Cloud Project Metadata with IaC](../../../enforce/standardizing-cloud-project-metadata-with-iac/index.md) - The general IaC mechanism for enforcing label schemas on cloud projects; this article covers the Config Connector-specific propagation quirk that mechanism runs into
-- [Resource Ownership and Criticality Tagging](../index.md) - The vendor-neutral governance pattern this page shows applied to one platform
+- [Resource Ownership and Criticality Tagging](index.md) - The vendor-neutral governance pattern this page shows applied to one platform

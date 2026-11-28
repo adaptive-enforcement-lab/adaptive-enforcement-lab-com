@@ -257,4 +257,4 @@ Replace deprecated PSPs with Kyverno policies:
 
 - [Kyverno Templates Overview](../index.md)
 - [Kyverno Network Security](../network/index.md)
-- [OPA Pod Security Templates](../pod-security/index.md)
+- [OPA Pod Security Templates](../../opa/pod-security/index.md)

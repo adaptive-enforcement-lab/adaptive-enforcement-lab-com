@@ -340,4 +340,4 @@ spec:
 - **[Kyverno Pod Security →](standards.md)** - Core pod security policies
 - **[Kyverno Image Validation →](../image/validation.md)** - Registry allowlists and tag validation
 - **[Kyverno Resource Limits →](../resource/limits.md)** - CPU and memory enforcement
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

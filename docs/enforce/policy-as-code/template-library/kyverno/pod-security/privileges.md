@@ -244,4 +244,4 @@ spec:
 - **[Kyverno Pod Security →](standards.md)** - Core pod security policies
 - **[Kyverno Pod Security Profiles →](profiles.md)** - Seccomp and AppArmor enforcement
 - **[Kyverno Image Validation →](../image/validation.md)** - Registry allowlists and tag validation
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

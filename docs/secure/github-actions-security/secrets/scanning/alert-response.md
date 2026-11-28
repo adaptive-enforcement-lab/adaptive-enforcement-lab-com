@@ -278,7 +278,7 @@ git commit -m "Add deployment config (secret removed)"
 
 ## Related Resources
 
-- [Secret Management Overview](index.md)
+- [Secret Management Overview](../secrets-management/index.md)
 - [OIDC Federation Patterns](../oidc/index.md)
 - [Secret Rotation Automation](../rotation/index.md)
 - [Workflow Trigger Security](../../workflows/triggers/index.md)

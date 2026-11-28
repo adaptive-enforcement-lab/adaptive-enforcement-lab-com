@@ -274,4 +274,4 @@ kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"\t"}{.s
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Resource Limits →](../resource/limits.md)** - CPU and memory enforcement
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
-- **[Template Library Overview →](../index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

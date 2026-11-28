@@ -235,4 +235,4 @@ kubectl get secrets -A -o json | jq -r '.items[] | select(.type == "kubernetes.i
 - **[Kyverno Network Security →](security.md)** - NetworkPolicy and egress requirements
 - **[Kyverno Network Services →](services.md)** - Service type restrictions
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

@@ -350,4 +350,4 @@ kubectl get pvc -A -o json | jq -r '.items[] | select(.spec.storageClassName == 
 - **[Kyverno HPA Requirements →](hpa.md)** - Horizontal Pod Autoscaler enforcement
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
 - **[Kyverno Labels →](../labels.md)** - Mandatory metadata
-- **[Template Library Overview →](index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

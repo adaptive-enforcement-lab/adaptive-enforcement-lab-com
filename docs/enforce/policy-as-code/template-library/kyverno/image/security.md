@@ -231,4 +231,4 @@ jobs:
 - **[Kyverno Image Signing →](signing.md)** - Cosign signature verification
 - **[Kyverno Image Validation →](validation.md)** - Digest requirements and registry allowlists
 - **[Kyverno Pod Security →](../pod-security/standards.md)** - Security contexts and capabilities
-- **[Template Library Overview →](../index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page

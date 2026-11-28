@@ -329,7 +329,7 @@ Implement security controls in this order for maximum impact:
 
 ## Additional Resources
 
-- **[GitHub Actions Security Hub](index.md)**: Full documentation and patterns
+- **[GitHub Actions Security Hub](../index.md)**: Full documentation and patterns
 - **[GitHub Security Hardening Guide](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions)**: Official documentation
 - **[OpenSSF Scorecard](https://github.com/ossf/scorecard)**: Automated security assessment
 - **[StepSecurity Harden-Runner](https://github.com/step-security/harden-runner)**: Runtime security monitoring

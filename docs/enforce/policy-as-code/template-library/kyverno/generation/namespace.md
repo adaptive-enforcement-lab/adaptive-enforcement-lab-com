@@ -369,4 +369,4 @@ done
 - **[Kyverno Resource Limits →](../resource/limits.md)** - Resource quota validation
 - **[Kyverno Mutation - Labels →](../mutation/labels.md)** - Auto-label resources
 - **[Kyverno Generation - Workload Resources →](workload.md)** - PodDisruptionBudget generation
-- **[Template Library Overview →](../index.md)** - Back to main page
+- **[Template Library Overview →](../../index.md)** - Back to main page
