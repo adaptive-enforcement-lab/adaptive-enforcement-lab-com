@@ -136,6 +136,59 @@ coverage:
 
 **Progressive Improvement**: Allow lower coverage for legacy code while enforcing high coverage for new code.
 
+### Codecov Components
+
+Components split the coverage report by package. Their `paths` are **regular
+expressions, not globs**. A glob such as `cmd/**` matches nothing, and the component
+silently reports "No report uploaded".
+
+```yaml
+# codecov.yml
+component_management:
+  default_rules:
+    statuses:
+      - type: project
+        target: 95%
+
+  individual_components:
+    - component_id: cli
+      name: CLI
+      paths:
+        - "cmd/readability/.*"
+
+    - component_id: analyzer
+      name: Analyzer
+      paths:
+        - "pkg/analyzer/.*"
+
+    - component_id: config
+      name: Configuration
+      paths:
+        - "pkg/config/.*"
+
+    - component_id: markdown
+      name: Markdown Parser
+      paths:
+        - "pkg/markdown/.*"
+
+    - component_id: output
+      name: Output Formatters
+      paths:
+        - "pkg/output/.*"
+```
+
+Escape regex metacharacters:
+
+```yaml
+# Glob (GitHub Actions)
+paths:
+  - "*.go"
+
+# Regex (Codecov)
+paths:
+  - ".*\\.go$"  # Escape the dot, anchor with $
+```
+
 ---
 
 ## Codecov Test Analytics
@@ -186,6 +239,12 @@ See: [OpenSSF Best Practices Badge](../../blog/posts/2025-12-17-openssf-badge-tw
 **Cause**: Pre-commit hook uses `bc` for floating-point comparison
 
 **Fix**: Install bc: `brew install bc`
+
+### Components show "No report uploaded"
+
+**Cause**: Component `paths` written as globs (`cmd/**`)
+
+**Fix**: Use regex paths (`"cmd/readability/.*"`), see [Codecov Components](#codecov_components)
 
 ### Error: "Codecov upload fails with 401"
 
