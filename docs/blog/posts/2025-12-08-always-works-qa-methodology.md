@@ -8,9 +8,9 @@ categories:
   - Testing
   - Developer Workflow
 description: >-
-  Pattern matching isn't verification. Build a habit of running code,
-  not just reading it.
+  Pattern matching isn't verification. Build a habit of running code, not just reading it. Verify locally, every time, before CI does it for you.
 slug: always-works-qa-methodology
+provenance: human
 ---
 # Should Work ≠ Does Work: The Always Works Methodology
 
@@ -81,55 +81,17 @@ The math is clear: always verify locally.
 
 ### Code Logic Changes
 
-```bash
-# 1. Build
-go build ./...
-
-# 2. Run unit tests
-go test ./...
-
-# 3. Run the specific scenario
-./my-tool --flag-i-changed input.txt
-
-# 4. Verify output matches expectations
-# (Actually read the output, don't assume)
-```
+Build. Run the unit tests. Run the exact scenario you changed. Read the output instead of assuming it.
 
 ### CLI Flag Changes
 
-```bash
-# 1. Build
-go build ./...
-
-# 2. Test the new flag
-./my-tool --new-flag value
-
-# 3. Test flag interactions
-./my-tool --new-flag value --existing-flag
-
-# 4. Test help output
-./my-tool --help | grep new-flag
-
-# 5. Test invalid input
-./my-tool --new-flag invalid-value
-```
+Build. Run the new flag. Combine it with existing flags. Check that `--help` lists it. Feed it an invalid value.
 
 ### CI/CD Pipeline Changes
 
-```bash
-# 1. Lint the workflow file
-actionlint .github/workflows/my-workflow.yml
+Lint the workflow with `actionlint` and `yamllint`. Push a test branch. Watch the run with `gh run view --log` instead of assuming.
 
-# 2. Validate YAML syntax
-yamllint .github/workflows/my-workflow.yml
-
-# 3. Create a test branch and push
-git checkout -b test-workflow
-git push origin test-workflow
-
-# 4. Watch CI run, don't assume
-gh run view <run-id> --log
-```
+The [local verification chains guide](../../enforce/testing-enforcement/local-verification-chains.md) has the commands for each chain.
 
 ---
 
@@ -146,48 +108,19 @@ gh run view <run-id> --log
 
 ## Multi-Step Verification Checklist
 
-For complex changes, create explicit checklists:
+For complex changes, create explicit checklists.
 
-```markdown
-## Verification Checklist
-
-- [ ] Code compiles: `go build ./...`
-- [ ] Linter passes: `golangci-lint run ./...`
-- [ ] Warning appears for failure case:
-  - Create failing input
-  - Run tool with `--check`
-  - Observe expected warning message
-- [ ] No warnings for passing case:
-  - Run tool on valid input
-  - Observe no warnings
-- [ ] Exit codes correct:
-  - Failure returns exit 1
-  - Success returns exit 0
-```
+Each item names a command and what to observe: the build, the linter, the warning on a failing input, no warning on a passing one, exit codes 1 and 0.
+The [guide](../../enforce/testing-enforcement/local-verification-chains.md) has a checklist template.
 
 ---
 
 ## Pre-commit Hooks as Enforcement
 
-Install verification as a habit:
+Install verification as a habit.
 
-```yaml
-# .pre-commit-config.yaml
-repos:
-  - repo: local
-    hooks:
-      - id: go-build
-        name: go build
-        entry: go build ./...
-        language: system
-        pass_filenames: false
-
-      - id: go-lint
-        name: golangci-lint
-        entry: golangci-lint run
-        language: system
-        pass_filenames: false
-```
+Two local hooks, `go build ./...` and `golangci-lint run`, run on every commit.
+The [guide](../../enforce/testing-enforcement/local-verification-chains.md) has the config.
 
 Now verification happens automatically. No discipline required.
 

@@ -771,6 +771,7 @@ nav:
       - Testing Enforcement:
           - Coverage Patterns: enforce/testing-enforcement/coverage-patterns.md
           - Coverage Enforcement: enforce/testing-enforcement/coverage-enforcement.md
+          - Local Verification Chains: enforce/testing-enforcement/local-verification-chains.md
       - Audit & Compliance:
           - enforce/audit-compliance/audit-evidence.md
           - Evidence Types: enforce/audit-compliance/evidence-types.md
