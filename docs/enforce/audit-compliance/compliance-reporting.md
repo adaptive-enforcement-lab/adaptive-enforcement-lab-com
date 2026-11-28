@@ -37,6 +37,15 @@ tar -xzf evidence-v1.7.0.tar.gz
 cosign verify-blob --bundle evidence-v1.7.0.tar.gz.sig evidence-v1.7.0.tar.gz
 ```
 
+**Sampled PRs from GitHub**: when an auditor picks a month, list every PR merged into
+`main` in that month, with its reviews:
+
+```bash
+gh api 'repos/org/repo/pulls?state=closed&base=main' \
+  --jq '.[] | select(.merged_at | startswith("2025-03")) |
+    {number, title, reviews, merged_at}'
+```
+
 ---
 
 ## Compliance Dashboard Patterns
