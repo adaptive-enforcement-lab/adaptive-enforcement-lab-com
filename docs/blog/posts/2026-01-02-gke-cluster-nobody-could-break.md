@@ -10,6 +10,7 @@ categories:
 description: >-
   When penetration testers give up after 3 days. The GKE hardening guide that turned a cluster into a fortress.
 slug: gke-cluster-nobody-could-break
+provenance: human
 ---
 # The GKE Cluster That Nobody Could Break
 
@@ -70,43 +71,15 @@ Instead of patching holes, the GKE security hardening guide removes the doors en
 
 ### 1. Network Isolation (Deny by Default)
 
-```yaml
-# Network policy: deny everything, allow explicitly
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: default-deny-all
-spec:
-  podSelector: {}
-  policyTypes:
-  - Ingress
-  - Egress
-```
+A `default-deny-all` NetworkPolicy selects every pod and denies all ingress and egress. Allowed paths are added one by one.
+See [Network Policies](../../secure/cloud-native/gke-hardening/network-security/network-policies.md).
 
 Result: Pods can't talk to anything unless explicitly allowed. No lateral movement, no cross-namespace explosions.
 
 ### 2. Pod Security Standards (No Privileged Containers)
 
-```yaml
-# Pod security policy: reject privileged, require security context
-apiVersion: pod-security.k8s.io/v1beta1
-kind: Pod
-metadata:
-  name: restricted-example
-spec:
-  securityContext:
-    runAsNonRoot: true
-    runAsUser: 1000
-    fsReadOnlyRootFilesystem: true
-  containers:
-  - name: app
-    securityContext:
-      allowPrivilegeEscalation: false
-      readOnlyRootFilesystem: true
-      capabilities:
-        drop:
-        - ALL
-```
+Pods run as a non-root user with a read-only root filesystem. Containers drop all capabilities and cannot escalate privileges.
+See [Pod Security Standards](../../secure/cloud-native/gke-hardening/runtime-security/pod-security-standards.md).
 
 Result: Containers can't escalate, can't write to root filesystem, can't use dangerous capabilities. Container escape leads nowhere.
 
@@ -134,12 +107,8 @@ Result: Even if someone breaches etcd, they get ciphertext.
 
 ### 5. Comprehensive Audit Logging
 
-```yaml
-# GKE cluster created with audit logs enabled
-gcloud container clusters create hardened-cluster \
-  --enable-cloud-logging \
-  --logging=SYSTEM,WORKLOAD,API_SERVER
-```
+The cluster is created with Cloud Logging on for system, workload and API server logs.
+See [Audit Logging](../../secure/cloud-native/gke-hardening/iam-configuration/audit-logging.md).
 
 Every API call logged:
 
@@ -152,29 +121,15 @@ Result: Nothing happens without leaving a trail.
 
 ### 6. Workload Identity (Eliminate Static Keys)
 
-```yaml
-# Pod uses Workload Identity, not static service account keys
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: app-sa
-  annotations:
-    iam.gke.io/gcp-service-account: app@project.iam.gserviceaccount.com
-```
+The pod's Kubernetes ServiceAccount carries an `iam.gke.io/gcp-service-account` annotation that binds it to a Google service account.
+See [Workload Identity](../../secure/cloud-native/gke-hardening/cluster-configuration/workload-identity.md).
 
 Result: No service account keys to steal. Credentials are ephemeral, bound to pod identity.
 
 ### 7. Private Cluster (No Public API Endpoint)
 
-```bash
-gcloud container clusters create hardened-cluster \
-  --enable-ip-alias \
-  --network custom-network \
-  --subnetwork custom-subnet \
-  --enable-private-nodes \
-  --enable-private-endpoint \
-  --master-ipv4-cidr 172.16.0.0/28
-```
+The cluster gets VPC-native networking on a custom subnet, private nodes, a private endpoint and a dedicated control plane CIDR.
+See [Private Cluster Setup](../../secure/cloud-native/gke-hardening/cluster-configuration/private-cluster-setup.md).
 
 Result: Kubernetes API not accessible from the internet. Access only through VPN or authorized networks.
 
