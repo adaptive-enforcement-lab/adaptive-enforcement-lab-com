@@ -13,12 +13,12 @@ Real-world policy management requires aggregating policies from different teams 
 
 ```mermaid
 graph TD
-    SP[security-policy repo] -->|OCI container| MS[Multi-stage Build]
-    DP[devops-policy repo] -->|OCI container| MS
+    SP[security-rules repo] -->|OCI container| MS[Multi-stage Build]
+    DP[ops-rules repo] -->|OCI container| MS
     KC[Kyverno curated] -->|OCI container| MS
     APP[Application repo] -->|OCI container| MS
 
-    MS -->|Single image| PP[policy-platform:latest]
+    MS -->|Single image| PP[policy-toolkit:latest]
 
     PP -->|Contains all policies| OUT[Unified Enforcement]
 
@@ -42,18 +42,18 @@ graph TD
 
 Each policy repository builds its own container:
 
-**security-policy repo Dockerfile**:
+**security-rules repo Dockerfile**:
 
 ```dockerfile
 FROM scratch
-COPY . /repos/security-policy/
+COPY . /repos/security-rules/
 ```
 
 **Build and push**:
 
 ```bash
-docker build -t security-policy-repo:main .
-docker push europe-west6-docker.pkg.dev/ops/charts/security-policy-repo:main
+docker build -t security-rules-repo:main .
+docker push europe-west6-docker.pkg.dev/ops/charts/security-rules-repo:main
 ```
 
 **Result**: Policies packaged as artifact, versioned, and distributed via registry.
@@ -64,17 +64,17 @@ docker push europe-west6-docker.pkg.dev/ops/charts/security-policy-repo:main
 
 ### Aggregating Policy Sources
 
-The policy-platform Dockerfile uses multi-stage builds to pull all policy sources:
+The policy-toolkit Dockerfile uses multi-stage builds to pull all policy sources:
 
 ```dockerfile
 # Stage 1: Pull DevOps policies
-FROM europe-west6-docker.pkg.dev/ops/charts/devops-policy-repo:main AS devops_policy_repo
+FROM europe-west6-docker.pkg.dev/ops/charts/ops-rules-repo:main AS ops_rules_repo
 
 # Stage 2: Pull Security policies
-FROM europe-west6-docker.pkg.dev/ops/charts/security-policy-repo:main AS security_policy_repo
+FROM europe-west6-docker.pkg.dev/ops/charts/security-rules-repo:main AS security_rules_repo
 
 # Stage 3: Pull Application-specific policies
-FROM europe-west6-docker.pkg.dev/ops/charts/backend-applications-repo:main AS backend_applications_repo
+FROM europe-west6-docker.pkg.dev/ops/charts/service-charts-repo:main AS service_charts_repo
 
 # Final stage: Combine everything
 FROM alpine:3.24.1
@@ -107,9 +107,9 @@ RUN mkdir -p ./bin/spectral && \
     cp ./bin/spectral/spectral /usr/local/bin/
 
 # Copy all policy repositories
-COPY --from=devops_policy_repo /repos/devops-policy/ /repos/devops-policy/
-COPY --from=security_policy_repo /repos/security-policy/ /repos/security-policy/
-COPY --from=backend_applications_repo /repos/backend-applications/ /repos/backend-applications/
+COPY --from=ops_rules_repo /repos/ops-rules/ /repos/ops-rules/
+COPY --from=security_rules_repo /repos/security-rules/ /repos/security-rules/
+COPY --from=service_charts_repo /repos/service-charts/ /repos/service-charts/
 
 WORKDIR /repos
 ```
@@ -120,14 +120,14 @@ WORKDIR /repos
 
 ## Policy Repository Organization
 
-### Security Policy Repository
+### Security Rules Repository
 
 **Directory structure**:
 
 ```text
-security-policy/
+security-rules/
 ├── charts/
-│   └── security-policy/
+│   └── security-rules/
 │       ├── Chart.yaml
 │       ├── values.yaml
 │       └── templates/
@@ -180,14 +180,14 @@ spec:
                         cpu: "?*"
 ```
 
-### DevOps Policy Repository
+### Ops Rules Repository
 
 **Focus**: Operational best practices
 
 ```text
-devops-policy/
+ops-rules/
 ├── charts/
-│   └── devops-policy/
+│   └── ops-rules/
 │       └── templates/
 │           ├── require-labels.yaml         # Standard labels
 │           ├── require-annotations.yaml    # Ownership metadata
@@ -227,16 +227,16 @@ spec:
 ```
 
 !!! note "Separation of Concerns"
-    Security team owns security-policy repo. DevOps team owns devops-policy repo. Each team maintains their domain independently.
+    Security team owns security-rules repo. DevOps team owns ops-rules repo. Each team maintains their domain independently.
 
 ### Application-Specific Policies
 
 **Focus**: Application Helm chart schemas and configurations
 
 ```text
-backend-applications/
+service-charts/
 ├── charts/
-│   └── backend-applications/
+│   └── service-charts/
 │       ├── values.yaml
 │       └── ...
 ├── .spectral.yaml           # Values schema validation
@@ -276,4 +276,4 @@ rules:
 
 - **[Policy Management](policy-management.md)** - Rendering, versioning, and discovery
 - **[Testing and Operations](testing-and-operations.md)** - Testing multi-source policies
-- **[Policy Packaging](../policy-packaging/index.md)** - Build the policy-platform container
+- **[Policy Packaging](../policy-packaging/index.md)** - Build the policy-toolkit container

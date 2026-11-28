@@ -54,7 +54,7 @@ The initial instinct was to just muscle through it. Pick an order and start reba
 with PR #445, the update for the Google API client. Then I tried to rebase PR #454, the platform
 library update, on top of it.
 
-The familiar, dreaded lines appeared, indicating a merge conflict in `ci/diagnostics/go.mod`.
+The familiar, dreaded lines appeared, indicating a merge conflict in `ci/tools/go.mod`.
 
 I opened the file. Go's module system is explicit and declarative, which is a strength, but it
 makes merges a headache. Do you take the version from `HEAD` or the incoming branch? Which

@@ -36,7 +36,7 @@ Four specific and significant errors had crept in:
     in all five environments. It existed in none of them. It was a ghost,
     a planned-for artifact that never materialized but had been
     immortalized in the docs.
-2.  The `gws-discovery/` namespace was documented under our operations
+2.  The `directory-discovery/` namespace was documented under our operations
     prefix. This namespace, and its producer, no longer existed. It had been
     migrated and deprecated months ago, but its ghost lived on in the
     architecture diagrams.

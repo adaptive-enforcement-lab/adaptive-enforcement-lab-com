@@ -31,13 +31,13 @@ graph LR
 ```bash
 # Merge base + environment values
 yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' \
-  /repos/security-policy/charts/security-policy/values.yaml \
-  /repos/security-policy/cd/prd/values.yaml \
+  /repos/security-rules/charts/security-rules/values.yaml \
+  /repos/security-rules/cd/prd/values.yaml \
 > merged-values.yaml
 
 # Render policies
-helm template security-policy \
-  /repos/security-policy/charts/security-policy \
+helm template security-rules \
+  /repos/security-rules/charts/security-rules \
   -f merged-values.yaml \
 > security-policies.yaml
 ```
@@ -51,7 +51,7 @@ helm template security-policy \
 
 ### Base Values
 
-**charts/security-policy/values.yaml** (defaults):
+**charts/security-rules/values.yaml** (defaults):
 
 ```yaml
 policies:
@@ -111,7 +111,7 @@ Each policy repo uses semantic versioning:
 ```yaml
 # Chart.yaml
 apiVersion: v2
-name: security-policy
+name: security-rules
 version: 2.1.2
 appVersion: 2.1.2
 ```
@@ -128,10 +128,10 @@ Pin specific policy versions in CI:
 
 ```bash
 # Use specific version
-docker pull policy-platform:v1.0.2
+docker pull policy-toolkit:v1.0.2
 
 # Or pin policy repo versions
-helm template security-policy /repos/security-policy/charts/security-policy \
+helm template security-rules /repos/security-rules/charts/security-rules \
   --version 2.1.2
 ```
 
@@ -143,17 +143,17 @@ helm template security-policy /repos/security-policy/charts/security-policy \
 
 ```bash
 # List all policies in container
-docker run --rm policy-platform:latest \
+docker run --rm policy-toolkit:latest \
   find /repos -name "*.yaml" -path "*/templates/*"
 ```
 
 **Output**:
 
 ```text
-/repos/security-policy/charts/security-policy/templates/require-resource-limits.yaml
-/repos/security-policy/charts/security-policy/templates/disallow-latest-tag.yaml
-/repos/devops-policy/charts/devops-policy/templates/require-labels.yaml
-/repos/devops-policy/charts/devops-policy/templates/naming-conventions.yaml
+/repos/security-rules/charts/security-rules/templates/require-resource-limits.yaml
+/repos/security-rules/charts/security-rules/templates/disallow-latest-tag.yaml
+/repos/ops-rules/charts/ops-rules/templates/require-labels.yaml
+/repos/ops-rules/charts/ops-rules/templates/naming-conventions.yaml
 ```
 
 ### Policy Metadata
@@ -162,9 +162,9 @@ Extract policy information:
 
 ```bash
 # Get policy names and descriptions
-docker run --rm policy-platform:latest \
+docker run --rm policy-toolkit:latest \
   yq eval '.metadata.name, .metadata.annotations["policies.kyverno.io/title"]' \
-  /repos/security-policy/charts/security-policy/templates/*.yaml
+  /repos/security-rules/charts/security-rules/templates/*.yaml
 ```
 
 ---
@@ -191,8 +191,8 @@ Security policies override DevOps policies:
 
 ```bash
 # Apply in order: DevOps first, Security last
-kyverno apply devops-policy.yaml --resource app.yaml
-kyverno apply security-policy.yaml --resource app.yaml
+kyverno apply ops-rules.yaml --resource app.yaml
+kyverno apply security-rules.yaml --resource app.yaml
 ```
 
 #### Strategy 3: Merge policies
@@ -207,5 +207,5 @@ Combine rules into single policy during Helm rendering.
 ## Next Steps
 
 - **[Testing and Operations](testing-and-operations.md)** - Test multi-source policies
-- **[Policy Packaging](../policy-packaging/index.md)** - Build the policy-platform container
+- **[Policy Packaging](../policy-packaging/index.md)** - Build the policy-toolkit container
 - **[Operations](../operations/index.md)** - Day-to-day policy management

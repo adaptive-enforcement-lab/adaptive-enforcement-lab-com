@@ -29,7 +29,7 @@ Operating a policy-as-code platform requires:
 **Step 1**: Create policy in policy repo
 
 ```yaml
-# security-policy/charts/security-policy/templates/require-network-policy.yaml
+# security-rules/charts/security-rules/templates/require-network-policy.yaml
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -59,7 +59,7 @@ spec:
 **Step 2**: Add to values.yaml
 
 ```yaml
-# security-policy/charts/security-policy/values.yaml
+# security-rules/charts/security-rules/values.yaml
 policies:
   networkPolicy:
     enabled: true
@@ -69,9 +69,9 @@ policies:
 **Step 3**: Test locally
 
 ```bash
-docker run --rm -v $(pwd):/workspace policy-platform:latest bash -c '\
-  helm template security /repos/security-policy/charts/security-policy \
-    -f /repos/security-policy/charts/security-policy/values.yaml \
+docker run --rm -v $(pwd):/workspace policy-toolkit:latest bash -c '\
+  helm template security /repos/security-rules/charts/security-rules \
+    -f /repos/security-rules/charts/security-rules/values.yaml \
   > /tmp/policies.yaml &&\
   kyverno apply /tmp/policies.yaml --resource /workspace/test-namespace.yaml\
 '
@@ -80,14 +80,14 @@ docker run --rm -v $(pwd):/workspace policy-platform:latest bash -c '\
 **Step 4**: Deploy to dev
 
 ```bash
-# Update policy-platform container (rebuild with new policy)
-docker build -t policy-platform:v1.0.3 -f ci/Dockerfile .
-docker push policy-platform:v1.0.3
+# Update policy-toolkit container (rebuild with new policy)
+docker build -t policy-toolkit:v1.0.3 -f ci/Dockerfile .
+docker push policy-toolkit:v1.0.3
 
 # Deploy to dev cluster
-helm upgrade security-policy /repos/security-policy/charts/security-policy \
+helm upgrade security-rules /repos/security-rules/charts/security-rules \
   --namespace kyverno \
-  --values /repos/security-policy/cd/dev/values.yaml
+  --values /repos/security-rules/cd/dev/values.yaml
 ```
 
 **Step 5**: Monitor PolicyReports
@@ -102,7 +102,7 @@ kubectl get policyreport polr-ns-default -o yaml
 **Step 6**: Switch to Enforce after validation
 
 ```yaml
-# security-policy/cd/prd/values.yaml
+# security-rules/cd/prd/values.yaml
 policies:
   networkPolicy:
     validationFailureAction: Enforce  # Now block violations
@@ -153,7 +153,7 @@ validate:
 
 1. Update policy in repo
 2. Increment version (`v2.1.2` → `v2.1.3`)
-3. Rebuild policy-platform container
+3. Rebuild policy-toolkit container
 4. Deploy to clusters
 
 ---

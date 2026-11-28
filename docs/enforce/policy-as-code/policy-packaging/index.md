@@ -1,22 +1,22 @@
 ---
 title: Policy Packaging
 description: >-
-  Build policy-platform containers that aggregate Kyverno policies from multiple OCI sources. Multi-stage Docker builds for local dev and CI validation.
+  Build policy-toolkit containers that aggregate Kyverno policies from multiple OCI sources. Multi-stage Docker builds for local dev and CI validation.
 ---
 # Policy Packaging
 
-Build the policy-platform container that aggregates all policy sources and tools.
+Build the policy-toolkit container that aggregates all policy sources and tools.
 
 ## Overview
 
-The policy-platform container is a multi-stage Docker build that:
+The policy-toolkit container is a multi-stage Docker build that:
 
 1. Pulls policy repositories as OCI containers
 2. Installs policy validation tools (Kyverno, Pluto, Spectral, Helm)
 3. Aggregates everything into a single distributable image
 
 !!! tip "One Container, All Policies"
-    The policy-platform image runs identically in local dev, CI pipelines, and reference environments. Zero configuration drift.
+    The policy-toolkit image runs identically in local dev, CI pipelines, and reference environments. Zero configuration drift.
 
 ---
 
@@ -112,7 +112,7 @@ RUN latest_spectral=$(curl -sSL https://api.github.com/repos/stoplightio/spectra
 ### Local Build
 
 ```bash
-docker build -t policy-platform:latest -f ci/Dockerfile .
+docker build -t policy-toolkit:latest -f ci/Dockerfile .
 ```
 
 ### CI Build
@@ -120,14 +120,14 @@ docker build -t policy-platform:latest -f ci/Dockerfile .
 ```yaml
 # Bitbucket Pipelines
 - step:
-    name: Build Policy Platform
+    name: Build Policy Toolkit
     services:
       - docker
     script:
-      - docker build -t policy-platform:${BITBUCKET_BUILD_NUMBER} -f ci/Dockerfile .
-      - docker tag policy-platform:${BITBUCKET_BUILD_NUMBER} policy-platform:latest
-      - docker push policy-platform:${BITBUCKET_BUILD_NUMBER}
-      - docker push policy-platform:latest
+      - docker build -t policy-toolkit:${BITBUCKET_BUILD_NUMBER} -f ci/Dockerfile .
+      - docker tag policy-toolkit:${BITBUCKET_BUILD_NUMBER} policy-toolkit:latest
+      - docker push policy-toolkit:${BITBUCKET_BUILD_NUMBER}
+      - docker push policy-toolkit:latest
 ```
 
 ### GitHub Actions
@@ -140,8 +140,8 @@ docker build -t policy-platform:latest -f ci/Dockerfile .
     file: ./ci/Dockerfile
     push: true
     tags: |
-      policy-platform:${{ github.sha }}
-      policy-platform:latest
+      policy-toolkit:${{ github.sha }}
+      policy-toolkit:latest
 ```
 
 ---

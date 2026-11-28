@@ -125,7 +125,7 @@ resourceFilters:
 ### 1. Version Everything
 
 - **Policy repos**: Semantic versions
-- **policy-platform container**: Tagged versions
+- **policy-toolkit container**: Tagged versions
 - **Helm deployments**: Track release history
 
 ### 2. Monitor Continuously

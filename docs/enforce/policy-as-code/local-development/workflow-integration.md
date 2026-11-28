@@ -29,11 +29,11 @@ repos:
     hooks:
       - id: kyverno-validate
         name: Kyverno Policy Validation
-        entry: docker run --rm -v $(pwd):/workspace policy-platform:latest
+        entry: docker run --rm -v $(pwd):/workspace policy-toolkit:latest
         args:
           - kyverno
           - apply
-          - /repos/security-policy/
+          - /repos/security-rules/
           - --resource
           - /workspace/manifests/
         language: system
@@ -53,14 +53,14 @@ Add to Makefile:
 .PHONY: validate-policies
 validate-policies:
  @echo "Rendering manifests..."
- docker run --rm -v $(PWD):/workspace policy-platform:latest \
+ docker run --rm -v $(PWD):/workspace policy-toolkit:latest \
    helm template app /workspace/charts/app \
      -f /workspace/charts/app/values.yaml \
      -f /workspace/cd/dev/values.yaml \
    > dev-manifests.yaml
  @echo "Validating policies..."
- docker run --rm -v $(PWD):/workspace policy-platform:latest \
-   kyverno apply /repos/security-policy/ \
+ docker run --rm -v $(PWD):/workspace policy-toolkit:latest \
+   kyverno apply /repos/security-rules/ \
      --resource /workspace/dev-manifests.yaml
 
 .PHONY: validate-all-envs
@@ -71,12 +71,12 @@ validate-all-envs:
 
 .PHONY: validate-env
 validate-env:
- docker run --rm -v $(PWD):/workspace policy-platform:latest \
+ docker run --rm -v $(PWD):/workspace policy-toolkit:latest \
    bash -c '\
      helm template app /workspace/charts/app \
        -f /workspace/charts/app/values.yaml \
        -f /workspace/cd/$(ENV)/values.yaml \
-     | kyverno apply /repos/security-policy/ --resource -'
+     | kyverno apply /repos/security-rules/ --resource -'
 ```
 
 **Usage**:
@@ -97,8 +97,8 @@ make validate-all-envs        # All environments
 **Local** (instant feedback):
 
 ```bash
-$ docker run --rm -v $(pwd):/workspace policy-platform:latest \
-  kyverno apply /repos/security-policy/ --resource deployment.yaml
+$ docker run --rm -v $(pwd):/workspace policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ --resource deployment.yaml
 
 fail: 1/12
   require-resource-limits: CPU and memory limits required
@@ -109,9 +109,9 @@ fail: 1/12
 ```yaml
 steps:
   - name: Policy Check
-    image: policy-platform:latest
+    image: policy-toolkit:latest
     script:
-      - kyverno apply /repos/security-policy/ --resource deployment.yaml
+      - kyverno apply /repos/security-rules/ --resource deployment.yaml
 ```
 
 **Output is identical. No surprises.**
@@ -132,8 +132,8 @@ steps:
 docker run --rm \
   -v $(pwd):/workspace \
   --user $(id -u):$(id -g) \
-  policy-platform:latest \
-  kyverno apply /repos/security-policy/ --resource /workspace/deployment.yaml
+  policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ --resource /workspace/deployment.yaml
 ```
 
 ### Policy Not Found
@@ -145,7 +145,7 @@ docker run --rm \
 **Solution**: List available policies in container
 
 ```bash
-docker run --rm policy-platform:latest ls -R /repos/
+docker run --rm policy-toolkit:latest ls -R /repos/
 ```
 
 ### Outdated Container
@@ -157,11 +157,11 @@ docker run --rm policy-platform:latest ls -R /repos/
 **Solution**: Pull latest image
 
 ```bash
-docker pull policy-platform:latest
+docker pull policy-toolkit:latest
 ```
 
 !!! tip "Pull Before Every Validation"
-    Policy repos update frequently. Set up a cron job or Git hook to pull `policy-platform:latest` daily.
+    Policy repos update frequently. Set up a cron job or Git hook to pull `policy-toolkit:latest` daily.
 
 ---
 
@@ -188,7 +188,7 @@ Use same container image as CI. Same commands. Same flags.
 Pin to specific versions for reproducibility:
 
 ```bash
-docker run policy-platform:v1.0.2 ...
+docker run policy-toolkit:v1.0.2 ...
 ```
 
 ---
@@ -199,11 +199,11 @@ docker run policy-platform:v1.0.2 ...
 
 ```bash
 # Pull once, use many times
-docker pull policy-platform:latest
+docker pull policy-toolkit:latest
 
 # Validate without pulling
-docker run --rm -v $(pwd):/workspace policy-platform:latest \
-  kyverno apply /repos/security-policy/ --resource deployment.yaml
+docker run --rm -v $(pwd):/workspace policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ --resource deployment.yaml
 ```
 
 ### Validate Changed Files Only
@@ -214,8 +214,8 @@ CHANGED=$(git diff --name-only --diff-filter=ACM | grep '\.yaml$')
 
 # Validate only changed files
 for file in $CHANGED; do
-  docker run --rm -v $(pwd):/workspace policy-platform:latest \
-    kyverno apply /repos/security-policy/ --resource /workspace/$file
+  docker run --rm -v $(pwd):/workspace policy-toolkit:latest \
+    kyverno apply /repos/security-rules/ --resource /workspace/$file
 done
 ```
 
@@ -224,5 +224,5 @@ done
 ## Next Steps
 
 - **[CI Integration](../ci-integration/index.md)** - Automate policy checks in pipelines
-- **[Policy Packaging](../policy-packaging/index.md)** - Build your own policy-platform container
+- **[Policy Packaging](../policy-packaging/index.md)** - Build your own policy-toolkit container
 - **[Multi-Source Policies](../multi-source-policies/index.md)** - Aggregate multiple policy repos

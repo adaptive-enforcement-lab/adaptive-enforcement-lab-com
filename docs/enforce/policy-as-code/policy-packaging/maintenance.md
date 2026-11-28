@@ -1,7 +1,7 @@
 ---
 title: Maintenance and Best Practices
 description: >-
-  Troubleshoot container builds, optimize image size, and maintain tool versions. Best practices for pinning dependencies and testing policy-platform images.
+  Troubleshoot container builds, optimize image size, and maintain tool versions. Best practices for pinning dependencies and testing policy-toolkit images.
 ---
 # Maintenance and Best Practices
 
@@ -19,7 +19,7 @@ Troubleshooting container builds, best practices, and included tools reference.
 
 ```bash
 # Test pulling policy repo
-docker pull europe-west6-docker.pkg.dev/project/charts/security-policy-repo:main
+docker pull europe-west6-docker.pkg.dev/project/charts/security-rules-repo:main
 
 # Check authentication
 docker login europe-west6-docker.pkg.dev
@@ -71,7 +71,7 @@ RUN curl ...v1.13.2/kyverno...  # Not /latest/
 **Policy repos**:
 
 ```dockerfile
-FROM security-policy-repo:v2.1.2  # Not :main
+FROM security-rules-repo:v2.1.2  # Not :main
 ```
 
 ### 2. Layer Order Optimization
@@ -83,7 +83,7 @@ Put frequently changing layers last:
 RUN apk add curl bash
 
 # Changes occasionally - put middle
-COPY --from=security_policy_repo /repos/ /repos/
+COPY --from=security_rules_repo /repos/ /repos/
 
 # Changes frequently - put last
 COPY ./scripts/ /scripts/
@@ -94,7 +94,7 @@ COPY ./scripts/ /scripts/
 Scan every build:
 
 ```yaml
-- trivy image --severity HIGH,CRITICAL policy-platform:latest
+- trivy image --severity HIGH,CRITICAL policy-toolkit:latest
 ```
 
 ### 4. Test Before Push
@@ -102,9 +102,9 @@ Scan every build:
 Never push untested images:
 
 ```bash
-docker build -t policy-platform:test .
-docker run policy-platform:test kyverno version
-docker push policy-platform:test  # Only after tests pass
+docker build -t policy-toolkit:test .
+docker run policy-toolkit:test kyverno version
+docker push policy-toolkit:test  # Only after tests pass
 ```
 
 ### 5. Document Tool Versions
@@ -181,9 +181,9 @@ yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' base.yaml override
 
 This container aggregates policies from:
 
-- **security-policy**: Security and compliance policies
-- **devops-policy**: Operational best practices
-- **backend-applications**: Application schemas and templates
+- **security-rules**: Security and compliance policies
+- **ops-rules**: Operational best practices
+- **service-charts**: Application schemas and templates
 
 For details, see **[Multi-Source Policies](../multi-source-policies/index.md)**.
 
@@ -191,6 +191,6 @@ For details, see **[Multi-Source Policies](../multi-source-policies/index.md)**.
 
 ## Next Steps
 
-- **[Local Development](../local-development/index.md)** - Use policy-platform locally
+- **[Local Development](../local-development/index.md)** - Use policy-toolkit locally
 - **[CI Integration](../ci-integration/index.md)** - Automated pipeline validation
 - **[Operations](../operations/index.md)** - Day-to-day management

@@ -274,8 +274,8 @@ targets:
 Use Helm chart versions for rollback capability:
 
 ```bash
-helm upgrade --install security-policy \
-  /repos/security-policy/charts/security-policy \
+helm upgrade --install security-rules \
+  /repos/security-rules/charts/security-rules \
   --version 1.2.3
 ```
 
@@ -307,5 +307,5 @@ helm upgrade --install security-policy \
 
 - **[Operations](../operations/index.md)** - Day-to-day policy lifecycle management
 - **[Multi-Source Policies](../multi-source-policies/index.md)** - Aggregate policies from multiple repos
-- **[Policy Packaging](../policy-packaging/index.md)** - Build policy-platform container
+- **[Policy Packaging](../policy-packaging/index.md)** - Build policy-toolkit container
 - **[Kyverno Deep Dive](../kyverno/index.md)** - Advanced Kyverno patterns

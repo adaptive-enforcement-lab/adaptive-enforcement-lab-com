@@ -15,12 +15,12 @@ Test all policy sources together:
 
 ```bash
 # Render all policies
-docker run --rm policy-platform:latest bash -c '
-  helm template devops /repos/devops-policy/charts/devops-policy \
-    -f /repos/devops-policy/cd/prd/values.yaml \
+docker run --rm policy-toolkit:latest bash -c '
+  helm template devops /repos/ops-rules/charts/ops-rules \
+    -f /repos/ops-rules/cd/prd/values.yaml \
   > /tmp/devops.yaml &&
-  helm template security /repos/security-policy/charts/security-policy \
-    -f /repos/security-policy/cd/prd/values.yaml \
+  helm template security /repos/security-rules/charts/security-rules \
+    -f /repos/security-rules/cd/prd/values.yaml \
   > /tmp/security.yaml &&
   cat /tmp/devops.yaml /tmp/security.yaml
 ' > all-policies.yaml
@@ -42,12 +42,12 @@ Test policy aggregation in CI before container build:
     image: alpine
     script:
       # Pull all policy repos
-      - docker pull security-policy-repo:main
-      - docker pull devops-policy-repo:main
+      - docker pull security-rules-repo:main
+      - docker pull ops-rules-repo:main
 
       # Verify no conflicts
-      - docker run security-policy-repo:main ls /repos/security-policy/
-      - docker run devops-policy-repo:main ls /repos/devops-policy/
+      - docker run security-rules-repo:main ls /repos/security-rules/
+      - docker run ops-rules-repo:main ls /repos/ops-rules/
 ```
 
 ---
@@ -59,14 +59,14 @@ Test policy aggregation in CI before container build:
 Tag policy repos with semantic versions:
 
 ```bash
-docker tag security-policy-repo:main security-policy-repo:2.1.2
-docker push security-policy-repo:2.1.2
+docker tag security-rules-repo:main security-rules-repo:2.1.2
+docker push security-rules-repo:2.1.2
 ```
 
 ### 2. Separate Concerns
 
-- **Security team** → security-policy repo
-- **DevOps team** → devops-policy repo
+- **Security team** → security-rules repo
+- **DevOps team** → ops-rules repo
 - **App teams** → application-specific policies
 
 ### 3. Test Independently
@@ -74,22 +74,22 @@ docker push security-policy-repo:2.1.2
 Each policy repo should be testable in isolation:
 
 ```bash
-docker run --rm -v $(pwd):/workspace security-policy-repo:main \
-  kyverno apply /repos/security-policy/ --resource /workspace/app.yaml
+docker run --rm -v $(pwd):/workspace security-rules-repo:main \
+  kyverno apply /repos/security-rules/ --resource /workspace/app.yaml
 ```
 
 ### 4. Document Policy Sources
 
-In policy-platform README, list all sources:
+In policy-toolkit README, list all sources:
 
 ```markdown
 ## Policy Sources
 
 This container aggregates policies from:
 
-- security-policy v2.1.2
-- devops-policy v0.3.2
-- backend-applications v1.5.0
+- security-rules v2.1.2
+- ops-rules v0.3.2
+- service-charts v1.5.0
 ```
 
 ### 5. Use Common Schemas
@@ -116,8 +116,8 @@ policies:
 **Solution**: Check if policy repo was copied
 
 ```bash
-docker run --rm policy-platform:latest \
-  ls /repos/security-policy/charts/security-policy/templates/
+docker run --rm policy-toolkit:latest \
+  ls /repos/security-rules/charts/security-rules/templates/
 ```
 
 ### Version Conflicts
@@ -129,8 +129,8 @@ docker run --rm policy-platform:latest \
 **Solution**: Pin versions in Dockerfile
 
 ```dockerfile
-FROM security-policy-repo:2.1.2 AS security_policy_repo
-FROM devops-policy-repo:0.3.2 AS devops_policy_repo
+FROM security-rules-repo:2.1.2 AS security_rules_repo
+FROM ops-rules-repo:0.3.2 AS ops_rules_repo
 ```
 
 !!! warning "Always Pin Versions"
@@ -153,6 +153,6 @@ metadata:
 
 ## Next Steps
 
-- **[Policy Packaging](../policy-packaging/index.md)** - Build the policy-platform container
+- **[Policy Packaging](../policy-packaging/index.md)** - Build the policy-toolkit container
 - **[Operations](../operations/index.md)** - Day-to-day policy management
 - **[CI Integration](../ci-integration/index.md)** - Automate policy validation

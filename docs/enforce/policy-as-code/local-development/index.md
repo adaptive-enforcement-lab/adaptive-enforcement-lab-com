@@ -1,7 +1,7 @@
 ---
 title: Local Development with Policy-as-Code
 description: >-
-  Run Kyverno policy validation locally with policy-platform containers. Zero local setup, same tools as CI, instant feedback before committing code changes.
+  Run Kyverno policy validation locally with policy-toolkit containers. Zero local setup, same tools as CI, instant feedback before committing code changes.
 ---
 # Local Development with Policy-as-Code
 
@@ -9,7 +9,7 @@ Run the same policy validation locally that runs in CI. Catch issues in seconds,
 
 ## Overview
 
-The policy-platform container includes all tools needed for local policy validation:
+The policy-toolkit container includes all tools needed for local policy validation:
 
 - **Kyverno CLI** - Policy validation and testing
 - **Pluto** - Deprecated API detection
@@ -26,12 +26,12 @@ The policy-platform container includes all tools needed for local policy validat
 
 ### What's Inside
 
-The policy-platform container is a multi-stage build that aggregates policies from multiple repositories:
+The policy-toolkit container is a multi-stage build that aggregates policies from multiple repositories:
 
 ```dockerfile
 # Pull policy repositories as OCI containers
-FROM security-policy-repo:main AS security_policy_repo
-FROM devops-policy-repo:main AS devops_policy_repo
+FROM security-rules-repo:main AS security_rules_repo
+FROM ops-rules-repo:main AS ops_rules_repo
 
 # Alpine base with all tools
 FROM alpine:3.24
@@ -46,8 +46,8 @@ RUN curl -sSL https://github.com/FairwindsOps/pluto/releases/download/v5.21.1/pl
   | tar xz -C /usr/local/bin
 
 # Copy policies from dependent containers
-COPY --from=security_policy_repo /repos/security-policy/ /repos/security-policy/
-COPY --from=devops_policy_repo /repos/devops-policy/ /repos/devops-policy/
+COPY --from=security_rules_repo /repos/security-rules/ /repos/security-rules/
+COPY --from=ops_rules_repo /repos/ops-rules/ /repos/ops-rules/
 
 WORKDIR /repos
 ```
@@ -65,8 +65,8 @@ Validate a Kubernetes manifest against all policies:
 ```bash
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
-  kyverno apply /repos/security-policy/ \
+  policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ \
   --resource /workspace/deployment.yaml
 ```
 
@@ -87,8 +87,8 @@ All resources passed policy validation!
 ### Validation Failure Example
 
 ```bash
-$ docker run --rm -v $(pwd):/workspace policy-platform:latest \
-  kyverno apply /repos/security-policy/ \
+$ docker run --rm -v $(pwd):/workspace policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ \
   --resource /workspace/bad-deployment.yaml
 
 fail: 2/12
@@ -113,7 +113,7 @@ Real-world Helm charts need environment-specific values:
 # Render chart for staging environment
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
+  policy-toolkit:latest \
   helm template my-app /workspace/charts/my-app \
     -f /workspace/charts/my-app/values.yaml \
     -f /workspace/cd/staging/values.yaml \
@@ -122,8 +122,8 @@ docker run --rm \
 # Validate rendered manifests
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
-  kyverno apply /repos/security-policy/ \
+  policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ \
     --resource /workspace/staging-manifests.yaml
 ```
 
@@ -138,15 +138,15 @@ for env in dev qac stg prd; do
   echo "Validating ${env} environment..."
 
   # Render manifests
-  docker run --rm -v $(pwd):/workspace policy-platform:latest \
+  docker run --rm -v $(pwd):/workspace policy-toolkit:latest \
     helm template app /workspace/charts/app \
       -f /workspace/charts/app/values.yaml \
       -f /workspace/cd/${env}/values.yaml \
     > ${env}-manifests.yaml
 
   # Validate policies
-  docker run --rm -v $(pwd):/workspace policy-platform:latest \
-    kyverno apply /repos/security-policy/ \
+  docker run --rm -v $(pwd):/workspace policy-toolkit:latest \
+    kyverno apply /repos/security-rules/ \
       --resource /workspace/${env}-manifests.yaml \
       --audit-warn
 done

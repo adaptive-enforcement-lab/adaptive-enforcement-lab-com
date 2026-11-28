@@ -9,7 +9,7 @@ Deep-dive into policy reports, deprecated API detection, and schema validation f
 
 ## Overview
 
-Beyond basic validation, the policy-platform container supports:
+Beyond basic validation, the policy-toolkit container supports:
 
 - **Policy reports** - Structured YAML output for tracking
 - **Audit mode** - Warn-only validation for gradual adoption
@@ -25,8 +25,8 @@ Generate detailed policy reports for review:
 ```bash
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
-  kyverno apply /repos/security-policy/ \
+  policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ \
     --resource /workspace/deployment.yaml \
     --policy-report \
   > policy-report.yaml
@@ -59,8 +59,8 @@ results:
 ```bash
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
-  kyverno apply /repos/security-policy/ \
+  policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ \
     --resource /workspace/deployment.yaml \
     -t --detailed-results
 ```
@@ -82,8 +82,8 @@ Test policies in audit mode (warn-only):
 ```bash
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
-  kyverno apply /repos/security-policy/ \
+  policy-toolkit:latest \
+  kyverno apply /repos/security-rules/ \
     --resource /workspace/deployment.yaml \
     --audit-warn
 ```
@@ -100,7 +100,7 @@ Detect deprecated Kubernetes APIs before cluster upgrades:
 ```bash
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
+  policy-toolkit:latest \
   pluto detect /workspace/deployment.yaml
 ```
 
@@ -118,7 +118,7 @@ Validate against specific Kubernetes versions:
 ```bash
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
+  policy-toolkit:latest \
   pluto detect /workspace/ --target-versions k8s=v1.29.0
 ```
 
@@ -137,7 +137,7 @@ Validate Helm values against JSON schemas:
 # Merge default + environment values
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
+  policy-toolkit:latest \
   yq eval-all 'select(fileIndex == 0) * select(fileIndex == 1)' \
     /workspace/charts/app/values.yaml \
     /workspace/cd/stg/values.yaml \
@@ -146,7 +146,7 @@ docker run --rm \
 # Validate against schema
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
+  policy-toolkit:latest \
   spectral lint \
     -r /workspace/.spectral.yaml \
     /workspace/combined-values.yaml
@@ -181,4 +181,4 @@ rules:
 
 - **[Workflow Integration](workflow-integration.md)** - Pre-commit hooks and Make targets
 - **[CI Integration](../ci-integration/index.md)** - Automated pipeline validation
-- **[Policy Packaging](../policy-packaging/index.md)** - Build custom policy-platform containers
+- **[Policy Packaging](../policy-packaging/index.md)** - Build custom policy-toolkit containers

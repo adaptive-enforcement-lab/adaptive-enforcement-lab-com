@@ -44,14 +44,14 @@ graph LR;
 Run policy container locally before committing:
 
 ```bash
-# Pull policy platform container
-docker pull europe-west6-docker.pkg.dev/neon-free-ops/operations/policy-platform:latest
+# Pull policy toolkit container
+docker pull europe-west6-docker.pkg.dev/example-project/operations/policy-toolkit:latest
 
 # Validate Helm chart against policies
 docker run --rm \
   -v $(pwd)/charts:/charts \
   -v $(pwd)/policies:/policies \
-  policy-platform:latest \
+  policy-toolkit:latest \
   kyverno apply /policies --resource <(helm template /charts/myapp)
 ```
 
@@ -68,7 +68,7 @@ docker run --rm \
 #!/bin/bash
 docker run --rm \
   -v $(pwd):/workspace \
-  policy-platform:latest \
+  policy-toolkit:latest \
   kyverno apply /workspace/policies --resource /workspace/manifests
 
 if [ $? -ne 0 ]; then
@@ -92,7 +92,7 @@ jobs:
   validate-policies:
     runs-on: ubuntu-latest
     container:
-      image: europe-west6-docker.pkg.dev/neon-free-ops/operations/policy-platform:latest
+      image: europe-west6-docker.pkg.dev/example-project/operations/policy-toolkit:latest
       credentials:
         username: _json_key
         password: ${{ secrets.GCP_SA_KEY }}
@@ -130,7 +130,7 @@ jobs:
 ```yaml
 ---
 image:
-  name: europe-west6-docker.pkg.dev/neon-free-ops/operations/policy-platform
+  name: europe-west6-docker.pkg.dev/example-project/operations/policy-toolkit
   username: _json_key
   password: "$GCLOUD_API_KEYFILE"
 pipelines:
@@ -164,7 +164,7 @@ pipelines:
 ### Kyverno Deployment via Helm
 
 ```yaml
-# charts/policy-platform/values.yaml
+# charts/policy-toolkit/values.yaml
 kyverno:
   replicaCount: 3
   image:
@@ -191,14 +191,14 @@ Deploy to clusters via Argo CD:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: policy-platform
+  name: policy-toolkit
   namespace: argocd
 spec:
   project: security
   source:
-    repoURL: https://github.com/org/policy-platform
+    repoURL: https://github.com/org/policy-toolkit
     targetRevision: HEAD
-    path: charts/policy-platform
+    path: charts/policy-toolkit
     helm:
       valueFiles:
         - values-production.yaml
