@@ -9,7 +9,10 @@ categories:
   - GitHub Apps
   - CI/CD
   - Retrospective
+description: >-
+  A year of on-and-off work, one building block at a time: from a simple file sync with a personal token to GitHub App distribution across 40 repos.
 slug: one-year-of-fidgeting-with-github-app-automation
+provenance: human
 ---
 # One Year of Fidgeting: The Journey to Enterprise-Grade Content Distribution
 
@@ -77,18 +80,7 @@ Creating the first GitHub App took 20 minutes. Making it actually work took six 
 The first hurdle: GitHub Apps don't use static tokens.
 They use JWTs signed with a private key, exchanged for short-lived installation tokens. Every. Single. Request.
 
-```yaml
-# What we thought we needed
-env:
-  GITHUB_TOKEN: ${{ secrets.APP_TOKEN }}
-
-# What we actually needed
-- uses: actions/create-github-app-token@v2
-  with:
-    app-id: ${{ secrets.APP_ID }}
-    private-key: ${{ secrets.APP_PRIVATE_KEY }}
-    owner: our-org
-```
+What we thought we needed: a static `GITHUB_TOKEN` secret. What we actually needed: `actions/create-github-app-token@v2` with an explicit `owner`. The [token generation guide](../../patterns/github-actions/actions-integration/token-generation/index.md) has the full step.
 
 !!! warning "The Owner Parameter"
 
@@ -123,20 +115,7 @@ Teams spin up new repos. Old ones get archived. The sync list was always stale.
 
 Solution: GraphQL queries against team membership.
 
-```graphql
-{
-  organization(login: "our-org") {
-    team(slug: "platform-team") {
-      repositories(first: 100) {
-        nodes {
-          name
-          defaultBranchRef { name }
-        }
-      }
-    }
-  }
-}
-```
+The [discovery stage guide](../../patterns/github-actions/use-cases/file-distribution/discovery-stage.md) has the full query.
 
 !!! success "Dynamic Discovery"
 
