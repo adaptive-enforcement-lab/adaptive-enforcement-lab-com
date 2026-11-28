@@ -11,6 +11,7 @@ description: >-
   The dual-trigger pattern was a workaround. GitHub App tokens are the
   real fix for release-please workflow triggers.
 slug: the-real-fix-for-release-please-triggers
+provenance: human
 ---
 # The Real Fix for Release-Please Triggers
 
@@ -22,16 +23,9 @@ A few days ago I wrote about [why release-please PRs don't trigger builds](./202
 
 ## The Workaround I Documented
 
-The [previous post](./2025-11-28-why-release-please-prs-dont-trigger-builds.md) explained that `GITHUB_TOKEN` actions don't emit workflow events, and proposed adding a secondary `push` trigger:
+The [previous post](./2025-11-28-why-release-please-prs-dont-trigger-builds.md) explained that `GITHUB_TOKEN` actions don't emit workflow events, and proposed adding a secondary `push` trigger.
 
-```yaml
-on:
-  pull_request:
-    branches: [main]
-  push:
-    branches:
-      - 'release-please--**'
-```
+Next to `pull_request` on `main`, the workflow also ran on `push` to `release-please--**` branches.
 
 This works. Release-please commits trigger `push` events, so the build runs.
 
@@ -75,31 +69,11 @@ flowchart LR
 !!! tip "The Solution"
     Generate a GitHub App token. The PR will trigger `pull_request` events like any developer-created PR.
 
-Generate a GitHub App token and pass it to release-please:
+Generate a GitHub App token and pass it to release-please.
 
-```yaml
-jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - name: Generate App Token
-        id: app-token
-        uses: actions/create-github-app-token@v2
-        with:
-          app-id: ${{ secrets.CORE_APP_ID }}
-          private-key: ${{ secrets.CORE_APP_PRIVATE_KEY }}
-          owner: your-org
-
-      - uses: googleapis/release-please-action@v4
-        id: release
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-          config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
-```
+A step with `actions/create-github-app-token@v2` mints the token from the App ID and private key, with `owner` set to the organization.
+`googleapis/release-please-action@v4` then receives it as `token`.
+The [workflow triggers guide](../../build/release-pipelines/workflow-triggers.md) has the full job.
 
 That's it. The PR now triggers `pull_request` events like any developer-created PR.
 
