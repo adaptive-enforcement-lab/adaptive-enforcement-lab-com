@@ -47,7 +47,8 @@ jobs:
       fail_on_threshold: true
 
   # Runs the repo's own local pre-commit script hooks (check-description,
-  # check-title, check-forbidden-tech, check-blog-not-howto, check-blog-fold)
+  # check-title, check-forbidden-tech, check-blog-not-howto, check-blog-fold,
+  # check-provenance; the last reads git history, hence fetch-depth: 0)
   # in CI, scoped to just this push's changed markdown files. Before this job
   # existed, those hooks only ever ran two ways: a contributor's own local
   # `pre-commit install` (opt-in, per CONTRIBUTING.md, easy to skip) or
@@ -90,6 +91,8 @@ jobs:
           ./scripts/check-blog-not-howto.sh $CHANGED_MD_FILES
           # shellcheck disable=SC2086
           ./scripts/check-blog-fold.sh $CHANGED_MD_FILES
+          # shellcheck disable=SC2086
+          ./scripts/check-provenance.sh $CHANGED_MD_FILES
 
   build-status:
     name: Build Status

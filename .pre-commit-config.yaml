@@ -39,6 +39,13 @@ repos:
         files: \.md$
         exclude: ^docs/includes/.*$
         pass_filenames: true
+      - id: check-provenance
+        name: check provenance frontmatter
+        entry: scripts/check-provenance.sh
+        language: script
+        files: ^docs/.*\.md$
+        exclude: ^docs/includes/.*$
+        pass_filenames: true
       - id: check-blog-not-howto
         name: block how-to content in blog posts
         entry: scripts/check-blog-not-howto.sh

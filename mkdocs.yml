@@ -313,6 +313,8 @@ plugins:
       post_date_format: yyyy-MM-dd
       archive_date_format: yyyy-MM
       draft_if_future_date: true
+      authors_profiles: true
+      post_excerpt_max_authors: 2
 markdown_extensions:
   - admonition
   - attr_list
