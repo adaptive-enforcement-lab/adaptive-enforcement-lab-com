@@ -8,8 +8,9 @@ categories:
   - Quality Assurance
   - DevSecOps
 description: >-
-  Started at 0% coverage. OpenSSF Passing has no requirement. We targeted 95% (above Gold's 90%). Hit a wall at 85%. Refactoring broke through. 99% became the security signal.
+  Started at 0% coverage. We targeted 95%, above Gold's 90%. Hit a wall at 85%. Refactoring broke through, and 99% became the security signal.
 slug: coverage-as-security-signal
+provenance: human
 ---
 # The Coverage That Mattered: When 99% Became a Security Signal
 
@@ -149,22 +150,10 @@ THRESHOLD=$(grep -A2 "project:" codecov.yml | grep "target:" | head -1 | sed "s/
 
 **One definition. Zero drift.** Change the threshold in one place, enforcement updates everywhere.
 
-Pre-push hook blocks commits below threshold:
+Pre-push hook blocks commits below threshold.
 
-```yaml
-- id: go-coverage
-  name: Check test coverage threshold
-  entry: >
-    bash -c '
-    THRESHOLD=$(grep -A2 "project:" codecov.yml | grep "target:" | head -1 | sed "s/.*target: *\([0-9]*\).*/\1/") || THRESHOLD=95;
-    gotestsum --format testdox -- -race -coverprofile=/tmp/coverage.out -covermode=atomic ./... &&
-    COVERAGE=$(go tool cover -func=/tmp/coverage.out | grep total | awk "{print \$3}" | sed "s/%//") &&
-    if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
-      echo "Coverage ${COVERAGE}% is below ${THRESHOLD}%"; exit 1;
-    fi
-    '
-  stages: [pre-push]
-```
+A `go-coverage` hook at the `pre-push` stage reads the same threshold, runs the tests with `-race` and a coverage profile, and fails when total coverage is below it.
+The [Go security workflow integration guide](../../secure/go-security/integration.md) has the hook.
 
 Coverage became a **blocking gate**, not a suggestion.
 
