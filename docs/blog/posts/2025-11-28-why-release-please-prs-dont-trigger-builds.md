@@ -11,14 +11,9 @@ description: >-
   The GITHUB_TOKEN limitation that breaks release-please builds,
   and the dual-trigger pattern that fixes it.
 slug: why-release-please-prs-dont-trigger-builds
+provenance: human
 ---
 # Why Release-Please PRs Don't Trigger Your Builds
-
-!!! warning "Update: There's a Better Way"
-
-    The dual-trigger pattern described below is a **workaround**, not the real fix.
-    See [The Real Fix for Release-Please Triggers](./2025-12-02-the-real-fix-for-release-please-triggers.md)
-    for the proper solution using GitHub App tokens.
 
 The release-please PR looked perfect. Clean changelog. Proper version bump. Ready to merge.
 
@@ -27,6 +22,12 @@ One problem: the build pipeline never ran. Branch protection blocked the merge. 
 This is the story of a GitHub Actions limitation that wastes hours of debugging time, and the pattern that fixes it in two lines of YAML.
 
 <!-- more -->
+
+!!! warning "Update: There's a Better Way"
+
+    The dual-trigger pattern described below is a **workaround**, not the real fix.
+    See [The Real Fix for Release-Please Triggers](./2025-12-02-the-real-fix-for-release-please-triggers.md)
+    for the proper solution using GitHub App tokens.
 
 ---
 
@@ -170,15 +171,9 @@ The glob pattern `release-please--**` catches both:
 
 This discovery solved another problem: change detection.
 
-Modern monorepo pipelines detect which components changed and only build what's affected:
+Modern monorepo pipelines detect which components changed and only build what's affected.
 
-```yaml
-jobs:
-  detect-changes:
-    outputs:
-      backend_needs_build: ${{ steps.changes.outputs.backend_any_changed == 'true' }}
-      frontend_needs_build: ${{ steps.changes.outputs.frontend_any_changed == 'true' }}
-```
+A detect job exposes one output per component, such as `backend_needs_build` and `frontend_needs_build`, from the changed-files step. The [change detection guide](../../build/release-pipelines/change-detection.md) has the full job.
 
 But release-please PRs often bump version files across multiple components. Without the build running, I couldn't verify that version bumps didn't break anything.
 
@@ -199,17 +194,7 @@ Helm-docs regenerates README files from chart values. If it runs on the main bra
 
 The fix: run documentation generators on PR branches only.
 
-```yaml
-- name: Generate docs
-  run: helm-docs
-
-- name: Commit changes
-  if: github.ref_name != 'main'
-  run: |
-    git add .
-    git diff --staged --quiet || git commit -m "docs: update generated docs"
-    git push
-```
+The generate step always runs. The commit step carries `if: github.ref_name != 'main'`. The [protected branches guide](../../build/release-pipelines/protected-branches.md) has the full steps.
 
 The conditional ensures docs update on PR branches (where builds run) but skip the commit on main (where protection rules apply).
 
