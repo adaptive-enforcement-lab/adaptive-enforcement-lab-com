@@ -8,8 +8,9 @@ categories:
   - Pre-commit
   - Developer Tools
 description: >-
-  Block forbidden tools at commit time. Enforce vendor-neutral standards before code reaches CI.
+  Block forbidden tools at commit time. Enforce vendor-neutral standards before code reaches CI, and keep violations out of git history for good.
 slug: pre-commit-security-gates
+provenance: human
 ---
 # Pre-commit Hooks as Security Gates: Enforcement Before Commit
 
