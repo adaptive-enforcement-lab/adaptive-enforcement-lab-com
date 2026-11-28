@@ -10,6 +10,7 @@ categories:
 slug: shipping-a-github-action-the-right-way
 description: >-
   Publishing a GitHub Action with versioned docs, automated releases, and proper change detection. Here's the pattern.
+provenance: human
 ---
 # Shipping a GitHub Action the Right Way
 
@@ -39,29 +40,13 @@ When you maintain many actions, this adds up. Every release becomes a checklist.
 
 One workflow handles everything:
 
-```yaml
-name: Release Pipeline
+- `release-please`: creates release PRs, bumps versions, generates changelogs
+- `detect-changes`: determines what actually changed
+- `build-go`: cross-compiles binaries (only on release)
+- `upload-release-assets`: attaches binaries to the GitHub release
+- `build-docs`: deploys versioned docs with mike
 
-on:
-  push:
-    branches: [main]
-
-jobs:
-  release-please:
-    # Creates release PRs, bumps versions, generates changelogs
-
-  detect-changes:
-    # Determines what actually changed
-
-  build-go:
-    # Cross-compiles binaries (only on release)
-
-  upload-release-assets:
-    # Attaches binaries to GitHub release
-
-  build-docs:
-    # Deploys versioned docs with mike
-```
+The [pipeline integration guide](../../build/versioned-docs/pipeline-integration.md) has the complete workflow.
 
 The key insight: **run jobs only when needed**. Most pushes don't need binary builds. But docs-only changes still need the `dev` docs updated.
 
@@ -69,20 +54,7 @@ The key insight: **run jobs only when needed**. Most pushes don't need binary bu
 
 ## Change Detection
 
-```yaml
-detect-changes:
-  steps:
-    - uses: tj-actions/changed-files@v45
-      with:
-        files_yaml: |
-          docs:
-            - docs/**
-            - mkdocs.yml
-          go:
-            - '**.go'
-            - go.mod
-            - go.sum
-```
+`tj-actions/changed-files@v45` gets two file groups: `docs` (`docs/**`, `mkdocs.yml`) and `go` (`**.go`, `go.mod`, `go.sum`).
 
 This outputs `docs_any_changed` and `go_any_changed` for downstream jobs to consume.
 
@@ -92,18 +64,8 @@ This outputs `docs_any_changed` and `go_any_changed` for downstream jobs to cons
 
 The build-docs job makes a key decision:
 
-```yaml
-- name: Deploy versioned docs
-  if: needs.release-please.outputs.release_created == 'true'
-  run: |
-    mike deploy --push --update-aliases \
-      ${{ steps.version.outputs.version }} \
-      ${{ steps.version.outputs.alias }} latest
-
-- name: Deploy dev docs
-  if: needs.release-please.outputs.release_created != 'true'
-  run: mike deploy --push dev
-```
+Did release-please create a release? Then `mike deploy --push --update-aliases` runs. If not, `mike deploy --push dev`.
+The [pipeline integration guide](../../build/versioned-docs/pipeline-integration.md) has both steps.
 
 On release: deploy `1.2.3` with aliases `v1` and `latest`.
 On regular push: update `dev` only.
@@ -114,18 +76,8 @@ Users linking to `/v1/` always get the latest 1.x docs. Users on `/dev/` see the
 
 ## Release-Please Configuration
 
-```json
-{
-  "include-v-in-tag": true,
-  "packages": {
-    ".": {
-      "release-type": "go",
-      "component": "readability",
-      "include-component-in-tag": false
-    }
-  }
-}
-```
+The root package uses `release-type: go`, with `include-v-in-tag: true` and no component in the tag.
+The [pipeline integration guide](../../build/versioned-docs/pipeline-integration.md) has the config.
 
 Commits drive the release. `feat:` bumps minor. `fix:` bumps patch. `feat!:` bumps major.
 

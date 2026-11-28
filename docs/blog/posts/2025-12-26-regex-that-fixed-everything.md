@@ -10,6 +10,7 @@ categories:
 description: >-
   Components configured. Codecov showed "No report uploaded." Paths looked correct. Glob patterns vs regex syntax.
 slug: regex-that-fixed-everything
+provenance: human
 ---
 # The Regex That Fixed Everything
 
@@ -41,26 +42,9 @@ Each component tracks coverage independently. Components show which parts need a
 
 ## The Configuration (Wrong)
 
-`codecov.yml` configuration:
+`codecov.yml` configuration.
 
-```yaml
-component_management:
-  individual_components:
-    - component_id: cli
-      name: CLI
-      paths:
-        - cmd/**
-
-    - component_id: analyzer
-      name: Analyzer
-      paths:
-        - pkg/analyzer/**
-
-    - component_id: config
-      name: Configuration
-      paths:
-        - pkg/config/**
-```
+Under `component_management.individual_components`, each component had an ID, a name and glob paths: `cmd/**` for the CLI, `pkg/analyzer/**`, `pkg/config/**`.
 
 This looks right. GitHub Actions uses glob patterns. This matches GitHub workflow syntax.
 
@@ -70,14 +54,9 @@ This looks right. GitHub Actions uses glob patterns. This matches GitHub workflo
 
 ## The Confusion
 
-Coverage uploaded successfully:
+Coverage uploaded successfully.
 
-```yaml
-- name: Upload coverage to Codecov
-  uses: codecov/codecov-action@v5
-  with:
-    files: ./coverage.out
-```
+`codecov/codecov-action@v5` uploaded `./coverage.out` without error.
 
 ✅ Coverage file uploaded
 ✅ Total coverage calculated (99%)
@@ -110,21 +89,9 @@ Codecov uses **regex syntax**:
 
 **Our paths were glob. Codecov expected regex.**
 
-The fix:
+The fix.
 
-```yaml
-component_management:
-  individual_components:
-    - component_id: cli
-      name: CLI
-      paths:
-        - "cmd/readability/.*"  # Regex, not glob
-
-    - component_id: analyzer
-      name: Analyzer
-      paths:
-        - "pkg/analyzer/.*"  # Regex, not glob
-```
+The same components with quoted regex paths: `"cmd/readability/.*"` and `"pkg/analyzer/.*"`.
 
 **Result**: All components showed coverage breakdown
 
@@ -150,15 +117,7 @@ paths:
 
 ### Escaping Special Characters
 
-```yaml
-# Glob (GitHub Actions)
-paths:
-  - "*.go"
-
-# Regex (Codecov)
-paths:
-  - ".*\\.go$"  # Escape the dot, anchor with $
-```
+A glob such as `"*.go"` becomes the regex `".*\\.go$"`: escape the dot, anchor with `$`.
 
 ---
 
@@ -194,15 +153,11 @@ Codecov didn't error. It just silently failed to match paths.
 
 **What we expected**:
 
-```text
-Warning: Component 'cli' path 'cmd/**' invalid (must be regex)
-```
+> `Warning: Component 'cli' path 'cmd/**' invalid (must be regex)`
 
 **What we got**:
 
-```text
-No report uploaded
-```
+> `No report uploaded`
 
 The error message suggests upload failure, not path mismatch.
 
@@ -227,39 +182,8 @@ When configuration "looks right" but doesn't work, check if you're using the wro
 
 ## The Working Configuration
 
-```yaml
-component_management:
-  default_rules:
-    statuses:
-      - type: project
-        target: 95%
-
-  individual_components:
-    - component_id: cli
-      name: CLI
-      paths:
-        - "cmd/readability/.*"
-
-    - component_id: analyzer
-      name: Analyzer
-      paths:
-        - "pkg/analyzer/.*"
-
-    - component_id: config
-      name: Configuration
-      paths:
-        - "pkg/config/.*"
-
-    - component_id: markdown
-      name: Markdown Parser
-      paths:
-        - "pkg/markdown/.*"
-
-    - component_id: output
-      name: Output Formatters
-      paths:
-        - "pkg/output/.*"
-```
+A 95% project target in `default_rules`, and five components with regex paths, one each for the CLI, analyzer, config, markdown parser and output packages.
+The [coverage enforcement guide](../../enforce/testing-enforcement/coverage-enforcement.md) has the full `codecov.yml`.
 
 **Result**: Component breakdown shows per-package coverage, trends, and gaps.
 

@@ -22,6 +22,7 @@ Security-focused tooling built into the Go ecosystem. No exotic tools needed. Ev
 ## Contents
 
 - **[Standard Toolkit](tools.md)** - Race detector, golangci-lint, gofmt, Trivy, govulncheck, syft, TruffleHog
+- **[golangci-lint v2 errcheck](golangci-lint-v2-errcheck.md)** - Fix patterns and config for the stricter v2 errcheck defaults
 - **[Workflow Integration](integration.md)** - Pre-commit hooks and CI pipeline configuration
 - **[Compliance](compliance.md)** - OpenSSF Best Practices and Go Report Card alignment
 - **[Conclusion](conclusion.md)** - Cost analysis, why this works, and related resources

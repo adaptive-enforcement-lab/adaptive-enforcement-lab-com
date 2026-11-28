@@ -34,6 +34,32 @@ Workflows and Jobs need lookup data: mappings, configurations, static lists, ref
 
 **The gap**: Fast, dynamic, zero-API-overhead lookups.
 
+**Before the cache**: a deployment restart workflow that answers "which deployments use
+this image?" with a cluster scan on every image push:
+
+```yaml
+templates:
+  - name: get-deployments
+    script:
+      image: google/cloud-sdk:latest
+      source: |
+        apt-get -qq -y install jq
+        kubectl get deployments -o json -A | jq '...' > /tmp/deployments.json
+
+  - name: select-candidates
+    script:
+      source: |
+        jq --arg IMAGE "${IMAGE}" 'map(select(.image==$IMAGE))' /tmp/deployments.json
+
+  - name: trigger-restart
+    script:
+      source: |
+        kubectl rollout restart deployment $NAME -n $NAMESPACE
+```
+
+Each run fetches every deployment in the cluster and installs `jq` first. The answer only
+changes when deployments change, a few times a week.
+
 ---
 
 ## Volume Mount Pattern

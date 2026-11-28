@@ -8,8 +8,9 @@ categories:
   - Supply Chain Security
   - Open Source
 description: >-
-  Scorecard said 8/10. Signatures alone weren't enough. The gap between signed and provably built.
+  Scorecard said 8/10. Signatures alone weren't enough. The gap between signed and provably built, and the SLSA provenance that closed it.
 slug: scorecard-stuck-at-eight
+provenance: human
 ---
 # The Score That Wouldn't Move: Stuck at 8/10
 
@@ -87,19 +88,13 @@ The attestation is cryptographically bound to the artifacts. Change a byte, veri
 
 The `slsa-github-generator` workflow had one non-negotiable constraint: version tags, not SHA pins.
 
-Every security guide says pin actions to SHA digests:
+Every security guide says pin actions to SHA digests.
 
-```yaml
-# Standard security practice
-uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
-```
+A SHA-pinned `uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4`.
 
-But `slsa-github-generator` requires version tags:
+But `slsa-github-generator` requires version tags.
 
-```yaml
-# Required for SLSA
-uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
-```
+`uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0`.
 
 Why? Because `slsa-verifier` validates the builder identity against **known version tags**. SHA references fail verification.
 
@@ -115,25 +110,19 @@ Three iterations to get it right:
 
 **Attempt 1**: Raw SHA256
 
-```bash
-sha256sum readability_* > hashes.txt
-```
+`sha256sum readability_* > hashes.txt`
 
 Result: Generator rejected the format.
 
 **Attempt 2**: Hex encoded
 
-```bash
-sha256sum readability_* | xxd -p > hashes.txt
-```
+`sha256sum readability_* | xxd -p > hashes.txt`
 
 Result: Still wrong format.
 
 **Attempt 3**: Base64 encoded
 
-```bash
-sha256sum readability_* | base64 -w0 > hashes.txt
-```
+`sha256sum readability_* | base64 -w0 > hashes.txt`
 
 Result: Generator accepted it.
 
@@ -145,13 +134,10 @@ The documentation mentioned this, but buried in examples. Trial and error won.
 
 Release v1.7.1 included a new file: `multiple.intoto.jsonl`
 
-Verification command:
+Verification command.
 
-```bash
-slsa-verifier verify-artifact readability_linux_amd64 \
-  --provenance-path multiple.intoto.jsonl \
-  --source-uri github.com/adaptive-enforcement-lab/readability
-```
+`slsa-verifier verify-artifact readability_linux_amd64` with `--provenance-path multiple.intoto.jsonl` and `--source-uri` set to the repository.
+The [SLSA provenance guide](../../enforce/slsa-provenance/slsa-provenance.md) has the full workflow and verification.
 
 Output:
 

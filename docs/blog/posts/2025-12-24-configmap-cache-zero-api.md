@@ -10,6 +10,7 @@ categories:
 description: >-
   Argo workflows hitting API limits. 100+ calls per execution. The volume mount pattern that dropped it to zero.
 slug: configmap-cache-zero-api
+provenance: human
 ---
 # Zero API Calls: The ConfigMap Pattern That Changed Everything
 
@@ -97,44 +98,12 @@ The realization hit during a documentation dive. Volume mounts. Not API calls. *
 
 ## The Implementation
 
-ConfigMap with JSON data:
+A `workflow-cache` ConfigMap holds `mappings.json`, a map from repository to namespace.
 
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: workflow-cache
-data:
-  mappings.json: |
-    {
-      "repo-to-namespace": {
-        "adaptive-enforcement-lab/readability": "tools",
-        "adaptive-enforcement-lab/scorecard-utils": "security"
-      }
-    }
-```
+The script looks the repository up in `/cache/mappings.json` with `jq`, falls back to `default`, and makes no API call.
 
-Workflow script reads from mounted volume:
-
-```bash
-#!/bin/bash
-REPO="$1"
-
-# No API call: just read the file
-NAMESPACE=$(jq -r --arg repo "$REPO" \
-  '.["repo-to-namespace"][$repo] // "default"' /cache/mappings.json)
-
-echo "Deploying $REPO to namespace: $NAMESPACE"
-```
-
-Volume mount configuration:
-
-```yaml
-volumeMounts:
-  - name: cache-volume
-    mountPath: /cache
-    readOnly: true
-```
+The container mounts `cache-volume` read-only at `/cache`.
+The [implementation guide](../../build/efficiency-patterns/implementation.md) has the ConfigMap, the script and the mount.
 
 **That's it.** No client libraries. No API tokens. No rate limits. Just... read a file.
 

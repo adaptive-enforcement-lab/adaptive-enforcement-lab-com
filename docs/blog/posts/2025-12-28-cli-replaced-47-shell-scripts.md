@@ -10,6 +10,7 @@ categories:
 description: >-
   When kubectl isn't enough and shell scripts become unmaintainable. The architecture decisions that make CLIs testable, deployable, and debuggable.
 slug: cli-replaced-47-shell-scripts
+provenance: human
 ---
 # The CLI That Replaced 47 Shell Scripts
 
@@ -32,18 +33,9 @@ Each solved a real problem. Each lived in its own file. Each got its own CronJob
 **Month 6**: 27 scripts
 **Month 12**: 47 scripts
 
-The pattern was always the same:
+The pattern was always the same.
 
-```bash
-#!/bin/bash
-set -euo pipefail
-
-kubectl get pods -n production -o json | \
-  jq -r '.items[] | select(.status.phase == "Running") | .metadata.name' | \
-  while read pod; do
-    # Do something with $pod
-  done
-```
+`kubectl get pods -o json`, piped through `jq` to the names of running pods, then a `while read` loop that did something with each one.
 
 Copy. Paste. Modify. Deploy.
 
@@ -95,15 +87,9 @@ We needed something better.
 
 **client-go** gave us the Kubernetes API. The same library kubectl uses. Official. Maintained. Well-documented.
 
-The architecture emerged naturally:
+The architecture emerged naturally.
 
-```text
-CLI Layer (Cobra commands)
-         ↓
-   Business Logic (pkg/)
-         ↓
-  Kubernetes API (client-go)
-```
+Three layers: Cobra commands on top, business logic in `pkg/`, and client-go underneath.
 
 Cobra handles flags, help text, subcommands. Business logic stays pure: inputs → outputs. client-go talks to Kubernetes.
 
@@ -119,13 +105,7 @@ The insight: **Every operation shares the same entry point**.
 
 Instead of this:
 
-```bash
-# 12 separate CronJobs
-/usr/local/bin/rollout-restart.sh
-/usr/local/bin/configmap-update.sh
-/usr/local/bin/pod-cleanup.sh
-...
-```
+Twelve separate CronJobs, each running its own script: `rollout-restart.sh`, `configmap-update.sh`, `pod-cleanup.sh` and more.
 
 We built this:
 
@@ -150,25 +130,10 @@ Shell scripts had zero test coverage. Bash testing frameworks exist, but nobody 
 
 Go changed that.
 
-**Fake clients** made testing trivial:
+**Fake clients** made testing trivial.
 
-```go
-func TestRolloutRestart(t *testing.T) {
-    // Create fake client
-    client := fake.NewSimpleClientset()
-
-    // Call business logic
-    err := RolloutRestart(client, "nginx", "production")
-
-    // Assert results
-    assert.NoError(t, err)
-
-    // Verify API calls
-    actions := client.Actions()
-    assert.Len(t, actions, 1)
-    assert.Equal(t, "patch", actions[0].GetVerb())
-}
-```
+A test creates `fake.NewSimpleClientset()`, passes it to `RolloutRestart`, and asserts that exactly one `patch` call reached the API.
+The [unit testing guide](../../build/go-cli-architecture/testing/unit-testing.md) has the test.
 
 No real Kubernetes cluster needed. No complex mocking libraries. client-go provides fake clients out of the box.
 
@@ -189,16 +154,7 @@ Go CLI deployments became boring (in the best way):
 3. **Multi-arch**: arm64 + amd64 builds via GoReleaser
 4. **Helm**: One chart deploys all CronJobs with same image, different args
 
-```yaml
-# CronJob 1: Rollout restart
-args: ["rollout", "restart", "--deployment", "nginx"]
-
-# CronJob 2: ConfigMap update
-args: ["configmap", "update", "--name", "cache"]
-
-# CronJob 3: Pod cleanup
-args: ["pod", "cleanup", "--namespace", "production"]
-```
+Each CronJob passes different `args` to the same image: `rollout restart --deployment nginx`, `configmap update --name cache`, `pod cleanup --namespace production`.
 
 Same container. Different subcommands. One version. One deployment.
 
@@ -236,13 +192,7 @@ The CLI handles more operations than the original 47 scripts. The codebase is la
 
 The same binary works on laptops and in Kubernetes. Kubeconfig authentication for local. ServiceAccount authentication in-cluster. client-go handles both.
 
-```bash
-# Local (uses ~/.kube/config)
-./kubectl-ops rollout restart --deployment nginx
-
-# In-cluster (uses ServiceAccount)
-kubectl-ops rollout restart --deployment nginx
-```
+`./kubectl-ops rollout restart --deployment nginx` on a laptop reads `~/.kube/config`. The same command in a pod uses the ServiceAccount.
 
 Development and production use identical code paths.
 
@@ -259,17 +209,9 @@ Argo Workflows use exit codes to determine retry strategies. Different errors ge
 
 ### Win 3: Structured Logging
 
-Shell scripts echoed text. Go CLI logs JSON:
+Shell scripts echoed text. Go CLI logs JSON.
 
-```json
-{
-  "level": "info",
-  "msg": "Rollout restart completed",
-  "deployment": "nginx",
-  "namespace": "production",
-  "duration_ms": 1247
-}
-```
+A rollout restart logs one JSON line with `level`, `msg`, `deployment`, `namespace` and `duration_ms`.
 
 Grafana queries structured logs. Alerts trigger on specific fields. Debugging becomes data analysis, not text parsing.
 

@@ -10,6 +10,7 @@ categories:
 description: >-
   Codecov worked in CI. Failed in release. Same token, different context. One missing line broke everything.
 slug: one-line-secrets-inherit
+provenance: human
 ---
 # One Line: `secrets: inherit`
 
@@ -29,32 +30,9 @@ Same token. Same workflow. Different result.
 
 ## The Setup
 
-Coverage reporting worked in the CI workflow:
+Coverage reporting worked in the CI workflow.
 
-```yaml
-# .github/workflows/ci.yml
-name: CI
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-
-      - name: Run tests
-        run: go test -coverprofile=coverage.out ./...
-
-      - name: Upload coverage
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage.out
-```
+The `test` job ran `go test -coverprofile=coverage.out ./...`, then `codecov/codecov-action@v5` with `token: ${{ secrets.CODECOV_TOKEN }}`.
 
 **Result**: ✅ Coverage uploaded to Codecov successfully
 
@@ -62,38 +40,17 @@ jobs:
 
 ## The Reusable Workflow
 
-We made `ci.yml` reusable to call from `release.yml`:
+We made `ci.yml` reusable to call from `release.yml`.
 
-```yaml
-# .github/workflows/ci.yml
-on:
-  workflow_call:  # Make it reusable
+`ci.yml` gained an `on: workflow_call` trigger. The `test` job stayed the same.
 
-jobs:
-  test:
-    # ... same as before
-```
+Then called it from the release workflow.
 
-Then called it from the release workflow:
-
-```yaml
-# .github/workflows/release.yml
-name: Release
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  ci:
-    uses: ./.github/workflows/ci.yml
-```
+`release.yml` got a `ci` job with `uses: ./.github/workflows/ci.yml` and nothing else.
 
 **Result**: ❌ Codecov upload failed
 
-```text
-Error: Token required - not valid tokenless upload
-```
+> `Error: Token required - not valid tokenless upload`
 
 ---
 
@@ -145,35 +102,16 @@ jobs:
 
 ### Before (Broken)
 
-```yaml
-# release.yml
-jobs:
-  ci:
-    uses: ./.github/workflows/ci.yml
-    # Secrets NOT passed
-```
+The `ci` job calls `./.github/workflows/ci.yml` and passes no secrets.
 
 ### After (Working)
 
-```yaml
-# release.yml
-jobs:
-  ci:
-    uses: ./.github/workflows/ci.yml
-    secrets: inherit  # Pass all secrets
-```
+The same job with `secrets: inherit`.
 
 ### Alternative (Selective)
 
-```yaml
-# release.yml
-jobs:
-  ci:
-    uses: ./.github/workflows/ci.yml
-    secrets:
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      # Only specific secrets passed
-```
+The same job with a `secrets:` map that passes only `CODECOV_TOKEN`.
+The [reusable workflow secret patterns guide](../../secure/github-actions-security/workflows/reusable/secret-patterns.md) compares both forms and their risk.
 
 ---
 
@@ -221,30 +159,15 @@ This pattern applies to any secret used in reusable workflows:
 
 **Deployment tokens**:
 
-```yaml
-jobs:
-  deploy:
-    uses: ./.github/workflows/deploy.yml
-    secrets: inherit  # Pass GCP credentials
-```
+A `deploy` job calling `deploy.yml` needs it for cloud credentials.
 
 **Registry credentials**:
 
-```yaml
-jobs:
-  publish:
-    uses: ./.github/workflows/publish.yml
-    secrets: inherit  # Pass GHCR token
-```
+A `publish` job calling `publish.yml` needs it for the registry token.
 
 **API keys**:
 
-```yaml
-jobs:
-  notify:
-    uses: ./.github/workflows/notify.yml
-    secrets: inherit  # Pass Slack webhook
-```
+A `notify` job calling `notify.yml` needs it for the Slack webhook.
 
 Same problem. Same solution.
 
@@ -256,16 +179,12 @@ Same problem. Same solution.
 
 But the error message doesn't help:
 
-```text
-Error: Token required - not valid tokenless upload
-```
+> `Error: Token required - not valid tokenless upload`
 
 It should say:
 
-```text
-Error: CODECOV_TOKEN not found in workflow context.
-Hint: When calling reusable workflows, use 'secrets: inherit' or pass secrets explicitly.
-```
+> `Error: CODECOV_TOKEN not found in workflow context.`
+> `Hint: When calling reusable workflows, use 'secrets: inherit' or pass secrets explicitly.`
 
 The security model is sound. The debugging experience could be better.
 

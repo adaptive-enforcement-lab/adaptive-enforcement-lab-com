@@ -11,6 +11,7 @@ description: >-
   The audit email arrives in 30 days. Documentation won't save you.
   Enforcement will. Here's what actually passes SOC 2.
 slug: harden-sdlc-before-audit
+provenance: human
 ---
 # How to Harden Your SDLC Before the Audit Comes
 
@@ -83,13 +84,7 @@ In 30 days, we transformed from documentation to enforcement. Here's what actual
 
 We turned "code must be reviewed" into a GitHub configuration that prevents merging without approval.
 
-```yaml
-required_pull_request_reviews:
-  required_approving_review_count: 1
-  dismiss_stale_reviews: true
-  require_code_owner_reviews: true
-enforce_admins: true
-```
+One approving review, stale reviews dismissed, code owner review required, and `enforce_admins: true`.
 
 No exceptions. Not even for administrators.
 
@@ -101,14 +96,7 @@ See [Branch Protection Enforcement](../../enforce/branch-protection/branch-prote
 
 We made CI failures block merges. No green checkmarks, no deployment.
 
-```yaml
-required_status_checks:
-  strict: true
-  contexts:
-    - "tests"
-    - "security-scan"
-    - "lint"
-```
+`strict: true`, with `tests`, `security-scan` and `lint` as required contexts.
 
 Untested code can't merge. Vulnerable containers can't deploy. The pipeline decides, not developers.
 
@@ -137,15 +125,9 @@ See [Pre-commit Security Gates](2025-12-04-pre-commit-security-gates.md) and [Pr
 
 Personal Access Tokens tied to individuals fail audits. What happens when Mark leaves? Whose token is this?
 
-GitHub Apps solved it:
+GitHub Apps solved it.
 
-```yaml
-- name: Generate App Token
-  uses: actions/create-github-app-token@v2
-  with:
-    app-id: ${{ secrets.APP_ID }}
-    private-key: ${{ secrets.PRIVATE_KEY }}
-```
+One `actions/create-github-app-token@v2` step mints a short-lived token from the App ID and private key.
 
 Token lifecycle independent of employees. Scoped permissions. Full audit trail.
 
@@ -170,16 +152,9 @@ See [Commit Signing](../../enforce/commit-signing/commit-signing.md) for setup.
 
 "Show me what's in your production containers."
 
-We generated SBOMs for every build:
+We generated SBOMs for every build.
 
-```yaml
-- name: Generate SBOM
-  uses: anchore/sbom-action@v0
-  with:
-    image: app:${{ github.sha }}
-    format: cyclonedx-json
-    output-file: sbom.json
-```
+One `anchore/sbom-action@v0` step writes a CycloneDX JSON SBOM for each image, tagged with the commit SHA.
 
 Auditor could verify: No GPL licenses. No HIGH CVEs. Dependencies matched versions.
 
@@ -195,30 +170,9 @@ These same practices earned our readability project OpenSSF Best Practices certi
 
 SDLC doesn't end at CI/CD. It extends to runtime.
 
-Kyverno enforces policies in Kubernetes clusters:
+Kyverno enforces policies in Kubernetes clusters.
 
-```yaml
-apiVersion: kyverno.io/v1
-kind: ClusterPolicy
-metadata:
-  name: require-resource-limits
-spec:
-  validationFailureAction: Enforce
-  rules:
-    - name: check-limits
-      match:
-        resources:
-          kinds: [Pod]
-      validate:
-        message: "CPU and memory limits required"
-        pattern:
-          spec:
-            containers:
-              - resources:
-                  limits:
-                    memory: "?*"
-                    cpu: "?*"
-```
+A `ClusterPolicy` named `require-resource-limits` runs in `Enforce` mode and rejects any Pod whose containers lack CPU and memory limits.
 
 Pods without resource limits get rejected. Policy runs in the cluster, not just CI.
 
@@ -228,13 +182,10 @@ See [Policy-as-Code with Kyverno](2025-12-13-policy-as-code-kyverno.md) for end-
 
 Auditors sampled March 2025. "Show me PRs merged that month."
 
-We ran an API query:
+We ran an API query.
 
-```bash
-gh api 'repos/org/repo/pulls?state=closed&base=main' \
-  --jq '.[] | select(.merged_at | startswith("2025-03")) |
-    {number, title, reviews, merged_at}'
-```
+A `gh api` call listed the closed PRs against `main`, filtered with `--jq` to those merged in March 2025, with number, title, reviews and merge time.
+The [compliance reporting guide](../../enforce/audit-compliance/compliance-reporting.md) has the query.
 
 The response showed:
 

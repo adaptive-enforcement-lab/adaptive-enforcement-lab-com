@@ -10,6 +10,7 @@ categories:
 description: >-
   SLSA provenance generated successfully. Verification failed. Version tags contradicted security advice. The exception that had to be documented.
 slug: file-wouldnt-verify
+provenance: human
 ---
 # The File That Wouldn't Verify: When Security Best Practices Contradict
 
@@ -31,25 +32,16 @@ Except everything changed.
 
 ## The Setup
 
-SLSA Level 3 provenance generation was working:
+SLSA Level 3 provenance generation was working.
 
-```yaml
-provenance:
-  uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
-  with:
-    base64-subjects: ${{ needs.build.outputs.hashes }}
-    upload-assets: true
-```
+A `provenance` job called `slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0` with the build's base64 subjects and `upload-assets: true`.
+The [SLSA provenance guide](../../enforce/slsa-provenance/slsa-provenance.md) has the full workflow.
 
 Release assets included `multiple.intoto.jsonl`. The provenance file existed. The build was attested.
 
-Verification should have been simple:
+Verification should have been simple.
 
-```bash
-slsa-verifier verify-artifact readability_linux_amd64 \
-  --provenance-path multiple.intoto.jsonl \
-  --source-uri github.com/adaptive-enforcement-lab/readability
-```
+`slsa-verifier verify-artifact readability_linux_amd64`, with `--provenance-path multiple.intoto.jsonl` and `--source-uri` set to the repository.
 
 Expected: **PASSED: SLSA verification passed**
 
@@ -65,20 +57,11 @@ Version tags can be moved. SHA digests are immutable.
 
 **Standard practice**:
 
-```yaml
-uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4
-```
+`uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4`
 
 **Renovate enforces it**:
 
-```json
-{
-  "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests"
-  ]
-}
-```
+The config extends `config:recommended` and `helpers:pinGitHubActionDigests`.
 
 This is non-negotiable security hygiene. SHA pins prevent:
 
@@ -94,29 +77,21 @@ SLSA provenance generation **requires version tags**, not SHA pins.
 
 **This fails**:
 
-```yaml
-uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@abc123def456
-```
+`uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@abc123def456`
 
 **This works**:
 
-```yaml
-uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0
-```
+`uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v2.1.0`
 
 Why? Because `slsa-verifier` validates the builder identity against a **list of known version tags**.
 
 The verifier expects:
 
-```text
-"https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v2.1.0"
-```
+`https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v2.1.0`
 
 Not:
 
-```text
-"https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@abc123def456"
-```
+`https://github.com/slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@abc123def456`
 
 SHA references fail verification. They're not in the known builder identity list.
 
@@ -141,11 +116,9 @@ One must give.
 
 ## The Discovery
 
-The SLSA documentation buries this detail in examples. The error message doesn't explain it:
+The SLSA documentation buries this detail in examples. The error message doesn't explain it.
 
-```text
-Error: builder identity not recognized
-```
+> `Error: builder identity not recognized`
 
 It should say:
 
@@ -166,19 +139,10 @@ The solution was clear: **Use version tags for slsa-github-generator only.**
 
 ## The Exception
 
-We documented the exception in Renovate configuration:
+We documented the exception in Renovate configuration.
 
-```json
-{
-  "packageRules": [
-    {
-      "description": "slsa-github-generator requires version tags for slsa-verifier compatibility",
-      "matchPackageNames": ["slsa-framework/slsa-github-generator"],
-      "pinDigests": false
-    }
-  ]
-}
-```
+A `packageRules` entry matches `slsa-framework/slsa-github-generator`, sets `pinDigests: false`, and carries its reason in `description`.
+The [SLSA provenance guide](../../enforce/slsa-provenance/slsa-provenance.md) has the config.
 
 This prevents Renovate from converting `@v2.1.0` to SHA digests.
 
@@ -194,14 +158,9 @@ The exception is **documented** with **clear reasoning**:
 
 This isn't the only valid exception. Another:
 
-**ossf/scorecard-action** requires version tags for internal workflow verification:
+**ossf/scorecard-action** requires version tags for internal workflow verification.
 
-```json
-{
-  "matchFileNames": [".github/workflows/scorecard.yml"],
-  "pinDigests": false
-}
-```
+A second rule sets `pinDigests: false` for files matching `.github/workflows/scorecard.yml`.
 
 The pattern:
 

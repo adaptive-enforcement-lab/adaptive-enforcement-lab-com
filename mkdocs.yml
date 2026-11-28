@@ -384,6 +384,7 @@ nav:
               - Orchestrator Pattern: build/go-cli-architecture/command-architecture/orchestrator-pattern.md
               - Subcommand Design: build/go-cli-architecture/command-architecture/subcommand-design.md
               - I/O Contracts: build/go-cli-architecture/command-architecture/io-contracts.md
+              - Error Messages for AI Agents: build/go-cli-architecture/command-architecture/error-messages-for-ai-agents.md
           - Packaging:
               - build/go-cli-architecture/packaging/index.md
               - Container Builds: build/go-cli-architecture/packaging/container-builds.md
@@ -545,6 +546,7 @@ nav:
       - Go Security:
           - secure/go-security/index.md
           - Standard Toolkit: secure/go-security/tools.md
+          - golangci-lint v2 errcheck: secure/go-security/golangci-lint-v2-errcheck.md
           - Workflow Integration: secure/go-security/integration.md
           - Compliance: secure/go-security/compliance.md
           - Conclusion: secure/go-security/conclusion.md
@@ -770,6 +772,7 @@ nav:
       - Testing Enforcement:
           - Coverage Patterns: enforce/testing-enforcement/coverage-patterns.md
           - Coverage Enforcement: enforce/testing-enforcement/coverage-enforcement.md
+          - Local Verification Chains: enforce/testing-enforcement/local-verification-chains.md
       - Audit & Compliance:
           - enforce/audit-compliance/audit-evidence.md
           - Evidence Types: enforce/audit-compliance/evidence-types.md
@@ -878,6 +881,7 @@ nav:
           - Usage Guide: enforce/policy-as-code/template-library/usage-guide.md
       - Incident Readiness:
           - Playbook Library: enforce/incident-readiness/playbook-library/index.md
+          - Playbook Structure: enforce/incident-readiness/playbook-library/playbook-structure.md
       - "CI/CD Compliance Audits for Component Integrity": enforce/ci-cd-compliance-audits-for-component-integrity/index.md
       - CI Compliance Audits: enforce/integrating-automated-compliance-audits-in-the-ci-pipeline/index.md
   - Patterns:
@@ -910,6 +914,7 @@ nav:
           - Environment Progression:
               - patterns/architecture/environment-progression.md
               - Operations: patterns/architecture/environment-progression-operations.md
+              - Pipeline: patterns/architecture/environment-progression-pipeline.md
           - GitOps ApplicationSet Delivery: patterns/architecture/gitops-applicationset/index.md
           - Three-Stage Design: patterns/architecture/three-stage-design.md
           - Matrix Distribution:

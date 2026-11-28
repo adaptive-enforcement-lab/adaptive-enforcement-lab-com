@@ -8,8 +8,9 @@ categories:
   - Performance
   - Engineering Patterns
 description: >-
-  Mount ConfigMaps as volumes for millisecond reads. Zero API calls. Self-healing cache misses.
+  Mount ConfigMaps as volumes for millisecond reads. Zero API calls. Self-healing cache misses. Mount first, API second, rebuild last.
 slug: configmap-cache-zero-api
+provenance: human
 ---
 # Zero-API Lookups: ConfigMap as a Cache Pattern
 
@@ -50,39 +51,14 @@ volumeMounts:
     readOnly: true
 ```
 
-The cache becomes a file at `/etc/cache/cache.json`:
+The cache becomes a file at `/etc/cache/cache.json`.
 
-```json
-{
-  "images": {
-    "us-docker.pkg.dev/project/repo/app:v1.2.3": [
-      {"name": "api", "namespace": "production"},
-      {"name": "api", "namespace": "staging"}
-    ],
-    "us-docker.pkg.dev/project/repo/worker:v2.0.1": [
-      {"name": "worker", "namespace": "production"}
-    ]
-  }
-}
-```
+It maps each image reference to the deployments that run it, by name and namespace.
 
-Read it like any file:
+Read it like any file.
 
-```go
-func readCache(mountPath string) (*Cache, error) {
-    data, err := os.ReadFile(filepath.Join(mountPath, "cache.json"))
-    if err != nil {
-        return nil, fmt.Errorf("reading cache file: %w", err)
-    }
-
-    var cache Cache
-    if err := json.Unmarshal(data, &cache); err != nil {
-        return nil, fmt.Errorf("parsing cache: %w", err)
-    }
-
-    return &cache, nil
-}
-```
+A Go reader opens it with `os.ReadFile` and decodes it with `json.Unmarshal`.
+The [implementation guide](../../build/efficiency-patterns/implementation.md) has the code.
 
 Zero API calls. Sub-millisecond reads.
 
@@ -119,34 +95,10 @@ flowchart LR
 
 ```
 
-Implementation:
-
-```go
-func GetDeployments(image string, cachePath string, client kubernetes.Interface) ([]Deployment, error) {
-    // Try volume mount first
-    if cache, err := readCache(cachePath); err == nil {
-        if deployments, found := cache.Images[image]; found {
-            return deployments, nil
-        }
-        // Image not in cache, trigger rebuild
-        return rebuildCache(client)
-    }
-
-    // Fallback to API
-    cache, err := getConfigMapCache(client)
-    if err != nil {
-        // Cache doesn't exist, rebuild from cluster scan
-        return rebuildCache(client)
-    }
-
-    if deployments, found := cache.Images[image]; found {
-        return deployments, nil
-    }
-
-    // Image not tracked, rebuild cache
-    return rebuildCache(client)
-}
-```
+`GetDeployments` reads the mount first.
+On a read error it falls back to a GET on the ConfigMap.
+If the ConfigMap is missing or the image is not tracked, it rebuilds the cache from a cluster scan.
+The [implementation guide](../../build/efficiency-patterns/implementation.md) has the function.
 
 This pattern aligns with [Graceful Degradation](../../patterns/error-handling/graceful-degradation/index.md): optimize for the happy path (mount), but survive all failure modes.
 
@@ -156,31 +108,10 @@ This pattern aligns with [Graceful Degradation](../../patterns/error-handling/gr
 
 Reads are fast. Writes are where it gets interesting.
 
-The volume mount is read-only, so the workflow can't write to it directly. Updates must go through the API:
+The volume mount is read-only, so the workflow can't write to it directly. Updates must go through the API.
 
-```go
-func updateCache(client kubernetes.Interface, cache *Cache) error {
-    data, err := json.MarshalIndent(cache, "", "  ")
-    if err != nil {
-        return fmt.Errorf("marshaling cache: %w", err)
-    }
-
-    cm := &corev1.ConfigMap{
-        ObjectMeta: metav1.ObjectMeta{
-            Name:      "deployment-image-cache",
-            Namespace: "automation",
-        },
-        Data: map[string]string{
-            "cache.json": string(data),
-        },
-    }
-
-    _, err = client.CoreV1().ConfigMaps("automation").Update(
-        context.Background(), cm, metav1.UpdateOptions{},
-    )
-    return err
-}
-```
+`updateCache` marshals the cache and calls `Update` on the `deployment-image-cache` ConfigMap.
+The [implementation guide](../../build/efficiency-patterns/implementation.md) has the code.
 
 Kubernetes syncs the change to all volume mounts. Typically within seconds, but not instant.
 
@@ -212,17 +143,8 @@ If you hit the limit, consider:
 
 The workflow needs read access to the ConfigMap. In namespaced setups, this requires cluster-scoped roles or cross-namespace access.
 
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: cache-reader
-rules:
-  - apiGroups: [""]
-    resources: ["configmaps"]
-    verbs: ["get"]
-    resourceNames: ["deployment-image-cache"]
-```
+A `ClusterRole` with `get` on `configmaps`, limited by `resourceNames` to `deployment-image-cache`, is enough.
+The [implementation guide](../../build/efficiency-patterns/implementation.md) has the manifest.
 
 ---
 

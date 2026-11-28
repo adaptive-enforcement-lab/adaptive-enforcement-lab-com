@@ -11,6 +11,7 @@ description: >-
   Binary releases eliminate the 30-second cold start penalty. Ship pre-commit
   hooks developers actually want to use.
 slug: pre-commit-hooks-binary-releases
+provenance: human
 ---
 # Pre-commit Hooks That Don't Make You Wait
 
@@ -49,28 +50,10 @@ The result: developers disable pre-commit hooks.
 
 ## The .pre-commit-hooks.yaml File
 
-Define hooks in your tool repo:
+Define hooks in your tool repo.
 
-```yaml
-# .pre-commit-hooks.yaml
-- id: readability
-  name: readability
-  description: Check documentation readability metrics
-  entry: readability --check
-  language: golang
-  files: \.md$
-  pass_filenames: true
-  types: [markdown]
-
-- id: readability-docs
-  name: readability (docs only)
-  description: Check only docs/ directory
-  entry: readability --check docs/
-  language: golang
-  files: ^docs/.*\.md$
-  pass_filenames: false
-  types: [markdown]
-```
+Two hooks: `readability` runs `readability --check` on every staged markdown file, and `readability-docs` runs `readability --check docs/` once, without file names.
+The [pre-commit hook distribution guide](../../build/go-cli-architecture/packaging/pre-commit-hooks.md) has the file.
 
 !!! tip "Two Hook Variants"
     Offer both file-based and directory-based hooks. Projects have different needs.
@@ -100,23 +83,7 @@ Pre-commit checks exit codes:
 - `1`: One or more files failed
 - Other: Error (config issues, crashes)
 
-```go
-func run() error {
-    // Analyze files...
-
-    if checkFlag && failed > 0 {
-        return fmt.Errorf("%d file(s) failed", failed)
-    }
-    return nil
-}
-
-func main() {
-    if err := run(); err != nil {
-        fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-        os.Exit(1)
-    }
-}
-```
+`run()` returns an error when `--check` is set and any file failed. `main()` prints it to stderr and exits 1.
 
 ### The --check Flag Pattern
 
@@ -126,120 +93,52 @@ Always implement `--check` that:
 2. Exits with code 1 on failure
 3. Used by default in hook entry
 
-```yaml
-entry: my-tool --check  # Always use --check in hooks
-```
+The hook entry is always `my-tool --check`.
 
 ### Accepting Multiple Files
 
-With `pass_filenames: true`, pre-commit passes files as args:
+With `pass_filenames: true`, pre-commit passes files as args.
 
-```bash
-my-tool --check file1.md file2.md docs/guide.md
-```
+A call looks like `my-tool --check file1.md file2.md docs/guide.md`.
 
-Your CLI must handle this:
+Your CLI must handle this.
 
-```go
-func run(cmd *cobra.Command, args []string) error {
-    paths := args
-    if len(paths) == 0 {
-        paths = []string{"."}
-    }
-
-    var allResults []*Result
-    for _, path := range paths {
-        results, err := analyze(path)
-        if err != nil {
-            return err
-        }
-        allResults = append(allResults, results...)
-    }
-
-    return processResults(allResults)
-}
-```
+Treat each argument as a path, fall back to `.` when there are none, and merge the results before reporting.
 
 ---
 
 ## GoReleaser Configuration
 
-Build for all platforms:
+Build for all platforms.
 
-```yaml
-# .goreleaser.yml
-version: 2
-
-builds:
-  - id: my-tool
-    main: ./cmd/my-tool
-    binary: my-tool_{{ .Os }}_{{ .Arch }}
-    env:
-      - CGO_ENABLED=0
-    goos: [linux, darwin, windows]
-    goarch: [amd64, arm64]
-    ldflags:
-      - -s -w
-      - -X main.version={{ .Version }}
-
-archives:
-  - id: my-tool
-    builds: [my-tool]
-    format: tar.gz
-    name_template: "my-tool_{{ .Os }}_{{ .Arch }}"
-```
+One binary per OS and architecture: Linux, macOS and Windows on amd64 and arm64, with `CGO_ENABLED=0` and the version set through `ldflags`, packed as `tar.gz`.
+The [pre-commit hook distribution guide](../../build/go-cli-architecture/packaging/pre-commit-hooks.md) has the config.
 
 ---
 
 ## Consumer Configuration
 
-In repos that use your hook:
+In repos that use your hook.
 
-```yaml
-# .pre-commit-config.yaml
-repos:
-  - repo: https://github.com/owner/my-tool
-    rev: v1.0.0
-    hooks:
-      - id: readability
-```
+A consumer lists your repo, a `rev` tag and the hook `id` in `.pre-commit-config.yaml`.
 
 ### With Arguments
 
-```yaml
-repos:
-  - repo: https://github.com/owner/my-tool
-    rev: v1.0.0
-    hooks:
-      - id: readability
-        args: ['--config', '.readability.yml']
-```
+Add `args`, such as `['--config', '.readability.yml']`.
 
 ### Excluding Files
 
-```yaml
-repos:
-  - repo: https://github.com/owner/my-tool
-    rev: v1.0.0
-    hooks:
-      - id: readability
-        exclude: '^CHANGELOG\.md$|^vendor/'
-```
+Add `exclude` with a regex such as `'^CHANGELOG\.md$|^vendor/'`.
+The [pre-commit hook distribution guide](../../build/go-cli-architecture/packaging/pre-commit-hooks.md) shows the full entry.
 
 ---
 
 ## Floating Version Tags
 
-Keep floating tags for easy updates:
+Keep floating tags for easy updates.
 
-```bash
-# In release workflow
-VERSION=${GITHUB_REF#refs/tags/}
-MAJOR=$(echo $VERSION | cut -d. -f1)
-
-git tag -f $MAJOR
-git push -f origin $MAJOR
-```
+The release workflow force-moves the major tag, such as `v1`, to each new release with `git tag -f` and `git push -f`.
+The [GitHub Actions distribution guide](../../build/go-cli-architecture/packaging/github-actions.md) has the step.
 
 Users can then reference:
 
@@ -253,49 +152,20 @@ rev: v1  # Always gets latest v1.x.x
 
 ### Local Testing
 
-```bash
-# Build the tool
-go build -o my-tool ./cmd/my-tool
-
-# Test with specific files
-./my-tool --check README.md docs/
-
-# Test exit code
-./my-tool --check bad-file.md; echo "Exit: $?"
-```
+Build the tool, run it with `--check` on a few files, and print the exit code.
 
 ### Pre-commit Testing
 
-```bash
-# Install hooks
-pre-commit install
-
-# Run on all files
-pre-commit run my-tool --all-files
-
-# Run on specific files
-pre-commit run my-tool --files README.md
-
-# Verbose output
-pre-commit run my-tool --all-files --verbose
-```
+Install the hooks, then `pre-commit run my-tool` with `--all-files`, `--files` or `--verbose`.
+The [pre-commit hook distribution guide](../../build/go-cli-architecture/packaging/pre-commit-hooks.md) has the commands.
 
 ---
 
 ## Helpful Error Messages
 
-Design output for humans and AI agents:
+Design output for humans and AI agents.
 
-```go
-if failed > 0 {
-    if tooLong > 0 {
-        fmt.Fprintln(os.Stderr, "")
-        fmt.Fprintln(os.Stderr, "IMPORTANT: Split files, don't delete content.")
-        fmt.Fprintln(os.Stderr, "")
-    }
-    return fmt.Errorf("%d file(s) failed", failed)
-}
-```
+When a file is too long, the CLI prints `IMPORTANT: Split files, don't delete content.` before it returns the failure count.
 
 See [CLI UX Patterns for AI Agents](2025-12-07-cli-ux-patterns-for-ai-agents.md) for more.
 
@@ -313,12 +183,9 @@ Make sure `.pre-commit-hooks.yaml` is in your repo.
 
 ### Wrong Version Running
 
-Clear pre-commit cache:
+Clear the pre-commit cache.
 
-```bash
-pre-commit clean
-pre-commit install
-```
+Run `pre-commit clean`, then `pre-commit install`.
 
 ### Slow First Run
 

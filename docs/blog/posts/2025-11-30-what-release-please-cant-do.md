@@ -11,6 +11,7 @@ description: >-
   Release-please packages are directories, not files.
   When I tried to track CONTRIBUTING.md separately, I learned why.
 slug: what-release-please-cant-do
+provenance: human
 ---
 # What Release-Please Can't Do
 
@@ -39,20 +40,8 @@ This seemed reasonable. Release-please supports [monorepo configurations](https:
 
 ## The Attempt
 
-```json
-{
-  "packages": {
-    ".": {
-      "release-type": "simple",
-      "component": "platform"
-    },
-    "contributing": {
-      "release-type": "simple",
-      "component": "contributing-guidelines"
-    }
-  }
-}
-```
+The config added `contributing` as a second package next to the root one: `release-type: simple`, component `contributing-guidelines`.
+The [extra-files guide](../../build/release-pipelines/release-please/extra-files.md) shows the config that fails.
 
 Error: `contributing` is not a directory.
 
@@ -81,24 +70,10 @@ All create more problems than they solve.
 
 ## The Solution
 
-Accept the limitation. Use `extra-files` instead:
+Accept the limitation. Use `extra-files` instead.
 
-```json
-{
-  "packages": {
-    ".": {
-      "release-type": "simple",
-      "extra-files": [
-        {
-          "type": "generic",
-          "path": "CONTRIBUTING.md",
-          "glob": false
-        }
-      ]
-    }
-  }
-}
-```
+One `generic` entry in the root package's `extra-files` points at `CONTRIBUTING.md`, with `glob: false`.
+The [extra-files guide](../../build/release-pipelines/release-please/extra-files.md) has the config.
 
 The file gets its version updated alongside the main package. Add the annotation:
 
@@ -130,20 +105,10 @@ If you truly need independent versioning for a single file, you need a different
 
 ## The Changelog Compromise
 
-Even without independent versioning, you can control what appears in changelogs. Hide noise with scope filtering:
+Even without independent versioning, you can control what appears in changelogs. Hide noise with scope filtering.
 
-```json
-{
-  "changelog-sections": [
-    { "type": "feat", "section": "Features" },
-    { "type": "fix", "section": "Bug Fixes" },
-    { "type": "docs", "section": "Documentation" },
-    { "type": "chore", "scope": "deps", "section": "Dependencies", "hidden": true },
-    { "type": "test", "section": "Tests", "hidden": true },
-    { "type": "ci", "section": "CI/CD", "hidden": true }
-  ]
-}
-```
+Sections for `feat`, `fix` and `docs` stay visible. `chore` with scope `deps`, `test` and `ci` are marked `hidden`.
+The [release-please setup guide](../../build/release-pipelines/release-please/index.md) has the config.
 
 The `scope` field targets specific commit patterns. `chore(deps): bump lodash` gets hidden. `chore: update build config` appears under Maintenance.
 

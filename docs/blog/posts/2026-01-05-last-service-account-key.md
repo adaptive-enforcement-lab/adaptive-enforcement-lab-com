@@ -10,6 +10,7 @@ categories:
 description: >-
   When you delete the last JSON key file from production. The Workload Identity migration that eliminated credential leaks forever.
 slug: last-service-account-key
+provenance: human
 ---
 # The Last Service Account Key
 
@@ -101,55 +102,12 @@ Every Pod authenticates via Workload Identity. Every GCP service uses least-priv
 
 ### Before Workload Identity
 
-```yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: gcp-credentials
-type: Opaque
-data:
-  service-account.json: eyJw... # 47 commits ago
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-app
-spec:
-  containers:
-  - name: app
-    env:
-    - name: GOOGLE_APPLICATION_CREDENTIALS
-      value: /secrets/credentials.json
-    volumeMounts:
-    - name: credentials
-      mountPath: /secrets
-  volumes:
-  - name: credentials
-    secret:
-      secretName: gcp-credentials
-```
+A `gcp-credentials` Secret held the JSON key. The Pod mounted it at `/secrets` and pointed `GOOGLE_APPLICATION_CREDENTIALS` at the file.
 
 ### After Workload Identity
 
-```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: my-app
-  annotations:
-    iam.gke.io/gcp-service-account: my-app@project-id.iam.gserviceaccount.com
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-app
-spec:
-  serviceAccountName: my-app
-  containers:
-  - name: app
-    # No secrets. No environment variables.
-    # Pod authenticates automatically via metadata server.
-```
+The Pod's ServiceAccount carries an `iam.gke.io/gcp-service-account` annotation, and the Pod names that ServiceAccount. No secret, no volume, no environment variable: the Pod authenticates through the metadata server.
+The [Workload Identity migration guide](../../secure/cloud-native/workload-identity/migration-guide.md) has both manifests and the migration steps.
 
 The code that uses GCP services barely changes. The authentication layer becomes invisible.
 

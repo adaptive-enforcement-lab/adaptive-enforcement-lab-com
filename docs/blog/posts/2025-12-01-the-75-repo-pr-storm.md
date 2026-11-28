@@ -11,6 +11,7 @@ description: >-
   A version bump nearly triggered 75 useless PRs across our organization.
   Content-based change detection saved us from PR fatigue.
 slug: the-75-repo-pr-storm
+provenance: human
 ---
 # The 75-Repo PR Storm We Almost Created
 
@@ -24,14 +25,9 @@ Then release-please bumped the version from 1.4.1 to 1.4.2.
 
 ## The Setup
 
-We track CONTRIBUTING.md version alongside our platform version using [release-please extra-files](../../build/release-pipelines/release-please/extra-files.md):
+We track CONTRIBUTING.md version alongside our platform version using [release-please extra-files](../../build/release-pipelines/release-please/extra-files.md).
 
-```markdown
----
-title: Contributing Guidelines
-version: 1.4.2 # x-release-please-version
----
-```
+The file's frontmatter carries `version: 1.4.2 # x-release-please-version`, and release-please rewrites that number on every release.
 
 When someone merges a `feat:` commit, release-please bumps the version everywhere. This includes CONTRIBUTING.md. The file distribution workflow sees "file changed" and springs into action.
 
@@ -42,15 +38,9 @@ When someone merges a `feat:` commit, release-please bumps the version everywher
 !!! danger "The Risk"
     Simple change detection catches everything. This includes version-only changes that don't matter.
 
-Our change detection was simple:
+Our change detection was simple.
 
-```bash
-if [ -z "$(git status --porcelain)" ]; then
-  echo "No changes"
-else
-  echo "Changes detected - creating PR"
-fi
-```
+It checked `git status --porcelain`: empty output meant no changes, anything else meant a PR.
 
 This catches everything. Including version-only changes.
 
@@ -67,13 +57,9 @@ Seventy-five PRs. Seventy-five notifications. Seventy-five reviews needed. Zero 
 
 ## The Discovery
 
-We caught it before it ran. The release-please PR merged, the distribution workflow triggered, and we watched the logs:
+We caught it before it ran. The release-please PR merged, the distribution workflow triggered, and we watched the logs.
 
-```text
-Processing repo 1/75: service-alpha
-  Changes detected: true
-  Creating PR...
-```
+> `Processing repo 1/75: service-alpha`, then `Changes detected: true`, then `Creating PR...`
 
 Wait. What changes? We hadn't touched the content.
 
@@ -83,26 +69,11 @@ The version bump. That's all that changed.
 
 ## The Fix
 
-Compare content **after stripping volatile fields**:
+Compare content **after stripping volatile fields**.
 
-```bash
-strip_version() {
-  sed '/^version:.*# x-release-please-version$/d' "$1"
-}
-
-SOURCE_CONTENT=$(strip_version "CONTRIBUTING.md")
-ORIGINAL_CONTENT=$(git show HEAD:CONTRIBUTING.md | \
-  sed '/^version:.*# x-release-please-version$/d')
-
-if [ "$SOURCE_CONTENT" = "$ORIGINAL_CONTENT" ]; then
-  # Only version changed - skip
-  git checkout -- CONTRIBUTING.md
-  echo "has_changes=false" >> "$GITHUB_OUTPUT"
-  exit 0
-fi
-
-echo "has_changes=true" >> "$GITHUB_OUTPUT"
-```
+A `strip_version` function deletes the `x-release-please-version` line with `sed`, from both the source file and `git show HEAD:CONTRIBUTING.md`.
+If the two results match, the script restores the file and sets `has_changes=false`.
+The [content comparison guide](../../patterns/github-actions/use-cases/work-avoidance/content-comparison.md) has the full script.
 
 The sed pattern strips the version line before comparison. If the remaining content is identical, skip the distribution.
 

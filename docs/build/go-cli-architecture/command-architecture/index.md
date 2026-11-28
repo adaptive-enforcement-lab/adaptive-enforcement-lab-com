@@ -20,6 +20,7 @@ A well-designed CLI has commands that work both independently and as part of lar
 - **[Orchestrator Pattern](orchestrator-pattern.md)** - Coordinate multi-step workflows
 - **[Subcommand Design](subcommand-design.md)** - Build independently useful commands
 - **[Input/Output Contracts](io-contracts.md)** - Design for pipelines and automation
+- **[Error Messages for AI Agents](error-messages-for-ai-agents.md)** - Output that agents fix correctly
 
 ---
 

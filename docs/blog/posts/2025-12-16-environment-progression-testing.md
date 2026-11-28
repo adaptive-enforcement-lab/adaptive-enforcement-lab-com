@@ -8,8 +8,9 @@ categories:
   - CI/CD
   - Kubernetes
 description: >-
-  Test deployments across environments before production. Automate smoke tests at each stage.
+  Test deployments across environments before production. Automate smoke tests at each stage, so staging catches the break and production never sees it.
 slug: environment-progression-testing
+provenance: human
 ---
 # Environment Progression Testing: Dev → Stage → Prod Validation
 
@@ -58,47 +59,12 @@ Code passes in dev. It fails in production. The environments aren't the same.
 
 ## Progressive Deployment Strategy
 
-Test in each environment sequentially:
+Test in each environment sequentially.
 
-```yaml
-# .github/workflows/deploy.yml
-name: Progressive Deployment
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  deploy-dev:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to dev
-        run: kubectl apply -f manifests/ -n development
-      - name: Smoke test dev
-        run: ./scripts/smoke-test.sh https://dev.example.com
-
-  deploy-staging:
-    needs: deploy-dev
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to staging
-        run: kubectl apply -f manifests/ -n staging
-      - name: Smoke test staging
-        run: ./scripts/smoke-test.sh https://staging.example.com
-
-  deploy-production:
-    needs: deploy-staging
-    runs-on: ubuntu-latest
-    environment: production  # Requires approval
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy to production
-        run: kubectl apply -f manifests/ -n production
-      - name: Smoke test production
-        run: ./scripts/smoke-test.sh https://example.com
-```
+Three jobs run in order: `deploy-dev`, `deploy-staging`, `deploy-production`.
+Each applies the manifests to its namespace and runs a smoke test against that environment's URL.
+The production job waits for an approval through a GitHub `environment`.
+The [environment progression pipeline guide](../../patterns/architecture/environment-progression-pipeline.md) has the workflow.
 
 Dev fails? Staging blocked. Staging fails? Production blocked.
 
@@ -106,45 +72,9 @@ Dev fails? Staging blocked. Staging fails? Production blocked.
 
 ## Smoke Tests That Matter
 
-Smoke tests validate critical paths:
+Smoke tests validate critical paths.
 
-```bash
-#!/usr/bin/env bash
-# scripts/smoke-test.sh
-
-set -euo pipefail
-
-URL=$1
-
-echo "Testing $URL"
-
-# Health check
-if ! curl -sf "$URL/healthz" > /dev/null; then
-    echo "❌ Health check failed"
-    exit 1
-fi
-
-# API responds
-if ! curl -sf "$URL/api/version" | jq -e '.version' > /dev/null; then
-    echo "❌ API version check failed"
-    exit 1
-fi
-
-# Database connectivity
-if ! curl -sf "$URL/api/db-status" | jq -e '.connected == true' > /dev/null; then
-    echo "❌ Database connection failed"
-    exit 1
-fi
-
-# Critical feature works
-RESPONSE=$(curl -sf -X POST "$URL/api/test-action" -d '{"test": true}')
-if ! echo "$RESPONSE" | jq -e '.success == true' > /dev/null; then
-    echo "❌ Critical action failed"
-    exit 1
-fi
-
-echo "✅ All smoke tests passed"
-```
+The script checks four things and exits 1 on the first failure: the `/healthz` endpoint, a version from `/api/version`, database connectivity from `/api/db-status`, and one critical POST action.
 
 Not comprehensive tests. Just basic health checks.
 
@@ -152,51 +82,14 @@ Not comprehensive tests. Just basic health checks.
 
 ## Namespace Strategy
 
-One cluster, multiple namespaces:
+One cluster, multiple namespaces.
 
-```yaml
-# Namespace isolation
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: development
-  labels:
-    environment: dev
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: staging
-  labels:
-    environment: staging
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: production
-  labels:
-    environment: prod
-```
+Three namespaces, `development`, `staging` and `production`, each labelled with its `environment`.
 
-NetworkPolicies enforce isolation:
+NetworkPolicies enforce isolation.
 
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: deny-cross-environment
-  namespace: production
-spec:
-  podSelector: {}
-  policyTypes:
-    - Ingress
-    - Egress
-  ingress:
-    - from:
-        - namespaceSelector:
-            matchLabels:
-              environment: prod
-```
+A default `NetworkPolicy` in `production` allows ingress only from namespaces labelled `environment: prod`.
+The [guide](../../patterns/architecture/environment-progression-pipeline.md) has the script, the namespaces and the policy.
 
 Production pods can't talk to dev pods. Boundaries enforced.
 

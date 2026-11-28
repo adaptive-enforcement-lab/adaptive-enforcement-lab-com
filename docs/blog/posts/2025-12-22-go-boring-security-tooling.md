@@ -10,6 +10,7 @@ categories:
 description: >-
   Security teams love exotic tools. Go offers go test. Boring standard tools caught real vulnerabilities. OpenSSF compliance with zero custom infrastructure.
 slug: go-boring-security-tooling
+provenance: human
 ---
 # Go's Boring Security Tooling (And Why That's Perfect)
 
@@ -133,12 +134,7 @@ No separate login. No SaaS dashboard. No procurement process. No integration mee
 
 **Pre-commit hooks**:
 
-```yaml
-- id: go-test
-  entry: go test -race ./...
-  language: system
-  files: '\.go$'
-```
+A `go-test` hook runs `go test -race ./...` on every `.go` change. The [Go security workflow integration guide](../../secure/go-security/integration.md) has the hook config.
 
 **CI pipeline**:
 

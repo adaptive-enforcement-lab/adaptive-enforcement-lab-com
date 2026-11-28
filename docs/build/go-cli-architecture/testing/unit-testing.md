@@ -99,6 +99,29 @@ func (f *FakeDeploymentClient) Restart(ctx context.Context, namespace, name stri
 }
 ```
 
+### client-go Fake Clientset
+
+For code that takes a `kubernetes.Interface`, client-go ships a fake clientset. It records
+every API call, so a test can assert on verbs without a cluster:
+
+```go
+func TestRolloutRestart(t *testing.T) {
+    // Create fake client
+    client := fake.NewSimpleClientset()
+
+    // Call business logic
+    err := RolloutRestart(client, "nginx", "production")
+
+    // Assert results
+    assert.NoError(t, err)
+
+    // Verify API calls
+    actions := client.Actions()
+    assert.Len(t, actions, 1)
+    assert.Equal(t, "patch", actions[0].GetVerb())
+}
+```
+
 ---
 
 ## Table-Driven Tests

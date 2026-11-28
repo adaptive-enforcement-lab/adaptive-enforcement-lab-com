@@ -11,6 +11,7 @@ description: >-
   When 5 queued workflows process identical data, you have a waste problem.
   Pre-execution cleanup eliminated 70% of resource waste in production.
 slug: queue-deleted-itself-argo-workflows
+provenance: human
 ---
 # The Queue That Deleted Itself
 
@@ -67,52 +68,15 @@ flowchart TD
 
 ### Workflow Structure
 
-```yaml
-spec:
-  serviceAccountName: workflow-sa
-  activeDeadlineSeconds: 1200   # 20 minute timeout
-  entrypoint: main
-  synchronization:
-    mutexes:
-      - name: build-lock
-  templates:
-    - name: main
-      steps:
-        - - name: cleanup-pending-workflows
-            template: cleanup-pending-workflows
-        - - name: build-main
-            template: build-main
-```
+The workflow holds a `build-lock` mutex and a 20-minute `activeDeadlineSeconds`.
+Its `main` steps run `cleanup-pending-workflows` first, then `build-main`.
 
 The cleanup step runs first. If it fails, the main build doesn't start.
 
 ### Cleanup Logic
 
-```bash
-#!/bin/bash
-
-# Get current workflow name
-CURRENT_WORKFLOW="{{workflow.name}}"
-
-# List all pending workflows matching our pattern
-PENDING_WORKFLOWS=$(kubectl get workflows -n production -o json | \
-  jq -r '.items[] |
-    select(.metadata.name | startswith("build-workflow-")) |
-    select(.status.phase == "Pending") |
-    .metadata.name' | \
-  sort)
-
-# Delete all pending workflows except current one
-DELETED=0
-for wf in ${PENDING_WORKFLOWS}; do
-  if [ "${wf}" != "${CURRENT_WORKFLOW}" ]; then
-    kubectl delete workflow ${wf} -n production
-    DELETED=$((DELETED + 1))
-  fi
-done
-
-echo "Deleted ${DELETED} intermediate workflows"
-```
+The script lists workflows with `kubectl get workflows -o json`, keeps the `Pending` ones whose names start with `build-workflow-`, and deletes each one except `{{workflow.name}}`, the workflow running the script.
+The [Queue Cleanup technique](../../patterns/efficiency/work-avoidance/techniques/queue-cleanup.md) has the template and script.
 
 Key design decisions:
 
@@ -140,26 +104,7 @@ Submitted 5 test workflows while 3 existing workflows were already pending. Tota
 
 ### Cleanup Execution
 
-```text
-2025-12-15T21:23:48+0000 START cleanup-pending-workflows
-Current workflow: build-workflow-abc123
-Pending workflows found:
-build-workflow-def456
-build-workflow-ghi789
-build-workflow-jkl012
-build-workflow-mno345
-build-workflow-pqr678
-build-workflow-stu901
-build-workflow-vwx234
-Total pending workflows: 7
-Deleting intermediate workflow: build-workflow-def456
-workflow.argoproj.io "build-workflow-def456" deleted
-Deleting intermediate workflow: build-workflow-ghi789
-workflow.argoproj.io "build-workflow-ghi789" deleted
-[... 5 more deletions ...]
-Deleted 7 intermediate workflows
-2025-12-15T21:23:50+0000 DONE cleanup-pending-workflows
-```
+The cleanup step found 7 pending workflows besides the current one and deleted them one by one, from `START` to `DONE` in two seconds.
 
 **Result**: 7 workflows deleted in 2 seconds. Only the running workflow remained.
 

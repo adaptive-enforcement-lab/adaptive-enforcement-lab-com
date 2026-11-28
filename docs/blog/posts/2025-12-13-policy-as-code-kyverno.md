@@ -8,8 +8,9 @@ categories:
   - DevSecOps
   - Engineering Patterns
 description: >-
-  Enforce security policies at admission time. Block misconfigured resources before they hit etcd.
+  Enforce security policies at admission time. Block misconfigured resources before they hit etcd, and run the same policies locally and in CI.
 slug: policy-as-code-kyverno
+provenance: human
 ---
 # Policy-as-Code with Kyverno: Kubernetes Validation at Admission Time
 
@@ -85,34 +86,19 @@ Kyverno isn't just runtime admission control. It runs **anywhere**:
 
 ### Local Development
 
-Test policies before committing:
+Test policies before committing.
 
-```bash
-# Install Kyverno CLI
-brew install kyverno
-
-# Validate manifests locally
-kyverno apply policy.yaml --resource deployment.yaml
-
-# Test against all manifests in a directory
-kyverno apply policies/ --resource manifests/
-```
+Install the Kyverno CLI, then run `kyverno apply` with a policy file or a policy directory against your manifests.
+The [Kyverno testing guide](../../enforce/policy-as-code/kyverno/testing-approaches.md) has the commands.
 
 Developer catches violations **before** pushing to CI. Faster feedback loop.
 
 ### CI/CD Pipeline
 
-Block deployments with policy violations:
+Block deployments with policy violations.
 
-```yaml
-- name: Validate with Kyverno
-  run: |
-    kyverno apply policies/ --resource k8s/
-    if [ $? -ne 0 ]; then
-      echo "Policy violations detected. Fix before merging."
-      exit 1
-    fi
-```
+A CI step runs `kyverno apply policies/ --resource k8s/` and fails the job on any violation.
+The [Kyverno CI/CD integration guide](../../enforce/policy-as-code/kyverno/ci-cd-integration.md) has the workflow.
 
 PR can't merge with policy violations. Same policies, different enforcement points.
 

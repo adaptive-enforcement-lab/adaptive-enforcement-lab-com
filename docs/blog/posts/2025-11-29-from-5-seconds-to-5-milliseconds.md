@@ -9,7 +9,10 @@ categories:
   - Performance
   - Go
   - Engineering Patterns
+description: >-
+  Every image push scanned the whole cluster. A ConfigMap cache, then a volume mount, took deployment lookups from 5 seconds to 5ms with zero API calls.
 slug: from-5-seconds-to-5-milliseconds
+provenance: human
 ---
 # From 5 Seconds to 5 Milliseconds: The Evolution of Event-Driven Deployment Automation
 
@@ -47,27 +50,11 @@ That red "Find Deployments" step? That's where the pain lived.
 
 ## V1: The Bash Script Era
 
-The first implementation was straightforward. Three Argo Workflow templates chained together:
+The first implementation was straightforward. Three Argo Workflow templates chained together.
 
-```yaml
-templates:
-  - name: get-deployments
-    script:
-      image: google/cloud-sdk:latest
-      source: |
-        apt-get -qq -y install jq
-        kubectl get deployments -o json -A | jq '...' > /tmp/deployments.json
-
-  - name: select-candidates
-    script:
-      source: |
-        jq --arg IMAGE "${IMAGE}" 'map(select(.image==$IMAGE))' /tmp/deployments.json
-
-  - name: trigger-restart
-    script:
-      source: |
-        kubectl rollout restart deployment $NAME -n $NAMESPACE
-```
+`get-deployments` ran `kubectl get deployments -o json -A` through `jq`, installing `jq` with `apt-get` first.
+`select-candidates` filtered that list by image. `trigger-restart` ran `kubectl rollout restart`.
+The [ConfigMap as Cache Pattern](../../build/efficiency-patterns/configmap-cache.md) shows these templates as the problem the cache solves.
 
 !!! failure "The Problems"
 
@@ -156,18 +143,7 @@ Reading the ConfigMap still required an API call. What if I could eliminate that
 
 Kubernetes can mount ConfigMaps as volumes. The kubelet syncs them automatically. If I mount the cache as a file, the workflow can read it directly from disk.
 
-```yaml
-volumes:
-  - name: cache-volume
-    configMap:
-      name: deployment-image-cache
-      optional: true
-
-volumeMounts:
-  - name: cache-volume
-    mountPath: /etc/cache
-    readOnly: true
-```
+The workflow mounts the `deployment-image-cache` ConfigMap read-only at `/etc/cache`, marked `optional: true`. The [implementation guide](../../build/efficiency-patterns/implementation.md) has the volume and mount spec.
 
 The CLI now has a two-tier access pattern:
 

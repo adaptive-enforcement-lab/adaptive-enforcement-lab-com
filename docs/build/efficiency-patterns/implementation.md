@@ -198,6 +198,117 @@ echo "Repo: $REPO → Namespace: $NAMESPACE"
 
 ---
 
+## 4. Go Client: Mount First, API Fallback
+
+A Go CLI can read the same cache with a three-tier fallback: volume mount, then the
+ConfigMap API, then a rebuild from a cluster scan.
+
+**Cache file** (`/etc/cache/cache.json`, mapping images to the deployments that use them):
+
+```json
+{
+  "images": {
+    "us-docker.pkg.dev/project/repo/app:v1.2.3": [
+      {"name": "api", "namespace": "production"},
+      {"name": "api", "namespace": "staging"}
+    ],
+    "us-docker.pkg.dev/project/repo/worker:v2.0.1": [
+      {"name": "worker", "namespace": "production"}
+    ]
+  }
+}
+```
+
+**Read from the mount**:
+
+```go
+func readCache(mountPath string) (*Cache, error) {
+    data, err := os.ReadFile(filepath.Join(mountPath, "cache.json"))
+    if err != nil {
+        return nil, fmt.Errorf("reading cache file: %w", err)
+    }
+
+    var cache Cache
+    if err := json.Unmarshal(data, &cache); err != nil {
+        return nil, fmt.Errorf("parsing cache: %w", err)
+    }
+
+    return &cache, nil
+}
+```
+
+**Fall back to the API, then rebuild**:
+
+```go
+func GetDeployments(image string, cachePath string, client kubernetes.Interface) ([]Deployment, error) {
+    // Try volume mount first
+    if cache, err := readCache(cachePath); err == nil {
+        if deployments, found := cache.Images[image]; found {
+            return deployments, nil
+        }
+        // Image not in cache, trigger rebuild
+        return rebuildCache(client)
+    }
+
+    // Fallback to API
+    cache, err := getConfigMapCache(client)
+    if err != nil {
+        // Cache doesn't exist, rebuild from cluster scan
+        return rebuildCache(client)
+    }
+
+    if deployments, found := cache.Images[image]; found {
+        return deployments, nil
+    }
+
+    // Image not tracked, rebuild cache
+    return rebuildCache(client)
+}
+```
+
+**Write through the API** (the mount is read-only; the kubelet syncs the change to every
+mount, typically within seconds):
+
+```go
+func updateCache(client kubernetes.Interface, cache *Cache) error {
+    data, err := json.MarshalIndent(cache, "", "  ")
+    if err != nil {
+        return fmt.Errorf("marshaling cache: %w", err)
+    }
+
+    cm := &corev1.ConfigMap{
+        ObjectMeta: metav1.ObjectMeta{
+            Name:      "deployment-image-cache",
+            Namespace: "automation",
+        },
+        Data: map[string]string{
+            "cache.json": string(data),
+        },
+    }
+
+    _, err = client.CoreV1().ConfigMaps("automation").Update(
+        context.Background(), cm, metav1.UpdateOptions{},
+    )
+    return err
+}
+```
+
+**RBAC** for readers in other namespaces:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cache-reader
+rules:
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get"]
+    resourceNames: ["deployment-image-cache"]
+```
+
+---
+
 ## Related Patterns
 
 - [ConfigMap Cache Pattern](configmap-cache.md) - Main overview
