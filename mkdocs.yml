@@ -546,6 +546,7 @@ nav:
       - Go Security:
           - secure/go-security/index.md
           - Standard Toolkit: secure/go-security/tools.md
+          - golangci-lint v2 errcheck: secure/go-security/golangci-lint-v2-errcheck.md
           - Workflow Integration: secure/go-security/integration.md
           - Compliance: secure/go-security/compliance.md
           - Conclusion: secure/go-security/conclusion.md

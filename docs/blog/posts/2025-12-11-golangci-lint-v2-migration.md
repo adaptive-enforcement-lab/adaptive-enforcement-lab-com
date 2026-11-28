@@ -8,9 +8,9 @@ categories:
   - Linting
   - Code Quality
 description: >-
-  Stricter errcheck rules break most Go projects. Here's the fix pattern
-  that keeps your code clean.
+  Stricter errcheck rules break most Go projects. Here's the fix pattern that keeps your code clean, and the migration path from golangci-lint v1 to v2.
 slug: golangci-lint-v2-migration
+provenance: human
 ---
 # golangci-lint v2: What Broke and How to Fix It
 
@@ -58,55 +58,19 @@ _, _ = fmt.Fprintln(w, "Hello")
 
 ### Pattern 2: Writer Wrapper (Recommended)
 
-For files with many write operations, create a wrapper:
+For files with many write operations, create a wrapper.
 
-```go
-// mw wraps io.Writer to simplify error handling for fmt functions.
-// Write errors to stdout are typically unrecoverable.
-type mw struct {
-    w io.Writer
-}
-
-func (m mw) println(a ...any) {
-    _, _ = fmt.Fprintln(m.w, a...)
-}
-
-func (m mw) printf(format string, a ...any) {
-    _, _ = fmt.Fprintf(m.w, format, a...)
-}
-
-// Usage
-func WriteReport(w io.Writer, data *Report) {
-    m := mw{w}
-    m.println("# Report")
-    m.printf("Total: %d\n", data.Total)
-}
-```
+A small `mw` type wraps the `io.Writer` and exposes `println` and `printf` methods that discard the write error in one place.
+Callers write `m.println("# Report")` instead of handling each return value.
 
 **Pros**: Clean code, centralized decision
 **Cons**: Requires refactoring
 
 ### Pattern 3: Error Accumulator
 
-When you want to track the first error:
+When you want to track the first error.
 
-```go
-type errWriter struct {
-    w   io.Writer
-    err error
-}
-
-func (e *errWriter) println(a ...any) {
-    if e.err != nil {
-        return
-    }
-    _, e.err = fmt.Fprintln(e.w, a...)
-}
-
-func (e *errWriter) Err() error {
-    return e.err
-}
-```
+An `errWriter` keeps the first write error, skips every later write, and returns it from `Err()`.
 
 **Pros**: Captures errors for logging
 **Cons**: More complex than needed for stdout
@@ -117,35 +81,15 @@ func (e *errWriter) Err() error {
 
 ### Exclude Specific Functions
 
-```yaml
-# .golangci.yml
-version: "2"
-
-linters-settings:
-  errcheck:
-    exclude-functions:
-      - fmt.Fprintln
-      - fmt.Fprintf
-      - fmt.Fprint
-      - (io.Writer).Write
-```
+`linters-settings.errcheck.exclude-functions` lists `fmt.Fprintln`, `fmt.Fprintf`, `fmt.Fprint` and `(io.Writer).Write`.
 
 **Pros**: No code changes
 **Cons**: May hide legitimate issues
 
 ### Exclude by Path
 
-```yaml
-# .golangci.yml
-version: "2"
-
-issues:
-  exclude-rules:
-    - path: pkg/output/
-      linters:
-        - errcheck
-      text: "Error return value of `fmt\\.(Fp|P)rint"
-```
+An `issues.exclude-rules` entry turns off `errcheck` for `pkg/output/`, matched on the `fmt` print error text.
+The [golangci-lint v2 errcheck guide](../../secure/go-security/golangci-lint-v2-errcheck.md) has the code and both configs.
 
 ---
 
@@ -153,13 +97,7 @@ issues:
 
 ### Step 1: Run Locally First
 
-```bash
-# Install latest golangci-lint
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-
-# Run linter
-golangci-lint run ./...
-```
+Install the latest `golangci-lint` with `go install`, then run `golangci-lint run ./...`.
 
 !!! danger "Never Push Without Local Verification"
     Don't discover linter failures in CI. Run locally first. See [Should Work ≠ Does Work](2025-12-08-always-works-qa-methodology.md).
@@ -184,16 +122,7 @@ Apply the same fix across all files.
 
 ### Step 4: Verify
 
-```bash
-# Full linter run
-golangci-lint run ./...
-
-# Build verification
-go build ./...
-
-# Push
-git push
-```
+Run `golangci-lint run ./...`, then `go build ./...`, then push.
 
 ---
 
@@ -201,47 +130,24 @@ git push
 
 ### Standard Library I/O
 
-```go
-// All need handling:
-fmt.Println("...")          // Returns (int, error)
-fmt.Fprintf(w, "...")       // Returns (int, error)
-io.WriteString(w, "...")    // Returns (int, error)
-w.Write([]byte("..."))      // Returns (int, error)
-```
+`fmt.Println`, `fmt.Fprintf`, `io.WriteString` and `w.Write` all return `(int, error)`, and all need handling.
 
 ### File Operations
 
-```go
-// File.Close returns error
-defer f.Close() // Fails errcheck!
-
-// Fix: explicit ignore for read-only operations
-defer func() { _ = f.Close() }()
-```
+`defer f.Close()` fails errcheck. For read-only files, `defer func() { _ = f.Close() }()` passes.
 
 ### JSON Encoding
 
-```go
-// Before (fails)
-enc.Encode(data)
-
-// After
-if err := enc.Encode(data); err != nil {
-    return err
-}
-```
+A bare `enc.Encode(data)` fails. Check its error and return it.
+The [golangci-lint v2 errcheck guide](../../secure/go-security/golangci-lint-v2-errcheck.md) lists each case.
 
 ---
 
 ## Rollback Strategy
 
-If you need more time, pin the old version:
+If you need more time, pin the old version.
 
-```yaml
-- uses: golangci/golangci-lint-action@v6
-  with:
-    version: v1.59.1  # Last v1 release
-```
+Pin `golangci/golangci-lint-action@v6` with `version: v1.59.1`, the last v1 release.
 
 This gives you time. But v1 will not get updates.
 
@@ -251,25 +157,15 @@ This gives you time. But v1 will not get updates.
 
 ### Different Local vs CI Results
 
-Ensure same version:
+Ensure same version.
 
-```bash
-# Check local version
-golangci-lint --version
-
-# Pin in CI
-- uses: golangci/golangci-lint-action@v9
-  with:
-    version: v2.7.1  # Explicit version
-```
+Compare `golangci-lint --version` locally with an explicit `version` pinned in the CI action.
 
 ### Cached Results
 
-Clear cache if seeing stale results:
+Clear cache if seeing stale results.
 
-```bash
-golangci-lint cache clean
-```
+Run `golangci-lint cache clean`.
 
 ---
 
