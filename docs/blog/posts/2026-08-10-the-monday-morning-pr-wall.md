@@ -3,14 +3,15 @@ title: The Monday Morning PR Wall
 date: 2026-08-10
 authors:
   - mark
+  - content-machine
 categories:
   - DevOps
   - Automation
   - Dependency Management
 description: >-
-  A 70-PR dependency backlog forced us to automate Renovate triage with
-  labels. Here's what changed.
+  A 70-PR dependency backlog across a fleet of microservices forced us to automate Renovate triage with labels. Here's what changed.
 slug: the-monday-morning-pr-wall
+provenance: human_edited
 ---
 
 # The Monday Morning PR Wall

@@ -1,5 +1,5 @@
 ---
-title: Tier 3: Score 9 to 10 (Advanced → Exceptional)
+title: "Tier 3: Score 9 to 10 (Advanced → Exceptional)"
 description: >-
   Selective improvements for Scorecard scores 9 to 10. CII badge, fuzzing integration,
   perfect branch protection, and ongoing maintenance. Diminishing returns, evaluate context.

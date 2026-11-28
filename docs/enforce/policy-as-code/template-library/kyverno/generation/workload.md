@@ -1,5 +1,5 @@
 ---
-title: Kyverno Generation Templates: Workload Resources
+title: "Kyverno Generation Templates: Workload Resources"
 description: >-
   Auto-generate PodDisruptionBudgets for high-availability Kubernetes workloads with Kyverno generation policies ensuring resilience during disruptions.
 tags:

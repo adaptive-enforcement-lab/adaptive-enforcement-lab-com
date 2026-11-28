@@ -9,8 +9,9 @@ categories:
   - Kubernetes
   - CI/CD
 description: >-
-  Image push triggers deployment restart. No polling. No manual steps. Full automation.
+  Image push triggers deployment restart. No polling. No manual steps. Full automation. How events flow from registry to cluster with Argo Events.
 slug: event-driven-deployments-argo
+provenance: human
 ---
 # Event-Driven Deployments with Argo: The Journey to Zero-Latency Automation
 

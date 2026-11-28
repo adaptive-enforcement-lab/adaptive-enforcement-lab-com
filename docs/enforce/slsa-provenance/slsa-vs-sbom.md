@@ -1,5 +1,5 @@
 ---
-title: SLSA vs SBOM: What's the Difference?
+title: "SLSA vs SBOM: What's the Difference?"
 tags:
   - slsa
   - sbom

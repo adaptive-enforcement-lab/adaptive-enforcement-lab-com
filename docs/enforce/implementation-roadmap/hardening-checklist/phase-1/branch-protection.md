@@ -1,5 +1,5 @@
 ---
-title: Phase 1: Branch Protection Rules
+title: "Phase 1: Branch Protection Rules"
 description: >-
   Branch protection rules for SDLC hardening. Required reviews, status checks, admin enforcement, commit signatures, history protection, and organization-wide automation to prevent unauthorized merges.
 tags:

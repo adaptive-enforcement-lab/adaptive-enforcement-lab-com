@@ -7,19 +7,22 @@ categories:
   - CI/CD
   - Resilience
   - Engineering Patterns
+description: >-
+  Your workflow failed at step 47 of 50. Idempotent automation makes the rerun boring. Why reruns should never scare you, and the journey to get there.
 slug: idempotent-automation-why-reruns-shouldnt-scare-you
+provenance: human
 ---
 # Idempotent Automation: Why Reruns Shouldn't Scare You
 
 Your workflow failed at step 47 of 50. Do you fix the issue and rerun from the beginning, or do you manually complete the remaining steps?
+
+<!-- more -->
 
 !!! failure "The Nervousness Test"
 
     If that question makes you nervous, your automation isn't idempotent. And that's a problem.
 
 This post shares the journey to making reruns boring. For the full technical deep-dive, see the [Idempotency Pattern Guide](../../patterns/efficiency/idempotency/index.md).
-
-<!-- more -->
 
 ---
 

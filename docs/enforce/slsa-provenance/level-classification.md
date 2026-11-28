@@ -1,5 +1,5 @@
 ---
-title: SLSA Level Classification: Decision Trees
+title: "SLSA Level Classification: Decision Trees"
 tags:
   - slsa
   - provenance

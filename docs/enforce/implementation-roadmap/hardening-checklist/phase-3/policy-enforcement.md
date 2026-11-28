@@ -1,5 +1,5 @@
 ---
-title: Phase 3: Runtime Policy Enforcement
+title: "Phase 3: Runtime Policy Enforcement"
 description: >-
   Runtime policy enforcement with Kyverno. Required resource limits, image source verification, security context requirements, and admission control for Kubernetes production environments.
 tags:
