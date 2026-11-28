@@ -1,4 +1,9 @@
 ---
+# Use the node already on PATH. Without this, pre-commit rejects a node
+# installed under $HOME (nvm, asdf) and asks nodeenv for "latest", which
+# breaks when the newest Node release is a prerelease.
+default_language_version:
+  node: system
 repos:
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.49.1
