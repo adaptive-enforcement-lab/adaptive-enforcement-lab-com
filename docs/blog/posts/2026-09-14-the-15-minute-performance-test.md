@@ -85,7 +85,7 @@ triggered a workflow that would:
 
 The first successful run was a breakthrough. It took about 30 minutes, which
 was slow, but it was repeatable and isolated. We had a baseline. Commits from
-this time, with messages like `chore(cd): TICKET-823 start qac sandbox-v1 for db/index size comparison`,
+this time, with messages like `chore(cd): TICKET-823 start qa sandbox-v1 for db/index size comparison`,
 mark this initial, crucial step.
 
 ## Measuring What Matters: Data Footprint Analysis
@@ -101,7 +101,7 @@ the data-loading benchmark completed, another job would connect to the
 database and run a query to measure the on-disk size of the newly created
 indexes and tables. This gave us a second, critical metric to track: the data
 footprint. Now, a PR that significantly increased the storage cost of our
-data would be flagged automatically. The commit `chore(cd): TICKET-823 stop qac
+data would be flagged automatically. The commit `chore(cd): TICKET-823 stop qa
 sandbox-v1 after size comparison` shows the evolution, where we explicitly
 started and stopped environments just for this specific analysis.
 
@@ -129,8 +129,8 @@ We also worked hard to optimize the environment startup time. We pre-baked our
 Docker images, optimized our Helm charts for a quick startup, and fine-tuned
 our resource requests to get pods scheduled faster. This brought the average
 environment creation time down from over 20 minutes to under five. The commits
-`chore(cd): TICKET-823 start qac sandbox-v2 for bulk-loader load` and
-`chore(cd): TICKET-823 stop qac sandbox-v2 after bulk-loader load benchmark`
+`chore(cd): TICKET-823 start qa sandbox-v2 for bulk-loader load` and
+`chore(cd): TICKET-823 stop qa sandbox-v2 after bulk-loader load benchmark`
 reflect this more mature, faster, and more targeted benchmark-and-destroy cycle.
 
 ## Integrating with the CI/CD Pipeline

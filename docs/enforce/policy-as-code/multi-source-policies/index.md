@@ -139,7 +139,7 @@ security-rules/
 ├── cd/
 │   ├── values.yaml          # Common values
 │   ├── dev/values.yaml      # Dev overrides
-│   ├── qac/values.yaml
+│   ├── qa/values.yaml
 │   ├── stg/values.yaml
 │   └── prd/values.yaml
 └── Dockerfile               # Build repo as OCI container

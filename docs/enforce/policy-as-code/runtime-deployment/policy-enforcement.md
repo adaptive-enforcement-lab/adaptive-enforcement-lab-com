@@ -83,7 +83,7 @@ policies:
 **Deployment command**:
 
 ```bash
-for env in dev qac stg prd; do
+for env in dev qa stg prd; do
   kubectl config use-context gke-${env}
 
   helm upgrade --install security-rules \
@@ -94,7 +94,7 @@ done
 ```
 
 !!! warning "Progressive Strictness"
-    Development should be permissive (Audit mode). QAC should catch most violations (Audit with warnings). Staging should match production (Enforce). Production must be strictest (Enforce on all critical policies).
+    Development should be permissive (Audit mode). The test environment should catch most violations (Audit with warnings). Staging should match production (Enforce). Production must be strictest (Enforce on all critical policies).
 
 ---
 
