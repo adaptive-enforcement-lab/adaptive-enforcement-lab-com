@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.14.0](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.3...1.14.0) (2026-11-28)
+
+
+### New Content
+
+* provenance key, content-machine author and rendered note ([#376](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/376)) ([701f136](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/701f136a83fb8b7eceac4ccccd450df88ebb4c14))
+
+
+### Documentation Updates
+
+* anonymise internal references ([#373](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/373)) ([3c65378](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/3c653789136b24433d9f442e68485ad5f9c17fd9))
+* backfill provenance on existing pages ([#377](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/377)) ([5a89685](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/5a89685f0405f917213820bbbdce61cee971d71c))
+* draft pattern post from content-machine ([#336](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/336)) ([a25d3eb](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/a25d3eb8de5d4a0a669771602b0e857ab807ad62))
+* draft pattern post from content-machine ([#339](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/339)) ([e9ec7df](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e9ec7dfbced1c8d1881b1415b527a7596075b6fd))
+* draft pattern post from content-machine ([#342](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/342)) ([2bf5e82](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/2bf5e82f9d7e76bc540aea03dabfebd0823ca991))
+* draft pattern post from content-machine ([#344](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/344)) ([2d86609](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/2d866097d49dffa3e0732d8f02e235258b82adca))
+* drop tombstone-markers stub that shadowed the real page ([#380](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/380)) ([9f1faae](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9f1faaeb3ce6f678f3e650762d75d009a68e9cda))
+* move how-to code out of 33 blog posts into articles ([#381](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/381)) ([6f2b162](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/6f2b1621ff69823ad4566e92577fa45fdddae4f2))
+* quote colon titles, fix four held-back posts ([#379](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/379)) ([e102a9f](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e102a9f259a15f93d4336ad02dce6eb7f8ca5116))
+* rename qac environment to qa ([#374](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/374)) ([010ec85](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/010ec85184471d1e99ea609bf88547b5c298c9e4))
+
+
+### Maintenance
+
+* automated site maintenance ([#335](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/335)) ([e437368](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/e43736806586d912784beec73ddc1c33bced96ff))
+* automated site maintenance ([#378](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/378)) ([9fcbb23](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/9fcbb238f39167b4ea60f6e096480f9a1da413a8))
+* system node for pre-commit, drop sample attribution ([#375](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/issues/375)) ([4b322ae](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/commit/4b322ae27a78cdabd96b8a0bf167fdd2e27d4a23))
+
 ## [1.13.3](https://github.com/adaptive-enforcement-lab/adaptive-enforcement-lab-com/compare/1.13.2...1.13.3) (2026-09-06)
 
 
