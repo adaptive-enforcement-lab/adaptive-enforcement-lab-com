@@ -202,6 +202,27 @@ Updates only the `dev` version without touching aliases.
 
 ---
 
+## Release-Please Configuration
+
+For a single Go action, one root package is enough. Tags stay plain `v1.2.3`:
+
+```json
+{
+  "include-v-in-tag": true,
+  "packages": {
+    ".": {
+      "release-type": "go",
+      "component": "readability",
+      "include-component-in-tag": false
+    }
+  }
+}
+```
+
+Commits drive the release. `feat:` bumps minor. `fix:` bumps patch. `feat!:` bumps major.
+
+---
+
 ## GitHub Pages Setup
 
 ### Enable Pages
