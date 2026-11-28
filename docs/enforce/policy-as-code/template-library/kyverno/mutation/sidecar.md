@@ -1,5 +1,5 @@
 ---
-title: Kyverno Mutation Templates: Sidecar Injection
+title: "Kyverno Mutation Templates: Sidecar Injection"
 description: >-
   Automatically inject monitoring, logging, and security sidecar containers into Kubernetes pods with Kyverno mutation policies.
 tags:

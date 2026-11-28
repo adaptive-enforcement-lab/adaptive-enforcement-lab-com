@@ -1,5 +1,5 @@
 ---
-title: SLSA Level 3 Provenance: Implementation Guide
+title: "SLSA Level 3 Provenance: Implementation Guide"
 tags:
   - slsa
   - provenance

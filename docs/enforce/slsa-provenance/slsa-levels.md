@@ -1,5 +1,5 @@
 ---
-title: SLSA Levels: Requirements and Security Guarantees
+title: "SLSA Levels: Requirements and Security Guarantees"
 tags:
   - slsa
   - provenance

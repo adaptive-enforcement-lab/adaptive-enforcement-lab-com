@@ -1,5 +1,5 @@
 ---
-title: OPA vs Kyverno: Decision Guide
+title: "OPA vs Kyverno: Decision Guide"
 description: >-
   OPA vs Kyverno decision guide. Choose the right policy engine based on use cases, team expertise, and operational requirements. Quick decision matrix with recommended starter paths.
 tags:

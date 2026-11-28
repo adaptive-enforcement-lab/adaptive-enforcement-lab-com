@@ -1,5 +1,5 @@
 ---
-title: Phase 3: SLSA Level 3 Implementation
+title: "Phase 3: SLSA Level 3 Implementation"
 tags:
   - slsa
   - provenance

@@ -1,5 +1,5 @@
 ---
-title: Kyverno Generation Templates: Namespace Resources
+title: "Kyverno Generation Templates: Namespace Resources"
 description: >-
   Auto-generate ResourceQuotas and NetworkPolicies for new Kubernetes namespaces with Kyverno generation policies enforcing security by default.
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Phase 2: CI/CD Gates
+title: "Phase 2: CI/CD Gates"
 description: >-
   CI/CD gates for SDLC hardening. Required status checks, test validation, security scanning, SBOM generation, and SLSA provenance to prevent failing builds from merging.
 tags:

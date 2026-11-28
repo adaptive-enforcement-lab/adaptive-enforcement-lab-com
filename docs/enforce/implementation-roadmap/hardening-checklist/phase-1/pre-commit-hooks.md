@@ -1,5 +1,5 @@
 ---
-title: Phase 1: Pre-commit Hooks
+title: "Phase 1: Pre-commit Hooks"
 description: >-
   Deploy pre-commit hooks with TruffleHog secrets detection, linting, and policy enforcement to block bad code from entering git history across your organization.
 tags:

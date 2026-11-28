@@ -1,5 +1,5 @@
 ---
-title: Phase 2: Evidence Collection
+title: "Phase 2: Evidence Collection"
 description: >-
   Evidence collection for SDLC hardening. Branch protection archival, PR review tracking, workflow logs, and integration with CI gates for comprehensive audit trail generation.
 tags:
