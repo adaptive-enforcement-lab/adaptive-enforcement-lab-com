@@ -53,7 +53,7 @@ All configurations use Terraform for Infrastructure as Code, enabling:
 
 !!! danger "Production Warning"
 
-    These configurations enforce strict security controls. Test in QAC/DEV before production deployment.
+    These configurations enforce strict security controls. Test in the test and dev environments before production deployment.
 
 ## Quick Start
 

@@ -65,7 +65,7 @@ validate-policies:
 
 .PHONY: validate-all-envs
 validate-all-envs:
- @for env in dev qac stg prd; do \
+ @for env in dev qa stg prd; do \
    $(MAKE) validate-env ENV=$$env; \
  done
 

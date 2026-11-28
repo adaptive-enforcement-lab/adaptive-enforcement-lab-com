@@ -25,11 +25,11 @@ Production-ready security configuration for Google Kubernetes Engine clusters. T
     3. **Identity** - Workload Identity Federation, least-privilege IAM, audit trails
     4. **Runtime** - Pod Security Standards, admission controllers, monitoring
 
-This guide uses Pulumi for Infrastructure as Code, enabling repeatable, auditable cluster deployments across environments (QAC, DEV, STG, PRD).
+This guide uses Pulumi for Infrastructure as Code, enabling repeatable, auditable cluster deployments across environments (QA, DEV, STG, PRD).
 
 !!! tip "Environment Promotion Order"
 
-    Always promote changes through: **QAC → DEV → STG → PRD → OPS**
+    Always promote changes through: **QA → DEV → STG → PRD → OPS**
 
     Never skip environments in the promotion pipeline.
 
@@ -43,7 +43,7 @@ This guide uses Pulumi for Infrastructure as Code, enabling repeatable, auditabl
 
 !!! danger "Production Warning"
 
-    These configurations enforce strict security controls. Test in QAC/DEV before production deployment.
+    These configurations enforce strict security controls. Test in the test and dev environments before production deployment.
 
 ## Architecture
 
@@ -90,12 +90,12 @@ git clone https://github.com/your-org/gke-infrastructure.git
 cd gke-infrastructure
 
 # Initialize Pulumi stack
-pulumi stack init qac
+pulumi stack init qa
 
 # Configure cluster
 pulumi config set gcp_project $PROJECT_ID
-pulumi config set cluster_name qac-cluster
-pulumi config set environment qac
+pulumi config set cluster_name qa-cluster
+pulumi config set environment qa
 pulumi config set team platform
 pulumi config set cost_center engineering
 pulumi config set admin_cidr_block 203.0.113.0/24
@@ -105,7 +105,7 @@ pulumi preview
 pulumi up
 
 # Get cluster credentials
-gcloud container clusters get-credentials qac-cluster \
+gcloud container clusters get-credentials qa-cluster \
   --region us-central1 \
   --project $PROJECT_ID
 ```
@@ -182,11 +182,11 @@ gcloud logging sinks list --filter="destination:*storage*" --format="table(name,
 
 ## Environment-Specific Configurations
 
-### QAC (Quality Assurance/Control)
+### QA (Test Environment)
 
 ```yaml
-# Pulumi.qac.yaml
-environment          = "qac"
+# Pulumi.qa.yaml
+environment          = "qa"
 kubernetes_version   = "1.28"
 machine_type         = "e2-medium"
 min_node_count       = 1
@@ -238,7 +238,7 @@ enable_cloud_armor   = true
 
 !!! tip "Progressive Hardening"
 
-    Notice security controls increase from QAC to PRD. Baseline standards in development, restricted standards in production.
+    Notice security controls increase from QA to PRD. Baseline standards in development, restricted standards in production.
 
 ## References
 

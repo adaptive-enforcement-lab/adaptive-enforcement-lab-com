@@ -15,8 +15,8 @@ Policy update workflows, backup procedures, performance tuning, and operational 
 
 ```mermaid
 graph TD
-    DEV[1. Test in Dev] --> QAC[2. Deploy to QAC]
-    QAC --> AUDIT[3. Monitor in Audit Mode]
+    DEV[1. Test in Dev] --> QA[2. Deploy to Test Environment]
+    QA --> AUDIT[3. Monitor in Audit Mode]
     AUDIT --> VALIDATE[4. Review Violations]
     VALIDATE --> FIX[5. Fix Issues]
     FIX --> STG[6. Deploy to Staging]
@@ -35,7 +35,7 @@ graph TD
 **Timeline**:
 
 - **Dev**: Immediate
-- **QAC**: 1 week in Audit mode
+- **Test environment**: 1 week in Audit mode
 - **Staging**: 1 week in Enforce mode
 - **Production**: After 0 violations in Staging
 

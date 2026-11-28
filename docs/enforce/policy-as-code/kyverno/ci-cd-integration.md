@@ -216,7 +216,7 @@ spec:
 ```bash
 cd/
 ├── dev/values.yaml          # Audit mode, relaxed policies
-├── qac/values.yaml          # Audit mode, production-like policies
+├── qa/values.yaml           # Audit mode, production-like policies
 ├── stg/values.yaml          # Enforce mode, full policies
 ├── prd/values.yaml          # Enforce mode, full policies + alerts
 └── ops/values.yaml          # Enforce mode, infrastructure policies

@@ -53,7 +53,7 @@ Policy validation is environment-specific. Detect target environment from branch
           # Pull Request - check destination branch
           case $BITBUCKET_PR_DESTINATION_BRANCH in
             "development") ENVIRONMENT="dev" ;;
-            "qac")         ENVIRONMENT="qac" ;;
+            "qa")          ENVIRONMENT="qa" ;;
             "staging")     ENVIRONMENT="stg" ;;
             "production")  ENVIRONMENT="prd" ;;
             *)
@@ -65,7 +65,7 @@ Policy validation is environment-specific. Detect target environment from branch
           # Direct push - check current branch
           case $BITBUCKET_BRANCH in
             "development") ENVIRONMENT="dev" ;;
-            "qac")         ENVIRONMENT="qac" ;;
+            "qa")          ENVIRONMENT="qa" ;;
             "staging")     ENVIRONMENT="stg" ;;
             "production")  ENVIRONMENT="prd" ;;
           esac
@@ -271,7 +271,7 @@ pipelines:
             - |
               case $BITBUCKET_PR_DESTINATION_BRANCH in
                 "development") ENVIRONMENT="dev" ;;
-                "qac")         ENVIRONMENT="qac" ;;
+                "qa")          ENVIRONMENT="qa" ;;
                 "staging")     ENVIRONMENT="stg" ;;
                 "production")  ENVIRONMENT="prd" ;;
                 *)

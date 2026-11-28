@@ -263,7 +263,7 @@ variable "kubernetes_version" {
 
 variable "environment" {
   type        = string
-  description = "Environment name (qac, dev, stg, prd)"
+  description = "Environment name (qa, dev, stg, prd)"
 }
 
 variable "team" {

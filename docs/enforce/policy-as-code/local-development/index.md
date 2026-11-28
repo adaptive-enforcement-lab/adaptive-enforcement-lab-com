@@ -134,7 +134,7 @@ docker run --rm \
 Validate across all environments before pushing:
 
 ```bash
-for env in dev qac stg prd; do
+for env in dev qa stg prd; do
   echo "Validating ${env} environment..."
 
   # Render manifests

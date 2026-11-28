@@ -80,7 +80,7 @@ policies/
 ### Rollout Strategy
 
 1. **Development**: Deploy new policy version in audit mode
-2. **QAC**: Monitor PolicyReports for violations
+2. **Test environment**: Monitor PolicyReports for violations
 3. **Staging**: Switch to enforce mode, validate
 4. **Production**: Gradual rollout (10% → 50% → 100%)
 

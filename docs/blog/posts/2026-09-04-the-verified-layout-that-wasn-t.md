@@ -103,7 +103,7 @@ formal one, the one that should be authoritative, becomes the least reliable.
 ## A Simple Audit, A Deeper Truth
 
 The fix itself was straightforward. I ran a few simple commands to list
-the root prefixes in each of our five environments (dev, test, qac,
+the root prefixes in each of our five environments (dev, test, qa,
 staging, and production) and diffed them against the document. The output
 was stark and undeniable.
 

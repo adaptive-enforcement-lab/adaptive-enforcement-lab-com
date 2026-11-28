@@ -134,7 +134,7 @@ kubectl exec test-pod -n apps -- wget -O- http://my-app:8080
 
 !!! danger "Testing Before Production"
 
-    Always test network policies in QAC/DEV first. Incorrect policies can break legitimate traffic.
+    Always test network policies in QA/DEV first. Incorrect policies can break legitimate traffic.
 
 ## Network Security Checklist
 
